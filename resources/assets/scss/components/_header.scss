@@ -1,0 +1,56 @@
+// Control settings
+$header-height:100px;
+$header-scrolling-height:100px;
+$header-background:#f00;
+
+header {
+    position: absolute;
+    width: 100%;
+    z-index: 9;
+    padding: 0;
+    top: 0;
+    left: 0;
+    // overflow: hidden;
+    // position: fixed;
+    height: $header-height;
+    background: $header-background !important;
+    @include flex;
+    @include flex-align-items(center);
+
+    &.scrolling {
+        position: fixed !important;
+        height: $header-scrolling-height;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 99;
+        -webkit-box-shadow: 1px 0 5px 1px rgba(0, 0, 0, .6);
+        box-shadow: 1px 0 5px 1px rgba(0, 0, 0, .6);
+    }
+
+    .main-nagivation-desktop {
+        .navbar-bar {
+            @include flex;
+            @include flex-align-items(center);
+
+            &__wrapper {
+                @include flex;
+                @include flex-justify-content(space-around);
+                width: 100%;
+            }
+
+            ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+        }
+    }
+}
+
+// .homepage--main {
+//     padding-top: 102px;
+//     header {
+//         position: absolute;
+//     }
+// }

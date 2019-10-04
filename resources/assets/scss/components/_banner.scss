@@ -1,0 +1,158 @@
+$banner-background-color:#000;
+
+.banner {
+    // height: 100vh !important;
+    margin-top: $header-height;
+    height: 100vh;
+    overflow: hidden;
+    // padding-left: 3%;
+    // padding-right: 3%;
+    min-height: calc(100%);
+    position: relative;
+    background-color: $banner-background-color;
+
+    @media only screen and (max-width: $tablet) {
+        height: 100vh !important;
+    }
+
+    @media only screen and (max-height:$mobile) {
+        height: 300px !important;
+    }
+
+    &__slick {
+        display: block;
+        height: 100%;
+        position: relative;
+
+        button.slick-prev.slick-arrow {
+            background: #f00;
+            width: 20px;
+            height: 99px;
+            overflow: hidden;
+            text-indent: -999px;
+            position: absolute;
+            left: -11px;
+            z-index: 5;
+            top: 0 !important;
+            bottom: 0 !important;
+            margin: auto;
+        }
+
+        button.slick-next.slick-arrow {
+            background: #f00;
+            width: 20px;
+            height: 99px;
+            overflow: hidden;
+            text-indent: -999px;
+            position: absolute;
+            right: -11px;
+            z-index: 5;
+            top: 0 !important;
+            bottom: 0 !important;
+            margin: auto;
+        }
+
+        div {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .slick-dots {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        padding: 0;
+
+        li {
+            display: inline-block;
+
+            button {
+                width: 20px;
+                height: 20px;
+                @include border-radius(100%);
+                border: 0;
+                overflow: hidden;
+                text-indent: -999px;
+                margin: 0 3px;
+                background: transparent;
+                border: 3px solid $color-white;
+                box-sizing: border-box;
+                padding: 0 !important;
+            }
+
+            &.slick-active {
+                button {
+                    background: $color-white;
+                }
+            }
+        }
+    }
+
+    &__item {}
+
+    &__content {
+        h1 {
+            color: $color-white;
+            font-size: 2.8em;
+            line-height: 55px;
+        }
+
+        &--description {
+            padding-left: 100px;
+            padding-top: 20px;
+
+            p {
+                margin-bottom: 15px;
+            }
+        }
+    }
+}
+
+.sub-banner {
+    // height: 538px;
+    margin-top: $header-height;
+    height: 358px;
+    background: #f00 !important;
+    background-size: cover !important;
+    background-position: center !important;
+    @include flex;
+    @include flex-align-items(center);
+
+    &__wrapper {
+        position: relative;
+        height: 100%;
+        max-width: 1400px;
+    }
+
+    &__item {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        left: 0;
+    }
+
+    &__content {
+        width: 100%;
+        max-width: 100%;
+
+        h1 {
+            border-top: 5px solid $color-secondary;
+            display: inline-block;
+            background: $color-white;
+            margin-bottom: 0;
+            padding: 14px 25px;
+            font-size: 2em;
+            font-weight: $weight-extrabold;
+
+            @media only screen and (max-width: $tablet) {
+                font-size: 1.5em;
+            }
+
+            @media only screen and (max-width:$mobile) {
+                font-size: 1em;
+            }
+        }
+    }
+}
