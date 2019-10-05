@@ -158,6 +158,13 @@
             platform.input_numeric(uiInputNumeric);
 
             /* create coupon_code validation */
+            uiCreateCouponCodeForm.find('[type="submit"]').on('click', function () {
+                if (platform.var_check(CKEDITOR) && platform.var_check(CKEDITOR.instances)) {
+                    for (var instance in CKEDITOR.instances) {
+                        CKEDITOR.instances[instance].updateElement();
+                    }
+                }
+            });
             uiCreateCouponCodeForm.validate({
                 errorClass: 'help-block animation-slideDown',
                 errorElement: 'span',
@@ -207,6 +214,13 @@
             });
 
             /* edit coupon_code validation */
+            uiEditCouponCodeForm.find('[type="submit"]').on('click', function () {
+                if (platform.var_check(CKEDITOR) && platform.var_check(CKEDITOR.instances)) {
+                    for (var instance in CKEDITOR.instances) {
+                        CKEDITOR.instances[instance].updateElement();
+                    }
+                }
+            });
             uiEditCouponCodeForm.validate({
                 errorClass: 'help-block animation-slideDown',
                 errorElement: 'span',

@@ -55,6 +55,13 @@
             uiPermissionGroupsDatatable = platform.permission_group.initialize_datatable();
 
             /* create permission group validation */
+            uiCreatePermissionGroupForm.find('[type="submit"]').on('click', function () {
+                if (platform.var_check(CKEDITOR) && platform.var_check(CKEDITOR.instances)) {
+                    for (var instance in CKEDITOR.instances) {
+                        CKEDITOR.instances[instance].updateElement();
+                    }
+                }
+            });
             uiCreatePermissionGroupForm.validate({
                 errorClass: 'help-block animation-slideDown',
                 errorElement: 'span',
@@ -86,6 +93,13 @@
             });
 
             /* edit permission group validation */
+            uiEditPermissionGroupForm.find('[type="submit"]').on('click', function () {
+                if (platform.var_check(CKEDITOR) && platform.var_check(CKEDITOR.instances)) {
+                    for (var instance in CKEDITOR.instances) {
+                        CKEDITOR.instances[instance].updateElement();
+                    }
+                }
+            });
             uiEditPermissionGroupForm.validate({
                 errorClass: 'help-block animation-slideDown',
                 errorElement: 'span',

@@ -55,6 +55,13 @@
             uiRolesDatatable = platform.role.initialize_datatable();
 
             /* create role validation */
+            uiCreateRoleForm.find('[type="submit"]').on('click', function () {
+                if (platform.var_check(CKEDITOR) && platform.var_check(CKEDITOR.instances)) {
+                    for (var instance in CKEDITOR.instances) {
+                        CKEDITOR.instances[instance].updateElement();
+                    }
+                }
+            });
             uiCreateRoleForm.validate({
                 errorClass: 'help-block animation-slideDown',
                 errorElement: 'span',
@@ -104,6 +111,13 @@
             });
 
             /* edit role validation */
+            uiEditRoleForm.find('[type="submit"]').on('click', function () {
+                if (platform.var_check(CKEDITOR) && platform.var_check(CKEDITOR.instances)) {
+                    for (var instance in CKEDITOR.instances) {
+                        CKEDITOR.instances[instance].updateElement();
+                    }
+                }
+            });
             uiEditRoleForm.validate({
                 errorClass: 'help-block animation-slideDown',
                 errorElement: 'span',

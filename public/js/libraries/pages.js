@@ -152,6 +152,13 @@
             uiPagesDatatable = platform.page.initialize_datatable();
 
             /* create page validation */
+            uiCreatePageForm.find('[type="submit"]').on('click', function () {
+                if (platform.var_check(CKEDITOR) && platform.var_check(CKEDITOR.instances)) {
+                    for (var instance in CKEDITOR.instances) {
+                        CKEDITOR.instances[instance].updateElement();
+                    }
+                }
+            });
             uiCreatePageForm.validate({
                 errorClass: 'help-block animation-slideDown',
                 errorElement: 'span',
@@ -189,6 +196,13 @@
             });
 
             /* edit page validation */
+            uiEditPageForm.find('[type="submit"]').on('click', function () {
+                if (platform.var_check(CKEDITOR) && platform.var_check(CKEDITOR.instances)) {
+                    for (var instance in CKEDITOR.instances) {
+                        CKEDITOR.instances[instance].updateElement();
+                    }
+                }
+            });
             uiEditPageForm.validate({
                 errorClass: 'help-block animation-slideDown',
                 errorElement: 'span',

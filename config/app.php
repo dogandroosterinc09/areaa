@@ -191,8 +191,6 @@ return [
 //        \InfyOm\AdminLTETemplates\AdminLTETemplatesServiceProvider::class,
         Spatie\Permission\PermissionServiceProvider::class,
         Orangehill\Iseed\IseedServiceProvider::class,
-        Way\Generators\GeneratorsServiceProvider::class,
-        Xethron\MigrationsGenerator\MigrationsGeneratorServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
     ],

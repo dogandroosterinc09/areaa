@@ -57,6 +57,13 @@
             uiPermissionsDatatable = platform.permission.initialize_datatable();
 
             /* create permission validation */
+            uiCreatePermissionForm.find('[type="submit"]').on('click', function () {
+                if (platform.var_check(CKEDITOR) && platform.var_check(CKEDITOR.instances)) {
+                    for (var instance in CKEDITOR.instances) {
+                        CKEDITOR.instances[instance].updateElement();
+                    }
+                }
+            });
             uiCreatePermissionForm.validate({
                 errorClass: 'help-block animation-slideDown',
                 errorElement: 'span',
@@ -94,6 +101,13 @@
             });
 
             /* edit permission validation */
+            uiEditPermissionForm.find('[type="submit"]').on('click', function () {
+                if (platform.var_check(CKEDITOR) && platform.var_check(CKEDITOR.instances)) {
+                    for (var instance in CKEDITOR.instances) {
+                        CKEDITOR.instances[instance].updateElement();
+                    }
+                }
+            });
             uiEditPermissionForm.validate({
                 errorClass: 'help-block animation-slideDown',
                 errorElement: 'span',

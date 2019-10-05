@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class PermissionGroupsTableSeeder extends Seeder
+class SeoMetasTableSeeder extends Seeder
 {
 
     /**
@@ -14,13 +14,15 @@ class PermissionGroupsTableSeeder extends Seeder
     {
         
 
-        \DB::table('permission_groups')->delete();
+        \DB::table('seo_metas')->delete();
         
-        \DB::table('permission_groups')->insert(array (
+        \DB::table('seo_metas')->insert(array (
             0 => 
             array (
                 'id' => 1,
-                'name' => 'Roles',
+                'meta_title' => 'Home',
+                'meta_keywords' => 'Home',
+                'meta_description' => 'Home',
                 'created_at' => '2019-10-04 22:04:34',
                 'updated_at' => '2019-10-04 22:04:34',
                 'deleted_at' => NULL,
@@ -28,7 +30,9 @@ class PermissionGroupsTableSeeder extends Seeder
             1 => 
             array (
                 'id' => 2,
-                'name' => 'Permissions',
+                'meta_title' => 'About Us',
+                'meta_keywords' => 'About Us',
+                'meta_description' => 'About Us',
                 'created_at' => '2019-10-04 22:04:34',
                 'updated_at' => '2019-10-04 22:04:34',
                 'deleted_at' => NULL,
@@ -36,7 +40,9 @@ class PermissionGroupsTableSeeder extends Seeder
             2 => 
             array (
                 'id' => 3,
-                'name' => 'Permission Groups',
+                'meta_title' => 'Contact Us',
+                'meta_keywords' => 'Contact Us',
+                'meta_description' => 'Contact Us',
                 'created_at' => '2019-10-04 22:04:34',
                 'updated_at' => '2019-10-04 22:04:34',
                 'deleted_at' => NULL,
@@ -44,7 +50,9 @@ class PermissionGroupsTableSeeder extends Seeder
             3 => 
             array (
                 'id' => 4,
-                'name' => 'Users',
+                'meta_title' => 'Page Not Found',
+                'meta_keywords' => 'Page Not Found',
+                'meta_description' => 'Page Not Found',
                 'created_at' => '2019-10-04 22:04:34',
                 'updated_at' => '2019-10-04 22:04:34',
                 'deleted_at' => NULL,
@@ -52,7 +60,9 @@ class PermissionGroupsTableSeeder extends Seeder
             4 => 
             array (
                 'id' => 5,
-                'name' => 'System Settings',
+                'meta_title' => 'Login',
+                'meta_keywords' => 'Login',
+                'meta_description' => 'Login',
                 'created_at' => '2019-10-04 22:04:34',
                 'updated_at' => '2019-10-04 22:04:34',
                 'deleted_at' => NULL,
@@ -60,7 +70,9 @@ class PermissionGroupsTableSeeder extends Seeder
             5 => 
             array (
                 'id' => 6,
-                'name' => 'Pages',
+                'meta_title' => 'Register',
+                'meta_keywords' => 'Register',
+                'meta_description' => 'Register',
                 'created_at' => '2019-10-04 22:04:34',
                 'updated_at' => '2019-10-04 22:04:34',
                 'deleted_at' => NULL,
@@ -68,7 +80,9 @@ class PermissionGroupsTableSeeder extends Seeder
             6 => 
             array (
                 'id' => 7,
-                'name' => 'Home Slides',
+                'meta_title' => 'Forgot Password',
+                'meta_keywords' => 'Forgot Password',
+                'meta_description' => 'Forgot Password',
                 'created_at' => '2019-10-04 22:04:34',
                 'updated_at' => '2019-10-04 22:04:34',
                 'deleted_at' => NULL,
@@ -76,7 +90,9 @@ class PermissionGroupsTableSeeder extends Seeder
             7 => 
             array (
                 'id' => 8,
-                'name' => 'Contacts',
+                'meta_title' => 'Reset Password',
+                'meta_keywords' => 'Reset Password',
+                'meta_description' => 'Reset Password',
                 'created_at' => '2019-10-04 22:04:34',
                 'updated_at' => '2019-10-04 22:04:34',
                 'deleted_at' => NULL,

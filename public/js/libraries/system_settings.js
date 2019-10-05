@@ -96,6 +96,13 @@
             uiSystemSettingsDatatable = platform.system_setting.initialize_datatable();
 
             /* create system setting validation */
+            uiCreateSystemSettingForm.find('[type="submit"]').on('click', function () {
+                if (platform.var_check(CKEDITOR) && platform.var_check(CKEDITOR.instances)) {
+                    for (var instance in CKEDITOR.instances) {
+                        CKEDITOR.instances[instance].updateElement();
+                    }
+                }
+            });
             uiCreateSystemSettingForm.validate({
                 errorClass: 'help-block animation-slideDown',
                 errorElement: 'span',
@@ -139,6 +146,13 @@
             });
 
             /* edit system setting validation */
+            uiEditSystemSettingForm.find('[type="submit"]').on('click', function () {
+                if (platform.var_check(CKEDITOR) && platform.var_check(CKEDITOR.instances)) {
+                    for (var instance in CKEDITOR.instances) {
+                        CKEDITOR.instances[instance].updateElement();
+                    }
+                }
+            });
             uiEditSystemSettingForm.validate({
                 errorClass: 'help-block animation-slideDown',
                 errorElement: 'span',

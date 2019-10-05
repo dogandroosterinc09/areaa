@@ -152,6 +152,13 @@
             uiHomeSlidesDatatable = platform.home_slide.initialize_datatable();
 
             /* create home_slide validation */
+            uiCreateHomeSlideForm.find('[type="submit"]').on('click', function () {
+                if (platform.var_check(CKEDITOR) && platform.var_check(CKEDITOR.instances)) {
+                    for (var instance in CKEDITOR.instances) {
+                        CKEDITOR.instances[instance].updateElement();
+                    }
+                }
+            });
             uiCreateHomeSlideForm.validate({
                 errorClass: 'help-block animation-slideDown',
                 errorElement: 'span',
@@ -208,6 +215,13 @@
             });
 
             /* edit home_slide validation */
+            uiEditHomeSlideForm.find('[type="submit"]').on('click', function () {
+                if (platform.var_check(CKEDITOR) && platform.var_check(CKEDITOR.instances)) {
+                    for (var instance in CKEDITOR.instances) {
+                        CKEDITOR.instances[instance].updateElement();
+                    }
+                }
+            });
             uiEditHomeSlideForm.validate({
                 errorClass: 'help-block animation-slideDown',
                 errorElement: 'span',

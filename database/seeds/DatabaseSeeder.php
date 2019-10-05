@@ -26,5 +26,10 @@ class DatabaseSeeder extends Seeder
         $this->call(PageSectionsTableSeeder::class);
 //        $this->call(CitiesTableSeeder::class);
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+        $this->call(ContactsTableSeeder::class);
+        $this->call(HomeSlidesTableSeeder::class);
+        $this->call(PasswordResetsTableSeeder::class);
+        $this->call(SeoMetasTableSeeder::class);
+        $this->call(UserHasPermissionsTableSeeder::class);
     }
 }
