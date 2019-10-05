@@ -88,14 +88,14 @@
                     },
                     'password': {
                         required: true,
-                        minlength: 6
+                        minlength: 8
                     }
                 },
                 messages: {
                     'email': 'Please enter your account\'s email',
                     'password': {
                         required: 'Please provide your password',
-                        minlength: 'Your password must be at least 6 characters long'
+                        minlength: 'Your password must be at least 8 characters long'
                     }
                 }
             });
@@ -143,7 +143,7 @@
                     },
                     'password': {
                         required: true,
-                        minlength: 6
+                        minlength: 8
                     },
                     'password_confirmation': {
                         equalTo: uiFrontRegister.find('#password')
@@ -165,7 +165,7 @@
                     },
                     'password': {
                         required: 'Password is required.',
-                        minlength: 'Your password must be at least 6 characters long.'
+                        minlength: 'Your password must be at least 8 characters long.'
                     },
                     'password_confirmation': {
                         equalTo: 'Please enter the same password as above.'
@@ -237,7 +237,7 @@
                     },
                     'password': {
                         required: true,
-                        minlength: 6
+                        minlength: 8
                     },
                     'password_confirmation': {
                         equalTo: uiFrontReset.find('#password')
@@ -247,7 +247,7 @@
                     'email': 'Please enter your account\'s email',
                     'password': {
                         required: 'Please provide a password',
-                        minlength: 'Your password must be at least 6 characters long'
+                        minlength: 'Your password must be at least 8 characters long'
                     },
                     'password_confirmation': {
                         equalTo: 'Please enter the same password as above'

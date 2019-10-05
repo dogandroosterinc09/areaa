@@ -95,7 +95,7 @@ class RegisterController extends Controller
             'last_name' => 'required',
             'user_name' => 'required|unique:users,user_name,NULL,id,deleted_at,NULL',
             'email' => 'required|unique:users,email,NULL,id,deleted_at,NULL',
-            'password' => 'required|min:6|confirmed',
+            'password' => 'required|min:87|confirmed',
         ]);
     }
 

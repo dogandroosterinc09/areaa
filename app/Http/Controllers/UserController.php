@@ -112,7 +112,7 @@ class UserController extends Controller
             'last_name' => 'required',
             'user_name' => 'required|unique:users,user_name,NULL,id,deleted_at,NULL',
             'email' => 'required|unique:users,email,NULL,id,deleted_at,NULL',
-            'password' => 'required|min:6|confirmed',
+            'password' => 'required|min:8|confirmed',
         ]);
 
         $user = $this->user_model->create($request->only('first_name', 'last_name', 'user_name', 'email', 'password'));
@@ -211,7 +211,7 @@ class UserController extends Controller
             'last_name' => 'required',
             'user_name' => 'required|unique:users,user_name,' . $id . ',id,deleted_at,NULL',
             'email' => 'required|unique:users,email,' . $id . ',id,deleted_at,NULL',
-            'password' => 'required_if:change_password,==,1|min:6|confirmed',
+            'password' => 'required_if:change_password,==,1|min:8|confirmed',
         ]);
 
         if ($request->get('change_password') == '1') {

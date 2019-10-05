@@ -104,7 +104,7 @@
                     },
                     'password': {
                         required: true,
-                        minlength: 6
+                        minlength: 8
                     },
                     'password_confirmation': {
                         equalTo: uiCreateUserForm.find('#password')
@@ -126,7 +126,7 @@
                     },
                     'password': {
                         required: 'Password is required.',
-                        minlength: 'Your password must be at least 6 characters long.'
+                        minlength: 'Your password must be at least 8 characters long.'
                     },
                     'password_confirmation': {
                         equalTo: 'Please enter the same password as above.'
@@ -174,7 +174,7 @@
                             }
                         },
                         minlength: {
-                            param: 6,
+                            param: 8,
                             depends: function () {
                                 return uiChangePasswordRadio.is(':checked');
                             }
@@ -205,7 +205,7 @@
                     },
                     'password': {
                         required: 'Password is required.',
-                        minlength: 'Your password must be at least 6 characters long.'
+                        minlength: 'Your password must be at least 8 characters long.'
                     },
                     'password_confirmation': {
                         equalTo: 'Please enter the same password as above.'
