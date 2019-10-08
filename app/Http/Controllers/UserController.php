@@ -220,7 +220,7 @@ class UserController extends Controller
             $input = $request->only(['first_name', 'last_name', 'user_name', 'email', 'is_active']);
         }
 
-        $input['is_active'] = $input['is_active'] ? 1 : 0;
+        $input['is_active'] = isset($input['is_active']) ? 1 : 0;
         $roles = $request['roles'];
         $user->fill($input)->save();
 
