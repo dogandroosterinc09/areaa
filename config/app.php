@@ -183,7 +183,8 @@ return [
         /*
          * Custom Service Providers
          */
-        App\Providers\TemplateServiceProvider::class,
+        App\Providers\AdminTemplateProvider::class,
+        App\Providers\FrontTemplateProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
         Prettus\Repository\Providers\RepositoryServiceProvider::class,
