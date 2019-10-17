@@ -19,8 +19,8 @@
     <meta property="og:description" content="{!! $seo_meta['description'] !!}">
     <meta property="og:url" content="{!! url('') !!}">
     <meta property="og:site_name" content="{!! $seo_meta['name'] !!}">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="canonical" href="{!! $seo_meta['canonical'] !!}">
 
     {{--Icons--}}
     <link rel="shortcut icon" href="{{ asset('public/images/icons/favicon.png') }}">

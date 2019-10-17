@@ -24,8 +24,8 @@ class FrontTemplateProvider extends ServiceProvider
             $logged_in = auth()->check();
             /*global variables*/
 
-            $front_template = $this->getAdminConfig($seo_meta);
-            $fron_primary_nav = $this->getAdminNav();
+            $front_template = $this->getFrontConfig($seo_meta);
+            $fron_primary_nav = $this->getFrontNav();
 
             $view->with(compact(
                 'system_settings',
@@ -38,7 +38,7 @@ class FrontTemplateProvider extends ServiceProvider
         });
     }
 
-    private function getAdminNav()
+    private function getFrontNav()
     {
         return [
             [
@@ -62,7 +62,7 @@ class FrontTemplateProvider extends ServiceProvider
         ];
     }
 
-    private function getAdminConfig($seo_meta)
+    private function getFrontConfig($seo_meta)
     {
         return [
             'name' => $seo_meta['name'],

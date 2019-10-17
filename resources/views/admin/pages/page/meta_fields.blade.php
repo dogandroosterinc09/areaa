@@ -39,4 +39,16 @@
             @endif
         </div>
     </div>
+    <div class="form-group{{ $errors->has('canonical_link') ? ' has-error' : '' }}">
+        <label class="col-md-3 control-label" for="canonical_link">Canonical Link</label>
+
+        <div class="col-md-9">
+            <textarea class="form-control" id="canonical_link" name="canonical_link"
+                      placeholder="Enter canonical link.." style="resize: vertical; min-height: 100px;"
+                      rows="5">{{ Request::old('canonical_link') ? old('canonical_link') : (!empty($page->seo_meta) ? $page->seo_meta->canonical_link : '') }}</textarea>
+            @if($errors->has('canonical_link'))
+                <span class="help-block animation-slideDown">{{ $errors->first('canonical_link') }}</span>
+            @endif
+        </div>
+    </div>
 </div>

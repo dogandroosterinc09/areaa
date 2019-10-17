@@ -182,7 +182,7 @@ class PageController extends Controller
 
         /* seo meta */
         $input['seo_meta_id'] = isset($input['seo_meta_id']) ? $input['seo_meta_id'] : 0;
-        $seo_inputs = $request->only(['meta_title', 'meta_keywords', 'meta_description', 'seo_meta_id']);
+        $seo_inputs = $request->only(['meta_title', 'meta_keywords', 'meta_description', 'seo_meta_id', 'canonical_link']);
         $seo_meta = $this->seo_meta_repository->updateOrCreate($seo_inputs);
         $input['seo_meta_id'] = $seo_meta->id;
         $input['content'] = '';
@@ -262,7 +262,7 @@ class PageController extends Controller
 
         /* seo meta */
         $input['seo_meta_id'] = isset($input['seo_meta_id']) ? $input['seo_meta_id'] : 0;
-        $seo_inputs = $request->only(['meta_title', 'meta_keywords', 'meta_description', 'seo_meta_id']);
+        $seo_inputs = $request->only(['meta_title', 'meta_keywords', 'meta_description', 'seo_meta_id', 'canonical_link']);
         $seo_meta = $this->seo_meta_repository->updateOrCreate($seo_inputs);
         $input['seo_meta_id'] = $seo_meta->id;
         /* seo meta */

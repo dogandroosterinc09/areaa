@@ -18,6 +18,7 @@ class CreateSeoMetasTable extends Migration
             $table->text('meta_title');
             $table->text('meta_keywords');
             $table->text('meta_description');
+            $table->text('canonical_link');
             $table->timestamps();
             $table->softDeletes();
         });

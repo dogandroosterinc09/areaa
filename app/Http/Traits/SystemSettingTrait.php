@@ -69,6 +69,7 @@ trait SystemSettingTrait
             'title' => 'Laravel Template',
             'keywords' => 'Laravel Template',
             'description' => 'Laravel Template. ACL Integrated (Access Control List).',
+            'canonical' => '',
         ];
 
         if(env('APP_ENV') == 'prod' || env('APP_ENV') == 'prod_ssl') {
@@ -108,6 +109,7 @@ trait SystemSettingTrait
                     $seo_meta['title'] = $page_seo_meta->meta_title;
                     $seo_meta['keywords'] = $page_seo_meta->meta_keywords;
                     $seo_meta['description'] = $page_seo_meta->meta_description;
+                    $seo_meta['canonical'] = $page_seo_meta->canonical_link;
                 }
             }
         }

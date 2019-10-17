@@ -7,6 +7,7 @@ require('slick-carousel');
 require('magnific-popup');
 window.swal = require('sweetalert');
 require('readmore-js');
+require('datatables');
 var AOS = require('aos');
 AOS.init({
     easing: 'ease-in-out-sine'
@@ -28,3 +29,4 @@ require('./static/custom/jquery.chain-height.js');
 
 require('./static/custom/custom-slick-carousel.js');
 require('./static/custom/custom-scripts.js');
+require('./static/custom/custom-datatable.js');

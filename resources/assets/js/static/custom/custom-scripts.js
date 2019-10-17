@@ -1,3 +1,10 @@
+/* Scroll to top functionality */
+var topLink = $('#to-top');
+
+$(window).scroll(function() { if ($(this).scrollTop() > 150) { topLink.fadeIn(100); } else { topLink.fadeOut(100); } });
+topLink.click(function() { $('html, body').animate({scrollTop: 0}, 200); return false;});
+
+
 // for image background
 $('.image-background').each(function () {
     var getImageSrc = $(this).find('img').attr('src');
