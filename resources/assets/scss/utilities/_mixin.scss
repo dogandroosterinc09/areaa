@@ -1,7 +1,6 @@
 /*for the px convert to em*/
 
 $base__font-size :16px;
-
 @function em($px, $base: $base__font-size) {
     @return ($px / $base) * 1em;
 }
@@ -69,11 +68,11 @@ $base__font-size :16px;
 }
 
 @mixin flex {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -ms-flex-wrap: wrap !important;
+    flex-wrap: wrap !important;
 }
 
 @mixin flex-justify-content($a:center) {

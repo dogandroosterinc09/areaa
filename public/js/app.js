@@ -46809,6 +46809,27 @@ $('.banner__slick').slick({
   cssEase: 'linear',
   arrows: false
 });
+$('.global-featured-slider__top--slick').slick({
+  lazyLoad: 'ondemand',
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false,
+  fade: true,
+  asNavFor: '.global-featured-slider__bottom--slick'
+});
+$('.global-featured-slider__bottom--slick').slick({
+  lazyLoad: 'ondemand',
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  asNavFor: '.global-featured-slider__top--slick',
+  dots: false,
+  centerMode: true,
+  arrows: true,
+  nextArrow: "<div class=\"nextIcon\" style=\"z-index: 9999999;\"><i class=\"featured-properties__icon--next\"></i></div>",
+  prevArrow: "<div class=\"prevIcon\" style=\"z-index: 9999999;\"><i class=\"featured-properties__icon--prev\"></i></div>",
+  // fade: true,
+  focusOnSelect: true
+});
 
 /***/ }),
 
@@ -48162,8 +48183,8 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;function _typeof
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\wamp64\www\laravel_template_v6\resources\assets\js\app.js */"./resources/assets/js/app.js");
-module.exports = __webpack_require__(/*! C:\wamp64\www\laravel_template_v6\resources\assets\scss\app.scss */"./resources/assets/scss/app.scss");
+__webpack_require__(/*! C:\xampp\htdocs\wil_laravel_template_v6\resources\assets\js\app.js */"./resources/assets/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\wil_laravel_template_v6\resources\assets\scss\app.scss */"./resources/assets/scss/app.scss");
 
 
 /***/ })

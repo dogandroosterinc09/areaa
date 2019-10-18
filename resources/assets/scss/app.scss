@@ -2,7 +2,6 @@
 @import "~bootstrap/scss/bootstrap";
 @import "~magnific-popup/src/css/main";
 @import "~aos/src/sass/aos";
-
 @import "./vendor/scrolling-nav";
 //@import "~font-awesome/scss/font-awesome.scss";
 @import "./vendor/variables";
@@ -10,20 +9,15 @@
 @import '~@fortawesome/fontawesome-free/scss/brands';
 @import '~@fortawesome/fontawesome-free/scss/regular';
 @import '~@fortawesome/fontawesome-free/scss/solid';
-
-
 @import '~slick-carousel/slick/slick';
 @import '~slick-carousel/slick/slick-theme';
-
 @import "~select2/dist/css/select2";
-
 // variables
 @import "utilities/mixin";
 @import "utilities/variables";
 @import "utilities/colors";
 @import "utilities/typography";
 @import "utilities/global-resets";
-
 // Custom components
 @import "components/button";
 @import "components/header";
@@ -37,6 +31,6 @@
 @import "components/pagination";
 @import "components/search-box";
 @import "components/homepage";
-
+@import "components/sliders";
 @import "pages/about";
 @import "pages/contact-us";
