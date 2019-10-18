@@ -25,13 +25,12 @@ class FrontTemplateProvider extends ServiceProvider
             /*global variables*/
 
             $front_template = $this->getFrontConfig($seo_meta);
-            $fron_primary_nav = $this->getFrontNav();
+            $front_primary_nav = $this->getFrontNav();
 
             $view->with(compact(
                 'system_settings',
                 'logged_user',
                 'logged_in',
-                'admin_primary_nav',
                 'front_template',
                 'front_primary_nav'
             ));
