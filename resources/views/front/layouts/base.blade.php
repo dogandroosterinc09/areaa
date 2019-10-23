@@ -19,6 +19,8 @@
     <meta property="og:description" content="{!! $seo_meta['description'] !!}">
     <meta property="og:url" content="{!! url('') !!}">
     <meta property="og:site_name" content="{!! $seo_meta['name'] !!}">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="canonical" href="{!! $seo_meta['canonical'] !!}">
 
@@ -38,6 +40,14 @@
     @stack('extrastylesheets')
 
     <script src="{{asset('public/js/modernizr.min.js')}}"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
 </head>
 <body>
 @yield('content')

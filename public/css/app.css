@@ -18834,6 +18834,24 @@ section {
 .page--contact-us .contact-section {
   color: #f00;
 }
+
+/* Safari 11+ */
+/* Safari 9.0-10.0 (not 10.1) */
+_::-webkit-:not(:root:root),
+.sub-banner__wrapper {
+  height: 118px;
+}
+
+_::-webkit-:not(:root:root),
+.featured-destinations__banner h2 {
+  bottom: 42px;
+}
+
+/* Safari 9 */
+@-moz-document url-prefix() {}
+@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+  /* IE10+ specific styles go here */
+}
 body.stop-scrolling {
   height: 100%;
   overflow: hidden; }

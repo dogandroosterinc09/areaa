@@ -30,7 +30,11 @@
 @import "components/mobile-menu";
 @import "components/pagination";
 @import "components/search-box";
-@import "components/homepage";
+@import "components/main-page";
+@import "components/subpages";
 @import "components/sliders";
 @import "pages/about";
 @import "pages/contact-us";
+@import "browsers/safari-only";
+@import "browsers/firefox-only";
+@import "browsers/ie-only";
