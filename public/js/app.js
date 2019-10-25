@@ -46478,11 +46478,21 @@ __webpack_require__(/*! ./static/custom/jquery_validation.js */ "./resources/ass
 
 __webpack_require__(/*! ./static/custom/jquery.chain-height.js */ "./resources/assets/js/static/custom/jquery.chain-height.js");
 
-__webpack_require__(/*! ./static/custom/custom-slick-carousel.js */ "./resources/assets/js/static/custom/custom-slick-carousel.js");
+__webpack_require__(/*! ./static/custom/custom-slick-carousel.js */ "./resources/assets/js/static/custom/custom-slick-carousel.js"); // custom scripts mixed
+
 
 __webpack_require__(/*! ./static/custom/custom-scripts.js */ "./resources/assets/js/static/custom/custom-scripts.js");
 
-__webpack_require__(/*! ./static/custom/custom-datatable.js */ "./resources/assets/js/static/custom/custom-datatable.js");
+__webpack_require__(/*! ./static/custom/custom-datatable.js */ "./resources/assets/js/static/custom/custom-datatable.js"); // mobile navigation
+
+
+__webpack_require__(/*! ./static/custom/custom-mobile-menu.js */ "./resources/assets/js/static/custom/custom-mobile-menu.js"); // target chrome on safari and pc
+
+
+__webpack_require__(/*! ./static/custom/custom-safari-chrome */ "./resources/assets/js/static/custom/custom-safari-chrome.js"); // image background 
+
+
+__webpack_require__(/*! ./static/custom/custom-imagebackground */ "./resources/assets/js/static/custom/custom-imagebackground.js");
 
 /***/ }),
 
@@ -46617,29 +46627,14 @@ dtIntegration();
 
 /***/ }),
 
-/***/ "./resources/assets/js/static/custom/custom-scripts.js":
-/*!*************************************************************!*\
-  !*** ./resources/assets/js/static/custom/custom-scripts.js ***!
-  \*************************************************************/
+/***/ "./resources/assets/js/static/custom/custom-imagebackground.js":
+/*!*********************************************************************!*\
+  !*** ./resources/assets/js/static/custom/custom-imagebackground.js ***!
+  \*********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-/* Scroll to top functionality */
-var topLink = $('#to-top');
-$(window).scroll(function () {
-  if ($(this).scrollTop() > 150) {
-    topLink.fadeIn(100);
-  } else {
-    topLink.fadeOut(100);
-  }
-});
-topLink.click(function () {
-  $('html, body').animate({
-    scrollTop: 0
-  }, 200);
-  return false;
-}); // for image background
-
+// for image background
 $('.image-background').each(function () {
   var getImageSrc = $(this).find('img').attr('src');
   var getImageErrorSrc = $(this).find('img').attr('onerror');
@@ -46657,30 +46652,19 @@ $('.image-background').each(function () {
     'background-position': 'center',
     'background-image': 'url("' + getImageSrc + '"), url("' + getImageErrorSrc + '")'
   });
-}); // for header class sticky
-
-jQuery(window).scroll(function () {
-  var scroll = jQuery(window).scrollTop();
-
-  if (scroll >= 100) {
-    jQuery("header").addClass("scrolling");
-  } else {
-    jQuery("header").removeClass("scrolling");
-  }
-}); // for contact us
-
-$("ul.form-box .form-group input").focus(function () {
-  $(this).parent().addClass('active');
-}).blur(function () {
-  $(this).parent().removeClass('active');
 });
-$("ul.form-box .form-group textarea").focus(function () {
-  $(this).parent().addClass('active');
-}).blur(function () {
-  $(this).parent().removeClass('active');
-}); // for mobile
-// "/* MOBILE HEADER */
 
+/***/ }),
+
+/***/ "./resources/assets/js/static/custom/custom-mobile-menu.js":
+/*!*****************************************************************!*\
+  !*** ./resources/assets/js/static/custom/custom-mobile-menu.js ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// for mobile
+// "/* MOBILE HEADER */
 $('.mob-burger-menu').click(function () {
   $(this).toggleClass('change');
   $('.mob-nav-menu').toggleClass('open-menu');
@@ -46712,6 +46696,67 @@ $(".icon-button__open").click(function () {
 });
 $(".icon-button__close").click(function () {
   $('.icon-button-active').removeClass('icon-button-active');
+});
+
+/***/ }),
+
+/***/ "./resources/assets/js/static/custom/custom-safari-chrome.js":
+/*!*******************************************************************!*\
+  !*** ./resources/assets/js/static/custom/custom-safari-chrome.js ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+if (navigator.userAgent.indexOf('Mac OS X') != -1) {
+  $("body").addClass("mac-chrome");
+} else {
+  $("body").addClass("pc-chrome");
+}
+
+/***/ }),
+
+/***/ "./resources/assets/js/static/custom/custom-scripts.js":
+/*!*************************************************************!*\
+  !*** ./resources/assets/js/static/custom/custom-scripts.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* Scroll to top functionality */
+var topLink = $('#to-top');
+$(window).scroll(function () {
+  if ($(this).scrollTop() > 150) {
+    topLink.fadeIn(100);
+  } else {
+    topLink.fadeOut(100);
+  }
+});
+topLink.click(function () {
+  $('html, body').animate({
+    scrollTop: 0
+  }, 200);
+  return false;
+}); // for header class sticky
+
+jQuery(window).scroll(function () {
+  var scroll = jQuery(window).scrollTop();
+
+  if (scroll >= 100) {
+    jQuery("header").addClass("scrolling");
+  } else {
+    jQuery("header").removeClass("scrolling");
+  }
+}); // for contact us
+
+$("ul.form-box .form-group input").focus(function () {
+  $(this).parent().addClass('active');
+}).blur(function () {
+  $(this).parent().removeClass('active');
+});
+$("ul.form-box .form-group textarea").focus(function () {
+  $(this).parent().addClass('active');
+}).blur(function () {
+  $(this).parent().removeClass('active');
 }); // for footer class
 
 jQuery(window).scroll(function () {
@@ -46808,6 +46853,27 @@ $('.banner__slick').slick({
   fade: true,
   cssEase: 'linear',
   arrows: false
+});
+$('.global-featured-slider__top--slick').slick({
+  lazyLoad: 'ondemand',
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false,
+  fade: true,
+  asNavFor: '.global-featured-slider__bottom--slick'
+});
+$('.global-featured-slider__bottom--slick').slick({
+  lazyLoad: 'ondemand',
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  asNavFor: '.global-featured-slider__top--slick',
+  dots: false,
+  centerMode: true,
+  arrows: true,
+  nextArrow: "<div class=\"nextIcon\" style=\"z-index: 9999999;\"><i class=\"featured-properties__icon--next\"></i></div>",
+  prevArrow: "<div class=\"prevIcon\" style=\"z-index: 9999999;\"><i class=\"featured-properties__icon--prev\"></i></div>",
+  // fade: true,
+  focusOnSelect: true
 });
 
 /***/ }),
@@ -48162,8 +48228,8 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;function _typeof
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\wamp64\www\laravel_template_v6\resources\assets\js\app.js */"./resources/assets/js/app.js");
-module.exports = __webpack_require__(/*! C:\wamp64\www\laravel_template_v6\resources\assets\scss\app.scss */"./resources/assets/scss/app.scss");
+__webpack_require__(/*! C:\xampp\htdocs\wil_laravel_template_v6\resources\assets\js\app.js */"./resources/assets/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\wil_laravel_template_v6\resources\assets\scss\app.scss */"./resources/assets/scss/app.scss");
 
 
 /***/ })

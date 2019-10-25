@@ -2,30 +2,14 @@
 var topLink = $('#to-top');
 
 $(window).scroll(function() { if ($(this).scrollTop() > 150) { topLink.fadeIn(100); } else { topLink.fadeOut(100); } });
-topLink.click(function() { $('html, body').animate({scrollTop: 0}, 200); return false;});
+topLink.click(function() { $('html, body').animate({ scrollTop: 0 }, 200); return false; });
 
 
-// for image background
-$('.image-background').each(function () {
-    var getImageSrc = $(this).find('img').attr('src');
-    var getImageErrorSrc = $(this).find('img').attr('onerror');
-    if (typeof(getImageErrorSrc) != 'undefined') {
-        getImageErrorSrc = getImageErrorSrc.slice(10);
-        getImageErrorSrc = getImageErrorSrc.slice(0, -1);
-    } else {
-        getImageErrorSrc = getImageSrc;
-    }
-    $(this).css({
-        'background-size': 'cover',
-        'background-repeat': 'no-repeat',
-        'background-position': 'center',
-        'background-image': 'url("' + getImageSrc + '"), url("' + getImageErrorSrc + '")'
-    });
-});
+
 
 
 // for header class sticky
-jQuery(window).scroll(function () {
+jQuery(window).scroll(function() {
     var scroll = jQuery(window).scrollTop();
     if (scroll >= 100) {
         jQuery("header").addClass("scrolling");
@@ -37,65 +21,24 @@ jQuery(window).scroll(function () {
 
 
 // for contact us
-$("ul.form-box .form-group input").focus(function () {
+$("ul.form-box .form-group input").focus(function() {
     $(this).parent().addClass('active');
 
-}).blur(function () {
+}).blur(function() {
     $(this).parent().removeClass('active');
 })
 
-$("ul.form-box .form-group textarea").focus(function () {
+$("ul.form-box .form-group textarea").focus(function() {
     $(this).parent().addClass('active');
 
-}).blur(function () {
+}).blur(function() {
     $(this).parent().removeClass('active');
 })
 
-
-// for mobile
-// "/* MOBILE HEADER */
-$('.mob-burger-menu').click(function () {
-    $(this).toggleClass('change');
-    $('.mob-nav-menu').toggleClass('open-menu');
-    $('.sub-elem').removeClass('show-sub');
-});
-
-$('.drop-menu-elem').click(function (e) {
-    e.preventDefault();
-    $('.sub-elem').toggleClass('show-sub');
-});
-
-$('.back-btn').click(function () {
-    $('.mob-sub-menu').removeClass('show-sub');
-});
-
-$('.btn--close-menu').click(function () {
-    $('.mob-nav-menu').removeClass('open-menu');
-    $('.mob-burger-menu').removeClass('change');
-    $('.mob-sub-menu').removeClass('show-sub');
-});
-
-$(document).click(function (e) {
-    if (!$(e.target).closest('.mobile-header__wrapper').length) {
-        $('.mob-nav-menu').removeClass('open-menu');
-        $('.mob-burger-menu').removeClass('change');
-        $('.mob-sub-menu').removeClass('show-sub');
-    }
-});
-
-// MObile menu sub
-$(".icon-button__open").click(function () {
-    $('.icon-button-active').removeClass('icon-button-active');
-    $(this).parent().addClass('icon-button-active');
-});
-
-$(".icon-button__close").click(function () {
-    $('.icon-button-active').removeClass('icon-button-active');
-});
 
 
 // for footer class
-jQuery(window).scroll(function () {
+jQuery(window).scroll(function() {
     var scroll = jQuery(window).scrollTop();
 
     if (scroll >= 300) {
@@ -108,7 +51,7 @@ jQuery(window).scroll(function () {
 
 
 // smooth scroll
-$(document).on('click', 'a[href^="#"]', function (event) {
+$(document).on('click', 'a[href^="#"]', function(event) {
     event.preventDefault();
 
     $('html, body').animate({
@@ -118,15 +61,15 @@ $(document).on('click', 'a[href^="#"]', function (event) {
 
 
 // activate search box
-$(".search-now").click(function () {
+$(".search-now").click(function() {
     $(".search-box").toggleClass('search-visible');
-    setTimeout(function () {
+    setTimeout(function() {
         var sValue = $('[name="keyword"]').val();
         $('[name="keyword"]').focus().val('').val(sValue);
     }, 100);
 });
 
-$(".search-box__button").click(function () {
+$(".search-box__button").click(function() {
     $(".search-box").toggleClass('search-visible');
 });
 
@@ -149,7 +92,7 @@ $(".search-box__button").click(function () {
 
 
 // for sidebar
-$(".siderbar-toggle-btn").click(function () {
+$(".siderbar-toggle-btn").click(function() {
     $(".sidebar").toggleClass('sidebar--toggle');
 });
 
@@ -160,7 +103,7 @@ var ellipsestext = "...";
 var moretext = "Read more";
 var lesstext = "Readmore less";
 
-$('.more').each(function () {
+$('.more').each(function() {
     var content = $(this).html();
 
     if (content.length > showChar) {
@@ -175,7 +118,7 @@ $('.more').each(function () {
 
 });
 
-$(".morelink").click(function () {
+$(".morelink").click(function() {
     if ($(this).hasClass("less")) {
         $(this).removeClass("less");
         $(this).html(moretext);
