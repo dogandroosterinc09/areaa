@@ -46466,6 +46466,8 @@ __webpack_require__(/*! ./static/platform/centralAjax */ "./resources/assets/js/
 
 __webpack_require__(/*! ./static/platform/config */ "./resources/assets/js/static/platform/config.js");
 
+__webpack_require__(/*! ./static/platform/delete */ "./resources/assets/js/static/platform/delete.js");
+
 __webpack_require__(/*! ./static/vendors/jquery.easing.min.js */ "./resources/assets/js/static/vendors/jquery.easing.min.js");
 
 __webpack_require__(/*! ./static/vendors/scrolling-nav.js */ "./resources/assets/js/static/vendors/scrolling-nav.js");
@@ -47307,6 +47309,65 @@ my_platform.config({
   'pusher.app.secret': '5aa1b2195cd3a03d340f',
   'pusher.auth.uri': 'http://localhost/laravel-template/auth_pusher',
   'csrf.token': $('meta[name="_token"]').attr('content')
+});
+
+/***/ }),
+
+/***/ "./resources/assets/js/static/platform/delete.js":
+/*!*******************************************************!*\
+  !*** ./resources/assets/js/static/platform/delete.js ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function () {
+  "use strict";
+
+  var filler;
+  /*
+   * This js file will only contain delete ajax events
+   *
+   * */
+
+  CPlatform.prototype.delete = {
+    initialize: function initialize() {},
+
+    /* delete function ajax */
+    delete: function _delete(oParams, fnCallback, uiBtn) {
+      if (platform.var_check(oParams) && platform.var_check(oParams.url)) {
+        var oAjaxConfig = {
+          "type": "DELETE",
+          "data": oParams,
+          "url": oParams.url,
+          "token": platform.config('csrf.token'),
+          "beforeSend": function beforeSend() {
+            /* check if there is a button to add spinner */
+            if (platform.var_check(uiBtn)) {
+              platform.show_spinner(uiBtn, true);
+            }
+          },
+          "success": function success(oData) {
+            console.log(oData);
+
+            if (typeof fnCallback == 'function') {
+              fnCallback(oData);
+            }
+          },
+          "complete": function complete() {
+            /* check if there is a button to remove spinner */
+            if (platform.var_check(uiBtn)) {
+              platform.show_spinner(uiBtn, false);
+            }
+          }
+        };
+        platform.CentralAjax.ajax(oAjaxConfig);
+      }
+    }
+  };
+})();
+
+$(window).load(function () {
+  platform.delete.initialize();
 });
 
 /***/ }),
