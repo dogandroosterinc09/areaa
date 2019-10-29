@@ -18,6 +18,7 @@ require('./static/platform/platform');
 require('./static/platform/ajaxq');
 require('./static/platform/centralAjax');
 require('./static/platform/config');
+require('./static/platform/delete');
 
 require('./static/vendors/jquery.easing.min.js');
 require('./static/vendors/scrolling-nav.js');
