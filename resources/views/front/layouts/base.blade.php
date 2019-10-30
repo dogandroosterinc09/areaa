@@ -64,6 +64,7 @@
                 title: "{!! session('flash_message.title') !!}",
                 text: "{!! session('flash_message.message') !!}",
                 type: "{!! session('flash_message.type') !!}",
+                html: true,
                 allowEscapeKey: true,
                 allowOutsideClick: true,
             }, function () {
