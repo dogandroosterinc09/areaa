@@ -33,9 +33,8 @@
         style="padding: 30px 20px 30px 20px; font-family: Arial, sans-serif; border-bottom: 1px solid #f6f6f6;">
         <table bgcolor="#425688" border="0" cellspacing="0" cellpadding="0" class="buttonwrapper">
             <tr>
-                <td align="center" height="50"
-                    style="font-family: Arial, sans-serif; font-size: 16px; font-weight: bold;">
-                    <a class="button" style=" padding: 25px; color: #ffffff; text-align: center; text-decoration: none;"
+                <td align="center" height="50" style="font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; background-color: #425688; padding: 0px 20px;">
+                    <a class="button" style="color: #ffffff; text-align: center; text-decoration: none;"
                        href="{{ url('admin/contacts') }}">Contacts</a>
                 </td>
             </tr>
