@@ -8,6 +8,7 @@ require('magnific-popup');
 window.swal = require('sweetalert');
 require('readmore-js');
 require('datatables');
+require('cookieconsent');
 var AOS = require('aos');
 AOS.init({
     easing: 'ease-in-out-sine'
@@ -38,3 +39,5 @@ require('./static/custom/custom-mobile-menu.js');
 require('./static/custom/custom-safari-chrome');
 // image background 
 require('./static/custom/custom-imagebackground');
+// cookie consent
+require('./static/custom/custom-cookieconsent');
