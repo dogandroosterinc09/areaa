@@ -28,10 +28,10 @@ class AppServiceProvider extends ServiceProvider
             url()->forceScheme('https');
         }
 
-        \Artisan::call('view:clear');
-        \Artisan::call('cache:clear');
-        \Artisan::call('route:clear');
-        \Artisan::call('config:clear');
+//        \Artisan::call('view:clear');
+//        \Artisan::call('cache:clear');
+//        \Artisan::call('route:clear');
+//        \Artisan::call('config:clear');
     }
 
     /**
