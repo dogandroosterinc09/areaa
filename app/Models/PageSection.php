@@ -25,6 +25,8 @@ class PageSection extends Model
         'page_id',
         'section',
         'content',
+        'type',
+        'position',
     ];
 
     public function page()
