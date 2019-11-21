@@ -153,6 +153,12 @@
                             </td>
                         </tr>
                     @endif
+                    <tr>
+                        <td style="width: 30%" class="text-right"><strong>Notes</strong></td>
+                        <td style="width: 70%">
+                            {!! $order->notes !!}
+                        </td>
+                    </tr>
                     </tbody>
                 </table>
             </div>
