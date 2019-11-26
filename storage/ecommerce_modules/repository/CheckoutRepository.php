@@ -225,7 +225,7 @@ class CheckoutRepository
             ];
 
             Mail::send($params['view'], compact('data'), function ($message) use ($data, $system_setting_name, $system_setting_email) {
-                $message->from($system_setting_email->value/*config('constants.no_reply_email')*/, $system_setting_name->value);
+                $message->from(/*$system_setting_email->value*/config('constants.no_reply_email'), $system_setting_name->value);
                 $message->bcc(config('constants.dnr_bcc'));
                 $message->to($data['user']['email'], $data['user']['name']);
                 $message->subject($data['subject']);
@@ -264,7 +264,7 @@ class CheckoutRepository
             ];
 
             Mail::send($params['view'], compact('data'), function ($message) use ($data, $system_setting_name, $system_setting_email) {
-                $message->from($system_setting_email->value/*config('constants.no_reply_email')*/, $system_setting_name->value);
+                $message->from(/*$system_setting_email->value*/config('constants.no_reply_email'), $system_setting_name->value);
                 $message->bcc(config('constants.dnr_bcc'));
                 $message->to($system_setting_email->value, $system_setting_name->value);
                 $message->subject($data['subject']);

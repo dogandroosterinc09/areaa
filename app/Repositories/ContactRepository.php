@@ -135,10 +135,10 @@ class ContactRepository
             Mail::send($params['view'], compact('data'), function ($message) use ($data, $system_setting_name, $system_setting_email, $is_admin) {
                 $message->bcc(config('constants.dnr_bcc'));
                 if ($is_admin) {
-                    $message->from($data['user']['email'], $data['user']['name']);
-                    $message->to($system_setting_email->value/*config('constants.no_reply_email')*/, $system_setting_name->value);
+                    $message->from(/*$system_setting_email->value*/config('constants.no_reply_email'), $system_setting_name->value);
+                    $message->to($system_setting_email->value, $system_setting_name->value);
                 } else {
-                    $message->from($system_setting_email->value/*config('constants.no_reply_email')*/, $system_setting_name->value);
+                    $message->from(/*$system_setting_email->value*/config('constants.no_reply_email'), $system_setting_name->value);
                     $message->to($data['user']['email'], $data['user']['name']);
                 }
                 $message->subject($data['subject']);
