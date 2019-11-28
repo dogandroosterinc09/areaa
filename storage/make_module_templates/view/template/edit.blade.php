@@ -71,7 +71,7 @@
                     </div>
                 </div>
                 <div class="form-group file-container {{ $errors->has('file') ? ' has-error' : '' }}">
-                    <label class="col-md-3 control-label" for="template_snake_case_banner_file">File</label>
+                    <label class="col-md-3 control-label" for="template_snake_case_file">File</label>
                     <div class="col-md-9">
                         <div class="input-group">
                             <label class="input-group-btn">
