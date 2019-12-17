@@ -10,7 +10,8 @@
             'method' => 'PUT',
             'id' => 'edit-system-setting',
             'route' => ['admin.system_settings.update', $system_setting->id],
-            'class' => 'form-horizontal '
+            'class' => 'form-horizontal ',
+            'files' => TRUE
             ])
         }}
         <div class="col-md-12">

@@ -10,7 +10,8 @@
             'method' => 'POST',
             'id' => 'create-system-setting',
             'route' => ['admin.system_settings.store'],
-            'class' => 'form-horizontal '
+            'class' => 'form-horizontal ',
+            'files' => TRUE
             ])
         }}
         <div class="col-md-12">
