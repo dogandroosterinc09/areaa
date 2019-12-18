@@ -12,6 +12,11 @@ $('.image-background').each(function() {
         'background-size': 'cover',
         'background-repeat': 'no-repeat',
         'background-position': 'center',
-        'background-image': 'url("' + getImageSrc + '"), url("' + getImageErrorSrc + '")'
+        'background-image': 'url("' + getImageSrc + '")'
+    });
+    $(this).find('img').on('error', function () {
+        $(this).parents('.image-background:first').css({
+            'background-image': 'url("' + getImageErrorSrc + '")'
+        });
     });
 });
