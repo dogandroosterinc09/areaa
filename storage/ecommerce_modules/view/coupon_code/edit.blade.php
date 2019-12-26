@@ -31,19 +31,6 @@
                         @endif
                     </div>
                 </div>
-
-                <div class="form-group{{ $errors->has('value') ? ' has-error' : '' }}">
-                    <label class="col-md-3 control-label" for="coupon_code_value">Value</label>
-
-                    <div class="col-md-9">
-                        <input type="text" class="form-control input-numeric" id="coupon_code_value" name="value"
-                               value="{{  Request::old('value') ? : $coupon_code->value }}"
-                               placeholder="Enter Coupon Code value..">
-                        @if($errors->has('value'))
-                            <span class="help-block animation-slideDown">{{ $errors->first('value') }}</span>
-                        @endif
-                    </div>
-                </div>
                 <div class="form-group{{ $errors->has('type') ? ' has-error' : '' }}">
                     <label class="col-md-3 control-label" for="coupon_code_type">Type</label>
                     <div class="col-md-9">
@@ -59,6 +46,18 @@
                         </label>
                         @if($errors->has('type'))
                             <span class="help-block animation-slideDown">{{ $errors->first('type') }}</span>
+                        @endif
+                    </div>
+                </div>
+                <div class="form-group{{ $errors->has('value') ? ' has-error' : '' }}">
+                    <label class="col-md-3 control-label" for="coupon_code_value"><span class="coupon_type"></span> Value</label>
+
+                    <div class="col-md-9">
+                        <input type="text" class="form-control input-numeric" id="coupon_code_value" name="value"
+                               value="{{  Request::old('value') ? : $coupon_code->value }}"
+                               placeholder="Enter Coupon Code value..">
+                        @if($errors->has('value'))
+                            <span class="help-block animation-slideDown">{{ $errors->first('value') }}</span>
                         @endif
                     </div>
                 </div>

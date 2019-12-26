@@ -10,6 +10,7 @@
         uiInputFile,
         uiRemoveFileBtn,
         uiInputNumeric,
+        uiInputType,
         filler;
 
     /* private ajax function that will send request to backend */
@@ -153,6 +154,7 @@
             uiRemoveImgBtn = $('.remove-image-btn');
             uiRemoveFileBtn = $('.remove-file-btn');
             uiInputNumeric = $('.input-numeric');
+            uiInputType = $('input[name="type"]');
 
             uiCouponCodesDatatable = platform.coupon_code.initialize_datatable();
             platform.input_numeric(uiInputNumeric);
@@ -388,6 +390,17 @@
                 element.val('');
                 element.closest('.form-group').find('.remove-file-btn').hide();
                 element.closest('.form-group').find('input.remove-file').val(1);
+            });
+
+            uiInputType.on('change', function () {
+                $('.coupon_type').text('');
+                if ($('input[name="type"]:checked').length) {
+                    if ($('input[name="type"]:checked').val() == 1) {
+                        $('.coupon_type').text('Percentage');
+                    } else if ($('input[name="type"]:checked').val() == 2) {
+                        $('.coupon_type').text('Amount');
+                    }
+                }
             });
         },
 
