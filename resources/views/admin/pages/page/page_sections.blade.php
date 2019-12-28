@@ -51,8 +51,6 @@
                         <input type="text" class="form-control" readonly>
                     </div>
                 </div>
-            </div>
-            <div class="form-group">
                 <label class="col-md-3 control-label"
                        for="page_sections[{{ $section->id }}]">&nbsp;</label>
                 <div class="col-md-9">

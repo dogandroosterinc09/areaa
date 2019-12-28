@@ -190,20 +190,29 @@ class PageController extends Controller
 
         $page = $this->page_model->create($input);
 
+        $pos = 1;
+        $file_upload_path = '';
         if ($request->hasFile('banner_image')) {
-            $file_upload_path = $this->page_repository->uploadFile($request->file('banner_image'), $page);
-            $page->fill(['banner_image' => $file_upload_path])->save();
+            $file_upload_path = $this->page_repository->uploadFilePageSection($request->file('banner_image'), $page);
         }
 
-        $this->page_section_model->create(
-            array(
-                'page_id' => $page->id,
+        $page->page_sections()->create([
+            'section' => 'banner_image',
+            'content' => $file_upload_path,
+            'type' => 'file',
+            'position' => $pos,
+        ]);
+
+        $pos++;
+
+        if ($request->has('content')) {
+            $page->page_sections()->create([
                 'section' => 'content',
                 'content' => $request->get('content'),
                 'type' => 'ckeditor',
-                'position' => 1,
-            )
-        );
+                'position' => $pos,
+            ]);
+        }
 
         return redirect()->route('admin.pages.index')
             ->with('flash_message', [

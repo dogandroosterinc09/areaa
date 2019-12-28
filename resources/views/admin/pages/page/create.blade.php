@@ -59,22 +59,22 @@
                     {{--</div>--}}
                 {{--</div>--}}
 
-                {{--<div class="form-group{{ $errors->has('banner_image') ? ' has-error' : '' }}">--}}
-                    {{--<label class="col-md-3 control-label" for="banner_image">Banner Image</label>--}}
-                    {{--<div class="col-md-9">--}}
-                        {{--<div class="input-group">--}}
-                            {{--<label class="input-group-btn">--}}
-                            {{--<span class="btn btn-primary">--}}
-                                {{--Choose File <input type="file" name="banner_image" style="display: none;">--}}
-                            {{--</span>--}}
-                            {{--</label>--}}
-                            {{--<input type="text" class="form-control" readonly>--}}
-                        {{--</div>--}}
-                        {{--@if($errors->has('banner_image'))--}}
-                            {{--<span class="help-block animation-slideDown">{{ $errors->first('banner_image') }}</span>--}}
-                        {{--@endif--}}
-                    {{--</div>--}}
-                {{--</div>--}}
+                <div class="form-group{{ $errors->has('banner_image') ? ' has-error' : '' }}">
+                    <label class="col-md-3 control-label" for="banner_image">Banner Image</label>
+                    <div class="col-md-9">
+                        <div class="input-group">
+                            <label class="input-group-btn">
+                            <span class="btn btn-primary">
+                                Choose File <input type="file" name="banner_image" style="display: none;">
+                            </span>
+                            </label>
+                            <input type="text" class="form-control" readonly>
+                        </div>
+                        @if($errors->has('banner_image'))
+                            <span class="help-block animation-slideDown">{{ $errors->first('banner_image') }}</span>
+                        @endif
+                    </div>
+                </div>
 
                 {{--<div class="form-group{{ $errors->has('banner_description') ? ' has-error' : '' }}">--}}
                     {{--<label class="col-md-3 control-label" for="banner_description">Banner Description</label>--}}
