@@ -25,21 +25,20 @@
     <link rel="canonical" href="{!! $seo_meta['canonical'] !!}">
 
     {{--Icons--}}
-    <link rel="shortcut icon" href="{{ asset('public/images/icons/favicon.png') }}">
-    <link rel="apple-touch-icon" href="{{ asset('public/images/icons/icon57.png') }}" sizes="57x57">
-    <link rel="apple-touch-icon" href="{{ asset('public/images/icons/icon72.png') }}" sizes="72x72">
-    <link rel="apple-touch-icon" href="{{ asset('public/images/icons/icon76.png') }}" sizes="76x76">
-    <link rel="apple-touch-icon" href="{{ asset('public/images/icons/icon114.png') }}" sizes="114x114">
-    <link rel="apple-touch-icon" href="{{ asset('public/images/icons/icon120.png') }}" sizes="120x120">
-    <link rel="apple-touch-icon" href="{{ asset('public/images/icons/icon144.png') }}" sizes="144x144">
-    <link rel="apple-touch-icon" href="{{ asset('public/images/icons/icon152.png') }}" sizes="152x152">
-    <link rel="apple-touch-icon" href="{{ asset('public/images/icons/icon180.png') }}" sizes="180x180">
+    <link rel="shortcut icon" href="{{ asset('public/images/favicon/favicon.png') }}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('public/images/favicon/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('public/images/favicon/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('public/images/favicon/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ asset('public/images/favicon/site.webmanifest') }}">
+    <link rel="mask-icon" href="{{ asset('public/images/favicon/safari-pinned-tab.svg') }}" color="#5bbad5">
+    <link rel="stylesheet" href="{{asset('public/css/animate.css')}}">
 
     <link rel="stylesheet" href="{{ asset('public/css/app.css') }}">
 
     @stack('extrastylesheets')
 
     <script src="{{asset('public/js/modernizr.min.js')}}"></script>
+    <script src="{{ asset('public/js/wow.min.js') }}"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -53,6 +52,9 @@
 @yield('content')
 <script>
     var sBaseURI = '{{ url('/') }}';
+</script>
+<script>
+    new WOW().init();
 </script>
 <script src="{{ asset('public/js/app.js') }}"></script>
 @stack('extrascripts')

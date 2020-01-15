@@ -5,7 +5,7 @@
         <div class="main-nagivation-desktop__wrapper--row row">
             <div class="col-lg-4">
                 <a href="{{ url('/') }}">
-                    <img src="{{ asset('public/images/header/logo.jpg') }}" alt="logo">
+                    <img src="{{ asset('public/images/header/header-logo.png') }}" alt="logo">
                 </a>
             </div>
             <div class="col-lg-8">
@@ -71,7 +71,7 @@
 
                         <div class="mobile-logo">
                             <a href="{{ url('/') }}">
-                                <img src="{{ asset('public/images/header/logo.jpg') }}" alt="logo">
+                                <img src="{{ asset('public/images/header/header-logo.png') }}" alt="logo">
                             </a>
                         </div>
 
