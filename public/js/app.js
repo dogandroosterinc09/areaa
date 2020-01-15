@@ -46692,7 +46692,12 @@ $('.image-background').each(function () {
     'background-size': 'cover',
     'background-repeat': 'no-repeat',
     'background-position': 'center',
-    'background-image': 'url("' + getImageSrc + '"), url("' + getImageErrorSrc + '")'
+    'background-image': 'url("' + getImageSrc + '")'
+  });
+  $(this).find('img').on('error', function () {
+    $(this).parents('.image-background:first').css({
+      'background-image': 'url("' + getImageErrorSrc + '")'
+    });
   });
 });
 
@@ -48329,8 +48334,8 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;function _typeof
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\wamp64\www\laravel_template_v6\resources\assets\js\app.js */"./resources/assets/js/app.js");
-module.exports = __webpack_require__(/*! C:\wamp64\www\laravel_template_v6\resources\assets\scss\app.scss */"./resources/assets/scss/app.scss");
+__webpack_require__(/*! C:\wamp64\www\areaa\resources\assets\js\app.js */"./resources/assets/js/app.js");
+module.exports = __webpack_require__(/*! C:\wamp64\www\areaa\resources\assets\scss\app.scss */"./resources/assets/scss/app.scss");
 
 
 /***/ })
