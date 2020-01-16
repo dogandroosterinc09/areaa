@@ -46891,15 +46891,29 @@ $(".morelink").click(function () {
 /***/ (function(module, exports) {
 
 $('.banner__slick').slick({
-  dots: true,
+  dots: false,
   infinite: true,
   speed: 800,
   slidesToShow: 1,
-  autoplay: false,
+  autoplay: true,
   autoplaySpeed: 2000,
   fade: true,
   cssEase: 'linear',
   arrows: false
+});
+$('.banner__image-slide').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false,
+  fade: true,
+  asNavFor: '.banner__thumb-slide'
+});
+$('.banner__thumb-slide').slick({
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  asNavFor: '.banner__image-slide',
+  dots: false,
+  focusOnSelect: true
 });
 $('.global-featured-slider__top--slick').slick({
   lazyLoad: 'ondemand',

@@ -1,7 +1,7 @@
 <header>
 
     {{-- FOR DESKTOP MENU  --}}
-    <div class="main-nagivation-desktop container">
+    <div class="main-nagivation-desktop container-max">
         <div class="main-nagivation-desktop__wrapper--row row">
             <div class="col-lg-4">
                 <a href="{{ url('/') }}">

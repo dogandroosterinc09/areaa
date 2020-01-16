@@ -1,13 +1,14 @@
+$btn-color: #ab1a2d;
+
 .btn {
 
     &--primary {
-        background: $color-secondary;
-        border: 0;
-        padding: 17px 44px;
+        background: transparent;
+        padding: 11px 46px;
         font-weight: 900;
-        border-radius: 0;
-        font-size: 1em;
-        color: $color-white;
+        font-size: 18px;
+        color: $btn-color;
+        border: 1px solid $btn-color;
         @include border-radius(100px);
         @include transition(.3);
 
@@ -22,7 +23,7 @@
         &:hover {
             color: $color-white;
             // background: $color-darkred;
-            background: $color-navydark;
+            background: $btn-color;
         }
     }
 
