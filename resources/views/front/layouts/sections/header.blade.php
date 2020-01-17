@@ -9,42 +9,63 @@
                 </a>
             </div>
             <div class="col-lg-8">
+                <div class="contact-details-wrap">
+                    <div class="title"><span>Join AREAA</span></div>
+                    <div class="info">
+                        <a href="tel:619.795.7873"><i class="ic-phone" aria-hidden="true"></i> 619.795.7873</a>
+                        <a href="mailto:contact@areaa.org"><i class="ic-email"></i> contact@areaa.org</a>
+                        <a href="#"><i class="ic-pin"></i> Find your Chapter</a>
+                        <a href="{{ route('customer.login') }}"><i class="ic-user"></i> Log In</a>
+                    </div>
+                </div>
                 <nav class="navbar-bar">
                     <ul class="navbar-bar__wrapper">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/') }}">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('contact-us') }}">Contact Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('about-us') }}">About Us</a>
-                        </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle"
-                               href="{{ route('customer.login') }}" {{--data-toggle="dropdown"--}}>
-                                Login
-                            </a>
+                            <a class="nav-link dropdown-toggle" href="{{ url('/') }}">About Us <span class="sr-only">(current)</span></a>
                             <div class="dropdown-menu">
                                 <ul class="sub-menu">
                                     <li>
-                                        <a class="nav-link" href="{{ route('customer.register') }}"> Register</a>
+                                        <a class="nav-link" href="#"> Sub menu 1</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="{{ url('contact-us') }}">Membership</a>
+                            <div class="dropdown-menu">
+                                <ul class="sub-menu">
+                                    <li>
+                                        <a class="nav-link" href="#"> Sub menu 1</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="{{ url('about-us') }}">Advocacy</a>
+                            <div class="dropdown-menu">
+                                <ul class="sub-menu">
+                                    <li>
+                                        <a class="nav-link" href="#"> Sub menu 1</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="{{ url('about-us') }}">Events</a>
+                            <div class="dropdown-menu">
+                                <ul class="sub-menu">
+                                    <li>
+                                        <a class="nav-link" href="#"> Sub menu 1</a>
                                     </li>
                                 </ul>
                             </div>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" {{--data-toggle="dropdown"--}}>
-                                Dropdown
+                                Resources
                             </a>
                             <div class="dropdown-menu">
                                 <ul class="sub-menu">
-                                    <li>
-                                        <a class="nav-link" href="#"> Sub menu 1</a>
-                                    </li>
-                                    <li>
-                                        <a class="nav-link" href="#"> Sub menu 1</a>
-                                    </li>
                                     <li>
                                         <a class="nav-link" href="#"> Sub menu 1</a>
                                     </li>

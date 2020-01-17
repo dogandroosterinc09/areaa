@@ -1,5 +1,18 @@
 section {
     padding: 0;
+    position: relative;
+    display: block;
+    width: 100%;
 
+    h2 {
+        color: #000;
+        font: bold 80px $font-primary;
+    }
 
+    &.events-camp {
+        margin: 0 0 0 auto;
+        max-width: 1803px;
+        min-height: 895px;
+        background: url('../images/events-bg.png') no-repeat;
+    }
 }

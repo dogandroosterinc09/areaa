@@ -1,7 +1,8 @@
 // Control settings
 $header-height:100px;
 $header-scrolling-height:100px;
-$header-background:transparent;
+$header-background:$color-white;
+$color-site-red: #ab1a2d;
 
 header {
     position: relative;
@@ -11,7 +12,7 @@ header {
     padding: 0;
     top: 0;
     left: 0;
-    // overflow: hidden;
+     overflow: hidden;
     // position: fixed;
     min-height: $header-height;
     background: $header-background !important;
@@ -44,6 +45,81 @@ header {
                 list-style: none;
                 margin: 0;
                 padding: 0;
+                text-align: right;
+            }
+        }
+    }
+    .contact-details-wrap  {
+        position: relative;
+        display: block;
+        text-align: right;
+        padding: 0 0;
+        &::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 53px;
+            position: absolute;
+            top: 0;
+            right: -50%;
+            z-index: -1;
+            background: $color-site-red;
+        }
+        .title {
+            position: relative;
+            display: inline-block;
+            background: #303132;
+            padding: 10px 85px 19px 50px;
+            border-bottom-left-radius: 100px;
+            color: $color-white;
+            font: bold 18px $font-primary;
+            margin-right: -50px;
+        }
+        .info {
+            position: relative;
+            display: inline-block;
+            background: $color-site-red;
+            padding: 10px 0 10px 50px;
+            border-bottom-left-radius: 100px;
+            a {
+                color: $color-white;
+                font: 300 18px $font-primary;
+                margin-left: 15px;
+                i {
+                    margin-right: 10px;
+                    &.ic-phone{
+                        display: inline-block;
+                        vertical-align: top;
+                        width: 21px;
+                        height: 21px;
+                        background: url('../images/sprite.png') no-repeat;
+                        background-position: -11px -10px;
+                    }
+                    &.ic-email{
+                        display: inline-block;
+                        vertical-align: top;
+                        width: 25px;
+                        height: 19px;
+                        background: url('../images/sprite.png') no-repeat;
+                        background-position: -53px -10px;
+                    }
+                    &.ic-pin{
+                        display: inline-block;
+                        vertical-align: top;
+                        width: 22px;
+                        height: 33px;
+                        background: url('../images/sprite.png') no-repeat;
+                        background-position: -98px -10px;
+                    }
+                    &.ic-user{
+                        display: inline-block;
+                        vertical-align: top;
+                        width: 25px;
+                        height: 24px;
+                        background: url('../images/sprite.png') no-repeat;
+                        background-position: -141px -10px;
+                    }
+                }
             }
         }
     }

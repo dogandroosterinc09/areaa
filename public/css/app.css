@@ -18104,8 +18104,9 @@ header {
   padding: 0;
   top: 0;
   left: 0;
+  overflow: hidden;
   min-height: 100px;
-  background: transparent !important;
+  background: #fff !important;
   display: flex !important;
   flex-wrap: wrap !important;
   align-items: center;
@@ -18134,6 +18135,81 @@ header .main-nagivation-desktop .navbar-bar ul {
   list-style: none;
   margin: 0;
   padding: 0;
+  text-align: right;
+}
+header .contact-details-wrap {
+  position: relative;
+  display: block;
+  text-align: right;
+  padding: 0 0;
+}
+header .contact-details-wrap::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 53px;
+  position: absolute;
+  top: 0;
+  right: -50%;
+  z-index: -1;
+  background: #ab1a2d;
+}
+header .contact-details-wrap .title {
+  position: relative;
+  display: inline-block;
+  background: #303132;
+  padding: 10px 85px 19px 50px;
+  border-bottom-left-radius: 100px;
+  color: #fff;
+  font: bold 18px "Open Sans", sans-serif;
+  margin-right: -50px;
+}
+header .contact-details-wrap .info {
+  position: relative;
+  display: inline-block;
+  background: #ab1a2d;
+  padding: 10px 0 10px 50px;
+  border-bottom-left-radius: 100px;
+}
+header .contact-details-wrap .info a {
+  color: #fff;
+  font: 300 18px "Open Sans", sans-serif;
+  margin-left: 15px;
+}
+header .contact-details-wrap .info a i {
+  margin-right: 10px;
+}
+header .contact-details-wrap .info a i.ic-phone {
+  display: inline-block;
+  vertical-align: top;
+  width: 21px;
+  height: 21px;
+  background: url("../images/sprite.png") no-repeat;
+  background-position: -11px -10px;
+}
+header .contact-details-wrap .info a i.ic-email {
+  display: inline-block;
+  vertical-align: top;
+  width: 25px;
+  height: 19px;
+  background: url("../images/sprite.png") no-repeat;
+  background-position: -53px -10px;
+}
+header .contact-details-wrap .info a i.ic-pin {
+  display: inline-block;
+  vertical-align: top;
+  width: 22px;
+  height: 33px;
+  background: url("../images/sprite.png") no-repeat;
+  background-position: -98px -10px;
+}
+header .contact-details-wrap .info a i.ic-user {
+  display: inline-block;
+  vertical-align: top;
+  width: 25px;
+  height: 24px;
+  background: url("../images/sprite.png") no-repeat;
+  background-position: -141px -10px;
 }
 
 .banner {
@@ -19185,6 +19261,19 @@ header .main-nagivation-desktop .navbar-bar ul {
 
 section {
   padding: 0;
+  position: relative;
+  display: block;
+  width: 100%;
+}
+section h2 {
+  color: #000;
+  font: bold 80px "Open Sans", sans-serif;
+}
+section.events-camp {
+  margin: 0 0 0 auto;
+  max-width: 1803px;
+  min-height: 895px;
+  background: url("../images/events-bg.png") no-repeat;
 }
 
 .global-featured-slider__top {
