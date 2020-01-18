@@ -27,7 +27,16 @@ $('.banner__thumb-slide').slick({
 });
 
 
-
+$('.events-camp-slider').slick({
+    dots: true,
+    infinite: true,
+    speed: 800,
+    slidesToShow: 4,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    cssEase: 'linear',
+    arrows: true
+});
 
 
 

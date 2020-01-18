@@ -5,6 +5,7 @@ $btn-color: #ab1a2d;
     &--primary {
         background: transparent;
         padding: 11px 46px;
+        min-width: 200px;
         font-weight: 900;
         font-size: 18px;
         color: $btn-color;
@@ -28,13 +29,13 @@ $btn-color: #ab1a2d;
     }
 
     &--secondary {
-        background: $color-third;
-        border: 0;
-        padding: 17px 44px;
+        background: $btn-color;
+        padding: 11px 46px;
+        min-width: 200px;
         font-weight: 900;
-        border-radius: 0;
-        font-size: 1em;
+        font-size: 18px;
         color: $color-white;
+        border: 1px solid $btn-color;
         @include border-radius(100px);
         @include transition(.3);
 
@@ -47,8 +48,9 @@ $btn-color: #ab1a2d;
         }
 
         &:hover {
-            color: $color-white;
-            background: $color-primary;
+            color: $btn-color;
+            // background: $color-darkred;
+            background: transparent;
         }
     }
 

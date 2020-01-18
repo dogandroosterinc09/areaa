@@ -46880,6 +46880,19 @@ $(".morelink").click(function () {
   $(this).prev().toggle();
   return false;
 });
+/* Count */
+
+$('.count').each(function () {
+  $(this).prop('Counter', 0).animate({
+    Counter: $(this).text()
+  }, {
+    duration: 4000,
+    easing: 'swing',
+    step: function step(now) {
+      $(this).text(Math.ceil(now));
+    }
+  });
+});
 
 /***/ }),
 
@@ -46914,6 +46927,16 @@ $('.banner__thumb-slide').slick({
   asNavFor: '.banner__image-slide',
   dots: false,
   focusOnSelect: true
+});
+$('.events-camp-slider').slick({
+  dots: true,
+  infinite: true,
+  speed: 800,
+  slidesToShow: 4,
+  autoplay: true,
+  autoplaySpeed: 5000,
+  cssEase: 'linear',
+  arrows: true
 });
 $('.global-featured-slider__top--slick').slick({
   lazyLoad: 'ondemand',
