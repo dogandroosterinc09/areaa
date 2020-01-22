@@ -38,6 +38,19 @@ $('.events-camp-slider').slick({
     arrows: true
 });
 
+$('.feat-members-slider').slick({
+    dots: true,
+    infinite: true,
+    speed: 800,
+    slidesToShow: 5,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    cssEase: 'linear',
+    arrows: true
+});
+
+
+
 
 
 $('.global-featured-slider__top--slick').slick({

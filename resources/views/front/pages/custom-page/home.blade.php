@@ -188,7 +188,13 @@
             <div class="container-max">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h2>Chapters</h2>
+                        <div class="map-content">
+                            <h2>Chapters</h2>
+                            <div class="btn-wrap">
+                                <a href="#" class="btn btn--secondary">View All Chapters</a>
+                            </div>
+                        </div>
+                        <div class="map"></div>
                     </div>
                 </div>
             </div>
@@ -196,16 +202,106 @@
         {{-- End of Chapters --}}
 
         {{-- Start  --}}
-        <section class="feat-members wrapper">
+        <section class="feat-members wrapper margin-both90">
             <div class="container-max">
                 <div class="row">
-                    <div class="col-lg-12">
+                    <div class="col-md-7">
                         <h2>Featured Members</h2>
+                    </div>
+                    <div class="col-md-5 padding-top20">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="feat-members-slider">
+                            <div class="feat-members-slider--item">
+                                <a href="#">
+                                    <div class="image-holder">
+                                        <img src="{{ asset('public/images/member-img1.jpg') }}" alt="Member Image">
+                                    </div>
+                                    <div class="desc-txt">
+                                        <div class="name">May Marcus</div>
+                                        <div class="chapter">San Diego Chapter</div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="feat-members-slider--item">
+                                <a href="#">
+                                    <div class="image-holder">
+                                        <img src="{{ asset('public/images/member-img2.jpg') }}" alt="Member Image">
+                                    </div>
+                                    <div class="desc-txt">
+                                        <div class="name">May Marcus</div>
+                                        <div class="chapter">San Diego Chapter</div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="feat-members-slider--item">
+                                <a href="#">
+                                    <div class="image-holder">
+                                        <img src="{{ asset('public/images/member-img3.jpg') }}" alt="Member Image">
+                                    </div>
+                                    <div class="desc-txt">
+                                        <div class="name">May Marcus</div>
+                                        <div class="chapter">San Diego Chapter</div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="feat-members-slider--item">
+                                <a href="#">
+                                    <div class="image-holder">
+                                        <img src="{{ asset('public/images/member-img4.jpg') }}" alt="Member Image">
+                                    </div>
+                                    <div class="desc-txt">
+                                        <div class="name">May Marcus</div>
+                                        <div class="chapter">San Diego Chapter</div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="feat-members-slider--item">
+                                <a href="#">
+                                    <div class="image-holder">
+                                        <img src="{{ asset('public/images/member-img5.jpg') }}" alt="Member Image">
+                                    </div>
+                                    <div class="desc-txt">
+                                        <div class="name">May Marcus</div>
+                                        <div class="chapter">San Diego Chapter</div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="feat-members-slider--item">
+                                <a href="#">
+                                    <div class="image-holder">
+                                        <img src="{{ asset('public/images/member-img1.jpg') }}" alt="Member Image">
+                                    </div>
+                                    <div class="desc-txt">
+                                        <div class="name">May Marcus</div>
+                                        <div class="chapter">San Diego Chapter</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
         {{-- End of Feaured Members --}}
+
+        {{-- Start  --}}
+        <section class="sponsors wrapper margin-both90">
+            <div class="container-max">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>Sponsors</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="sponsor-logo">
+                <img src="{{ asset('public/images/sponsors-logos.png') }}" alt="Sponsors Image">
+            </div>
+        </section>
+        {{-- End of Sponsors --}}
 
     </main>
 
