@@ -18499,17 +18499,138 @@ header .contact-details-wrap .info a i.ic-user {
   margin-bottom: 35px;
 }
 
-.footer-main ul {
+.footer__wrapper {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 108px 0 0;
+  background-position: top center !important;
+}
+.footer__item .row {
+  margin-bottom: 30px;
+}
+.footer__item .footer-logo img {
+  width: 100%;
+  max-width: 258px;
+}
+.footer__item .footer-contacts {
+  display: block;
+  margin-top: 130px;
+}
+.footer__item .footer-contacts .item {
+  position: relative;
+  display: block;
+  color: #000;
+  font: 300 18px "Open Sans", sans-serif;
+  margin-bottom: 6px;
+}
+.footer__item .footer-contacts .item a {
+  color: #000;
+}
+.footer__item .footer-contacts .item a, .footer__item .footer-contacts .item span {
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 250px;
+}
+.footer__item .footer-contacts .item i.loc {
+  display: inline-block;
+  vertical-align: middle;
+  width: 25px;
+  height: 37px;
+  background: url("../images/sprite.png") no-repeat;
+  background-position: -97px -8px;
+}
+.footer__item .footer-contacts .item i.tel {
+  display: inline-block;
+  vertical-align: middle;
+  width: 25px;
+  height: 21px;
+  background: url("../images/sprite.png") no-repeat;
+  background-position: -240px -8px;
+}
+.footer__item .footer-contacts .item i.mail {
+  display: inline-block;
+  vertical-align: middle;
+  width: 25px;
+  height: 19px;
+  background: url("../images/sprite.png") no-repeat;
+  background-position: -119px -51px;
+}
+.footer__item h4 {
+  color: #000;
+  text-transform: uppercase;
+  font: 900 21px "Open Sans", sans-serif;
+}
+.footer__item ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-.footer-main ul li a {
+.footer__item ul li {
+  display: block;
+  margin-bottom: 7px;
+}
+.footer__item ul li a {
+  outline: none;
   text-decoration: none;
+  color: #000;
+  font: 300 19px "Open Sans", sans-serif;
 }
-.footer-main__wrapper {
-  max-width: 1400px;
+.footer__item .join-content .title {
+  position: relative;
+  background: #000;
+  padding: 12px 0 12px 100px;
+  border-bottom-left-radius: 100px;
+  margin-bottom: 30px;
 }
+.footer__item .join-content .title::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: -95%;
+  width: 100%;
+  height: 60px;
+  z-index: 0;
+  background: #000;
+}
+.footer__item .join-content .title h4 {
+  color: #fff;
+}
+.footer__item .join-content .btn-wrap {
+  margin-top: 15px;
+}
+.footer__copyright {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 30px 0;
+  margin-top: 30px;
+  background: #ab1a2d;
+}
+.footer__copyright .copyright-txt {
+  position: relative;
+  color: #b9b1b2;
+  font: 400 16px "Open Sans", sans-serif;
+}
+.footer__copyright .copyright-txt a {
+  color: #b9b1b2;
+}
+
+.smi-wrap {
+  text-align: right;
+}
+.smi-wrap a {
+  outline: none;
+  text-decoration: none;
+  color: #fff;
+  margin: 0 8px;
+  font-size: 18px;
+}
+
 /* Scroll to top link */
 #to-top {
   display: none;
