@@ -8,6 +8,10 @@
             @include('front.pages.custom-page.home')
         @elseif ($page['slug'] == 'contact-us')
             @include('front.pages.custom-page.contact-us')
+
+        @elseif ($page['slug'] == 'about-us')
+            @include('front.pages.custom-page.about-us')
+
         @else
             @include('front.pages.custom-page.default-page')
         @endif

@@ -1,6 +1,5 @@
 $site-red: #ab1a2d;
 $site-dred: #841523;
-
 .footer {
     &__wrapper {
         position: relative;
@@ -8,12 +7,12 @@ $site-dred: #841523;
         width: 100%;
         height: 100%;
         //min-height: 765px;
-        margin: 0 ;
+        margin: 0;
         padding: 108px 0 0;
         background-position: top center !important;
+        overflow: hidden;
     }
     &__menus {}
-
     &__item {
         .row {
             margin-bottom: 30px;
@@ -36,7 +35,8 @@ $site-dred: #841523;
                 a {
                     color: $color-black;
                 }
-                a, span {
+                a,
+                span {
                     display: inline-block;
                     vertical-align: middle;
                     max-width: 250px;
@@ -78,7 +78,6 @@ $site-dred: #841523;
             list-style: none;
             padding: 0;
             margin: 0;
-
             li {
                 display: block;
                 margin-bottom: 7px;
@@ -117,11 +116,8 @@ $site-dred: #841523;
             }
         }
     }
-
     &__middle {}
-
     &__right {}
-
     &__copyright {
         position: relative;
         display: block;
@@ -152,7 +148,9 @@ $site-dred: #841523;
     }
 }
 
+
 /* Scroll to top link */
+
 #to-top {
     display: none;
     position: fixed;

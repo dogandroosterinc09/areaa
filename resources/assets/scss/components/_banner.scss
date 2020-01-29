@@ -106,7 +106,6 @@ $banner-background-color:#000;
             }
         }
     }
-
     /*.banner-overlay {
         position: absolute;
         display: block;
@@ -122,7 +121,6 @@ $banner-background-color:#000;
         display: block;
         width: 100%;
         padding: 0 0 0;
-
         &--item {
             position: relative;
             display: block;
@@ -156,7 +154,6 @@ $banner-background-color:#000;
             display: inline-block;
             vertical-align: top;
             width: 58%;
-
             &::before {
                 content: '';
                 display: block;
@@ -219,7 +216,6 @@ $banner-background-color:#000;
         height: auto;
         margin: 0 auto;
     }
-
     .alpha-target {
         mask-image: $brush-circle;
         mask-mode: alpha;
@@ -230,41 +226,81 @@ $banner-background-color:#000;
 
 .sub-banner {
     // height: 538px;
-    margin-top: $header-height;
-    height: 358px;
-    background: #f00 !important;
+    // margin-top: $header-height;
+    height: 400px;
+    background: url('../images/white-paper.jpg');
     background-size: cover !important;
     background-position: center !important;
     @include flex;
     @include flex-align-items(center);
+    overflow: hidden;
+    position: relative;
     &__wrapper {
         position: relative;
         height: 100%;
-        max-width: 1400px;
+        max-width: 100%;
+        &:before {
+            content: '';
+            background: url('../images/paper-transparent.png');
+            height: 100%;
+            left: 0;
+            bottom: 0;
+            width: 53%;
+            z-index: 3;
+            position: absolute;
+            background-size: cover;
+        }
     }
     &__item {
         position: absolute;
-        bottom: 0;
         width: 100%;
+        height: 100%;
         left: 0;
+        @include flex;
+        @include flex-align-items(center);
     }
     &__content {
         width: 100%;
-        max-width: 100%;
+        max-width: 1500px;
+        margin-top: -50px;
+        position: relative;
+        z-index: 5;
         h1 {
-            border-top: 5px solid $color-secondary;
             display: inline-block;
-            background: $color-white;
             margin-bottom: 0;
-            padding: 14px 25px;
-            font-size: 2em;
+            font-size: 4em;
             font-weight: $weight-extrabold;
-            @media only screen and (max-width: $tablet) {
-                font-size: 1.5em;
-            }
-            @media only screen and (max-width:$mobile) {
-                font-size: 1em;
-            }
         }
+    }
+    &__image {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 63%;
+        height: 100%;
+        background-position: top left !important;
+        background-size: cover !important;
+        z-index: 2;
+    }
+    &:after {
+        content: '';
+        width: 100%;
+        height: 60px;
+        left: 0;
+        position: absolute;
+        bottom: 0;
+        background: url('../images/bottom-style-white.png');
+        z-index: 5;
+    }
+    &:before {
+        content: "";
+        width: 517px;
+        height: 100%;
+        background: url(../images/red-stripe.png);
+        position: absolute;
+        z-index: 6;
+        background-size: contain !important;
+        background-repeat: no-repeat;
+        left: 30%;
     }
 }
