@@ -21,7 +21,7 @@
                 <nav class="navbar-bar">
                     <ul class="navbar-bar__wrapper">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="{{ url('/') }}">About Us <span class="sr-only">(current)</span></a>
+                            <a class="nav-link dropdown-toggle" href="{{ url('about-us') }}">About Us <span class="sr-only">(current)</span></a>
                             <div class="dropdown-menu">
                                 <ul class="sub-menu">
                                     <li>

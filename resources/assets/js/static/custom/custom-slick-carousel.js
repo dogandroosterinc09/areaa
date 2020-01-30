@@ -76,3 +76,17 @@ $('.global-featured-slider__bottom--slick').slick({
     // fade: true,
     focusOnSelect: true
 });
+
+
+
+$('.insta-gram__slide').slick({
+    dots: false,
+    infinite: true,
+    speed: 800,
+    slidesToShow: 6,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    cssEase: 'linear',
+    arrows: true
+});

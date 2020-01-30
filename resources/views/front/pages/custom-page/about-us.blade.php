@@ -34,9 +34,11 @@
                     <div class="col-md-6 our-mission__left">
                         <img src="{{ url('public/images/mission-object.png') }}">
                     </div>
-                    <div class="col-md-6 our-mission__right">
+                    <div class="col-md-6 our-mission__right content-middle">
                         <div class="our-mission__content">
+
                             <h2>Our Mission</h2>
+
                             <p>AREAA is dedicated to promoting sustainable homeownership opportunities in Asian American communities by creating a powerful national voice for housing and real estate professionals that serve this dynamic market.</p>
                             <a href="#" class="btn btn btn--secondary">Join AaREAA!</a>
                         </div>
@@ -52,11 +54,15 @@
         <section class="masking-background">
             <div class="masking-background__wrapper container-max">
                 <div class="masking-background__item">
-                    <div class="container-max masking-background__content">
+                    <div class="container-max masking-background__container">
                         <div class="row">
-                            <div class="col-md-6 masking-background__content">
-                                <h2>Our Story</h2>
-                                <p>Founded in 2003, the Asian Real Estate Association of America (AREAA) is a nonprofit professional trade organization dedicated to promoting sustainable homeownership opportunities in Asian American communities by creating a powerful national voice for housing and real estate professionals that serve this dynamic market.</p>
+                            <div class="col-md-6 content-middle">
+
+                                <div class="masking-background__content">
+                                    <h2>Our Story</h2>
+                                    <p>Founded in 2003, the Asian Real Estate Association of America (AREAA) is a nonprofit professional trade organization dedicated to promoting sustainable homeownership opportunities in Asian American communities by creating a powerful national voice for housing and real estate professionals that serve this dynamic market.</p>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -74,13 +80,17 @@
 
 
         {{-- story section  --}}
-        <section class="story">
-            <div class="container">
+        <section class="goals">
+            <div class="container-max">
                 <div class="row">
 
+
+                    <div class="col-lg-12 text-center font-weight-bold">
+                        <h4 class="">AREAA Will Accomplish These Goals By: </h4>
+                    </div>
+
                     <div class="col-md-12">
-                       
-                            <h3>AREAA Will Accomplish These Goals By: </h3>
+                           
                             <ul class="bullet-style">
                                 <li>
                                    <strong>Creating a powerful national voice </strong> 
@@ -96,12 +106,11 @@
                                 <li><strong>Conducting trade missions</strong> throughout Asia to develop business partnerships & increase brand awareness.
                                 </li>
                             </ul>
+
+
                     </div>
 
-                    <div class="col-md-6story__right">
-                       
-                        
-                    </div>
+                 
               
                 </div>
             </div> {{-- end of default-content--row --}}
@@ -114,15 +123,74 @@
                 <div class="container">
                     <div class="row">
     
-                        <div class="col-md-12">
-                           <h4>AREAA’s Membership Represents A Vast array of Cultural, Ethnic, & Professional Backgrounds.</h4>
-                           <div class="btn-group">
-                                <a href="#" class="btn btn btn--secondary">Join AaREAA!</a>
-                                <a href="#" class="btn btn btn--primary">Join AaREAA!</a>
-                           </div>
+                        <div class="col-lg-6">
+                            <div class="hightlight__left">
+                                <h4>AREAA’s Membership Represents A Vast array of Cultural, Ethnic, & Professional Backgrounds.</h4>
+                                <div class="btn-group">
+                                     <a href="#" class="btn btn btn--secondary">View Our Partners</a>
+                                     <a href="#" class="btn btn btn--primary">Become a Member</a>
+                                </div>
+                            </div>
+                          
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="hightlight__right">
+                                 <p>Founded in 2003, the Asian Real Estate Association of America (AREAA) is a nonprofit professional trade organization dedicated to promoting sustainable homeownership opportunities in Asian American communities by creating a powerful national voice for housing and real estate professionals that serve this dynamic market.</p>
+                            </div>
                         </div>
     
-                                     
+                    </div>
+                </div> {{-- end of default-content--row --}}
+            </section> {{-- end of default-content --}}
+
+
+
+              {{-- story section  --}}
+              <section class="follow-us">
+                <div class="container">
+                    <div class="row">
+    
+
+                        <div class="col-lg-12 follow-us__wrapper">
+                            <div class="primary-heading">
+                                <h2>Follow Us</h4>
+                                <p>On Instagram </p>
+                            </div>
+
+                            <div class="insta-gram">
+                                <div class="insta-gram__slide">
+                                        <div class="insta-gram__item image-background"> 
+                                            <img src="{{ url('public/images/instagram1.jpg') }}"> 
+                                        </div>
+                                        <div class="insta-gram__item image-background"> 
+                                                <img src="{{ url('public/images/instagram2.jpg') }}"> 
+                                        </div>
+                                        <div class="insta-gram__item image-background"> 
+                                                    <img src="{{ url('public/images/instagram3.jpg') }}"> 
+                                        </div>
+                                        <div class="insta-gram__item image-background"> 
+                                            <img src="{{ url('public/images/instagram4.jpg') }}"> 
+                                        </div>
+                                        <div class="insta-gram__item image-background"> 
+                                                <img src="{{ url('public/images/our-story-image.jpg') }}"> 
+                                        </div>
+                                        <div class="insta-gram__item image-background"> 
+                                                    <img src="{{ url('public/images/instagram1.jpg') }}"> 
+                                        </div>
+                                        <div class="insta-gram__item image-background"> 
+                                            <img src="{{ url('public/images/our-story-image.jpg') }}"> 
+                                        </div>
+                                        <div class="insta-gram__item image-background"> 
+                                                <img src="{{ url('public/images/instagram2.jpg') }}"> 
+                                        </div>
+                                        <div class="insta-gram__item image-background"> 
+                                                    <img src="{{ url('public/images/our-story-image.jpg') }}"> 
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+    
                     </div>
                 </div> {{-- end of default-content--row --}}
             </section> {{-- end of default-content --}}

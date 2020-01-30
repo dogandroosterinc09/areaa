@@ -3,7 +3,6 @@ $header-height:100px;
 $header-scrolling-height:100px;
 $header-background:$color-white;
 $color-site-red: #ab1a2d;
-
 header {
     position: relative;
     display: block;
@@ -13,14 +12,13 @@ header {
     padding: 0;
     top: 0;
     left: 0;
-     //overflow: hidden;
+    //overflow: hidden;
     // position: fixed;
     min-height: $header-height;
     background: $header-background !important;
     @include flex;
     @include flex-align-items(center);
     @include transition-all(all 0.5s ease-in-out);
-
     &.scrolling {
         position: fixed !important;
         height: auto;
@@ -31,24 +29,22 @@ header {
         -webkit-box-shadow: 1px 0 5px 1px rgba(0, 0, 0, .6);
         box-shadow: 1px 0 5px 1px rgba(0, 0, 0, .6);
     }
-
     .main-nagivation-desktop {
         .navbar-bar {
             position: relative;
             margin: 27px 0;
             z-index: 9;
             &__wrapper {}
-
             ul {
                 position: relative;
                 list-style: none;
                 margin: 0;
                 padding: 0;
                 text-align: right;
-                & > li {
+                &>li {
                     position: relative;
                     display: inline-block;
-                    & > a {
+                    &>a {
                         color: $color-black;
                         font: 300 18px $font-primary;
                         text-transform: uppercase;
@@ -57,7 +53,7 @@ header {
             }
         }
     }
-    .contact-details-wrap  {
+    .contact-details-wrap {
         position: relative;
         display: block;
         text-align: right;
@@ -95,7 +91,7 @@ header {
                 margin-left: 15px;
                 i {
                     margin-right: 10px;
-                    &.ic-phone{
+                    &.ic-phone {
                         display: inline-block;
                         vertical-align: top;
                         width: 21px;
@@ -103,7 +99,7 @@ header {
                         background: url('../images/sprite.png') no-repeat;
                         background-position: -11px -10px;
                     }
-                    &.ic-email{
+                    &.ic-email {
                         display: inline-block;
                         vertical-align: top;
                         width: 25px;
@@ -111,7 +107,7 @@ header {
                         background: url('../images/sprite.png') no-repeat;
                         background-position: -53px -10px;
                     }
-                    &.ic-pin{
+                    &.ic-pin {
                         display: inline-block;
                         vertical-align: top;
                         width: 22px;
@@ -119,7 +115,7 @@ header {
                         background: url('../images/sprite.png') no-repeat;
                         background-position: -98px -10px;
                     }
-                    &.ic-user{
+                    &.ic-user {
                         display: inline-block;
                         vertical-align: top;
                         width: 25px;

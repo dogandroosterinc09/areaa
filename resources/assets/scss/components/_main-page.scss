@@ -637,7 +637,7 @@ section {
             height: 100%;
             left: 0;
             bottom: 0;
-            width: 53%;
+            width: 73%;
             z-index: 3;
             position: absolute;
             background-size: cover;
@@ -663,24 +663,33 @@ section {
         @include flex;
         @include flex-align-items(center);
     }
-    &__content {
+    &__container {
         width: 100%;
         max-width: 1500px;
         // margin-top: -50px;
         position: relative;
         z-index: 5;
+    }
+    &__content {
+        margin: 25px 0;
+        padding-right: 90px;
         h1 {
             display: inline-block;
             margin-bottom: 0;
             font-size: 4em;
             font-weight: $weight-extrabold;
         }
+        p {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #303132;
+        }
     }
     &__image {
         position: absolute;
         right: 0;
         top: 0;
-        width: 63%;
+        width: 53%;
         height: 100%;
         background-position: top left !important;
         background-size: cover !important;
@@ -698,14 +707,130 @@ section {
     }
     &:before {
         content: "";
-        width: 517px;
-        height: 100%;
+        width: 500px;
+        height: 130%;
         background: url('../images/red-stripe-big.png');
         position: absolute;
         z-index: 9;
-        background-size: contain !important;
+        background-size: 100% 100%;
         background-repeat: no-repeat;
-        left: 36%;
-        top: -35px;
+        left: 45%;
+        top: -54px;
+        background-position: right top;
+    }
+}
+
+.our-mission {
+    overflow: hidden;
+    .container-max {
+        max-width: 100%;
+        padding: 0;
+    }
+    &__content {
+        padding-right: 10%;
+        margin-left: 50px;
+        p {
+            margin-left: 100px;
+            font-weight: 600;
+            font-style: italic;
+            font-size: 1.4em;
+        }
+        .btn {
+            margin-left: 100px;
+            margin-top: 20px;
+        }
+    }
+}
+
+.content-middle {
+    @include flex;
+    @include flex-align-items(center);
+}
+
+ul.bullet-style {
+    @include flex;
+    @include flex-align-items(center);
+    @include flex-justify-content(space-between);
+    list-style: none;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    li {
+        width: calc(95%/2);
+        margin-bottom: 20px;
+        font-size: 1em;
+        @include flex;
+        @include flex-align-items(center);
+        position: relative;
+        &:before {
+            content: "";
+            width: 15px;
+            height: 28px;
+            position: absolute;
+            left: -30px;
+            top: 0;
+            display: block;
+            background: url(../images/sprite.png) no-repeat;
+            background-position: -213px -7px;
+        }
+        strong {
+            text-transform: uppercase;
+        }
+    }
+}
+
+.goals {
+    margin-top: 50px;
+    margin-bottom: 25px;
+}
+
+.font-weight-bold {
+    h4 {
+        font-weight: 700;
+    }
+}
+
+.hightlight {
+    margin-bottom: 90px;
+    .container {
+        max-width: 1280px;
+        border-top: 1px solid #ddd;
+        padding-top: 50px;
+    }
+    &__left {
+        h4 {
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 50px;
+        }
+    }
+    p {
+        font-weight: 400;
+    }
+}
+
+.follow-us {
+    overflow: hidden;
+    .container {
+        padding: 0;
+        max-width: 1700px;
+        margin-right: 0;
+    }
+    &__wrapper {
+        position: relative;
+        .primary-heading {
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    }
+}
+
+.insta-gram {
+    position: relative;
+    right: -9%;
+    margin-left: 11%;
+    &__item {
+        height: 200px;
     }
 }

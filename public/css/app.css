@@ -18522,17 +18522,8 @@ header .contact-details-wrap .info a i.ic-user {
   left: 30%;
 }
 
-.primary-heading {
-  margin-bottom: 45px;
-}
 .primary-heading h2 {
-  font-size: 3.6em;
-}
-.secondary-heading h2 {
-  font-weight: 900;
-  font-size: 3.6em;
-  color: #cb0000;
-  margin-bottom: 35px;
+  font-size: 4em;
 }
 
 .footer__wrapper {
@@ -20015,7 +20006,7 @@ section .sponsors .sponsor-logo {
   height: 100%;
   left: 0;
   bottom: 0;
-  width: 53%;
+  width: 73%;
   z-index: 3;
   position: absolute;
   background-size: cover;
@@ -20041,11 +20032,15 @@ section .sponsors .sponsor-logo {
   flex-wrap: wrap !important;
   align-items: center;
 }
-.masking-background__content {
+.masking-background__container {
   width: 100%;
   max-width: 1500px;
   position: relative;
   z-index: 5;
+}
+.masking-background__content {
+  margin: 25px 0;
+  padding-right: 90px;
 }
 .masking-background__content h1 {
   display: inline-block;
@@ -20053,11 +20048,16 @@ section .sponsors .sponsor-logo {
   font-size: 4em;
   font-weight: 800;
 }
+.masking-background__content p {
+  font-size: 1.3em;
+  font-weight: 600;
+  color: #303132;
+}
 .masking-background__image {
   position: absolute;
   right: 0;
   top: 0;
-  width: 63%;
+  width: 53%;
   height: 100%;
   background-position: top left !important;
   background-size: cover !important;
@@ -20075,15 +20075,134 @@ section .sponsors .sponsor-logo {
 }
 .masking-background:before {
   content: "";
-  width: 517px;
-  height: 100%;
+  width: 500px;
+  height: 130%;
   background: url("../images/red-stripe-big.png");
   position: absolute;
   z-index: 9;
-  background-size: contain !important;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
-  left: 36%;
-  top: -35px;
+  left: 45%;
+  top: -54px;
+  background-position: right top;
+}
+
+.our-mission {
+  overflow: hidden;
+}
+.our-mission .container-max {
+  max-width: 100%;
+  padding: 0;
+}
+.our-mission__content {
+  padding-right: 10%;
+  margin-left: 50px;
+}
+.our-mission__content p {
+  margin-left: 100px;
+  font-weight: 600;
+  font-style: italic;
+  font-size: 1.4em;
+}
+.our-mission__content .btn {
+  margin-left: 100px;
+  margin-top: 20px;
+}
+
+.content-middle {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center;
+}
+
+ul.bullet-style {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+ul.bullet-style li {
+  width: calc(95%/2);
+  margin-bottom: 20px;
+  font-size: 1em;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center;
+  position: relative;
+}
+ul.bullet-style li:before {
+  content: "";
+  width: 15px;
+  height: 28px;
+  position: absolute;
+  left: -30px;
+  top: 0;
+  display: block;
+  background: url(../images/sprite.png) no-repeat;
+  background-position: -213px -7px;
+}
+ul.bullet-style li strong {
+  text-transform: uppercase;
+}
+
+.goals {
+  margin-top: 50px;
+  margin-bottom: 25px;
+}
+
+.font-weight-bold h4 {
+  font-weight: 700;
+}
+
+.hightlight {
+  margin-bottom: 90px;
+}
+.hightlight .container {
+  max-width: 1280px;
+  border-top: 1px solid #ddd;
+  padding-top: 50px;
+}
+.hightlight__left h4 {
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+.hightlight p {
+  font-weight: 400;
+}
+
+.follow-us {
+  overflow: hidden;
+}
+.follow-us .container {
+  padding: 0;
+  max-width: 1700px;
+  margin-right: 0;
+}
+.follow-us__wrapper {
+  position: relative;
+}
+.follow-us__wrapper .primary-heading {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.insta-gram {
+  position: relative;
+  right: -9%;
+  margin-left: 11%;
+}
+.insta-gram__item {
+  height: 200px;
+}
+
+section .page {
+  overflow: hidden;
 }
 
 .global-featured-slider__top {
