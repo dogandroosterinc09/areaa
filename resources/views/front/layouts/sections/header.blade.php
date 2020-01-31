@@ -31,7 +31,7 @@
                             </div>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="{{ url('contact-us') }}">Membership</a>
+                            <a class="nav-link dropdown-toggle" href="{{ url('executive-board') }}">Membership</a>
                             <div class="dropdown-menu">
                                 <ul class="sub-menu">
                                     <li>
