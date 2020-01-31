@@ -30,7 +30,7 @@
     <div class="banner__thumb-slide">
         <div class="banner__thumb-slide--item">
             <div class="thumb-holder">
-                <a href="#">
+                <a href="#" class="image-background">
                     <img class="target alpha-target" src="{{ url('public/images/banner/hp-banner-img1.jpg') }}">
                     <span>Mem-<br>bership</span>
                 </a>
@@ -38,7 +38,7 @@
         </div>
         <div class="banner__thumb-slide--item">
             <div class="thumb-holder">
-                <a href="#">
+                <a href="#" class="image-background">
                     <img class="target alpha-target" src="{{ url('public/images/banner/hp-banner-img1.jpg') }}">
                     <span>Mem-<br>bership</span>
                 </a>
@@ -46,7 +46,7 @@
         </div>
         <div class="banner__thumb-slide--item">
             <div class="thumb-holder">
-                <a href="#">
+                <a href="#" class="image-background">
                     <img class="target alpha-target" src="{{ url('public/images/banner/hp-banner-img1.jpg') }}">
                     <span>Mem-<br>bership</span>
                 </a>

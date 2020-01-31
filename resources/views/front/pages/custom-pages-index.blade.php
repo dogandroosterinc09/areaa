@@ -12,6 +12,14 @@
         @elseif ($page['slug'] == 'about-us')
             @include('front.pages.custom-page.about-us')
 
+        @elseif ($page['slug'] == 'executive-board')
+            @include('front.pages.custom-page.executive-board')
+
+        @elseif ($page['slug'] == 'delegate-board')
+            @include('front.pages.custom-page.delegate-board')
+
+          
+
         @else
             @include('front.pages.custom-page.default-page')
         @endif

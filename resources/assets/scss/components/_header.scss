@@ -2,7 +2,7 @@
 $header-height:100px;
 $header-scrolling-height:100px;
 $header-background:$color-white;
-$color-site-red: #ab1a2d;
+// $color-site-red: #ab1a2d;
 header {
     position: relative;
     display: block;
@@ -28,8 +28,27 @@ header {
         z-index: 99;
         -webkit-box-shadow: 1px 0 5px 1px rgba(0, 0, 0, .6);
         box-shadow: 1px 0 5px 1px rgba(0, 0, 0, .6);
+        .contact-details-wrap {
+            transform: scale(.8) translate(0, -9px);
+        }
+        .navbar-bar {
+            position: relative;
+            margin: 0px !important;
+        }
+        .logo {
+            margin-top: 0 !important;
+            transform: scale(.7);
+            width: 180px;
+        }
+        .dropdown-menu {
+            padding-top: 12px !important;
+        }
     }
     .main-nagivation-desktop {
+        .logo {
+            display: inline-block;
+            margin-top: 10px;
+        }
         .navbar-bar {
             position: relative;
             margin: 27px 0;
@@ -48,6 +67,33 @@ header {
                         color: $color-black;
                         font: 300 18px $font-primary;
                         text-transform: uppercase;
+                        font-size: 1em;
+                        font-weight: 500;
+                    }
+                    .dropdown-menu {
+                        background: transparent;
+                        padding: 0;
+                        margin-top: 0;
+                        border-radius: 0;
+                        padding-top: 26px;
+                        border: 0 !important;
+                        ul {
+                            li {
+                                padding: 0;
+                                margin: 0;
+                                width: 100%;
+                                a {
+                                    background: $color-secondary;
+                                    text-align: left;
+                                    font-weight: 500 !important;
+                                    font-size: .9em !important;
+                                    color: $color-white;
+                                    &:hover {
+                                        background: $color-darkred;
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -62,12 +108,12 @@ header {
             content: '';
             display: block;
             width: 100%;
-            height: 53px;
+            height: 50px;
             position: absolute;
             top: 0;
             right: -50%;
             z-index: -1;
-            background: $color-site-red;
+            background: $color-secondary;
         }
         .title {
             position: relative;
@@ -78,17 +124,23 @@ header {
             color: $color-white;
             font: bold 18px $font-primary;
             margin-right: -50px;
+            position: absolute;
+            left: 115px;
+            height: 50px;
         }
         .info {
             position: relative;
             display: inline-block;
-            background: $color-site-red;
+            background: $color-secondary;
             padding: 10px 0 10px 50px;
             border-bottom-left-radius: 100px;
+            height: 50px;
             a {
                 color: $color-white;
                 font: 300 18px $font-primary;
                 margin-left: 15px;
+                font-size: 1em;
+                text-decoration: none;
                 i {
                     margin-right: 10px;
                     &.ic-phone {
@@ -134,4 +186,4 @@ header {
 //     header {
 //         position: absolute;
 //     }
-// }
+// }banner-content-desc

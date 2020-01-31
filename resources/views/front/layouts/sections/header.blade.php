@@ -4,7 +4,7 @@
     <div class="main-nagivation-desktop container-max">
         <div class="main-nagivation-desktop__wrapper--row row">
             <div class="col-lg-4">
-                <a href="{{ url('/') }}">
+                <a href="{{ url('/') }}" class="logo">
                     <img src="{{ asset('public/images/header/header-logo.png') }}" alt="logo">
                 </a>
             </div>
@@ -35,7 +35,10 @@
                             <div class="dropdown-menu">
                                 <ul class="sub-menu">
                                     <li>
-                                        <a class="nav-link" href="#"> Sub menu 1</a>
+                                        <a class="nav-link" href="{{url('executive-board')}}"> Executive Board</a>
+                                    </li>
+                                    <li>
+                                        <a class="nav-link" href="{{url('delegate-board')}}"> Delegate Board</a>
                                     </li>
                                 </ul>
                             </div>

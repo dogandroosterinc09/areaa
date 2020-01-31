@@ -195,9 +195,6 @@
                 </div> {{-- end of default-content--row --}}
             </section> {{-- end of default-content --}}
     
-    
-
-
 
 
 

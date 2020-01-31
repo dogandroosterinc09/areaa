@@ -145,7 +145,7 @@ $banner-background-color:#000;
                 }
                 h2 {
                     color: #303132;
-                    font: 900 80px $font-primary;
+                    font: 900 65px $font-primary;
                 }
             }
         }
@@ -188,8 +188,32 @@ $banner-background-color:#000;
             display: block;
             margin-bottom: 28px;
             .thumb-holder {
-                width: 95px;
-                height: 103px;
+                // width: 95px;
+                // height: 103px;
+                width: 90px;
+                height: 90px;
+                overflow: hidden;
+                background-size: cover;
+                border-radius: 100%;
+                position: relative;
+                cursor: pointer;
+                &:before {
+                    width: 100%;
+                    height: 100%;
+                    content: '';
+                    z-index: 9;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    background: url('../images/circle-white.png');
+                }
+                a {
+                    display: block;
+                    height: 100%;
+                    width: 100%;
+                    min-height: inherit;
+                    color: $color-white;
+                }
                 img {
                     width: 100%;
                     height: 100%;
@@ -198,13 +222,18 @@ $banner-background-color:#000;
                     position: absolute;
                     top: 30px;
                     left: 15px;
-                    color: #ffffff;
+                    color: $color-white;
                     font: 900 16px/20px $font-primary;
                     @include transition-all(all 0.3s ease-in-out);
+                    font-weight: 600;
+                    font-size: .9em;
+                    display: block;
+                    text-align: left;
+                    padding-left: 8px;
                 }
                 &:hover {
                     span {
-                        color: #ab1a2d;
+                        color: $color-darkred;
                     }
                 }
             }
@@ -278,7 +307,7 @@ $banner-background-color:#000;
         top: 0;
         width: 63%;
         height: 100%;
-        background-position: top left !important;
+        background-position: left center !important;
         background-size: cover !important;
         z-index: 2;
     }

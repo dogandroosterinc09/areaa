@@ -10,7 +10,7 @@
                     <div class="col-md-10">
                         <h2>Events & Campaigns</h2>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-md-2 content-middle">
                         <a href="#" class="btn btn--secondary">View All</a>
                     </div>
                 </div>
@@ -18,7 +18,7 @@
             <div class="events-camp-slider">
                 <div class="events-camp-slider--item">
                     <a href="#">
-                        <div class="img-holder">
+                        <div class="img-holder image-background">
                             <img src="{{ asset('public/images/events-img1.jpg') }}" alt="Events Image">
                         </div>
                         <div class="title">Leadership Summit <span><i></i></span></div>
@@ -26,7 +26,7 @@
                 </div>
                 <div class="events-camp-slider--item">
                     <a href="#">
-                        <div class="img-holder">
+                        <div class="img-holder image-background">
                             <img src="{{ asset('public/images/events-img2.jpg') }}" alt="Events Image">
                         </div>
                         <div class="title">Regional Retreats <span><i></i></span></div>
@@ -34,7 +34,7 @@
                 </div>
                 <div class="events-camp-slider--item">
                     <a href="#">
-                        <div class="img-holder">
+                        <div class="img-holder image-background">
                             <img src="{{ asset('public/images/events-img3.jpg') }}" alt="Events Image">
                         </div>
                         <div class="title">Global & Luxury Summit <span><i></i></span></div>
@@ -42,7 +42,7 @@
                 </div>
                 <div class="events-camp-slider--item">
                     <a href="#">
-                        <div class="img-holder">
+                        <div class="img-holder image-background">
                             <img src="{{ asset('public/images/events-img4.jpg') }}" alt="Events Image">
                         </div>
                         <div class="title">National Convention <span><i></i></span></div>
@@ -50,7 +50,7 @@
                 </div>
                 <div class="events-camp-slider--item">
                     <a href="#">
-                        <div class="img-holder">
+                        <div class="img-holder image-background">
                             <img src="{{ asset('public/images/events-img1.jpg') }}" alt="Events Image">
                         </div>
                         <div class="title">Leadership Summit <span><i></i></span></div>
@@ -65,13 +65,27 @@
             <div class="container-max">
                 <div class="row">
                     <div class="col-md-7">
-                        <h2>Become a Member</h2>
-                        <div class="content-text">
-                            <p>With over <b class="red-txt">17,000 members</b> in <b class="red-txt">41 chapters</b> across the US and Canada, AREAA is <b>the largest Asian American and Pacific Islander (AAPI) trade organization in North America</b>.</p>
-                            <p>As a member, you’ll receive discounted pricing to all AREAA events, FREE webinar training to help fine-tune your skill sets, and be able to participate in International Trade missions. The benefits don’t stop there; below are more reasons as to why it pays to be an AREAA Member.</p>
-                            <br>
-                            <p><a href="#" class="btn btn--secondary margin-right20">Learn More</a> <a href="#" class="btn btn--primary">Become a Member</a></p>
+
+                        <div class="become-member__content">
+                            <h2>Become a Member</h2>
+                            <div class="content-text">
+                                <div class="become-member__paragraph-top">
+                                    <p>With over <b class="red-txt">17,000 members</b> in <b class="red-txt">41 chapters</b> across the US and Canada, AREAA is <b>the largest Asian American and Pacific Islander (AAPI) trade organization in North America</b>.</p>
+                                </div>
+
+                                <div class="become-member__paragraph-bottom">
+                                    <p>As a member, you’ll receive discounted pricing to all AREAA events, FREE webinar training to help fine-tune your skill sets, and be able to participate in International Trade missions. The benefits don’t stop there; below are more reasons as to why it pays to be an AREAA Member.</p>
+                                <br>
+                                </div>
+
+                                <div class="become-member__button">
+                                    <a href="#" class="btn btn--secondary margin-right20">Learn More</a> 
+                                    <a href="#" class="btn btn--primary">Become a Member</a>
+                                </div>
+                               
+                            </div>
                         </div>
+
                     </div>
                     <div class="col-md-5"></div>
                 </div>
@@ -205,10 +219,10 @@
         <section class="feat-members wrapper margin-both90">
             <div class="container-max">
                 <div class="row">
-                    <div class="col-md-7">
+                    <div class="col-md-6 feat-members__left">
                         <h2>Featured Members</h2>
                     </div>
-                    <div class="col-md-5 padding-top20">
+                    <div class="col-md-6 feat-members__right content-middle">
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                     </div>
                 </div>
@@ -217,7 +231,7 @@
                         <div class="feat-members-slider">
                             <div class="feat-members-slider--item">
                                 <a href="#">
-                                    <div class="image-holder">
+                                    <div class="image-holder image-background">
                                         <img src="{{ asset('public/images/member-img1.jpg') }}" alt="Member Image">
                                     </div>
                                     <div class="desc-txt">
@@ -228,7 +242,7 @@
                             </div>
                             <div class="feat-members-slider--item">
                                 <a href="#">
-                                    <div class="image-holder">
+                                    <div class="image-holder image-background">
                                         <img src="{{ asset('public/images/member-img2.jpg') }}" alt="Member Image">
                                     </div>
                                     <div class="desc-txt">
@@ -239,7 +253,7 @@
                             </div>
                             <div class="feat-members-slider--item">
                                 <a href="#">
-                                    <div class="image-holder">
+                                    <div class="image-holder image-background">
                                         <img src="{{ asset('public/images/member-img3.jpg') }}" alt="Member Image">
                                     </div>
                                     <div class="desc-txt">
@@ -250,7 +264,7 @@
                             </div>
                             <div class="feat-members-slider--item">
                                 <a href="#">
-                                    <div class="image-holder">
+                                    <div class="image-holder image-background">
                                         <img src="{{ asset('public/images/member-img4.jpg') }}" alt="Member Image">
                                     </div>
                                     <div class="desc-txt">
@@ -261,7 +275,7 @@
                             </div>
                             <div class="feat-members-slider--item">
                                 <a href="#">
-                                    <div class="image-holder">
+                                    <div class="image-holder image-background">
                                         <img src="{{ asset('public/images/member-img5.jpg') }}" alt="Member Image">
                                     </div>
                                     <div class="desc-txt">
@@ -272,7 +286,7 @@
                             </div>
                             <div class="feat-members-slider--item">
                                 <a href="#">
-                                    <div class="image-holder">
+                                    <div class="image-holder image-background">
                                         <img src="{{ asset('public/images/member-img1.jpg') }}" alt="Member Image">
                                     </div>
                                     <div class="desc-txt">
