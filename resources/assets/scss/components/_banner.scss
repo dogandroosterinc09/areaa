@@ -213,6 +213,11 @@ $banner-background-color:#000;
                     width: 100%;
                     min-height: inherit;
                     color: $color-white;
+                    &:before {
+                        @include transition(.5s);
+                        opacity: 0;
+                        visibility: hidden;
+                    }
                 }
                 img {
                     width: 100%;
@@ -230,10 +235,25 @@ $banner-background-color:#000;
                     display: block;
                     text-align: left;
                     padding-left: 8px;
+                    z-index: 3;
                 }
                 &:hover {
+                    a {
+                        &:before {
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            background: rgba(0, 0, 0, .6);
+                            content: '';
+                            left: 0;
+                            top: 0;
+                            z-index: 2;
+                            opacity: 1;
+                            visibility: visible;
+                        }
+                    }
                     span {
-                        color: $color-darkred;
+                        color: $color-white;
                     }
                 }
             }

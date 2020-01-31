@@ -17,7 +17,9 @@
 
         @elseif ($page['slug'] == 'delegate-board')
             @include('front.pages.custom-page.delegate-board')
-
+        
+        @elseif ($page['slug'] == 'board-detail')
+            @include('front.pages.custom-page.board-detail')
           
 
         @else

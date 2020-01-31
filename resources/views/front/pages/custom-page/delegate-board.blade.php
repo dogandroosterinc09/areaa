@@ -1,4 +1,4 @@
-<section class="page page--about-us">
+<section class="page page--board">
     @include('front.layouts.sections.header')
     {{-- @include('front.pages.custom-page.sections.banner') --}}
 
@@ -36,7 +36,7 @@
 
                          {{-- board-thumbnail --}}
                         <div class="board-thumbnail__item">
-                            <a href="#">
+                            <a href="{{url('board-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/no-image.jpg') }}" alt="Member Image">
                                 </div>
@@ -51,7 +51,7 @@
 
                           {{-- board-thumbnail --}}
                           <div class="board-thumbnail__item">
-                            <a href="#">
+                            <a href="{{url('board-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/delagate-Bryan-Ahn.jpg') }}" alt="Member Image">
                                 </div>
@@ -66,7 +66,7 @@
 
                           {{-- board-thumbnail --}}
                           <div class="board-thumbnail__item">
-                            <a href="#">
+                            <a href="{{url('board-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/delagate-Brian-Almero.jpg') }}" alt="Member Image">
                                 </div>
@@ -81,7 +81,7 @@
                         
                           {{-- board-thumbnail --}}
                           <div class="board-thumbnail__item">
-                            <a href="#">
+                            <a href="{{url('board-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/deleg-Keith-Andrews.jpg') }}" alt="Member Image">
                                 </div>
@@ -98,7 +98,7 @@
 
                            {{-- board-thumbnail --}}
                            <div class="board-thumbnail__item">
-                            <a href="#">
+                            <a href="{{url('board-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/deleg-LC-Beh.jpg') }}" alt="Member Image">
                                 </div>
@@ -112,7 +112,7 @@
 
                         {{-- board-thumbnail --}}
                         <div class="board-thumbnail__item">
-                            <a href="#">
+                            <a href="{{url('board-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/deleg-JC-Caceres.jpg') }}" alt="Member Image">
                                 </div>
@@ -127,7 +127,7 @@
 
                         {{-- board-thumbnail --}}
                         <div class="board-thumbnail__item">
-                            <a href="#">
+                            <a href="{{url('board-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/deleg-Kyle-Chan.jpg') }}" alt="Member Image">
                                 </div>
@@ -142,7 +142,7 @@
 
                         {{-- board-thumbnail --}}
                         <div class="board-thumbnail__item">
-                            <a href="#">
+                            <a href="{{url('board-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/deleg-Lynman-Chao.jpg') }}" alt="Member Image">
                                 </div>
@@ -158,7 +158,7 @@
 
                         {{-- board-thumbnail --}}
                         <div class="board-thumbnail__item">
-                            <a href="#">
+                            <a href="{{url('board-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/deleg-Stephen-Chow.jpg') }}" alt="Member Image">
                                 </div>
@@ -174,7 +174,7 @@
                              
                           {{-- board-thumbnail --}}
                           <div class="board-thumbnail__item">
-                            <a href="#">
+                            <a href="{{url('board-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/deleg-Gregg-Christensen.jpg') }}" alt="Member Image">
                                 </div>
@@ -192,7 +192,7 @@
 
                                {{-- board-thumbnail --}}
                                <div class="board-thumbnail__item">
-                                <a href="#">
+                                <a href="{{url('board-detail')}}">
                                     <div class="board-thumbnail__image image-background">
                                         <img src="{{ asset('public/images/exec-DickLee.jpg') }}" alt="Member Image">
                                     </div>

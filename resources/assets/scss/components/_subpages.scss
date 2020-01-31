@@ -1,5 +1,22 @@
 section {
-    .page {
+    &.page {
         overflow: hidden;
+        &--board-detail {
+            .sub-banner__image {
+                width: 400px;
+                height: 400px;
+                position: absolute;
+                z-index: 9;
+                border-radius: 100%;
+                right: 10%;
+            }
+            .sub-banner__wrapper:before {
+                display: none;
+            }
+            .sub-banner:before {
+                left: inherit;
+                right: 10%;
+            }
+        }
     }
 }
