@@ -1025,3 +1025,141 @@
             }
         }
     }
+    
+    .contact-details {
+        display: block;
+        &__item {
+            position: relative;
+            display: block;
+            color: $color-black;
+            font: 300 18px $font-primary;
+            margin-bottom: 6px;
+            margin-bottom: 18px;
+            a {
+                color: $color-black;
+            }
+            a,
+            span {
+                display: inline-block;
+                vertical-align: middle;
+                max-width: 250px;
+                font-size: .9em;
+                font-weight: 500;
+            }
+            i {
+                margin-right: 10px;
+                &.loc {
+                    display: inline-block;
+                    vertical-align: middle;
+                    width: 25px;
+                    height: 37px;
+                    background: url("../images/sprite.png") no-repeat;
+                    background-position: -97px -8px;
+                }
+                &.tel {
+                    display: inline-block;
+                    vertical-align: middle;
+                    width: 25px;
+                    height: 21px;
+                    background: url("../images/sprite.png") no-repeat;
+                    background-position: -240px -8px;
+                }
+                &.mail {
+                    display: inline-block;
+                    vertical-align: middle;
+                    width: 25px;
+                    height: 19px;
+                    background: url("../images/sprite.png") no-repeat;
+                    background-position: -119px -51px;
+                }
+            }
+        }
+    }
+    
+    .contact-section {
+        // padding: 100px 0;
+        margin-bottom: 50px;
+        .container {
+            max-width: 100%;
+            padding: 0;
+        }
+        &__item {
+            padding-top: 80px;
+        }
+        &__left {
+            padding-right: 5%;
+            padding-left: 12%;
+            &.curl-tail-side {
+                &:before {
+                    background: #fff;
+                    position: absolute;
+                    width: 95%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    content: '';
+                }
+            }
+        }
+        &__right {
+            padding-right: 11%;
+            padding-bottom: 5%;
+            padding-left: 5%;
+        }
+    }
+    
+    .contact-details-content {
+        position: relative;
+        h1 {
+            font-weight: 800;
+            font-size: 4em;
+            font-family: $font-primary;
+        }
+        h3 {
+            margin-bottom: 0;
+            font-size: 2.2em;
+        }
+        p {
+            font-size: 1em;
+        }
+        .contact-details {
+            margin-top: 65px;
+        }
+    }
+    
+    .paper-background {
+        background: url("../images/white-paper-texture.jpg") no-repeat;
+        background-size: cover;
+    }
+    
+    .curl-tail-bottom {
+        position: relative;
+        // .row {
+        //     >div {
+        //         padding: 100px 0;
+        //     }
+        // }
+        &:after {
+            width: 100%;
+            height: 43px;
+            content: '';
+            background: url("../images/curl-tail.png") no-repeat;
+            position: absolute;
+            left: 0;
+            bottom: -1px;
+            display: block;
+            z-index: 3;
+        }
+    }
+    
+    .curl-tail-side {
+        &:after {
+            width: 100px;
+            position: absolute;
+            content: '';
+            height: 100%;
+            background: url("../images/curl-tail-side.png") no-repeat;
+            top: 0;
+            right: -45px;
+        }
+    }
