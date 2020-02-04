@@ -54,7 +54,7 @@
                             </div>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="{{ url('about-us') }}">Events</a>
+                            <a class="nav-link dropdown-toggle" href="{{ url('events') }}">Events</a>
                             <div class="dropdown-menu">
                                 <ul class="sub-menu">
                                     <li>

@@ -20,6 +20,9 @@
         
         @elseif ($page['slug'] == 'board-detail')
             @include('front.pages.custom-page.board-detail')
+
+        @elseif ($page['slug'] == 'events')
+            @include('front.pages.custom-page.events')
           
 
         @else
