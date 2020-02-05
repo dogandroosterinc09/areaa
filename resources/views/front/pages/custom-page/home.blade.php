@@ -197,7 +197,7 @@
         {{-- End of Growing Opportunities --}}
 
         {{-- Start  --}}
-        <section class="chapters wrapper image-background margin-top90">
+        {{-- <section class="chapters wrapper image-background margin-top90">
             <img src="{{ asset('public/images/map-bg.jpg') }}" alt="Chapters BG">
             <div class="container-max">
                 <div class="row">
@@ -212,8 +212,38 @@
                     </div>
                 </div>
             </div>
+        </section> --}}
+        {{-- End of Chapters --}}
+
+
+          {{-- Start  --}}
+          <section class="chapters curl-tail-both">
+            {{-- <img src="{{ asset('public/images/about-banner.jpg') }}" alt="Chapters BG"> --}}
+
+            <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3355.5879424825084!2d-117.19442028450332!3d32.7501305926623!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80deaadf44e40d1b%3A0x22d5d30ead4c5d1e!2s3990%20Old%20Town%20Ave%20C304%2C%20San%20Diego%2C%20CA%2092110%2C%20USA!5e0!3m2!1sen!2sph!4v1580885034023!5m2!1sen!2sph" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+            </div>
+            
+            <div class="container-max">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="map-content">
+                            <h2>Chapters</h2>
+                            <div class="btn-wrap">
+                                <a href="#" class="btn btn--secondary">View All Chapters</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                      
+                    </div>
+                </div>
+            </div>
         </section>
         {{-- End of Chapters --}}
+
+
+
 
         {{-- Start  --}}
         <section class="feat-members wrapper margin-both90">
@@ -312,7 +342,16 @@
                 </div>
             </div>
             <div class="sponsor-logo">
-                <img src="{{ asset('public/images/sponsors-logos.png') }}" alt="Sponsors Image">
+                <div class="sponsor-logo__slide">
+                    <div class="sponsor-logo__items"><img src="{{ asset('public/images/logo1.png') }}" alt="Sponsors Image"></div>
+                    <div class="sponsor-logo__items"><img src="{{ asset('public/images/logo2.png') }}" alt="Sponsors Image"></div>
+                    <div class="sponsor-logo__items"><img src="{{ asset('public/images/logo3.png') }}" alt="Sponsors Image"></div>
+                    <div class="sponsor-logo__items"><img src="{{ asset('public/images/logo4.png') }}" alt="Sponsors Image"></div>
+                    <div class="sponsor-logo__items"><img src="{{ asset('public/images/logo5.png') }}" alt="Sponsors Image"></div>
+                    <div class="sponsor-logo__items"><img src="{{ asset('public/images/logo1.png') }}" alt="Sponsors Image"></div>
+                    <div class="sponsor-logo__items"><img src="{{ asset('public/images/logo1.png') }}" alt="Sponsors Image"></div>
+                </div>
+                {{-- <img src="{{ asset('public/images/sponsors-logos.png') }}" alt="Sponsors Image"> --}}
             </div>
         </section>
         {{-- End of Sponsors --}}
