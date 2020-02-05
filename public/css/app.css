@@ -18096,6 +18096,30 @@ img.img-responsive {
   color: #841523;
   background: transparent;
 }
+.btn--third {
+  height: 22px;
+  width: 34px;
+  padding: 0;
+  background: url("../images/sprite.png") no-repeat;
+  background-position: -75px -182px;
+  padding: 0;
+}
+.btn--back {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center;
+  padding: 0;
+  border: 0;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #ab1a2d;
+}
+.btn--back i {
+  -webkit-transform: rotate(180deg) scale(0.7);
+  transform: rotate(180deg) scale(0.7);
+  margin-right: 10px;
+}
 
 header {
   position: relative;
@@ -20504,6 +20528,11 @@ ul.bullet-style li strong {
   max-width: 40%;
   min-height: 300px;
 }
+.events-thumbnail__image a {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
 .events-thumbnail__details {
   flex: 0 0 52%;
   max-width: 52%;
@@ -20512,6 +20541,10 @@ ul.bullet-style li strong {
 .events-thumbnail__details h5 {
   font-size: 2em;
   font-weight: bold;
+}
+.events-thumbnail__details > a {
+  text-decoration: none;
+  color: #000;
 }
 .events-thumbnail__time {
   color: #ab1a2d;
@@ -20553,6 +20586,151 @@ ul.bullet-style li strong {
   color: #b9b1b2;
 }
 
+.events-next-preview {
+  border: 1px solid #d4d4d4;
+  padding: 5px;
+}
+.events-next-preview__month {
+  font-weight: bold;
+}
+.events-next-preview__month:after {
+  content: "|";
+  margin-right: 15px;
+  margin-left: 15px;
+  font-weight: normal;
+  color: #7f7f7f;
+}
+.events-next-preview__time {
+  color: #7f7f7f;
+  font-weight: 600;
+}
+
+.event-details {
+  padding-right: 15%;
+}
+.event-details__image {
+  width: 100%;
+  height: 400px;
+  background-position: top center !important;
+}
+.event-details__image img {
+  width: 100%;
+}
+.event-details__description {
+  font-size: 1em;
+  margin-top: 35px;
+}
+.event-details__description h3 {
+  font-size: 1.4em;
+  font-weight: 700;
+}
+.event-details__description p {
+  font-size: 1em;
+}
+.event-details__email h5 {
+  font-weight: 600;
+  font-size: 1em;
+}
+.event-details__email a {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center;
+  font-weight: 600;
+  text-decoration: none;
+  color: #000;
+}
+.event-details__email a i {
+  width: 35px;
+  height: 35px;
+  background: url("../images/sprite.png") no-repeat;
+  display: inline-block;
+  margin-right: 10px;
+  background-position: -17px -175px;
+}
+
+.events-next-preview {
+  margin-bottom: 50px;
+  margin-top: 40px;
+}
+.events-next-preview__image {
+  min-height: 120px;
+}
+.events-next-preview__details h4 {
+  font-size: 1em;
+  color: #ab1a2d;
+  font-weight: 600;
+}
+.events-next-preview__details h3 {
+  font-weight: bold;
+}
+.events-next-preview__details .btn {
+  position: absolute;
+  right: 5px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.events-next-preview__date-time {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center;
+}
+
+.register-info {
+  margin-bottom: 25px;
+}
+.register-info h4 {
+  font-weight: 700;
+  margin-bottom: 20px;
+  font-size: 1.3em;
+}
+.register-info__list {
+  border: 1px solid #d4d4d4;
+  padding: 25px;
+}
+.register-info__list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.register-info__list ul li {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  border-bottom: 1px solid #d4d4d4;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+}
+.register-info__list ul li:last-child {
+  border-bottom: 0;
+}
+.register-info__list ul li:nth-child(3) span:last-child {
+  font-weight: 500;
+}
+.register-info__list ul li span {
+  font-weight: bold;
+  width: 50%;
+}
+.register-info__list ul li span:first-child {
+  width: 30%;
+}
+.register-info__list ul li span > strong {
+  color: #ab1a2d;
+}
+.register-info__list ul li span:last-child strong {
+  display: block;
+  color: #000;
+}
+.register-info__button .btn {
+  width: 100%;
+}
+
+.event-single-map {
+  height: 445px;
+}
+.event-single-map iframe {
+  height: 100%;
+}
+
 section.page {
   overflow: hidden;
 }
@@ -20574,6 +20752,14 @@ section.page--board-detail .sub-banner:before {
 section.page header {
   border-bottom: 1px solid #f4f4f4;
   box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.1);
+}
+section.page--events-detail .sub-banner:before,
+section.page--events-detail .sub-banner__wrapper:before,
+section.page--events-detail .sub-banner__image.image-background {
+  display: none;
+}
+section.page--events-detail .sub-banner {
+  height: 310px;
 }
 
 .global-featured-slider__top {

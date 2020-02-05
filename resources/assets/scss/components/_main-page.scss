@@ -1187,6 +1187,11 @@
             flex: 0 0 40%;
             max-width: 40%;
             min-height: 300px;
+            a {
+                display: block;
+                height: 100%;
+                width: 100%;
+            }
         }
         &__details {
             flex: 0 0 52%;
@@ -1195,6 +1200,10 @@
             h5 {
                 font-size: 2em;
                 font-weight: bold;
+            }
+            >a {
+                text-decoration: none;
+                color: $color-third;
             }
         }
         &__time {
@@ -1236,5 +1245,159 @@
                 border: 1px solid $color-gray;
                 color: $color-gray;
             }
+        }
+    }
+    
+    .events-next-preview {
+        border: 1px solid $color-lightgray2;
+        padding: 5px;
+        &__month {
+            font-weight: bold;
+            &:after {
+                content: '|';
+                margin-right: 15px;
+                margin-left: 15px;
+                font-weight: normal;
+                color: $color-gray2;
+            }
+        }
+        &__time {
+            color: $color-gray2;
+            font-weight: 600;
+        }
+    }
+    
+    .event-details {
+        padding-right: 15%;
+        &__image {
+            width: 100%;
+            height: 400px;
+            background-position: top center !important;
+            img {
+                width: 100%;
+            }
+        }
+        &__description {
+            font-size: 1em;
+            margin-top: 35px;
+            h3 {
+                font-size: 1.4em;
+                font-weight: 700;
+            }
+            p {
+                font-size: 1em;
+            }
+        }
+        &__email {
+            h5 {
+                font-weight: 600;
+                font-size: 1em;
+            }
+            a {
+                @include flex;
+                @include flex-align-items(center);
+                font-weight: 600;
+                text-decoration: none;
+                color: $color-black;
+                i {
+                    width: 35px;
+                    height: 35px;
+                    background: $sprite-all;
+                    display: inline-block;
+                    margin-right: 10px;
+                    background-position: -17px -175px;
+                }
+            }
+        }
+    }
+    
+    .events-next-preview {
+        margin-bottom: 50px;
+        margin-top: 40px;
+        &__image {
+            min-height: 120px;
+        }
+        &__details {
+            h4 {
+                font-size: 1em;
+                color: $color-secondary;
+                font-weight: 600;
+            }
+            h3 {
+                font-weight: bold;
+            }
+            .btn {
+                position: absolute;
+                right: 5px;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+            }
+        }
+        &__date-time {
+            @include flex;
+            align-items: center;
+        }
+    }
+    
+    .register-info {
+        margin-bottom: 25px;
+        h4 {
+            font-weight: 700;
+            margin-bottom: 20px;
+            font-size: 1.3em;
+        }
+        &__list {
+            border: 1px solid $color-lightgray2;
+            padding: 25px;
+            ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                li {
+                    @include flex;
+                    border-bottom: 1px solid $color-lightgray2;
+                    margin-bottom: 15px;
+                    padding-bottom: 15px;
+                    &:last-child {
+                        border-bottom: 0;
+                    }
+                    &:nth-child(3) {
+                        span {
+                            &:last-child {
+                                font-weight: 500;
+                            }
+                        }
+                    }
+                    span {
+                        font-weight: bold;
+                        width: 50%;
+                        &:first-child {
+                            width: 30%;
+                        }
+                        >strong {
+                            color: $color-secondary;
+                        }
+                        &:last-child {
+                            strong {
+                                display: block;
+                                color: $color-black;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &__button {
+            .btn {
+                width: 100%;
+            }
+        }
+    }
+    
+    .event-single-map {
+        height: 445px;
+        iframe {
+            height: 100%;
         }
     }

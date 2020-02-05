@@ -46,4 +46,28 @@
             background: transparent;
         }
     }
+    &--third {
+        height: 22px;
+        width: 34px;
+        padding: 0;
+        background: $sprite-all;
+        background-position: -75px -182px;
+        padding: 0;
+    }
+    &--back {
+        @include flex;
+        @include flex-align-items(center);
+        padding: 0;
+        border: 0;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: $color-secondary;
+        i {
+            -webkit-transform: rotate(180deg) scale(.7);
+            -ms-transform: rotate(180deg) scale(.7);
+            transform: rotate(180deg) scale(.7);
+            margin-right: 10px;
+        }
+    }
 }

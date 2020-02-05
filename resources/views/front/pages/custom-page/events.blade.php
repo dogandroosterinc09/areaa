@@ -10,7 +10,7 @@
                 <div class="container-max sub-banner__content">
                     <div class="row">
                         <div class="col-md-12 sub-banner__content">
-                            <h3>Natiional</h3>
+                            <h3>National</h3>
                             <h1>Events</h1>
                         </div>
                     </div>
@@ -43,18 +43,22 @@
                                     to
                                     <div class="events-thumbnail__day events-thumbnail__day--end"> 29</div>
                                 </div>
-                                <div class="events-thumbnail__image image-background">
-                                    <img src="{{ asset('public/images/no-image.jpg') }}" alt="Member Image">
+                                <div class="events-thumbnail__image">
+                                    <a href="{{url('events-detail')}}" class="image-background">
+                                        <img src="{{ asset('public/images/executive-banner.jpg') }}" alt="Member Image">
+                                    </a>
                                 </div>
                                 <div class="events-thumbnail__details">
-                                    <h5>2020 Global Luxury Summit </h5>
+                                    <a href="{{url('events-detail')}}">
+                                         <h5>2020 Global Luxury Summit </h5>
+                                    </a>
                                     <div class="events-thumbnail__time">7:00pm - 9:00pm</div>
                                     <div class="events-thumbnail__location"><strong>Four Seasons Chicago</strong>, 120 E Delaware Pl, Chicago, CA 60611 United States</div>
                                     <div class="events-thumbnail__paragraph">
                                         <p> Lorem ipsum dolor sit amet, dolor at ligula faucibus imperdiet libero, phasellus nulla sollicitudin in, libero nec venenatis, luctus pretium imperdiet volutpat sit atque. Porttitor ligula vitae ultrices eleifend, felis suscipit iaculis turpis</p>
                                     </div>
                                     <div class="events-thumbnail__buttons">
-                                        <a href="#" class="btn btn--secondary"> View Details</a>
+                                        <a href="{{url('events-detail')}}" class="btn btn--secondary"> View Details</a>
                                     </div>
                                 </div>
                         </div>
@@ -70,18 +74,22 @@
                                 to
                                 <div class="events-thumbnail__day events-thumbnail__day--end"> 29</div>
                             </div>
-                            <div class="events-thumbnail__image image-background">
-                                <img src="{{ asset('public/images/no-image.jpg') }}" alt="Member Image">
+                            <div class="events-thumbnail__image">
+                                <a href="{{url('events-detail')}}" class="image-background">
+                                    <img src="{{ asset('public/images/no-image.jpg') }}" alt="Member Image">
+                                </a>
                             </div>
                             <div class="events-thumbnail__details">
-                                <h5>2020 Global Luxury Summit </h5>
+                                <a href="{{url('events-detail')}}">
+                                    <h5>2020 Global Luxury Summit </h5>
+                               </a>
                                 <div class="events-thumbnail__time">7:00pm - 9:00pm</div>
                                 <div class="events-thumbnail__location"><strong>Four Seasons Chicago</strong>, 120 E Delaware Pl, Chicago, CA 60611 United States</div>
                                 <div class="events-thumbnail__paragraph">
                                     <p> Lorem ipsum dolor sit amet, dolor at ligula faucibus imperdiet libero, phasellus nulla sollicitudin in, libero nec venenatis, luctus pretium imperdiet volutpat sit atque. Porttitor ligula vitae ultrices eleifend, felis suscipit iaculis turpis</p>
                                 </div>
                                 <div class="events-thumbnail__buttons">
-                                    <a href="#" class="btn btn--secondary"> View Details</a>
+                                    <a href="{{url('events-detail')}}" class="btn btn--secondary"> View Details</a>
                                 </div>
                             </div>
                         </div>
