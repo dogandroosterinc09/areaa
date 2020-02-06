@@ -1,0 +1,9 @@
+@media only screen and (max-width:1024px) {
+    header {
+        min-height: 75px;
+    }
+    .main-nagivation-mobile__wrapper.container {
+        max-width: 100%;
+        padding: 0;
+    }
+}

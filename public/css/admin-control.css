@@ -1,0 +1,134 @@
+div#login-container {
+  /* background: #f99; */
+  max-width: 352px;
+  width: 100%;
+  margin: auto;
+  left: 0;
+  right: 0;
+  background: transparent;
+  position: inherit;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+}
+div#login-container span.input-group-addon {
+  background: transparent;
+  color: #fff;
+}
+div#login-container .form-horizontal.form-bordered .form-group {
+  border: 0;
+  padding: 15px 0;
+}
+div#login-container .form-group div iframe {
+  width: 100% !important;
+  /* background: #fff; */
+  text-align: center;
+}
+div#login-container .form-group div iframe div#rc-anchor-container {
+  border: 0 !important;
+  width: 100%;
+}
+div#login-container span.input-group-addon {
+  position: absolute;
+  right: 0;
+  top: 8px;
+}
+div#login-container label.switch.switch-primary {
+  /* background: #f99; */
+  margin: 12px auto;
+  width: 65px;
+  text-align: center;
+  margin: 15px auto;
+  /* float: none; */
+  display: block;
+}
+div#login-container .g-recaptcha {
+  text-align: center;
+  background: #fff !important;
+}
+div#login-container .g-recaptcha > div {
+  margin: 0 !important;
+  width: 100% !important;
+}
+
+.login-wrapper {
+  position: absolute;
+  height: 100% !important;
+  width: 100% !important;
+  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  background-size: cover !important;
+  background-position: center !important;
+}
+.login-wrapper .form-group .input-group {
+  display: block;
+}
+.login-wrapper .form-group .input-group .form-control {
+  background: transparent;
+  border-bottom: 3px solid #ab1a2d !important;
+  color: #fff !important;
+  border-radius: 0;
+}
+.login-wrapper button.btn.btn-sm.btn-primary {
+  background: #ab1a2d;
+  border: 0;
+  display: block;
+  width: 100%;
+  padding: 12px;
+  font-weight: bold;
+  font-size: 1.2em;
+  transition: all 0.3s ease;
+}
+.login-wrapper button.btn.btn-sm.btn-primary:hover {
+  background: #870717;
+}
+.login-wrapper .block {
+  background: transparent !important;
+}
+.login-wrapper .block div {
+  background: transparent !important;
+}
+.login-wrapper #login-container .login-title {
+  background: transparent;
+  padding: 0;
+}
+.login-wrapper #login-container .login-title small {
+  font-size: 12px;
+}
+.login-wrapper:after {
+  content: "";
+  width: 100%;
+  position: absolute;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+.login-wrapper .copyright a {
+  color: #fff;
+  font-size: 0.9em;
+  display: block;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+}
+.login-wrapper .switch-primary span {
+  background: #868686;
+  border: 0;
+}
+.login-wrapper .switch-primary input:checked + span {
+  background: #ab1a2d;
+}
+.login-wrapper .has-error .help-block {
+  color: #fff;
+  display: block;
+  text-align: center;
+  font-size: 0.9em;
+}
+.login-wrapper .rc-anchor-normal {
+  width: 100% !important;
+}
+.login-wrapper .rc-anchor-light.rc-anchor-normal {
+  width: 100% !important;
+  border-radius: 0 !important;
+}

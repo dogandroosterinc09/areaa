@@ -75,6 +75,12 @@ header {
                 &>li {
                     position: relative;
                     display: inline-block;
+                    &:focus {
+                        .dropdown-menu {
+                            visibility: visible;
+                            opacity: 1;
+                        }
+                    }
                     &>a {
                         color: $color-black;
                         font: 300 18px $font-primary;

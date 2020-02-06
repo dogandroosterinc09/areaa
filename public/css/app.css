@@ -18193,6 +18193,10 @@ header .main-nagivation-desktop .navbar-bar ul > li {
   position: relative;
   display: inline-block;
 }
+header .main-nagivation-desktop .navbar-bar ul > li:focus .dropdown-menu {
+  visibility: visible;
+  opacity: 1;
+}
 header .main-nagivation-desktop .navbar-bar ul > li > a {
   color: #000;
   font: 300 18px "Open Sans", sans-serif;
@@ -19024,7 +19028,7 @@ header .contact-details-wrap .info a i.ic-user {
 /* MOBILE HEADER */
 .btn--close-menu {
   position: absolute;
-  background: #f00;
+  background: #ab1a2d;
   border-radius: 0;
   -moz-border-radius: 0;
   right: 0;
@@ -19040,6 +19044,30 @@ header .contact-details-wrap .info a i.ic-user {
 
 .main-nagivation-mobile {
   display: none;
+  width: 100%;
+}
+.main-nagivation-mobile .mobile-logo {
+  position: absolute;
+  width: 265px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 0px;
+  height: 55px;
+}
+.main-nagivation-mobile .mobile-logo a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+  -webkit-transform: inherit;
+          transform: inherit;
+  text-align: center;
+}
+.main-nagivation-mobile .mobile-logo a img {
+  height: 100%;
+  width: auto;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -19056,7 +19084,7 @@ header .contact-details-wrap .info a i.ic-user {
   width: 100%;
   padding: 6px 10px;
   z-index: 99;
-  background: #f00;
+  background: #fff;
   font-size: 0;
   /* MEDIA & RESPONSIVE CSS */
   /* END */
@@ -19076,7 +19104,7 @@ header .contact-details-wrap .info a i.ic-user {
   .mobile-header__wrapper--item .mob-burger-menu div {
     width: 32px;
     height: 5px;
-    background-color: #fff;
+    background-color: #303132;
     margin: 6px 0;
     transition: 0.4s;
   }
@@ -19085,7 +19113,7 @@ header .contact-details-wrap .info a i.ic-user {
     top: 0;
     left: -300px;
     display: block;
-    background: #f00;
+    background: #fff;
     z-index: 9;
     width: 260px;
     height: 100%;
@@ -19093,6 +19121,7 @@ header .contact-details-wrap .info a i.ic-user {
     transition: all 0.5s ease;
     z-index: 999;
     overflow-y: scroll;
+    box-shadow: 2px 0 5px 1px rgba(0, 0, 0, 0.2);
   }
   .mobile-header__wrapper--item .mob-nav-menu ul {
     position: relative;
@@ -19108,20 +19137,20 @@ header .contact-details-wrap .info a i.ic-user {
     font-family: arial;
   }
   .mobile-header__wrapper--item .mob-nav-menu ul > li h6 {
-    color: #fff;
+    color: #303132;
     font-weight: bold;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid #303132;
     padding-bottom: 10px;
   }
   .mobile-header__wrapper--item .mob-nav-menu ul > li a {
     padding: 10px 0 !important;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid #303132;
   }
   .mobile-header__wrapper--item .mob-nav-menu ul > li.nav-item {
     position: relative;
   }
   .mobile-header__wrapper--item .mob-nav-menu ul > li.nav-item .drop-menu-elem {
-    background: #f00;
+    background: #ab1a2d;
     display: block;
     position: absolute;
     right: 0;
@@ -19163,7 +19192,7 @@ header .contact-details-wrap .info a i.ic-user {
     height: 22px;
     padding: 2px !important;
     text-align: center;
-    background: #f00;
+    background: #ab1a2d;
   }
   .mobile-header__wrapper--item .mob-nav-menu ul > li.nav-item .icon-button i {
     color: #fff;
@@ -19178,16 +19207,16 @@ header .contact-details-wrap .info a i.ic-user {
     display: none !important;
   }
   .mobile-header__wrapper--item .mob-nav-menu ul > li > a {
-    color: #fff;
+    color: #303132;
     text-transform: uppercase;
     font-size: 14px;
     font-weight: normal;
-    font-family: #f00;
+    font-family: #303132;
     padding: 5px 0;
     transition: all 0.5s ease;
   }
   .mobile-header__wrapper--item .mob-nav-menu ul > li > a > i {
-    color: #fff;
+    color: #303132;
     font-weight: bold;
     margin-right: 5px;
     font-size: 1em;
@@ -19204,7 +19233,7 @@ header .contact-details-wrap .info a i.ic-user {
     top: 51px;
     left: -300px;
     display: block;
-    background: #f00;
+    background: #fff;
     z-index: 9;
     width: 260px;
     height: 100%;
@@ -19220,7 +19249,7 @@ header .contact-details-wrap .info a i.ic-user {
     margin: 10px 0;
   }
   .mobile-header__wrapper--item .mob-sub-menu .sub-menu > li > a {
-    color: #fff;
+    color: #303132;
     text-transform: uppercase;
     font-size: 14px;
     font-weight: normal;
@@ -19232,7 +19261,7 @@ header .contact-details-wrap .info a i.ic-user {
     padding: 10px;
   }
   .mobile-header__wrapper--item .mob-sub-menu a.back-btn {
-    color: #fff;
+    color: #303132;
     font-size: 14px;
     text-transform: uppercase;
   }
@@ -19249,7 +19278,7 @@ header .contact-details-wrap .info a i.ic-user {
     text-align: center;
   }
   .mobile-header__wrapper--item .mob-email a {
-    color: #fff;
+    color: #303132;
     font-size: 25px;
   }
   .mobile-header__wrapper--item .mob-phone {
@@ -19259,7 +19288,7 @@ header .contact-details-wrap .info a i.ic-user {
     margin-left: 30px;
   }
   .mobile-header__wrapper--item .mob-phone a {
-    color: #fff;
+    color: #303132;
     font-size: 25px;
     margin-left: 10px;
   }
@@ -19503,7 +19532,7 @@ section.events-camp .events-camp-slider--item a {
 section.events-camp .events-camp-slider--item a .img-holder {
   position: relative;
   display: block;
-  height: 350px;
+  height: 300px;
   width: 100%;
   background-size: cover !important;
 }
@@ -19556,6 +19585,10 @@ section.events-camp .events-camp-slider .slick-prev {
   left: 32%;
   cursor: pointer;
   z-index: 9;
+  opacity: 0.4;
+}
+section.events-camp .events-camp-slider .slick-prev:hover {
+  opacity: 1;
 }
 section.events-camp .events-camp-slider .slick-prev::before {
   display: none;
@@ -19572,6 +19605,10 @@ section.events-camp .events-camp-slider .slick-next {
   right: 54%;
   cursor: pointer;
   z-index: 9;
+  opacity: 0.4;
+}
+section.events-camp .events-camp-slider .slick-next:hover {
+  opacity: 1;
 }
 section.events-camp .events-camp-slider .slick-next::before {
   display: none;
@@ -20503,6 +20540,10 @@ ul.bullet-style li strong {
   padding-bottom: 5%;
   padding-left: 5%;
 }
+.contact-section__right h4 {
+  font-size: 1em;
+  font-weight: 600;
+}
 
 .contact-details-content {
   position: relative;
@@ -20798,6 +20839,13 @@ ul.bullet-style li strong {
   height: 100%;
 }
 
+.login-mask {
+  margin: 100px 0;
+}
+.login-mask .masking-background__content {
+  width: 85%;
+}
+
 section.page {
   overflow: hidden;
 }
@@ -20827,6 +20875,9 @@ section.page--events-detail .sub-banner__image.image-background {
 }
 section.page--events-detail .sub-banner {
   height: 310px;
+}
+section.page--login .site-content {
+  margin: 200px 0;
 }
 
 .global-featured-slider__top {
@@ -20902,10 +20953,6 @@ section.page--events-detail .sub-banner {
   }
 }
 
-.page--about-us .about-section {
-  color: #f00;
-}
-
 /* Safari 11+ */
 /* Safari 9.0-10.0 (not 10.1) */
 _::-webkit-:not(:root:root),
@@ -20922,6 +20969,16 @@ _::-webkit-:not(:root:root),
 @-moz-document url-prefix() {}
 @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
   /* IE10+ specific styles go here */
+}
+@media only screen and (max-width: 1024px) {
+  header {
+    min-height: 75px;
+  }
+
+  .main-nagivation-mobile__wrapper.container {
+    max-width: 100%;
+    padding: 0;
+  }
 }
 body.stop-scrolling {
   height: 100%;

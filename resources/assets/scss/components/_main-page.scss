@@ -58,7 +58,7 @@
                         .img-holder {
                             position: relative;
                             display: block;
-                            height: 350px;
+                            height: 300px;
                             width: 100%;
                             background-size: cover !important;
                             img {
@@ -114,6 +114,10 @@
                     left: 32%;
                     cursor: pointer;
                     z-index: 9;
+                    opacity: .4;
+                    &:hover {
+                        opacity: 1;
+                    }
                     &::before {
                         display: none;
                     }
@@ -130,6 +134,10 @@
                     right: 54%;
                     cursor: pointer;
                     z-index: 9;
+                    opacity: .4;
+                    &:hover {
+                        opacity: 1;
+                    }
                     &::before {
                         display: none;
                     }
@@ -1156,6 +1164,10 @@
             padding-right: 11%;
             padding-bottom: 5%;
             padding-left: 5%;
+            h4 {
+                font-size: 1em;
+                font-weight: 600;
+            }
         }
     }
     
@@ -1465,5 +1477,12 @@
         height: 445px;
         iframe {
             height: 100%;
+        }
+    }
+    
+    .login-mask {
+        margin: 100px 0;
+        .masking-background__content {
+            width: 85%;
         }
     }

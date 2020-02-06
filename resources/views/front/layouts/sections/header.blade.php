@@ -14,7 +14,7 @@
                     <div class="info">
                         <a href="tel:619.795.7873"><i class="ic-phone" aria-hidden="true"></i> 619.795.7873</a>
                         <a href="mailto:contact@areaa.org"><i class="ic-email"></i> contact@areaa.org</a>
-                        <a href="#"><i class="ic-pin"></i> Find your Chapter</a>
+                        <a href="{{url('contact-us')}}"><i class="ic-pin"></i> Find your Chapter</a>
                         <a href="{{ route('customer.login') }}"><i class="ic-user"></i> Log In</a>
                     </div>
                 </div>
@@ -84,8 +84,8 @@
     </div>
 
 
-    {{-- FOR MOBILE MENU  --}}
-    <div class="main-nagivation-mobile">
+     {{-- FOR MOBILE MENU  --}}
+     <div class="main-nagivation-mobile">
         <div class="main-nagivation-mobile__wrapper container">
             <div class="main-nagivation-mobile__wrapper--row">
 
@@ -94,7 +94,7 @@
                     <div class="mobile-header__wrapper">
 
                         <div class="mobile-logo">
-                            <a href="{{ url('/') }}">
+                            <a href="{{ url('/') }}" class="logo" aria-label="areaa logo">
                                 <img src="{{ asset('public/images/header/header-logo.png') }}" alt="logo">
                             </a>
                         </div>
@@ -116,14 +116,41 @@
                                                     class="sr-only">(current)</span></a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{ url('contact-us') }}">Contact Us</a>
+                                        <a class="nav-link" href="{{ url('about-us') }}">about us</a>
+                                        <div class="icon-button icon-button__open">
+                                            <i class="fa fa-plus" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="icon-button icon-button__close">
+                                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                        </div>
+
+                                        <ul class="sub-menu no-mega-sub">
+                                            <li>
+                                                <a href="#"> Sub menu1</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">membership</a>
+
+                                        
+                                        <div class="icon-button icon-button__open">
+                                            <i class="fa fa-plus" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="icon-button icon-button__close">
+                                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                        </div>
+
+                                        <ul class="sub-menu no-mega-sub">
+                                            <li>
+                                                <a href="#"> Sub menu1</a>
+                                            </li>
+                                        </ul>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{ url('about-us') }}">About Us</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('customer.login') }}">
-                                            Login
+                                        <a class="nav-link" href="#">
+                                            Advocacy
                                         </a>
 
                                         <div class="icon-button icon-button__open">
@@ -135,13 +162,13 @@
 
                                         <ul class="sub-menu no-mega-sub">
                                             <li>
-                                                <a href="{{ route('customer.register') }}"> Register</a>
+                                                <a href="#"> Sub menu1</a>
                                             </li>
                                         </ul>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link " href="#">
-                                            Dropdown
+                                            Events
                                         </a>
 
                                         <div class="icon-button icon-button__open">
@@ -150,19 +177,33 @@
                                         <div class="icon-button icon-button__close">
                                             <i class="fa fa-angle-down" aria-hidden="true"></i>
                                         </div>
-
                                         <ul class="sub-menu no-mega-sub">
                                             <li>
-                                                <a href="#"> Sub menu 1</a>
-                                            </li>
-                                            <li>
-                                                <a href="#"> Sub menu 1</a>
-                                            </li>
-                                            <li>
-                                                <a href="#"> Sub menu 1</a>
+                                                <a href="#"> Sub menu1</a>
                                             </li>
                                         </ul>
                                     </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="#">
+                                            Resources
+                                        </a>
+
+                                        <div class="icon-button icon-button__open">
+                                            <i class="fa fa-plus" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="icon-button icon-button__close">
+                                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                        </div>
+                                        <ul class="sub-menu no-mega-sub">
+                                            <li>
+                                                <a href="#"> Sub menu1</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+{{-- 
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ url('contact-us') }}">Contact Us</a>
+                                    </li> --}}
                                     <!-- **************************************** -->
 
                                 </ul>
