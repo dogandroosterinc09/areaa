@@ -18172,6 +18172,16 @@ header .main-nagivation-desktop .navbar-bar {
   margin: 27px 0;
   z-index: 9;
 }
+header .main-nagivation-desktop .navbar-bar .dropdown-toggle:after {
+  width: 13px;
+  height: 7px;
+  background: url("../images/sprite.png") no-repeat;
+  background-position: -159px -190px;
+  border: 0;
+  position: relative;
+  top: 2px;
+  right: -3px;
+}
 header .main-nagivation-desktop .navbar-bar ul {
   position: relative;
   list-style: none;

@@ -54,6 +54,18 @@ header {
             margin: 27px 0;
             z-index: 9;
             &__wrapper {}
+            .dropdown-toggle {
+                &:after {
+                    width: 13px;
+                    height: 7px;
+                    background: $sprite-all;
+                    background-position: -159px -190px;
+                    border: 0;
+                    position: relative;
+                    top: 2px;
+                    right: -3px;
+                }
+            }
             ul {
                 position: relative;
                 list-style: none;
