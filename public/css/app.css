@@ -20853,7 +20853,7 @@ section.page--board-detail .sub-banner__image {
   width: 400px;
   height: 400px;
   position: absolute;
-  z-index: 9;
+  z-index: 6;
   border-radius: 100%;
   right: 10%;
 }
