@@ -98,7 +98,7 @@ class PageController extends Controller
 
         $pages = $this->page->get();
 
-        return view('admin.pages.page.index', compact('pages'));
+        return view('admin.modules.page.index', compact('pages'));
     }
 
     /**
@@ -114,7 +114,7 @@ class PageController extends Controller
 
         $page_types = $this->pageType->get();
 
-        return view('admin.pages.page.create', compact('page_types'));
+        return view('admin.modules.page.create', compact('page_types'));
     }
 
     /**
@@ -199,7 +199,7 @@ class PageController extends Controller
         $page = $this->page->findOrFail($id);
         $page_types = $this->pageType->get();
 
-        return view('admin.pages.page.edit', compact('page', 'page_types'));
+        return view('admin.modules.page.edit', compact('page', 'page_types'));
     }
 
     /**

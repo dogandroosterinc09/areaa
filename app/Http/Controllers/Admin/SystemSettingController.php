@@ -52,7 +52,7 @@ class SystemSettingController extends Controller
 
         $system_settings = $this->systemSetting->get();
 
-        return view('admin.pages.system_setting.index', compact('system_settings'));
+        return view('admin.modules.system_setting.index', compact('system_settings'));
     }
 
     /**
@@ -68,7 +68,7 @@ class SystemSettingController extends Controller
 
         $max_code = $this->generateSystemCode($this->systemSetting, 'SS');
 
-        return view('admin.pages.system_setting.create', compact('max_code'));
+        return view('admin.modules.system_setting.create', compact('max_code'));
     }
 
     /**
@@ -113,7 +113,7 @@ class SystemSettingController extends Controller
 
         $system_setting = $this->systemSetting->findOrFail($id);
 
-        return view('admin.pages.system_setting.edit', compact('system_setting'));
+        return view('admin.modules.system_setting.edit', compact('system_setting'));
     }
 
     /**

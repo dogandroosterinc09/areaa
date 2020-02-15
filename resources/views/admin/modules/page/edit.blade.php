@@ -111,7 +111,7 @@
                     {{--</div>--}}
                 {{--</div>--}}
 
-                @include('admin.pages.page.page_sections')
+                @include('admin.modules.page.page_sections')
 
                 <div class="form-group">
                     <label class="col-md-3 control-label">Is Active?</label>
@@ -134,7 +134,7 @@
             </div>
         </div>
         <div class="col-md-12">
-            @include('admin.pages.page.meta_fields')
+            @include('admin.modules.page.meta_fields')
         </div>
         {{ Form::close() }}
     </div>

@@ -14,6 +14,6 @@ class AdminDashboardController extends Controller
      */
     public function __invoke()
     {
-        return view('admin.pages.dashboard.index');
+        return view('admin.modules.dashboard.index');
     }
 }

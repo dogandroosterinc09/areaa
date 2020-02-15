@@ -44,7 +44,7 @@
                         @endif
                     </div>
                 </div>
-                @include('admin.pages.system_setting.value')
+                @include('admin.modules.system_setting.value')
                 {{--<div class="form-group{{ $errors->has('value') ? ' has-error' : '' }}">--}}
                     {{--<label class="col-md-3 control-label" for="system_settings_value">Value</label>--}}
 

@@ -74,7 +74,7 @@ class PermissionController extends Controller
 
         $permissions = $this->permissionRepository->getAllWithPermissionGroup();
 
-        return view('admin.pages.permission.index', compact('permissions'));
+        return view('admin.modules.permission.index', compact('permissions'));
     }
 
     /**
@@ -91,7 +91,7 @@ class PermissionController extends Controller
         $roles = $this->role->get();
         $permission_groups = $this->permissionGroupRepository->getAll();
 
-        return view('admin.pages.permission.create', compact('roles', 'permission_groups'));
+        return view('admin.modules.permission.create', compact('roles', 'permission_groups'));
     }
 
     /**
@@ -160,7 +160,7 @@ class PermissionController extends Controller
         $permission = $this->permission->findOrFail($id);
         $permission_groups = $this->permissionGroupRepository->getAll();
 
-        return view('admin.pages.permission.edit', compact('roles', 'permission', 'permission_groups'));
+        return view('admin.modules.permission.edit', compact('roles', 'permission', 'permission_groups'));
     }
 
     /**

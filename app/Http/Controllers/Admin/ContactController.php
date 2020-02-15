@@ -47,7 +47,7 @@ class ContactController extends Controller
 
         $contacts = $this->contact->get();
 
-        return view('admin.pages.contact.index', compact('contacts'));
+        return view('admin.modules.contact.index', compact('contacts'));
     }
 
     /**
@@ -64,6 +64,6 @@ class ContactController extends Controller
 
         $contact = $this->contact->findOrFail($id);
 
-        return view('admin.pages.contact.show', compact('contact'));
+        return view('admin.modules.contact.show', compact('contact'));
     }
 }

@@ -71,7 +71,7 @@ class UserController extends Controller
         }
         $users = collect($users);
 
-        return view('admin.pages.user.index', compact('users'));
+        return view('admin.modules.user.index', compact('users'));
     }
 
     /**
@@ -87,7 +87,7 @@ class UserController extends Controller
 
         $roles = $this->role->get();
 
-        return view('admin.pages.user.create', compact('roles'));
+        return view('admin.modules.user.create', compact('roles'));
     }
 
     /**
@@ -148,7 +148,7 @@ class UserController extends Controller
             }
         }
 
-        return view('admin.pages.user.show', compact('user'));
+        return view('admin.modules.user.show', compact('user'));
     }
 
     /**
@@ -173,7 +173,7 @@ class UserController extends Controller
 
         $roles = $this->role->get();
 
-        return view('admin.pages.user.edit', compact('user', 'roles'));
+        return view('admin.modules.user.edit', compact('user', 'roles'));
     }
 
     /**

@@ -49,7 +49,7 @@ class HomeSlideController extends Controller
 
         $home_slides = $this->homeSlide->get();
 
-        return view('admin.pages.home_slide.index', compact('home_slides'));
+        return view('admin.modules.home_slide.index', compact('home_slides'));
     }
 
     /**
@@ -63,7 +63,7 @@ class HomeSlideController extends Controller
             abort('401', '401');
         }
 
-        return view('admin.pages.home_slide.create');
+        return view('admin.modules.home_slide.create');
     }
 
     /**
@@ -128,7 +128,7 @@ class HomeSlideController extends Controller
 
         $home_slide = $this->homeSlide->findOrFail($id);
 
-        return view('admin.pages.home_slide.edit', compact('home_slide'));
+        return view('admin.modules.home_slide.edit', compact('home_slide'));
     }
 
     /**

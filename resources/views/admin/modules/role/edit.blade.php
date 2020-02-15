@@ -33,7 +33,7 @@
             </div>
         </div>
         <div class="col-md-12">
-            @include('admin.pages.role.permission_group')
+            @include('admin.modules.role.permission_group')
         </div>
         {{ Form::close() }}
     </div>

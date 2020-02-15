@@ -64,7 +64,7 @@ class TemplateCamelCaseController extends Controller
 
         $template_snake_case_plural = $this->template_snake_case_model->get();
 
-        return view('admin.pages.template_snake_case.index', compact('template_snake_case_plural'));
+        return view('admin.modules.template_snake_case.index', compact('template_snake_case_plural'));
     }
 
     /**
@@ -78,7 +78,7 @@ class TemplateCamelCaseController extends Controller
             abort('401', '401');
         }
 
-        return view('admin.pages.template_snake_case.create');
+        return view('admin.modules.template_snake_case.create');
     }
 
     /**
@@ -140,7 +140,7 @@ class TemplateCamelCaseController extends Controller
 
         $template_snake_case = $this->template_snake_case_model->findOrFail($id);
 
-        return view('admin.pages.template_snake_case.show', compact('template_snake_case'));
+        return view('admin.modules.template_snake_case.show', compact('template_snake_case'));
     }
 
     /**
@@ -158,7 +158,7 @@ class TemplateCamelCaseController extends Controller
 
         $template_snake_case = $this->template_snake_case_model->findOrFail($id);
 
-        return view('admin.pages.template_snake_case.edit', compact('template_snake_case'));
+        return view('admin.modules.template_snake_case.edit', compact('template_snake_case'));
     }
 
     /**
