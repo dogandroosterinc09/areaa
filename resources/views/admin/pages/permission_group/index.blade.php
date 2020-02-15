@@ -61,7 +61,7 @@
                                        class="btn btn-xs btn-danger delete-permission-group-btn"
                                        data-original-title="Delete"
                                        data-permission-group-id="{{ $permission_group->id }}"
-                                       data-permission-group-route="{{ route('admin.permission_groups.delete', $permission_group->id) }}">
+                                       data-permission-group-route="{{ route('admin.permission_groups.destroy', $permission_group->id) }}">
                                         <i class="fa fa-times"></i>
                                     </a>
                                 @endif

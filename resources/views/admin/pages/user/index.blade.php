@@ -73,7 +73,7 @@
                                        class="btn btn-xs btn-danger delete-user-btn"
                                        data-original-title="Delete"
                                        data-user-id="{{ $user->id }}"
-                                       data-user-route="{{ route('admin.users.delete', $user->id) }}">
+                                       data-user-route="{{ route('admin.users.destroy', $user->id) }}">
                                         <i class="fa fa-times"></i>
                                     </a>
                                 @endif

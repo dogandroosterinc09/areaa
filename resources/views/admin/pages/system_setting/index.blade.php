@@ -61,7 +61,7 @@
                                        class="btn btn-xs btn-danger delete-system-setting-btn"
                                        data-original-title="Delete"
                                        data-system-setting-id="{{ $system_setting->id }}"
-                                       data-system-setting-route="{{ route('admin.system_settings.delete', $system_setting->id) }}">
+                                       data-system-setting-route="{{ route('admin.system_settings.destroy', $system_setting->id) }}">
                                         <i class="fa fa-times"></i>
                                     </a>
                                 @endif

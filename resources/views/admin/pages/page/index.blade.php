@@ -65,7 +65,7 @@
                                        class="btn btn-xs btn-danger delete-page-btn"
                                        data-original-title="Delete"
                                        data-page-id="{{ $page->id }}"
-                                       data-page-route="{{ route('admin.pages.delete', $page->id) }}">
+                                       data-page-route="{{ route('admin.pages.destroy', $page->id) }}">
                                         <i class="fa fa-times"></i>
                                     </a>
                                 @endif

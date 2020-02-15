@@ -1,124 +1,37 @@
 <?php
 
-/* dashboard routes */
-Route::get('/', function () {
-    return redirect('/admin/dashboard');
-});
+Route::get('/', 'AdminDashboardController')->name('index');
 
-/* dashboard */
-Route::get('/dashboard', [
-    'uses' => '\App\Http\Controllers\AdminDashboardController@index',
-    'as' => 'admin.dashboard',
-]);
-/* dashboard */
+Route::get('/dashboard', 'AdminDashboardController')->name('index');
 
-/* users */
-Route::get('/users/draw',
-    ['as' => 'admin.users.draw',
-        'uses' => '\App\Http\Controllers\UserController@draw']
-);
 
-Route::resource('/users', 'UserController', [
-    'as' => 'admin'
-]);
+Route::get('/users/draw', 'UserController@draw')->name('users.draw');
 
-Route::delete('/users/{id}/delete',
-    ['as' => 'admin.users.delete',
-        'uses' => '\App\Http\Controllers\UserController@destroy']
-);
-/* users */
+Route::resource('/users', 'UserController');
 
-/* roles */
-Route::resource('/roles', 'RoleController', [
-    'as' => 'admin'
-]);
 
-Route::delete('/roles/{id}/delete',
-    ['as' => 'admin.roles.delete',
-        'uses' => '\App\Http\Controllers\RoleController@destroy']
-);
-/* roles */
+Route::resource('/roles', 'RoleController');
 
-/* permissions */
-Route::resource('/permissions', 'PermissionController', [
-    'as' => 'admin'
-]);
 
-Route::delete('/permissions/{id}/delete',
-    ['as' => 'admin.permissions.delete',
-        'uses' => '\App\Http\Controllers\PermissionController@destroy']
-);
-/* permissions */
+Route::resource('/permissions', 'PermissionController');
 
-/* permission groups */
-Route::resource('/permission_groups', 'PermissionGroupController', [
-    'as' => 'admin'
-]);
 
-Route::delete('/permission_groups/{id}/delete',
-    ['as' => 'admin.permission_groups.delete',
-        'uses' => '\App\Http\Controllers\PermissionGroupController@destroy']
-);
-/* permission groups */
+Route::resource('/permission_groups', 'PermissionGroupController');
 
-/* system settings */
-Route::resource('/system_settings', 'SystemSettingController', [
-    'as' => 'admin',
-]);
 
-Route::delete('/system_settings/{id}/delete',
-    ['as' => 'admin.system_settings.delete',
-        'uses' => '\App\Http\Controllers\SystemSettingController@destroy']
-);
-/* system settings */
+Route::resource('/system_settings', 'SystemSettingController');
 
-/* posts */
-Route::resource('/posts', 'PostController', [
-    'as' => 'admin'
-]);
 
-Route::delete('/posts/{id}/delete',
-    ['as' => 'admin.posts.delete',
-        'uses' => '\App\Http\Controllers\PostController@destroy']
-);
-/* posts */
+Route::resource('/pages', 'PageController');
 
-/* pages */
-Route::resource('/pages', 'PageController', [
-    'as' => 'admin'
-]);
 
-Route::delete('/pages/{id}/delete',
-    ['as' => 'admin.pages.delete',
-        'uses' => '\App\Http\Controllers\PageController@destroy']
-);
-/* pages */
+Route::post('/ckeditor_image_upload', 'PageController@ckEditorImageUpload')->name('ckeditor_image_upload');
 
-/* ckeditor image upload */
-Route::post('/ckeditor_image_upload',
-    ['as' => 'admin.ckeditor_image_upload',
-        'uses' => '\App\Http\Controllers\PageController@ckEditorImageUpload']
-);
-/* ckeditor image upload */
 
-/* home_slides */
-Route::resource('/home_slides', 'HomeSlideController', [
-    'as' => 'admin'
-]);
+Route::resource('/home_slides', 'HomeSlideController');
 
-Route::delete('/home_slides/{id}/delete',
-    ['as' => 'admin.home_slides.delete',
-        'uses' => '\App\Http\Controllers\HomeSlideController@destroy']
-);
-/* home_slides */
 
-/* contacts */
-Route::resource('/contacts', 'ContactController', [
-    'as' => 'admin'
-]);
+Route::get('/contacts', 'ContactController@index')->name('contacts.index');
 
-Route::delete('/contacts/{id}/delete',
-    ['as' => 'admin.contacts.delete',
-        'uses' => '\App\Http\Controllers\ContactController@destroy']
-);
-/* contacts */
+Route::get('/contacts/{contact}', 'ContactController@show')->name('contacts.show');
+

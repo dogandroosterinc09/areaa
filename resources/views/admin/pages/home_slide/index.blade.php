@@ -78,7 +78,7 @@
                                        class="btn btn-xs btn-danger delete-home_slide-btn"
                                        data-original-title="Delete"
                                        data-home_slide-id="{{ $home_slide->id }}"
-                                       data-home_slide-route="{{ route('admin.home_slides.delete', $home_slide->id) }}">
+                                       data-home_slide-route="{{ route('admin.home_slides.destroy', $home_slide->id) }}">
                                         <i class="fa fa-times"></i>
                                     </a>
                                 @endif

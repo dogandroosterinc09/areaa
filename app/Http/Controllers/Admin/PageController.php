@@ -1,131 +1,94 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Http\Traits\SystemSettingTrait;
 use App\Models\Page;
-use App\Models\PageSection;
 use App\Models\PageType;
-use App\Repositories\HomeSlideRepository;
-use App\Repositories\PageRepository;
-use App\Repositories\SeoMetaRepository;
+use App\Models\PageSection;
 use Illuminate\Http\Request;
+use App\Repositories\PageRepository;
+use App\Http\Controllers\Controller;
+use App\Http\Traits\SystemSettingTrait;
+use App\Repositories\SeoMetaRepository;
+use App\Repositories\HomeSlideRepository;
 
-/**
- * Class PageController
- * @package App\Http\Controllers
- * @author Randall Anthony Bondoc
- */
+
 class PageController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Pages Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles pages in front end and page module in admin.
-    |
-    */
-
     use SystemSettingTrait;
 
-    /*
-    |--------------------------------------------------------------------------
-    | Front
-    |--------------------------------------------------------------------------
-    */
+    /**
+     * Page model instance.
+     *
+     * @var Page
+     */
+    private $page;
+
+    /**
+     * PageType model instance.
+     *
+     * @var PageType
+     */
+    private $pageType;
+
+    /**
+     * PageSection model instance.
+     *
+     * @var PageSection
+     */
+    private $pageSection;
+
+    /**
+     * SeoMeta repository instance.
+     *
+     * @var SeoMetaRepository
+     */
+    private $seoMetaRepository;
+
+    /**
+     * Page repository instance.
+     *
+     * @var PageRepository
+     */
+    private $pageRepository;
+
+    /**
+     * HomeSlide repository instance.
+     *
+     * @var HomeSlideRepository
+     */
+    private $homeSlideRepository;
 
     /**
      * Create a new controller instance.
      *
-     * @param Page $page_model
-     * @param PageType $page_type_model
-     * @param SeoMetaRepository $seo_meta_repository
-     * @param PageRepository $page_repository
-     * @param PageSection $page_section_model
-     * @param HomeSlideRepository $home_slide_repository
+     * @param Page $page
+     * @param PageType $pageType
+     * @param SeoMetaRepository $seoMetaRepository
+     * @param PageRepository $pageRepository
+     * @param PageSection $pageSection
+     * @param HomeSlideRepository $homeSlideRepository
      */
-    public function __construct(Page $page_model,
-                                PageType $page_type_model,
-                                SeoMetaRepository $seo_meta_repository,
-                                PageRepository $page_repository,
-                                PageSection $page_section_model,
-                                HomeSlideRepository $home_slide_repository
+    public function __construct(Page $page,
+                                PageType $pageType,
+                                SeoMetaRepository $seoMetaRepository,
+                                PageRepository $pageRepository,
+                                PageSection $pageSection,
+                                HomeSlideRepository $homeSlideRepository
     )
     {
-        /*
-         * Model namespace
-         * using $this->role_model can also access $this->role_model->where('id', 1)->get();
-         * */
-        $this->page_model = $page_model;
-        $this->page_type_model = $page_type_model;
-        $this->page_section_model = $page_section_model;
-
-        /*
-         * Repository namespace
-         * this class may include methods that can be used by other controllers, like getting of posts with other data (related tables).
-         * */
-        $this->seo_meta_repository = $seo_meta_repository;
-        $this->page_repository = $page_repository;
-        $this->home_slide_repository = $home_slide_repository;
+        $this->page = $page;
+        $this->pageType = $pageType;
+        $this->pageSection = $pageSection;
+        $this->seoMetaRepository = $seoMetaRepository;
+        $this->pageRepository = $pageRepository;
+        $this->homeSlideRepository = $homeSlideRepository;
     }
 
-    /**
-     * Show the application home page.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function home()
-    {
-        return view('front.pages.home');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  string $slug
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function showPages($slug = '')
-    {
-        $page = $home_slides = [];
-
-        if ($slug == '') {
-            /* home */
-            $page = $this->page_repository->getActivePageBySlug('home');
-            $home_slides = $this->home_slide_repository->getAllActive();
-            if (empty($page)) {
-                return view('front.pages.home');
-            } else {
-                $seo_meta = $this->getSeoMeta($page);
-            }
-        } else {
-            $page = $this->page_repository->getActivePageBySlug($slug);
-            /* if not in pages */
-            if (empty($page)) {
-                abort('404', '404');
-            } else {
-                $seo_meta = $this->getSeoMeta($page);
-
-                if ($slug == 'home') {
-                    $home_slides = $this->home_slide_repository->getAllActive();
-                }
-            }
-        }
-
-        return view('front.pages.custom-pages-index', compact('page', 'seo_meta', 'home_slides'));
-    }
-
-    /*
-    |--------------------------------------------------------------------------
-    | Admin
-    |--------------------------------------------------------------------------
-    */
     /**
      * Show the application pages.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index()
     {
@@ -133,7 +96,7 @@ class PageController extends Controller
             abort('401', '401');
         }
 
-        $pages = $this->page_model->get();
+        $pages = $this->page->get();
 
         return view('admin.pages.page.index', compact('pages'));
     }
@@ -141,7 +104,7 @@ class PageController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function create()
     {
@@ -149,7 +112,7 @@ class PageController extends Controller
             abort('401', '401');
         }
 
-        $page_types = $this->page_type_model->get();
+        $page_types = $this->pageType->get();
 
         return view('admin.pages.page.create', compact('page_types'));
     }
@@ -157,9 +120,9 @@ class PageController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
-     *
-     * @return \Illuminate\Http\Response
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     * @throws \Illuminate\Validation\ValidationException
      */
     public function store(Request $request)
     {
@@ -183,17 +146,17 @@ class PageController extends Controller
         /* seo meta */
         $input['seo_meta_id'] = isset($input['seo_meta_id']) ? $input['seo_meta_id'] : 0;
         $seo_inputs = $request->only(['meta_title', 'meta_keywords', 'meta_description', 'seo_meta_id', 'canonical_link']);
-        $seo_meta = $this->seo_meta_repository->updateOrCreate($seo_inputs);
+        $seo_meta = $this->seoMetaRepository->updateOrCreate($seo_inputs);
         $input['seo_meta_id'] = $seo_meta->id;
         $input['content'] = '';
         /* seo meta */
 
-        $page = $this->page_model->create($input);
+        $page = $this->page->create($input);
 
         $pos = 1;
         $file_upload_path = '';
         if ($request->hasFile('banner_image')) {
-            $file_upload_path = $this->page_repository->uploadFilePageSection($request->file('banner_image'), $page);
+            $file_upload_path = $this->pageRepository->uploadFilePageSection($request->file('banner_image'), $page);
         }
 
         $page->page_sections()->create([
@@ -214,20 +177,18 @@ class PageController extends Controller
             ]);
         }
 
-        return redirect()->route('admin.pages.index')
-            ->with('flash_message', [
-                'title' => '',
-                'message' => 'Page ' . $page->title . ' successfully added.',
-                'type' => 'success'
-            ]);
+        return redirect()->route('admin.pages.index')->with('flash_message', [
+            'title' => '',
+            'message' => 'Page ' . $page->title . ' successfully added.',
+            'type' => 'success'
+        ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int $id
-     *
-     * @return \Illuminate\Http\Response
+     * @param int $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function edit($id)
     {
@@ -235,8 +196,8 @@ class PageController extends Controller
             abort('401', '401');
         }
 
-        $page = $this->page_model->findOrFail($id);
-        $page_types = $this->page_type_model->get();
+        $page = $this->page->findOrFail($id);
+        $page_types = $this->pageType->get();
 
         return view('admin.pages.page.edit', compact('page', 'page_types'));
     }
@@ -244,10 +205,10 @@ class PageController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int $id
-     *
-     * @return \Illuminate\Http\Response
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
+     * @return \Illuminate\Http\RedirectResponse
+     * @throws \Illuminate\Validation\ValidationException
      */
     public function update(Request $request, $id)
     {
@@ -263,7 +224,7 @@ class PageController extends Controller
             'banner_image' => 'mimes:jpg,jpeg,png',
         ]);
 
-        $page = $this->page_model->findOrFail($id);
+        $page = $this->page->findOrFail($id);
         $input = $request->all();
         $input['is_active'] = isset($input['is_active']) ? 1 : 0;
         /* if slug is hidden, generate slug automatically */
@@ -272,12 +233,12 @@ class PageController extends Controller
         /* seo meta */
         $input['seo_meta_id'] = isset($input['seo_meta_id']) ? $input['seo_meta_id'] : 0;
         $seo_inputs = $request->only(['meta_title', 'meta_keywords', 'meta_description', 'seo_meta_id', 'canonical_link']);
-        $seo_meta = $this->seo_meta_repository->updateOrCreate($seo_inputs);
+        $seo_meta = $this->seoMetaRepository->updateOrCreate($seo_inputs);
         $input['seo_meta_id'] = $seo_meta->id;
         /* seo meta */
 
         if ($request->hasFile('banner_image')) {
-            $file_upload_path = $this->page_repository->uploadFile($request->file('banner_image'), $page);
+            $file_upload_path = $this->pageRepository->uploadFile($request->file('banner_image'), $page);
             $input['banner_image'] = $file_upload_path;
         }
 
@@ -285,10 +246,10 @@ class PageController extends Controller
 
         if (!empty($input['page_sections'])) {
             foreach ($input['page_sections'] as $page_section_key => $page_section) {
-                $section = $this->page_section_model->find($page_section_key);
+                $section = $this->pageSection->find($page_section_key);
                 if (!empty($section)) {
                     if ($section->type == 'file') {
-                        $file_upload_path = $this->page_repository->uploadFilePageSection($request->file('page_sections.' . $page_section_key), $page);
+                        $file_upload_path = $this->pageRepository->uploadFilePageSection($request->file('page_sections.' . $page_section_key), $page);
                         $page_section = $file_upload_path;
                     }
                     $section->content = $page_section;
@@ -297,20 +258,18 @@ class PageController extends Controller
             }
         }
 
-        return redirect()->route('admin.pages.index')
-            ->with('flash_message', [
-                'title' => '',
-                'message' => 'Page ' . $page->title . ' successfully updated.',
-                'type' => 'success'
-            ]);
+        return redirect()->route('admin.pages.index')->with('flash_message', [
+            'title' => '',
+            'message' => 'Page ' . $page->title . ' successfully updated.',
+            'type' => 'success'
+        ]);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int $id
-     *
-     * @return \Illuminate\Http\Response
+     * @param int $id
+     * @return \Illuminate\Http\JsonResponse
      */
     public function destroy($id)
     {
@@ -318,27 +277,20 @@ class PageController extends Controller
             abort('401', '401');
         }
 
-        $page = $this->page_model->findOrFail($id);
+        $page = $this->page->findOrFail($id);
         $page->delete();
 
-        $response = array(
-            'status' => FALSE,
-            'data' => array(),
-            'message' => array(),
-        );
-
-        $response['message'][] = 'Page successfully deleted.';
-        $response['data']['id'] = $id;
-        $response['status'] = TRUE;
-
-        return json_encode($response);
+        return response()->json([
+            'status' => true,
+            'data' => compact('id'),
+            'message' => ['Page successfully deleted.']
+        ]);
     }
 
     /**
      * upload image ckeditor
      *
-     * @param  \Illuminate\Http\Request $request
-     *
+     * @param \Illuminate\Http\Request $request
      * @return string
      */
     public function ckEditorImageUpload(Request $request)

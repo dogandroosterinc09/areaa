@@ -57,7 +57,7 @@
                                        class="btn btn-xs btn-danger delete-role-btn"
                                        data-original-title="Delete"
                                        data-role-id="{{ $role->id }}"
-                                       data-role-route="{{ route('admin.roles.delete', $role->id) }}">
+                                       data-role-route="{{ route('admin.roles.destroy', $role->id) }}">
                                         <i class="fa fa-times"></i>
                                     </a>
                                 @endif

@@ -1,61 +1,56 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Models\User;
-use App\Repositories\UserRepository;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Role;
+use App\Http\Controllers\Controller;
+use App\Repositories\UserRepository;
 
-/**
- * Class UserController
- * @package App\Http\Controllers
- * @author Randall Anthony Bondoc
- */
+
 class UserController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | User Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles users.
-    |
-    */
+    /**
+     * User model instance.
+     *
+     * @var User
+     */
+    private $user;
+
+    /**
+     * Role model instance.
+     *
+     * @var Role
+     */
+    private $role;
+
+    /**
+     * User repository instance.
+     *
+     * @var UserRepository
+     */
+    private $userRepository;
 
     /**
      * Create a new controller instance.
      *
-     * @param User $user_model
-     * @param UserRepository $user_repository
-     * @param Role $role_model
+     * @param User $user
+     * @param UserRepository $userRepository
+     * @param Role $role
      */
-    public function __construct(User $user_model,
-                                Role $role_model,
-                                UserRepository $user_repository
-    )
+    public function __construct(User $user, Role $role, UserRepository $userRepository)
     {
-        /*
-         * Model namespace
-         * using $this->user_model can also access $this->user_model->where('id', 1)->get();
-         * */
-        $this->user_model = $user_model;
-        $this->role_model = $role_model;
-
-        /*
-         * Repository namespace
-         * this class may include methods that can be used by other controllers, like getting of posts with other data (related tables).
-         * */
-        $this->user_repository = $user_repository;
-
-//        $this->middleware(['isAdmin']);
+        $this->user = $user;
+        $this->role = $role;
+        $this->userRepository = $userRepository;
     }
 
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index()
     {
@@ -63,7 +58,7 @@ class UserController extends Controller
             abort('401', '401');
         }
 
-        $all_users = $this->user_model->get();
+        $all_users = $this->user->get();
         $users = [];
         if (!auth()->user()->hasRole('Super Admin')) {
             foreach ($all_users as $all_user) {
@@ -82,7 +77,7 @@ class UserController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function create()
     {
@@ -90,16 +85,17 @@ class UserController extends Controller
             abort('401', '401');
         }
 
-        $roles = $this->role_model->get();
+        $roles = $this->role->get();
+
         return view('admin.pages.user.create', compact('roles'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
-     *
-     * @return \Illuminate\Http\Response
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     * @throws \Illuminate\Validation\ValidationException
      */
     public function store(Request $request)
     {
@@ -115,30 +111,28 @@ class UserController extends Controller
             'password' => 'required|min:8|confirmed',
         ]);
 
-        $user = $this->user_model->create($request->only('first_name', 'last_name', 'user_name', 'email', 'password'));
+        $user = $this->user->create($request->only('first_name', 'last_name', 'user_name', 'email', 'password'));
 
         $roles = $request['roles'];
         if (isset($roles)) {
             foreach ($roles as $role) {
-                $role_r = $this->role_model->where('id', '=', $role)->firstOrFail();
+                $role_r = $this->role->where('id', '=', $role)->firstOrFail();
                 $user->assignRole($role_r);
             }
         }
 
-        return redirect()->route('admin.users.index')
-            ->with('flash_message', [
-                'title' => '',
-                'message' => 'User successfully added.',
-                'type' => 'success'
-            ]);
+        return redirect()->route('admin.users.index')->with('flash_message', [
+            'title' => '',
+            'message' => 'User successfully added.',
+            'type' => 'success'
+        ]);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int $id
-     *
-     * @return \Illuminate\Http\Response
+     * @param int $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function show($id)
     {
@@ -146,7 +140,7 @@ class UserController extends Controller
             abort('401', '401');
         }
 
-        $user = $this->user_model->findOrFail($id);
+        $user = $this->user->findOrFail($id);
 
         if (!auth()->user()->hasRole('Super Admin')) {
             if ($user->hasRole('Super Admin')) {
@@ -160,9 +154,8 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int $id
-     *
-     * @return \Illuminate\Http\Response
+     * @param int $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function edit($id)
     {
@@ -170,7 +163,7 @@ class UserController extends Controller
             abort('401', '401');
         }
 
-        $user = $this->user_model->findOrFail($id);
+        $user = $this->user->findOrFail($id);
 
         if (!auth()->user()->hasRole('Super Admin')) {
             if ($user->hasRole('Super Admin')) {
@@ -178,19 +171,18 @@ class UserController extends Controller
             }
         }
 
-        $roles = $this->role_model->get();
+        $roles = $this->role->get();
 
         return view('admin.pages.user.edit', compact('user', 'roles'));
-
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int $id
-     *
-     * @return \Illuminate\Http\Response
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
+     * @return \Illuminate\Http\RedirectResponse
+     * @throws \Illuminate\Validation\ValidationException
      */
     public function update(Request $request, $id)
     {
@@ -198,7 +190,7 @@ class UserController extends Controller
             abort('401', '401');
         }
 
-        $user = $this->user_model->findOrFail($id);
+        $user = $this->user->findOrFail($id);
 
         if (!auth()->user()->hasRole('Super Admin')) {
             if ($user->hasRole('Super Admin')) {
@@ -229,20 +221,18 @@ class UserController extends Controller
         } else {
             $user->roles()->detach();
         }
-        return redirect()->route('admin.users.index')
-            ->with('flash_message', [
-                'title' => '',
-                'message' => 'User successfully updated.',
-                'type' => 'success'
-            ]);
+        return redirect()->route('admin.users.index')->with('flash_message', [
+            'title' => '',
+            'message' => 'User successfully updated.',
+            'type' => 'success'
+        ]);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int $id
-     *
-     * @return \Illuminate\Http\Response
+     * @param int $id
+     * @return \Illuminate\Http\JsonResponse
      */
     public function destroy($id)
     {
@@ -250,7 +240,7 @@ class UserController extends Controller
             abort('401', '401');
         }
 
-        $user = $this->user_model->findOrFail($id);
+        $user = $this->user->findOrFail($id);
 
         if (!auth()->user()->hasRole('Super Admin')) {
             if ($user->hasRole('Super Admin')) {
@@ -260,24 +250,13 @@ class UserController extends Controller
 
         $user->delete();
 
-        $response = array(
-            'status' => FALSE,
-            'data' => array(),
-            'message' => array(),
-        );
-
-        $response['message'][] = 'User successfully deleted.';
-        $response['data']['id'] = $id;
-        $response['status'] = TRUE;
-
-        return json_encode($response);
+        return response()->json(status()->success('User successfully deleted.', compact('id')));
     }
 
     /**
      * Datatables draw
      *
-     * @param  \Illuminate\Http\Request $request
-     *
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function draw(Request $request)
@@ -294,24 +273,24 @@ class UserController extends Controller
 
         if (!auth()->user()->hasRole('Super Admin')) {
             if ($user_role != '') {
-                $totalData = $this->user_model
+                $totalData = $this->user
                     ->select('users.*', (DB::raw("CONCAT(`users`.`first_name`, ' ', `users`.`last_name`) as full_name")))
                     ->role([$user_role])
                     ->count();
             } else {
-                $totalData = $this->user_model
+                $totalData = $this->user
                     ->select('users.*', (DB::raw("CONCAT(`users`.`first_name`, ' ', `users`.`last_name`) as full_name")))
                     ->role(['Admin', 'Customer'])
                     ->count();
             }
         } else {
             if ($user_role != '') {
-                $totalData = $this->user_model
+                $totalData = $this->user
                     ->select('users.*', (DB::raw("CONCAT(`users`.`first_name`, ' ', `users`.`last_name`) as full_name")))
                     ->role([$user_role])
                     ->count();
             } else {
-                $totalData = $this->user_model
+                $totalData = $this->user
                     ->select('users.*', (DB::raw("CONCAT(`users`.`first_name`, ' ', `users`.`last_name`) as full_name")))
                     ->count();
             }
@@ -327,13 +306,13 @@ class UserController extends Controller
             if ($limit == -1) {
                 if (!auth()->user()->hasRole('Super Admin')) {
                     if ($user_role != '') {
-                        $users = $this->user_model
+                        $users = $this->user
                             ->select('users.*', (DB::raw("CONCAT(`users`.`first_name`, ' ', `users`.`last_name`) as full_name")))
                             ->role([$user_role])
                             ->orderBy($order, $dir)
                             ->get();
                     } else {
-                        $users = $this->user_model
+                        $users = $this->user
                             ->select('users.*', (DB::raw("CONCAT(`users`.`first_name`, ' ', `users`.`last_name`) as full_name")))
                             ->role(['Admin', 'Customer'])
                             ->orderBy($order, $dir)
@@ -341,13 +320,13 @@ class UserController extends Controller
                     }
                 } else {
                     if ($user_role != '') {
-                        $users = $this->user_model
+                        $users = $this->user
                             ->select('users.*', (DB::raw("CONCAT(`users`.`first_name`, ' ', `users`.`last_name`) as full_name")))
                             ->role([$user_role])
                             ->orderBy($order, $dir)
                             ->get();
                     } else {
-                        $users = $this->user_model
+                        $users = $this->user
                             ->select('users.*', (DB::raw("CONCAT(`users`.`first_name`, ' ', `users`.`last_name`) as full_name")))
                             ->orderBy($order, $dir)
                             ->get();
@@ -356,7 +335,7 @@ class UserController extends Controller
             } else {
                 if (!auth()->user()->hasRole('Super Admin')) {
                     if ($user_role != '') {
-                        $users = $this->user_model
+                        $users = $this->user
                             ->select('users.*', (DB::raw("CONCAT(`users`.`first_name`, ' ', `users`.`last_name`) as full_name")))
                             ->role([$user_role])
                             ->offset($start)
@@ -364,7 +343,7 @@ class UserController extends Controller
                             ->orderBy($order, $dir)
                             ->get();
                     } else {
-                        $users = $this->user_model
+                        $users = $this->user
                             ->select('users.*', (DB::raw("CONCAT(`users`.`first_name`, ' ', `users`.`last_name`) as full_name")))
                             ->role(['Admin', 'Customer'])
                             ->offset($start)
@@ -375,7 +354,7 @@ class UserController extends Controller
 
                 } else {
                     if ($user_role != '') {
-                        $users = $this->user_model
+                        $users = $this->user
                             ->select('users.*', (DB::raw("CONCAT(`users`.`first_name`, ' ', `users`.`last_name`) as full_name")))
                             ->role([$user_role])
                             ->offset($start)
@@ -383,7 +362,7 @@ class UserController extends Controller
                             ->orderBy($order, $dir)
                             ->get();
                     } else {
-                        $users = $this->user_model
+                        $users = $this->user
                             ->select('users.*', (DB::raw("CONCAT(`users`.`first_name`, ' ', `users`.`last_name`) as full_name")))
                             ->offset($start)
                             ->limit($limit)
@@ -398,7 +377,7 @@ class UserController extends Controller
             if ($limit == -1) {
                 if (!auth()->user()->hasRole('Super Admin')) {
                     if ($user_role != '') {
-                        $users = $this->user_model
+                        $users = $this->user
                             ->orWhere('user_name', 'LIKE', "%{$search}%")
                             ->orWhere('email', 'LIKE', "%{$search}%")
                             ->orWhere((DB::raw("CONCAT(`users`.`first_name`, ' ', `users`.`last_name`)")), 'LIKE', "%{$search}%")
@@ -407,7 +386,7 @@ class UserController extends Controller
                             ->orderBy($order, $dir)
                             ->get();
                     } else {
-                        $users = $this->user_model
+                        $users = $this->user
                             ->orWhere('user_name', 'LIKE', "%{$search}%")
                             ->orWhere('email', 'LIKE', "%{$search}%")
                             ->orWhere((DB::raw("CONCAT(`users`.`first_name`, ' ', `users`.`last_name`)")), 'LIKE', "%{$search}%")
@@ -418,7 +397,7 @@ class UserController extends Controller
                     }
                 } else {
                     if ($user_role != '') {
-                        $users = $this->user_model
+                        $users = $this->user
                             ->orWhere('user_name', 'LIKE', "%{$search}%")
                             ->orWhere('email', 'LIKE', "%{$search}%")
                             ->orWhere((DB::raw("CONCAT(`users`.`first_name`, ' ', `users`.`last_name`)")), 'LIKE', "%{$search}%")
@@ -427,7 +406,7 @@ class UserController extends Controller
                             ->orderBy($order, $dir)
                             ->get();
                     } else {
-                        $users = $this->user_model
+                        $users = $this->user
                             ->orWhere('user_name', 'LIKE', "%{$search}%")
                             ->orWhere('email', 'LIKE', "%{$search}%")
                             ->orWhere((DB::raw("CONCAT(`users`.`first_name`, ' ', `users`.`last_name`)")), 'LIKE', "%{$search}%")
@@ -439,7 +418,7 @@ class UserController extends Controller
             } else {
                 if (!auth()->user()->hasRole('Super Admin')) {
                     if ($user_role != '') {
-                        $users = $this->user_model
+                        $users = $this->user
                             ->orWhere('user_name', 'LIKE', "%{$search}%")
                             ->orWhere('email', 'LIKE', "%{$search}%")
                             ->orWhere((DB::raw("CONCAT(`users`.`first_name`, ' ', `users`.`last_name`)")), 'LIKE', "%{$search}%")
@@ -448,7 +427,7 @@ class UserController extends Controller
                             ->orderBy($order, $dir)
                             ->get();
                     } else {
-                        $users = $this->user_model
+                        $users = $this->user
                             ->orWhere('user_name', 'LIKE', "%{$search}%")
                             ->orWhere('email', 'LIKE', "%{$search}%")
                             ->orWhere((DB::raw("CONCAT(`users`.`first_name`, ' ', `users`.`last_name`)")), 'LIKE', "%{$search}%")
@@ -459,7 +438,7 @@ class UserController extends Controller
                     }
                 } else {
                     if ($user_role != '') {
-                        $users = $this->user_model
+                        $users = $this->user
                             ->orWhere('user_name', 'LIKE', "%{$search}%")
                             ->orWhere('email', 'LIKE', "%{$search}%")
                             ->orWhere((DB::raw("CONCAT(`users`.`first_name`, ' ', `users`.`last_name`)")), 'LIKE', "%{$search}%")
@@ -470,7 +449,7 @@ class UserController extends Controller
                             ->orderBy($order, $dir)
                             ->get();
                     } else {
-                        $users = $this->user_model
+                        $users = $this->user
                             ->orWhere('user_name', 'LIKE', "%{$search}%")
                             ->orWhere('email', 'LIKE', "%{$search}%")
                             ->orWhere((DB::raw("CONCAT(`users`.`first_name`, ' ', `users`.`last_name`)")), 'LIKE', "%{$search}%")
@@ -485,7 +464,7 @@ class UserController extends Controller
 
             if (!auth()->user()->hasRole('Super Admin')) {
                 if ($user_role != '') {
-                    $totalFiltered = $this->user_model
+                    $totalFiltered = $this->user
                         ->orWhere('user_name', 'LIKE', "%{$search}%")
                         ->orWhere('email', 'LIKE', "%{$search}%")
                         ->orWhere((DB::raw("CONCAT(`users`.`first_name`, ' ', `users`.`last_name`)")), 'LIKE', "%{$search}%")
@@ -494,7 +473,7 @@ class UserController extends Controller
                         ->orderBy($order, $dir)
                         ->count();
                 } else {
-                    $totalFiltered = $this->user_model
+                    $totalFiltered = $this->user
                         ->orWhere('user_name', 'LIKE', "%{$search}%")
                         ->orWhere('email', 'LIKE', "%{$search}%")
                         ->orWhere((DB::raw("CONCAT(`users`.`first_name`, ' ', `users`.`last_name`)")), 'LIKE', "%{$search}%")
@@ -505,7 +484,7 @@ class UserController extends Controller
                 }
             } else {
                 if ($user_role != '') {
-                    $totalFiltered = $this->user_model
+                    $totalFiltered = $this->user
                         ->orWhere('user_name', 'LIKE', "%{$search}%")
                         ->orWhere('email', 'LIKE', "%{$search}%")
                         ->orWhere((DB::raw("CONCAT(`users`.`first_name`, ' ', `users`.`last_name`)")), 'LIKE', "%{$search}%")
@@ -514,7 +493,7 @@ class UserController extends Controller
                         ->orderBy($order, $dir)
                         ->count();
                 } else {
-                    $totalFiltered = $this->user_model
+                    $totalFiltered = $this->user
                         ->orWhere('user_name', 'LIKE', "%{$search}%")
                         ->orWhere('email', 'LIKE', "%{$search}%")
                         ->orWhere((DB::raw("CONCAT(`users`.`first_name`, ' ', `users`.`last_name`)")), 'LIKE', "%{$search}%")
@@ -538,7 +517,7 @@ class UserController extends Controller
                 $nestedData['user_roles'] = $user->roles()->pluck('name')->implode(', ');
 
                 if (auth()->user()->can('Read User')) {
-                    $view = '<a href="'. route('admin.users.show', $user->id) .'"
+                    $view = '<a href="' . route('admin.users.show', $user->id) . '"
                                        data-toggle="tooltip"
                                        title=""
                                        class="btn btn-default"
@@ -546,7 +525,7 @@ class UserController extends Controller
                 }
 
                 if (auth()->user()->can('Update User')) {
-                    $edit = '<a href="'. route('admin.users.edit', $user->id) .'"
+                    $edit = '<a href="' . route('admin.users.edit', $user->id) . '"
                                        data-toggle="tooltip"
                                        title=""
                                        class="btn btn-default"
@@ -558,8 +537,8 @@ class UserController extends Controller
                                        title=""
                                        class="btn btn-xs btn-danger delete-user-btn"
                                        data-original-title="Delete"
-                                       data-user-id="'. $user->id .'"
-                                       data-user-route="'. route('admin.users.delete', $user->id) .'">
+                                       data-user-id="' . $user->id . '"
+                                       data-user-route="' . route('admin.users.destroy', $user->id) . '">
                                         <i class="fa fa-times"></i>
                                     </a>';
                 }

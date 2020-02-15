@@ -61,7 +61,7 @@
                                        class="btn btn-xs btn-danger delete-permission-btn"
                                        data-original-title="Delete"
                                        data-permission-id="{{ $permission->id }}"
-                                       data-permission-route="{{ route('admin.permissions.delete', $permission->id) }}">
+                                       data-permission-route="{{ route('admin.permissions.destroy', $permission->id) }}">
                                         <i class="fa fa-times"></i>
                                     </a>
                                 @endif

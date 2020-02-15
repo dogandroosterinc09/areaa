@@ -65,3 +65,8 @@ function add_http($url = null)
     }
     return $url;
 }
+
+
+function status() {
+    return \App\Utilities\StatusBuilder::response();
+}

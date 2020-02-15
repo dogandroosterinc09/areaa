@@ -1,16 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use Illuminate\Http\Request;
 use App\Models\HomeSlide;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App\Repositories\HomeSlideRepository;
 
-/**
- * Class HomeSlideController
- * @package App\Http\Controllers
- * @author Randall Anthony Bondoc
- */
+
 class HomeSlideController extends Controller
 {
     /**
@@ -18,51 +15,39 @@ class HomeSlideController extends Controller
      *
      * @var HomeSlide
      */
-    private $home_slide_model;
+    private $homeSlide;
 
     /**
      * HomeSlideRepository repository instance.
      *
      * @var HomeSlideRepository
      */
-    private $home_slide_repository;
+    private $homeSlideRepository;
 
     /**
      * Create a new controller instance.
      *
-     * @param HomeSlide $home_slide_model
-     * @param HomeSlideRepository $home_slide_repository
+     * @param HomeSlide $homeSlide
+     * @param HomeSlideRepository $homeSlideRepository
      */
-    public function __construct(HomeSlide $home_slide_model, HomeSlideRepository $home_slide_repository)
+    public function __construct(HomeSlide $homeSlide, HomeSlideRepository $homeSlideRepository)
     {
-        /*
-         * Model namespace
-         * using $this->home_slide_model can also access $this->home_slide_model->where('id', 1)->get();
-         * */
-        $this->home_slide_model = $home_slide_model;
-
-        /*
-         * Repository namespace
-         * this class may include methods that can be used by other controllers, like getting of home_slides with other data (related tables).
-         * */
-        $this->home_slide_repository = $home_slide_repository;
-
-//        $this->middleware(['isAdmin']);
+        $this->homeSlide = $homeSlide;
+        $this->homeSlideRepository = $homeSlideRepository;
     }
 
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-
     public function index()
     {
         if (!auth()->user()->hasPermissionTo('Read Home Slide')) {
             abort('401', '401');
         }
 
-        $home_slides = $this->home_slide_model->get();
+        $home_slides = $this->homeSlide->get();
 
         return view('admin.pages.home_slide.index', compact('home_slides'));
     }
@@ -70,7 +55,7 @@ class HomeSlideController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function create()
     {
@@ -85,7 +70,7 @@ class HomeSlideController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      * @throws \Illuminate\Validation\ValidationException
      */
     public function store(Request $request)
@@ -104,10 +89,10 @@ class HomeSlideController extends Controller
         $input = $request->all();
         $input['is_active'] = isset($input['is_active']) ? 1 : 0;
 
-        $home_slide = $this->home_slide_model->create($input);
+        $home_slide = $this->homeSlide->create($input);
 
         if ($request->hasFile('background_image')) {
-            $file_upload_path = $this->home_slide_repository->uploadFile($request->file('background_image'), $home_slide);
+            $file_upload_path = $this->homeSlideRepository->uploadFile($request->file('background_image'));
             $home_slide->fill(['background_image' => $file_upload_path])->save();
         }
 
@@ -122,8 +107,7 @@ class HomeSlideController extends Controller
      * Display the specified resource.
      *
      * @param  int $id
-     *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function show($id)
     {
@@ -134,8 +118,7 @@ class HomeSlideController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  int $id
-     *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function edit($id)
     {
@@ -143,7 +126,7 @@ class HomeSlideController extends Controller
             abort('401', '401');
         }
 
-        $home_slide = $this->home_slide_model->findOrFail($id);
+        $home_slide = $this->homeSlide->findOrFail($id);
 
         return view('admin.pages.home_slide.edit', compact('home_slide'));
     }
@@ -153,7 +136,7 @@ class HomeSlideController extends Controller
      *
      * @param  \Illuminate\Http\Request $request
      * @param  int $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      * @throws \Illuminate\Validation\ValidationException
      */
     public function update(Request $request, $id)
@@ -169,12 +152,12 @@ class HomeSlideController extends Controller
             'background_image' => 'required_if:remove_background_image,==,1|mimes:jpg,jpeg,png',
         ]);
 
-        $home_slide = $this->home_slide_model->findOrFail($id);
+        $home_slide = $this->homeSlide->findOrFail($id);
         $input = $request->all();
         $input['is_active'] = isset($input['is_active']) ? 1 : 0;
 
         if ($request->hasFile('background_image')) {
-            $file_upload_path = $this->home_slide_repository->uploadFile($request->file('background_image'), $home_slide);
+            $file_upload_path = $this->homeSlideRepository->uploadFile($request->file('background_image'));
             $input['background_image'] = $file_upload_path;
         }
 
@@ -191,7 +174,7 @@ class HomeSlideController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function destroy($id)
     {
@@ -199,19 +182,13 @@ class HomeSlideController extends Controller
             abort('401', '401');
         }
 
-        $home_slide = $this->home_slide_model->findOrFail($id);
+        $home_slide = $this->homeSlide->findOrFail($id);
         $home_slide->delete();
 
-        $response = array(
-            'status' => FALSE,
-            'data' => array(),
-            'message' => array(),
-        );
-
-        $response['message'][] = 'Home Slide successfully deleted.';
-        $response['data']['id'] = $id;
-        $response['status'] = TRUE;
-
-        return response()->json($response);
+        return response()->json([
+            'status' => true,
+            'data' => compact('id'),
+            'message' => ['Home Slide successfully deleted.']
+        ]);
     }
 }
