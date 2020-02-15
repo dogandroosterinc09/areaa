@@ -19,101 +19,16 @@
                 <div class="block-title">
                     <h2><i class="fa fa-pencil"></i> <strong>Add new Page</strong></h2>
                 </div>
-                <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                    <label class="col-md-3 control-label" for="pages_name">Name</label>
 
-                    <div class="col-md-9">
-                        <input type="text" class="form-control" id="pages_name" name="name"
-                               placeholder="Enter page name.." value="{{ old('name') }}">
-                        @if($errors->has('name'))
-                            <span class="help-block animation-slideDown">{{ $errors->first('name') }}</span>
-                        @endif
-                    </div>
-                </div>
-                <div class="form-group{{ $errors->has('slug') ? ' has-error' : '' }}">
-                    <label class="col-md-3 control-label" for="pages_slug">Slug</label>
+                @include('admin.components.heading', ['text' => 'Page Details'])
+                @include('admin.components.input-field', ['label' => 'Name'])
+                @include('admin.components.input-field', ['label' => 'Slug'])
+                @include('admin.components.editor', ['label' => 'Content'])
+                @include('admin.components.toggle', ['label' => 'Is Active', 'value' => true])
 
-                    <div class="col-md-9">
-                        <input type="text" class="form-control" id="pages_slug" name="slug"
-                               placeholder="Enter page slug.." value="{{ old('slug') }}">
-                        @if($errors->has('slug'))
-                            <span class="help-block animation-slideDown">{{ $errors->first('slug') }}</span>
-                        @endif
-                    </div>
-                </div>
-                {{--<div class="form-group{{ $errors->has('page_type') ? ' has-error' : '' }}">--}}
-                    {{--<label class="col-md-3 control-label" for="page_type_id">Type</label>--}}
+                @include('admin.components.heading', ['text' => 'Sections'])
+{{--                @include('admin.modules.page.page_sections')--}}
 
-                    {{--<div class="col-md-9">--}}
-                        {{--<select name="page_type_id" id="page_type_id"--}}
-                                {{--class="page-type-select"--}}
-                                {{--data-placeholder="Choose page type..">--}}
-                            {{--<option value=""></option>--}}
-                            {{--@foreach($page_types as $page_type)--}}
-                                {{--<option value="{{ $page_type->id }}" {{ old('page_type_id') ? old('page_type_id') == $page_type->id ? 'selected' : '' : '' }}>{{ $page_type->name }}</option>--}}
-                            {{--@endforeach--}}
-                        {{--</select>--}}
-                        {{--@if($errors->has('page_type'))--}}
-                            {{--<span class="help-block animation-slideDown">{{ $errors->first('page_type') }}</span>--}}
-                        {{--@endif--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-
-                <div class="form-group{{ $errors->has('banner_image') ? ' has-error' : '' }}">
-                    <label class="col-md-3 control-label" for="banner_image">Banner Image</label>
-                    <div class="col-md-9">
-                        <div class="input-group">
-                            <label class="input-group-btn">
-                            <span class="btn btn-primary">
-                                Choose File <input type="file" name="banner_image" style="display: none;">
-                            </span>
-                            </label>
-                            <input type="text" class="form-control" readonly>
-                        </div>
-                        @if($errors->has('banner_image'))
-                            <span class="help-block animation-slideDown">{{ $errors->first('banner_image') }}</span>
-                        @endif
-                    </div>
-                </div>
-
-                {{--<div class="form-group{{ $errors->has('banner_description') ? ' has-error' : '' }}">--}}
-                    {{--<label class="col-md-3 control-label" for="banner_description">Banner Description</label>--}}
-
-                    {{--<div class="col-md-9">--}}
-                        {{--<textarea id="banner_description" name="banner_description" rows="9"--}}
-                                  {{--class="form-control ckeditor"--}}
-                                  {{--placeholder="Enter page banner description..">{{ old('banner_description') }}</textarea>--}}
-                        {{--@if($errors->has('banner_description'))--}}
-                            {{--<span class="help-block animation-slideDown">{{ $errors->first('banner_description') }}</span>--}}
-                        {{--@endif--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-                <div class="form-group{{ $errors->has('content') ? ' has-error' : '' }}">
-                    <label class="col-md-3 control-label" for="page_content">Content</label>
-
-                    <div class="col-md-9">
-                            <textarea id="page_content" name="content" rows="9"
-                                  class="form-control ckeditor"
-                                  placeholder="Enter page content..">{{ old('content') }}</textarea>
-                        @if($errors->has('content'))
-                            <span class="help-block animation-slideDown">{{ $errors->first('content') }}</span>
-                        @endif
-                    </div>
-                </div>
-
-                @include('admin.modules.page.page_sections')
-
-                <div class="form-group">
-                    <label class="col-md-3 control-label">Is Active?</label>
-
-                    <div class="col-md-9">
-                        <label class="switch switch-primary">
-                            <input type="checkbox" id="is_active" name="is_active"
-                                   value="1" checked>
-                            <span></span>
-                        </label>
-                    </div>
-                </div>
                 <div class="form-group form-actions">
                     <div class="col-md-9 col-md-offset-3">
                         <a href="{{ route('admin.pages.index') }}" class="btn btn-sm btn-warning">Cancel</a>

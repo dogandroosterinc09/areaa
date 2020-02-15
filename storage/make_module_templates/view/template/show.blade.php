@@ -15,7 +15,8 @@
         <div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
             <div class="block block-alt-noborder">
                 <article>
-                    <h3 class="sub-header text-center"><strong> {{ $template_snake_case->created_at->format('F d, Y') }} </strong>
+                    <h3 class="sub-header text-center">
+                        <strong>{{ $template_snake_case->created_at->format('F d, Y') }}</strong>
                         <div class="btn-group btn-group-xs pull-right">
                             @if (auth()->user()->can('Update DefaultTemplate'))
                                 <a href="{{ route('admin.template_snake_case_plural.edit', $template_snake_case->id) }}"
@@ -23,16 +24,6 @@
                                    title=""
                                    class="btn btn-default"
                                    data-original-title="Edit"><i class="fa fa-pencil"></i> Edit</a>
-                            @endif
-                            @if (auth()->user()->can('Delete DefaultTemplate'))
-                                <a href="javascript:void(0)" data-toggle="tooltip"
-                                   title=""
-                                   class="btn btn-xs btn-danger delete-template_snake_case-btn"
-                                   data-original-title="Delete"
-                                   data-template_snake_case-id="{{ $template_snake_case->id }}"
-                                   data-template_snake_case-route="{{ route('admin.template_snake_case_plural.delete', $template_snake_case->id) }}">
-                                    <i class="fa fa-times"> Delete</i>
-                                </a>
                             @endif
                         </div>
                     </h3>

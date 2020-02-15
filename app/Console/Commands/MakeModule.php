@@ -9,7 +9,7 @@ use Illuminate\Support\Composer;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
-class makeModule extends Command
+class MakeModule extends Command
 {
     /**
      * The name and signature of the console command.
@@ -79,10 +79,10 @@ class makeModule extends Command
             $this->info('');
             $this->info('Model ' . $data['module_name'] . ' Created');
 
-            $this->generateRepository($data);
-            $bar->advance(10);
-            $this->info('');
-            $this->info('Repository ' . $data['module_name'] . ' Created');
+//            $this->generateRepository($data);
+//            $bar->advance(10);
+//            $this->info('');
+//            $this->info('Repository ' . $data['module_name'] . ' Created');
 
             $this->generateView($data);
             $bar->advance(10);
@@ -189,7 +189,7 @@ class makeModule extends Command
 //        $this->filesystem->put('database/migrations/' . date('Y_m_d_His'). '_create_' . $data['snake_case_plural'] . '_table.php', $template);
 //        $this->call('migrate', []);
         $this->filesystem->put('database/migrations/2018_02_21_123927_create_' . $data['snake_case_plural'] . '_table.php', $template);
-        $this->callSilent('migrate:refresh', ['--seed' => TRUE]);
+//        $this->callSilent('migrate:refresh', ['--seed' => TRUE]);
 
         $iseed = $this->filesystem->get('Iseed.txt');
         $iseed .= "\nphp artisan iseed " . $data['snake_case_plural'] . " --force";
@@ -227,16 +227,9 @@ class makeModule extends Command
     private function generateRoute($data)
     {
         $template = $this->filesystem->get('routes/admin.php');
-        $template .= "\n\n/* " . $data['snake_case_plural'] . " */
-Route::resource('/" . $data['snake_case_plural'] . "', '" . $data['camel_case'] . "Controller', [
-    'as' => 'admin'
-]);";
+        $template .= "\n\n
+Route::resource('/" . $data['snake_case_plural'] . "', '" . $data['camel_case'] . "Controller');";
 
-        $template .= "\n\nRoute::delete('/" . $data['snake_case_plural'] . "/{id}/delete',
-    ['as' => 'admin." . $data['snake_case_plural'] . ".delete',
-        'uses' => '\App\Http\Controllers\\" . $data['camel_case'] . "Controller@destroy']
-);
-/* " . $data['snake_case_plural'] . " */";
         $this->filesystem->put('routes/admin.php', $template);
     }
 

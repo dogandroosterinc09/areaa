@@ -11,7 +11,7 @@
             'id' => 'edit-template_snake_case',
             'route' => ['admin.template_snake_case_plural.update', $template_snake_case->id],
             'class' => 'form-horizontal ',
-            'files' => TRUE
+            'files' => true
             ])
         }}
         <div class="col-md-12">

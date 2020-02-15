@@ -1,16 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Models\TemplateCamelCase;
-use App\Repositories\TemplateCamelCaseRepository;
+use App\Http\Controllers\Controller;
 
-/**
- * Class TemplateCamelCaseController
- * @package App\Http\Controllers
- * @author Randall Anthony Bondoc
- */
 class TemplateCamelCaseController extends Controller
 {
     /**
@@ -18,42 +13,22 @@ class TemplateCamelCaseController extends Controller
      *
      * @var TemplateCamelCase
      */
-    private $template_snake_case_model;
-
-    /**
-     * TemplateCamelCaseRepository repository instance.
-     *
-     * @var TemplateCamelCaseRepository
-     */
-    private $template_snake_case_repository;
+    private $template_snake_case;
 
     /**
      * Create a new controller instance.
      *
-     * @param TemplateCamelCase $template_snake_case_model
-     * @param TemplateCamelCaseRepository $template_snake_case_repository
+     * @param TemplateCamelCase $template_snake_case
      */
-    public function __construct(TemplateCamelCase $template_snake_case_model, TemplateCamelCaseRepository $template_snake_case_repository)
+    public function __construct(TemplateCamelCase $template_snake_case)
     {
-        /*
-         * Model namespace
-         * using $this->template_snake_case_model can also access $this->template_snake_case_model->where('id', 1)->get();
-         * */
-        $this->template_snake_case_model = $template_snake_case_model;
-
-        /*
-         * Repository namespace
-         * this class may include methods that can be used by other controllers, like getting of template_snake_case_plural with other data (related tables).
-         * */
-        $this->template_snake_case_repository = $template_snake_case_repository;
-
-//        $this->middleware(['isAdmin']);
+        $this->template_snake_case = $template_snake_case;
     }
 
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
 
     public function index()
@@ -62,7 +37,7 @@ class TemplateCamelCaseController extends Controller
             abort('401', '401');
         }
 
-        $template_snake_case_plural = $this->template_snake_case_model->get();
+        $template_snake_case_plural = $this->template_snake_case->get();
 
         return view('admin.modules.template_snake_case.index', compact('template_snake_case_plural'));
     }
@@ -70,7 +45,7 @@ class TemplateCamelCaseController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function create()
     {
@@ -84,8 +59,8 @@ class TemplateCamelCaseController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\RedirectResponse
      * @throws \Illuminate\Validation\ValidationException
      */
     public function store(Request $request)
@@ -98,25 +73,12 @@ class TemplateCamelCaseController extends Controller
             'name' => 'required|unique:template_snake_case_plural,name,NULL,id,deleted_at,NULL',
             'slug' => 'required|unique:template_snake_case_plural,slug,NULL,id,deleted_at,NULL',
             'content' => 'required',
-            'banner_image' => 'mimes:jpg,jpeg,png',
-            'file' => 'mimes:docx,doc,pdf',
         ]);
 
-        $input = $request->all();
-        $input['is_active'] = isset($input['is_active']) ? 1 : 0;
-        /* if slug is hidden, generate slug automatically */
-        $input['slug'] = str_slug($input['name']);
-
-        $template_snake_case = $this->template_snake_case_model->create($input);
-
-        if ($request->hasFile('banner_image')) {
-            $file_upload_path = $this->template_snake_case_repository->uploadFile($request->file('banner_image'), /*'banner_image'*/null, 'template_snake_case_images');
-            $template_snake_case->fill(['banner_image' => $file_upload_path])->save();
-        }
-        if ($request->hasFile('file')) {
-            $file_upload_path = $this->template_snake_case_repository->uploadFile($request->file('file'), /*'file'*/null, 'template_snake_case_files');
-            $template_snake_case->fill(['file' => $file_upload_path])->save();
-        }
+        $template_snake_case = $this->template_snake_case->create(array_merge($request->all(), [
+            'is_active' => $request->has('is_active') ? 1 : 0,
+            'slug' => str_slug($request->input('name'))
+        ]));
 
         return redirect()->route('admin.template_snake_case_plural.index')->with('flash_message', [
             'title' => '',
@@ -128,9 +90,8 @@ class TemplateCamelCaseController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int $id
-     *
-     * @return \Illuminate\Http\Response
+     * @param int $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function show($id)
     {
@@ -138,7 +99,7 @@ class TemplateCamelCaseController extends Controller
             abort('401', '401');
         }
 
-        $template_snake_case = $this->template_snake_case_model->findOrFail($id);
+        $template_snake_case = $this->template_snake_case->findOrFail($id);
 
         return view('admin.modules.template_snake_case.show', compact('template_snake_case'));
     }
@@ -146,9 +107,9 @@ class TemplateCamelCaseController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int $id
+     * @param int $id
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function edit($id)
     {
@@ -156,7 +117,7 @@ class TemplateCamelCaseController extends Controller
             abort('401', '401');
         }
 
-        $template_snake_case = $this->template_snake_case_model->findOrFail($id);
+        $template_snake_case = $this->template_snake_case->findOrFail($id);
 
         return view('admin.modules.template_snake_case.edit', compact('template_snake_case'));
     }
@@ -164,9 +125,9 @@ class TemplateCamelCaseController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int $id
-     * @return \Illuminate\Http\Response
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
+     * @return \Illuminate\Http\RedirectResponse
      * @throws \Illuminate\Validation\ValidationException
      */
     public function update(Request $request, $id)
@@ -179,33 +140,14 @@ class TemplateCamelCaseController extends Controller
             'name' => 'required|unique:template_snake_case_plural,name,' . $id . ',id,deleted_at,NULL',
             'slug' => 'required|unique:template_snake_case_plural,slug,' . $id . ',id,deleted_at,NULL',
             'content' => 'required',
-            'banner_image' => 'required_if:remove_banner_image,==,1|mimes:jpg,jpeg,png',
-            'file' => 'required_if:remove_file,==,1|mimes:docx,doc,pdf',
         ]);
 
-        $template_snake_case = $this->template_snake_case_model->findOrFail($id);
-        $input = $request->all();
-        $input['is_active'] = isset($input['is_active']) ? 1 : 0;
-        /* if slug is hidden, generate slug automatically */
-        $input['slug'] = str_slug($input['name']);
+        $template_snake_case = $this->template_snake_case->findOrFail($id);
 
-        if ($request->hasFile('banner_image')) {
-            $file_upload_path = $this->template_snake_case_repository->uploadFile($request->file('banner_image'), /*'banner_image'*/null, 'template_snake_case_images');
-            $input['banner_image'] = $file_upload_path;
-        }
-        if ($request->has('remove_banner_image') && $request->get('remove_banner_image')) {
-            $input['banner_image'] = '';
-        }
-
-        if ($request->hasFile('file')) {
-            $file_upload_path = $this->template_snake_case_repository->uploadFile($request->file('file'), /*'file'*/null, 'template_snake_case_files');
-            $input['file'] = $file_upload_path;
-        }
-        if ($request->has('remove_file') && $request->get('remove_file')) {
-            $input['file'] = '';
-        }
-
-        $template_snake_case->fill($input)->save();
+        $template_snake_case->fill(array_merge($request->all(), [
+            'is_active' => $request->has('is_active') ? 1 : 0,
+            'slug' => str_slug($request->input('name'))
+        ]))->save();
 
         return redirect()->route('admin.template_snake_case_plural.index')->with('flash_message', [
             'title' => '',
@@ -217,8 +159,8 @@ class TemplateCamelCaseController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
+     * @param int $id
+     * @return \Illuminate\Http\JsonResponse
      */
     public function destroy($id)
     {
@@ -226,19 +168,9 @@ class TemplateCamelCaseController extends Controller
             abort('401', '401');
         }
 
-        $template_snake_case = $this->template_snake_case_model->findOrFail($id);
+        $template_snake_case = $this->template_snake_case->findOrFail($id);
         $template_snake_case->delete();
 
-        $response = array(
-            'status' => FALSE,
-            'data' => array(),
-            'message' => array(),
-        );
-
-        $response['message'][] = 'DefaultTemplate successfully deleted.';
-        $response['data']['id'] = $id;
-        $response['status'] = TRUE;
-
-        return response()->json($response);
+        return response()->json(status()->success('DefaultTemplate successfully deleted.', compact('id')));
     }
 }

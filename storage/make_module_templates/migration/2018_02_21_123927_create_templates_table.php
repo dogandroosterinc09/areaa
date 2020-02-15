@@ -15,12 +15,6 @@ class CreateTemplateCamelCasePluralTable extends Migration
     {
         Schema::create('template_snake_case_plural', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name', 255);
-            $table->text('slug');
-            $table->string('banner_image', 255);
-            $table->string('file', 255);
-            $table->text('content');
-            $table->tinyInteger('is_active')->default(1);
             $table->timestamps();
             $table->softDeletes();
         });
