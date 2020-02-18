@@ -1,4 +1,4 @@
-@php($field = $field ?? str_slug($label))
+<?php  $field = $field ?? snake_case($label) ?>
 
 <div class="row">
     <div class="col-md-8 col-md-offset-2">
@@ -12,7 +12,7 @@
                                 $name = !empty($async) && $async ? '' : $field;
                             @endphp
                             Choose File <input type="file" class="{{ !empty($async) && $async ? 'async' : '' }}" name="{{ $name }}" style="display: none;">
-                            <input type="hidden" class="fld" data-name="{{ $field }}" name="{{ $name }}" value="{{ $value ? $value->id : 0 }}">
+                            <input type="hidden" class="fld" data-name="{{ $field }}" name="{{ $name }}" value="{{ json_encode($value) ?? '' }}">
                         </span>
                     </label>
                     <input type="text" class="form-control" readonly>
@@ -28,7 +28,7 @@
                     <a href="{{ $value->url }}" class="zoom img-thumbnail" style="cursor: default !important;" data-toggle="lightbox-image">
                         <img src="{{ $value->url }}" alt="{{ $value->name }}" class="img-responsive center-block" style="max-width: 100px;">
                     </a>
-                    <a href="#" class="btnDeleteAttachment" data-id="{{ $value->id }}" style="display: block;"><i class="fa fa-trash-o"></i> Remove Image</a>
+                    <a href="#" class="btnDeleteAttachment" data-id="{{ $field }}~|~{{ $value->alias }}" style="display: block;"><i class="fa fa-trash-o"></i> Remove Image</a>
                 </div>
             </div>
         @endif

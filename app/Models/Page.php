@@ -2,19 +2,14 @@
 
 namespace App\Models;
 
+use App\Http\Traits\Attachments\HandlesAttachments;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-/**
- * Class Page
- * @package App\Models
- * @author Randall Anthony Bondoc
- */
 class Page extends Model
 {
-    use SoftDeletes;
-
-    protected $table = 'pages';
+    use SoftDeletes, HandlesAttachments;
 
     /**
      * The attributes that are mass assignable.
@@ -34,16 +29,16 @@ class Page extends Model
 
     public function seo_meta()
     {
-        return $this->hasOne('App\Models\SeoMeta', 'id', 'seo_meta_id');
+        return $this->belongsTo(SeoMeta::class);
     }
 
     public function page_type()
     {
-        return $this->hasOne('App\Models\PageType', 'id', 'page_type_id');
+        return $this->belongsTo(PageType::class);
     }
 
-    public function page_sections()
+    public function sections(): BelongsToMany
     {
-        return $this->hasMany('App\Models\PageSection', 'page_id');
+        return $this->belongsToMany(Section::class);
     }
 }

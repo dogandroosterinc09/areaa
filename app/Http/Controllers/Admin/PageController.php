@@ -153,6 +153,8 @@ class PageController extends Controller
 
         $page = $this->page->create($input);
 
+
+
         $pos = 1;
         $file_upload_path = '';
         if ($request->hasFile('banner_image')) {
@@ -237,9 +239,14 @@ class PageController extends Controller
         $input['seo_meta_id'] = $seo_meta->id;
         /* seo meta */
 
-        if ($request->hasFile('banner_image')) {
-            $file_upload_path = $this->pageRepository->uploadFile($request->file('banner_image'), $page);
-            $input['banner_image'] = $file_upload_path;
+        $file_upload_path = '';
+//        if ($request->hasFile('banner_image')) {
+//            $file_upload_path = $this->pageRepository->uploadFile($request->file('banner_image'), $page);
+//            $input['banner_image'] = $file_upload_path;
+//        }
+
+        if ($request->hasFile('banner-image')) {
+            $page->attach($request->file('banner-image'), 'banner_image');
         }
 
         $page->fill($input)->save();
@@ -285,6 +292,34 @@ class PageController extends Controller
             'data' => compact('id'),
             'message' => ['Page successfully deleted.']
         ]);
+    }
+
+    public function upload(Request $request)
+    {
+//        if (!$request->hasFile('image'))
+            return response()->json([
+                'status' => false,
+                'message' => 'No file provided',
+                'data' => []
+            ]);
+//
+//        $file = $request->file('image');
+//
+//        $attachment = new Attachment();
+//        $attachment->alias = str_random() . '.' . $file->getClientOriginalExtension();
+//        $attachment->folder = 'Form';
+//        $attachment->mime = $file->getClientMimeType();
+//        $attachment->name = $file->getClientOriginalName();
+//        $attachment->extension = $file->getClientOriginalExtension();
+//        $attachment->save();
+//
+//        $file->move(storage_path('app/public/Form'), $attachment->alias);
+
+//        return response()->json([
+//            'status' => true,
+//            'message' => 'Image successfully uploaded',
+//            'data' => $attachment
+//        ]);
     }
 
     /**

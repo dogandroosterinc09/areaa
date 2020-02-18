@@ -27,6 +27,8 @@ Route::resource('/pages', 'PageController');
 
 Route::post('/ckeditor_image_upload', 'PageController@ckEditorImageUpload')->name('ckeditor_image_upload');
 
+Route::post('/upload', 'PageController@upload')->name('upload');
+
 
 Route::resource('/home_slides', 'HomeSlideController');
 
