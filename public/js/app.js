@@ -46512,6 +46512,8 @@ __webpack_require__(/*! ./static/custom/custom-imagebackground */ "./resources/a
 
 __webpack_require__(/*! ./static/custom/custom-cookieconsent */ "./resources/assets/js/static/custom/custom-cookieconsent.js");
 
+__webpack_require__(/*! ./static/custom/custom-limit-text */ "./resources/assets/js/static/custom/custom-limit-text.js");
+
 /***/ }),
 
 /***/ "./resources/assets/js/static/custom/custom-cookieconsent.js":
@@ -46699,6 +46701,19 @@ $('.image-background').each(function () {
       'background-image': 'url("' + getImageErrorSrc + '")'
     });
   });
+});
+
+/***/ }),
+
+/***/ "./resources/assets/js/static/custom/custom-limit-text.js":
+/*!****************************************************************!*\
+  !*** ./resources/assets/js/static/custom/custom-limit-text.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(".limit-me").text(function (index, currentText) {
+  return currentText.substr(0, 255);
 });
 
 /***/ }),

@@ -41,3 +41,4 @@ require('./static/custom/custom-safari-chrome');
 require('./static/custom/custom-imagebackground');
 // cookie consent
 require('./static/custom/custom-cookieconsent');
+require('./static/custom/custom-limit-text');
