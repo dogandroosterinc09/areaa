@@ -30,6 +30,10 @@
 
         @elseif ($page['slug'] == 'dashboard')
             @include('front.pages.custom-page.dashboard')
+
+        @elseif ($page['slug'] == 'chapter')
+            @include('front.pages.custom-page.chapter')
+            
           
 
         @else

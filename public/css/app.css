@@ -20847,6 +20847,81 @@ ul.bullet-style li strong {
   width: 85%;
 }
 
+.chapter-tab {
+  margin: 50px 0;
+  margin-bottom: 60px;
+}
+.chapter-tab__tab {
+  margin-bottom: 35px;
+  border: 0 !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  border-bottom: 1px solid #b9b1b2 !important;
+}
+.chapter-tab__tab li {
+  width: 50%;
+}
+.chapter-tab__tab li a {
+  border: 0 !important;
+  background: transparent !important;
+  padding: 15px 0;
+  text-align: center;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #000;
+  border-bottom: 2px solid transparent;
+  font-size: 1.5em;
+}
+.chapter-tab__tab li a.nav-link.active {
+  color: #ab1a2d;
+  border-bottom: 2px solid #ab1a2d !important;
+}
+.chapter-tab__content .container {
+  max-width: 100%;
+  padding: 0;
+}
+.chapter-tab__item .btn {
+  border: 1px solid #b9b1b2;
+  color: #b9b1b2;
+}
+
+.chapter-list-view__item {
+  border: 1px solid #b9b1b2;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 25px;
+}
+.chapter-list-view__image {
+  min-height: 225px;
+}
+.chapter-list-view__image a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.chapter-list-view__title a {
+  display: block;
+  text-decoration: none;
+}
+.chapter-list-view__title h3 {
+  font-size: 1.5em;
+  font-weight: 800;
+  display: block;
+  text-align: center;
+  padding: 20px 0;
+  margin: 0;
+  color: #000;
+}
+
+.map-grayscale {
+  height: 600px;
+}
+.map-grayscale iframe {
+  width: 100%;
+  height: 100%;
+}
+
 section.page {
   overflow: hidden;
 }

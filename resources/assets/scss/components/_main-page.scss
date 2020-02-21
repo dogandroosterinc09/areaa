@@ -1486,3 +1486,86 @@
             width: 85%;
         }
     }
+    
+    .chapter-tab {
+        margin: 50px 0;
+        margin-bottom: 60px;
+        &__tab {
+            margin-bottom: 35px;
+            border: 0 !important;
+            @include flex;
+            border-bottom: 1px solid $color-gray !important;
+            li {
+                width: 50%;
+                a {
+                    border: 0 !important;
+                    background: transparent !important;
+                    padding: 15px 0;
+                    text-align: center;
+                    font-weight: 800;
+                    text-transform: uppercase;
+                    color: $color-black;
+                    border-bottom: 2px solid transparent;
+                    font-size: 1.5em;
+                    &.nav-link {
+                        &.active {
+                            color: $color-secondary;
+                            border-bottom: 2px solid $color-secondary !important;
+                        }
+                    }
+                }
+            }
+        }
+        &__content {
+            .container {
+                max-width: 100%;
+                padding: 0;
+            }
+        }
+        &__item {
+            .btn {
+                border: 1px solid $color-gray;
+                color: $color-gray;
+            }
+        }
+    }
+    
+    .chapter-list-view {
+        &__item {
+            border: 1px solid $color-gray;
+            @include border-radius(10px);
+            overflow: hidden;
+            margin-bottom: 25px;
+        }
+        &__image {
+            min-height: 225px;
+            a {
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        &__title {
+            a {
+                display: block;
+                text-decoration: none;
+            }
+            h3 {
+                font-size: 1.5em;
+                font-weight: 800;
+                display: block;
+                text-align: center;
+                padding: 20px 0;
+                margin: 0;
+                color: $color-black;
+            }
+        }
+    }
+    
+    .map-grayscale {
+        height: 600px;
+        iframe {
+            width: 100%;
+            height: 100%;
+        }
+    }
