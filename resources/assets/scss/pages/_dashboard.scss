@@ -181,3 +181,108 @@
         }
     }
 }
+
+.side-by-side {
+    @include flex;
+    @include flex-align-items(center);
+    @include flex-justify-content(space-between);
+    margin-bottom: 25px;
+    div {
+        margin: 0 !important;
+    }
+}
+
+.navigation-icon {
+    margin-bottom: 30px;
+    .container {
+        max-width: 100%;
+        padding: 0;
+    }
+    &__item {
+        height: 250px;
+        border: 1px solid $color-gray;
+        @include flex;
+        @include flex-align-items(center);
+        @include flex-justify-content(center);
+        border-radius: 10px;
+        margin-bottom: 25px;
+        overflow: hidden;
+        position: relative;
+        h3 {
+            display: block;
+            margin: 0;
+        }
+    }
+    &__watermark {
+        position: absolute;
+        background: url('../images/watermark.jpg');
+        background-position: center;
+        background-size: cover;
+        width: 100%;
+        left: 0;
+        top: 0;
+        height: 100%;
+        @include flex;
+        @include flex-align-items(flex-end);
+        @include flex-justify-content(center);
+        h3 {
+            display: block;
+            background: $color-white;
+            width: 100%;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 1.1em;
+            text-transform: uppercase;
+            padding: 12px 0;
+            @include flex;
+            @include flex-align-items(center);
+            @include flex-justify-content(center);
+            &:before {
+                content: '';
+                width: 30px;
+                height: 3px;
+                background: #000;
+                display: inline-block;
+                margin-right: 10px;
+            }
+            &:after {
+                content: '';
+                width: 30px;
+                height: 3px;
+                background: #000;
+                display: inline-block;
+                margin-right: 10px;
+            }
+        }
+    }
+    &__icon {
+        width: 140px;
+        height: 135px;
+        background: $sprite-all;
+        background-position: -3px -220px;
+        @include flex;
+        @include flex-align-items(center);
+        @include flex-justify-content(center);
+        &--object {
+            width: 60px;
+            height: 60px;
+            background: #000;
+        }
+    }
+    &__title {
+        display: block;
+        width: 100%;
+        text-align: center;
+        h3 {
+            font-size: 1.3em;
+            font-weight: 800;
+        }
+    }
+}
+
+.menu-icon {
+    background: $sprite-all;
+    &--one {
+        background-position: -162px -224px;
+    }
+}
