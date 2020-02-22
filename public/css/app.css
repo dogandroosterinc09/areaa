@@ -21195,6 +21195,116 @@ section.page--login .site-content {
   margin: 50px auto;
 }
 
+.side-by-side {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+.side-by-side div {
+  margin: 0 !important;
+}
+
+.navigation-icon {
+  margin-bottom: 30px;
+}
+.navigation-icon .container {
+  max-width: 100%;
+  padding: 0;
+}
+.navigation-icon__item {
+  height: 250px;
+  border: 1px solid #b9b1b2;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  overflow: hidden;
+  position: relative;
+}
+.navigation-icon__item h3 {
+  display: block;
+  margin: 0;
+}
+.navigation-icon__watermark {
+  position: absolute;
+  background: url("../images/watermark.jpg");
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  left: 0;
+  top: 0;
+  height: 100%;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: flex-end;
+  justify-content: center;
+}
+.navigation-icon__watermark h3 {
+  display: block;
+  background: #fff;
+  width: 100%;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 1.1em;
+  text-transform: uppercase;
+  padding: 12px 0;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center;
+  justify-content: center;
+}
+.navigation-icon__watermark h3:before {
+  content: "";
+  width: 30px;
+  height: 3px;
+  background: #000;
+  display: inline-block;
+  margin-right: 10px;
+}
+.navigation-icon__watermark h3:after {
+  content: "";
+  width: 30px;
+  height: 3px;
+  background: #000;
+  display: inline-block;
+  margin-right: 10px;
+}
+.navigation-icon__icon {
+  width: 140px;
+  height: 135px;
+  background: url("../images/sprite.png") no-repeat;
+  background-position: -3px -220px;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center;
+  justify-content: center;
+}
+.navigation-icon__icon--object {
+  width: 60px;
+  height: 60px;
+  background: #000;
+}
+.navigation-icon__title {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+.navigation-icon__title h3 {
+  font-size: 1.3em;
+  font-weight: 800;
+}
+
+.menu-icon {
+  background: url("../images/sprite.png") no-repeat;
+}
+.menu-icon--one {
+  background-position: -162px -224px;
+}
+
 /* Safari 11+ */
 /* Safari 9.0-10.0 (not 10.1) */
 _::-webkit-:not(:root:root),

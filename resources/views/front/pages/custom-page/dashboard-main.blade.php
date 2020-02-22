@@ -1,4 +1,4 @@
-<section class="page page--dashboard page--dashboard--event">
+<section class="page page--dashboard page--dashboard--main">
     @include('front.layouts.sections.header')
     {{-- @include('front.pages.custom-page.sections.banner') --}}
 
@@ -43,7 +43,7 @@
 
                         <nav class="navbar-bar">
                             <ul class="navbar-bar__wrapper">
-                                <li class="nav-item dropdown">
+                                <li class="nav-item dropdown active">
                                     <a class="nav-link dropdown-toggle" href="{{ url('about-us') }}">Dashboard <span class="sr-only">(current)</span></a>
                                     <div class="dropdown-menu">
                                         <ul class="sub-menu">
@@ -53,7 +53,7 @@
                                         </ul>
                                     </div>
                                 </li>
-                                <li class="nav-item active">
+                                <li class="nav-item">
                                     <a class="nav-link" href="{{ url('executive-board') }}">Events</a>
                                 </li>
                                 <li class="nav-item">
@@ -88,12 +88,43 @@
 
         <section class="dashboard-content dashboard-content__events">
             <div class="container-max">
+
+                <div class="col-lg-12">
+                    <div class="navigation-icon">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="navigation-icon__item">
+                                        <div class="navigation-icon__watermark">
+                                            <h3> Areaa Membership Card </h3>
+                                        </div>
+                                        <div class="navigation-icon__icon">
+                                           <div class="navigation-icon__icon--object menu-icon menu-icon--one">
+
+                                           </div>
+                                        </div>
+                                        <div class="navigation-icon__title">
+                                            <h3> Areaa Membership Card </h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="col-lg-12">
                         
                         <div class="events-upcoming">
-                            <div class="primary-heading text-center">
-                                <h3> My Upcoming Events </h3>
+
+                            <div class="side-by-side">
+                                <div class="primary-heading text-center">
+                                    <h3> My Upcoming Events </h3>
+                                </div>
+
+                                <a href="#" class="btn btn--primary">View All Events</a>
                             </div>
+                                
 
                             {{-- loop here --}}
                             <div class="events-upcoming__box">
