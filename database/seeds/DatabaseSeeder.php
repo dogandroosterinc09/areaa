@@ -31,5 +31,6 @@ class DatabaseSeeder extends Seeder
         $this->call(PasswordResetsTableSeeder::class);
         $this->call(SeoMetasTableSeeder::class);
         $this->call(UserHasPermissionsTableSeeder::class);
+        $this->call(PostsTableSeeder::class);
     }
 }
