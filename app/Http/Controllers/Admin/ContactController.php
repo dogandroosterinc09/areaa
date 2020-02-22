@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Contact;
 use App\Http\Controllers\Controller;
-use App\Repositories\ContactRepository;
 
 class ContactController extends Controller
 {
@@ -16,22 +15,13 @@ class ContactController extends Controller
     private $contact;
 
     /**
-     * ContactRepository repository instance.
-     *
-     * @var ContactRepository
-     */
-    private $contactRepository;
-
-    /**
      * Create a new controller instance.
      *
      * @param Contact $contact
-     * @param ContactRepository $contactRepository
      */
-    public function __construct(Contact $contact, ContactRepository $contactRepository)
+    public function __construct(Contact $contact)
     {
         $this->contact = $contact;
-        $this->contactRepository = $contactRepository;
     }
 
     /**

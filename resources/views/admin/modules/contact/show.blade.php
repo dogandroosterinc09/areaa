@@ -21,23 +21,10 @@
                         <td style="width: 30%" class="text-right"><strong>Name</strong></td>
                         <td style="width: 70%">{{ $contact->name }}</td>
                     </tr>
-
-                    <tr>
-                        <td style="width: 30%" class="text-right"><strong>Subject</strong></td>
-                        <td style="width: 70%">{{ $contact->subject }}</td>
-                    </tr>
                     <tr>
                         <td style="width: 30%" class="text-right"><strong>Email</strong></td>
-                        <td style="width: 70%">{{ $contact->email }}</td>
+                        <td style="width: 70%"><a href="mailto:{{ $contact->email }}">{{ $contact->email }}</a></td>
                     </tr>
-                    {{--<tr>--}}
-                        {{--<td style="width: 30%" class="text-right"><strong>Company</strong></td>--}}
-                        {{--<td style="width: 70%">{{ $contact->company }}</td>--}}
-                    {{--</tr>--}}
-                    {{--<tr>--}}
-                        {{--<td style="width: 30%" class="text-right"><strong>Phone</strong></td>--}}
-                        {{--<td style="width: 70%">{{ $contact->phone }}</td>--}}
-                    {{--</tr>--}}
                     <tr>
                         <td style="width: 30%" class="text-right"><strong>Message</strong></td>
                         <td style="width: 70%">{!! $contact->message !!}</td>

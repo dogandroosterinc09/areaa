@@ -5,16 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-/**
- * Class Contact
- * @package App\Models
- * @author Randall Anthony Bondoc
- */
+
 class Contact extends Model
 {
     use SoftDeletes;
-
-    protected $table = 'contacts';
 
     /**
      * The attributes that are mass assignable.
@@ -22,11 +16,14 @@ class Contact extends Model
      * @var array
      */
     protected $fillable = [
-        'name',
         'email',
-        'phone',
-        'company',
         'message',
-        'subject',
+        'last_name',
+        'first_name',
     ];
+
+    public function getNameAttribute()
+    {
+        return "{$this->attributes['first_name']} {$this->attributes['last_name']}";
+    }
 }
