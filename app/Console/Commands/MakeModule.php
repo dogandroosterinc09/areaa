@@ -162,7 +162,7 @@ class MakeModule extends Command
     private function generateView($data)
     {
         $views = ['create', 'edit', 'index', 'show'];
-        $directory = 'resources/views/admin/pages/' . $data['snake_case'] . '/';
+        $directory = 'resources/views/admin/modules/' . $data['snake_case'] . '/';
 
         if (!$this->filesystem->exists($directory)) {
             $this->filesystem->makeDirectory($directory, 0775);
@@ -184,16 +184,10 @@ class MakeModule extends Command
 
     private function generateMigration($data)
     {
-        $template = $this->filesystem->get(storage_path('make_module_templates/migration/2018_02_21_123927_create_templates_table.php'));
-        $template = $this->replaceTexts($data, $template);
-//        $this->filesystem->put('database/migrations/' . date('Y_m_d_His'). '_create_' . $data['snake_case_plural'] . '_table.php', $template);
-//        $this->call('migrate', []);
-        $this->filesystem->put('database/migrations/2018_02_21_123927_create_' . $data['snake_case_plural'] . '_table.php', $template);
-//        $this->callSilent('migrate:refresh', ['--seed' => TRUE]);
-
-        $iseed = $this->filesystem->get('Iseed.txt');
-        $iseed .= "\nphp artisan iseed " . $data['snake_case_plural'] . " --force";
-        $this->filesystem->put('Iseed.txt', $iseed);
+        $this->call('make:migration', [
+            'name' => "create_{$data['snake_case_plural']}_table",
+            '--create' => $data['snake_case_plural'],
+        ]);
     }
 
     private function generatePermissions($data)

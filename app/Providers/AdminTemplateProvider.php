@@ -78,6 +78,26 @@ class AdminTemplateProvider extends ServiceProvider
                 ]);
             }
 
+            if ($this->hasCrudAccessFor('Board Member')) {
+                $board_member_tab = [];
+
+                array_push($board_member_tab, [
+                    'name' => 'Executives',
+                    'url' => route('admin.board_members.executives'),
+                ]);
+
+                array_push($board_member_tab, [
+                    'name' => 'Delegates',
+                    'url' => route('admin.board_members.delegates')
+                ]);
+
+                array_push($navigation, [
+                    'name' => 'Board Members',
+                    'icon' => 'fa fa-users',
+                    'sub' => $board_member_tab
+                ]);
+            }
+
             if ($this->hasCrudAccessFor('User') || $this->hasCrudAccessFor('Permission') || $this->hasCrudAccessFor('Permission Group') || $this->hasCrudAccessFor('Role')) {
                 $user_management_tab = [];
 

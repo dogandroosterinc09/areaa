@@ -1,4 +1,4 @@
-@php($field = $field ?? str_slug($label))
+@php($field = $field ?? snake_case($label))
 
 <div class="row">
     <div class="col-md-8 col-md-offset-2">

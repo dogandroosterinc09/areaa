@@ -18,7 +18,7 @@ class StatusBuilder
         return self::$builder;
     }
 
-    public function success($message, $data)
+    public function success($message, $data = [])
     {
         return [
             'status' => true,

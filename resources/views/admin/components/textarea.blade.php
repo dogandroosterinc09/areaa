@@ -1,4 +1,4 @@
-@php($field = $field ?? str_slug($label))
+@php($field = $field ?? snake_case($label))
 
 <div class="row">
     <div class="col-md-8 col-md-offset-2">
@@ -7,10 +7,10 @@
 
             <div class="col-md-10">
                 <textarea class="form-control"
-                          rows="5"
+                          rows="{{ $rows ?? 5 }}"
                           id="{{ $field }}"
                           name="{{ $field }}"
-                          placeholder="Enter {{ $label }}">{{ old($field) ?? $value }}</textarea>
+                          placeholder="Enter {{ $label }}">{{ old($field) ?? $value ?? '' }}</textarea>
                 @if($errors->has($field))
                     <span class="help-block animation-slideDown">{{ $errors->first($field) }}</span>
                 @endif
