@@ -23,7 +23,6 @@ class DatabaseSeeder extends Seeder
         $this->call(PageTypesTableSeeder::class);
         $this->call(CountriesTableSeeder::class);
         $this->call(StatesTableSeeder::class);
-        $this->call(PageSectionsTableSeeder::class);
 //        $this->call(CitiesTableSeeder::class);
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
         $this->call(ContactsTableSeeder::class);
