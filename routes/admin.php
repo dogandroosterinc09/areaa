@@ -44,3 +44,7 @@ Route::get('/board_members/executives', 'BoardMemberController@executives')->nam
 Route::get('/board_members/delegates', 'BoardMemberController@delegates')->name('board_members.delegates');
 Route::post('/board_members/position', 'BoardMemberController@position')->name('board_members.position');
 Route::resource('/board_members', 'BoardMemberController');
+
+
+Route::post('/faqs/position', 'FaqController@position')->name('faqs.position');
+Route::resource('/faqs', 'FaqController');
