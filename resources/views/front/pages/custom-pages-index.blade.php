@@ -26,6 +26,19 @@
 
         @elseif ($page['slug'] == 'events-detail')
             @include('front.pages.custom-page.events-detail')
+
+
+        @elseif ($page['slug'] == 'dashboard')
+            @include('front.pages.custom-page.dashboard')
+
+         @elseif ($page['slug'] == 'dashboard-main')
+            @include('front.pages.custom-page.dashboard-main')
+
+           
+
+        @elseif ($page['slug'] == 'chapter')
+            @include('front.pages.custom-page.chapter')
+            
           
 
         @else

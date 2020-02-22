@@ -8,6 +8,7 @@ body {
     // background-image: url('../images/overlay.jpg');
     background-size: cover;
     background-position: top center;
+    font-weight: 600;
 }
 
 ul {
@@ -28,6 +29,7 @@ img {
     }
 }
 
+
 /* Container */
 
 .container-max {
@@ -39,6 +41,7 @@ img {
     margin-right: auto;
     margin-left: auto;
 }
+
 .container-inner {
     position: relative;
     width: 100%;
