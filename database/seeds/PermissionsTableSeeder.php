@@ -341,6 +341,42 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2020-02-18 16:01:59',
                 'updated_at' => '2020-02-18 16:01:59',
             ),
+            36 => 
+            array (
+                'id' => 37,
+                'name' => 'Create Faq',
+                'guard_name' => 'web',
+                'permission_group_id' => 10,
+                'created_at' => '2020-02-21 18:18:58',
+                'updated_at' => '2020-02-21 18:18:58',
+            ),
+            37 => 
+            array (
+                'id' => 38,
+                'name' => 'Read Faq',
+                'guard_name' => 'web',
+                'permission_group_id' => 10,
+                'created_at' => '2020-02-21 18:18:59',
+                'updated_at' => '2020-02-21 18:18:59',
+            ),
+            38 => 
+            array (
+                'id' => 39,
+                'name' => 'Update Faq',
+                'guard_name' => 'web',
+                'permission_group_id' => 10,
+                'created_at' => '2020-02-21 18:18:59',
+                'updated_at' => '2020-02-21 18:18:59',
+            ),
+            39 => 
+            array (
+                'id' => 40,
+                'name' => 'Delete Faq',
+                'guard_name' => 'web',
+                'permission_group_id' => 10,
+                'created_at' => '2020-02-21 18:18:59',
+                'updated_at' => '2020-02-21 18:18:59',
+            ),
         ));
         
         
