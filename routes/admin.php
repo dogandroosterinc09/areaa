@@ -48,3 +48,6 @@ Route::resource('/board_members', 'BoardMemberController');
 
 Route::post('/faqs/position', 'FaqController@position')->name('faqs.position');
 Route::resource('/faqs', 'FaqController');
+
+
+Route::resource('/galleries', 'GalleryController');

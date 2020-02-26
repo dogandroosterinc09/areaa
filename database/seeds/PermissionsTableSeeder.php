@@ -377,6 +377,42 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2020-02-21 18:18:59',
                 'updated_at' => '2020-02-21 18:18:59',
             ),
+            40 => 
+            array (
+                'id' => 41,
+                'name' => 'Create Gallery',
+                'guard_name' => 'web',
+                'permission_group_id' => 11,
+                'created_at' => '2020-02-21 19:05:56',
+                'updated_at' => '2020-02-21 19:05:56',
+            ),
+            41 => 
+            array (
+                'id' => 42,
+                'name' => 'Read Gallery',
+                'guard_name' => 'web',
+                'permission_group_id' => 11,
+                'created_at' => '2020-02-21 19:05:56',
+                'updated_at' => '2020-02-21 19:05:56',
+            ),
+            42 => 
+            array (
+                'id' => 43,
+                'name' => 'Update Gallery',
+                'guard_name' => 'web',
+                'permission_group_id' => 11,
+                'created_at' => '2020-02-21 19:05:56',
+                'updated_at' => '2020-02-21 19:05:56',
+            ),
+            43 => 
+            array (
+                'id' => 44,
+                'name' => 'Delete Gallery',
+                'guard_name' => 'web',
+                'permission_group_id' => 11,
+                'created_at' => '2020-02-21 19:05:56',
+                'updated_at' => '2020-02-21 19:05:56',
+            ),
         ));
         
         

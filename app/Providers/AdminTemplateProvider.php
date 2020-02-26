@@ -86,6 +86,14 @@ class AdminTemplateProvider extends ServiceProvider
                 ]);
             }
 
+            if (auth()->user()->can('Read Gallery')) {
+                array_push($navigation, [
+                    'name' => 'Galleries',
+                    'url' => url('admin/galleries'),
+                    'icon' => 'fa fa-phone'
+                ]);
+            }
+
             if ($this->hasCrudAccessFor('Board Member')) {
                 $board_member_tab = [];
 
