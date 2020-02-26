@@ -78,39 +78,39 @@ class AdminTemplateProvider extends ServiceProvider
                 ]);
             }
 
-            if (auth()->user()->can('Read Faq')) {
+//            if (auth()->user()->can('Read Faq')) {
                 array_push($navigation, [
                     'name' => 'FAQs',
                     'url' => url('admin/faqs'),
                     'icon' => 'fa fa-phone'
                 ]);
-            }
+//            }
 
-            if (auth()->user()->can('Read Event')) {
+//            if (auth()->user()->can('Read Event')) {
                 array_push($navigation, [
                     'name' => 'Events',
                     'url' => url('admin/events'),
                     'icon' => 'fa fa-phone'
                 ]);
-            }
+//            }
 
-            if (auth()->user()->can('Read Chapter')) {
+//            if (auth()->user()->can('Read Chapter')) {
                 array_push($navigation, [
                     'name' => 'Chapters',
                     'url' => url('admin/chapters'),
                     'icon' => 'fa fa-phone'
                 ]);
-            }
+//            }
 
-            if (auth()->user()->can('Read Gallery')) {
+//            if (auth()->user()->can('Read Gallery')) {
                 array_push($navigation, [
                     'name' => 'Galleries',
                     'url' => url('admin/galleries'),
                     'icon' => 'fa fa-phone'
                 ]);
-            }
+//            }
 
-            if ($this->hasCrudAccessFor('Board Member')) {
+//            if ($this->hasCrudAccessFor('Board Member')) {
                 $board_member_tab = [];
 
                 array_push($board_member_tab, [
@@ -128,7 +128,7 @@ class AdminTemplateProvider extends ServiceProvider
                     'icon' => 'fa fa-users',
                     'sub' => $board_member_tab
                 ]);
-            }
+//            }
 
             if ($this->hasCrudAccessFor('User') || $this->hasCrudAccessFor('Permission') || $this->hasCrudAccessFor('Permission Group') || $this->hasCrudAccessFor('Role')) {
                 $user_management_tab = [];
