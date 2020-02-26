@@ -21074,6 +21074,7 @@ section.page--login .site-content {
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
   border-bottom: 12px solid #fff;
+  border-top: 0;
 }
 
 .page--dashboard .primary-heading {
@@ -21229,6 +21230,10 @@ section.page--login .site-content {
   display: block;
   margin: 0;
 }
+.navigation-icon__item:hover .navigation-icon__watermark {
+  opacity: 1;
+  visibility: visible;
+}
 .navigation-icon__watermark {
   position: absolute;
   background: url("../images/watermark.jpg");
@@ -21242,6 +21247,15 @@ section.page--login .site-content {
   flex-wrap: wrap !important;
   align-items: flex-end;
   justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease;
+}
+.navigation-icon__watermark a {
+  display: block;
+  width: 100% !important;
+  color: #303132;
+  text-decoration: none;
 }
 .navigation-icon__watermark h3 {
   display: block;
@@ -21271,7 +21285,7 @@ section.page--login .site-content {
   height: 3px;
   background: #000;
   display: inline-block;
-  margin-right: 10px;
+  margin-left: 10px;
 }
 .navigation-icon__icon {
   width: 140px;
@@ -21302,7 +21316,22 @@ section.page--login .site-content {
   background: url("../images/sprite.png") no-repeat;
 }
 .menu-icon--one {
+  background-position: -351px -224px;
+}
+.menu-icon--events {
   background-position: -162px -224px;
+}
+.menu-icon--directory {
+  background-position: -224px -224px;
+}
+.menu-icon--benefits {
+  background-position: -289px -224px;
+}
+.menu-icon--profile {
+  background-position: -351px -224px;
+}
+.menu-icon--profile {
+  background-position: -351px -224px;
 }
 
 /* Safari 11+ */
