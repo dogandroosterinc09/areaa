@@ -86,6 +86,14 @@ class AdminTemplateProvider extends ServiceProvider
                 ]);
             }
 
+            if (auth()->user()->can('Read Event')) {
+                array_push($navigation, [
+                    'name' => 'Events',
+                    'url' => url('admin/events'),
+                    'icon' => 'fa fa-phone'
+                ]);
+            }
+
             if (auth()->user()->can('Read Gallery')) {
                 array_push($navigation, [
                     'name' => 'Galleries',

@@ -413,6 +413,42 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2020-02-21 19:05:56',
                 'updated_at' => '2020-02-21 19:05:56',
             ),
+            44 => 
+            array (
+                'id' => 45,
+                'name' => 'Create Event',
+                'guard_name' => 'web',
+                'permission_group_id' => 12,
+                'created_at' => '2020-02-25 16:43:13',
+                'updated_at' => '2020-02-25 16:43:13',
+            ),
+            45 => 
+            array (
+                'id' => 46,
+                'name' => 'Read Event',
+                'guard_name' => 'web',
+                'permission_group_id' => 12,
+                'created_at' => '2020-02-25 16:43:13',
+                'updated_at' => '2020-02-25 16:43:13',
+            ),
+            46 => 
+            array (
+                'id' => 47,
+                'name' => 'Update Event',
+                'guard_name' => 'web',
+                'permission_group_id' => 12,
+                'created_at' => '2020-02-25 16:43:13',
+                'updated_at' => '2020-02-25 16:43:13',
+            ),
+            47 => 
+            array (
+                'id' => 48,
+                'name' => 'Delete Event',
+                'guard_name' => 'web',
+                'permission_group_id' => 12,
+                'created_at' => '2020-02-25 16:43:13',
+                'updated_at' => '2020-02-25 16:43:13',
+            ),
         ));
         
         

@@ -12,7 +12,7 @@
                                 $name = !empty($async) && $async ? '' : $field;
                             @endphp
                             Choose File <input type="file" class="{{ !empty($async) && $async ? 'async' : '' }}" name="{{ $name }}" style="display: none;">
-                            <input type="hidden" class="fld" data-name="{{ $field }}" name="{{ $name }}" value="{{ json_encode($value) ?? '' }}">
+                            <input type="hidden" class="fld" data-name="{{ $field }}" name="{{ $name }}" value="{{ json_encode($value ?? []) ?? '' }}">
                         </span>
                     </label>
                     <input type="text" class="form-control" readonly>
