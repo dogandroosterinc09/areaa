@@ -54,3 +54,6 @@ Route::resource('/galleries', 'GalleryController');
 
 
 Route::resource('/events', 'EventController');
+
+
+Route::resource('/chapters', 'ChapterController');

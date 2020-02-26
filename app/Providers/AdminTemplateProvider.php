@@ -94,6 +94,14 @@ class AdminTemplateProvider extends ServiceProvider
                 ]);
             }
 
+            if (auth()->user()->can('Read Chapter')) {
+                array_push($navigation, [
+                    'name' => 'Chapters',
+                    'url' => url('admin/chapters'),
+                    'icon' => 'fa fa-phone'
+                ]);
+            }
+
             if (auth()->user()->can('Read Gallery')) {
                 array_push($navigation, [
                     'name' => 'Galleries',

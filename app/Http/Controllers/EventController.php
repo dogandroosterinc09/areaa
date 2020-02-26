@@ -170,6 +170,10 @@ class EventController extends Controller
             'slug' => str_slug($request->input('name'))
         ]))->save();
 
+        if ($request->hasFile('thumbnail')) {
+            $event->attach($request->file('thumbnail'), 'thumbnail');
+        }
+
         return redirect()->route('admin.events.index')->with('flash_message', [
             'title' => '',
             'message' => 'Event ' . $event->name . ' successfully updated.',

@@ -20,7 +20,7 @@
                     <h2><i class="fa fa-pencil"></i> <strong>Edit Event "{{$event->name}}"</strong></h2>
                 </div>
                 @include('admin.components.heading', ['text' => 'Event Details'])
-                @include('admin.components.attachment', ['label' => 'Thumbnail', 'value' => optional($event->attachment('thumbnail')->url) ?? '' ])
+                @include('admin.components.attachment', ['label' => 'Thumbnail', 'value' => $event->attachment('thumbnail')])
                 @include('admin.components.input-field', ['label' => 'Name', 'value' => $event->name])
                 @include('admin.components.input-field', ['label' => 'Amount', 'type' => 'number', 'value' => $event->amount])
                 @include('admin.components.input-field', ['label' => 'Starts At', 'type' => 'date', 'value' => $event->starts_at->format('Y-m-d')])
