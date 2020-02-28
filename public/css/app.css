@@ -20922,6 +20922,99 @@ ul.bullet-style li strong {
   height: 100%;
 }
 
+.accordion {
+  margin-bottom: 70px;
+}
+.accordion * {
+  padding: 0;
+  margin: 0;
+}
+.accordion__head a {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center;
+  justify-content: space-between;
+  color: #303132;
+  text-decoration: none;
+  padding: 15px 25px;
+}
+.accordion__head h5 {
+  font-weight: bold;
+}
+.accordion__head h5,
+.accordion__head i {
+  color: #ab1a2d;
+}
+.accordion__head .collapsed h5,
+.accordion__head .collapsed i {
+  color: #303132;
+}
+.accordion__content {
+  padding: 15px 65px;
+  font-weight: 600;
+}
+.accordion__item {
+  border: 1px solid #b9b1b2;
+  margin-bottom: 20px;
+}
+.accordion__item--active h5,
+.accordion__item--active i {
+  color: #ab1a2d;
+}
+.accordion .moreBox__item {
+  display: none;
+}
+.accordion__button {
+  padding: 30px;
+}
+.accordion__button .btn {
+  padding: 10px 65px !important;
+  display: inline-block;
+  min-width: inherit !important;
+  border: 1px solid #b9b1b2;
+  color: #b9b1b2;
+}
+.accordion__button .btn:hover {
+  border: 1px solid #ab1a2d;
+  color: #fff;
+}
+
+.faq-navigation .container-max {
+  margin-bottom: 50px;
+  max-width: 1490px;
+  border-bottom: 1px solid #b9b1b2;
+}
+.faq-navigation .navigation-icon__item {
+  border: 0;
+  padding: 0 15px;
+  position: relative;
+}
+.faq-navigation .navigation-icon__item:after {
+  content: "";
+  height: 100px;
+  width: 2px;
+  background: #b9b1b2;
+  position: absolute;
+  right: 0;
+}
+.faq-navigation .navigation-icon__icon {
+  width: 35%;
+  flex: 0 0 35%;
+}
+.faq-navigation .navigation-icon__title {
+  flex: 0 0 65%;
+  max-width: 65%;
+  text-align: left;
+  padding-left: 33px;
+}
+.faq-navigation .navigation-icon__title a {
+  text-decoration: none;
+  color: #303132;
+}
+.faq-navigation .navigation-icon__title a:hover {
+  color: #ab1a2d;
+}
+
 section.page {
   overflow: hidden;
 }
@@ -21332,6 +21425,15 @@ section.page--login .site-content {
 }
 .menu-icon--profile {
   background-position: -351px -224px;
+}
+.menu-icon--location {
+  background-position: -164px -345px;
+}
+.menu-icon--phone {
+  background-position: -225px -345px;
+}
+.menu-icon--email {
+  background-position: -288px -345px;
 }
 
 /* Safari 11+ */

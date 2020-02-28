@@ -46514,6 +46514,8 @@ __webpack_require__(/*! ./static/custom/custom-cookieconsent */ "./resources/ass
 
 __webpack_require__(/*! ./static/custom/custom-limit-text */ "./resources/assets/js/static/custom/custom-limit-text.js");
 
+__webpack_require__(/*! ./static/custom/custom-loadmore */ "./resources/assets/js/static/custom/custom-loadmore.js");
+
 /***/ }),
 
 /***/ "./resources/assets/js/static/custom/custom-cookieconsent.js":
@@ -46718,6 +46720,32 @@ $(".limit-me").text(function (index, currentText) {
 
 /***/ }),
 
+/***/ "./resources/assets/js/static/custom/custom-loadmore.js":
+/*!**************************************************************!*\
+  !*** ./resources/assets/js/static/custom/custom-loadmore.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(document).ready(function () {
+  $(".moreBox").slice(0, 6).show();
+
+  if ($(".moreBox__item:hidden").length != 0) {
+    $("#loadMore").show();
+  }
+
+  $("#loadMore").on('click', function (e) {
+    e.preventDefault();
+    $(".moreBox:hidden").slice(0, 6).slideDown();
+
+    if ($(".moreBox:hidden").length == 0) {
+      $("#loadMore").fadeOut('slow');
+    }
+  });
+});
+
+/***/ }),
+
 /***/ "./resources/assets/js/static/custom/custom-mobile-menu.js":
 /*!*****************************************************************!*\
   !*** ./resources/assets/js/static/custom/custom-mobile-menu.js ***!
@@ -46830,13 +46858,13 @@ jQuery(window).scroll(function () {
     jQuery(".btn--backbutton").removeClass("scrolling");
   }
 }); // smooth scroll
-
-$(document).on('click', 'a[href^="#"]', function (event) {
-  event.preventDefault();
-  $('html, body').animate({
-    scrollTop: $($.attr(this, 'href')).offset().top
-  }, 500);
-}); // activate search box
+// $(document).on('click', 'a[href^="#"]', function(event) {
+//     event.preventDefault();
+//     $('html, body').animate({
+//         scrollTop: $($.attr(this, 'href')).offset().top
+//     }, 500);
+// });
+// activate search box
 
 $(".search-now").click(function () {
   $(".search-box").toggleClass('search-visible');
@@ -46907,6 +46935,11 @@ $('.count').each(function () {
       $(this).text(Math.ceil(now));
     }
   });
+}); // accordion active 
+
+$(".accordion__item").click(function () {
+  $(".accordion__item--active").removeClass("accordion__item--active");
+  $(this).toggleClass('accordion__item--active');
 });
 
 /***/ }),

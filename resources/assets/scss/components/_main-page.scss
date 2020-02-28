@@ -1569,3 +1569,110 @@
             height: 100%;
         }
     }
+    
+    .accordion {
+        margin-bottom: 70px;
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        &__head {
+            a {
+                @include flex;
+                @include flex-align-items(center);
+                @include flex-justify-content(space-between);
+                color: $color-dark;
+                text-decoration: none;
+                padding: 15px 25px;
+            }
+            h5 {
+                font-weight: bold;
+            }
+            h5,
+            i {
+                color: $color-secondary;
+            }
+            .collapsed {
+                h5,
+                i {
+                    color: $color-dark;
+                }
+            }
+        }
+        &__content {
+            padding: 15px 65px;
+            font-weight: 600;
+        }
+        &__item {
+            border: 1px solid $color-gray;
+            margin-bottom: 20px;
+            &--active {
+                h5,
+                i {
+                    color: $color-secondary;
+                }
+            }
+        }
+        .moreBox {
+            &__item {
+                display: none;
+                // &.moreBox {
+                //     // display: none;
+                // }
+            }
+        }
+        &__button {
+            padding: 30px;
+            .btn {
+                padding: 10px 65px !important;
+                display: inline-block;
+                min-width: inherit !important;
+                border: 1px solid $color-gray;
+                color: $color-gray;
+                &:hover {
+                    border: 1px solid $color-secondary;
+                    color: $color-white;
+                }
+            }
+        }
+    }
+    
+    .faq-navigation {
+        .container-max {
+            margin-bottom: 50px;
+            max-width: 1490px;
+            border-bottom: 1px solid $color-gray;
+        }
+        .navigation-icon {
+            &__item {
+                border: 0;
+                padding: 0 15px;
+                position: relative;
+                &:after {
+                    content: '';
+                    height: 100px;
+                    width: 2px;
+                    background: $color-gray;
+                    position: absolute;
+                    right: 0;
+                }
+            }
+            &__icon {
+                width: 35%;
+                flex: 0 0 35%;
+            }
+            &__title {
+                flex: 0 0 65%;
+                max-width: 65%;
+                text-align: left;
+                padding-left: 33px;
+                a {
+                    text-decoration: none;
+                    color: $color-dark;
+                    &:hover {
+                        color: $color-secondary;
+                    }
+                }
+            }
+        }
+    }

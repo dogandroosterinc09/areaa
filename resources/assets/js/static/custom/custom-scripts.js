@@ -51,13 +51,13 @@ jQuery(window).scroll(function() {
 
 
 // smooth scroll
-$(document).on('click', 'a[href^="#"]', function(event) {
-    event.preventDefault();
+// $(document).on('click', 'a[href^="#"]', function(event) {
+//     event.preventDefault();
 
-    $('html, body').animate({
-        scrollTop: $($.attr(this, 'href')).offset().top
-    }, 500);
-});
+//     $('html, body').animate({
+//         scrollTop: $($.attr(this, 'href')).offset().top
+//     }, 500);
+// });
 
 
 // activate search box
@@ -142,4 +142,10 @@ $('.count').each(function() {
             $(this).text(Math.ceil(now));
         }
     });
+});
+
+// accordion active 
+$(".accordion__item").click(function() {
+    $(".accordion__item--active").removeClass("accordion__item--active");
+    $(this).toggleClass('accordion__item--active');
 });
