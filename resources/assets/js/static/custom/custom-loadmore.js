@@ -11,3 +11,18 @@ $(document).ready(function() {
         }
     });
 });
+
+
+$(document).ready(function() {
+    $(".moreWebinar").slice(0, 7).show();
+    if ($(".moreWebinar__item:hidden").length != 0) {
+        $("#loadMore").show();
+    }
+    $("#loadMore").on('click', function(e) {
+        e.preventDefault();
+        $(".moreWebinar:hidden").slice(0, 6).slideDown();
+        if ($(".moreWebinar:hidden").length == 0) {
+            $("#loadMore").fadeOut('slow');
+        }
+    });
+});

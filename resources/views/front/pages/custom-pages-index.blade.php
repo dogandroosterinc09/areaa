@@ -30,6 +30,9 @@
         @elseif ($page['slug'] == 'FAQ')
             @include('front.pages.custom-page.FAQ')
 
+        @elseif ($page['slug'] == 'media')
+            @include('front.pages.custom-page.media')
+
 
 
         @elseif ($page['slug'] == 'dashboard')
