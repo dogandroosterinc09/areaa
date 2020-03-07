@@ -33,6 +33,9 @@
         @elseif ($page['slug'] == 'media')
             @include('front.pages.custom-page.media')
 
+        @elseif ($page['slug'] == 'photo-gallery')
+            @include('front.pages.custom-page.photo-gallery')
+
 
 
         @elseif ($page['slug'] == 'dashboard')

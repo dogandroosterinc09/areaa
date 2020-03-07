@@ -1678,3 +1678,22 @@
             display: none;
         }
     }
+    
+    .photo-section {
+        margin: 50px 0;
+    }
+    
+    .photo-thumbnail {
+        margin-bottom: 50px;
+        &__image {
+            height: 400px;
+            cursor: pointer;
+        }
+        &__title {
+            h3 {
+                font-size: 1.5em;
+                font-weight: bold;
+                padding: 18px 0;
+            }
+        }
+    }

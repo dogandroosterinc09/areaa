@@ -46759,6 +46759,22 @@ $(document).ready(function () {
     }
   });
 });
+$(document).ready(function () {
+  $(".morePhoto").slice(0, 7).show();
+
+  if ($(".morePhoto__item:hidden").length != 0) {
+    $("#loadMore").show();
+  }
+
+  $("#loadMore").on('click', function (e) {
+    e.preventDefault();
+    $(".morePhoto:hidden").slice(0, 6).slideDown();
+
+    if ($(".morePhoto:hidden").length == 0) {
+      $("#loadMore").fadeOut('slow');
+    }
+  });
+});
 
 /***/ }),
 
