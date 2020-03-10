@@ -36,6 +36,9 @@
         @elseif ($page['slug'] == 'photo-gallery')
             @include('front.pages.custom-page.photo-gallery')
 
+        @elseif ($page['slug'] == 'areabenefits') 
+            @include('front.pages.custom-page.areabenefits')
+
 
 
         @elseif ($page['slug'] == 'dashboard')

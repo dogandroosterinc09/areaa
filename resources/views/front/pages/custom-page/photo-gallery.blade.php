@@ -1,4 +1,4 @@
-<section class="page page--media">
+<section class="page page--photo-gallery">
     @include('front.layouts.sections.header')
     {{-- @include('front.pages.custom-page.sections.banner') --}}
 

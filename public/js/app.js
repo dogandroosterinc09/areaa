@@ -47080,6 +47080,16 @@ $('.sponsor-logo__slide').slick({
   cssEase: 'linear',
   arrows: false
 });
+$('.slider-mask__slick').slick({
+  dots: true,
+  infinite: true,
+  speed: 800,
+  slidesToShow: 1,
+  autoplay: true,
+  autoplaySpeed: 5000,
+  cssEase: 'linear',
+  arrows: true
+});
 
 /***/ }),
 
