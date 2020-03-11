@@ -43,3 +43,4 @@ require('./static/custom/custom-imagebackground');
 require('./static/custom/custom-cookieconsent');
 require('./static/custom/custom-limit-text');
 require('./static/custom/custom-loadmore');
+require('./static/custom/custom-steps');

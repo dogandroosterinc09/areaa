@@ -1,0 +1,72 @@
+.steps-wizard {
+    &__header {
+        div {
+            width: 100%;
+        }
+        ul {
+            @include flex;
+            @include flex-justify-content(center);
+            list-style: none;
+            padding: 0;
+            width: 100%;
+            li {
+                margin: 0 35px;
+                display: block;
+                text-align: center;
+                a {
+                    text-decoration: none;
+                    strong {
+                        display: block;
+                        text-align: center;
+                        width: 70px;
+                        height: 70px;
+                        margin: auto;
+                        background: $sprite-all;
+                        background-position: -351px -81px;
+                        @include flex;
+                        @include flex-justify-content(center);
+                        @include flex-align-items(center);
+                        color: $color-white;
+                    }
+                    p {
+                        font-weight: 800;
+                    }
+                    &.active {
+                        strong {
+                            background-position: -273px -81px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &__box {
+        background: #fff;
+        padding: 20px;
+        border-radius: 20px;
+        border: 1px solid #ddd;
+        input,
+        select {
+            border: 1px solid $color-gray;
+            background: $color-white;
+        }
+        select {
+            width: 100%;
+            border-radius: 100px;
+            padding: 10px 20px;
+            -webkit-appearance: none;
+            font-weight: 600;
+        }
+    }
+    &__button {
+        .btn--next {
+            background: $color-secondary;
+            padding: 10px 80px !important;
+            border-radius: 100px !important;
+            font-weight: 800;
+            display: inline-block;
+            margin: auto;
+            color: $color-white;
+        }
+    }
+}

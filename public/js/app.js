@@ -46516,6 +46516,8 @@ __webpack_require__(/*! ./static/custom/custom-limit-text */ "./resources/assets
 
 __webpack_require__(/*! ./static/custom/custom-loadmore */ "./resources/assets/js/static/custom/custom-loadmore.js");
 
+__webpack_require__(/*! ./static/custom/custom-steps */ "./resources/assets/js/static/custom/custom-steps.js");
+
 /***/ }),
 
 /***/ "./resources/assets/js/static/custom/custom-cookieconsent.js":
@@ -47090,6 +47092,17 @@ $('.slider-mask__slick').slick({
   cssEase: 'linear',
   arrows: true
 });
+
+/***/ }),
+
+/***/ "./resources/assets/js/static/custom/custom-steps.js":
+/*!***********************************************************!*\
+  !*** ./resources/assets/js/static/custom/custom-steps.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
 
 /***/ }),
 

@@ -39,6 +39,11 @@
         @elseif ($page['slug'] == 'areabenefits') 
             @include('front.pages.custom-page.areabenefits')
 
+         @elseif ($page['slug'] == 'membership-registration') 
+            @include('front.pages.custom-page.membership-registration')
+
+
+          
 
 
         @elseif ($page['slug'] == 'dashboard')
