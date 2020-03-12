@@ -718,9 +718,47 @@
         @include flex;
         @include flex-align-items(center);
         position: relative;
+        &__equal {
+            max-width: 60%;
+            margin: auto;
+            .masking-background__wrapper {
+                &:before {
+                    display: none;
+                }
+            }
+            .container-max {
+                max-width: 100%;
+                padding: 0 10%;
+                position: relative;
+                &:before {
+                    content: '';
+                    width: 40px;
+                    background: url("../images/curl-tail-side.png") repeat;
+                    height: 100%;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                }
+                &:after {
+                    content: '';
+                    width: 40px;
+                    background: url("../images/curl-tail-side.png") repeat;
+                    height: 100%;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    transform: rotate(180deg) !important;
+                }
+            }
+        }
         &--plain {
             &:before {
                 display: none;
+            }
+            .masking-background__wrapper {
+                &:before {
+                    display: none;
+                }
             }
         }
         &__wrapper {
