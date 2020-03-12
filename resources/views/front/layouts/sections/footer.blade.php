@@ -21,11 +21,11 @@
                         <article>
                             <h4>About Us</h4>
                             <ul>
-                                <li><a href="#"> About AREAA </a></li>
-                                <li><a href="#"> Executive Board </a></li>
-                                <li><a href="#"> National Board </a></li>
-                                <li><a href="#"> Our Partners </a></li>
-                                <li><a href="#"> FAQ </a></li>
+                                <li><a href="{{url('about-us')}}"> About AREAA </a></li>
+                                <li><a href="{{url('executive-board')}}"> Executive Board </a></li>
+                                <li><a href="{{url('delegate-board')}}"> National Board </a></li>
+                                <li><a href="{{url('about-us')}}"> Our Partners </a></li>
+                                <li><a href="{{url('FAQ')}}"> FAQ </a></li>
                             </ul>
                         </article>
                     </div>
@@ -45,8 +45,8 @@
                             <ul>
                                 <li><a href="#"> a | r | e Magazine </a></li>
                                 <li><a href="#"> State of Asia America report </a></li>
-                                <li><a href="#"> Photo gallery </a></li>
-                                <li><a href="#"> Webinars </a></li>
+                                <li><a href="{{url('photo-gallery')}}"> Photo gallery </a></li>
+                                <li><a href="{{url('media')}}"> Webinars </a></li>
                                 <li><a href="#"> In Language Support </a></li>
                             </ul>
                         </article>
@@ -58,10 +58,10 @@
                             <h4>Membership</h4>
                             <ul>
                                 <li><a href="#"> Why join </a></li>
-                                <li><a href="#"> Benefits </a></li>
+                                <li><a href="{{url('areabenefits')}}"> Benefits </a></li>
                                 <li><a href="#"> Find a Member </a></li>
                                 <li><a href="#"> Chapter Locations </a></li>
-                                <li><a href="#"> A-List </a></li>
+                                <li><a href="{{url('membership-registration')}}"> A-List </a></li>
                             </ul>
                         </article>
                     </div>
@@ -86,7 +86,7 @@
                             <div class="text-center">
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
                                 <div class="btn-wrap">
-                                    <a href="#" class="btn btn--secondary">Join</a>
+                                    <a href="{{url('membership-registration')}}" class="btn btn--secondary">Join</a>
                                 </div>
                             </div>
                         </div>
