@@ -11,10 +11,10 @@
             @include flex-justify-content(center);
             list-style: none;
             padding: 0;
-            li {
-                a {
+            >li {
+                >a {
                     color: $color-white;
-                    padding: 15px 30px;
+                    padding: 15px 45px;
                     text-transform: uppercase;
                     font-size: .9em;
                     position: relative;
@@ -30,7 +30,7 @@
                     }
                 }
                 &.active {
-                    a {
+                    >a {
                         position: relative;
                         &:after {
                             content: '';

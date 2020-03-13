@@ -68,7 +68,7 @@
                                     <li><a href="#">Global & Luxury Summit</a></li>
                                     <li><a href="#">Regional Retreats</a></li>
                                     <li><a href="#">National Convention</a></li>
-                                    <li><a href="#">Chapter Events </a></li>
+                                    <li><a href="{{url('chapter-homepage')}}">Chapter Events </a></li>
                                     <li><a href="#">How to get involved </a></li>
                                 </ul>
                             </div>

@@ -1,0 +1,320 @@
+.chapter-events-upcoming {
+    max-width: 80%;
+    margin: auto;
+    &__content {
+        margin-left: 8%;
+        h4,
+        h5 {
+            font-weight: 800;
+        }
+        h5 {
+            color: $color-secondary;
+            margin-bottom: 10px;
+        }
+    }
+    &__description {
+        margin-bottom: 15px;
+    }
+    &__box {
+        border-radius: 5px;
+        margin: auto;
+        margin-bottom: 50px;
+        a.btn {
+            padding: 0 !important;
+            background: transparent;
+            border: none;
+            color: #000;
+            font-weight: 600;
+            font-size: 1em;
+            display: inline-block;
+            min-width: inherit !important;
+            i {
+                @include transition(.5s);
+            }
+            &:hover {
+                color: $color-secondary;
+                i {
+                    @include transform_translate(10px, 0);
+                }
+            }
+        }
+    }
+    &__image {
+        img {
+            width: 100%;
+        }
+        a {
+            display: block;
+        }
+    }
+}
+
+.heading-button {
+    @include flex;
+    @include flex-align-items(center);
+    @include flex-justify-content(space-between);
+    margin-bottom: 30px;
+    .btn {
+        display: inline-block;
+        background: $color-secondary;
+        border-radius: 100px;
+        color: $color-white;
+        font-weight: bold;
+        padding: 5px 45px;
+    }
+}
+
+.fullwidth {
+    .container-max {
+        max-width: 100%;
+        padding: 0;
+    }
+    &__left-push {
+        .container-max {
+            padding-left: 12%;
+        }
+    }
+    &__right-push {
+        .container-max {
+            padding-right: 12%;
+        }
+    }
+    div {
+        img {
+            width: 100% !important;
+        }
+    }
+    .img-fluid {
+        box-shadow: 0 1px 21px 0px rgba(0, 0, 0, 0.5);
+    }
+}
+
+.chapter-benefits {
+    margin-bottom: 90px;
+}
+
+.video-masking {
+    margin-bottom: 100px;
+    &__fullwidth {
+        .container-max {
+            max-width: 100%;
+            padding: 0;
+        }
+    }
+    .row {
+        &:before {
+            background: $whole-frame;
+            content: '';
+            width: 100%;
+            height: 100%;
+            display: block;
+            position: absolute;
+            z-index: 2;
+            background-size: 100% 100%;
+        }
+    }
+    &__floater {
+        // background: $paper-right;
+        // position: absolute;
+        // right: 0;
+        // height: 100%;
+        // max-width: 55%;
+        // background-size: cover;
+        // background-position: left center;
+        @include flex;
+        @include flex-align-items(center);
+        z-index: 3;
+        // &:before {
+        //     content: "";
+        //     width: 500px;
+        //     height: 130%;
+        //     background: url('../images/red-stripe-big.png');
+        //     position: absolute;
+        //     z-index: 9;
+        //     background-size: 100% 100%;
+        //     background-repeat: no-repeat;
+        //     left: -140px;
+        //     top: -50px;
+        //     background-position: right top;
+        //     transform: rotate(12deg) !important;
+        // }
+    }
+    &__content {
+        position: relative;
+        left: -90px;
+        padding-right: 14%;
+        &--push {
+            padding-left: 80px;
+        }
+        p {
+            a {
+                color: $color-secondary;
+                font-weight: 800;
+                text-decoration: none;
+            }
+            font-weight: 600;
+        }
+    }
+}
+
+.html-video {
+    min-height: 700px;
+    video {
+        height: 100%;
+    }
+    &__button {
+        position: absolute;
+        height: 100px;
+        width: 100px;
+        bottom: 0;
+        top: 0;
+        margin: auto;
+        z-index: 9;
+        left: -105px;
+        right: 0;
+        button {
+            display: block;
+            background: $sprite-all;
+            border: 0;
+            width: 77px;
+            height: 77px;
+            background-position: -456px -235px;
+            overflow: hidden;
+            text-indent: -999px;
+            outline: none;
+        }
+    }
+}
+
+.sponsors {
+    background: #f8f6f6;
+    padding: 50px 0;
+    &__content {
+        p {
+            font-size: 1em;
+            line-height: 24px;
+            margin-bottom: 40px;
+            margin-top: 25px;
+        }
+    }
+}
+
+.logo-display {
+    &__single {
+        .sponsor-thumbnail__badge {
+            @include transform_scale(1.1, 1.1);
+        }
+    }
+}
+
+.sponsor-thumbnail {
+    height: 225px;
+    position: relative;
+    @include flex;
+    @include flex-align-items(center);
+    @include flex-justify-content(center);
+    background: $color-white;
+    margin-bottom: 35px;
+    padding: 10%;
+    &__badge {
+        position: absolute;
+        width: 38px;
+        height: 52px;
+        background: $sprite-all;
+        top: -11px;
+        left: 12px;
+        &--ruby {
+            background-position: -458px -166px;
+        }
+        &--emerald {
+            background-position: -512px -166px;
+        }
+        &--diamond {
+            background-position: -562px -166px;
+        }
+        &--jade {
+            background-position: -458px -109px;
+        }
+        &--opal {
+            background-position: -561px -109px;
+        }
+        &--pearl {
+            background-position: -511px -109px;
+        }
+    }
+    img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+}
+
+.filter-stone {
+    display: block;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 60px;
+    li {
+        a {
+            @include flex;
+            @include flex-align-items(center);
+            padding: 0 15px;
+            text-decoration: none;
+            color: $color-black;
+            &:hover {
+                opacity: .5;
+            }
+        }
+        span {
+            width: 18px;
+            height: 18px;
+            background: $sprite-all;
+            display: inline-block;
+            overflow: hidden;
+            text-indent: -999px;
+            border-radius: 100%;
+            margin-right: 7px;
+        }
+    }
+    &--jade {
+        a {
+            span {
+                background-position: -565px -244px;
+            }
+        }
+    }
+    &--diamond {
+        a {
+            span {
+                background-position: -565px -266px;
+            }
+        }
+    }
+    &--emerald {
+        a {
+            span {
+                background-position: -565px -290px;
+            }
+        }
+    }
+    &--opal {
+        a {
+            span {
+                background-position: -565px -313px;
+            }
+        }
+    }
+    &--ruby {
+        a {
+            span {
+                background-position: -565px -336px;
+            }
+        }
+    }
+    &--pearl {
+        a {
+            span {
+                background-position: -565px -359px;
+            }
+        }
+    }
+}

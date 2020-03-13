@@ -889,17 +889,35 @@
     
     ul.bullet-style {
         @include flex;
-        @include flex-align-items(center);
+        @include flex-align-items(flex-start);
         @include flex-justify-content(space-between);
         list-style: none;
         margin-top: 50px;
         margin-bottom: 50px;
+        &--uppercase {
+            li {
+                strong {
+                    text-transform: uppercase;
+                    font-weight: bold;
+                }
+            }
+        }
+        &__col-2 {
+            li {
+                width: calc(95%/2);
+            }
+        }
+        &__col-3 {
+            li {
+                width: calc(95%/3);
+            }
+        }
         li {
-            width: calc(95%/2);
-            margin-bottom: 20px;
+            // margin-bottom: 20px;
             font-size: 1em;
-            @include flex;
-            @include flex-align-items(center);
+            margin-bottom: 30px;
+            // @include flex;
+            // @include flex-align-items(center);
             position: relative;
             &:before {
                 content: "";
@@ -907,12 +925,17 @@
                 height: 28px;
                 position: absolute;
                 left: -30px;
-                top: 0;
+                top: -2px;
                 display: block;
                 background: url(../images/sprite.png) no-repeat;
                 background-position: -213px -7px;
             }
-            strong {
+            h4,
+            h5,
+            h6 {
+                font-weight: 800;
+                margin: 0;
+                font-size: 1em;
                 text-transform: uppercase;
             }
         }
@@ -952,7 +975,8 @@
         overflow: hidden;
         .container {
             padding: 0;
-            max-width: 1700px;
+            // max-width: 1700px;
+            max-width: 1670px;
             margin-right: 0;
         }
         &__wrapper {

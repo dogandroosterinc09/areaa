@@ -42,8 +42,9 @@
          @elseif ($page['slug'] == 'membership-registration') 
             @include('front.pages.custom-page.membership-registration')
 
-
-          
+            {{-- chapters --}}
+        @elseif ($page['slug'] == 'chapter-homepage') 
+            @include('front.pages.custom-page.chapter-homepage')
 
 
         @elseif ($page['slug'] == 'dashboard')

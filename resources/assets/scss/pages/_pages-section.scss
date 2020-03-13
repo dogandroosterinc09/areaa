@@ -1,0 +1,12 @@
+.page-chapter {
+    overflow: hidden;
+    &--homepage {
+        .footer__wrapper {
+            background: #f8f6f6;
+        }
+    }
+    .dashboard-nav {
+        margin-bottom: 50px;
+        margin-top: -20px;
+    }
+}

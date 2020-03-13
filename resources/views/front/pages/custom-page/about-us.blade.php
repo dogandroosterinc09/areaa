@@ -91,19 +91,28 @@
 
                     <div class="col-md-12">
                            
-                            <ul class="bullet-style">
+                            {{-- comment insert class on UL  --}}
+                            {{-- use class bullet-style only if you want one col  --}}
+                            {{-- use class bullet-style__col-2 to enable 2cols --}}
+                            {{-- use class bullet-style__col-3 to enable 3cols --}}
+                            {{-- bullet-style--uppercase the strong tag will capitalize --}}
+                            <ul class="bullet-style bullet-style__col-2 bullet-style--uppercase">
                                 <li>
                                    <strong>Creating a powerful national voice </strong> 
                                     for housing & real estate professionals that serve this dynamic market.
                                 </li>
                                 <li>
-                                    <strong>Advocating for policy positions   </strong>at the national level that will reduce barriers to homeownership for the AAPI community.
+                                    <strong>Advocating for policy positions   </strong>
+                                    at the national level that will reduce barriers to homeownership for the AAPI community.
                                 </li>
-                                <li> <strong>Increasing business opportunities </strong> for mortgage & real estate professionals that serve this growing community.</li>
+                                <li> <strong>Increasing business opportunities </strong> 
+                                    for mortgage & real estate professionals that serve this growing community.</li>
                                 <li>
-                                    <strong>Hosting National and Local events </strong> to educate & inform members about housing issues & developments affecting the AAPI community.
+                                    <strong>Hosting National and Local events </strong> 
+                                    to educate & inform members about housing issues & developments affecting the AAPI community.
                                 </li>
-                                <li><strong>Conducting trade missions</strong> throughout Asia to develop business partnerships & increase brand awareness.
+                                <li><strong>Conducting trade missions</strong> 
+                                    throughout Asia to develop business partnerships & increase brand awareness.
                                 </li>
                             </ul>
 
