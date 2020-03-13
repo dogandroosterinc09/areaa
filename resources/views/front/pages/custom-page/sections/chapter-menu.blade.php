@@ -27,7 +27,7 @@
                             <a class="nav-link" href="{{ url('') }}">About Us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('') }}">Events</a>
+                            <a class="nav-link" href="{{ url('chapter-events') }}">Events</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('') }}">Leadership</a>

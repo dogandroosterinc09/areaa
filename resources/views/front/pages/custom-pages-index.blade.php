@@ -57,8 +57,14 @@
 
         @elseif ($page['slug'] == 'chapter')
             @include('front.pages.custom-page.chapter')
+        
+        @elseif ($page['slug'] == 'chapter-event-detail')
+            @include('front.pages.custom-page.chapter-event-detail')
+
+        @elseif ($page['slug'] == 'chapter-events')
+            @include('front.pages.custom-page.chapter-events')
             
-          
+            
 
         @else
             @include('front.pages.custom-page.default-page')
