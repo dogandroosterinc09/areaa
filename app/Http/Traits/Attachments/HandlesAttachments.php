@@ -9,52 +9,43 @@ use Illuminate\Http\UploadedFile;
 
 trait HandlesAttachments
 {
-    public function attachment($name)
-    {
-        if (empty($this->$name))
-            return null;
-
-        $attachment = json_decode($this->$name);
-
-        $path = $attachment->folder . '/' . $attachment->alias;
-
-        $attachment->url = asset("public/storage/$path");
-
-        return $attachment;
-    }
-
-    public function attach($files, $identifier = 'section')
+    public function attach($files, $identifier = 'default', $name = '')
     {
         if ($files instanceof UploadedFile)
-            return $this->handleUpload($files, $identifier);
+            return $this->handleUpload($files, $identifier, $name);
 
         if (is_array($files) || $files instanceof \Traversable)
-            return collect($files)->map(function ($file) use ($identifier) {
-                return $this->handleUpload($file, $identifier);
+            return collect($files)->map(function ($file) use ($identifier, $name) {
+                return $this->handleUpload($file, $identifier, $name);
             });
 
         return collect([]);
     }
 
-    private function handleUpload(UploadedFile $file, $identifier)
+    private function handleUpload(UploadedFile $file, $identifier, $name)
     {
-        $attachment = $this->mutateAttachment($file, $identifier);
-        if ($identifier != 'section') {
-            if (str_singular($identifier) === $identifier) {
-                $this->$identifier = json_encode($attachment);
-            } else {
-                if (empty($this->$identifier))
-                    $this->$identifier = json_encode([]);
+        $attachment = $this->getAttachmentModelInstance($identifier);
+        $this->mutateAttachment($attachment, $file, $identifier);
 
-                $attachments = json_decode($this->$identifier);
-                array_push($attachments, $attachment);
+        $attachment->name = $name;
 
-                $this->$identifier = json_encode($attachments);
+        if ($identifier === 'default') {
+            if (method_exists($this, 'attachment')) {
+                $this->attachment()->count() > 0 && $this->attachment()->delete();
+
+                $this->attachment()->save($attachment);
+            } else if (method_exists($this, 'attachments')) {
+                $this->attachments()->save($attachment);
+            } else return null;
+        } else {
+            if (method_exists($this, $identifier)) {
+                $this->$identifier()->count() > 0 && $this->$identifier()->delete();
+
+                $this->$identifier()->save($attachment);
             }
-            $this->save();
         }
 
-        $this->saveAttachmentToDisk($file, $attachment->alias, $this->getClassName());
+        $this->saveAttachmentToDisk($file, $attachment, $this->getClassName());
 
         return $attachment;
     }
@@ -75,26 +66,27 @@ trait HandlesAttachments
         return new $className;
     }
 
-    private function mutateAttachment(UploadedFile $file, string $identifier): object
+    private function mutateAttachment(Model $model, UploadedFile $file, string $identifier)
     {
         $alias = str_random() . '.' . $file->getClientOriginalExtension();
+        $model->alias = $alias;
+        $model->folder = $this->getFolderName($this->getClassName());
+        $model->mime = $file->getClientMimeType();
+        $model->name = $file->getClientOriginalName();
+        $model->extension = $file->getClientOriginalExtension();
+        $model->identifier = $identifier;
 
-        return (object) array_merge([
-            'alias' => $alias,
-            'folder' => $this->getFolderName($this->getClassName()),
-            'mime' => $file->getClientMimeType(),
-            'name' => $file->getClientOriginalName(),
-            'extension' => $file->getClientOriginalExtension(),
-            'identifier' => $identifier
-        ], $this->appendAttachmentData($file, $identifier));
+        $model = $this->appendAttachmentData($model, $file, $identifier);
+
+        return $model;
     }
 
-    protected function appendAttachmentData(UploadedFile $file, string $identifier): array
+    protected function appendAttachmentData(Model $model, UploadedFile $file, string $identifier)
     {
-        return [];
+        return $model;
     }
 
-    protected function getClassName(): string
+    protected function getClassName()
     {
         $namespace = explode('\\', get_class($this));
 
@@ -106,9 +98,9 @@ trait HandlesAttachments
         return $class;
     }
 
-    protected function saveAttachmentToDisk(UploadedFile $file, $alias, string $class)
+    protected function saveAttachmentToDisk(UploadedFile $file, Attachment $attachment, string $class)
     {
-        $file->storeAs($class, $alias, ['disk' => 'public']);
+        $file->storeAs($class, $attachment->alias, ['disk' => 'public']);
     }
 
     private function attachmentFor($identifier = 'default')

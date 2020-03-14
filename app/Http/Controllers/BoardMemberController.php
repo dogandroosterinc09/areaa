@@ -110,6 +110,7 @@ class BoardMemberController extends Controller
 
         $board_member = $this->board_member->create(array_merge($request->all(), [
             'order' => $this->board_member->max('id') + 1,
+            'slug' => str_slug($request->input('first_name').' '.$request->input('last_name')),
             'is_active' => $request->has('is_active')
         ]));
 
@@ -185,6 +186,7 @@ class BoardMemberController extends Controller
 
         $board_member->fill(array_merge($request->all(), [
             'order' => $board_member->order ?? ($this->board_member->max('id') + 1),
+            'slug' => str_slug($request->input('first_name').' '.$request->input('last_name')),
             'is_active' => $request->has('is_active')
         ]))->save();
 

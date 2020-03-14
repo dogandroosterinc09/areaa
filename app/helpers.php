@@ -70,3 +70,25 @@ function add_http($url = null)
 function status() {
     return \App\Utilities\StatusBuilder::response();
 }
+
+function section($parameters, \App\Models\Page $page = null)
+{
+    $sections = collect([]);
+    if (!empty($page))
+        $sections = $page->sections;
+
+    $repository = new \App\Repositories\SectionRepository($sections);
+
+    return $repository->render($parameters);
+}
+
+function addSection($name, $type, $pages, $value = '')
+{
+    if (empty($value) && $type === \App\Models\Section::FORM)
+        $value = '{"options": {}, "fields": [], "data": []}';
+
+    $section = \App\Models\Section::create(compact('name', 'type', 'value'));
+    $section->pages()->sync($pages);
+
+    return $section;
+}
