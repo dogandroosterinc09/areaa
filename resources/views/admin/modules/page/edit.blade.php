@@ -23,17 +23,17 @@
                 @include('admin.components.heading', ['text' => 'Page Details'])
                 @include('admin.components.input-field', ['label' => 'Name', 'value' => $page->name])
                 @include('admin.components.input-field', ['label' => 'Slug', 'value' => $page->slug])
-                @include('admin.components.attachment', ['label' => 'Banner Image', 'value' => $page->attachment('banner_image')])
+                @include('admin.components.attachment', ['label' => 'Banner Image', 'value' => $page->attachment])
                 @include('admin.components.editor', ['label' => 'Content', 'value' => $page->content])
                 @include('admin.components.toggle', ['label' => 'Is Active', 'value' => $page->is_active])
 
                 @include('admin.components.heading', ['text' => 'Sections'])
-                {{--                @include('admin.modules.page.page_sections')--}}
+                                @include('admin.modules.page.page_sections')
 
                 <div class="form-group form-actions">
                     <div class="col-md-9 col-md-offset-3">
                         <a href="{{ route('admin.pages.index') }}" class="btn btn-sm btn-warning">Cancel</a>
-                        <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-floppy-o"></i> Save
+                        <button id="btnSave" type="submit" class="btn btn-sm btn-primary"><i class="fa fa-floppy-o"></i> Save
                         </button>
                     </div>
                 </div>
@@ -92,13 +92,9 @@
                     contentType: false,
                     cache: false,
                     processData: false,
-                    beforeSend: function () {
-                        $(e.target).closest('.form-group').siblings().find('img').attr('src', '{{ url("public/images/loading.gif") }}')
-                    },
                     success: function (response) {
                         if (response.status) {
                             $self.siblings('input[type=hidden].fld').val(response.data.id);
-                            $(e.target).closest('.form-group').siblings().find('img').attr('src', response.data.url);
                         }
                     }
                 });
@@ -117,19 +113,12 @@
             sections.filter(function (section) {
                 return section.type === 3;
             }).forEach(function (section) {
-                var deletedAttachments = $('[name="delete-attachments[]"]').toArray().map(function (el) {
-                    return $(el).val();
-                });
                 section.value.data = $(`#section-${section.id}`).children('.form-field').map(function (i, el) {
                     return $(el).find('.form-group').toArray().reduce(function (item, fg) {
                         var field = $(fg).find('input.fld');
 
                         if (field.length > 0) {
-                            if ($(field).attr('type') === 'hidden' && deletedAttachments.includes($(field).val())) {
-                                item[$(field).data('name')] = null;
-                            } else {
-                                item[$(field).data('name')] = $(field).val();
-                            }
+                            item[$(field).data('name')] = $(field).val();
                         } else if (field.length === 0) {
                             field = $(fg).find('textarea.fld');
 
@@ -152,26 +141,6 @@
 
             $('form#edit-page').submit();
         });
-
-        $('.btnDeleteAttachment').on('click', function (e) {
-            e.preventDefault();
-            var self = this;
-
-            swal({
-                title: 'Are you sure you want to remove this attachment?',
-                text: 'This action is irreversible.',
-                type: 'warning',
-                showCancelButton: true,
-                confirmButtonText: 'Delete'
-            }, function (confirmed) {
-                if (confirmed) {
-                    var parent = $(self).parent();
-                    var id = $(self).data('id');
-                    parent.empty();
-                    parent.append(`<input type="hidden" name="delete-attachments[]" value="${id}">`);
-                }
-            });
-        })
     </script>
     <script type="text/javascript" src="{{ asset('public/js/ckeditor/ckeditor.js') }}"></script>
     <script type="text/javascript" src="{{ asset('public/js/libraries/pages.js') }}"></script>

@@ -1,75 +1,83 @@
-@if (!empty($page))
-    @foreach($page->page_sections()->orderBy('position', 'ASC')->get() as $section)
-        @if ($section->type == 'textarea')
-            <div class="form-group{{ $errors->has($section->section) ? ' has-error' : '' }}">
-                <label class="col-md-3 control-label"
-                       for="page_sections[{{ $section->id }}]">{{ ucwords(str_replace('_', ' ', $section->section)) }}</label>
-                <div class="col-md-9">
-                                    <textarea id="page_sections[{{ $section->id }}]"
-                                              name="page_sections[{{ $section->id }}]" rows="9"
-                                              class="form-control" style="resize: vertical; min-height: 150px;"
-                                              placeholder="Enter page {{ str_replace('_', ' ', $section->section) }}..">{!! $section->content !!}</textarea>
-                </div>
+@foreach($page->sections as $section)
+    @if($section->isEditor)
+        @include('admin.components.editor', ['field' => $section->alias, 'label' => $section->name, 'value' => $section->value])
+
+    @elseif($section->isAttachment)
+        @include('admin.components.attachment', ['field' => $section->alias, 'label' => $section->name, 'value' => $section->attachment])
+
+    @elseif($section->isForm)
+        <input type="hidden" name="{{ $section->alias }}">
+        @php
+            $form = json_decode($section->value);
+        @endphp
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h4 style="border-left: 3px solid #61dbd5; padding-left: 8px; margin-bottom: 20px;">{{ $section->name }}</h4>
             </div>
-        @elseif ($section->type == 'ckeditor')
-            <div class="form-group{{ $errors->has($section->section) ? ' has-error' : '' }}">
-                <label class="col-md-3 control-label"
-                       for="page_sections[{{ $section->id }}]">{{ ucwords(str_replace('_', ' ', $section->section)) }}</label>
-                <div class="col-md-9">
-                                <textarea id="page_sections[{{ $section->id }}]"
-                                          name="page_sections[{{ $section->id }}]" rows="9"
-                                          class="form-control ckeditor"
-                                          placeholder="Enter page {{ str_replace('_', ' ', $section->section) }}..">{!! $section->content !!}</textarea>
+        </div>
+
+        <div id="section-{{ $section->id }}" style="margin-bottom: 50px;">
+            @foreach($form->data as $index => $data)
+                <div class="form-field">
+                    @foreach($data as $key => $value)
+                        @php
+                            $field = collect($form->fields)->filter(function ($fld) use ($key) {
+                                $alias = $fld->alias ?? str_slug($fld->name);
+
+                                return $key === $alias;
+                            })->first();
+                            $alias = $field->alias ?? str_slug($field->name);
+                        @endphp
+                        @if($field->type === 'text')
+                            <div class="row">
+                                <div class="col-md-8 col-md-offset-2">
+                                    <div class="form-group">
+                                        <label for="{{ $alias }}" class="col-md-2 control-label">{{ $field->name }}</label>
+
+                                        <div class="col-md-10">
+                                            <input type="text" class="form-control fld" data-name="{{ $alias }}" value="{{ $value }}">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @elseif($field->type === 'numeric')
+                            <div class="row">
+                                <div class="col-md-8 col-md-offset-2">
+                                    <div class="form-group">
+                                        <label for="{{ $alias }}" class="col-md-2 control-label">{{ $field->name }}</label>
+
+                                        <div class="col-md-10">
+                                            <input type="number" class="form-control fld" data-name="{{ $alias }}" value="{{ $value }}">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @elseif($field->type === 'textarea')
+                            <div class="row">
+                                <div class="col-md-8 col-md-offset-2">
+                                    <div class="form-group">
+                                        <label for="{{ $alias }}" class="col-md-2 control-label">{{ $field->name }}</label>
+
+                                        <div class="col-md-10">
+                                            <textarea class="fld form-control" data-name="{{ $alias }}" rows="4">{{ $value }}</textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @elseif($field->type === 'attachment')
+                            @include('admin.components.attachment', ['field' => $alias, 'label' => $field->name, 'value' => \App\Models\Attachment::find($value), 'async' => true])
+                        @elseif($field->type === 'editor')
+                            @include('admin.components.editor', ['field' => $alias, 'label' => $field->name, 'value' => $value, 'async' => true])
+                        @endif
+                    @endforeach
                 </div>
-            </div>
-        @elseif ($section->type == 'input')
-            <div class="form-group{{ $errors->has($section->section) ? ' has-error' : '' }}">
-                <label class="col-md-3 control-label"
-                       for="page_sections[{{ $section->id }}]">{{ ucwords(str_replace('_', ' ', $section->section)) }}</label>
-                <div class="col-md-9">
-                    <input type="text" class="form-control" id="page_sections[{{ $section->id }}]"
-                           name="page_sections[{{ $section->id }}]"
-                           placeholder="Enter page {{ str_replace('_', ' ', $section->section) }}.."
-                           value="{{ $section->content }}">
-                </div>
-            </div>
-        @elseif ($section->type == 'file')
-            @php
-                $ext = pathinfo(asset($section->content), PATHINFO_EXTENSION);
-            @endphp
-            <div class="form-group{{ $errors->has($section->section) ? ' has-error' : '' }}">
-                <label class="col-md-3 control-label"
-                       for="page_sections[{{ $section->id }}]">{{ ucwords(str_replace('_', ' ', $section->section)) }}</label>
-                <div class="col-md-9">
-                    <div class="input-group">
-                        <label class="input-group-btn">
-                                                <span class="btn btn-primary">
-                                                    Choose File <input type="file" name="page_sections[{{ $section->id }}]"
-                                                                       style="display: none;" data-file-type="{{ $ext }}">
-                                                </span>
-                        </label>
-                        <input type="text" class="form-control" readonly>
+
+                @if(!$loop->last)
+                    <div class="col-md-8 col-md-offset-2">
+                        <hr/>
                     </div>
-                </div>
-                <label class="col-md-3 control-label"
-                       for="page_sections[{{ $section->id }}]">&nbsp;</label>
-                <div class="col-md-9">
-                    @if ($ext == 'pdf' || $ext == 'doc' || $ext == 'docx')
-                        <a target="_blank" href="{{ asset($section->content) }}" class="file-anchor">
-                            {{ $section->content }}
-                        </a>
-                    @else
-                        <a href="{{ asset($section->content) }}" class="zoom img-thumbnail"
-                           style="cursor: default !important;" data-toggle="lightbox-image">
-                            <img src="{{ asset($section->content) }}" alt="{{ $section->content}}" onerror="this.src='{{ asset(config('constants.placeholder_image')) }}'"
-                                 class="img-responsive center-block" style="max-width: 100px;">
-                        </a>
-                    @endif
-                </div>
-            </div>
-        @endif
-        @if($errors->has($section->section))
-            <span class="help-block animation-slideDown">{{ $errors->first($section->section) }}</span>
-        @endif
-    @endforeach
-@endif
+                @endif
+            @endforeach
+        </div>
+    @endif
+@endforeach

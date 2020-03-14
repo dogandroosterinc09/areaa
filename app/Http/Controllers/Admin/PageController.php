@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Attachment;
 use App\Models\Page;
 use App\Models\PageType;
 use App\Models\PageSection;
@@ -155,29 +156,29 @@ class PageController extends Controller
 
 
 
-        $pos = 1;
-        $file_upload_path = '';
-        if ($request->hasFile('banner_image')) {
-            $file_upload_path = $this->pageRepository->uploadFilePageSection($request->file('banner_image'), $page);
-        }
+//        $pos = 1;
+//        $file_upload_path = '';
+//        if ($request->hasFile('banner_image')) {
+//            $file_upload_path = $this->pageRepository->uploadFilePageSection($request->file('banner_image'), $page);
+//        }
 
-        $page->page_sections()->create([
-            'section' => 'banner_image',
-            'content' => $file_upload_path,
-            'type' => 'file',
-            'position' => $pos,
-        ]);
+//        $page->page_sections()->create([
+//            'section' => 'banner_image',
+//            'content' => $file_upload_path,
+//            'type' => 'file',
+//            'position' => $pos,
+//        ]);
 
-        $pos++;
-
-        if ($request->has('content')) {
-            $page->page_sections()->create([
-                'section' => 'content',
-                'content' => $request->get('content'),
-                'type' => 'ckeditor',
-                'position' => $pos,
-            ]);
-        }
+//        $pos++;
+//
+//        if ($request->has('content')) {
+//            $page->page_sections()->create([
+//                'section' => 'content',
+//                'content' => $request->get('content'),
+//                'type' => 'ckeditor',
+//                'position' => $pos,
+//            ]);
+//        }
 
         return redirect()->route('admin.pages.index')->with('flash_message', [
             'title' => '',
@@ -223,7 +224,7 @@ class PageController extends Controller
             'slug' => 'required|unique:pages,slug,' . $id . ',id,deleted_at,NULL',
 //            'content' => 'required',
 //            'page_type_id' => 'required',
-            'banner_image' => 'mimes:jpg,jpeg,png',
+//            'banner_image' => 'mimes:jpg,jpeg,png',
         ]);
 
         $page = $this->page->findOrFail($id);
@@ -239,29 +240,17 @@ class PageController extends Controller
         $input['seo_meta_id'] = $seo_meta->id;
         /* seo meta */
 
-        $file_upload_path = '';
-//        if ($request->hasFile('banner_image')) {
-//            $file_upload_path = $this->pageRepository->uploadFile($request->file('banner_image'), $page);
-//            $input['banner_image'] = $file_upload_path;
-//        }
-
-        if ($request->hasFile('banner-image')) {
-            $page->attach($request->file('banner-image'), 'banner_image');
-        }
-
         $page->fill($input)->save();
 
-        if (!empty($input['page_sections'])) {
-            foreach ($input['page_sections'] as $page_section_key => $page_section) {
-                $section = $this->pageSection->find($page_section_key);
-                if (!empty($section)) {
-                    if ($section->type == 'file') {
-                        $file_upload_path = $this->pageRepository->uploadFilePageSection($request->file('page_sections.' . $page_section_key), $page);
-                        $page_section = $file_upload_path;
-                    }
-                    $section->content = $page_section;
-                    $section->save();
-                }
+        if ($request->hasFile('banner_image'))
+            $page->attach($request->file('banner_image'));
+
+        foreach ($page->sections as $section) {
+            if ($section->isAttachment) {
+                $page->attach($request->file($section->alias));
+            } else {
+                $section->value = $request->input($section->alias);
+                $section->save();
             }
         }
 
@@ -296,30 +285,30 @@ class PageController extends Controller
 
     public function upload(Request $request)
     {
-//        if (!$request->hasFile('image'))
+        if (!$request->hasFile('image'))
             return response()->json([
                 'status' => false,
                 'message' => 'No file provided',
                 'data' => []
             ]);
-//
-//        $file = $request->file('image');
-//
-//        $attachment = new Attachment();
-//        $attachment->alias = str_random() . '.' . $file->getClientOriginalExtension();
-//        $attachment->folder = 'Form';
-//        $attachment->mime = $file->getClientMimeType();
-//        $attachment->name = $file->getClientOriginalName();
-//        $attachment->extension = $file->getClientOriginalExtension();
-//        $attachment->save();
-//
-//        $file->move(storage_path('app/public/Form'), $attachment->alias);
 
-//        return response()->json([
-//            'status' => true,
-//            'message' => 'Image successfully uploaded',
-//            'data' => $attachment
-//        ]);
+        $file = $request->file('image');
+
+        $attachment = new Attachment();
+        $attachment->alias = str_random() . '.' . $file->getClientOriginalExtension();
+        $attachment->folder = 'Form';
+        $attachment->mime = $file->getClientMimeType();
+        $attachment->name = $file->getClientOriginalName();
+        $attachment->extension = $file->getClientOriginalExtension();
+        $attachment->save();
+
+        $file->move(storage_path('app/public/Form'), $attachment->alias);
+
+        return response()->json([
+            'status' => true,
+            'message' => 'Image successfully uploaded',
+            'data' => $attachment
+        ]);
     }
 
     /**

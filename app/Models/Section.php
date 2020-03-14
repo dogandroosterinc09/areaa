@@ -2,17 +2,15 @@
 
 namespace App\Models;
 
-use App\Http\Traits\Attachments\HandlesAttachments;
-use App\Http\Traits\Attachments\IHasAttachment;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletes;
-//use App\Http\Traits\Attachments\HasAttachment;
+use App\Http\Traits\Attachments\HasAttachment;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Section extends Model
 {
-    use SoftDeletes, HandlesAttachments;
+    use SoftDeletes, HasAttachment;
 
     const EDITOR = 1;
     const ATTACHMENT = 2;

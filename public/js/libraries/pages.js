@@ -147,7 +147,7 @@
             uiEditPageForm = $('#edit-page');
             uiPageTypeSelect = $('.page-type-select');
             uiPagesDatatable = null;
-            uiInputBannerImage = $('input[name="banner_image"]');
+            uiInputBannerImage = $('input[type="file"]');
 
             uiPagesDatatable = platform.page.initialize_datatable();
 
