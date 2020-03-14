@@ -18121,6 +18121,15 @@ img.img-responsive {
   transform: rotate(180deg) scale(0.7);
   margin-right: 10px;
 }
+.btn--forgot {
+  border: 0;
+  outline: none;
+  color: #ab1a2d;
+  text-align: right;
+  padding: 0;
+  margin-top: 15px;
+  font-weight: 600;
+}
 
 #loadMore {
   border: 1px solid #b9b1b2;
@@ -20447,13 +20456,11 @@ ul.bullet-style li h6 {
   font-weight: 600;
   font-size: 1em;
 }
-.board-thumbnail__item {
-  width: calc(100%/4);
-  margin-bottom: 50px;
-  padding: 0 20px;
-}
 .board-thumbnail__item a {
   text-decoration: none;
+  display: block;
+  min-height: 400px;
+  margin-bottom: 20px;
 }
 
 .become-member .container-max {
@@ -20474,10 +20481,6 @@ ul.bullet-style li h6 {
   margin: 0;
   font-size: 1.1em;
   font-weight: 600;
-}
-
-.executive-board {
-  padding: 60px 0;
 }
 
 .board-detail-content {
@@ -20700,6 +20703,7 @@ ul.bullet-style li h6 {
   background: url("../images/curl-tail-side.png") no-repeat;
   top: 0;
   right: -45px;
+  background-size: 100% 100%;
 }
 
 .events-thumbnail {
@@ -21279,6 +21283,132 @@ section.page--login .site-content {
           transform: scale(0.9);
 }
 
+.custom-radio,
+.custom-checkbox {
+  list-style: none;
+  /* Create a custom checkbox */
+}
+.custom-radio:after,
+.custom-checkbox:after {
+  display: block;
+  clear: both;
+  content: "";
+}
+.custom-radio--inline-block,
+.custom-checkbox--inline-block {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: flex-start;
+}
+.custom-radio--inline-block li,
+.custom-checkbox--inline-block li {
+  display: inline-block;
+  margin-right: 10px;
+}
+.custom-radio__item,
+.custom-checkbox__item {
+  /* The container */
+  margin: 0 !important;
+}
+.custom-radio__item--holder,
+.custom-checkbox__item--holder {
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  font-size: 0.9em;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* Hide the browser's default checkbox */
+}
+.custom-radio__item--holder input:checked,
+.custom-checkbox__item--holder input:checked {
+  /* When the checkbox is checked, add a blue background */
+}
+.custom-radio__item--holder input:checked ~ .checkmark,
+.custom-checkbox__item--holder input:checked ~ .checkmark {
+  background-color: #ab1a2d;
+  /* Show the checkmark when checked */
+}
+.custom-radio__item--holder input:checked ~ .checkmark:after,
+.custom-checkbox__item--holder input:checked ~ .checkmark:after {
+  display: block;
+}
+.custom-radio__item--holder:hover input,
+.custom-checkbox__item--holder:hover input {
+  /* On mouse-over, add a grey background color */
+}
+.custom-radio__item--holder:hover input ~ .checkmark,
+.custom-checkbox__item--holder:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+.custom-radio__item--holder input,
+.custom-checkbox__item--holder input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.custom-radio__checkmark,
+.custom-checkbox__checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+  border: 1px solid #c8c8c8;
+  right: inherit;
+  margin: auto;
+  border-radius: 100%;
+  top: 0;
+  /* Create the checkmark/indicator (hidden when not checked) */
+  /* Style the checkmark/indicator */
+}
+.custom-radio__checkmark:after,
+.custom-checkbox__checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  background: url("../images/sprite.png") no-repeat !important;
+  color: #fff;
+  font-size: 11px;
+  width: 14px;
+  height: 14px;
+  background-position: -319px -33px !important;
+  background-color: #fff !important;
+}
+.custom-radio__checkmark:after,
+.custom-checkbox__checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid #fff;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.custom-radio__checkmark--boxstyle:after,
+.custom-checkbox__checkmark--boxstyle:after {
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 14px;
+  height: 14px;
+  background: #ab1a2d;
+  border-radius: 100%;
+  border: 0;
+  -webkit-transform: inherit;
+          transform: inherit;
+}
+
 .page-chapter {
   overflow: hidden;
 }
@@ -21288,6 +21418,28 @@ section.page--login .site-content {
 .page-chapter .dashboard-nav {
   margin-bottom: 50px;
   margin-top: -20px;
+}
+.page-chapter--contact-us .dashboard-nav {
+  margin-bottom: 0;
+}
+.page-chapter--contact-us .contact-section {
+  margin-top: -15px;
+}
+.page-chapter--contact-us .col-lg-6.contact-section__item.contact-section__right {
+  background: #f8f6f6 !important;
+}
+.page-chapter--contact-us .contact-section__left.curl-tail-side:before {
+  width: 100%;
+}
+.page-chapter--login .contact-form .form-group {
+  padding: 0 !important;
+}
+.page-chapter--login .contact-form .form-group:nth-child(2) {
+  padding: 0;
+}
+
+.page--board .executive-board {
+  padding: 60px 0;
 }
 
 .dashboard-navigation {
@@ -22216,14 +22368,40 @@ section.page--login .site-content {
 .fullwidth__left-push .container-max {
   padding-left: 12%;
 }
+.fullwidth__left-push .fullwidth__left {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center;
+}
+@media only screen and (min-width: 1000px) {
+  .fullwidth__left-push .fullwidth__left {
+    padding-right: 5%;
+  }
+}
 .fullwidth__right-push .container-max {
   padding-right: 12%;
+}
+.fullwidth__right-push .fullwidth__right {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center;
+}
+@media only screen and (min-width: 1000px) {
+  .fullwidth__right-push .fullwidth__right {
+    padding-left: 5%;
+  }
 }
 .fullwidth div img {
   width: 100% !important;
 }
 .fullwidth .img-fluid {
   box-shadow: 0 1px 21px 0px rgba(0, 0, 0, 0.5);
+}
+.fullwidth__image {
+  min-height: 550px;
+}
+.fullwidth .btn-group {
+  margin-top: 20px;
 }
 
 .chapter-benefits {
@@ -22624,6 +22802,124 @@ section.page--login .site-content {
 .chapter-event-display {
   max-width: 80%;
   margin: auto;
+}
+
+.chapter-story__push {
+  padding-left: 80px;
+}
+.chapter-story__push a {
+  text-decoration: none;
+}
+.chapter-story__push h4 {
+  margin-bottom: 25px;
+  font-weight: 600;
+  font-style: italic;
+}
+.chapter-story__push h4 a {
+  color: #ab1a2d;
+}
+.chapter-story__push p {
+  font-size: 1em;
+}
+.chapter-story__push .btn-group {
+  margin-top: 35px;
+}
+.chapter-story__image {
+  padding: 50px;
+}
+.chapter-story__image img {
+  max-width: 100%;
+  width: 100%;
+  max-height: 100%;
+}
+
+img.img-dropshadow {
+  box-shadow: 0 6px 11px 1px rgba(0, 0, 0, 0.6);
+}
+
+.chapter-ourstory-section {
+  margin-bottom: 100px;
+}
+.chapter-ourstory-section .container-max {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 50px;
+}
+
+.chapter-national {
+  margin-bottom: 50px;
+}
+
+.login-section {
+  margin-bottom: 50px;
+}
+.login-section .container-max {
+  border-radius: 10px !important;
+  overflow: hidden;
+}
+.login-section__item {
+  min-height: 420px;
+  background: #f8f6f6;
+  padding: 0;
+}
+.login-section__form {
+  padding: 10%;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center;
+  height: 100%;
+}
+.login-section__form form input {
+  display: block;
+  width: 100%;
+  padding: 24px;
+  border-radius: 100px;
+  -moz-border-radius: 100px;
+}
+.login-section__form ul {
+  margin: 0;
+  padding: 0;
+}
+.login-section__message {
+  height: 100%;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center;
+}
+.login-section__message h4 {
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 25px;
+}
+.login-section__message .btn-group {
+  float: right;
+  clear: both;
+}
+.login-section__message .btn-group .btn {
+  margin-right: 0;
+}
+.login-section__message .btn-group .btn:hover {
+  background: #7b0817;
+  color: #fff;
+}
+.login-section__message:before {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  background: rgba(0, 0, 0, 0.5);
+}
+.login-section__message p {
+  color: #fff;
+  margin-bottom: 30px;
+  font-size: 1em;
+  line-height: 24px;
+  font-weight: 300;
+}
+.login-section__content {
+  padding: 10%;
+  position: relative;
 }
 
 /* Safari 11+ */

@@ -1030,11 +1030,14 @@
             }
         }
         &__item {
-            width: calc(100%/4);
-            margin-bottom: 50px;
-            padding: 0 20px;
+            // width: calc(100%/4);
+            // margin-bottom: 50px;
+            // padding: 0 20px;
             a {
                 text-decoration: none;
+                display: block;
+                min-height: 400px;
+                margin-bottom: 20px;
             }
         }
     }
@@ -1071,10 +1074,8 @@
         }
     }
     
-    .executive-board {
-        padding: 60px 0;
-    }
-    
+    // .executive-board {
+    // }
     .board-detail-content {
         margin: 75px 0;
         .container-max {
@@ -1306,6 +1307,7 @@
             background: url("../images/curl-tail-side.png") no-repeat;
             top: 0;
             right: -45px;
+            background-size: 100% 100%;
         }
     }
     

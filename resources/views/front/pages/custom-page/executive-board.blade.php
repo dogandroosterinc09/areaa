@@ -32,10 +32,10 @@
             <div class="container-max">
                 <div class="col-lg-12">
 
-                    <div class="board-thumbnail">
+                    <div class="board-thumbnail row">
 
                          {{-- board-thumbnail --}}
-                        <div class="board-thumbnail__item">
+                        <div class="board-thumbnail__item col-lg-3 col-md-6">
                             <a href="{{url('board-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/exec-James-Huang.jpg') }}" alt="Member Image">
@@ -50,7 +50,7 @@
 
 
                           {{-- board-thumbnail --}}
-                          <div class="board-thumbnail__item">
+                          <div class="board-thumbnail__item col-lg-3 col-md-6">
                             <a href="{{url('board-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/exec-AmyKong.jpg') }}" alt="Member Image">
@@ -65,7 +65,7 @@
 
 
                           {{-- board-thumbnail --}}
-                          <div class="board-thumbnail__item">
+                          <div class="board-thumbnail__item col-lg-3 col-md-6">
                             <a href="{{url('board-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/exec-TomTruong.jpg') }}" alt="Member Image">
@@ -80,7 +80,7 @@
 
                         
                           {{-- board-thumbnail --}}
-                          <div class="board-thumbnail__item">
+                          <div class="board-thumbnail__item col-lg-3 col-md-6">
                             <a href="{{url('board-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/exec-AtsukoYube.jpg') }}" alt="Member Image">
@@ -96,7 +96,7 @@
 
                         
                           {{-- board-thumbnail --}}
-                          <div class="board-thumbnail__item">
+                          <div class="board-thumbnail__item col-lg-3 col-md-6">
                             <a href="{{url('board-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/exec-DickLee.jpg') }}" alt="Member Image">
@@ -111,7 +111,7 @@
 
 
                            {{-- board-thumbnail --}}
-                           <div class="board-thumbnail__item">
+                           <div class="board-thumbnail__item col-lg-3 col-md-6">
                             <a href="{{url('board-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/exec-Allen-Okamoto.jpg') }}" alt="Member Image">
@@ -125,7 +125,7 @@
                         {{-- board-thumbnail --}}
 
                         {{-- board-thumbnail --}}
-                        <div class="board-thumbnail__item">
+                        <div class="board-thumbnail__item col-lg-3 col-md-6">
                             <a href="{{url('board-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/exec-Jim-Park.jpg') }}" alt="Member Image">
@@ -140,7 +140,7 @@
 
 
                         {{-- board-thumbnail --}}
-                        <div class="board-thumbnail__item">
+                        <div class="board-thumbnail__item col-lg-3 col-md-6">
                             <a href="{{url('board-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/exec-Allen-Chiang.jpg') }}" alt="Member Image">
@@ -155,7 +155,7 @@
 
 
                         {{-- board-thumbnail --}}
-                        <div class="board-thumbnail__item">
+                        <div class="board-thumbnail__item col-lg-3 col-md-6">
                             <a href="{{url('board-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/exec-JohnYenWong.jpg') }}" alt="Member Image">
@@ -170,7 +170,7 @@
 
 
                         {{-- board-thumbnail --}}
-                        <div class="board-thumbnail__item">
+                        <div class="board-thumbnail__item col-lg-3 col-md-6">
                             <a href="{{url('board-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/exec-Hope-Atuel.jpg') }}" alt="Member Image">
