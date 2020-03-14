@@ -115,6 +115,26 @@ header {
                     }
                 }
             }
+            .mega-menu {
+                width: 400px;
+                background: #2f2f2f !important;
+                display: flex;
+                flex-wrap: wrap;
+                left: -0%;
+                li {
+                    width: calc(100%/2) !important;
+                    a {
+                        padding: 20px;
+                        display: block;
+                        text-decoration: none;
+                        background: transparent !important;
+                        &:hover {
+                            background: #383838 !important;
+                            color: #fff !important;
+                        }
+                    }
+                }
+            }
         }
     }
     .contact-details-wrap {

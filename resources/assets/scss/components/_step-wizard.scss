@@ -1,0 +1,241 @@
+.steps-wizard {
+    margin: 50px 0;
+    margin-bottom: 100px;
+    display: block;
+    &__header {
+        div {
+            width: 100%;
+        }
+        ul {
+            @include flex;
+            @include flex-justify-content(center);
+            flex-wrap: inherit;
+            list-style: none;
+            padding: 0;
+            width: 100%;
+            li {
+                margin: 0 35px;
+                display: block;
+                text-align: center;
+                a {
+                    text-decoration: none;
+                    color: $color-gray;
+                    strong {
+                        display: block;
+                        text-align: center;
+                        width: 70px;
+                        height: 70px;
+                        margin: auto;
+                        background: $sprite-all;
+                        background-position: -351px -81px;
+                        @include flex;
+                        @include flex-justify-content(center);
+                        @include flex-align-items(center);
+                        color: $color-white;
+                    }
+                    p {
+                        font-weight: 800;
+                    }
+                    &.active {
+                        strong {
+                            background-position: -273px -81px;
+                        }
+                        color: $color-black;
+                    }
+                }
+            }
+        }
+        .navbar-inner {
+            position: relative;
+            z-index: 2;
+        }
+    }
+    &__box {
+        background: #fff;
+        padding: 20px;
+        border-radius: 20px;
+        border: 1px solid #ddd;
+        input,
+        select {
+            border: 1px solid $color-gray;
+            background: $color-white;
+        }
+        select {
+            width: 100%;
+            border-radius: 100px;
+            padding: 10px 20px;
+            -webkit-appearance: none;
+            font-weight: 600;
+        }
+    }
+    &__progress {
+        position: absolute;
+        background: $color-gray;
+        height: 3px;
+        max-width: 380px;
+        margin: auto;
+        left: 0;
+        right: 0;
+        top: -54px;
+        bottom: 0;
+    }
+    &__title {
+        text-align: center;
+        margin-bottom: 20px;
+        p,
+        h2 {
+            margin: 0;
+        }
+        h2 {
+            font-weight: 800;
+        }
+        p {
+            font-size: 2em;
+        }
+    }
+    &__items {
+        &--one {
+            p {
+                font-style: italic;
+                text-align: center;
+                font-size: 1em;
+                padding: 15px 0;
+            }
+        }
+    }
+    &__form {
+        h4 {
+            font-weight: 800;
+            margin-bottom: 0;
+        }
+        input,
+        select {
+            border: 1px solid $color-gray;
+            background: $color-white;
+            width: 100%;
+            padding: 10px 30px;
+            border-radius: 100px;
+            color: $color-gray;
+            outline: none;
+        }
+        select {
+            width: 100%;
+            border-radius: 100px;
+            padding: 10px 30px;
+            -webkit-appearance: none;
+            font-weight: 600;
+        }
+        &--field {
+            margin-bottom: 20px;
+        }
+        .flex-middle {
+            @include flex;
+            @include flex-align-items(center);
+        }
+        .check-box-label {
+            @include flex;
+            flex-wrap: inherit;
+            @include flex-align-items(center);
+            margin: auto;
+            width: 100%;
+            font-weight: bold;
+            input {
+                width: auto;
+                margin-right: 10px;
+            }
+            a {
+                color: $color-secondary;
+                margin-left: 5px;
+                text-decoration: none;
+            }
+        }
+        .selector-option {
+            @include flex;
+            flex-wrap: inherit !important;
+            label {
+                font-weight: 800;
+                width: 110px;
+                margin-top: 8px;
+            }
+        }
+        .title-icon {
+            @include flex;
+            flex-wrap: inherit;
+            @include flex-justify-content(space-between);
+            width: 100%;
+        }
+        .payment-icon {
+            height: 30px;
+            width: 199px;
+            background: $sprite-all;
+            background-position: -215px -173px;
+            overflow: hidden;
+            text-indent: -999px;
+        }
+        .select-box {
+            position: relative;
+            background: $color-white;
+            border-radius: 100px;
+            width: 100%;
+            &:after {
+                position: absolute;
+                content: '';
+                width: 10px;
+                height: 7px;
+                background: $sprite-all;
+                background-position: -188px -188px;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                right: 20px;
+            }
+            select {
+                position: relative;
+                z-index: 2;
+                background: transparent;
+            }
+        }
+    }
+    &__button {
+        margin-top: 35px;
+        .btn--next {
+            background: $color-secondary;
+            padding: 10px 80px !important;
+            border-radius: 100px !important;
+            font-weight: 800;
+            display: inline-block;
+            margin: auto;
+            color: $color-white;
+            border: 2px solid transparent;
+        }
+        .btn--back {
+            background: transparent;
+            border: 2px solid $color-secondary;
+            padding: 10px 80px !important;
+            border-radius: 100px !important;
+            font-weight: 800;
+            margin: auto;
+            color: $color-white;
+            display: inline-block !important;
+            background: $color-white;
+            color: $color-black;
+            text-transform: capitalize;
+        }
+    }
+    &__bottom {
+        margin-top: 50px;
+        a {
+            color: $color-secondary;
+            text-decoration: none;
+            font-weight: bold;
+            i {
+                position: relative;
+                top: 2px;
+                margin-left: 5px;
+            }
+            &:hover {
+                color: $color-primary;
+            }
+        }
+    }
+}

@@ -28,63 +28,7 @@
 
     <main class="main-content">
 
-        <section class="dashboard-nav">
-
-            <div class="dashboard-navigation">
-                <div class="dashboard-navigation__wrapper">
-                    <div class="dashboard-navigation__item">
-                        {{-- <ul>
-                            <li><a href="#"> Dashboard</a> </li>
-                            <li><a href="#"> Events</a> </li>
-                            <li><a href="#"> Profile</a> </li>
-                            <li><a href="#"> Membership Details</a> </li>
-                            <li><a href="#"> Support</a> </li>
-                        </ul> --}}
-
-                        <nav class="navbar-bar">
-                            <ul class="navbar-bar__wrapper">
-                                <li class="nav-item dropdown active">
-                                    <a class="nav-link dropdown-toggle" href="{{ url('about-us') }}">Dashboard <span class="sr-only">(current)</span></a>
-                                    <div class="dropdown-menu">
-                                        <ul class="sub-menu">
-                                            <li>
-                                                <a class="nav-link" href="#"> Sub menu 1</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ url('executive-board') }}">Events</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ url('about-us') }}">Profile</a>
-                                    <div class="dropdown-menu">
-                                        <ul class="sub-menu">
-                                            <li>
-                                                <a class="nav-link" href="#"> Sub menu 1</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ url('events') }}">Membership Details</a>
-                                 
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#" {{--data-toggle="dropdown"--}}>
-                                        Profile
-                                    </a>
-                                   
-                                </li>
-                            </ul>
-                        </nav>
-
-
-                    </div>
-                </div>
-            </div>
-
-        </section>
+        @include('front.pages.custom-page.sections.dashboard-menu')
 
         <section class="dashboard-content dashboard-content__events">
             <div class="container-max">
@@ -93,13 +37,16 @@
                     <div class="navigation-icon">
                         <div class="container">
                             <div class="row">
+                                {{-- loop here  --}}
                                 <div class="col-lg-4">
                                     <div class="navigation-icon__item">
                                         <div class="navigation-icon__watermark">
-                                            <h3> Areaa Membership Card </h3>
+                                            <a href="#">
+                                                <h3> Areaa Membership Card </h3>
+                                            </a>
                                         </div>
                                         <div class="navigation-icon__icon">
-                                           <div class="navigation-icon__icon--object menu-icon menu-icon--one">
+                                           <div class="navigation-icon__icon--object menu-icon menu-icon--events">
 
                                            </div>
                                         </div>
@@ -108,6 +55,172 @@
                                         </div>
                                     </div>
                                 </div>
+                                    {{-- loop here  --}}
+
+                                         {{-- loop here  --}}
+                                <div class="col-lg-4">
+                                    <div class="navigation-icon__item">
+                                        <div class="navigation-icon__watermark">
+                                            <a href="#">
+                                                <h3> Events</h3>
+                                            </a>
+                                        </div>
+                                        <div class="navigation-icon__icon">
+                                           <div class="navigation-icon__icon--object menu-icon menu-icon--events">
+
+                                           </div>
+                                        </div>
+                                        <div class="navigation-icon__title">
+                                            <h3> Events</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                    {{-- loop here  --}}
+
+                                         {{-- loop here  --}}
+                                <div class="col-lg-4">
+                                    <div class="navigation-icon__item">
+                                        <div class="navigation-icon__watermark">
+                                            <a href="#">
+                                                <h3>Membership Directory</h3>
+                                            </a>
+                                        </div>
+                                        <div class="navigation-icon__icon">
+                                           <div class="navigation-icon__icon--object menu-icon menu-icon--directory">
+
+                                           </div>
+                                        </div>
+                                        <div class="navigation-icon__title">
+                                            <h3> Membership Directory</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                    {{-- loop here  --}}
+
+                                         {{-- loop here  --}}
+                                <div class="col-lg-4">
+                                    <div class="navigation-icon__item">
+                                        <div class="navigation-icon__watermark">
+                                            <a href="#">
+                                                <h3> My Benefits </h3>
+                                            </a>
+                                        </div>
+                                        <div class="navigation-icon__icon">
+                                           <div class="navigation-icon__icon--object menu-icon menu-icon--benefits">
+
+                                           </div>
+                                        </div>
+                                        <div class="navigation-icon__title">
+                                            <h3> My Benefits</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                    {{-- loop here  --}}
+
+
+                                         {{-- loop here  --}}
+                                <div class="col-lg-4">
+                                    <div class="navigation-icon__item">
+                                        <div class="navigation-icon__watermark">
+                                            <a href="#">
+                                                <h3> Profile </h3>
+                                            </a>
+                                        </div>
+                                        <div class="navigation-icon__icon">
+                                           <div class="navigation-icon__icon--object menu-icon menu-icon--one">
+
+                                           </div>
+                                        </div>
+                                        <div class="navigation-icon__title">
+                                            <h3> Profile </h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                    {{-- loop here  --}}
+
+
+                                         {{-- loop here  --}}
+                                <div class="col-lg-4">
+                                    <div class="navigation-icon__item">
+                                        <div class="navigation-icon__watermark">
+                                            <a href="#">
+                                                <h3> My Inbox </h3>
+                                            </a>
+                                        </div>
+                                        <div class="navigation-icon__icon">
+                                           <div class="navigation-icon__icon--object menu-icon menu-icon--one">
+
+                                           </div>
+                                        </div>
+                                        <div class="navigation-icon__title">
+                                            <h3> My Inbox </h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                    {{-- loop here  --}}
+
+                                                {{-- loop here  --}}
+                                <div class="col-lg-4">
+                                    <div class="navigation-icon__item">
+                                        <div class="navigation-icon__watermark">
+                                            <a href="#">
+                                                <h3>My Committee </h3>
+                                            </a>
+                                        </div>
+                                        <div class="navigation-icon__icon">
+                                           <div class="navigation-icon__icon--object menu-icon menu-icon--one">
+
+                                           </div>
+                                        </div>
+                                        <div class="navigation-icon__title">
+                                            <h3> My Committee </h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                    {{-- loop here  --}}
+
+                                                {{-- loop here  --}}
+                                <div class="col-lg-4">
+                                    <div class="navigation-icon__item">
+                                        <div class="navigation-icon__watermark">
+                                            <a href="#">
+                                                <h3> Membership Details </h3>
+                                            </a>
+                                        </div>
+                                        <div class="navigation-icon__icon">
+                                           <div class="navigation-icon__icon--object menu-icon menu-icon--one">
+
+                                           </div>
+                                        </div>
+                                        <div class="navigation-icon__title">
+                                            <h3> Membership Details </h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                    {{-- loop here  --}}
+
+
+                                                {{-- loop here  --}}
+                                <div class="col-lg-4">
+                                    <div class="navigation-icon__item">
+                                        <div class="navigation-icon__watermark">
+                                            <a href="#">
+                                                <h3>Support</h3>
+                                            </a>
+                                        </div>
+                                        <div class="navigation-icon__icon">
+                                           <div class="navigation-icon__icon--object menu-icon menu-icon--one">
+
+                                           </div>
+                                        </div>
+                                        <div class="navigation-icon__title">
+                                            <h3> Support </h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                    {{-- loop here  --}}
+
+
                             </div>
                         </div>
                     </div>

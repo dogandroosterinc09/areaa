@@ -27,6 +27,25 @@
         @elseif ($page['slug'] == 'events-detail')
             @include('front.pages.custom-page.events-detail')
 
+        @elseif ($page['slug'] == 'FAQ')
+            @include('front.pages.custom-page.FAQ')
+
+        @elseif ($page['slug'] == 'media')
+            @include('front.pages.custom-page.media')
+
+        @elseif ($page['slug'] == 'photo-gallery')
+            @include('front.pages.custom-page.photo-gallery')
+
+        @elseif ($page['slug'] == 'areabenefits') 
+            @include('front.pages.custom-page.areabenefits')
+
+         @elseif ($page['slug'] == 'membership-registration') 
+            @include('front.pages.custom-page.membership-registration')
+
+            {{-- chapters --}}
+        @elseif ($page['slug'] == 'chapter-homepage') 
+            @include('front.pages.custom-page.chapter-homepage')
+
 
         @elseif ($page['slug'] == 'dashboard')
             @include('front.pages.custom-page.dashboard')
@@ -38,8 +57,14 @@
 
         @elseif ($page['slug'] == 'chapter')
             @include('front.pages.custom-page.chapter')
+        
+        @elseif ($page['slug'] == 'chapter-event-detail')
+            @include('front.pages.custom-page.chapter-event-detail')
+
+        @elseif ($page['slug'] == 'chapter-events')
+            @include('front.pages.custom-page.chapter-events')
             
-          
+            
 
         @else
             @include('front.pages.custom-page.default-page')

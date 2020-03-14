@@ -11,10 +11,10 @@
             @include flex-justify-content(center);
             list-style: none;
             padding: 0;
-            li {
-                a {
+            >li {
+                >a {
                     color: $color-white;
-                    padding: 15px 30px;
+                    padding: 15px 45px;
                     text-transform: uppercase;
                     font-size: .9em;
                     position: relative;
@@ -30,7 +30,7 @@
                     }
                 }
                 &.active {
-                    a {
+                    >a {
                         position: relative;
                         &:after {
                             content: '';
@@ -44,6 +44,7 @@
                             border-left: 10px solid transparent;
                             border-right: 10px solid transparent;
                             border-bottom: 12px solid $color-white;
+                            border-top: 0;
                         }
                     }
                 }
@@ -212,6 +213,12 @@
             display: block;
             margin: 0;
         }
+        &:hover {
+            .navigation-icon__watermark {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
     }
     &__watermark {
         position: absolute;
@@ -225,6 +232,15 @@
         @include flex;
         @include flex-align-items(flex-end);
         @include flex-justify-content(center);
+        opacity: 0;
+        visibility: hidden;
+        @include transition(.5s);
+        a {
+            display: block;
+            width: 100% !important;
+            color: $color-dark;
+            text-decoration: none;
+        }
         h3 {
             display: block;
             background: $color-white;
@@ -251,7 +267,7 @@
                 height: 3px;
                 background: #000;
                 display: inline-block;
-                margin-right: 10px;
+                margin-left: 10px;
             }
         }
     }
@@ -283,6 +299,30 @@
 .menu-icon {
     background: $sprite-all;
     &--one {
+        background-position: -351px -224px;
+    }
+    &--events {
         background-position: -162px -224px;
+    }
+    &--directory {
+        background-position: -224px -224px;
+    }
+    &--benefits {
+        background-position: -289px -224px;
+    }
+    &--profile {
+        background-position: -351px -224px;
+    }
+    &--profile {
+        background-position: -351px -224px;
+    }
+    &--location {
+        background-position: -164px -345px;
+    }
+    &--phone {
+        background-position: -225px -345px;
+    }
+    &--email {
+        background-position: -288px -345px;
     }
 }

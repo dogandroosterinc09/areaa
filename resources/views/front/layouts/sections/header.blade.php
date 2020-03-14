@@ -23,30 +23,37 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="{{ url('about-us') }}">About Us <span class="sr-only">(current)</span></a>
                             <div class="dropdown-menu">
-                                <ul class="sub-menu">
-                                    <li>
-                                        <a class="nav-link" href="#"> Sub menu 1</a>
-                                    </li>
+                                <ul class="sub-menu mega-menu">
+                                    <li><a href="{{url('about-us')}}"> About AREAA </a></li>
+                                    <li><a href="{{url('executive-board')}}"> Executive Board </a></li>
+                                    <li><a href="{{url('delegate-board')}}"> National Board </a></li>
+                                    <li><a href="{{url('about-us')}}"> Our Partners </a></li>
+                                    <li><a href="{{url('FAQ')}}"> FAQ </a></li>
                                 </ul>
                             </div>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="{{ url('executive-board') }}">Membership</a>
+                            <a class="nav-link dropdown-toggle" href="{{ url('membership-registration') }}">Membership</a>
                             <div class="dropdown-menu">
-                                <ul class="sub-menu">
-                                    <li>
-                                        <a class="nav-link" href="{{url('executive-board')}}"> Executive Board</a>
-                                    </li>
-                                    <li>
-                                        <a class="nav-link" href="{{url('delegate-board')}}"> Delegate Board</a>
-                                    </li>
+                                <ul class="sub-menu mega-menu">
+                                    <li><a href="#"> Why join </a></li>
+                                    <li><a href="{{url('areabenefits')}}"> Benefits </a></li>
+                                    <li><a href="#"> Find a Member </a></li>
+                                    <li><a href="#"> Chapter Locations </a></li>
+                                    <li><a href="{{url('membership-registration')}}"> A-List </a></li>
                                 </ul>
                             </div>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="{{ url('about-us') }}">Advocacy</a>
                             <div class="dropdown-menu">
-                                <ul class="sub-menu">
+                                <ul class="sub-menu mega-menu">
+                                    <li>
+                                        <a class="nav-link" href="#"> Sub menu 1</a>
+                                    </li>
+                                    <li>
+                                        <a class="nav-link" href="#"> Sub menu 1</a>
+                                    </li>
                                     <li>
                                         <a class="nav-link" href="#"> Sub menu 1</a>
                                     </li>
@@ -56,19 +63,28 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="{{ url('events') }}">Events</a>
                             <div class="dropdown-menu">
-                                <ul class="sub-menu">
-                                    <li>
-                                        <a class="nav-link" href="#"> Sub menu 1</a>
-                                    </li>
+                                <ul class="sub-menu mega-menu">
+                                    <li><a href="#"> Leadership Summit</a></li>
+                                    <li><a href="#">Global & Luxury Summit</a></li>
+                                    <li><a href="#">Regional Retreats</a></li>
+                                    <li><a href="#">National Convention</a></li>
+                                    <li><a href="{{url('chapter-homepage')}}">Chapter Events </a></li>
+                                    <li><a href="#">How to get involved </a></li>
                                 </ul>
                             </div>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" {{--data-toggle="dropdown"--}}>
+                            <a class="nav-link dropdown-toggle" href="{{ url('media')}}">
                                 Resources
                             </a>
                             <div class="dropdown-menu">
-                                <ul class="sub-menu">
+                                <ul class="sub-menu mega-menu">
+                                    <li>
+                                        <a href="#"> Sub menu 1</a>
+                                    </li>
+                                    <li>
+                                        <a class="nav-link" href="#"> Sub menu 1</a>
+                                    </li>
                                     <li>
                                         <a class="nav-link" href="#"> Sub menu 1</a>
                                     </li>

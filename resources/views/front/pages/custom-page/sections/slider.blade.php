@@ -2,6 +2,8 @@
     {{--<div class="banner-overlay image-background">
         <img src="{{ url('public/images/banner/hp-banner-overlay.png') }}">
     </div>--}}
+
+    {{-- content slider  --}}
     <div class="banner__image-slide">
         <div class="banner__image-slide--item">
             <div class="item-left">
@@ -47,7 +49,9 @@
             </div>
         </div>
     </div>
+    {{-- content slider  --}}
 
+     {{-- slider controller  --}}
     <div class="banner__thumb-slide">
         <div class="banner__thumb-slide--item">
             <div class="thumb-holder">
@@ -74,5 +78,6 @@
             </div>
         </div>
     </div>
+     {{-- slider controller  --}}
 
 </section>

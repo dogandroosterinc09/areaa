@@ -68,3 +68,41 @@
         }
     }
 }
+
+.slider-mask {
+    &__slick {
+        &--item {
+            height: 550px;
+            position: relative;
+        }
+    }
+    &__text {
+        background: $sprite-all;
+        width: 571px;
+        height: 571px;
+        position: absolute;
+        bottom: -108px;
+        right: 170px;
+        background-position: -4px -443px;
+        transform: scale(.7);
+        @include flex;
+        @include flex-align-items(center);
+        @include flex-justify-content(center);
+        &--content {
+            width: 70%;
+            text-align: center;
+            color: #fff;
+        }
+    }
+    &__image {
+        width: 550px;
+        height: 550px;
+        right: -23px;
+        top: -20px;
+        position: absolute;
+        img {
+            -webkit-mask-box-image: url('../images/masking.png')10;
+            transform: scale(.9);
+        }
+    }
+}
