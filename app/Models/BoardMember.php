@@ -22,6 +22,7 @@ class BoardMember extends Model
      */
     protected $fillable = [
         'bio',
+        'slug',
         'type',
         'order',
         'avatar',
@@ -34,6 +35,15 @@ class BoardMember extends Model
     public function getNameAttribute()
     {
         return $this->attributes['first_name'] . ' ' . $this->attributes['last_name'];
+    }
+
+    public function getUrlAttribute()
+    {
+        $type = strtolower($this->getTypeAsStringAttribute());
+
+        $route = "board.{$type}.show";
+
+        return route($route, $this->attributes['slug']);
     }
 
     public function getTypeAsStringAttribute()

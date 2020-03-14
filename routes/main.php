@@ -12,8 +12,8 @@
 */
 
 Route::group([
-    "middleware" => ['auth.customer'],
-    "prefix" => 'customer',
+    'middleware' => ['auth.customer'],
+    'prefix' => 'customer',
     'as' => 'customer.'
 ], function () {
     Route::get('/', 'FrontDashboardController@index')->name('dashboard');
@@ -22,5 +22,9 @@ Route::group([
 });
 
 Route::post('/contact/store', 'ContactController@store')->name('contact.store');
+
+Route::get('/executive-board/{slug}', 'BoardMemberController@showExecutive')->name('board.executive.show');
+
+Route::get('/delegate-board/{slug}', 'BoardMemberController@showDelegate')->name('board.delegate.show');
 
 Route::get('/{slug?}', 'PageController')->name('page');

@@ -12,7 +12,10 @@ trait HandlesAttachments
     public function attachment($name)
     {
         if (empty($this->$name))
-            return null;
+            return (object) [
+                'name' => 'no-image',
+                'url' => asset('public/images/no-image.jpg')
+            ];
 
         $attachment = json_decode($this->$name);
 
