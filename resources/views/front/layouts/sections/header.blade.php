@@ -83,7 +83,7 @@
                                         <a class="nav-link" href="#"> a | r | e Magazine</a>
                                     </li>
                                     <li>
-                                        <a class="nav-link" href="#"> State of Asia America Report</a>
+                                        <a class="nav-link" href="{{ url('asia-america-report')}}"> State of Asia America Report</a>
                                     </li>
                                     <li>
                                         <a href="{{ url('media')}}"> Webinars</a>

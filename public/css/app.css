@@ -21452,6 +21452,9 @@ section.page--login .site-content {
 .page-chapter--login .contact-form .form-group:nth-child(2) {
   padding: 0;
 }
+.page-chapter--resources-american-report main.main-content {
+  padding: 50px 0;
+}
 
 .page--board .executive-board {
   padding: 60px 0;
