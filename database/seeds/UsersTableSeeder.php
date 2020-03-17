@@ -50,11 +50,11 @@ class UsersTableSeeder extends Seeder
                 'phone' => '',
                 'profile_image' => '',
                 'is_active' => 1,
-                'last_login' => '2020-02-20 21:38:53',
+                'last_login' => '2020-03-16 16:37:18',
                 'token' => NULL,
                 'remember_token' => NULL,
                 'created_at' => '2018-03-01 13:14:04',
-                'updated_at' => '2020-02-20 21:38:53',
+                'updated_at' => '2020-03-16 16:37:18',
                 'deleted_at' => NULL,
             ),
             2 => 

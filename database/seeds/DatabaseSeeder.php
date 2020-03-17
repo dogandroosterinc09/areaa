@@ -31,5 +31,14 @@ class DatabaseSeeder extends Seeder
         $this->call(SeoMetasTableSeeder::class);
         $this->call(UserHasPermissionsTableSeeder::class);
         $this->call(PostsTableSeeder::class);
+        $this->call(AttachablesTableSeeder::class);
+        $this->call(AttachmentsTableSeeder::class);
+        $this->call(BoardMembersTableSeeder::class);
+        $this->call(ChaptersTableSeeder::class);
+        $this->call(EventsTableSeeder::class);
+        $this->call(FaqsTableSeeder::class);
+        $this->call(GalleriesTableSeeder::class);
+        $this->call(PageSectionTableSeeder::class);
+        $this->call(SectionsTableSeeder::class);
     }
 }

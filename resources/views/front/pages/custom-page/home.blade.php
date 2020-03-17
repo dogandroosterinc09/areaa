@@ -67,20 +67,21 @@
                     <div class="col-md-7">
 
                         <div class="become-member__content">
-                            <h2>Become a Member</h2>
+                            <h2>{{ section('Become a Member.data.first.title') }}</h2>
                             <div class="content-text">
+                                {!! section('Become a Member.data.first.content') !!}
                                 <div class="become-member__paragraph-top">
-                                    <p>With over <b class="red-txt">17,000 members</b> in <b class="red-txt">41 chapters</b> across the US and Canada, AREAA is <b>the largest Asian American and Pacific Islander (AAPI) trade organization in North America</b>.</p>
+                                    <p class="d-none">With over <b class="red-txt">17,000 members</b> in <b class="red-txt">41 chapters</b> across the US and Canada, AREAA is <b>the largest Asian American and Pacific Islander (AAPI) trade organization in North America</b>.</p>
                                 </div>
 
                                 <div class="become-member__paragraph-bottom">
-                                    <p>As a member, you’ll receive discounted pricing to all AREAA events, FREE webinar training to help fine-tune your skill sets, and be able to participate in International Trade missions. The benefits don’t stop there; below are more reasons as to why it pays to be an AREAA Member.</p>
+                                    <p class="d-none">>As a member, you’ll receive discounted pricing to all AREAA events, FREE webinar training to help fine-tune your skill sets, and be able to participate in International Trade missions. The benefits don’t stop there; below are more reasons as to why it pays to be an AREAA Member.</p>
                                 <br>
                                 </div>
 
                                 <div class="become-member__button">
-                                    <a href="#" class="btn btn--secondary margin-right20">Learn More</a> 
-                                    <a href="#" class="btn btn--primary">Become a Member</a>
+                                    <a href="{{ section('Become a Member.data.first.btn1_link') }}" class="btn btn--secondary margin-right20">{{ section('Become a Member.data.first.btn1_text') }}</a> 
+                                    <a href="{{ section('Become a Member.data.first.btn2_link') }}" class="btn btn--primary">{{ section('Become a Member.data.first.btn2_text') }}</a>
                                 </div>
                                
                             </div>
@@ -117,7 +118,7 @@
                 </div>
             </div>
             <div class="img-holder">
-                <img src="{{ asset('public/images/member-right-bg.png') }}" alt="Members Image">
+                <img src="{{ asset('public/images/member-right-bg.png') }}" alt="Members Image">                
             </div>
         </section>
         {{-- End of Become Member --}}
@@ -129,16 +130,27 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="title">
-                            <h2>Partnership</h2>
-                            <p>We have more than 30 partners from<br> <b>Local</b> to <b>International</b>.</p>
+                            <h2>{{ section('Partnership.data.first.title') }}</h2>
+                            {!! section('Partnership.data.first.content') !!}
+                            <p class="d-none">We have more than 30 partners from<br> <b>Local</b> to <b>International</b>.</p>
                         </div>
                     </div>
                     <div class="offset-1 col-md-5">
                         <div class="partnership-level">
+                            @foreach ( section('Partnership Levels.data') as $data )
                             <div class="partnership-level--item">
                                 <div class="icon jade"></div>
                                 <div class="content-txt">
-                                    <h3>Jade Level</h3>
+                                    <h3>{{ $data->title }}</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisi.</p>
+                                </div>
+                            </div>
+                            @endforeach
+
+                            <!-- <div class="partnership-level--item">
+                                <div class="icon jade"></div>
+                                <div class="content-txt">
+                                    <h3>{{ section('Partnership Levels.data.first.title') }}</h3>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisi.</p>
                                 </div>
                             </div>
@@ -155,9 +167,9 @@
                                     <h3>Emerald Level</h3>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisi.</p>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="btn-wrap">
-                                <a href="#" class="btn btn--secondary margin-right20">Learn More</a> <a href="#" class="btn btn--primary">Become a Member</a>
+                                <a href="{{ section('Partnership.data.first.btn1_link') }}" class="btn btn--secondary margin-right20">{{ section('Partnership.data.first.btn1_text') }}</a> <a href="{{ section('Partnership.data.first.btn2_link') }}" class="btn btn--primary">{{ section('Partnership.data.first.btn2_text') }}</a>
                             </div>
                         </div>
                     </div>
@@ -171,21 +183,24 @@
             <div class="container-max">
                 <div class="row">
                     <div class="col-md-12 text-center">
-                        <h2>Growing Opportunities</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut<br> labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                        <h2>{{ section('Growing Opportunities.data.first.title') }}</h2>
+                        <p>{{ section('Growing Opportunities.data.first.content') }}</p>
                     </div>
                 </div>
                 <div class="row margin-top40">
                     <div class="col-md-6">
                         <div class="list padding-top60">
-                            <p>Asian American population is <b>22.5 million</b></p>
+                            @foreach( section('Growing Opportunities List.data') as $data )
+                            {!! $data->content !!}
+                            @endforeach
+                            <!-- <p>Asian American population is <b>22.5 million</b></p>
                             <p><b>72% population growth</b> from 2000 to 2015</p>
                             <p>By <b>2060</b>, there is going to be <b>100% increase</b> in this number</p>
                             <p><b>Chinese, Indian</b> and <b>Filipino</b> for  <b>57%</b> of the Asian Americans</p>
-                            <p><b>The buying power</b> of this group is said to <b>exceed $1 trillion</b> with a <b>33% increase by 2022</b></p>
+                            <p><b>The buying power</b> of this group is said to <b>exceed $1 trillion</b> with a <b>33% increase by 2022</b></p> -->
                         </div>
                         <div class="btn-wrap text-center margin-top80">
-                            <a href="#" class="btn btn--secondary margin-right20">Learn More</a> <a href="#" class="btn btn--primary">Become a Member</a>
+                            <a href="{{ section('Growing Opportunities.data.first.btn1_link') }}" class="btn btn--secondary margin-right20">{{ section('Growing Opportunities.data.first.btn1_text') }}</a> <a href="{{ section('Growing Opportunities.data.first.btn2_link') }}" class="btn btn--primary">{{ section('Growing Opportunities.data.first.btn2_text') }}</a>
                         </div>
                     </div>
                     <div class="col-md-6">
