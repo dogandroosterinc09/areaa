@@ -1,4 +1,4 @@
-<section class="page page--about-us">
+<section class="page page--default">
     @include('front.layouts.sections.header')
     @include('front.pages.custom-page.sections.banner')
     <main class="main-content">

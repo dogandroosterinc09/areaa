@@ -67,6 +67,11 @@ $base__font-size :16px;
     box-shadow: 0 1px 5px 1px rgba(0, 0, 0, .5);
 }
 
+@mixin img-shadow {
+    -webkit-box-shadow: 0 6px 11px 1px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 6px 11px 1px rgba(0, 0, 0, 0.6);
+}
+
 @mixin flex {
     display: -webkit-box !important;
     display: -ms-flexbox !important;
@@ -93,7 +98,8 @@ $base__font-size :16px;
     -ms-flex-direction: column;
     flex-direction: column;
 }
-@mixin transition-all($all-ein){
+
+@mixin transition-all($all-ein) {
     -webkit-transition: $all-ein;
     -moz-transition: $all-ein;
     -ms-transition: $all-ein;

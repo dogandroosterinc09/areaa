@@ -9,4 +9,36 @@
         margin-bottom: 50px;
         margin-top: -20px;
     }
+    &--contact-us {
+        .dashboard-nav {
+            margin-bottom: 0;
+        }
+        .contact-section {
+            margin-top: -15px;
+        }
+        .col-lg-6.contact-section__item.contact-section__right {
+            background: #f8f6f6 !important;
+        }
+        .contact-section__left.curl-tail-side:before {
+            width: 100%;
+        }
+    }
+    &--login {
+        .contact-form {
+            .form-group {
+                padding: 0 !important;
+                &:nth-child(2) {
+                    padding: 0;
+                }
+            }
+        }
+    }
+}
+
+.page {
+    &--board {
+        .executive-board {
+            padding: 60px 0;
+        }
+    }
 }

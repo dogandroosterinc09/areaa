@@ -64,6 +64,19 @@
         @elseif ($page['slug'] == 'chapter-events')
             @include('front.pages.custom-page.chapter-events')
             
+        @elseif ($page['slug'] == 'chapter-contact-us')
+            @include('front.pages.custom-page.chapter-contact-us')
+
+        @elseif ($page['slug'] == 'chapter-leadership')
+            @include('front.pages.custom-page.chapter-leadership')
+
+        @elseif ($page['slug'] == 'chapter-our-story')
+            @include('front.pages.custom-page.chapter-our-story')
+
+        @elseif ($page['slug'] == 'chapter-login')
+            @include('front.pages.custom-page.chapter-login')
+            
+            
             
 
         @else
