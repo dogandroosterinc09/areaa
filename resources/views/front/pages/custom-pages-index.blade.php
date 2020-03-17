@@ -77,7 +77,12 @@
             @include('front.pages.custom-page.chapter-login')
             
             
+        @elseif ($page['slug'] == 'resources')
+            @include('front.pages.custom-page.resources')
             
+
+            
+
 
         @else
             @include('front.pages.custom-page.default-page')

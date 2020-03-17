@@ -36,10 +36,10 @@
                             <a class="nav-link dropdown-toggle" href="{{ url('membership-registration') }}">Membership</a>
                             <div class="dropdown-menu">
                                 <ul class="sub-menu mega-menu">
-                                    <li><a href="#"> Why join </a></li>
+                                    <li><a href="{{url('about-us')}}"> Why join </a></li>
                                     <li><a href="{{url('areabenefits')}}"> Benefits </a></li>
                                     <li><a href="#"> Find a Member </a></li>
-                                    <li><a href="#"> Chapter Locations </a></li>
+                                    <li><a href="{{url('chapter')}}"> Chapter Locations </a></li>
                                     <li><a href="{{url('membership-registration')}}"> A-List </a></li>
                                 </ul>
                             </div>
@@ -74,19 +74,19 @@
                             </div>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="{{ url('media')}}">
+                            <a class="nav-link dropdown-toggle" href="{{ url('resources')}}">
                                 Resources
                             </a>
                             <div class="dropdown-menu">
                                 <ul class="sub-menu mega-menu">
                                     <li>
-                                        <a href="#"> Sub menu 1</a>
+                                        <a class="nav-link" href="#"> a | r | e Magazine</a>
                                     </li>
                                     <li>
-                                        <a class="nav-link" href="#"> Sub menu 1</a>
+                                        <a class="nav-link" href="#"> State of Asia America Report</a>
                                     </li>
                                     <li>
-                                        <a class="nav-link" href="#"> Sub menu 1</a>
+                                        <a href="{{ url('media')}}"> Webinars</a>
                                     </li>
                                 </ul>
                             </div>
