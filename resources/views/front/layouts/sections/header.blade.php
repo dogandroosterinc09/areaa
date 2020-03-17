@@ -74,7 +74,7 @@
                             </div>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="{{ url('resources')}}">
+                            <a class="nav-link dropdown-toggle" href="{{ url('resource-page')}}">
                                 Resources
                             </a>
                             <div class="dropdown-menu">

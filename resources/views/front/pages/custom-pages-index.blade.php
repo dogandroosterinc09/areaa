@@ -76,11 +76,9 @@
         @elseif ($page['slug'] == 'chapter-login')
             @include('front.pages.custom-page.chapter-login')
             
-            
-        @elseif ($page['slug'] == 'resources')
-            @include('front.pages.custom-page.resources')
-            
 
+        @elseif ($page['slug'] == 'resource-page')
+            @include('front.pages.custom-page.resource-page')
             
 
 

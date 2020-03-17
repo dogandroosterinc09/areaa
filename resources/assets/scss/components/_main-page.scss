@@ -900,6 +900,10 @@
                     text-transform: uppercase;
                     font-weight: bold;
                 }
+                a {
+                    text-decoration: none;
+                    color: $color-secondary;
+                }
             }
         }
         &__col-2 {

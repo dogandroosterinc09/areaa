@@ -27,31 +27,11 @@
     <main class="main-content">
 
 
-        {{-- our-mission section  --}}
-        <section class="our-mission">
-            <div class="container-max">
-                <div class="row">
-                    <div class="col-md-6 our-mission__left">
-                        <img src="{{ url('public/images/mission-object.png') }}">
-                    </div>
-                    <div class="col-md-6 our-mission__right content-middle">
-                        <div class="our-mission__content">
-
-                            <h2>Our Mission</h2>
-
-                            <p>AREAA is dedicated to promoting sustainable homeownership opportunities in Asian American communities by creating a powerful national voice for housing and real estate professionals that serve this dynamic market.</p>
-                            <a href="#" class="btn btn btn--secondary">Join AaREAA!</a>
-                        </div>
-
-                    </div>
-                </div>
-            </div> {{-- end of default-content--row --}}
-        </section> {{-- end of default-content --}}
 
 
 
         {{-- need to dynamic this sub  --}}
-        <section class="masking-background">
+        {{-- <section class="masking-background">
             <div class="masking-background__wrapper container-max">
                 <div class="masking-background__item">
                     <div class="container-max masking-background__container">
@@ -72,7 +52,7 @@
             <div class="masking-background__image image-background">
                 <img src="{{ url('public/images/our-story-image.jpg') }}">
             </div>
-        </section>
+        </section> --}}
 
 
 
@@ -86,7 +66,7 @@
 
 
                     <div class="col-lg-12 text-center font-weight-bold">
-                        <h4 class="">AREAA Will Accomplish These Goals By: </h4>
+                        <h4 class="">AREAA Resources: </h4>
                     </div>
 
                     <div class="col-md-12">
@@ -98,22 +78,22 @@
                             {{-- bullet-style--uppercase the strong tag will capitalize --}}
                             <ul class="bullet-style bullet-style__col-2 bullet-style--uppercase">
                                 <li>
-                                   <strong>Creating a powerful national voice </strong> 
-                                    for housing & real estate professionals that serve this dynamic market.
+                                   <strong>2017 Student Debt and Housing Report, by Better Homes and Gardens </strong> <br>
+                                   <a href="#">Click here to download the 2017 Student Debt Report</a>
                                 </li>
                                 <li>
-                                    <strong>Advocating for policy positions   </strong>
-                                    at the national level that will reduce barriers to homeownership for the AAPI community.
+                                    <strong>2016 State of Asia America Report </strong> <br>
+                                    <a href="#">Click here to download the 2016 State of Asia America Report</a>
                                 </li>
-                                <li> <strong>Increasing business opportunities </strong> 
-                                    for mortgage & real estate professionals that serve this growing community.</li>
+                                <li> <strong>2016 Chinese Investment in US Real Estate, by Asia Society </strong>  <br>
+                                    <a href="#">Click here to download the 2016 China Investment in US Real Estate Report</a>
+
+                                </li>
                                 <li>
-                                    <strong>Hosting National and Local events </strong> 
-                                    to educate & inform members about housing issues & developments affecting the AAPI community.
+                                    <strong>2015 State of Asia America Report </strong>  <br>
+                                    <a href="#">Click here to download the 2015 State of Asia America Housing Report</a>
                                 </li>
-                                <li><strong>Conducting trade missions</strong> 
-                                    throughout Asia to develop business partnerships & increase brand awareness.
-                                </li>
+                                
                             </ul>
 
 
