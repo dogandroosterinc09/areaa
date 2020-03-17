@@ -916,6 +916,15 @@
                 width: calc(95%/3);
             }
         }
+        &__one {
+            li {
+                width: calc(100%/1);
+                a {
+                    display: block;
+                    width: 100%;
+                }
+            }
+        }
         li {
             // margin-bottom: 20px;
             font-size: 1em;
@@ -1782,4 +1791,8 @@
             padding: 0;
             padding-left: 7%;
         }
+    }
+    
+    .american-report {
+        margin-bottom: 100px;
     }

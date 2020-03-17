@@ -20350,6 +20350,13 @@ ul.bullet-style__col-2 li {
 ul.bullet-style__col-3 li {
   width: calc(95%/3);
 }
+ul.bullet-style__one li {
+  width: calc(100%/1);
+}
+ul.bullet-style__one li a {
+  display: block;
+  width: 100%;
+}
 ul.bullet-style li {
   font-size: 1em;
   margin-bottom: 30px;
@@ -21141,6 +21148,10 @@ ul.bullet-style li h6 {
   max-width: 100%;
   padding: 0;
   padding-left: 7%;
+}
+
+.american-report {
+  margin-bottom: 100px;
 }
 
 section.page {
