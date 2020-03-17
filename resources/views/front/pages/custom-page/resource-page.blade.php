@@ -83,15 +83,15 @@
                                 </li>
                                 <li>
                                     <strong>2016 State of Asia America Report </strong> <br>
-                                    <a href="#">Click here to download the 2016 State of Asia America Report</a>
+                                    <a href="https://www.areaa.org/wp-content/uploads/2013/10/DRAFT-saa16-120816.pdf" target="blank">Click here to download the 2016 State of Asia America Report</a>
                                 </li>
                                 <li> <strong>2016 Chinese Investment in US Real Estate, by Asia Society </strong>  <br>
-                                    <a href="#">Click here to download the 2016 China Investment in US Real Estate Report</a>
+                                    <a href="http://asiasociety.org/files/uploads/66files/Asia%20Society%20Breaking%20Ground%20Complete%20Final.pdf" target="blank">Click here to download the 2016 China Investment in US Real Estate Report</a>
 
                                 </li>
                                 <li>
                                     <strong>2015 State of Asia America Report </strong>  <br>
-                                    <a href="#">Click here to download the 2015 State of Asia America Housing Report</a>
+                                    <a href="https://www.areaa.org/wp-content/uploads/2013/10/SAA15.pdf" target="blank">Click here to download the 2015 State of Asia America Housing Report</a>
                                 </li>
                                 
                             </ul>
@@ -107,32 +107,7 @@
 
 
 
-             {{-- story section  --}}
-             <section class="hightlight">
-                <div class="container">
-                    <div class="row">
-    
-                        <div class="col-lg-6">
-                            <div class="hightlight__left">
-                                <h4>AREAA’s Membership Represents A Vast array of Cultural, Ethnic, & Professional Backgrounds.</h4>
-                                <div class="btn-group">
-                                     <a href="#" class="btn btn btn--secondary">View Our Partners</a>
-                                     <a href="#" class="btn btn btn--primary">Become a Member</a>
-                                </div>
-                            </div>
-                          
-                        </div>
-
-                        <div class="col-lg-6">
-                            <div class="hightlight__right">
-                                 <p>Founded in 2003, the Asian Real Estate Association of America (AREAA) is a nonprofit professional trade organization dedicated to promoting sustainable homeownership opportunities in Asian American communities by creating a powerful national voice for housing and real estate professionals that serve this dynamic market.</p>
-                            </div>
-                        </div>
-    
-                    </div>
-                </div> {{-- end of default-content--row --}}
-            </section> {{-- end of default-content --}}
-
+           
 
 
               {{-- story section  --}}
