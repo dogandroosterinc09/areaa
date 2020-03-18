@@ -4,7 +4,6 @@ namespace App\Repositories;
 
 
 use App\Models\Attachment;
-use App\Models\Page;
 use App\Models\Section;
 use Illuminate\Support\Collection;
 
@@ -41,6 +40,12 @@ class SectionRepository
                 if ($parameter === 'first')
                     $value = $value[0];
 
+                elseif ($parameter === 'second')
+                    $value = $value[1];
+
+                elseif ($parameter === 'third')
+                    $value = $value[2];
+
                 elseif (is_numeric($parameter))
                     $value = $value[$parameter];
 
@@ -58,7 +63,7 @@ class SectionRepository
                         $value = array_map(function ($item) use ($attachmentFields, $fetchAttachment) {
                             foreach ($attachmentFields as $field) {
                                 $alias = isset($field->alias) ? $field->alias : str_slug($field->name);
-                                if ($fetchAttachment) {
+                                if (true || $fetchAttachment) {
                                     $attachment = Attachment::find($item->$alias);
                                     $item->$alias = $attachment;
                                 } else
