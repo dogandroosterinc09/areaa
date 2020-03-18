@@ -14,14 +14,15 @@
 
                     <div class="col-lg-6 contact-section__item contact-section__left curl-tail-side">
                         <div class="contact-details-content">
-                            <h3>Have Questions?</h3>
+                            {!! section('Contact Us.data.first.content') !!}
+                            <!-- <h3>Have Questions?</h3>
                             <h1>Contact Us</h1>
-                            <p>Lorem ipsum dolor sit amet, quam sollicitudin sagittis fringilla lacus enim, leo elit non nec varius sodales. Amet faucibus, id tempor quisque pharetra leo. Curae integer. Diam duis integer vel ut. </p>
+                            <p>Lorem ipsum dolor sit amet, quam sollicitudin sagittis fringilla lacus enim, leo elit non nec varius sodales. Amet faucibus, id tempor quisque pharetra leo. Curae integer. Diam duis integer vel ut. </p> -->
 
                             <div class="contact-details">
-                                <div class="contact-details__item"><i class="loc"></i> <span>3990 Old Town Avenue C304, San Diego, CA 92110</span></div>
-                                <div class="contact-details__item"><i class="tel"></i> <a href="tel:619.795.7873 ">619.795.7873 </a></div>
-                                <div class="contact-details__item"><i class="mail"></i> <a href="mailto:contact@areaa.org">contact@areaa.org</a></div>
+                                <div class="contact-details__item"><i class="{{ section('Contact Us.data.first.loc_icon') }}"></i> <span>{{ section('Contact Us.data.first.loc_text') }}</span></div>
+                                <div class="contact-details__item"><i class="{{ section('Contact Us.data.first.tel_icon') }}"></i> <a href="{{ section('Contact Us.data.first.tel_link') }}">{{ section('Contact Us.data.first.tel_text') }}</a></div>
+                                <div class="contact-details__item"><i class="{{ section('Contact Us.data.first.mail_icon') }}"></i> <a href="{{ section('Contact Us.data.first.mail_link') }}">{{ section('Contact Us.data.first.mail_text') }}</a></div>
                             </div>
                         </div>
 

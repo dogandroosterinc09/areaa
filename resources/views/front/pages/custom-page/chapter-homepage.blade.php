@@ -77,15 +77,13 @@
                     <div class="col-md-5 video-masking__floater">
 
                         <div class="video-masking__content">
-                            <h2>Who We Are</h2>
+                            <h2>{{ section('Who We Are.data.first.title') }}</h2>
                             <div class="video-masking__content--push">
-                                <p>With over <a href="#">17,000 members</a> in<a href="#"> 41 chapters </a> across the US and Canada, AREAA <strong> is the largest Asian American and Pacific Islander (AAPI) trade organization in North America. </strong>
-                                </p>
-                                <p>As a member, you’ll receive discounted pricing to all AREAA events, FREE webinar training to help fine-tune your skill sets, and be able to participate in International Trade missions. The benefits don’t stop there; below are more reasons as to why it pays to be an AREAA Member.</p>
+                                {!! section('Who We Are.data.first.content') !!}                                
 
                                 <div class="btn-group">
-                                    <a href="#" class="btn btn btn--secondary">Join Us</a>
-                                    <a href="#" class="btn btn btn--primary">Contact us</a>
+                                    <a href="{{ section('Who We Are.data.first.btn1_link') }}" class="btn btn btn--secondary">{{ section('Who We Are.data.first.btn1_text') }}</a>
+                                    <a href="{{ section('Who We Are.data.first.btn2_link') }}" class="btn btn btn--primary">{{ section('Who We Are.data.first.btn2_text') }}</a>
                                 </div>
                             </div>
                         </div>
@@ -105,8 +103,8 @@
 
                         <div class="col-md-6">
 
-                                <h2>Member Benefits</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                                <h2>{{ section('Member Benefits.data.first.title') }}</h2>
+                                <p>{{ section('Member Benefits.data.first.content') }}</p>
 
                                 {{-- comment insert class on UL  --}}
                                 {{-- use class bullet-style only if you want one col  --}}
@@ -114,17 +112,14 @@
                                 {{-- use class bullet-style__col-3 to enable 3cols --}}
                                 {{-- bullet-style--uppercase the strong tag will capitalize --}}
                                 <ul class="bullet-style bullet-style--uppercase">
-                                    <li>Lorem ipsum dolor sit amet <strong>consectetur</strong> adipisicing
-
-                                    </li>
-                                    <li>Aipisicing elit, <strong>sed do eiusmod tempor</strong> incididunt ut labore et 
-                                    </li>
-                                    <li> <strong>Eiusmod </strong>tempor incididunt ut labore et dolore magna aliqua</li>
+                                    @foreach( section('Member Benefits List Items.data') as $data )
+                                    <li>{!! $data->content !!}</li>
+                                    @endforeach                                    
                                 </ul>
 
                                 <div class="btn-group">
-                                    <a href="#" class="btn btn btn--secondary">Join Us</a>
-                                    <a href="#" class="btn btn btn--primary">Contact us</a>
+                                    <a href="{{ section('Member Benefits.data.first.btn1_link') }}" class="btn btn btn--secondary">{{ section('Member Benefits.data.first.btn1_text') }}</a>
+                                    <a href="{{ section('Member Benefits.data.first.btn2_link') }}" class="btn btn btn--primary">{{ section('Member Benefits.data.first.btn2_text') }}</a>
                                </div>
 
                         </div>
@@ -148,12 +143,15 @@
                     <div class="col-md-12">
                         <div class="filter-stone">
                             <ul class="inline-block">
-                                <li class="filter-stone--jade"><a href="#"> <span> 1 </span>- Jade </a> </li>
+                                @foreach( section('Sponsors Filters.data') as $data )
+                                <li class="filter-stone--{{ $data->icon }}"><a href="{{ $data->link }}"> <span> 1 </span>- {{ $data->text }} </a> </li>
+                                @endforeach
+                                <!-- <li class="filter-stone--jade"><a href="#"> <span> 1 </span>- Jade </a> </li>
                                 <li class="filter-stone--diamond"><a href="#"> <span> 1 </span>- Diamond </a> </li>
                                 <li class="filter-stone--emerald"><a href="#"> <span> 1 </span>- Emerald </a> </li>
                                 <li class="filter-stone--opal"><a href="#"> <span> 1 </span>- Opal </a> </li>
                                 <li class="filter-stone--ruby"><a href="#"> <span> 1 </span>- Ruby </a> </li>
-                                <li class="filter-stone--pearl"><a href="#"> <span> 1 </span>- Pearl </a> </li>
+                                <li class="filter-stone--pearl"><a href="#"> <span> 1 </span>- Pearl </a> </li> -->
                             </ul>
                         </div>
                     </div>
@@ -161,11 +159,11 @@
 
                     <div class="col-md-4">
                             <div class="sponsors__content">
-                                <h2>Sponsors</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+                                <h2>{{ section('Sponsors.data.first.title') }}</h2>
+                                <p>{{ section('Sponsors.data.first.content') }}</p>
     
                                 <div class="btn-group">
-                                        <a href="#" class="btn btn btn--primary">Interested In Sponsorship?</a>
+                                        <a href="{{ section('Sponsors.data.first.btn_link') }}" class="btn btn btn--primary">{{ section('Sponsors.data.first.btn_text') }}</a>
                                 </div>
                             </div>
                     </div>
@@ -176,7 +174,7 @@
                                 <div class="row">
                                     <div class="col-md-5">
                                         <div class="sponsor-thumbnail">
-                                            <div class="sponsor-thumbnail__badge sponsor-thumbnail__badge--jade">  </div>
+                                            <div class="sponsor-thumbnail__badge sponsor-thumbnail__badge--{{ section('Top Sponsor.data.first.badge_icon') }}">  </div>
                                             <img src="{{ url('public/images/sponsor0.jpg') }}" alt="chapter title" class="img-fluid">
                                         </div>
                                     </div>
@@ -185,7 +183,15 @@
                             </div>
                             <div class="logo-display__col3">
                                 <div class="row">
+                                    @foreach( section('Other Sponsors.data') as $data )
                                     <div class="col-md-4">
+                                        <div class="sponsor-thumbnail">
+                                            <div class="sponsor-thumbnail__badge sponsor-thumbnail__badge--{{ $data->badge_icon }}">  </div>
+                                            <img src="{{ $data->image }}" alt="{{ $data->alt_text }}" class="img-fluid">
+                                        </div>
+                                    </div>
+                                    @endforeach
+                                    <!-- <div class="col-md-4">
                                         <div class="sponsor-thumbnail">
                                             <div class="sponsor-thumbnail__badge sponsor-thumbnail__badge--ruby">  </div>
                                             <img src="{{ url('public/images/sponsor1.jpg') }}" alt="chapter title" class="img-fluid">
@@ -260,7 +266,7 @@
                                             <div class="sponsor-thumbnail__badge sponsor-thumbnail__badge--diamond">  </div>
                                             <img src="{{ url('public/images/sponsor12.jpg') }}" alt="chapter title" class="img-fluid">
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>

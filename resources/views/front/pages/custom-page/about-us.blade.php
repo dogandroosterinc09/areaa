@@ -37,10 +37,10 @@
                     <div class="col-md-6 our-mission__right content-middle">
                         <div class="our-mission__content">
 
-                            <h2>Our Mission</h2>
+                            <h2>{{ section('Our Mission.data.first.title') }}</h2>
 
-                            <p>AREAA is dedicated to promoting sustainable homeownership opportunities in Asian American communities by creating a powerful national voice for housing and real estate professionals that serve this dynamic market.</p>
-                            <a href="#" class="btn btn btn--secondary">Join AaREAA!</a>
+                            <p>{{ section('Our Mission.data.first.content') }}</p>
+                            <a href="{{ section('Our Mission.data.first.btn_link') }}" class="btn btn btn--secondary">{{ section('Our Mission.data.first.btn_text') }}</a>
                         </div>
 
                     </div>
@@ -59,8 +59,8 @@
                             <div class="col-md-6 content-middle">
 
                                 <div class="masking-background__content">
-                                    <h2>Our Story</h2>
-                                    <p>Founded in 2003, the Asian Real Estate Association of America (AREAA) is a nonprofit professional trade organization dedicated to promoting sustainable homeownership opportunities in Asian American communities by creating a powerful national voice for housing and real estate professionals that serve this dynamic market.</p>
+                                    <h2>{{ section('Our Story.data.first.title') }}</h2>
+                                    <p>{{ section('Our Story.data.first.content') }}</p>
                                 </div>
 
                             </div>
@@ -86,7 +86,7 @@
 
 
                     <div class="col-lg-12 text-center font-weight-bold">
-                        <h4 class="">AREAA Will Accomplish These Goals By: </h4>
+                        <h4 class="">{{ section('Goals.data.first.title') }}</h4>
                     </div>
 
                     <div class="col-md-12">
@@ -97,23 +97,11 @@
                             {{-- use class bullet-style__col-3 to enable 3cols --}}
                             {{-- bullet-style--uppercase the strong tag will capitalize --}}
                             <ul class="bullet-style bullet-style__col-2 bullet-style--uppercase">
+                                @foreach( section('Goals List Items.data') as $data )
                                 <li>
-                                   <strong>Creating a powerful national voice </strong> 
-                                    for housing & real estate professionals that serve this dynamic market.
+                                   {!! $data->content !!}
                                 </li>
-                                <li>
-                                    <strong>Advocating for policy positions   </strong>
-                                    at the national level that will reduce barriers to homeownership for the AAPI community.
-                                </li>
-                                <li> <strong>Increasing business opportunities </strong> 
-                                    for mortgage & real estate professionals that serve this growing community.</li>
-                                <li>
-                                    <strong>Hosting National and Local events </strong> 
-                                    to educate & inform members about housing issues & developments affecting the AAPI community.
-                                </li>
-                                <li><strong>Conducting trade missions</strong> 
-                                    throughout Asia to develop business partnerships & increase brand awareness.
-                                </li>
+                                @endforeach                                
                             </ul>
 
 
@@ -134,10 +122,10 @@
     
                         <div class="col-lg-6">
                             <div class="hightlight__left">
-                                <h4>AREAA’s Membership Represents A Vast array of Cultural, Ethnic, & Professional Backgrounds.</h4>
+                                <h4>{{ section('Membership.data.first.title') }}</h4>
                                 <div class="btn-group">
-                                     <a href="#" class="btn btn btn--secondary">View Our Partners</a>
-                                     <a href="#" class="btn btn btn--primary">Become a Member</a>
+                                     <a href="{{ section('Membership.data.first.btn1_link') }}" class="btn btn btn--secondary">{{ section('Membership.data.first.btn1_text') }}</a>
+                                     <a href="{{ section('Membership.data.first.btn2_link') }}" class="btn btn btn--primary">{{ section('Membership.data.first.btn2_text') }}</a>
                                 </div>
                             </div>
                           
@@ -145,7 +133,7 @@
 
                         <div class="col-lg-6">
                             <div class="hightlight__right">
-                                 <p>Founded in 2003, the Asian Real Estate Association of America (AREAA) is a nonprofit professional trade organization dedicated to promoting sustainable homeownership opportunities in Asian American communities by creating a powerful national voice for housing and real estate professionals that serve this dynamic market.</p>
+                                 <p>{{ section('Membership.data.first.content') }}</p>
                             </div>
                         </div>
     
