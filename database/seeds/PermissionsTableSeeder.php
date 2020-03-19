@@ -485,6 +485,42 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2020-02-25 17:09:07',
                 'updated_at' => '2020-02-25 17:09:07',
             ),
+            52 => 
+            array (
+                'id' => 53,
+                'name' => 'Create Benefits',
+                'guard_name' => 'web',
+                'permission_group_id' => 14,
+                'created_at' => '2020-03-18 16:56:12',
+                'updated_at' => '2020-03-18 16:56:12',
+            ),
+            53 => 
+            array (
+                'id' => 54,
+                'name' => 'Read Benefits',
+                'guard_name' => 'web',
+                'permission_group_id' => 14,
+                'created_at' => '2020-03-18 16:56:12',
+                'updated_at' => '2020-03-18 16:56:12',
+            ),
+            54 => 
+            array (
+                'id' => 55,
+                'name' => 'Update Benefits',
+                'guard_name' => 'web',
+                'permission_group_id' => 14,
+                'created_at' => '2020-03-18 16:56:12',
+                'updated_at' => '2020-03-18 16:56:12',
+            ),
+            55 => 
+            array (
+                'id' => 56,
+                'name' => 'Delete Benefits',
+                'guard_name' => 'web',
+                'permission_group_id' => 14,
+                'created_at' => '2020-03-18 16:56:12',
+                'updated_at' => '2020-03-18 16:56:12',
+            ),
         ));
         
         

@@ -171,6 +171,13 @@ class PageSectionTableSeeder extends Seeder
                 'section_id' => 22,
                 'order' => 1,
             ),
+            22 => 
+            array (
+                'id' => 41,
+                'page_id' => 17,
+                'section_id' => 23,
+                'order' => 1,
+            ),
         ));
         
         

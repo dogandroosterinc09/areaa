@@ -106,14 +106,14 @@
                 </div>
             </div>
             <div class="img-holder">
-                <img src="{{ asset('public/images/member-right-bg.png') }}" alt="{{ section('Become a Member.data.first.alt_text') }}">
+                <img src="{{ section('Become a Member.data.first.image') }}" alt="{{ section('Become a Member.data.first.alt_text') }}">
             </div>
         </section>
         {{-- End of Become Member --}}
 
         {{-- Start  --}}
         <section class="partnership wrapper image-background margin-top60">
-            <img src="{{ asset('public/images/partnership-img-bg.jpg') }}" alt="{{ section('Partnership.data.first.alt_text') }}">
+            <img src="{{ section('Partnership.data.first.image') }}" alt="{{ section('Partnership.data.first.alt_text') }}">
             <div class="container-max">
                 <div class="row">
                     <div class="col-md-6">
@@ -164,7 +164,7 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <img src="{{ asset('public/images/grow-statline.png') }}" alt="{{ section('Growing Opportunities.data.first.alt_text') }}">
+                        <img src="{{ section('Growing Opportunities.data.first.image') }}" alt="{{ section('Growing Opportunities.data.first.alt_text') }}">
                     </div>
                 </div>
             </div>

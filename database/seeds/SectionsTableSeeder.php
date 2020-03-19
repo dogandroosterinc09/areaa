@@ -124,7 +124,7 @@ class SectionsTableSeeder extends Seeder
                 'type' => 3,
             'value' => '{"options":{"create":false},"fields":[{"name":"Featured Image","type":"attachment","alias":"image"},{"name":"Alt Text","type":"text","alias":"alt_text"},{"name":"Title","type":"text"},{"name":"Content","type":"textarea"}],"data":[{"image":"31","alt_text":"","title":"Our Story","content":"Founded in 2003, the Asian Real Estate Association of America (AREAA) is a nonprofit professional trade organization dedicated to promoting sustainable homeownership opportunities in Asian American communities by creating a powerful national voice for housing and real estate professionals that serve this dynamic market."}]}',
                 'created_at' => '2020-03-17 16:03:41',
-                'updated_at' => '2020-03-17 17:24:14',
+                'updated_at' => '2020-03-18 17:36:19',
                 'deleted_at' => NULL,
             ),
             11 => 
@@ -162,9 +162,9 @@ class SectionsTableSeeder extends Seeder
                 'id' => 15,
                 'name' => 'Who We Are',
                 'type' => 3,
-            'value' => '{"options":{"create":false},"fields":[{"name":"Featured Video","type":"attachment","alias":"video"},{"name":"Title","type":"text"},{"name":"Content","type":"editor"},{"name":"Button1 Text","type":"text","alias":"btn1_text"},{"name":"Button1 Link","type":"text","alias":"btn1_link"},{"name":"Button2 Text","type":"text","alias":"btn2_text"},{"name":"Button2 Link","type":"text","alias":"btn2_link"}],"data":[{"video":"0","title":"Who We Are","content":"<p><span style=\\"font-size:18px;\\">With over&nbsp;<strong><a href=\\"http://127.0.0.1/areaa/chapter-homepage#\\"><span style=\\"color:#ab1a2d;\\">17,000 members</span></a></strong>&nbsp;in<a href=\\"http://127.0.0.1/areaa/chapter-homepage#\\">&nbsp;<strong><span style=\\"color:#ab1a2d;\\">41 chapters</span></strong>&nbsp;</a>across the US and Canada, AREAA&nbsp;<strong>is the largest Asian American and Pacific Islander (AAPI) trade organization in North America.</strong></span></p>\\n\\n<p><span style=\\"font-size:18px;\\">As a member, you’ll receive discounted pricing to all AREAA events, FREE webinar training to help fine-tune your skill sets, and be able to participate in International Trade missions. The benefits don’t stop there; below are more reasons as to why it pays to be an AREAA Member.</span></p>\\n","btn1_text":"Join Us","btn1_link":"#","btn2_text":"Contact us","btn2_link":"#"}]}',
+            'value' => '{"options":{"create":false},"fields":[{"name":"Featured Video","type":"attachment","alias":"video"},{"name":"Video Cover Image","type":"attachment","alias":"cover_image"},{"name":"Title","type":"text"},{"name":"Content","type":"editor"},{"name":"Button1 Text","type":"text","alias":"btn1_text"},{"name":"Button1 Link","type":"text","alias":"btn1_link"},{"name":"Button2 Text","type":"text","alias":"btn2_text"},{"name":"Button2 Link","type":"text","alias":"btn2_link"}],"data":[{"video":"67","cover_image":"46","title":"Who We Are","content":"<p><span style=\\"font-size:18px;\\">With over&nbsp;<strong><a href=\\"http://127.0.0.1/areaa/chapter-homepage#\\"><span style=\\"color:#ab1a2d;\\">17,000 members</span></a></strong>&nbsp;in<a href=\\"http://127.0.0.1/areaa/chapter-homepage#\\">&nbsp;<strong><span style=\\"color:#ab1a2d;\\">41 chapters</span></strong>&nbsp;</a>across the US and Canada, AREAA&nbsp;<strong>is the largest Asian American and Pacific Islander (AAPI) trade organization in North America.</strong></span></p>\\n\\n<p><span style=\\"font-size:18px;\\">As a member, you’ll receive discounted pricing to all AREAA events, FREE webinar training to help fine-tune your skill sets, and be able to participate in International Trade missions. The benefits don’t stop there; below are more reasons as to why it pays to be an AREAA Member.</span></p>\\n","btn1_text":"Join Us","btn1_link":"#","btn2_text":"Contact us","btn2_link":"#"}]}',
                 'created_at' => '2020-03-17 16:11:25',
-                'updated_at' => '2020-03-17 17:41:39',
+                'updated_at' => '2020-03-18 19:59:02',
                 'deleted_at' => NULL,
             ),
             15 => 
@@ -172,9 +172,9 @@ class SectionsTableSeeder extends Seeder
                 'id' => 16,
                 'name' => 'Member Benefits',
                 'type' => 3,
-                'value' => '{"options":{"create":false},"fields":[{"name":"Featured Image","type":"attachment","alias":"image"},{"name":"Alt Text","type":"text","alias":"alt_text"},{"name":"Title","type":"text"},{"name":"Content","type":"textarea"},{"name":"Button1 Text","type":"text","alias":"btn1_text"},{"name":"Button1 Link","type":"text","alias":"btn1_link"},{"name":"Button2 Text","type":"text","alias":"btn2_text"},{"name":"Button2 Link","type":"text","alias":"btn2_link"}],"data":[{"image":"32","alt_text":"","title":"Member Benefits","content":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.","btn1_text":"Join Us","btn1_link":"#","btn2_text":"Contact us","btn2_link":"#"}]}',
+                'value' => '{"options":{"create":false},"fields":[{"name":"Featured Image","type":"attachment","alias":"image"},{"name":"Alt Text","type":"text","alias":"alt_text"},{"name":"Title","type":"text"},{"name":"Content","type":"textarea"},{"name":"Button1 Text","type":"text","alias":"btn1_text"},{"name":"Button1 Link","type":"text","alias":"btn1_link"},{"name":"Button2 Text","type":"text","alias":"btn2_text"},{"name":"Button2 Link","type":"text","alias":"btn2_link"}],"data":[{"image":"32","alt_text":"chapter title","title":"Member Benefits","content":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.","btn1_text":"Join Us","btn1_link":"#","btn2_text":"Contact us","btn2_link":"#"}]}',
                 'created_at' => '2020-03-17 16:13:28',
-                'updated_at' => '2020-03-17 17:41:39',
+                'updated_at' => '2020-03-18 17:42:03',
                 'deleted_at' => NULL,
             ),
             16 => 
@@ -235,6 +235,16 @@ class SectionsTableSeeder extends Seeder
                 'value' => '{"options":{"create":false},"fields":[{"name":"Content","type":"editor"},{"name":"Location Icon","type":"text","alias":"loc_icon"},{"name":"Location Text","type":"text","alias":"loc_text"},{"name":"Telephone Icon","type":"text","alias":"tel_icon"},{"name":"Telephone Text","type":"text","alias":"tel_text"},{"name":"Telephone Link","type":"text","alias":"tel_link"},{"name":"Mail Icon","type":"text","alias":"mail_icon"},{"name":"Mail Text","type":"text","alias":"mail_text"},{"name":"Mail Link","type":"text","alias":"mail_link"}],"data":[{"content":"<h3>Have Questions?</h3>\\n\\n<h1>Contact Us</h1>\\n\\n<p>Lorem ipsum dolor sit amet, quam sollicitudin sagittis fringilla lacus enim, leo elit non nec varius sodales. Amet faucibus, id tempor quisque pharetra leo. Curae integer. Diam duis integer vel ut.</p>\\n","loc_icon":"loc","loc_text":"3990 Old Town Avenue C304, San Diego, CA 92110","tel_icon":"tel","tel_text":"619.795.7873 ","tel_link":"tel:619.795.7873","mail_icon":"mail","mail_text":"contact@areaa.org","mail_link":"mailto:contact@areaa.org"}]}',
                 'created_at' => '2020-03-17 18:28:28',
                 'updated_at' => '2020-03-17 18:35:09',
+                'deleted_at' => NULL,
+            ),
+            22 => 
+            array (
+                'id' => 23,
+                'name' => 'FAQ Contact Details',
+                'type' => 3,
+                'value' => '{"options":{"create":false},"fields":[{"name":"Icon","type":"text"},{"name":"Title","type":"text"},{"name":"Content","type":"textarea"}],"data":[{"icon":"location","title":"AREAA National","content":"3990 Old Town Avenue C304, San Diego, CA 92110"},{"icon":"phone","title":"Support Phone #","content":"Contact: 795-7873"},{"icon":"email","title":"Support Email","content":"Email: contact@areaa.org"}]}',
+                'created_at' => '2020-03-18 20:24:10',
+                'updated_at' => '2020-03-18 20:37:28',
                 'deleted_at' => NULL,
             ),
         ));
