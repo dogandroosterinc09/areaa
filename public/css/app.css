@@ -21455,6 +21455,11 @@ section.page--login .site-content {
 .page-chapter--resources-american-report main.main-content {
   padding: 50px 0;
 }
+.page-chapter header .main-nagivation-desktop .logo {
+  display: inline-block;
+  margin-top: 10px;
+  width: 130px;
+}
 
 .page--board .executive-board {
   padding: 60px 0;

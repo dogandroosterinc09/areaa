@@ -87,7 +87,10 @@
 
         @elseif ($page['slug'] == 'aloha')
             @include('front.pages.custom-page-chapters.aloha')
+
             
+        @elseif ($page['slug'] == 'newyorkeast')
+            @include('front.pages.custom-page-chapters.newyorkeast')
             
 
 

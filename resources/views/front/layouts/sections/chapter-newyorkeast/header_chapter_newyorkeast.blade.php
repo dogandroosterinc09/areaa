@@ -5,7 +5,7 @@
         <div class="main-nagivation-desktop__wrapper--row row">
             <div class="col-lg-4">
                 <a href="{{ url('/') }}" class="logo">
-                    <img src="{{ asset('public/images/logos/areaa_aloha.png') }}" alt="logo">
+                    <img src="{{ asset('public/images/logos/areaa_new_york_east.png') }}" alt="logo">
                 </a>
             </div>
             <div class="col-lg-8">
@@ -21,7 +21,7 @@
                 <nav class="navbar-bar">
                     <ul class="navbar-bar__wrapper">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="{{ url('/aloha') }}">Home</a>
+                            <a class="nav-link dropdown-toggle" href="{{ url('/newyorkeast') }}">Home</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="{{ url('about-us') }}">About Us</a>
