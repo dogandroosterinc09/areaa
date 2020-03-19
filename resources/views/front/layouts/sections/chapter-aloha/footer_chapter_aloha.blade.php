@@ -6,13 +6,13 @@
             <div class="col-md-3 footer__item">
                 <div class="footer-logo">
                     <a href="{{ url('/') }}">
-                        <img src="{{ asset('public/images/footer/footer-logo.png') }}" alt="logo">
+                        <img src="{{ asset('public/images/logos/areaa_aloha.png') }}" alt="logo">
                     </a>
                 </div>
                 <div class="footer-contacts">
-                    <div class="item"><i class="loc"></i> <span>3990 Old Town Avenue C304, San Diego, CA 92110</span></div>
-                    <div class="item"><i class="tel"></i> <a href="tel:619.795.7873 ">619.795.7873 </a></div>
-                    <div class="item"><i class="mail"></i> <a href="mailto:contact@areaa.org">contact@areaa.org</a></div>
+                    <div class="item"><i class="loc"></i> <span>Chapter President: Abe Lee</span></div>
+                    <div class="item"><i class="tel"></i> <a href="tel:8082164999 ">808-216-4999 </a></div>
+                    <div class="item"><i class="mail"></i> <a href="mailto:contact@areaa.org">abelee1948@gmail.com</a></div>
                 </div>
             </div>
             <div class="offset-1 col-md-8 footer__item">

@@ -5,7 +5,7 @@
         <div class="main-nagivation-desktop__wrapper--row row">
             <div class="col-lg-4">
                 <a href="{{ url('/') }}" class="logo">
-                    <img src="{{ asset('public/images/header/header-logo.png') }}" alt="logo">
+                    <img src="{{ asset('public/images/areaa_aloha.png') }}" alt="logo">
                 </a>
             </div>
             <div class="col-lg-8">
@@ -14,15 +14,18 @@
                     <div class="info">
                         <a href="tel:619.795.7873"><i class="ic-phone" aria-hidden="true"></i> 619.795.7873</a>
                         <a href="mailto:contact@areaa.org"><i class="ic-email"></i> contact@areaa.org</a>
-                        <a href="{{url('contact-us')}}"><i class="ic-pin"></i> AREAA National </a>
+                        <a href="{{url('/')}}"><i class="ic-pin"></i> AREAA National </a>
                         <a href="{{ route('customer.login') }}"><i class="ic-user"></i> Log In</a>
                     </div>
                 </div>
                 <nav class="navbar-bar">
                     <ul class="navbar-bar__wrapper">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="{{ url('about-us') }}">About Us <span class="sr-only">(current)</span></a>
-                            <div class="dropdown-menu">
+                            <a class="nav-link dropdown-toggle" href="{{ url('/') }}">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="{{ url('about-us') }}">About Us</a>
+                            {{-- <div class="dropdown-menu">
                                 <ul class="sub-menu mega-menu">
                                     <li><a href="{{url('about-us')}}"> About AREAA </a></li>
                                     <li><a href="{{url('executive-board')}}"> Executive Board </a></li>
@@ -30,39 +33,12 @@
                                     <li><a href="{{url('about-us')}}"> Our Partners </a></li>
                                     <li><a href="{{url('FAQ')}}"> FAQ </a></li>
                                 </ul>
-                            </div>
+                            </div> --}}
                         </li>
+                        
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="{{ url('membership-registration') }}">Membership</a>
-                            <div class="dropdown-menu">
-                                <ul class="sub-menu mega-menu">
-                                    <li><a href="{{url('about-us')}}"> Why join </a></li>
-                                    <li><a href="{{url('areabenefits')}}"> Benefits </a></li>
-                                    <li><a href="#"> Find a Member </a></li>
-                                    <li><a href="{{url('chapter')}}"> Chapter Locations </a></li>
-                                    <li><a href="{{url('membership-registration')}}"> A-List </a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="{{ url('about-us') }}">Advocacy</a>
-                            <div class="dropdown-menu">
-                                <ul class="sub-menu mega-menu">
-                                    <li>
-                                        <a class="nav-link" href="#"> Sub menu 1</a>
-                                    </li>
-                                    <li>
-                                        <a class="nav-link" href="#"> Sub menu 1</a>
-                                    </li>
-                                    <li>
-                                        <a class="nav-link" href="#"> Sub menu 1</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="{{ url('events') }}">Events</a>
-                            <div class="dropdown-menu">
+                            <a class="nav-link dropdown-toggle" href="{{ url('/aloha/events') }}">Events</a>
+                            {{-- <div class="dropdown-menu">
                                 <ul class="sub-menu mega-menu">
                                     <li><a href="#"> Leadership Summit</a></li>
                                     <li><a href="#">Global & Luxury Summit</a></li>
@@ -71,26 +47,16 @@
                                     <li><a href="{{url('chapter-homepage')}}">Chapter Events </a></li>
                                     <li><a href="#">How to get involved </a></li>
                                 </ul>
-                            </div>
+                            </div> --}}
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="{{ url('resource-page')}}">
-                                Resources
-                            </a>
-                            <div class="dropdown-menu">
-                                <ul class="sub-menu mega-menu">
-                                    <li>
-                                        <a class="nav-link" href="#"> a | r | e Magazine</a>
-                                    </li>
-                                    <li>
-                                        <a class="nav-link" href="{{ url('resource-asia-america-report')}}"> State of Asia America Report</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ url('media')}}"> Webinars</a>
-                                    </li>
-                                </ul>
-                            </div>
+                            <a class="nav-link dropdown-toggle" href="{{ url('') }}">Leadership</a>
                         </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="{{ url('') }}">Contact Us</a>
+                        </li>
+                        
+
                     </ul>
                 </nav>
             </div>
