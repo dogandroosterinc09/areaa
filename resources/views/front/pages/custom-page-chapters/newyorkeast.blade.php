@@ -285,5 +285,5 @@
          
 
     </main>
-    @include('front.layouts.sections.chapter-newyorkeast.footer_chapter_newyorkeast.blade')
+    @include('front.layouts.sections.chapter-newyorkeast.footer_chapter_newyorkeast')
 </section>
