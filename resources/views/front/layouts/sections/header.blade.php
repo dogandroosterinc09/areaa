@@ -22,8 +22,8 @@
                                 </a>
                                 <div class="info__menu">
                                     <ul>
-                                        <li> <a href="{{url('/areaa/aloha')}}"> Aloha</a></li>
-                                        <li> <a href="{{url('/areaa/newyorkeast')}}"> New York East</a></li>
+                                        <li> <a href="{{url('/aloha')}}"> Aloha</a></li>
+                                        <li> <a href="{{url('/newyorkeast')}}"> New York East</a></li>
                                     </ul>
                                  </div>
                              </li>
