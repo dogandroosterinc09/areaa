@@ -1,5 +1,5 @@
 <section class="page-chapter page-chapter-newyorkeast page-chapter-aloha--homepage">
-    @include('front.layouts.sections.chapter-newyorkeast.header_chapter_aloha')
+    @include('front.layouts.sections.chapter-newyorkeast.header_chapter_newyorkeast')
 
     @include('front.pages.custom-page.sections.chapter-slider')
 
@@ -285,5 +285,5 @@
          
 
     </main>
-    @include('front.layouts.sections.chapter-newyorkeast.footer_chapter_newyorkeast')
+    @include('front.layouts.sections.chapter-newyorkeast.footer_chapter_newyorkeast.blade')
 </section>
