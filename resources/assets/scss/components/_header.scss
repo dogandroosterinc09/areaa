@@ -173,6 +173,48 @@ header {
             padding: 10px 0 10px 50px;
             border-bottom-left-radius: 100px;
             height: 50px;
+            >ul {
+                display: block;
+                list-style: none;
+                padding: 0;
+                >li {
+                    display: inline-block;
+                    height: 40px;
+                    &:hover {
+                        .info__menu {
+                            display: block;
+                        }
+                    }
+                }
+            }
+            &__menu {
+                position: absolute;
+                background: #3b3d40;
+                width: 100%;
+                left: 0;
+                top: 50px;
+                z-index: 999;
+                display: none;
+                padding: 20px;
+                ul {
+                    list-style: none;
+                    @include flex;
+                    @include flex-align-items(center);
+                    @include flex-justify-content(flex-start);
+                    padding: 0;
+                    li {
+                        width: calc(100%/3);
+                        text-align: left;
+                        a {
+                            font-weight: 600;
+                            @include transition(.5s);
+                            &:hover {
+                                opacity: .5;
+                            }
+                        }
+                    }
+                }
+            }
             a {
                 color: $color-white;
                 font: 300 18px $font-primary;

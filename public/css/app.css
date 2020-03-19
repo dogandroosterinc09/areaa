@@ -18301,6 +18301,47 @@ header .contact-details-wrap .info {
   border-bottom-left-radius: 100px;
   height: 50px;
 }
+header .contact-details-wrap .info > ul {
+  display: block;
+  list-style: none;
+  padding: 0;
+}
+header .contact-details-wrap .info > ul > li {
+  display: inline-block;
+  height: 40px;
+}
+header .contact-details-wrap .info > ul > li:hover .info__menu {
+  display: block;
+}
+header .contact-details-wrap .info__menu {
+  position: absolute;
+  background: #3b3d40;
+  width: 100%;
+  left: 0;
+  top: 50px;
+  z-index: 999;
+  display: none;
+  padding: 20px;
+}
+header .contact-details-wrap .info__menu ul {
+  list-style: none;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0;
+}
+header .contact-details-wrap .info__menu ul li {
+  width: calc(100%/3);
+  text-align: left;
+}
+header .contact-details-wrap .info__menu ul li a {
+  font-weight: 600;
+  transition: all 0.5s ease;
+}
+header .contact-details-wrap .info__menu ul li a:hover {
+  opacity: 0.5;
+}
 header .contact-details-wrap .info a {
   color: #fff;
   font: 300 18px "Open Sans", sans-serif;

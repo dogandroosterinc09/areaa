@@ -149,3 +149,13 @@ $(".accordion__item").click(function() {
     $(".accordion__item--active").removeClass("accordion__item--active");
     $(this).toggleClass('accordion__item--active');
 });
+
+
+
+
+
+
+// $(".info .dropdown-toggle-menu").click(function() {
+//     $(".dropdown-toggle-menu--active").removeClass("dropdown-toggle-menu--active");
+//     $(parent).find(this).toggleClass('dropdown-toggle-menu--active');
+// });
