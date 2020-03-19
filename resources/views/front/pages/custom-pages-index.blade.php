@@ -92,6 +92,13 @@
         @elseif ($page['slug'] == 'newyorkeast')
             @include('front.pages.custom-page-chapters.newyorkeast')
 
+        @elseif ($page['slug'] == 'newyorkeast-events')
+            @include('front.pages.custom-page-chapters.newyorkeast-events')
+
+            
+        @elseif ($page['slug'] == 'newyorkeast-login')
+            @include('front.pages.custom-page-chapters.newyorkeast-login')
+
 
         @else
             @include('front.pages.custom-page.default-page')

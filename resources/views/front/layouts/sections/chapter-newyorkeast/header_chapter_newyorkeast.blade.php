@@ -15,13 +15,13 @@
                         <a href="tel:619.795.7873"><i class="ic-phone" aria-hidden="true"></i> 619.795.7873</a>
                         <a href="mailto:contact@areaa.org"><i class="ic-email"></i> contact@areaa.org</a>
                         <a href="{{url('/')}}"><i class="ic-pin"></i> AREAA National </a>
-                        <a href="{{ route('customer.login') }}"><i class="ic-user"></i> Log In</a>
+                        <a href="{{ route('/newyorkeast-login') }}"><i class="ic-user"></i> Log In</a>
                     </div>
                 </div>
                 <nav class="navbar-bar">
                     <ul class="navbar-bar__wrapper">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="{{ url('/newyorkeast') }}">Home</a>
+                            <a class="nav-link dropdown-toggle" href="{{ url('newyorkeast') }}">Home</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="{{ url('about-us') }}">About Us</a>
@@ -37,7 +37,7 @@
                         </li>
                         
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="{{ url('/aloha/events') }}">Events</a>
+                            <a class="nav-link dropdown-toggle" href="{{ url('newyorkeast-login') }}">Events</a>
                             {{-- <div class="dropdown-menu">
                                 <ul class="sub-menu mega-menu">
                                     <li><a href="#"> Leadership Summit</a></li>
