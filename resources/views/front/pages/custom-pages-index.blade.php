@@ -82,6 +82,12 @@
             
         @elseif ($page['slug'] == 'resource-asia-america-report')
             @include('front.pages.custom-page.resource-asia-america-report')
+
+
+
+        @elseif ($page['slug'] == 'aloha')
+            @include('front.pages.custom-page-chapters.aloha')
+            
             
 
 
