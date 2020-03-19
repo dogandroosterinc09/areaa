@@ -5,7 +5,7 @@
         <div class="main-nagivation-desktop__wrapper--row row">
             <div class="col-lg-4">
                 <a href="{{ url('/') }}" class="logo">
-                    <img src="{{ asset('public/images/areaa_aloha.png') }}" alt="logo">
+                    <img src="{{ asset('public/images/logos/areaa_aloha.png') }}" alt="logo">
                 </a>
             </div>
             <div class="col-lg-8">
