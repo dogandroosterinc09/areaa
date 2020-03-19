@@ -91,7 +91,6 @@
             
         @elseif ($page['slug'] == 'newyorkeast')
             @include('front.pages.custom-page-chapters.newyorkeast')
-            
 
 
         @else

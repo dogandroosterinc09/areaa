@@ -142,6 +142,7 @@ header {
         display: block;
         text-align: right;
         padding: 0 0;
+        z-index: 22;
         &::after {
             content: '';
             display: block;
