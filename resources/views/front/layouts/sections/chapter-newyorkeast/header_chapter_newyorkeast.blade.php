@@ -12,10 +12,25 @@
                 <div class="contact-details-wrap">
                     <div class="title"><span>Join AREAA</span></div>
                     <div class="info">
-                        <a href="tel:619.795.7873"><i class="ic-phone" aria-hidden="true"></i> 619.795.7873</a>
-                        <a href="mailto:contact@areaa.org"><i class="ic-email"></i> contact@areaa.org</a>
-                        <a href="{{url('/')}}"><i class="ic-pin"></i> AREAA National </a>
-                        <a href="{{ route('/newyorkeast-login') }}"><i class="ic-user"></i> Log In</a>
+                        <ul>
+                            <li> <a href="tel:619.795.7873"><i class="ic-phone" aria-hidden="true"></i> 619.795.7873</a></li>
+                            <li> <a href="mailto:contact@areaa.org"><i class="ic-email"></i> contact@areaa.org</a></li>
+                            <li>  
+                                <a href="javascript:void(0)" class="dropdown-toggle-menu">
+                                <i class="ic-chapter"></i> 
+                                Find your Chapter
+                                </a>
+                                <div class="info__menu">
+                                    <ul>
+                                        <li> <a href="{{url('/aloha')}}"> Aloha</a></li>
+                                        <li> <a href="{{url('/newyorkeast')}}"> New York East</a></li>
+                                    </ul>
+                                 </div>
+                             </li>
+                            <li> 
+                                <a href="{{ route('newyorkeast-login') }}"><i class="ic-user"></i> Log In</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
                 <nav class="navbar-bar">
