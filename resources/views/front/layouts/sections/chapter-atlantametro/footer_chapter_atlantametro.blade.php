@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-3 footer__item">
                 <div class="footer-logo">
-                    <a href="{{ url('/') }}">
+                    <a href="{{ url('atlantametro') }}">
                         <img src="{{ asset('public/images/logos/areaa_atlanta_metro.png') }}" alt="logo">
                     </a>
                 </div>
