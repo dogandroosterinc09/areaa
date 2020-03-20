@@ -23,136 +23,84 @@
     </section>
 
     <main class="main-content">
-        
+
+
+
         <section class="executive-board">
             <div class="container-max">
                 <div class="col-lg-12">
                     <h2>Executive board</h2>
 
-                    {{-- board-thumbnail --}}
-                    <div class="board-thumbnail__item col-lg-3 col-md-6">
-                        <a href="{{url('board-detail')}}">
-                            <div class="board-thumbnail__image image-background">
-                                <img src="{{ asset('public/images/no-pix.jpg') }}" alt="Member Image">
-                            </div>
-                            <div class="board-thumbnail__details">
-                                <h5>James Huang </h5>
-                                <h6>2020 President</h6>
-                            </div>
-                        </a>
-                    </div>
-                    {{-- board-thumbnail --}}
+                    {{-- board-thumbnail row --}}
+                    <div class="board-thumbnail row">
+                         {{-- board-thumbnail --}}
+                        <div class="board-thumbnail__item col-lg-3 col-md-6">
+                            <a href="{{url('board-detail')}}">
+                                <div class="board-thumbnail__image image-background">
+                                    <img src="{{ asset('public/images/no-pix.jpg') }}" alt="Member Image">
+                                </div>
+                                <div class="board-thumbnail__details">
+                                    <h5>Baldwin Lee </h5>
+                                    <h6>President</h6>
+                                </div>
+                            </a>
+                        </div>
+                        {{-- board-thumbnail --}}
 
 
-                      {{-- board-thumbnail --}}
-                      <div class="board-thumbnail__item col-lg-3 col-md-6">
-                        <a href="{{url('board-detail')}}">
-                            <div class="board-thumbnail__image image-background">
-                                <img src="{{ asset('public/images/no-pix.jpg') }}" alt="Member Image">
-                            </div>
-                            <div class="board-thumbnail__details">
-                                <h5>Amy Kong </h5>
-                                <h6>2021 President-Elect</h6>
-                            </div>
-                        </a>
-                    </div>
-                    {{-- board-thumbnail --}}
+                          {{-- board-thumbnail --}}
+                          <div class="board-thumbnail__item col-lg-3 col-md-6">
+                            <a href="{{url('board-detail')}}">
+                                <div class="board-thumbnail__image image-background">
+                                    <img src="{{ asset('public/images/no-pix.jpg') }}" alt="Member Image">
+                                </div>
+                                <div class="board-thumbnail__details">
+                                    <h5>John Pan</h5>
+                                    <h6>Vice President</h6>
+                                </div>
+                            </a>
+                        </div>
+                        {{-- board-thumbnail --}}
 
 
-                      {{-- board-thumbnail --}}
-                      <div class="board-thumbnail__item col-lg-3 col-md-6">
-                        <a href="{{url('board-detail')}}">
-                            <div class="board-thumbnail__image image-background">
-                                <img src="{{ asset('public/images/no-pix.jpg') }}" alt="Member Image">
-                            </div>
-                            <div class="board-thumbnail__details">
-                                <h5>Tom Truong </h5>
-                                <h6>Immediate Past President</h6>
-                            </div>
-                        </a>
-                    </div>
-                    {{-- board-thumbnail --}}
-
-                    
-                      {{-- board-thumbnail --}}
-                      <div class="board-thumbnail__item col-lg-3 col-md-6">
-                        <a href="{{url('board-detail')}}">
-                            <div class="board-thumbnail__image image-background">
-                                <img src="{{ asset('public/images/no-pix.jpg') }}" alt="Member Image">
-                            </div>
-                            <div class="board-thumbnail__details">
-                                <h5>Atsuko Yube </h5>
-                                <h6>2020 Treasure</h6>
-                            </div>
-                        </a>
-                    </div>
-                    {{-- board-thumbnail --}}
-
-
-                    
-                      {{-- board-thumbnail --}}
-                      <div class="board-thumbnail__item col-lg-3 col-md-6">
-                        <a href="{{url('board-detail')}}">
-                            <div class="board-thumbnail__image image-background">
-                                <img src="{{ asset('public/images/no-pix.jpg') }}" alt="Member Image">
-                            </div>
-                            <div class="board-thumbnail__details">
-                                <h5>Dick Lee  </h5>
-                                <h6>2020 Secretary/2021 Treasurer-Elect</h6>
-                            </div>
-                        </a>
-                    </div>
-                    {{-- board-thumbnail --}}
-
-
-                       {{-- board-thumbnail --}}
-                       <div class="board-thumbnail__item col-lg-3 col-md-6">
-                        <a href="{{url('board-detail')}}">
-                            <div class="board-thumbnail__image image-background">
-                                <img src="{{ asset('public/images/no-pix.jpg') }}" alt="Member Image">
-                            </div>
-                            <div class="board-thumbnail__details">
-                                <h5>Allen M. Okamoto </h5>
-                                <h6>National Founding Chairman, Education Foundation, Emeritus</h6>
-                            </div>
-                        </a>
-                    </div>
-                    {{-- board-thumbnail --}}
-
-                    {{-- board-thumbnail --}}
-                    <div class="board-thumbnail__item col-lg-3 col-md-6">
-                        <a href="{{url('board-detail')}}">
-                            <div class="board-thumbnail__image image-background">
-                                <img src="{{ asset('public/images/no-pix.jpg') }}" alt="Member Image">
-                            </div>
-                            <div class="board-thumbnail__details">
-                                <h5>Jim Park</h5>
-                                <h6>AREAA National Chairman Emeritus</h6>
-                            </div>
-                        </a>
-                    </div>
-                    {{-- board-thumbnail --}}
-                             {{-- board-thumbnail --}}
-                             <div class="board-thumbnail__item col-lg-3 col-md-6">
-                                <a href="{{url('board-detail')}}">
-                                    <div class="board-thumbnail__image image-background">
-                                        <img src="{{ asset('public/images/no-pix.jpg') }}" alt="Member Image">
-                                    </div>
-                                    <div class="board-thumbnail__details">
-                                        <h5>Jim Park</h5>
-                                        <h6>AREAA National Chairman Emeritus</h6>
-                                    </div>
-                                </a>
-                            </div>
-                            {{-- board-thumbnail --}}
-
+                          {{-- board-thumbnail --}}
+                          <div class="board-thumbnail__item col-lg-3 col-md-6">
+                            <a href="{{url('board-detail')}}">
+                                <div class="board-thumbnail__image image-background">
+                                    <img src="{{ asset('public/images/no-pix.jpg') }}" alt="Member Image">
+                                </div>
+                                <div class="board-thumbnail__details">
+                                    <h5>Steve Shteyn</h5>
+                                    <h6>Treasurer</h6>
+                                </div>
+                            </a>
+                        </div>
+                        {{-- board-thumbnail --}}
 
                         
-                    </div>
-                     {{-- board-thumbnail row --}}
+                          {{-- board-thumbnail --}}
+                          <div class="board-thumbnail__item col-lg-3 col-md-6">
+                            <a href="{{url('board-detail')}}">
+                                <div class="board-thumbnail__image image-background">
+                                    <img src="{{ asset('public/images/no-pix.jpg') }}" alt="Member Image">
+                                </div>
+                                <div class="board-thumbnail__details">
+                                    <h5>Ayres D'Cunha</h5>
+                                    <h6>Secretary</h6>
+                                </div>
+                            </a>
+                        </div>
+                        {{-- board-thumbnail --}}
 
+                       
+                    </div>
+                     {{-- board-thumbnail row --}} 
+
+                </div>
             </div>
         </section>
+        
+        
 
         <section class="board-board">
             <div class="container-max">
