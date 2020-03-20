@@ -19,7 +19,7 @@
         </div>
         
         <div class="sub-banner__image image-background">
-            <img src="{{ url('public/images/about-banner.jpg') }}">
+            <img src="{{ url('public/images/chapter-aboutus.jpg') }}">
         </div>
         
     </section>
