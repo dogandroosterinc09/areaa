@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Http\Traits\Attachments\HandlesAttachments;
+use App\Http\Traits\Attachments\HasAttachment;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -10,7 +11,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class BoardMember extends Model
 {
-    use SoftDeletes, HandlesAttachments;
+    use SoftDeletes, HasAttachment;
 
     const TYPE_EXECUTIVE = 1;
     const TYPE_DELEGATE = 2;

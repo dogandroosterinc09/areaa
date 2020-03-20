@@ -24,7 +24,7 @@
                     <div class="col-md-8 col-md-offset-2">
                         <div class="form-group">
                             <label class="col-md-2 control-label">
-                                <img id="avatarContainer" src="{{ $board_member->avatar ? $board_member->attachment('avatar')->url : asset('public/images/placeholders/avatars/avatar2.jpg') }}" alt="avatar"
+                                <img id="avatarContainer" src="{{ $board_member->attachment ? $board_member->attachment->url : asset('public/images/placeholders/avatars/avatar2.jpg') }}" alt="avatar"
                                      class="img-circle" width="64">
                             </label>
                             <div class="col-md-10">

@@ -18,7 +18,7 @@
                 <article>
                     <div class="sub-header text-center">
                         <div class="sub-header text-center">
-                            <img src="{{ $board_member->avatar ? $board_member->attachment('avatar')->url : asset('public/images/placeholders/avatars/avatar2.jpg') }}" height="150" width="150" alt="Avatar" class="img-circle">
+                            <img src="{{ $board_member->attachment ? $board_member->attachment->url : asset('public/images/placeholders/avatars/avatar2.jpg') }}" height="150" width="150" alt="Avatar" class="img-circle">
                             <p style="margin: 0; margin-top: 10px;"><strong>{{ $board_member->name }}</strong></p>
                         </div>
                         <p style="margin-top: -16px; margin-bottom: -5px;"><small>{{ $board_member->position }}</small></p>

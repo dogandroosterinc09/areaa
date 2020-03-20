@@ -115,7 +115,7 @@ class BoardMemberController extends Controller
         ]));
 
         if ($request->hasFile('avatar')) {
-            $board_member->attach($request->file('avatar'), 'avatar');
+            $board_member->attach($request->file('avatar'));
         }
 
         $route = $board_member->isExecutive ? 'admin.board_members.executives' : 'admin.board_members.delegates';
@@ -191,7 +191,7 @@ class BoardMemberController extends Controller
         ]))->save();
 
         if ($request->hasFile('avatar')) {
-            $board_member->attach($request->file('avatar'), 'avatar');
+            $board_member->attach($request->file('avatar'));
         }
 
         $route = $board_member->isExecutive ? 'admin.board_members.executives' : 'admin.board_members.delegates';
