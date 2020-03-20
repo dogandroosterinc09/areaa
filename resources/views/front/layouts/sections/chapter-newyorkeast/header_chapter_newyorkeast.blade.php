@@ -4,7 +4,7 @@
     <div class="main-nagivation-desktop container-max">
         <div class="main-nagivation-desktop__wrapper--row row">
             <div class="col-lg-4">
-                <a href="{{ url('/') }}" class="logo">
+                <a href="{{ url('/newyorkeast') }}" class="logo">
                     <img src="{{ asset('public/images/logos/areaa_new_york_east.png') }}" alt="logo">
                 </a>
             </div>
