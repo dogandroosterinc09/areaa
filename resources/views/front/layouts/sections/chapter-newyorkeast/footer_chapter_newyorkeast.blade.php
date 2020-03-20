@@ -12,7 +12,7 @@
                 <div class="footer-contacts">
                     <div class="item"><i class="loc"></i> <span>Chapter President: Baldwin Lee</span></div>
                     <div class="item"><i class="tel"></i> <a href="tel:5167077299">516-707-7299 </a></div>
-                    <div class="item"><i class="mail"></i> <a href="mailto:baldwinklee@gmail.com">Email: baldwinklee@gmail.com</a></div>
+                    <div class="item"><i class="mail"></i> <a href="mailto:baldwinklee@gmail.com">baldwinklee@gmail.com</a></div>
                 </div>
             </div>
             <div class="offset-1 col-md-8 footer__item">
