@@ -57,12 +57,15 @@
                         <div class="html-video">
                             <div class="html-video__button">
                                 <button class="active">play</button>
-                            </div>
-                            <video id="video" width="100%" height="100%" poster="{{ url('public/images/video-cover.jpg') }}" loop muted controlsList="nodownload" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+                            </div>                            
+                            <video id="video" width="100%" height="100%" poster="{{ section('Who We Are.data.first.cover_image') }}" loop muted controlsList="nodownload" webkitallowfullscreen mozallowfullscreen allowfullscreen>
                                 <!-- MP4 for Safari, IE9, iPhone, iPad, Android, and Windows Phone 7 -->
+                                <source type="video/mp4" src="{{ section('Who We Are.data.first.video') }}" />
+                                <!--
                                 <source type="video/mp4" src="{{ url('public/images/AREAACentralNewJersey.mp4') }}" />
                                 <source type="video/ogg" src="{{ url('public/images/AREAACentralNewJersey.ogg') }}" />
                                 <source type="video/webm" src="{{ url('public/images/AREAACentralNewJersey.webm') }}" />
+                                -->
                                 <!-- Flash fallback for non-HTML5 browsers without JavaScript -->
                                 <object width="100%" height="400" type="application/x-shockwave-flash" data="flashmediaelement.swf">
                                     <param name="movie" value="flashmediaelement.swf" />
@@ -125,7 +128,7 @@
                         </div>
 
                         <div class="col-md-6">
-                            <img src="{{ url('public/images/chapter-image.jpg') }}" alt="chapter title" class="img-fluid">
+                            <img src="{{ section('Member Benefits.data.first.image') }}" alt="{{ section('Member Benefits.data.first.alt_text') }}" class="img-fluid">
                         </div>
 
                 

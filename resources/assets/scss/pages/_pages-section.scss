@@ -38,6 +38,15 @@
             padding: 50px 0;
         }
     }
+    header {
+        .main-nagivation-desktop {
+            .logo {
+                display: inline-block;
+                margin-top: 10px;
+                width: 130px;
+            }
+        }
+    }
 }
 
 .page {

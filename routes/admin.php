@@ -57,3 +57,6 @@ Route::resource('/events', 'EventController');
 
 
 Route::resource('/chapters', 'ChapterController');
+
+
+Route::resource('/benefits', 'BenefitsController');

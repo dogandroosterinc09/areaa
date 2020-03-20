@@ -32,7 +32,7 @@
             <div class="container-max">
                 <div class="row">
                     <div class="col-md-6 our-mission__left">
-                        <img src="{{ url('public/images/mission-object.png') }}">
+                        <img src="{{ section('Our Mission.data.first.image') }}" alt="{{ section('Our Mission.data.first.alt_text') }}">
                     </div>
                     <div class="col-md-6 our-mission__right content-middle">
                         <div class="our-mission__content">
@@ -70,7 +70,7 @@
             </div>
             
             <div class="masking-background__image image-background">
-                <img src="{{ url('public/images/our-story-image.jpg') }}">
+                <img src="{{ section('Our Story.data.first.image') }}" alt="{{ section('Our Story.data.first.alt_text') }}">
             </div>
         </section>
 

@@ -40,8 +40,9 @@
                             </div>
                             <div class="navigation-icon__title">
                                 <h3> AREAA National</h3>
-                                <p>3990 Old Town Avenue C304,
-                                    San Diego, CA 92110</p>
+                                <p>{{ section('Contact Us.data.first.loc_text') }}</p>
+                                <!-- <p>3990 Old Town Avenue C304,
+                                    San Diego, CA 92110</p> -->
                             </div>
                         </div>
                     </div>
@@ -55,7 +56,8 @@
                             </div>
                             <div class="navigation-icon__title">
                                 <h3> Support Phone #</h3>
-                                <p>Contact: <a href="tel:7957873"> 795-7873</a></p>
+                                <p>Contact: <a href="{{ section('Contact Us.data.first.tel_link') }}"> {{ section('Contact Us.data.first.tel_text') }}</a></p>
+                                <!-- <p>Contact: <a href="tel:7957873"> 795-7873</a></p> -->
                             </div>
                         </div>
                     </div>
@@ -69,7 +71,8 @@
                             </div>
                             <div class="navigation-icon__title">
                                 <h3> Support Email</h3>
-                                <p>Email: <a href="mailto:contact@areaa.org">contact@areaa.org</a></p>
+                                <p>Email: <a href="{{ section('Contact Us.data.first.mail_link') }}">{{ section('Contact Us.data.first.mail_text') }}</a></p>
+                                <!-- <p>Email: <a href="mailto:contact@areaa.org">contact@areaa.org</a></p> -->
                             </div>
                         </div>
                     </div>

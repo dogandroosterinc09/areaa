@@ -110,6 +110,12 @@ class AdminTemplateProvider extends ServiceProvider
                 ]);
 //            }
 
+                array_push($navigation, [
+                    'name' => 'Benefits',
+                    'url' => url('admin/benefits'),
+                    'icon' => 'fa fa-phone'
+                ]);
+
 //            if ($this->hasCrudAccessFor('Board Member')) {
                 $board_member_tab = [];
 

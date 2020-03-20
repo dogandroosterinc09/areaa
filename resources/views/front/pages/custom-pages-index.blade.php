@@ -82,7 +82,28 @@
             
         @elseif ($page['slug'] == 'resource-asia-america-report')
             @include('front.pages.custom-page.resource-asia-america-report')
+
+
+
+        @elseif ($page['slug'] == 'aloha')
+            @include('front.pages.custom-page-chapters.aloha')
+
+        @elseif ($page['slug'] == 'aloha-login')
+            @include('front.pages.custom-page-chapters.aloha-login')
+
+        @elseif ($page['slug'] == 'aloha-events')
+            @include('front.pages.custom-page-chapters.aloha-events')
+
             
+        @elseif ($page['slug'] == 'newyorkeast')
+            @include('front.pages.custom-page-chapters.newyorkeast')
+
+        @elseif ($page['slug'] == 'newyorkeast-events')
+            @include('front.pages.custom-page-chapters.newyorkeast-events')
+
+            
+        @elseif ($page['slug'] == 'newyorkeast-login')
+            @include('front.pages.custom-page-chapters.newyorkeast-login')
 
 
         @else
