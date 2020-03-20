@@ -37,7 +37,7 @@
                         <div class="board-thumbnail__item col-lg-3 col-md-6">
                             <a href="{{url('board-detail')}}">
                                 <div class="board-thumbnail__image image-background">
-                                    <img src="{{ asset('public/images/no-pix.jpg') }}" alt="Member Image">
+                                    <img src="{{ asset('public/images/newyorkeast-Baldwin.jpg') }}" alt="Member Image">
                                 </div>
                                 <div class="board-thumbnail__details">
                                     <h5>Baldwin Lee </h5>
@@ -52,7 +52,7 @@
                           <div class="board-thumbnail__item col-lg-3 col-md-6">
                             <a href="{{url('board-detail')}}">
                                 <div class="board-thumbnail__image image-background">
-                                    <img src="{{ asset('public/images/no-pix.jpg') }}" alt="Member Image">
+                                    <img src="{{ asset('public/images/newyorkeast-John.jpg') }}" alt="Member Image">
                                 </div>
                                 <div class="board-thumbnail__details">
                                     <h5>John Pan</h5>
@@ -67,7 +67,7 @@
                           <div class="board-thumbnail__item col-lg-3 col-md-6">
                             <a href="{{url('board-detail')}}">
                                 <div class="board-thumbnail__image image-background">
-                                    <img src="{{ asset('public/images/no-pix.jpg') }}" alt="Member Image">
+                                    <img src="{{ asset('public/images/newyorkeast-Steve.jpg') }}" alt="Member Image">
                                 </div>
                                 <div class="board-thumbnail__details">
                                     <h5>Steve Shteyn</h5>
@@ -82,7 +82,7 @@
                           <div class="board-thumbnail__item col-lg-3 col-md-6">
                             <a href="{{url('board-detail')}}">
                                 <div class="board-thumbnail__image image-background">
-                                    <img src="{{ asset('public/images/no-pix.jpg') }}" alt="Member Image">
+                                    <img src="{{ asset('public/images/newyorkeast-Ayres.jpg') }}" alt="Member Image">
                                 </div>
                                 <div class="board-thumbnail__details">
                                     <h5>Ayres D'Cunha</h5>
@@ -145,7 +145,7 @@
                           <div class="board-thumbnail__item col-lg-3 col-md-6">
                             <a href="{{url('board-detail')}}">
                                 <div class="board-thumbnail__image image-background">
-                                    <img src="{{ asset('public/images/no-pix.jpg') }}" alt="Member Image">
+                                    <img src="{{ asset('public/images/newyorkeast-Kenny.jpg') }}" alt="Member Image">
                                 </div>
                                 <div class="board-thumbnail__details">
                                     <h5>Kenny Lam </h5>
@@ -160,7 +160,7 @@
                           <div class="board-thumbnail__item col-lg-3 col-md-6">
                             <a href="{{url('board-detail')}}">
                                 <div class="board-thumbnail__image image-background">
-                                    <img src="{{ asset('public/images/no-pix.jpg') }}" alt="Member Image">
+                                    <img src="{{ asset('public/images/newyorkeast-Chris.jpg') }}" alt="Member Image">
                                 </div>
                                 <div class="board-thumbnail__details">
                                     <h5>Chris Sung </h5>
@@ -176,7 +176,7 @@
                           <div class="board-thumbnail__item col-lg-3 col-md-6">
                             <a href="{{url('board-detail')}}">
                                 <div class="board-thumbnail__image image-background">
-                                    <img src="{{ asset('public/images/no-pix.jpg') }}" alt="Member Image">
+                                    <img src="{{ asset('public/images/newyorkeast-Helen.jpg') }}" alt="Member Image">
                                 </div>
                                 <div class="board-thumbnail__details">
                                     <h5>Helen Kim  </h5>
@@ -205,7 +205,7 @@
                         <div class="board-thumbnail__item col-lg-3 col-md-6">
                             <a href="{{url('board-detail')}}">
                                 <div class="board-thumbnail__image image-background">
-                                    <img src="{{ asset('public/images/no-pix.jpg') }}" alt="Member Image">
+                                    <img src="{{ asset('public/images/newyorkeast-Andrew.jpg') }}" alt="Member Image">
                                 </div>
                                 <div class="board-thumbnail__details">
                                     <h5>Andrew Wu</h5>
@@ -235,7 +235,7 @@
                         <div class="board-thumbnail__item col-lg-3 col-md-6">
                             <a href="{{url('board-detail')}}">
                                 <div class="board-thumbnail__image image-background">
-                                    <img src="{{ asset('public/images/no-pix.jpg') }}" alt="Member Image">
+                                    <img src="{{ asset('public/images/newyorkeast-David.jpg') }}" alt="Member Image">
                                 </div>
                                 <div class="board-thumbnail__details">
                                     <h5>David Legaz </h5>
