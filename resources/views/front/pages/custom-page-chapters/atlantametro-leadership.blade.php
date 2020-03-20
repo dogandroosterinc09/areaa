@@ -35,7 +35,7 @@
                         <div class="board-thumbnail__item col-lg-3 col-md-6">
                             <a href="{{url('board-detail')}}">
                                 <div class="board-thumbnail__image image-background">
-                                    <img src="{{ asset('public/images/exec-James-Huang.jpg') }}" alt="Member Image">
+                                    <img src="{{ asset('public/images/metro-Helen.jpg') }}" alt="Member Image">
                                 </div>
                                 <div class="board-thumbnail__details">
                                     <h5>Helen Pham Nguyen </h5>
@@ -50,7 +50,7 @@
                           <div class="board-thumbnail__item col-lg-3 col-md-6">
                             <a href="{{url('board-detail')}}">
                                 <div class="board-thumbnail__image image-background">
-                                    <img src="{{ asset('public/images/exec-AmyKong.jpg') }}" alt="Member Image">
+                                    <img src="{{ asset('public/images/metro-Andrew.jpg') }}" alt="Member Image">
                                 </div>
                                 <div class="board-thumbnail__details">
                                     <h5>Andrew Peters</h5>
@@ -65,7 +65,7 @@
                           <div class="board-thumbnail__item col-lg-3 col-md-6">
                             <a href="{{url('board-detail')}}">
                                 <div class="board-thumbnail__image image-background">
-                                    <img src="{{ asset('public/images/exec-TomTruong.jpg') }}" alt="Member Image">
+                                    <img src="{{ asset('public/images/metro-Kacey.jpg') }}" alt="Member Image">
                                 </div>
                                 <div class="board-thumbnail__details">
                                     <h5>Kacey Yi </h5>
@@ -80,7 +80,7 @@
                           <div class="board-thumbnail__item col-lg-3 col-md-6">
                             <a href="{{url('board-detail')}}">
                                 <div class="board-thumbnail__image image-background">
-                                    <img src="{{ asset('public/images/exec-AtsukoYube.jpg') }}" alt="Member Image">
+                                    <img src="{{ asset('public/images/metro-Dan.jpg') }}" alt="Member Image">
                                 </div>
                                 <div class="board-thumbnail__details">
                                     <h5>Dan Park</h5>
@@ -109,7 +109,7 @@
                         <div class="board-thumbnail__item col-lg-3 col-md-6">
                             <a href="{{url('board-detail')}}">
                                 <div class="board-thumbnail__image image-background">
-                                    <img src="{{ asset('public/images/exec-James-Huang.jpg') }}" alt="Member Image">
+                                    <img src="{{ asset('public/images/metro-Jimmy.jpg') }}" alt="Member Image">
                                 </div>
                                 <div class="board-thumbnail__details">
                                     <h5>Jimmy Chang
@@ -125,7 +125,7 @@
                           <div class="board-thumbnail__item col-lg-3 col-md-6">
                             <a href="{{url('board-detail')}}">
                                 <div class="board-thumbnail__image image-background">
-                                    <img src="{{ asset('public/images/exec-AmyKong.jpg') }}" alt="Member Image">
+                                    <img src="{{ asset('public/images/metro-David.jpg') }}" alt="Member Image">
                                 </div>
                                 <div class="board-thumbnail__details">
                                     <h5>David Washington</h5>
@@ -140,7 +140,7 @@
                           <div class="board-thumbnail__item col-lg-3 col-md-6">
                             <a href="{{url('board-detail')}}">
                                 <div class="board-thumbnail__image image-background">
-                                    <img src="{{ asset('public/images/exec-TomTruong.jpg') }}" alt="Member Image">
+                                    <img src="{{ asset('public/images/metro-Jennifer.jpg') }}" alt="Member Image">
                                 </div>
                                 <div class="board-thumbnail__details">
                                     <h5>Jennifer Kwon </h5>
@@ -155,7 +155,7 @@
                           <div class="board-thumbnail__item col-lg-3 col-md-6">
                             <a href="{{url('board-detail')}}">
                                 <div class="board-thumbnail__image image-background">
-                                    <img src="{{ asset('public/images/exec-AtsukoYube.jpg') }}" alt="Member Image">
+                                    <img src="{{ asset('public/images/metro-Tony.jpg') }}" alt="Member Image">
                                 </div>
                                 <div class="board-thumbnail__details">
                                     <h5>Tony Lin </h5>
@@ -171,7 +171,7 @@
                           <div class="board-thumbnail__item col-lg-3 col-md-6">
                             <a href="{{url('board-detail')}}">
                                 <div class="board-thumbnail__image image-background">
-                                    <img src="{{ asset('public/images/exec-DickLee.jpg') }}" alt="Member Image">
+                                    <img src="{{ asset('public/images/metro-Judy.jpg') }}" alt="Member Image">
                                 </div>
                                 <div class="board-thumbnail__details">
                                     <h5>Judy Chin  </h5>
@@ -186,7 +186,7 @@
                            <div class="board-thumbnail__item col-lg-3 col-md-6">
                             <a href="{{url('board-detail')}}">
                                 <div class="board-thumbnail__image image-background">
-                                    <img src="{{ asset('public/images/exec-Allen-Okamoto.jpg') }}" alt="Member Image">
+                                    <img src="{{ asset('public/images/metro-Ming.jpg') }}" alt="Member Image">
                                 </div>
                                 <div class="board-thumbnail__details">
                                     <h5>Ming Zhou </h5>
