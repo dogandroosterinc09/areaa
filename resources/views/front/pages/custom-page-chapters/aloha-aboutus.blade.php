@@ -1,11 +1,33 @@
 <section class="page-chapter page-chapter-aloha page-chapter-aloha--aboutus">
     @include('front.layouts.sections.chapter-aloha.header_chapter_aloha')
 
-    @include('front.pages.custom-page.sections.chapter-slider-aloha')
+    {{-- @include('front.pages.custom-page.sections.chapter-slider-aloha') --}}
+
+    
+    {{-- need to dynamic this sub  --}}
+    <section class="sub-banner">
+        <div class="sub-banner__wrapper container-max">
+            <div class="sub-banner__item">
+                <div class="container-max sub-banner__content">
+                    <div class="row">
+                        <div class="col-md-12 sub-banner__content">
+                            <h3>Learn More</h3>
+                            <h1>About Us</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="sub-banner__image image-background">
+            <img src="{{ url('public/images/about-banner.jpg') }}">
+        </div>
+        
+    </section>
+
 
     <main class="main-content">
 
-    
 
        {{-- story section  --}}
        <section class="default-content chapter-ourstory-section">
