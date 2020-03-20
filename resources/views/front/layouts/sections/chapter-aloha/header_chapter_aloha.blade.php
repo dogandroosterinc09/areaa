@@ -34,42 +34,21 @@
                 <nav class="navbar-bar">
                     <ul class="navbar-bar__wrapper">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="{{ url('/aloha') }}">Home</a>
+                            <a class="nav-link" href="{{ url('aloha') }}">Home</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="{{ url('about-us') }}">About Us</a>
-                            {{-- <div class="dropdown-menu">
-                                <ul class="sub-menu mega-menu">
-                                    <li><a href="{{url('about-us')}}"> About AREAA </a></li>
-                                    <li><a href="{{url('executive-board')}}"> Executive Board </a></li>
-                                    <li><a href="{{url('delegate-board')}}"> National Board </a></li>
-                                    <li><a href="{{url('about-us')}}"> Our Partners </a></li>
-                                    <li><a href="{{url('FAQ')}}"> FAQ </a></li>
-                                </ul>
-                            </div> --}}
+                            <a class="nav-link" href="{{ url('aloha-aboutus') }}">About Us</a>
                         </li>
                         
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="{{ url('aloha-events') }}">Events</a>
-                            {{-- <div class="dropdown-menu">
-                                <ul class="sub-menu mega-menu">
-                                    <li><a href="#"> Leadership Summit</a></li>
-                                    <li><a href="#">Global & Luxury Summit</a></li>
-                                    <li><a href="#">Regional Retreats</a></li>
-                                    <li><a href="#">National Convention</a></li>
-                                    <li><a href="{{url('chapter-homepage')}}">Chapter Events </a></li>
-                                    <li><a href="#">How to get involved </a></li>
-                                </ul>
-                            </div> --}}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('aloha-login') }}">Events</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="{{ url('') }}">Leadership</a>
+                            <a class="nav-link" href="{{ url('aloha-leadership') }}">Leadership</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="{{url('aloha-events')}}">Contact Us</a>
+                            <a class="nav-link" href="{{ url('aloha-contactus') }}">Contact Us</a>
                         </li>
-                        
-
                     </ul>
                 </nav>
             </div>

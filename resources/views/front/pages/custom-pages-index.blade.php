@@ -94,16 +94,29 @@
         @elseif ($page['slug'] == 'aloha-events')
             @include('front.pages.custom-page-chapters.aloha-events')
 
-            
+        @elseif ($page['slug'] == 'aloha-leadership')
+            @include('front.pages.custom-page-chapters.aloha-leadership')
+
+        @elseif ($page['slug'] == 'aloha-contactus')
+            @include('front.pages.custom-page-chapters.aloha-contactus')
+
+
+
+
         @elseif ($page['slug'] == 'newyorkeast')
             @include('front.pages.custom-page-chapters.newyorkeast')
+        
+        @elseif ($page['slug'] == 'newyorkeast-login')
+            @include('front.pages.custom-page-chapters.newyorkeast-login')
 
         @elseif ($page['slug'] == 'newyorkeast-events')
             @include('front.pages.custom-page-chapters.newyorkeast-events')
 
-            
-        @elseif ($page['slug'] == 'newyorkeast-login')
-            @include('front.pages.custom-page-chapters.newyorkeast-login')
+        @elseif ($page['slug'] == 'newyorkeast-leadership')
+            @include('front.pages.custom-page-chapters.newyorkeast-leadership')
+        
+        @elseif ($page['slug'] == 'newyorkeast-contactus')
+            @include('front.pages.custom-page-chapters.newyorkeast-contactus')
 
 
         @else
