@@ -33,7 +33,7 @@
                                 <a href="{{ $executive->url }}">
                                     <div class="board-thumbnail__image image-background">
                                         <img src="{{ $executive->attachment ? optional($executive->attachment)->url : asset('public/images/no-image.jpg') }}"
-                                             alt="{{ $executive->attachment('avatar')->name }}">
+                                             alt="{{ optional($executive->attachment)->name }}">
                                     </div>
                                     <div class="board-thumbnail__details">
                                         <h5>{{ $executive->name }}</h5>
