@@ -21522,6 +21522,9 @@ section.page--login .site-content {
   margin-top: 10px;
   width: 130px;
 }
+.page-chapter .footer__item .footer-contacts {
+  margin-top: 40px !important;
+}
 
 .page--board .executive-board {
   padding: 60px 0;
