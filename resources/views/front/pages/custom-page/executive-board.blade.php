@@ -32,7 +32,7 @@
                             <div class="board-thumbnail__item">
                                 <a href="{{ $executive->url }}">
                                     <div class="board-thumbnail__image image-background">
-                                        <img src="{{ asset($executive->attachment('avatar')->url) }}"
+                                        <img src="{{ $executive->attachment ? optional($executive->attachment)->url : asset('public/images/no-image.jpg') }}"
                                              alt="{{ $executive->attachment('avatar')->name }}">
                                     </div>
                                     <div class="board-thumbnail__details">
