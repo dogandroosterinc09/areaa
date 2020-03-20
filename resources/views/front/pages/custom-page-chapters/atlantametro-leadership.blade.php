@@ -92,7 +92,7 @@
 
                        
                     </div>
-                     {{-- board-thumbnail row --}}
+                     {{-- board-thumbnail row --}} 
 
                 </div>
             </div>
