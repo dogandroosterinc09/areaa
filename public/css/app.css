@@ -18165,6 +18165,7 @@ header.scrolling {
 header.scrolling .contact-details-wrap {
   -webkit-transform: scale(0.8) translate(0, -9px);
           transform: scale(0.8) translate(0, -9px);
+  z-index: 22;
 }
 header.scrolling .navbar-bar {
   position: relative;
@@ -18268,6 +18269,7 @@ header .contact-details-wrap {
   display: block;
   text-align: right;
   padding: 0 0;
+  z-index: 22;
 }
 header .contact-details-wrap::after {
   content: "";
@@ -18383,6 +18385,14 @@ header .contact-details-wrap .info a i.ic-user {
   height: 24px;
   background: url("../images/sprite.png") no-repeat;
   background-position: -141px -10px;
+}
+header .contact-details-wrap .info a i.ic-chapter {
+  display: inline-block;
+  vertical-align: top;
+  width: 40px;
+  height: 24px;
+  background: url("../images/sprite.png") no-repeat;
+  background-position: -271px -5px;
 }
 
 .banner {

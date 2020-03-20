@@ -30,6 +30,7 @@ header {
         box-shadow: 1px 0 5px 1px rgba(0, 0, 0, .6);
         .contact-details-wrap {
             transform: scale(.8) translate(0, -9px);
+            z-index: 22;
         }
         .navbar-bar {
             position: relative;
