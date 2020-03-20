@@ -18669,10 +18669,12 @@ header .contact-details-wrap .info a i.ic-chapter {
   display: none;
 }
 .banner__chapter .banner-content-desc {
-  top: 99px !important h3;
-  top-font-size: 3.5rem !important;
-  top-font-weight: 800;
-  top-max-width: 85%;
+  top: 99px !important;
+}
+.banner__chapter .banner-content-desc h3 {
+  font-size: 3.5rem !important;
+  font-weight: 800;
+  max-width: 85%;
 }
 .banner__chapter .banner-content-desc .btn--primary {
   margin-top: 20px;
