@@ -1,7 +1,7 @@
 <section class="page-chapter page-chapter-newyorkeast page-chapter-newyorkeast--events">
     @include('front.layouts.sections.chapter-newyorkeast.header_chapter_newyorkeast')
 
-    @include('front.pages.custom-page.sections.chapter-slider')
+    @include('front.pages.custom-page.sections.chapter-slider-newyorkeast')
 
     <main class="main-content">
         

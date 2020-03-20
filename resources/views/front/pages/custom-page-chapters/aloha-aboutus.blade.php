@@ -1,7 +1,7 @@
 <section class="page-chapter page-chapter-aloha page-chapter-aloha--aboutus">
     @include('front.layouts.sections.chapter-aloha.header_chapter_aloha')
 
-    @include('front.pages.custom-page.sections.chapter-slider')
+    @include('front.pages.custom-page.sections.chapter-slider-aloha')
 
     <main class="main-content">
 
