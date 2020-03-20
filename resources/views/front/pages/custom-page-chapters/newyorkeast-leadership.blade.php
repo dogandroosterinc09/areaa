@@ -151,7 +151,6 @@
                     </div>
                      {{-- board-thumbnail row --}}
 
-                </div>
             </div>
         </section>
 
