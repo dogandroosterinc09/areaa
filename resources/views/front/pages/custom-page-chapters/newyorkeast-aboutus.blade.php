@@ -5,44 +5,7 @@
 
     <main class="main-content">
         
-        
-        {{-- @include('front.pages.custom-page.sections.chapter-menu') --}}
-        <section class="dashboard-nav">
-
-            <div class="dashboard-navigation">
-                <div class="dashboard-navigation__wrapper">
-                    <div class="dashboard-navigation__item">
-                    
-                        <nav class="navbar-bar">
-                            <ul class="navbar-bar__wrapper">
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link" href="{{ url('chapter-homepage') }}">Home </a>
-                                </li>
-                                <li class="nav-item active">
-                                    <a class="nav-link" href="{{ url('chapter-our-story') }}">About Us</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ url('chapter-events') }}">Events</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ url('chapter-leadership') }}">Leadership</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ url('chapter-contact-us') }}">Contact us</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ url('chapter-login') }}">Log in</a>
-                                </li>
-                            </ul>
-                        </nav>
-        
-        
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
+    
 
 
 

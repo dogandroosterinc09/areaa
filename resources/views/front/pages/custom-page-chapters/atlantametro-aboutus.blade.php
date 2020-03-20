@@ -1,7 +1,7 @@
-<section class="page-chapter page-chapter-aloha page-chapter-aloha--aboutus">
-    @include('front.layouts.sections.chapter-aloha.header_chapter_aloha')
+<section class="page-chapter page-chapter-atlantametro page-chapter-atlantametro--aboutus">
+    @include('front.layouts.sections.chapter-atlantametro.header_chapter_atlantametro')
 
-    @include('front.pages.custom-page.sections.chapter-slider-aloha')
+    @include('front.pages.custom-page.sections.chapter-slider-atlantametro')
 
     <main class="main-content">
 
@@ -78,5 +78,5 @@
          
 
     </main>
-    @include('front.layouts.sections.chapter-aloha.footer_chapter_aloha')
+    @include('front.layouts.sections.chapter-atlantametro.footer_chapter_atlantametro')
 </section>
