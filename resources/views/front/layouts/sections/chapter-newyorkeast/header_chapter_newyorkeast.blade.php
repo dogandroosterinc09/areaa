@@ -28,7 +28,7 @@
                                  </div>
                              </li>
                             <li> 
-                                <a href="{{ route('newyorkeast-login') }}"><i class="ic-user"></i> Log In</a>
+                                <a href="{{ url('newyorkeast-login') }}"><i class="ic-user"></i> Log In</a>
                             </li>
                         </ul>
                     </div>

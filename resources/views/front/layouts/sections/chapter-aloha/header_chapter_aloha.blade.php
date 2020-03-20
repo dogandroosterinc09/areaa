@@ -27,7 +27,7 @@
                              </div>
                          </li>
                         <li> 
-                            <a href="{{ route('aloha-login') }}"><i class="ic-user"></i> Log In</a>
+                            <a href="{{ url('aloha-login') }}"><i class="ic-user"></i> Log In</a>
                         </li>
                     </div>
                 </div>
