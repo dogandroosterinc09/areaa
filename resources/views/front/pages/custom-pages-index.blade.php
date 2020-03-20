@@ -126,6 +126,26 @@
 
 
 
+        @elseif ($page['slug'] == 'atlantametro')
+            @include('front.pages.custom-page-chapters.atlantametro')
+        
+        @elseif ($page['slug'] == 'atlantametro-login')
+            @include('front.pages.custom-page-chapters.atlantametro-login')
+
+        @elseif ($page['slug'] == 'atlantametro-events')
+            @include('front.pages.custom-page-chapters.atlantametro-events')
+
+        @elseif ($page['slug'] == 'atlantametro-leadership')
+            @include('front.pages.custom-page-chapters.atlantametro-leadership')
+        
+        @elseif ($page['slug'] == 'atlantametro-contactus')
+            @include('front.pages.custom-page-chapters.atlantametro-contactus')
+
+        @elseif ($page['slug'] == 'atlantametro-aboutus')
+            @include('front.pages.custom-page-chapters.atlantametro-aboutus')
+
+
+
         @else
             @include('front.pages.custom-page.default-page')
         @endif

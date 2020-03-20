@@ -4,8 +4,8 @@
     <div class="main-nagivation-desktop container-max">
         <div class="main-nagivation-desktop__wrapper--row row">
             <div class="col-lg-4">
-                <a href="{{ url('/newyorkeast') }}" class="logo">
-                    <img src="{{ asset('public/images/logos/areaa_new_york_east.png') }}" alt="logo">
+                <a href="{{ url('/atlantametro') }}" class="logo">
+                    <img src="{{ asset('public/images/logos/areaa_atlanta_metro.png') }}" alt="logo">
                 </a>
             </div>
             <div class="col-lg-8">
@@ -29,7 +29,7 @@
                                  </div>
                              </li>
                             <li> 
-                                <a href="{{ url('newyorkeast-login') }}"><i class="ic-user"></i> Log In</a>
+                                <a href="{{ url('atlantametro-login') }}"><i class="ic-user"></i> Log In</a>
                             </li>
                         </ul>
                     </div>
@@ -37,20 +37,20 @@
                 <nav class="navbar-bar">
                     <ul class="navbar-bar__wrapper">
                         <li class="nav-item dropdown">
-                            <a class="nav-link" href="{{ url('newyorkeast') }}">Home</a>
+                            <a class="nav-link" href="{{ url('atlantametro') }}">Home</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link" href="{{ url('newyorkeast-aboutus') }}">About Us</a>
+                            <a class="nav-link" href="{{ url('atlantametro-aboutus') }}">About Us</a>
                         </li>
                         
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('newyorkeast-login') }}">Events</a>
+                            <a class="nav-link" href="{{ url('atlantametro-login') }}">Events</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link" href="{{ url('newyorkeast-leadership') }}">Leadership</a>
+                            <a class="nav-link" href="{{ url('atlantametro-leadership') }}">Leadership</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link" href="{{ url('newyorkeast-contactus') }}">Contact Us</a>
+                            <a class="nav-link" href="{{ url('atlantametro-contactus') }}">Contact Us</a>
                         </li>
                     </ul>
                 </nav>
