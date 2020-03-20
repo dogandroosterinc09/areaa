@@ -62,7 +62,7 @@
                                             <p> Lorem ipsum dolor sit amet, dolor at ligula faucibus imperdiet libero, phasellus nulla sollicitudin in, libero nec venenatis, luctus pretium imperdiet volutpat sit atque. Porttitor ligula vitae ultrices eleifend, felis suscipit iaculis turpis</p>
                                         </div>
                                         <div class="chapter-events-thumbnail__buttons">
-                                            <a href="{{url('chapter-event-detail')}}" class="btn btn--secondary"> View Details</a>
+                                            <a href="{{url('aloha-events-detail')}}" class="btn btn--secondary"> View Details</a>
                                         </div>
                                     </div>
                                 </div>
@@ -90,7 +90,7 @@
                                             <p> Lorem ipsum dolor sit amet, dolor at ligula faucibus imperdiet libero, phasellus nulla sollicitudin in, libero nec venenatis, luctus pretium imperdiet volutpat sit atque. Porttitor ligula vitae ultrices eleifend, felis suscipit iaculis turpis</p>
                                         </div>
                                         <div class="chapter-events-thumbnail__buttons">
-                                            <a href="{{url('chapter-event-detail')}}" class="btn btn--secondary"> View Details</a>
+                                            <a href="{{url('aloha-events-detail')}}" class="btn btn--secondary"> View Details</a>
                                         </div>
                                     </div>
                                 </div>

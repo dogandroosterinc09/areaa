@@ -93,6 +93,9 @@
 
         @elseif ($page['slug'] == 'aloha-events')
             @include('front.pages.custom-page-chapters.aloha-events')
+        
+        @elseif ($page['slug'] == 'aloha-events-detail')
+            @include('front.pages.custom-page-chapters.aloha-events-detail')
 
         @elseif ($page['slug'] == 'aloha-leadership')
             @include('front.pages.custom-page-chapters.aloha-leadership')
@@ -115,6 +118,9 @@
         @elseif ($page['slug'] == 'newyorkeast-events')
             @include('front.pages.custom-page-chapters.newyorkeast-events')
 
+        @elseif ($page['slug'] == 'newyorkeast-events-detail')
+            @include('front.pages.custom-page-chapters.newyorkeast-events-detail')
+
         @elseif ($page['slug'] == 'newyorkeast-leadership')
             @include('front.pages.custom-page-chapters.newyorkeast-leadership')
         
@@ -134,6 +140,9 @@
 
         @elseif ($page['slug'] == 'atlantametro-events')
             @include('front.pages.custom-page-chapters.atlantametro-events')
+
+        @elseif ($page['slug'] == 'atlantametro-events-detail')
+            @include('front.pages.custom-page-chapters.atlantametro-events-detail')
 
         @elseif ($page['slug'] == 'atlantametro-leadership')
             @include('front.pages.custom-page-chapters.atlantametro-leadership')
