@@ -10,7 +10,7 @@
                     <div class="row">
                         <div class="col-md-12 sub-banner__content">
                             <h3>Meet Our </h3>
-                            <h1>Executive <br>
+                            <h1>Leadership <br>
                                 Board</h1>
                         </div>
                     </div>
