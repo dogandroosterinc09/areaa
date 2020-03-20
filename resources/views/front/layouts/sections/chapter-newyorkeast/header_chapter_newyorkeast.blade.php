@@ -44,7 +44,7 @@
                         </li>
                         
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('newyorkeast-login') }}">Events</a>
+                            <a class="nav-link" href="{{ url('newyorkeast-events') }}">Events</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link" href="{{ url('newyorkeast-leadership') }}">Leadership</a>
