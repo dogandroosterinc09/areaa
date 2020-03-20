@@ -50,7 +50,7 @@
                         </li>
                         
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="{{ url('/aloha/events') }}">Events</a>
+                            <a class="nav-link dropdown-toggle" href="{{ url('aloha-events') }}">Events</a>
                             {{-- <div class="dropdown-menu">
                                 <ul class="sub-menu mega-menu">
                                     <li><a href="#"> Leadership Summit</a></li>
@@ -66,7 +66,7 @@
                             <a class="nav-link dropdown-toggle" href="{{ url('') }}">Leadership</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="{{ url('') }}">Contact Us</a>
+                            <a class="nav-link dropdown-toggle" href="{{url('aloha-events')}}">Contact Us</a>
                         </li>
                         
 
@@ -89,7 +89,7 @@
                     <div class="mobile-header__wrapper">
 
                         <div class="mobile-logo">
-                            <a href="{{ url('/') }}" class="logo" aria-label="areaa logo">
+                            <a href="{{ url('/aloha') }}" class="logo" aria-label="areaa logo">
                                 <img src="{{ asset('public/images/header/header-logo.png') }}" alt="logo">
                             </a>
                         </div>
@@ -107,7 +107,7 @@
                                 <ul>
                                     <!-- **************************************** -->
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{ url('/') }}">Home <span
+                                        <a class="nav-link" href="{{ url('/aloha') }}">Home <span
                                                     class="sr-only">(current)</span></a>
                                     </li>
                                     <li class="nav-item">
@@ -162,7 +162,7 @@
                                         </ul>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link " href="#">
+                                    <a class="nav-link " href="{{url('aloha-events')}}">
                                             Events
                                         </a>
 
