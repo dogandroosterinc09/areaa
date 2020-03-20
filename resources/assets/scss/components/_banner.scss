@@ -280,6 +280,17 @@ $banner-background-color:#000;
         .banner__image-slide .item-right::before {
             display: none;
         }
+        .banner-content-desc {
+            top: 120px;
+            h3 {
+                font-size: 3.5rem !important;
+                font-weight: 800;
+                max-width: 85%;
+            }
+            .btn--primary {
+                margin-top: 20px;
+            }
+        }
         .banner__image-slide {
             .banner-img-holder {
                 &:before {

@@ -18668,6 +18668,17 @@ header .contact-details-wrap .info a i.ic-chapter {
 .banner__chapter .banner__image-slide .item-right::before {
   display: none;
 }
+.banner__chapter .banner-content-desc {
+  top: 120px;
+}
+.banner__chapter .banner-content-desc h3 {
+  font-size: 3.5rem !important;
+  font-weight: 800;
+  max-width: 85%;
+}
+.banner__chapter .banner-content-desc .btn--primary {
+  margin-top: 20px;
+}
 .banner__chapter .banner__image-slide .banner-img-holder:before {
   content: "";
   width: 100px;
