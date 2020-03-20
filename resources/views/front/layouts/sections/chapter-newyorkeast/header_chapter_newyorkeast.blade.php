@@ -18,7 +18,7 @@
                             <li>  
                                 <a href="{{url('/')}}" class="dropdown-toggle-menu">
                                 <i class="ic-chapter"></i> 
-                                AREAA National 
+                                AREAA National
                                 </a>
                                 <div class="info__menu">
                                     <ul>

@@ -100,6 +100,9 @@
         @elseif ($page['slug'] == 'aloha-contactus')
             @include('front.pages.custom-page-chapters.aloha-contactus')
 
+        @elseif ($page['slug'] == 'aloha-aboutus')
+            @include('front.pages.custom-page-chapters.aloha-aboutus')
+
 
 
 
@@ -117,6 +120,10 @@
         
         @elseif ($page['slug'] == 'newyorkeast-contactus')
             @include('front.pages.custom-page-chapters.newyorkeast-contactus')
+
+        @elseif ($page['slug'] == 'newyorkeast-aboutus')
+            @include('front.pages.custom-page-chapters.newyorkeast-aboutus')
+
 
 
         @else
