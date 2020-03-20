@@ -1,7 +1,7 @@
 <section class="page-chapter page-chapter-atlantametro page-chapter-atlantametro--login">
     @include('front.layouts.sections.chapter-atlantametro.header_chapter_atlantametro')
 
-    @include('front.pages.custom-page.sections.chapter-slider-atlantametro')
+    {{-- @include('front.pages.custom-page.sections.chapter-slider-atlantametro') --}}
 
     <main class="main-content">
 
