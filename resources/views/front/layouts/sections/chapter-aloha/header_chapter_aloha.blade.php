@@ -16,9 +16,9 @@
                             <li> <a href="tel:619.795.7873"><i class="ic-phone" aria-hidden="true"></i> 619.795.7873</a></li>
                             <li> <a href="mailto:contact@areaa.org"><i class="ic-email"></i> contact@areaa.org</a></li>
                             <li>  
-                                <a href="javascript:void(0)" class="dropdown-toggle-menu">
+                                <a href="{{url('/')}}" class="dropdown-toggle-menu">
                                 <i class="ic-chapter"></i> 
-                                Find your Chapter
+                                AREAA National
                                 </a>
                                 <div class="info__menu">
                                     <ul>
