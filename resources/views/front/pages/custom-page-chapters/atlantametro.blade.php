@@ -285,5 +285,5 @@
          
 
     </main>
-    @include('front.layouts.sections.chapter-newyorkeast.footer_chapter_atlantametro')
+    @include('front.layouts.sections.chapter-atlantametro.footer_chapter_atlantametro')
 </section>
