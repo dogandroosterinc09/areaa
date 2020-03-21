@@ -202,21 +202,19 @@
             border: 0;
             width: 77px;
             height: 77px;
-            background-position: -457px -321px;
-            background-position: -456px -235px;
+            // background-position: -457px -321px;
+            background-position: -457px -322px !important;
             overflow: hidden;
             text-indent: -999px;
             outline: none;
             opacity: 0;
             visibility: hidden;
             &.active {
-                background-position: -456px -235px;
+                background-position: -456px -235px !important;
                 opacity: 1;
                 visibility: visible;
             }
-        }
-        &:hover {
-            button {
+            &:hover {
                 opacity: 1;
                 visibility: visible;
             }

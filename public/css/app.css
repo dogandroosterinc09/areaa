@@ -22559,8 +22559,7 @@ section.page--login .site-content {
   border: 0;
   width: 77px;
   height: 77px;
-  background-position: -457px -321px;
-  background-position: -456px -235px;
+  background-position: -457px -322px !important;
   overflow: hidden;
   text-indent: -999px;
   outline: none;
@@ -22568,11 +22567,11 @@ section.page--login .site-content {
   visibility: hidden;
 }
 .html-video__button button.active {
-  background-position: -456px -235px;
+  background-position: -456px -235px !important;
   opacity: 1;
   visibility: visible;
 }
-.html-video__button:hover button {
+.html-video__button button:hover {
   opacity: 1;
   visibility: visible;
 }
