@@ -33,178 +33,196 @@
                 <div class="col-lg-12">
 
                     <div class="board-thumbnail row">
-
-                         {{-- board-thumbnail --}}
-                        <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('board-detail')}}">
-                                <div class="board-thumbnail__image image-background">
-                                    <img src="{{ asset('public/images/no-image.jpg') }}" alt="Member Image">
-                                </div>
-                                <div class="board-thumbnail__details">
-                                    <h5>Michael Acevedo </h5>
-                                    <h6>Mortgage Committee Vice Chair</h6>
-                                </div>
-                            </a>
-                        </div>
-                        {{-- board-thumbnail --}}
-
-
-                          {{-- board-thumbnail --}}
-                          <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('board-detail')}}">
-                                <div class="board-thumbnail__image image-background">
-                                    <img src="{{ asset('public/images/delagate-Bryan-Ahn.jpg') }}" alt="Member Image">
-                                </div>
-                                <div class="board-thumbnail__details">
-                                    <h5>Bryan Ahn </h5>
-                                    <h6>Board Member</h6>
-                                </div>
-                            </a>
-                        </div>
-                        {{-- board-thumbnail --}}
-
-
-                          {{-- board-thumbnail --}}
-                          <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('board-detail')}}">
-                                <div class="board-thumbnail__image image-background">
-                                    <img src="{{ asset('public/images/delagate-Brian-Almero.jpg') }}" alt="Member Image">
-                                </div>
-                                <div class="board-thumbnail__details">
-                                    <h5>Brian Almero </h5>
-                                    <h6>Las Vegas President</h6>
-                                </div>
-                            </a>
-                        </div>
-                        {{-- board-thumbnail --}}
-
-                        
-                          {{-- board-thumbnail --}}
-                          <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('board-detail')}}">
-                                <div class="board-thumbnail__image image-background">
-                                    <img src="{{ asset('public/images/deleg-Keith-Andrews.jpg') }}" alt="Member Image">
-                                </div>
-                                <div class="board-thumbnail__details">
-                                    <h5>Keith Andrews </h5>
-                                    <h6>Greater Birmingham President</h6>
-                                </div>
-                            </a>
-                        </div>
-                        {{-- board-thumbnail --}}
-
-
-                   
-
-                           {{-- board-thumbnail --}}
-                           <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('board-detail')}}">
-                                <div class="board-thumbnail__image image-background">
-                                    <img src="{{ asset('public/images/deleg-LC-Beh.jpg') }}" alt="Member Image">
-                                </div>
-                                <div class="board-thumbnail__details">
-                                    <h5>LC Beh</h5>
-                                    <h6>Greater Los Angeles President</h6>
-                                </div>
-                            </a>
-                        </div>
-                        {{-- board-thumbnail --}}
-
-                        {{-- board-thumbnail --}}
-                        <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('board-detail')}}">
-                                <div class="board-thumbnail__image image-background">
-                                    <img src="{{ asset('public/images/deleg-JC-Caceres.jpg') }}" alt="Member Image">
-                                </div>
-                                <div class="board-thumbnail__details">
-                                    <h5>JC Caceres</h5>
-                                    <h6>Greater Miami President</h6>
-                                </div>
-                            </a>
-                        </div>
-                        {{-- board-thumbnail --}}
-
-
-                        {{-- board-thumbnail --}}
-                        <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('board-detail')}}">
-                                <div class="board-thumbnail__image image-background">
-                                    <img src="{{ asset('public/images/deleg-Kyle-Chan.jpg') }}" alt="Member Image">
-                                </div>
-                                <div class="board-thumbnail__details">
-                                    <h5>Kyle Chan</h5>
-                                    <h6>Central New Jersey</h6>
-                                </div>
-                            </a>
-                        </div>
-                        {{-- board-thumbnail --}}
-
-
-                        {{-- board-thumbnail --}}
-                        <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('board-detail')}}">
-                                <div class="board-thumbnail__image image-background">
-                                    <img src="{{ asset('public/images/deleg-Lynman-Chao.jpg') }}" alt="Member Image">
-                                </div>
-                                <div class="board-thumbnail__details">
-                                    <h5>Lynman Chao </h5>
-                                    <h6> Membership Benefits Committee Vice-Chair/ San Francisco Peninsula
-                                    </h6>
-                                </div>
-                            </a>
-                        </div>
-                        {{-- board-thumbnail --}}
-
-
-                        {{-- board-thumbnail --}}
-                        <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('board-detail')}}">
-                                <div class="board-thumbnail__image image-background">
-                                    <img src="{{ asset('public/images/deleg-Stephen-Chow.jpg') }}" alt="Member Image">
-                                </div>
-                                <div class="board-thumbnail__details">
-                                    <h5>Stephen Chow</h5>
-                                    <h6>Greater Toronto President</h6>
-                                </div>
-                            </a>
-                        </div>
-                        {{-- board-thumbnail --}}
-
-
-                             
-                          {{-- board-thumbnail --}}
-                          <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('board-detail')}}">
-                                <div class="board-thumbnail__image image-background">
-                                    <img src="{{ asset('public/images/deleg-Gregg-Christensen.jpg') }}" alt="Member Image">
-                                </div>
-                                <div class="board-thumbnail__details">
-                                    <h5>Gregg Christensen
-                                    </h5>
-                                    <h6>New York Manhattan President
-
-                                    </h6>
-                                </div>
-                            </a>
-                        </div>
-                        {{-- board-thumbnail --}}
-
-
-                               {{-- board-thumbnail --}}
-                               <div class="board-thumbnail__item col-lg-3 col-md-6">
-                                <a href="{{url('board-detail')}}">
+                        @php($delegates = \App\Models\BoardMember::delegates()->orderBy('order')->get())
+                        @if($delegates->isEmpty())
+                            <h3 class="text-danger font-weight-bold text-center w-100 my-5">No Delegates Members.</h3>
+                        @endif
+                        @foreach($delegates as $delegate)
+                            <div class="board-thumbnail__item col-lg-3 col-md-6">
+                                <a href="{{ $delegate->url }}">
                                     <div class="board-thumbnail__image image-background">
-                                        <img src="{{ asset('public/images/exec-DickLee.jpg') }}" alt="Member Image">
+                                        <img src="{{ $delegate->attachment ? optional($delegate->attachment)->url : asset('public/images/no-image.jpg') }}"
+                                             alt="Member Image">
                                     </div>
                                     <div class="board-thumbnail__details">
-                                        <h5>Andy Chung
-                                        </h5>
-                                        <h6>Silicon Valley President
-                                            </h6>
+                                        <h5>{{ $delegate->name }}</h5>
+                                        <h6>{{ $delegate->position }}</h6>
                                     </div>
                                 </a>
                             </div>
-                            {{-- board-thumbnail --}}
+                        @endforeach                        
+
+                    <!-- {{-- board-thumbnail --}}
+                    <div class="board-thumbnail__item col-lg-3 col-md-6">
+                    <a href="{{url('board-detail')}}">
+                    <div class="board-thumbnail__image image-background">
+                        <img src="{{ asset('public/images/no-image.jpg') }}" alt="Member Image">
+                    </div>
+                    <div class="board-thumbnail__details">
+                        <h5>Michael Acevedo </h5>
+                        <h6>Mortgage Committee Vice Chair</h6>
+                    </div>
+                    </a>
+                    </div>
+                    {{-- board-thumbnail --}}
+
+
+                    {{-- board-thumbnail --}}
+                    <div class="board-thumbnail__item col-lg-3 col-md-6">
+                    <a href="{{url('board-detail')}}">
+                    <div class="board-thumbnail__image image-background">
+                        <img src="{{ asset('public/images/delagate-Bryan-Ahn.jpg') }}" alt="Member Image">
+                    </div>
+                    <div class="board-thumbnail__details">
+                        <h5>Bryan Ahn </h5>
+                        <h6>Board Member</h6>
+                    </div>
+                    </a>
+                    </div>
+                    {{-- board-thumbnail --}}
+
+
+                    {{-- board-thumbnail --}}
+                    <div class="board-thumbnail__item col-lg-3 col-md-6">
+                    <a href="{{url('board-detail')}}">
+                    <div class="board-thumbnail__image image-background">
+                        <img src="{{ asset('public/images/delagate-Brian-Almero.jpg') }}" alt="Member Image">
+                    </div>
+                    <div class="board-thumbnail__details">
+                        <h5>Brian Almero </h5>
+                        <h6>Las Vegas President</h6>
+                    </div>
+                    </a>
+                    </div>
+                    {{-- board-thumbnail --}}
+
+
+                    {{-- board-thumbnail --}}
+                    <div class="board-thumbnail__item col-lg-3 col-md-6">
+                    <a href="{{url('board-detail')}}">
+                    <div class="board-thumbnail__image image-background">
+                        <img src="{{ asset('public/images/deleg-Keith-Andrews.jpg') }}" alt="Member Image">
+                    </div>
+                    <div class="board-thumbnail__details">
+                        <h5>Keith Andrews </h5>
+                        <h6>Greater Birmingham President</h6>
+                    </div>
+                    </a>
+                    </div>
+                    {{-- board-thumbnail --}}
+
+
+
+
+                    {{-- board-thumbnail --}}
+                    <div class="board-thumbnail__item col-lg-3 col-md-6">
+                    <a href="{{url('board-detail')}}">
+                    <div class="board-thumbnail__image image-background">
+                        <img src="{{ asset('public/images/deleg-LC-Beh.jpg') }}" alt="Member Image">
+                    </div>
+                    <div class="board-thumbnail__details">
+                        <h5>LC Beh</h5>
+                        <h6>Greater Los Angeles President</h6>
+                    </div>
+                    </a>
+                    </div>
+                    {{-- board-thumbnail --}}
+
+                    {{-- board-thumbnail --}}
+                    <div class="board-thumbnail__item col-lg-3 col-md-6">
+                    <a href="{{url('board-detail')}}">
+                    <div class="board-thumbnail__image image-background">
+                        <img src="{{ asset('public/images/deleg-JC-Caceres.jpg') }}" alt="Member Image">
+                    </div>
+                    <div class="board-thumbnail__details">
+                        <h5>JC Caceres</h5>
+                        <h6>Greater Miami President</h6>
+                    </div>
+                    </a>
+                    </div>
+                    {{-- board-thumbnail --}}
+
+
+                    {{-- board-thumbnail --}}
+                    <div class="board-thumbnail__item col-lg-3 col-md-6">
+                    <a href="{{url('board-detail')}}">
+                    <div class="board-thumbnail__image image-background">
+                        <img src="{{ asset('public/images/deleg-Kyle-Chan.jpg') }}" alt="Member Image">
+                    </div>
+                    <div class="board-thumbnail__details">
+                        <h5>Kyle Chan</h5>
+                        <h6>Central New Jersey</h6>
+                    </div>
+                    </a>
+                    </div>
+                    {{-- board-thumbnail --}}
+
+
+                    {{-- board-thumbnail --}}
+                    <div class="board-thumbnail__item col-lg-3 col-md-6">
+                    <a href="{{url('board-detail')}}">
+                    <div class="board-thumbnail__image image-background">
+                        <img src="{{ asset('public/images/deleg-Lynman-Chao.jpg') }}" alt="Member Image">
+                    </div>
+                    <div class="board-thumbnail__details">
+                        <h5>Lynman Chao </h5>
+                        <h6> Membership Benefits Committee Vice-Chair/ San Francisco Peninsula
+                        </h6>
+                    </div>
+                    </a>
+                    </div>
+                    {{-- board-thumbnail --}}
+
+
+                    {{-- board-thumbnail --}}
+                    <div class="board-thumbnail__item col-lg-3 col-md-6">
+                    <a href="{{url('board-detail')}}">
+                    <div class="board-thumbnail__image image-background">
+                        <img src="{{ asset('public/images/deleg-Stephen-Chow.jpg') }}" alt="Member Image">
+                    </div>
+                    <div class="board-thumbnail__details">
+                        <h5>Stephen Chow</h5>
+                        <h6>Greater Toronto President</h6>
+                    </div>
+                    </a>
+                    </div>
+                    {{-- board-thumbnail --}}
+
+
+
+                    {{-- board-thumbnail --}}
+                    <div class="board-thumbnail__item col-lg-3 col-md-6">
+                    <a href="{{url('board-detail')}}">
+                    <div class="board-thumbnail__image image-background">
+                        <img src="{{ asset('public/images/deleg-Gregg-Christensen.jpg') }}" alt="Member Image">
+                    </div>
+                    <div class="board-thumbnail__details">
+                        <h5>Gregg Christensen
+                        </h5>
+                        <h6>New York Manhattan President
+
+                        </h6>
+                    </div>
+                    </a>
+                    </div>
+                    {{-- board-thumbnail --}}
+
+
+                    {{-- board-thumbnail --}}
+                    <div class="board-thumbnail__item col-lg-3 col-md-6">
+                    <a href="{{url('board-detail')}}">
+                        <div class="board-thumbnail__image image-background">
+                            <img src="{{ asset('public/images/exec-DickLee.jpg') }}" alt="Member Image">
+                        </div>
+                        <div class="board-thumbnail__details">
+                            <h5>Andy Chung
+                            </h5>
+                            <h6>Silicon Valley President
+                                </h6>
+                        </div>
+                    </a>
+                    </div>
+                    {{-- board-thumbnail --}} -->
 
 
 

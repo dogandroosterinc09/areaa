@@ -21522,6 +21522,9 @@ section.page--login .site-content {
   margin-top: 10px;
   width: 130px;
 }
+.page-chapter .footer__item .footer-contacts {
+  margin-top: 40px !important;
+}
 
 .page--board .executive-board {
   padding: 60px 0;
@@ -22560,6 +22563,15 @@ section.page--login .site-content {
   overflow: hidden;
   text-indent: -999px;
   outline: none;
+}
+.html-video__button button.active {
+  background-position: -457px -321px;
+  opacity: 0;
+  visibility: hidden;
+}
+.html-video__button button.active:hover {
+  opacity: 1;
+  visibility: visible;
 }
 
 .sponsors {

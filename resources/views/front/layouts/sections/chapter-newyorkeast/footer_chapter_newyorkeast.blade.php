@@ -5,14 +5,14 @@
         <div class="row">
             <div class="col-md-3 footer__item">
                 <div class="footer-logo">
-                    <a href="{{ url('/') }}">
+                    <a href="{{ url('newyorkeast') }}">
                         <img src="{{ asset('public/images/logos/areaa_new_york_east.png') }}" alt="logo">
                     </a>
                 </div>
                 <div class="footer-contacts">
                     <div class="item"><i class="loc"></i> <span>Chapter President: Baldwin Lee</span></div>
                     <div class="item"><i class="tel"></i> <a href="tel:5167077299">516-707-7299 </a></div>
-                    <div class="item"><i class="mail"></i> <a href="mailto:baldwinklee@gmail.com">Email: baldwinklee@gmail.com</a></div>
+                    <div class="item"><i class="mail"></i> <a href="mailto:baldwinklee@gmail.com">baldwinklee@gmail.com</a></div>
                 </div>
             </div>
             <div class="offset-1 col-md-8 footer__item">

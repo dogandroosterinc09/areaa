@@ -1,7 +1,28 @@
 <section class="page-chapter page-chapter-aloha page-chapter-aloha--events">
     @include('front.layouts.sections.chapter-aloha.header_chapter_aloha')
 
-    @include('front.pages.custom-page.sections.chapter-slider-aloha')
+    {{-- @include('front.pages.custom-page.sections.chapter-slider-aloha') --}}
+    
+    {{-- need to dynamic this sub  --}}
+    <section class="sub-banner">
+        <div class="sub-banner__wrapper container-max">
+            <div class="sub-banner__item">
+                <div class="container-max sub-banner__content">
+                    <div class="row">
+                        <div class="col-md-12 sub-banner__content">
+                            <h3>National</h3>
+                            <h1>Events</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="sub-banner__image image-background">
+            <img src="{{ url('public/images/events-banner.jpg') }}">
+        </div>
+    </section>
+    
 
     <main class="main-content">
 
@@ -41,7 +62,7 @@
                                             <p> Lorem ipsum dolor sit amet, dolor at ligula faucibus imperdiet libero, phasellus nulla sollicitudin in, libero nec venenatis, luctus pretium imperdiet volutpat sit atque. Porttitor ligula vitae ultrices eleifend, felis suscipit iaculis turpis</p>
                                         </div>
                                         <div class="chapter-events-thumbnail__buttons">
-                                            <a href="{{url('chapter-event-detail')}}" class="btn btn--secondary"> View Details</a>
+                                            <a href="{{url('aloha-events-detail')}}" class="btn btn--secondary"> View Details</a>
                                         </div>
                                     </div>
                                 </div>
@@ -69,7 +90,7 @@
                                             <p> Lorem ipsum dolor sit amet, dolor at ligula faucibus imperdiet libero, phasellus nulla sollicitudin in, libero nec venenatis, luctus pretium imperdiet volutpat sit atque. Porttitor ligula vitae ultrices eleifend, felis suscipit iaculis turpis</p>
                                         </div>
                                         <div class="chapter-events-thumbnail__buttons">
-                                            <a href="{{url('chapter-event-detail')}}" class="btn btn--secondary"> View Details</a>
+                                            <a href="{{url('aloha-events-detail')}}" class="btn btn--secondary"> View Details</a>
                                         </div>
                                     </div>
                                 </div>

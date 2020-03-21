@@ -23,6 +23,7 @@
                                 <div class="info__menu">
                                     <ul>
                                         <li> <a href="{{url('/aloha')}}"> Aloha</a></li>
+                                        <li> <a href="{{url('/atlantametro')}}"> Atlanta Metro</a></li>
                                         <li> <a href="{{url('/newyorkeast')}}"> New York East</a></li>
                                     </ul>
                                  </div>
@@ -43,7 +44,7 @@
                         </li>
                         
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('aloha-login') }}">Events</a>
+                            <a class="nav-link" href="{{ url('aloha-events') }}">Events</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link" href="{{ url('aloha-leadership') }}">Leadership</a>
