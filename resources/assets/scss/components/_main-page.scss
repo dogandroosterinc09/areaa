@@ -1026,6 +1026,11 @@
             overflow: hidden;
             border-radius: 100%;
             margin: auto;
+            @include transition(.3s);
+            &:hover {
+                @include transform_scale(.9,
+                .9);
+            }
         }
         &__details {
             text-align: center;

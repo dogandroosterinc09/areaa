@@ -20513,6 +20513,13 @@ ul.bullet-style li h6 {
   overflow: hidden;
   border-radius: 100%;
   margin: auto;
+  transition: all 0.3s ease;
+}
+.board-thumbnail__image:hover {
+  transform: scale(0.9, 0.9);
+  -moz-transform: scale(0.9, 0.9);
+  -webkit-transform: scale(0.9, 0.9);
+  -o-transform: scale(0.9, 0.9);
 }
 .board-thumbnail__details {
   text-align: center;
