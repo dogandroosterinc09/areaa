@@ -22564,6 +22564,15 @@ section.page--login .site-content {
   text-indent: -999px;
   outline: none;
 }
+.html-video__button button.active {
+  background-position: -457px -321px;
+  opacity: 0;
+  visibility: hidden;
+}
+.html-video__button button.active:hover {
+  opacity: 1;
+  visibility: visible;
+}
 
 .sponsors {
   background: #f8f6f6;
