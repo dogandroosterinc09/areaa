@@ -22571,7 +22571,7 @@ section.page--login .site-content {
   opacity: 1;
   visibility: visible;
 }
-.html-video__button button:hover {
+.html-video__button:hover button {
   opacity: 1;
   visibility: visible;
 }
