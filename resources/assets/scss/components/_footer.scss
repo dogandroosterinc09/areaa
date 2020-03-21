@@ -34,6 +34,11 @@
                 margin-bottom: 6px;
                 a {
                     color: $color-black;
+                    text-decoration: none;
+                    @include transition(.3s);
+                    &:hover {
+                        color: $color-secondary;
+                    }
                 }
                 a,
                 span {
@@ -44,6 +49,7 @@
                     font-weight: 500;
                 }
                 i {
+                    margin-right: 4px;
                     &.loc {
                         display: inline-block;
                         vertical-align: middle;
@@ -90,6 +96,10 @@
                     font: 300 19px $font-primary;
                     font-weight: 500;
                     font-size: 1em;
+                    @include transition(.3s);
+                    &:hover {
+                        color: $color-secondary;
+                    }
                 }
             }
         }

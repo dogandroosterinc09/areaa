@@ -18805,6 +18805,11 @@ header .contact-details-wrap .info a i.ic-chapter {
 }
 .footer__item .footer-contacts .item a {
   color: #000;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.footer__item .footer-contacts .item a:hover {
+  color: #ab1a2d;
 }
 .footer__item .footer-contacts .item a,
 .footer__item .footer-contacts .item span {
@@ -18813,6 +18818,9 @@ header .contact-details-wrap .info a i.ic-chapter {
   max-width: 250px;
   font-size: 0.9em;
   font-weight: 500;
+}
+.footer__item .footer-contacts .item i {
+  margin-right: 4px;
 }
 .footer__item .footer-contacts .item i.loc {
   display: inline-block;
@@ -18859,6 +18867,10 @@ header .contact-details-wrap .info a i.ic-chapter {
   font: 300 19px "Open Sans", sans-serif;
   font-weight: 500;
   font-size: 1em;
+  transition: all 0.3s ease;
+}
+.footer__item ul li a:hover {
+  color: #ab1a2d;
 }
 .footer__item .join-content .title {
   position: relative;
