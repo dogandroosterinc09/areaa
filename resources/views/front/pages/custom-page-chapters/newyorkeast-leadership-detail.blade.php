@@ -9,7 +9,7 @@
             <div class="container-max sub-banner__content">
                 <div class="row">
                     <div class="col-md-12 sub-banner__content">
-                        <h1>Ronda Ching-Day </h1>
+                        <h1>Baldwin Lee  </h1>
                         <h3>President  </h3>
                     </div>
                 </div>

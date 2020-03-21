@@ -33,7 +33,7 @@
                     <div class="board-thumbnail row">
                          {{-- board-thumbnail --}}
                         <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('board-detail')}}">
+                            <a href="{{url('atlantametro-leadership-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/metro-Helen.jpg') }}" alt="Member Image">
                                 </div>
@@ -48,7 +48,7 @@
 
                           {{-- board-thumbnail --}}
                           <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('board-detail')}}">
+                            <a href="{{url('atlantametro-leadership-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/metro-Andrew.jpg') }}" alt="Member Image">
                                 </div>
@@ -63,7 +63,7 @@
 
                           {{-- board-thumbnail --}}
                           <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('board-detail')}}">
+                            <a href="{{url('atlantametro-leadership-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/metro-Kacey.jpg') }}" alt="Member Image">
                                 </div>
@@ -78,7 +78,7 @@
                         
                           {{-- board-thumbnail --}}
                           <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('board-detail')}}">
+                            <a href="{{url('atlantametro-leadership-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/metro-Dan.jpg') }}" alt="Member Image">
                                 </div>
@@ -107,7 +107,7 @@
                     <div class="board-thumbnail row">
                          {{-- board-thumbnail --}}
                         <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('board-detail')}}">
+                            <a href="{{url('atlantametro-leadership-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/metro-Jimmy.jpg') }}" alt="Member Image">
                                 </div>
@@ -123,7 +123,7 @@
 
                           {{-- board-thumbnail --}}
                           <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('board-detail')}}">
+                            <a href="{{url('atlantametro-leadership-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/metro-David.jpg') }}" alt="Member Image">
                                 </div>
@@ -138,7 +138,7 @@
 
                           {{-- board-thumbnail --}}
                           <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('board-detail')}}">
+                            <a href="{{url('atlantametro-leadership-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/metro-Jennifer.jpg') }}" alt="Member Image">
                                 </div>
@@ -153,7 +153,7 @@
                         
                           {{-- board-thumbnail --}}
                           <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('board-detail')}}">
+                            <a href="{{url('atlantametro-leadership-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/metro-Tony.jpg') }}" alt="Member Image">
                                 </div>
@@ -169,7 +169,7 @@
                         
                           {{-- board-thumbnail --}}
                           <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('board-detail')}}">
+                            <a href="{{url('atlantametro-leadership-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/metro-Judy.jpg') }}" alt="Member Image">
                                 </div>
@@ -184,7 +184,7 @@
 
                            {{-- board-thumbnail --}}
                            <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('board-detail')}}">
+                            <a href="{{url('atlantametro-leadership-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/metro-Ming.jpg') }}" alt="Member Image">
                                 </div>

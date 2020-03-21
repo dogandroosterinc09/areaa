@@ -35,7 +35,7 @@
                     <div class="board-thumbnail row">
                          {{-- board-thumbnail --}}
                         <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('board-detail')}}">
+                            <a href="{{url('newyorkeast-leadership-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/newyorkeast-Baldwin.jpg') }}" alt="Member Image">
                                 </div>
@@ -50,7 +50,7 @@
 
                           {{-- board-thumbnail --}}
                           <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('board-detail')}}">
+                            <a href="{{url('newyorkeast-leadership-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/newyorkeast-John.jpg') }}" alt="Member Image">
                                 </div>
@@ -65,7 +65,7 @@
 
                           {{-- board-thumbnail --}}
                           <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('board-detail')}}">
+                            <a href="{{url('newyorkeast-leadership-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/newyorkeast-Steve.jpg') }}" alt="Member Image">
                                 </div>
@@ -80,7 +80,7 @@
                         
                           {{-- board-thumbnail --}}
                           <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('board-detail')}}">
+                            <a href="{{url('newyorkeast-leadership-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/newyorkeast-Ayres.jpg') }}" alt="Member Image">
                                 </div>
@@ -113,7 +113,7 @@
                       
                         {{-- board-thumbnail --}}
                         <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('board-detail')}}">
+                            <a href="{{url('newyorkeast-leadership-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/no-pix.jpg') }}" alt="Member Image">
                                 </div>
@@ -128,7 +128,7 @@
 
                           {{-- board-thumbnail --}}
                           <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('board-detail')}}">
+                            <a href="{{url('newyorkeast-leadership-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/no-pix.jpg') }}" alt="Member Image">
                                 </div>
@@ -143,7 +143,7 @@
 
                           {{-- board-thumbnail --}}
                           <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('board-detail')}}">
+                            <a href="{{url('newyorkeast-leadership-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/newyorkeast-Kenny.jpg') }}" alt="Member Image">
                                 </div>
@@ -158,7 +158,7 @@
                         
                           {{-- board-thumbnail --}}
                           <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('board-detail')}}">
+                            <a href="{{url('newyorkeast-leadership-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/newyorkeast-Chris.jpg') }}" alt="Member Image">
                                 </div>
@@ -174,7 +174,7 @@
                         
                           {{-- board-thumbnail --}}
                           <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('board-detail')}}">
+                            <a href="{{url('newyorkeast-leadership-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/newyorkeast-Helen.jpg') }}" alt="Member Image">
                                 </div>
@@ -189,7 +189,7 @@
 
                            {{-- board-thumbnail --}}
                            <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('board-detail')}}">
+                            <a href="{{url('newyorkeast-leadership-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/no-pix.jpg') }}" alt="Member Image">
                                 </div>
@@ -203,7 +203,7 @@
 
                         {{-- board-thumbnail --}}
                         <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('board-detail')}}">
+                            <a href="{{url('newyorkeast-leadership-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/newyorkeast-Andrew.jpg') }}" alt="Member Image">
                                 </div>
@@ -233,7 +233,7 @@
                     <div class="board-thumbnail row">
                          {{-- board-thumbnail --}}
                         <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('board-detail')}}">
+                            <a href="{{url('newyorkeast-leadership-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/newyorkeast-David.jpg') }}" alt="Member Image">
                                 </div>
@@ -248,7 +248,7 @@
 
                           {{-- board-thumbnail --}}
                           <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('board-detail')}}">
+                            <a href="{{url('newyorkeast-leadership-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/no-pix.jpg') }}" alt="Member Image">
                                 </div>
@@ -263,7 +263,7 @@
 
                           {{-- board-thumbnail --}}
                           <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('board-detail')}}">
+                            <a href="{{url('newyorkeast-leadership-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/no-pix.jpg') }}" alt="Member Image">
                                 </div>
@@ -278,7 +278,7 @@
                         
                           {{-- board-thumbnail --}}
                           <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('board-detail')}}">
+                            <a href="{{url('newyorkeast-leadership-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/no-pix.jpg') }}" alt="Member Image">
                                 </div>
@@ -294,7 +294,7 @@
                         
                           {{-- board-thumbnail --}}
                           <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('board-detail')}}">
+                            <a href="{{url('newyorkeast-leadership-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/no-pix.jpg') }}" alt="Member Image">
                                 </div>
@@ -309,7 +309,7 @@
 
                            {{-- board-thumbnail --}}
                            <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('board-detail')}}">
+                            <a href="{{url('newyorkeast-leadership-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/no-pix.jpg') }}" alt="Member Image">
                                 </div>
@@ -324,7 +324,7 @@
                         
                            {{-- board-thumbnail --}}
                            <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('board-detail')}}">
+                            <a href="{{url('newyorkeast-leadership-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/no-pix.jpg') }}" alt="Member Image">
                                 </div>
