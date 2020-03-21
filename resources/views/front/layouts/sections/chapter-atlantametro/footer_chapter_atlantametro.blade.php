@@ -9,76 +9,33 @@
                         <img src="{{ asset('public/images/logos/areaa_atlanta_metro.png') }}" alt="logo">
                     </a>
                 </div>
-                <div class="footer-contacts">
-                    <div class="item"><i class="loc"></i> <span>Chapter President: Helen Pham</span></div>
-                    <div class="item"><i class="tel"></i> <a href="tel:6789952526">678-995-2526 </a></div>
-                    <div class="item"><i class="mail"></i> <a href="mailto:baldwinklee@gmail.com"> helennguyen127@gmail.com</a></div>
-                </div>
+               
             </div>
-            <div class="offset-1 col-md-8 footer__item">
+            <div class="col-md-9 footer__item">
+              
                 <div class="row">
-                    <div class="col-md-3 footer__item">
-                        <article>
-                            <h4>About Us</h4>
-                            <ul>
-                                <li><a href="{{url('about-us')}}"> About AREAA </a></li>
-                                <li><a href="{{url('executive-board')}}"> Executive Board </a></li>
-                                <li><a href="{{url('delegate-board')}}"> National Board </a></li>
-                                <li><a href="{{url('about-us')}}"> Our Partners </a></li>
-                                <li><a href="{{url('FAQ')}}"> FAQ </a></li>
-                            </ul>
-                        </article>
+                    <div class="col-md-4 footer__item">
+                        <div class="footer-contacts">
+                            <div class="item"><i class="loc"></i> <span>Chapter President: Helen Pham</span></div>
+                            <div class="item"><i class="tel"></i> <a href="tel:6789952526">678-995-2526 </a></div>
+                            <div class="item"><i class="mail"></i> <a href="mailto:baldwinklee@gmail.com"> helennguyen127@gmail.com</a></div>
+                        </div>
                     </div>
                     <div class="col-md-3 footer__item">
                         <article>
-                            <h4>Advocacy</h4>
-                            <ul>
-                                <li><a href="#"> AREAA Timeline </a></li>
-                                <li><a href="#"> How to get involved </a></li>
-                                <li><a href="#"> 3 Point Plan </a></li>
-                            </ul>
+                            <h4>Menu</h4>
+                                <ul>
+                                    <li><a href="{{ url('atlantametro') }}">Home</a></li>
+                                    <li><a href="{{ url('atlantametro-aboutus') }}">About us</a></li>
+                                    <li><a href="{{ url('atlantametro-events') }}">Events</a></li>
+                                    <li><a href="{{ url('atlantametro-leadership') }}">Leadership</a></li>
+                                    <li><a href="{{ url('atlantametro-contactus') }}">Contact us </a></li>
+                                    <li><a href="{{ url('atlantametro-login') }}">Log in</a></li>
+                                    <li><a href="{{ url('/') }}"> AREAA National</a></li>
+                                </ul>
                         </article>
                     </div>
-                    <div class="col-md-6 footer__item">
-                        <article>
-                            <h4>Resources</h4>
-                            <ul>
-                                <li><a href="#"> a | r | e Magazine </a></li>
-                                <li><a href="#"> State of Asia America report </a></li>
-                                <li><a href="{{url('photo-gallery')}}"> Photo gallery </a></li>
-                                <li><a href="{{url('media')}}"> Webinars </a></li>
-                                <li><a href="#"> In Language Support </a></li>
-                            </ul>
-                        </article>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3 footer__item">
-                        <article>
-                            <h4>Membership</h4>
-                            <ul>
-                                <li><a href="#"> Why join </a></li>
-                                <li><a href="{{url('areabenefits')}}"> Benefits </a></li>
-                                <li><a href="#"> Find a Member </a></li>
-                                <li><a href="#"> Chapter Locations </a></li>
-                                <li><a href="{{url('membership-registration')}}"> A-List </a></li>
-                            </ul>
-                        </article>
-                    </div>
-                    <div class="col-md-3 footer__item">
-                        <article>
-                            <h4>Events</h4>
-                            <ul>
-                                <li><a href="#"> Leadership Summit</a></li>
-                                <li><a href="#">Global & Luxury Summit</a></li>
-                                <li><a href="#">Regional Retreats</a></li>
-                                <li><a href="#">National Convention</a></li>
-                                <li><a href="#">Chapter Events </a></li>
-                                <li><a href="#">How to get involved </a></li>
-                            </ul>
-                        </article>
-                    </div>
-                    <div class="col-md-6 footer__item">
+                    <div class="col-md-5 footer__item">
                         <div class="join-content">
                             <div class="title">
                                 <h4>Join AREAA today!</h4>

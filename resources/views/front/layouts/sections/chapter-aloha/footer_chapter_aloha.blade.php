@@ -25,13 +25,15 @@
                     <div class="col-md-3 footer__item">
                         <article>
                             <h4>Menu</h4>
-                            <ul>
-                                <li><a href="{{ url('aloha') }}">Home</a></li>
-                                <li><a href="{{ url('aloha-aboutus') }}">About us</a></li>
-                                <li><a href="{{ url('aloha-events') }}">Events</a></li>
-                                <li><a href="{{ url('aloha-leadership') }}">Leadership</a></li>
-                                <li><a href="{{ url('aloha-contactus') }}">Contact us </a></li>
-                            </ul>
+                                <ul>
+                                    <li><a href="{{ url('aloha') }}">Home</a></li>
+                                    <li><a href="{{ url('aloha-aboutus') }}">About us</a></li>
+                                    <li><a href="{{ url('aloha-events') }}">Events</a></li>
+                                    <li><a href="{{ url('aloha-leadership') }}">Leadership</a></li>
+                                    <li><a href="{{ url('aloha-contactus') }}">Contact us </a></li>
+                                    <li><a href="{{ url('aloha-login') }}">Log in</a></li>
+                                    <li><a href="{{ url('/') }}"> AREAA National</a></li>
+                                </ul>
                         </article>
                     </div>
                     <div class="col-md-5 footer__item">
