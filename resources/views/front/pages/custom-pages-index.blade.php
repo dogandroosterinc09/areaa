@@ -100,6 +100,9 @@
         @elseif ($page['slug'] == 'aloha-leadership')
             @include('front.pages.custom-page-chapters.aloha-leadership')
 
+        @elseif ($page['slug'] == 'aloha-leadership-detail')
+            @include('front.pages.custom-page-chapters.aloha-leadership-detail')
+
         @elseif ($page['slug'] == 'aloha-contactus')
             @include('front.pages.custom-page-chapters.aloha-contactus')
 
