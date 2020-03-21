@@ -126,6 +126,10 @@
 
         @elseif ($page['slug'] == 'newyorkeast-leadership')
             @include('front.pages.custom-page-chapters.newyorkeast-leadership')
+
+        @elseif ($page['slug'] == 'newyorkeast-leadership-detail')
+            @include('front.pages.custom-page-chapters.newyorkeast-leadership-detail')
+        
         
         @elseif ($page['slug'] == 'newyorkeast-contactus')
             @include('front.pages.custom-page-chapters.newyorkeast-contactus')
@@ -149,6 +153,9 @@
 
         @elseif ($page['slug'] == 'atlantametro-leadership')
             @include('front.pages.custom-page-chapters.atlantametro-leadership')
+
+        @elseif ($page['slug'] == 'atlantametro-leadership-detail')
+            @include('front.pages.custom-page-chapters.atlantametro-leadership-detail')
         
         @elseif ($page['slug'] == 'atlantametro-contactus')
             @include('front.pages.custom-page-chapters.atlantametro-contactus')

@@ -33,7 +33,7 @@
                     <div class="board-thumbnail row">
                          {{-- board-thumbnail --}}
                         <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('board-detail')}}">
+                            <a href="{{url('aloha-leadership-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/aloha-Ronda.jpg') }}" alt="Member Image">
                                 </div>
@@ -48,7 +48,7 @@
 
                           {{-- board-thumbnail --}}
                           <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('board-detail')}}">
+                            <a href="{{url('aloha-leadership-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/no-pix.jpg') }}" alt="Member Image">
                                 </div>
@@ -63,7 +63,7 @@
 
                           {{-- board-thumbnail --}}
                           <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('board-detail')}}">
+                            <a href="{{url('aloha-leadership-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/aloha-Abe.jpg') }}" alt="Member Image">
                                 </div>
@@ -78,7 +78,7 @@
                         
                           {{-- board-thumbnail --}}
                           <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('board-detail')}}">
+                            <a href="{{url('aloha-leadership-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/no-pix.jpg') }}" alt="Member Image">
                                 </div>
@@ -107,7 +107,7 @@
                     <div class="board-thumbnail row">
                          {{-- board-thumbnail --}}
                         <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('board-detail')}}">
+                            <a href="{{url('aloha-leadership-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/aloha-Claire.jpg') }}" alt="Member Image">
                                 </div>
@@ -122,7 +122,7 @@
 
                           {{-- board-thumbnail --}}
                           <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('board-detail')}}">
+                            <a href="{{url('aloha-leadership-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/aloha-Christine.jpg') }}" alt="Member Image">
                                 </div>
@@ -137,7 +137,7 @@
 
                           {{-- board-thumbnail --}}
                           <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('board-detail')}}">
+                            <a href="{{url('aloha-leadership-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/aloha-Gina.jpg') }}" alt="Member Image">
                                 </div>
@@ -152,7 +152,7 @@
                         
                           {{-- board-thumbnail --}}
                           <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('board-detail')}}">
+                            <a href="{{url('baloha-leadership-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/aloha-Lisa.jpg') }}" alt="Member Image">
                                 </div>
@@ -168,7 +168,7 @@
                         
                           {{-- board-thumbnail --}}
                           <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('board-detail')}}">
+                            <a href="{{url('aloha-leadership-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/aloha-Judy.jpg') }}" alt="Member Image">
                                 </div>
@@ -183,7 +183,7 @@
 
                            {{-- board-thumbnail --}}
                            <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('board-detail')}}">
+                            <a href="{{url('baloha-leadership-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/aloha-Bruce.jpg') }}" alt="Member Image">
                                 </div>
@@ -197,7 +197,7 @@
 
                         {{-- board-thumbnail --}}
                         <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('board-detail')}}">
+                            <a href="{{url('aloha-leadership-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/aloha-Mami.jpg') }}" alt="Member Image">
                                 </div>
@@ -211,7 +211,7 @@
                         {{-- board-thumbnail --}}
                                  {{-- board-thumbnail --}}
                                  <div class="board-thumbnail__item col-lg-3 col-md-6">
-                                    <a href="{{url('board-detail')}}">
+                                    <a href="{{url('aloha-leadership-detail')}}">
                                         <div class="board-thumbnail__image image-background">
                                             <img src="{{ asset('public/images/aloha-Christina.jpg') }}" alt="Member Image">
                                         </div>
@@ -225,7 +225,7 @@
 
                                 {{-- board-thumbnail --}}
                                 <div class="board-thumbnail__item col-lg-3 col-md-6">
-                                    <a href="{{url('board-detail')}}">
+                                    <a href="{{url('aloha-leadership-detail')}}">
                                         <div class="board-thumbnail__image image-background">
                                             <img src="{{ asset('public/images/no-pix.jpg') }}" alt="Member Image">
                                         </div>
@@ -241,7 +241,7 @@
                                 
                                 {{-- board-thumbnail --}}
                                 <div class="board-thumbnail__item col-lg-3 col-md-6">
-                                    <a href="{{url('board-detail')}}">
+                                    <a href="{{url('aloha-leadership-detail')}}">
                                         <div class="board-thumbnail__image image-background">
                                             <img src="{{ asset('public/images/no-pix.jpg') }}" alt="Member Image">
                                         </div>
@@ -270,7 +270,7 @@
                     <div class="board-thumbnail row">
                          {{-- board-thumbnail --}}
                         <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('board-detail')}}">
+                            <a href="{{url('aloha-leadership-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/no-pix.jpg') }}" alt="Member Image">
                                 </div>
@@ -285,7 +285,7 @@
 
                           {{-- board-thumbnail --}}
                           <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('board-detail')}}">
+                            <a href="{{url('aloha-leadership-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/no-pix.jpg') }}" alt="Member Image">
                                 </div>
@@ -300,7 +300,7 @@
 
                           {{-- board-thumbnail --}}
                           <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('board-detail')}}">
+                            <a href="{{url('aloha-leadership-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/no-pix.jpg') }}" alt="Member Image">
                                 </div>
@@ -315,7 +315,7 @@
                         
                           {{-- board-thumbnail --}}
                           <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('board-detail')}}">
+                            <a href="{{url('aloha-leadership-detail')}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ asset('public/images/no-pix.jpg') }}" alt="Member Image">
                                 </div>

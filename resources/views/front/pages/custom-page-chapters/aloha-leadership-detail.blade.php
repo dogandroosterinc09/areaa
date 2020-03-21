@@ -1,4 +1,4 @@
-<section class="page-chapter page-chapter-aloha page-chapter-aloha--leadership-detail">
+<section class="page-chapter page-chapter--detail page-chapter-aloha page-chapter-aloha--leadership-detail">
     @include('front.layouts.sections.chapter-aloha.header_chapter_aloha')
 
     {{-- need to dynamic this sub  --}}

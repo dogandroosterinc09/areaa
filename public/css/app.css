@@ -21528,6 +21528,21 @@ section.page--login .site-content {
 .page-chapter .main-content {
   padding: 80px 0;
 }
+.page-chapter--detail .sub-banner__image {
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  z-index: 6;
+  border-radius: 100%;
+  right: 10%;
+}
+.page-chapter--detail .sub-banner__wrapper:before {
+  display: none;
+}
+.page-chapter--detail .sub-banner:before {
+  left: inherit;
+  right: 10%;
+}
 
 .page--board .executive-board {
   padding: 60px 0;
