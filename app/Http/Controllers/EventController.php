@@ -90,7 +90,7 @@ class EventController extends Controller
         ]));
 
         if ($request->hasFile('thumbnail')) {
-            $event->attach($request->file('thumbnail'), 'thumbnail');
+            $event->attach($request->file('thumbnail'));
         }
 
         return redirect()->route('admin.events.index')->with('flash_message', [
@@ -171,7 +171,7 @@ class EventController extends Controller
         ]))->save();
 
         if ($request->hasFile('thumbnail')) {
-            $event->attach($request->file('thumbnail'), 'thumbnail');
+            $event->attach($request->file('thumbnail'));
         }
 
         return redirect()->route('admin.events.index')->with('flash_message', [

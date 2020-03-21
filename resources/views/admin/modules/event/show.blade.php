@@ -20,7 +20,7 @@
                         <strong>{{ $event->name }}</strong>
                     </h3>
 
-                    <img src="{{ asset($event->attachment('thumbnail')->url) }}" alt="{{ $event->name }}" class="img-responsive center-block" style="max-width: 100px;">
+                    <img src="{{ optional($event->attachment)->url }}" alt="{{ $event->name }}" class="img-responsive center-block" style="max-width: 100px;">
 
                     <p>{!! $event->description !!}</p>
                 </article>

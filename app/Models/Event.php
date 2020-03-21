@@ -2,14 +2,14 @@
 
 namespace App\Models;
 
+use App\Http\Traits\Attachments\HasAttachment;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use App\Http\Traits\Attachments\HandlesAttachments;
 
 
 class Event extends Model
 {
-    use SoftDeletes, HandlesAttachments;
+    use SoftDeletes, HasAttachment;
 
     /**
      * The attributes that are mass assignable.
