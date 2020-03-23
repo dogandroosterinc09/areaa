@@ -53,7 +53,12 @@
          @elseif ($page['slug'] == 'dashboard-main')
             @include('front.pages.custom-page.dashboard-main')
 
-           
+        @elseif ($page['slug'] == 'sponsors')
+            @include('front.pages.custom-page.sponsors')
+
+        @elseif ($page['slug'] == 'our-partners')
+            @include('front.pages.custom-page.our-partners')
+
 
         @elseif ($page['slug'] == 'chapter')
             @include('front.pages.custom-page.chapter')
