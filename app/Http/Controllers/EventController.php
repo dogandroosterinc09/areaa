@@ -155,6 +155,7 @@ class EventController extends Controller
             'starts_at' => 'required',
             'ends_at' => 'required',
             'location_name' => 'required',
+            'time' => 'required',
             'city' => 'required',
             'state' => 'required',
             'zip' => 'required',
