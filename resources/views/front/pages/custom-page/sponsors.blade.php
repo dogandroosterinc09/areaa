@@ -28,7 +28,7 @@
 
         
     {{-- story section  --}}
-    <section class="sponsors">
+    <section class="sponsors margin-m100">
         <div class="container-max">
             <div class="row">
 

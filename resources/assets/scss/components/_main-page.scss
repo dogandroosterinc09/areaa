@@ -1801,3 +1801,9 @@
     .american-report {
         margin-bottom: 100px;
     }
+    
+    .margin {
+        &--m100 {
+            margin: 100px 0;
+        }
+    }
