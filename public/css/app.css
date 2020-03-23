@@ -21567,6 +21567,10 @@ section.page--login .site-content {
   padding: 60px 0;
 }
 
+.homepage--main .sponsors {
+  background: transparent;
+}
+
 .dashboard-navigation {
   background: #303132;
 }

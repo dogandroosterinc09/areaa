@@ -81,3 +81,11 @@
         }
     }
 }
+
+.homepage {
+    &--main {
+        .sponsors {
+            background: transparent;
+        }
+    }
+}
