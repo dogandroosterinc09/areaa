@@ -27,4 +27,6 @@ Route::get('/executive-board/{slug}', 'BoardMemberController@showExecutive')->na
 
 Route::get('/delegate-board/{slug}', 'BoardMemberController@showDelegate')->name('board.delegate.show');
 
+Route::get('/event/{slug}', 'EventController@showEvent')->name('event.show');
+
 Route::get('/{slug?}', 'PageController')->name('page');

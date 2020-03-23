@@ -87,6 +87,13 @@ class AttachablesTableSeeder extends Seeder
                 'attachable_id' => 11,
                 'attachable_type' => 'App\\Models\\BoardMember',
             ),
+            10 => 
+            array (
+                'id' => 11,
+                'attachment_id' => 78,
+                'attachable_id' => 1,
+                'attachable_type' => 'App\\Models\\Event',
+            ),
         ));
         
         

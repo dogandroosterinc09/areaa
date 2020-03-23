@@ -32,7 +32,42 @@
                 <div class="col-lg-12">
 
                     <div class="events-thumbnail">
+                        @php($events = \App\Models\Event::orderBy('starts_at')->get())
+                        @if ($events->isEmpty())
+                            <h3 class="text-danger font-weight-bold text-center w-100 my-5">No Events.</h3>
+                        @endif
+                        @foreach($events as $event)                        
+                        <div class="events-thumbnail__item">
+                                <div class="events-thumbnail__date-range">
+                                    <div class="events-thumbnail__month">
+                                        {{ $event->startMonth }}
+                                    </div>
+                                    <div class="events-thumbnail__day events-thumbnail__day--first"> {{ $event->startDay }}</div>
+                                    to
+                                    <div class="events-thumbnail__day events-thumbnail__day--end"> {{ $event->endDay }}</Div>
+                                </div>
+                                <div class="events-thumbnail__image">
+                                    <a href="{{ $event->url }}" class="image-background">
+                                        <img src="{{ asset('public/images/executive-banner.jpg') }}" alt="Member Image">
+                                    </a>
+                                </div>
+                                <div class="events-thumbnail__details">
+                                    <a href="{{url('events-detail')}}">
+                                         <h5>{{ $event->name }}</h5>
+                                    </a>
+                                    <div class="events-thumbnail__time">{{ $event->time }}</div>
+                                    <div class="events-thumbnail__location"><strong>{{ $event->location_name }}</strong>, {{ $event->locationAddress }}</div>
+                                    <div class="events-thumbnail__paragraph">
+                                        {{ $event->description }}                                        
+                                    </div>
+                                    <div class="events-thumbnail__buttons">
+                                        <a href="{{ $event->url }}" class="btn btn--secondary"> View Details</a>
+                                    </div>
+                                </div>
+                        </div>                            
+                        @endforeach
 
+                    <!--
                          {{-- events-thumbnail --}}
                         <div class="events-thumbnail__item">
                                 <div class="events-thumbnail__date-range">
@@ -127,7 +162,7 @@
                         <div class="events-thumbnail__loadmore text-center">
                             <a href="#" class="btn btn--primary"> Load more </a>
                         </div>
-
+                    -->
                     </div>
 
                 </div>

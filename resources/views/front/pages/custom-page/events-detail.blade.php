@@ -11,7 +11,7 @@
                     <div class="row">
                         <div class="col-md-12 sub-banner__content">
                             <h3>National Events</h3>
-                            <h1>2020 Global Luxury Summit</h1>
+                            <h1>{{ $event->name }}</h1>
                         </div>
                     </div>
                 </div>
@@ -25,13 +25,11 @@
 
 
     <main class="main-content">
-
-
         <section class="events-section">
             <div class="container-max">
                 <div class="row">
                     <div class="col-lg-12">
-                        <a href="#" class="btn btn--back">   <i href="#" class="btn btn--third"> </i> Back to National Events </a>
+                        <a href="{{ url('events') }}" class="btn btn--back">   <i href="#" class="btn btn--third"> </i> Back to National Events </a>
                     </div>
     
                     <div class="col-lg-8">
@@ -41,7 +39,7 @@
                             </div>
                             <div class="event-details__description">
                                 <h3>Description</h3>
-                                <p>Lorem ipsum dolor sit amet, justo non porttitor, ornare vel etiam at vulputate, ipsum elit lorem leo quis. Rutrum eu turpis, ultricies nunc, sed fermentum tincidunt nulla. Vel duis arcu a ligula, ultrices neque class pellentesque luctus, ac quis curae luctus adipiscing vulputate imperdiet, vehicula nunc morbi, sodales vel wisi. Consequat mauris sapiente sem leo duis nulla, turpis class dolor, vitae purus arcu dolor, sapien pellentesque etiam fringilla placerat integer. Diam ipsum suspendisse nec. Nunc eu, suscipit quasi optio, ultrices sunt porta orci, et sed vel magnis. Sint eu ornare sed, praesent varius tristique, suscipit eget nunc ut libero ligula quam, maecenas iaculis magna pellentesque venenatis, ligula quisque sit. Pede voluptatum, sagittis tempor porttitor rutrum in felis, nibh condimentum bibendum, ullamcorper et consequat. </p>
+                                <p>{!! $event->description !!}</p>
                                
                             </div>
                             <div class="event-details__email">
@@ -50,6 +48,7 @@
                                 <a href="mailto:adminassistant@areaa.org"> <i></i> adminassistant@areaa.org</a>
                             </div>
     
+                            @if ($nextEvent)
                             <div class="events-next-preview">
                                <div class="container">
                                     <div class="row">
@@ -59,18 +58,19 @@
                                         <div class="events-next-preview__details content-middle col-sm-9">
                                             <div class="events-next-preview__holder">
                                                 <h4>Next National Event</h4>
-                                                <h3>2020 National Convention</h3>
+                                                <h3>{{ $nextEvent->name }}</h3>
                                                 <div class="events-next-preview__date-time">
-                                                    <div class="events-next-preview__month">Oct. 08 - 10</div> 
-                                                    <div class="events-next-preview__time">7:00pm - 9:00pm</div>
+                                                    <div class="events-next-preview__month">{{ $nextEvent->dateRange }}</div> 
+                                                    <div class="events-next-preview__time">{{ $nextEvent->time }}</div>
                                                 </div>
                                             </div>
                                             
-                                            <a href="#" class="btn btn--third"> </a>
+                                            <a href="{{ $nextEvent->url }}" class="btn btn--third"> </a>
                                         </div>
                                     </div>
                                </div>
                             </div>
+                            @endif
                         </div>
                        
                     </div>
@@ -82,12 +82,12 @@
 
                             <div class="register-info__list">
                                 <ul>
-                                    <li><span><strong>Date</strong></span> <span>December 12 - 16, 2020</span></li>
-                                    <li><span><strong>Time</strong></span> <span>7:00pm - 9:00pm</span></li>
-                                    <li><span><strong>Location</strong></span> <span><strong>Four Seasons Chicago</strong> 
-                                        120 E Delaware Pl, 
-                                        Chicago, CA 60611 United States</span></li>
-                                    <li><span><strong>Cost</strong></span> <span>$70.00</span></li>
+                                    <li><span><strong>Date</strong></span> <span>{{ $event->dateRange }}</span></li>
+                                    <li><span><strong>Time</strong></span> <span>{{ $event->time }}</span></li>
+                                    <li><span><strong>Location</strong></span> <span><strong>{{ $event->location_name }}</strong> 
+                                        {{ $event->locationAddress }}
+                                        </span></li>
+                                    <li><span><strong>Cost</strong></span> <span>${{ $event->amount }}</span></li>
                                 </ul>
                                 <div class="register-info__button">
                                     <a href="#" class="btn btn--secondary"> Register</a>
