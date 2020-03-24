@@ -130,3 +130,33 @@ $('.slider-mask__slick').slick({
     cssEase: 'linear',
     arrows: true
 });
+
+
+
+$('.big-advertisement__slick').slick({
+    dots: true,
+    infinite: true,
+    speed: 800,
+    slidesToShow: 1,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    cssEase: 'linear',
+    arrows: true,
+    fade: true,
+    cssEase: 'linear',
+});
+
+
+
+$('.small-advertisement__slick').slick({
+    dots: true,
+    infinite: true,
+    speed: 800,
+    slidesToShow: 1,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    cssEase: 'linear',
+    arrows: false,
+    fade: true,
+    cssEase: 'linear',
+});

@@ -47014,6 +47014,8 @@ $(".accordion__item").click(function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 $('.banner__slick').slick({
   dots: false,
   infinite: true,
@@ -47121,6 +47123,28 @@ $('.slider-mask__slick').slick({
   cssEase: 'linear',
   arrows: true
 });
+$('.big-advertisement__slick').slick(_defineProperty({
+  dots: true,
+  infinite: true,
+  speed: 800,
+  slidesToShow: 1,
+  autoplay: true,
+  autoplaySpeed: 5000,
+  cssEase: 'linear',
+  arrows: true,
+  fade: true
+}, "cssEase", 'linear'));
+$('.small-advertisement__slick').slick(_defineProperty({
+  dots: true,
+  infinite: true,
+  speed: 800,
+  slidesToShow: 1,
+  autoplay: true,
+  autoplaySpeed: 5000,
+  cssEase: 'linear',
+  arrows: false,
+  fade: true
+}, "cssEase", 'linear'));
 
 /***/ }),
 

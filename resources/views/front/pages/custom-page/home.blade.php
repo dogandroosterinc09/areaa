@@ -111,19 +111,22 @@
         </section>
         {{-- End of Become Member --}}
 
+
+ 
+
         {{-- Start  --}}
         <section class="partnership wrapper image-background margin-top60">
             <img src="{{ section('Partnership.data.first.image') }}" alt="{{ section('Partnership.data.first.alt_text') }}">
             <div class="container-max">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-6 partnership__left">
                         <div class="title">
                             <h2>{{ section('Partnership.data.first.title') }}</h2>
+                            {{-- <p>We have more than 30 partners fromLocal to International.</p> --}}
                             {!! section('Partnership.data.first.content') !!}
                         </div>
-                    </div>
-                    <div class="offset-1 col-md-5">
-                        <div class="partnership-level">
+                           {{-- partnership-level --}}
+                           <div class="partnership-level partnership-level__adjustment">
                             @foreach( section('Partnership Levels.data') as $data )
                             <div class="partnership-level--item">
                                 <div class="icon {{ $data->icon }}"></div>
@@ -137,6 +140,27 @@
                                 <a href="{{ section('Partnership.data.first.btn1_link') }}" class="btn btn--secondary margin-right20">{{ section('Partnership.data.first.btn1_text') }}</a> <a href="{{ section('Partnership.data.first.btn2_link') }}" class="btn btn--primary">{{ section('Partnership.data.first.btn2_text') }}</a>
                             </div>
                         </div>
+                         {{-- partnership-level --}}
+                    </div>
+                    <div class="col-md-6 partnership__right content-middle">
+                        
+                        {{-- big-advertisement --}}
+                        <div class="big-advertisement">
+                            <div class="big-advertisement__slick">
+                                <div class="big-advertisement__slick--item">
+                                    <img src="{{ asset('public/images/advertisement-big.jpg') }}" alt="ads">   
+                                </div>
+                                <div class="big-advertisement__slick--item">
+                                    <img src="{{ asset('public/images/advertisement-big.jpg') }}" alt="ads">   
+                                </div>
+                                <div class="big-advertisement__slick--item">
+                                    <img src="{{ asset('public/images/advertisement-big.jpg') }}" alt="ads">   
+                                </div>
+                            </div>
+                        </div>
+                        {{-- big-advertisement --}}
+
+
                     </div>
                 </div>
             </div>
