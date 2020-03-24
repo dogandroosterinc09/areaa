@@ -85,8 +85,10 @@
                                 {!! section('Who We Are.data.first.content') !!}                                
 
                                 <div class="btn-group">
-                                    <a href="{{ section('Who We Are.data.first.btn1_link') }}" class="btn btn btn--secondary">{{ section('Who We Are.data.first.btn1_text') }}</a>
-                                    <a href="{{ section('Who We Are.data.first.btn2_link') }}" class="btn btn btn--primary">{{ section('Who We Are.data.first.btn2_text') }}</a>
+                                    <a href="{{ url('membership-registration') }}" class="btn btn btn--secondary">Join Us</a>
+                                    <a href="{{ url('contact-us') }}" class="btn btn btn--primary">Contact us</a>
+                                    {{-- <a href="{{ section('Who We Are.data.first.btn1_link') }}" class="btn btn btn--secondary">{{ section('Who We Are.data.first.btn1_text') }}</a>
+                                    <a href="{{ section('Who We Are.data.first.btn2_link') }}" class="btn btn btn--primary">{{ section('Who We Are.data.first.btn2_text') }}</a> --}}
                                 </div>
                             </div>
                         </div>
@@ -121,8 +123,10 @@
                                 </ul>
 
                                 <div class="btn-group">
-                                    <a href="{{ section('Member Benefits.data.first.btn1_link') }}" class="btn btn btn--secondary">{{ section('Member Benefits.data.first.btn1_text') }}</a>
-                                    <a href="{{ section('Member Benefits.data.first.btn2_link') }}" class="btn btn btn--primary">{{ section('Member Benefits.data.first.btn2_text') }}</a>
+                                    <a href="{{ url('membership-registration') }}" class="btn btn btn--secondary">Join Us</a>
+                                    <a href="{{ url('contact-us') }}" class="btn btn btn--primary">Contact us</a>
+                                    {{-- <a href="{{ section('Member Benefits.data.first.btn1_link') }}" class="btn btn btn--secondary">{{ section('Member Benefits.data.first.btn1_text') }}</a>
+                                    <a href="{{ section('Member Benefits.data.first.btn2_link') }}" class="btn btn btn--primary">{{ section('Member Benefits.data.first.btn2_text') }}</a> --}}
                                </div>
 
                         </div>
