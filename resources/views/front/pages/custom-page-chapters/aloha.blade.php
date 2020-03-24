@@ -86,7 +86,7 @@
 
                                 <div class="btn-group">
                                     <a href="{{ url('membership-registration') }}" class="btn btn btn--secondary">Join Us</a>
-                                    <a href="{{ url('contact-us') }}" class="btn btn btn--primary">Contact us</a>
+                                    <a href="{{ url('aloha-contactus') }}" class="btn btn btn--primary">Contact us</a>
                                 </div>
                             </div>
                         </div>
@@ -122,7 +122,7 @@
 
                                 <div class="btn-group">
                                     <a href="{{ url('membership-registration') }}" class="btn btn btn--secondary">Join Us</a>
-                                    <a href="{{ url('contact-us') }}" class="btn btn btn--primary">Contact us</a>
+                                    <a href="{{ url('aloha-contactus') }}" class="btn btn btn--primary">Contact us</a>
                                </div>
 
                         </div>
