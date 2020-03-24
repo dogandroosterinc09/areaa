@@ -4,12 +4,12 @@
     <div class="chapter-list-view">
         <div class="chapter-list-view__item">
             <div class="chapter-list-view__image image-background">
-                <a href="#">
+                <a href="{{url('aloha')}}">
                      <img src="{{ url('public/images/chapter-list2.jpg') }}" alt="chapter">
                 </a>
             </div>
             <div class="chapter-list-view__title">
-                <a href="#">
+                <a href="{{url('aloha')}}">
                      <h3>Aloha</h3>
                 </a>
             </div>
@@ -25,12 +25,12 @@
     <div class="chapter-list-view">
         <div class="chapter-list-view__item">
             <div class="chapter-list-view__image image-background">
-                <a href="#">
+                <a href="{{url('atlantametro')}}">
                      <img src="{{ url('public/images/chapter-list2.jpg') }}" alt="chapter">
                 </a>
             </div>
             <div class="chapter-list-view__title">
-                <a href="#">
+                <a href="{{url('atlantametro')}}">
                      <h3>Atlanta Metro</h3>
                 </a>
             </div>
@@ -46,13 +46,13 @@
     <div class="chapter-list-view">
         <div class="chapter-list-view__item">
             <div class="chapter-list-view__image image-background">
-                <a href="#">
+                <a href="{{url('newyorkeast')}}">
                      <img src="{{ url('public/images/chapter-list3.jpg') }}" alt="chapter">
                 </a>
             </div>
             <div class="chapter-list-view__title">
-                <a href="#">
-                     <h3>Austin</h3>
+                <a href="{{url('newyorkeast')}}">
+                     <h3>New York East</h3>
                 </a>
             </div>
         </div>
@@ -67,13 +67,13 @@
     <div class="chapter-list-view">
         <div class="chapter-list-view__item">
             <div class="chapter-list-view__image image-background">
-                <a href="#">
+                <a href="{{url('aloha')}}">
                      <img src="{{ url('public/images/chapter-list4.jpg') }}" alt="chapter">
                 </a>
             </div>
             <div class="chapter-list-view__title">
-                <a href="#">
-                     <h3>Boston</h3>
+                <a href="{{url('aloha')}}">
+                     <h3>Austin</h3>
                 </a>
             </div>
         </div>
