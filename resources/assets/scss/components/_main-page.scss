@@ -367,26 +367,35 @@
                         display: inline-block;
                         vertical-align: top;
                         &.jade {
-                            width: 62px;
+                            // width: 62px;
                             height: 53px;
-                            margin-right: 37px;
+                            // margin-right: 37px;
                             background: url('../images/sprite.png') no-repeat;
-                            background-position: -11px -87px;
+                            // background-position: -11px -87px;
+                            margin-right: 35px;
+                            width: 65px;
+                            background-position: -465px -6px;
                         }
                         &.diamond {
-                            width: 62px;
+                            // width: 62px;
                             height: 62px;
-                            margin-right: 37px;
+                            // margin-right: 37px;
                             background: url('../images/sprite.png') no-repeat;
-                            background-position: -97px -87px;
+                            // background-position: -97px -87px;
+                            margin-right: 35px;
+                            width: 65px;
+                            background-position: -550px -6px;
                         }
                         &.emerald {
-                            width: 47px;
-                            height: 62px;
-                            margin-left: 10px;
-                            margin-right: 42px;
+                            // width: 47px;
+                            height: 65px;
+                            // margin-left: 10px;
+                            // margin-right: 42px;
                             background: url('../images/sprite.png') no-repeat;
-                            background-position: -183px -87px;
+                            // background-position: -183px -87px;
+                            margin-right: 35px;
+                            width: 65px;
+                            background-position: -629px -6px;
                         }
                     }
                     .content-txt {
@@ -1848,6 +1857,11 @@
         height: 420px;
         margin: auto;
         &__slick {
+            &--item {
+                a {
+                    display: block;
+                }
+            }
             .slick-prev:hover,
             .slick-prev:focus,
             .slick-next:hover,
@@ -1990,6 +2004,11 @@
         max-width: 280px;
         height: 280px;
         &__slick {
+            &--item {
+                a {
+                    display: block;
+                }
+            }
             .slick-prev:hover,
             .slick-prev:focus,
             .slick-next:hover,

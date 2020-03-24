@@ -19956,26 +19956,25 @@ section.partnership .partnership-level--item .icon {
   vertical-align: top;
 }
 section.partnership .partnership-level--item .icon.jade {
-  width: 62px;
   height: 53px;
-  margin-right: 37px;
   background: url("../images/sprite.png") no-repeat;
-  background-position: -11px -87px;
+  margin-right: 35px;
+  width: 65px;
+  background-position: -465px -6px;
 }
 section.partnership .partnership-level--item .icon.diamond {
-  width: 62px;
   height: 62px;
-  margin-right: 37px;
   background: url("../images/sprite.png") no-repeat;
-  background-position: -97px -87px;
+  margin-right: 35px;
+  width: 65px;
+  background-position: -550px -6px;
 }
 section.partnership .partnership-level--item .icon.emerald {
-  width: 47px;
-  height: 62px;
-  margin-left: 10px;
-  margin-right: 42px;
+  height: 65px;
   background: url("../images/sprite.png") no-repeat;
-  background-position: -183px -87px;
+  margin-right: 35px;
+  width: 65px;
+  background-position: -629px -6px;
 }
 section.partnership .partnership-level--item .content-txt {
   display: inline-block;
@@ -21295,6 +21294,9 @@ ul.bullet-style li h6 {
 .big-advertisement__slick {
   /* Slick Dots */
 }
+.big-advertisement__slick--item a {
+  display: block;
+}
 .big-advertisement__slick .slick-prev:hover,
 .big-advertisement__slick .slick-prev:focus,
 .big-advertisement__slick .slick-next:hover,
@@ -21426,6 +21428,9 @@ ul.bullet-style li h6 {
 }
 .small-advertisement__slick {
   /* Slick Dots */
+}
+.small-advertisement__slick--item a {
+  display: block;
 }
 .small-advertisement__slick .slick-prev:hover,
 .small-advertisement__slick .slick-prev:focus,

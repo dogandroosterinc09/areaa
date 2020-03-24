@@ -148,13 +148,19 @@
                         <div class="big-advertisement">
                             <div class="big-advertisement__slick">
                                 <div class="big-advertisement__slick--item">
-                                    <img src="{{ asset('public/images/advertisement-big.jpg') }}" alt="ads">   
+                                    <a href="#">
+                                        <img src="{{ asset('public/images/advertisement-big.jpg') }}" alt="ads">   
+                                     </a>
                                 </div>
                                 <div class="big-advertisement__slick--item">
-                                    <img src="{{ asset('public/images/advertisement-big.jpg') }}" alt="ads">   
+                                    <a href="#">
+                                        <img src="{{ asset('public/images/advertisement-big.jpg') }}" alt="ads">   
+                                     </a> 
                                 </div>
                                 <div class="big-advertisement__slick--item">
-                                    <img src="{{ asset('public/images/advertisement-big.jpg') }}" alt="ads">   
+                                    <a href="#">
+                                        <img src="{{ asset('public/images/advertisement-big.jpg') }}" alt="ads">   
+                                     </a>
                                 </div>
                             </div>
                         </div>

@@ -100,13 +100,19 @@
                          <div class="small-advertisement ">
                             <div class="small-advertisement__slick">
                                 <div class="small-advertisement__slick--item">
-                                    <img src="{{ asset('public/images/advertisement-big.jpg') }}" alt="ads">   
+                                    <a href="#">
+                                        <img src="{{ asset('public/images/advertisement-big.jpg') }}" alt="ads"> 
+                                    </a>  
                                 </div>
                                 <div class="small-advertisement__slick--item">
-                                    <img src="{{ asset('public/images/advertisement-big.jpg') }}" alt="ads">   
+                                    <a href="#">
+                                        <img src="{{ asset('public/images/advertisement-big.jpg') }}" alt="ads"> 
+                                    </a>  
                                 </div>
                                 <div class="small-advertisement__slick--item">
-                                    <img src="{{ asset('public/images/advertisement-big.jpg') }}" alt="ads">   
+                                    <a href="#">
+                                        <img src="{{ asset('public/images/advertisement-big.jpg') }}" alt="ads"> 
+                                    </a>  
                                 </div>
                             </div>
                         </div>
