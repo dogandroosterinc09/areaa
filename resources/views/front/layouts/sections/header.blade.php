@@ -10,7 +10,7 @@
             </div>
             <div class="col-lg-8">
                 <div class="contact-details-wrap">
-                    <div class="title"><span>Join AREAA</span></div>
+                    <div class="title"><a href="{{url('membership-registration')}}"><span>Join AREAA</span></a></div>
                     <div class="info">
                         <ul>
                             <li> <a href="tel:619.795.7873"><i class="ic-phone" aria-hidden="true"></i> 619.795.7873</a></li>

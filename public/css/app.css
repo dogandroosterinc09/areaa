@@ -18298,6 +18298,10 @@ header .contact-details-wrap .title {
   left: 115px;
   height: 50px;
 }
+header .contact-details-wrap .title a {
+  color: #fff;
+  text-decoration: none;
+}
 header .contact-details-wrap .info {
   position: relative;
   display: inline-block;

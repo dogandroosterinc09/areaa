@@ -4,13 +4,13 @@
     <div class="main-nagivation-desktop container-max">
         <div class="main-nagivation-desktop__wrapper--row row">
             <div class="col-lg-4">
-                <a href="{{ url('/') }}" class="logo">
+                <a href="{{ url('aloha') }}" class="logo">
                     <img src="{{ asset('public/images/logos/areaa_aloha.png') }}" alt="logo">
                 </a>
             </div>
             <div class="col-lg-8">
                 <div class="contact-details-wrap">
-                    <div class="title"><span>Join AREAA</span></div>
+                    <div class="title"><a href="{{url('membership-registration')}}"><span>Join AREAA</span></a></div>
                     <div class="info">
                         <ul>
                             <li> <a href="tel:619.795.7873"><i class="ic-phone" aria-hidden="true"></i> 619.795.7873</a></li>
@@ -20,13 +20,13 @@
                                 <i class="ic-chapter"></i> 
                                 AREAA National
                                 </a>
-                                <div class="info__menu">
+                                {{-- <div class="info__menu">
                                     <ul>
                                         <li> <a href="{{url('/aloha')}}"> Aloha</a></li>
                                         <li> <a href="{{url('/atlantametro')}}"> Atlanta Metro</a></li>
                                         <li> <a href="{{url('/newyorkeast')}}"> New York East</a></li>
                                     </ul>
-                                 </div>
+                                 </div> --}}
                              </li>
                             <li> 
                                 <a href="{{ url('newyorkeast-login') }}"><i class="ic-user"></i> Log In</a>
