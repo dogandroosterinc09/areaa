@@ -18240,6 +18240,9 @@ header .main-nagivation-desktop .navbar-bar ul > li .dropdown-menu ul li a {
   font-weight: 500 !important;
   font-size: 0.9em !important;
   color: #fff;
+  text-transform: capitalize;
+  padding: 10px 15px;
+  display: block !important;
 }
 header .main-nagivation-desktop .navbar-bar ul > li .dropdown-menu ul li a:hover {
   background: #841523;

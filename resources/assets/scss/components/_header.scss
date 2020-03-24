@@ -107,6 +107,9 @@ header {
                                     font-weight: 500 !important;
                                     font-size: .9em !important;
                                     color: $color-white;
+                                    text-transform: capitalize;
+                                    padding: 10px 15px;
+                                    display: block !important;
                                     &:hover {
                                         background: $color-darkred;
                                     }
