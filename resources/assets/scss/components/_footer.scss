@@ -26,6 +26,10 @@
         .footer-contacts {
             display: block;
             margin-top: 130px;
+            &__main {
+                margin-top: 10%;
+                margin-bottom: 10%;
+            }
             .item {
                 position: relative;
                 display: block;
@@ -123,6 +127,17 @@
                 }
                 h4 {
                     color: $color-white;
+                }
+            }
+            &__left {
+                margin-bottom: 25px;
+                .title {
+                    border-bottom-right-radius: 100px;
+                    border-bottom-left-radius: 0;
+                    &::after {
+                        right: 0%;
+                        left: -95%;
+                    }
                 }
             }
             .btn-wrap {

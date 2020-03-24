@@ -3,19 +3,32 @@
     <img src="{{ asset('public/images/footer/footer-bg.png') }}" alt="BG Image">
     <div class="container-max">
         <div class="row">
-            <div class="col-md-3 footer__item">
+            <div class="col-md-4 footer__item">
                 <div class="footer-logo">
                     <a href="{{ url('/') }}">
                         <img src="{{ asset('public/images/footer/footer-logo.png') }}" alt="logo">
                     </a>
                 </div>
-                <div class="footer-contacts">
+                <div class="footer-contacts footer-contacts__main">
                     <div class="item"><i class="loc"></i> <span>3990 Old Town Avenue C304, San Diego, CA 92110</span></div>
                     <div class="item"><i class="tel"></i> <a href="tel:619.795.7873 ">619.795.7873 </a></div>
                     <div class="item"><i class="mail"></i> <a href="mailto:contact@areaa.org">contact@areaa.org</a></div>
                 </div>
+
+                <div class="join-content join-content__left">
+                    <div class="title">
+                        <h4>Join AREAA today!</h4>
+                    </div>
+                    <div class="text-center">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                        <div class="btn-wrap">
+                            <a href="{{url('membership-registration')}}" class="btn btn--secondary">Join</a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-            <div class="offset-1 col-md-8 footer__item">
+            <div class="col-md-8 footer__item">
                 <div class="row">
                     <div class="col-md-3 footer__item">
                         <article>
@@ -29,7 +42,7 @@
                             </ul>
                         </article>
                     </div>
-                    <div class="col-md-3 footer__item">
+                    <div class="col-md-4 footer__item">
                         <article>
                             <h4>Advocacy</h4>
                             <ul>
@@ -39,7 +52,7 @@
                             </ul>
                         </article>
                     </div>
-                    <div class="col-md-6 footer__item">
+                    <div class="col-md-5 footer__item">
                         <article>
                             <h4>Resources</h4>
                             <ul>
@@ -65,7 +78,7 @@
                             </ul>
                         </article>
                     </div>
-                    <div class="col-md-3 footer__item">
+                    <div class="col-md-4 footer__item">
                         <article>
                             <h4>Events</h4>
                             <ul>
@@ -74,22 +87,28 @@
                                 <li><a href="#">Regional Retreats</a></li>
                                 <li><a href="#">National Convention</a></li>
                                 <li><a href="#">Chapter Events </a></li>
-                                <li><a href="#">How to get involved </a></li>
+                                {{-- <li><a href="#">How to get involved </a></li> --}}
                             </ul>
                         </article>
                     </div>
-                    <div class="col-md-6 footer__item">
-                        <div class="join-content">
-                            <div class="title">
-                                <h4>Join AREAA today!</h4>
-                            </div>
-                            <div class="text-center">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
-                                <div class="btn-wrap">
-                                    <a href="{{url('membership-registration')}}" class="btn btn--secondary">Join</a>
+                    <div class="col-md-5 footer__item">
+
+                         {{-- big-advertisement --}}
+                         <div class="small-advertisement ">
+                            <div class="small-advertisement__slick">
+                                <div class="small-advertisement__slick--item">
+                                    <img src="{{ asset('public/images/advertisement-big.jpg') }}" alt="ads">   
+                                </div>
+                                <div class="small-advertisement__slick--item">
+                                    <img src="{{ asset('public/images/advertisement-big.jpg') }}" alt="ads">   
+                                </div>
+                                <div class="small-advertisement__slick--item">
+                                    <img src="{{ asset('public/images/advertisement-big.jpg') }}" alt="ads">   
                                 </div>
                             </div>
                         </div>
+                        {{-- big-advertisement --}}
+                       
                     </div>
                 </div>
             </div>
