@@ -29,7 +29,7 @@
                             <h3 class="text-danger font-weight-bold text-center w-100 my-5">No Executive Members.</h3>
                         @endif
                         @foreach($executives as $executive)
-                            <div class="board-thumbnail__item">
+                            <div class="board-thumbnail__item col-lg-3 col-md-6">
                                 <a href="{{ $executive->url }}">
                                     <div class="board-thumbnail__image image-background">
                                         <img src="{{ $executive->attachment ? optional($executive->attachment)->url : asset('public/images/no-image.jpg') }}"

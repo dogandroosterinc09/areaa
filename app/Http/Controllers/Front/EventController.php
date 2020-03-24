@@ -47,7 +47,7 @@ class EventController extends PageController
     public function nextEvent($event) {
         $current_event_date = \Carbon\Carbon::parse($event->starts_at)->format('Y-m-d');
 
-        return  $this->event
+        return  $event
             ->whereDate('starts_at', '>', $current_event_date)
             ->orWhere('id', '>', $event->id)
             ->orderBy('starts_at')

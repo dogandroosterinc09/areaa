@@ -10,8 +10,8 @@
                 <div class="container-max sub-banner__content">
                     <div class="row">
                         <div class="col-md-12 sub-banner__content">
-                            <h1>Bryan Ahn</h1>
-                            <h3>Board Member  </h3>
+                            <h1>{{ $boardMember->name }}</h1>
+                            <h3>{{ $boardMember->position }}  </h3>
                         </div>
                     </div>
                 </div>
@@ -19,13 +19,12 @@
         </div>
         
         <div class="sub-banner__image image-background">
-            <img src="{{ url('public/images/delagate-Bryan-Ahn.jpg') }}">
+            <img src="{{ $boardMember->attachment ? optional($boardMember->attachment)->url : asset('public/images/no-image.jpg') }}">
         </div>
     </section>
 
-
-    <main class="main-content">
-
+    
+    <main class="main-content">        
 
         <section class="board-detail-content">
             <div class="container-max">
@@ -44,38 +43,44 @@
             </div>
         </section>
 
-
+        
         <section class="next-board">
             <div class="container-max">
                 <div class="row">
+                    
                     <div class="col-lg-6 next-board__left">
                         <div class="next-board__item">
+                        @if($previousBoardMember)
                             <div class="next-board__image">
-                                <img src="{{ url('public/images/delagate-Bryan-Ahn.jpg') }}">
-                            </div>
-                            <div class="next-board__content">
-                                <a href="#">
-                                    <i class="fas fa-angle-left"></i>Previous
-                                    <h3>Michael Acevedo</h3>
-                                </a>
+                                <img src="{{ $previousBoardMember->attachment ? optional($previousBoardMember->attachment)->url : asset('public/images/no-image.jpg') }}">
                             </div>
                             
+                            <div class="next-board__content">
+                                <a href="{{ $previousBoardMember->url }}">
+                                    <i class="fas fa-angle-left"></i>Previous
+                                    <h3>{{ $previousBoardMember->name }}</h3>
+                                </a>
+                            </div>
+                        @endif        
                         </div>
                     </div>
+                                        
                     <div class="col-lg-6 next-board__right">
                         <div class="next-board__item">
-                           
+                        @if($nextBoardMember)       
                             <div class="next-board__content">
-                                <a href="#">
-                                    Previous<i class="fas fa-angle-right"></i>
-                                    <h3>Michael Acevedo</h3>
+                                <a href="{{ $nextBoardMember->url }}">
+                                    Next<i class="fas fa-angle-right"></i>
+                                    <h3>{{ $nextBoardMember->name }}</h3>
                                 </a>
                             </div>
                             <div class="next-board__image">
-                                <img src="{{ url('public/images/delagate-Bryan-Ahn.jpg') }}">
+                                <img src="{{ $nextBoardMember->attachment ? optional($nextBoardMember->attachment)->url : asset('public/images/no-image.jpg') }}">
                             </div>
+                            @endif
                         </div>
                     </div>
+                    
                 </div>
             </div>
         </section>

@@ -36,7 +36,7 @@
                         @if ($events->isEmpty())
                             <h3 class="text-danger font-weight-bold text-center w-100 my-5">No Events.</h3>
                         @endif
-                        @foreach($events as $event)                        
+                        @foreach($events as $event)
                         <div class="events-thumbnail__item">
                                 <div class="events-thumbnail__date-range">
                                     <div class="events-thumbnail__month">
@@ -58,7 +58,7 @@
                                     <div class="events-thumbnail__time">{{ $event->time }}</div>
                                     <div class="events-thumbnail__location"><strong>{{ $event->location_name }}</strong>, {{ $event->locationAddress }}</div>
                                     <div class="events-thumbnail__paragraph">
-                                        {{ $event->description }}                                        
+                                        {{ $event->description }}
                                     </div>
                                     <div class="events-thumbnail__buttons">
                                         <a href="{{ $event->url }}" class="btn btn--secondary"> View Details</a>
