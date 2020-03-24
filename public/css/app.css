@@ -19930,6 +19930,20 @@ section.partnership .partnership-level__adjustment .content-txt {
 section.partnership .partnership-level__adjustment h3 {
   color: #fff !important;
 }
+section.partnership .partnership-level__adjustment .btn.btn--secondary:hover {
+  color: #fff;
+  border: 1px solid #303132;
+  background: #303132;
+}
+section.partnership .partnership-level__adjustment .btn.btn--primary {
+  color: #fff;
+  border: 1px solid #fff;
+}
+section.partnership .partnership-level__adjustment .btn.btn--primary:hover {
+  background: #303132;
+  border: 1px solid #303132;
+  color: #fff;
+}
 section.partnership .partnership-level--item {
   display: block;
   margin-bottom: 40px;

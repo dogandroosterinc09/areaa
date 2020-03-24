@@ -342,6 +342,22 @@
                     h3 {
                         color: $color-white !important;
                     }
+                    .btn.btn--secondary {
+                        &:hover {
+                            color: $color-white;
+                            border: 1px solid $color-dark;
+                            background: $color-dark;
+                        }
+                    }
+                    .btn.btn--primary {
+                        color: $color-white;
+                        border: 1px solid $color-white;
+                        &:hover {
+                            background: $color-dark;
+                            border: 1px solid $color-dark;
+                            color: $color-white;
+                        }
+                    }
                 }
                 &--item {
                     display: block;
