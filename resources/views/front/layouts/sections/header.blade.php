@@ -69,13 +69,13 @@
                             <div class="dropdown-menu">
                                 <ul class="sub-menu mega-menu">
                                     <li>
-                                        <a class="nav-link" href="#"> Sub menu 1</a>
+                                        <a class="nav-link" href="#"> AREAA Timeline</a>
                                     </li>
                                     <li>
-                                        <a class="nav-link" href="#"> Sub menu 1</a>
+                                        <a class="nav-link" href="#"> How to get involved</a>
                                     </li>
                                     <li>
-                                        <a class="nav-link" href="#"> Sub menu 1</a>
+                                        <a class="nav-link" href="#"> 3 Point Plan</a>
                                     </li>
                                 </ul>
                             </div>

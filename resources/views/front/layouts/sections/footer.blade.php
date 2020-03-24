@@ -36,9 +36,12 @@
                             <ul>
                                 <li><a href="{{url('about-us')}}"> About AREAA </a></li>
                                 <li><a href="{{url('executive-board')}}"> Executive Board </a></li>
-                                <li><a href="{{url('delegate-board')}}"> National Board </a></li>
-                                <li><a href="{{url('about-us')}}"> Our Partners </a></li>
+                                <li><a href="{{url('delegate-board')}}"> Delagate Board </a></li>
+                                <li><a href="{{url('our-partners')}}"> Our Partners </a></li>
+                                <li><a href="{{url('sponsors')}}">Our Sponsors</a></li>
                                 <li><a href="{{url('FAQ')}}"> FAQ </a></li>
+                                <li><a href="{{url('media')}}"> Photo Gallery </a></li>
+                                <li><a href="#"> Career </a></li>
                             </ul>
                         </article>
                     </div>
