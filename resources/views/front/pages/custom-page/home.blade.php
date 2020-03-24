@@ -122,8 +122,8 @@
                     <div class="col-md-6 partnership__left">
                         <div class="title">
                             <h2>{{ section('Partnership.data.first.title') }}</h2>
-                            <p>We have more than 30 partners fromLocal to International.</p>
-                            {{-- {!! section('Partnership.data.first.content') !!} --}}
+                            {{-- <p>We have more than 30 partners fromLocal to International.</p> --}}
+                            {!! section('Partnership.data.first.content') !!}
                         </div>
                            {{-- partnership-level --}}
                            <div class="partnership-level partnership-level__adjustment">
