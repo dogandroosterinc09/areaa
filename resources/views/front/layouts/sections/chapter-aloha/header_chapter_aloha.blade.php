@@ -29,7 +29,7 @@
                                  </div> --}}
                              </li>
                             <li> 
-                                <a href="{{ url('newyorkeast-login') }}"><i class="ic-user"></i> Log In</a>
+                                <a href="{{ url('aloha-login') }}"><i class="ic-user"></i> Log In</a>
                             </li>
                         </ul>
                     </div>

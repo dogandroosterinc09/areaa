@@ -10,7 +10,7 @@
                 <div class="banner-content-desc">
                     <h1>The Voice of the AAPI community</h1>
                     <h2>Fulfilling the American Dream.</h2>
-                    <a href="#" class="btn btn--primary">Learn More</a>
+                    <a href="{{url('about-us')}}" class="btn btn--primary">Learn More</a>
                 </div>
             </div>
             <div class="item-right">
@@ -22,9 +22,9 @@
         <div class="banner__image-slide--item">
             <div class="item-left">
                 <div class="banner-content-desc">
-                    <h1>The Voice of the AAPI community 2</h1>
+                    <h1>Become a</h1>
                     <h2>Partnership.</h2>
-                    <a href="#" class="btn btn--primary">Learn More</a>
+                    <a href="{{url('our-partners')}}" class="btn btn--primary">Learn More</a>
                 </div>
             </div>
             <div class="item-right">
@@ -39,7 +39,7 @@
                 <div class="banner-content-desc">
                     <h1>The Voice of the AAPI community 2</h1>
                     <h2>Events</h2>
-                    <a href="#" class="btn btn--primary">Learn More</a>
+                    <a href="{{url('events')}}" class="btn btn--primary">Learn More</a>
                 </div>
             </div>
             <div class="item-right">
