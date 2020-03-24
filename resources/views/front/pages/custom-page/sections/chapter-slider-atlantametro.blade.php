@@ -26,14 +26,14 @@
                 <div class="banner-content-desc">
                     <h1>Welcome to AREAA <br>
                         Atlanta Metro Chapter</h1>
-                    <h3>Educate. Empower. Expand together</h3>
-                    {{-- <img src="{{ url('public/images/chapter-newyork.png') }}"> --}}
-                    <a href="#" class="btn btn--primary">Join AREAA</a>
+                        <h3>News & Events</h3>
+                        {{-- <img src="{{ url('public/images/chapter-newyork.png') }}"> --}}
+                        <a href="{{url('atlantametro-events')}}" class="btn btn--primary">View More</a>
                 </div>
             </div>
             <div class="item-right">
                 <div class="banner-img-holder image-background">
-                    <img src="{{ url('public/images/chapter-slider-banner.jpg') }}">
+                    <img src="{{ url('public/images/chapter-banner2.jpg') }}">
                 </div>
             </div>
         </div>
