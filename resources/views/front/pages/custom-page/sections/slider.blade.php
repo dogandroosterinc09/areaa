@@ -37,7 +37,7 @@
         <div class="banner__image-slide--item">
             <div class="item-left">
                 <div class="banner-content-desc">
-                    <h1>The Voice of the AAPI community 2</h1>
+                    <h1>The Voice of the AAPI community</h1>
                     <h2>Events</h2>
                     <a href="{{url('events')}}" class="btn btn--primary">Learn More</a>
                 </div>
