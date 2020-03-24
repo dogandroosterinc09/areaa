@@ -1,4 +1,4 @@
-<section class="page-chapter page-chapter-aloha page-chapter-aloha--contactus">
+<section class="page-chapter page-chapter--contactus page-chapter-aloha page-chapter-aloha--contactus">
     @include('front.layouts.sections.chapter-aloha.header_chapter_aloha')
 
     {{-- @include('front.pages.custom-page.sections.chapter-slider-aloha') --}}
@@ -18,9 +18,9 @@
                             <p>Lorem ipsum dolor sit amet, quam sollicitudin sagittis fringilla lacus enim, leo elit non nec varius sodales. Amet faucibus, id tempor quisque pharetra leo. Curae integer. Diam duis integer vel ut. </p>
 
                             <div class="contact-details">
-                                <div class="contact-details__item"><i class="loc"></i> <span>3990 Old Town Avenue C304, San Diego, CA 92110</span></div>
-                                <div class="contact-details__item"><i class="tel"></i> <a href="tel:619.795.7873 ">619.795.7873 </a></div>
-                                <div class="contact-details__item"><i class="mail"></i> <a href="mailto:contact@areaa.org">contact@areaa.org</a></div>
+                                <div class="contact-details__item"><i class="loc"></i> <span>Chapter President: Abe Lee</span></div>
+                                <div class="contact-details__item"><i class="tel"></i> <a href="tel:8082164999">808-216-4999 </a></div>
+                                <div class="contact-details__item"><i class="mail"></i> <a href="mailto:abelee1948@gmail.com">abelee1948@gmail.com</a></div>
                             </div>
                         </div>
 

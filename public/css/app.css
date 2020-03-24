@@ -21891,6 +21891,16 @@ section.page--login .site-content {
   left: inherit;
   right: 10%;
 }
+.page-chapter--contactus .main-content {
+  padding-top: 0 !important;
+}
+.page-chapter--contactus .contact-section.paper-background {
+  background: transparent !important;
+}
+.page-chapter--contactus .contact-section__right {
+  background: #f8f6f6 !important;
+  border-radius: 0 0 0 20px;
+}
 
 .page--board .executive-board {
   padding: 60px 0;

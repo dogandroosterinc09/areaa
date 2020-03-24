@@ -75,6 +75,19 @@
             right: 10%;
         }
     }
+    &--contactus {
+        .main-content {
+            padding-top: 0 !important;
+        }
+        .contact-section.paper-background {
+            background: transparent !important;
+        }
+        .contact-section__right {
+            background: #f8f6f6 !important;
+            -webkit-border-radius: 0 0 0 20px;
+            border-radius: 0 0 0 20px;
+        }
+    }
 }
 
 .page {

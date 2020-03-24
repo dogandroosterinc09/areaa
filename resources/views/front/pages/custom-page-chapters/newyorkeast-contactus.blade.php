@@ -1,4 +1,4 @@
-<section class="page-chapter page-chapter-newyorkeast page-chapter-newyorkeast--contactus">
+<section class="page-chapter page-chapter--contactus page-chapter-newyorkeast page-chapter-newyorkeast--contactus">
     @include('front.layouts.sections.chapter-newyorkeast.header_chapter_newyorkeast')
 
     {{-- @include('front.pages.custom-page.sections.chapter-slider-newyorkeast') --}}
@@ -19,9 +19,9 @@
                         <p>Lorem ipsum dolor sit amet, quam sollicitudin sagittis fringilla lacus enim, leo elit non nec varius sodales. Amet faucibus, id tempor quisque pharetra leo. Curae integer. Diam duis integer vel ut. </p>
 
                         <div class="contact-details">
-                            <div class="contact-details__item"><i class="loc"></i> <span>3990 Old Town Avenue C304, San Diego, CA 92110</span></div>
-                            <div class="contact-details__item"><i class="tel"></i> <a href="tel:619.795.7873 ">619.795.7873 </a></div>
-                            <div class="contact-details__item"><i class="mail"></i> <a href="mailto:contact@areaa.org">contact@areaa.org</a></div>
+                            <div class="contact-details__item"><i class="loc"></i> <span>Chapter President: Baldwin Lee</span></div>
+                            <div class="contact-details__item"><i class="tel"></i> <a href="tel:5167077299">516-707-7299</a></div>
+                            <div class="contact-details__item"><i class="mail"></i> <a href="mailto:baldwinklee@gmail.com">baldwinklee@gmail.com</a></div>
                         </div>
                     </div>
 

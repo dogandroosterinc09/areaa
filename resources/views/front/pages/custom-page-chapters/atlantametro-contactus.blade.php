@@ -1,4 +1,4 @@
-<section class="page-chapter page-chapter-atlantametro page-chapter-atlantametro--contactus">
+<section class="page-chapter page-chapter--contactus page-chapter-atlantametro page-chapter-atlantametro--contactus">
     @include('front.layouts.sections.chapter-atlantametro.header_chapter_atlantametro')
 
     {{-- @include('front.pages.custom-page.sections.chapter-slider-atlantametro') --}}
@@ -18,9 +18,9 @@
                             <p>Lorem ipsum dolor sit amet, quam sollicitudin sagittis fringilla lacus enim, leo elit non nec varius sodales. Amet faucibus, id tempor quisque pharetra leo. Curae integer. Diam duis integer vel ut. </p>
 
                             <div class="contact-details">
-                                <div class="contact-details__item"><i class="loc"></i> <span>3990 Old Town Avenue C304, San Diego, CA 92110</span></div>
-                                <div class="contact-details__item"><i class="tel"></i> <a href="tel:619.795.7873 ">619.795.7873 </a></div>
-                                <div class="contact-details__item"><i class="mail"></i> <a href="mailto:contact@areaa.org">contact@areaa.org</a></div>
+                                <div class="contact-details__item"><i class="loc"></i> <span>Chapter President: Helen Pham</span></div>
+                                <div class="contact-details__item"><i class="tel"></i> <a href="tel:6789952526">678-995-2526 </a></div>
+                                <div class="contact-details__item"><i class="mail"></i> <a href="mailto:helennguyen127@gmail.com">helennguyen127@gmail.com</a></div>
                             </div>
                         </div>
 
