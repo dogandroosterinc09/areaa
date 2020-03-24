@@ -237,7 +237,7 @@
                                                            <h4>$268.95</h4>
                                                          </div>
                                                          <div class="red-box__bottom">
-                                                            <a href="#" class="btn btn--primary"> Become a Member Today !</a>
+                                                            <a href="{{url('membership-registration')}}" class="btn btn--primary"> Become a Member Today !</a>
                                                          </div>
                                                      </div>
                                                  </div>
@@ -277,7 +277,7 @@
                                                           <h4>$68.95</h4>
                                                         </div>
                                                         <div class="red-box__bottom">
-                                                           <a href="#" class="btn btn--primary"> Become a Member Today !</a>
+                                                           <a href="{{url('membership-registration')}}" class="btn btn--primary"> Become a Member Today !</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -299,7 +299,7 @@
                                                           <h4>$26.95</h4>
                                                         </div>
                                                         <div class="red-box__bottom">
-                                                           <a href="#" class="btn btn--primary"> Become a Member Today !</a>
+                                                           <a href="{{url('membership-registration')}}" class="btn btn--primary"> Become a Member Today !</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -320,7 +320,7 @@
                                                           <h4>$268.95</h4>
                                                         </div>
                                                         <div class="red-box__bottom">
-                                                           <a href="#" class="btn btn--primary"> Become a Member Today !</a>
+                                                           <a href="{{url('membership-registration')}}" class="btn btn--primary"> Become a Member Today !</a>
                                                         </div>
                                                     </div>
                                                 </div>

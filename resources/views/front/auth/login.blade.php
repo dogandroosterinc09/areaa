@@ -78,9 +78,12 @@
                                                 <small>Remember me</small>
                                             </div>
                                             <div class="col-xs-6 text-right">
-                                                <button type="submit" class="btn btn--secondary"><i class="fa fa-arrow-right"></i>
+                                                <a href="{{url('dashboard-main')}}" class="btn btn--secondary"><i class="fa fa-arrow-right"></i>
                                                     Log In
-                                                </button>
+                                                </a>
+                                                {{-- <button type="submit" class="btn btn--secondary"><i class="fa fa-arrow-right"></i>
+                                                    Log In
+                                                </button> --}}
                                             </div>
                                         </div>
                                         <div class="form-group">
