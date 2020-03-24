@@ -29,7 +29,11 @@
         <section class="board-detail-content">
             <div class="container-max">
                 <div class="col-lg-12 text-center">
-
+                    @if($boardMember->bio) {{-- remove this condition when there is already content --}}
+                    <div class="board-detail-content__content">
+                        <p>{{ $boardMember->bio }}</p>
+                    </div>
+                    @else
                     <div class="board-detail-content__message">
                         “Lorem ipsum dolor sit amet, eget etiam ante lectus etiam, ligula nulla. Enim tellus morbi consequat arcu, lacus dapibus lectus sagittis.“
                     </div>
@@ -38,7 +42,7 @@
                         <p>Lorem ipsum dolor sit amet, eget etiam ante lectus etiam, ligula nulla. Enim tellus morbi consequat arcu, lacus dapibus lectus sagittis faucibus nisl, luctus metus. Ultricies suscipit vestibulum quam maxime, potenti luctus sed sit. Fames sit, curabitur mus mi libero risus dui. Libero felis a, enim faucibus ut mattis, praesent ac felis eget non libero malesuada, condimentum et sit id velit explicabo et. Erat morbi hendrerit. Magna non a urna nunc, scelerisque sodales fusce interdum donec, aliquet dolor ante porttitor. Porttitor id lectus lobortis eu nullam irure, ut id, non ut interdum fermentum sapien luctus, ac turpis ipsum vel ut aliquam et. Amet tristique per turpis. Ac morbi laoreet auctor omnis, voluptatum dolor, lorem fermentum justo id ipsum, sociosqu mauris pellentesque, praesent viverra in integer dapibus sapien molestie. Pharetra eu condimentum, neque interdum accumsan nemo, nulla mauris enim ut nec sit sollicitudin, aliquam quis in risus nisl dui, a etiam suscipit velit ultrices lectus in.</p>
                         <p>Lorem ipsum dolor sit amet, eget etiam ante lectus etiam, ligula nulla. Enim tellus morbi consequat arcu, lacus dapibus lectus sagittis faucibus nisl, luctus metus. Ultricies suscipit vestibulum quam maxime, potenti luctus sed sit. Fames sit, curabitur mus mi libero risus dui. Libero felis a, enim faucibus ut mattis, praesent ac felis eget non libero malesuada, condimentum et sit id velit explicabo et. Erat morbi hendrerit. Magna non a urna nunc, scelerisque sodales fusce interdum donec, aliquet dolor ante porttitor. Porttitor id lectus lobortis eu nullam irure, ut id, non ut interdum fermentum sapien luctus, ac turpis ipsum vel ut aliquam et. Amet tristique per turpis. Ac morbi laoreet auctor omnis, voluptatum dolor, lorem fermentum justo id ipsum, sociosqu mauris pellentesque, praesent viverra in integer dapibus sapien molestie. Pharetra eu condimentum, neque interdum accumsan nemo, nulla mauris enim ut nec sit sollicitudin, aliquam quis in risus nisl dui, a etiam suscipit velit ultrices lectus in.</p>
                     </div>
-
+                    @endif
                 </div>
             </div>
         </section>
