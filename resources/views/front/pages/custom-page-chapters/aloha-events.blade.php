@@ -10,7 +10,7 @@
                 <div class="container-max sub-banner__content">
                     <div class="row">
                         <div class="col-md-12 sub-banner__content">
-                            <h3>Aloha</h3>
+                            {{-- <h3>Aloha</h3> --}}
                             <h1>Events</h1>
                         </div>
                     </div>
