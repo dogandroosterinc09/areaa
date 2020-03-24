@@ -170,7 +170,7 @@
                                 <p>{{ section('Sponsors.data.first.content') }}</p>
     
                                 <div class="btn-group">
-                                    <a href="{{ url('/') }}" class="btn btn btn--primary">Sponsors</a>
+                                    <a href="{{ url('/') }}" class="btn btn btn--primary">Interested In Sponsorship?</a>
                                 </div>
                             </div>
                     </div>
