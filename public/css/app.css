@@ -21837,6 +21837,9 @@ section.page--login .site-content {
 .page-chapter--homepage .footer__wrapper {
   background: #f8f6f6;
 }
+.page-chapter--homepage .main-content {
+  padding-bottom: 0 !important;
+}
 .page-chapter .dashboard-nav {
   margin-bottom: 50px;
   margin-top: -20px;

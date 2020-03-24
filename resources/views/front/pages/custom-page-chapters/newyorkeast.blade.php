@@ -1,4 +1,4 @@
-<section class="page-chapter page-chapter-newyorkeast page-chapter-aloha--homepage">
+<section class="page-chapter page-chapter--homepage page-chapter-newyorkeast  page-chapter-newyorkeast--homepage">
     @include('front.layouts.sections.chapter-newyorkeast.header_chapter_newyorkeast')
 
     @include('front.pages.custom-page.sections.chapter-slider-newyorkeast')

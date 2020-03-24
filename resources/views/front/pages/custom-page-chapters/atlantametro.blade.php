@@ -1,4 +1,4 @@
-<section class="page-chapter page-chapter-newyorkeast page-chapter-atlantametro--homepage">
+<section class="page-chapter page-chapter--homepage page-chapter-atlantametro page-chapter-atlantametro--homepage">
     @include('front.layouts.sections.chapter-atlantametro.header_chapter_atlantametro')
 
     @include('front.pages.custom-page.sections.chapter-slider-atlantametro')
