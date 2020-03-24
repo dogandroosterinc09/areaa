@@ -11,7 +11,7 @@
                         <h2>Events & Campaigns</h2>
                     </div>
                     <div class="col-md-2 content-middle">
-                        <a href="#" class="btn btn--secondary">View All</a>
+                        <a href="{{url('events')}}" class="btn btn--secondary">View All</a>
                     </div>
                 </div>
             </div>
@@ -235,7 +235,7 @@
                         <div class="map-content">
                             <h2>Chapters</h2>
                             <div class="btn-wrap">
-                                <a href="#" class="btn btn--secondary">View All Chapters</a>
+                                <a href="{{url('chapter')}}" class="btn btn--secondary">View All Chapters</a>
                             </div>
                         </div>
                     </div>
