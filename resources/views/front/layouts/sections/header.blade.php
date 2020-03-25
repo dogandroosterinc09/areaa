@@ -46,7 +46,7 @@
                                     <li><a href="{{url('our-partners')}}"> Our Partners </a></li>
                                     <li><a href="{{url('sponsors')}}">Our Sponsors</a></li>
                                     <li><a href="{{url('FAQ')}}"> FAQ </a></li>
-                                    <li><a href="{{url('media')}}"> Photo Gallery </a></li>
+                                    <li><a href="{{url('photo-gallery')}}"> Photo Gallery </a></li>
                                     <li><a href="#"> Career </a></li>
 
                                 </ul>

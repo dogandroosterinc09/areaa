@@ -40,7 +40,7 @@
                                 <li><a href="{{url('our-partners')}}"> Our Partners </a></li>
                                 <li><a href="{{url('sponsors')}}">Our Sponsors</a></li>
                                 <li><a href="{{url('FAQ')}}"> FAQ </a></li>
-                                <li><a href="{{url('media')}}"> Photo Gallery </a></li>
+                                <li><a href="{{url('photo-gallery')}}"> Photo Gallery </a></li>
                                 <li><a href="#"> Career </a></li>
                             </ul>
                         </article>
@@ -61,7 +61,7 @@
                             <ul>
                                 <li><a href="#"> a | r | e Magazine </a></li>
                                 <li><a href="#"> State of Asia America report </a></li>
-                                <li><a href="{{url('photo-gallery')}}"> Photo gallery </a></li>
+                                {{-- <li><a href="{{url('photo-gallery')}}"> Photo gallery </a></li> --}}
                                 <li><a href="{{url('media')}}"> Webinars </a></li>
                                 <li><a href="#"> In Language Support </a></li>
                             </ul>
