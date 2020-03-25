@@ -89,7 +89,36 @@
                     <div class="col-lg-12">
                         <!--Accordion wrapper-->
                             <div class="accordion md-accordion moreBox" id="accordionEx" role="tablist" aria-multiselectable="true">
+                            @php ($faqs = \App\Models\Faq::all())
+                            @foreach ($faqs as $faq)
+                            <!-- Accordion card -->
+                                <div class="accordion__item @if($loop->first) accordion__item--active @endif moreBox__item moreBox">                                
+                                <!-- Card header -->
+                                <div class="accordion__head" role="tab" id="one">
+                                    <a data-toggle="collapse" data-parent="#accordionEx" href="#accord-{{ $faq->id }}" aria-expanded="@if($loop->first){{'true'}}@else{{'false'}}@endif"
+                                    aria-controls="accord-one" @if(!$loop->first) class="collapsed" @endif>
+                                    <h5>
+                                        {{ $faq->question }}
+                                    </h5>
+                                    <i class="fas fa-angle-down rotate-icon"></i>
+                                    </a>
+                                </div>
+                            
+                                <!-- Card body -->
+                                <div id="accord-{{ $faq->id }}" class="collapse @if($loop->first) show @endif accordion__content" role="tabpanel" aria-labelledby="one"
+                                    data-parent="#accordionEx">
+                                    <div class="card-body">
+                                    {!! $faq->answer !!}
+                                    </div>
+                                </div>
+                        
+                            </div>
+                            <!-- Accordion card -->
+                            @endforeach
 
+                                
+
+                            {{-- commented out for reference
                                 <!-- Accordion card -->
                                 <div class="accordion__item accordion__item--active moreBox__item moreBox">
                             
@@ -215,8 +244,8 @@
                                 </div>
                                 <!-- Accordion card -->
 
-                                  <!-- Accordion card -->
-                                  <div class="accordion__item moreBox__item moreBox">
+                                <!-- Accordion card -->
+                                <div class="accordion__item moreBox__item moreBox">
                                                             
                                     <!-- Card header -->
                                     <div class="accordion__head" role="tab" id="five">
@@ -247,103 +276,103 @@
                                 </div>
                                 <!-- Accordion card -->
 
+                                <!-- Accordion card -->
+                                <div class="accordion__item moreBox__item moreBox">
+                                                        
+                                    <!-- Card header -->
+                                    <div class="accordion__head" role="tab" id="six">
+                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#accord-six"
+                                        aria-expanded="false" aria-controls="accord-six">
+                                        <h5>
+                                            How Do I Update My Profile?
 
-                                    <!-- Accordion card -->
-                                     <div class="accordion__item moreBox__item moreBox">
-                                                            
-                                        <!-- Card header -->
-                                        <div class="accordion__head" role="tab" id="six">
-                                            <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#accord-six"
-                                            aria-expanded="false" aria-controls="accord-six">
-                                            <h5>
-                                                How Do I Update My Profile?
-    
-                                            </h5>
-                                            <i class="fas fa-angle-down rotate-icon"></i>
-                                            </a>
-                                        </div>
-    
-                                        <!-- Card body -->
-                                        <div id="accord-six" class="collapse accordion__content" role="tabpanel" aria-labelledby="six"
-                                            data-parent="#accordionEx">
-                                            <div class="card-body">
-                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-                                            wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                                            eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
-                                            assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                                            nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-                                            farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                                            labore sustainable VHS.
-                                            </div>
-                                        </div>
-    
+                                        </h5>
+                                        <i class="fas fa-angle-down rotate-icon"></i>
+                                        </a>
                                     </div>
-                                    <!-- Accordion card -->
 
-                                     <!-- Accordion card -->
-                                     <div class="accordion__item moreBox__item moreBox">
-                                                            
-                                        <!-- Card header -->
-                                        <div class="accordion__head" role="tab" id="seven">
-                                            <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#accord-seven"
-                                            aria-expanded="false" aria-controls="accord-seven">
-                                            <h5>
-                                                Can I Become a AREAA.org Member If I Don’t Live In The United States?
-    
-                                            </h5>
-                                            <i class="fas fa-angle-down rotate-icon"></i>
-                                            </a>
+                                    <!-- Card body -->
+                                    <div id="accord-six" class="collapse accordion__content" role="tabpanel" aria-labelledby="six"
+                                        data-parent="#accordionEx">
+                                        <div class="card-body">
+                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
+                                        wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
+                                        eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
+                                        assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
+                                        nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
+                                        farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
+                                        labore sustainable VHS.
                                         </div>
-    
-                                        <!-- Card body -->
-                                        <div id="accord-seven" class="collapse accordion__content" role="tabpanel" aria-labelledby="seven"
-                                            data-parent="#accordionEx">
-                                            <div class="card-body">
-                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-                                            wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                                            eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
-                                            assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                                            nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-                                            farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                                            labore sustainable VHS.
-                                            </div>
-                                        </div>
-    
                                     </div>
-                                    <!-- Accordion card -->
 
-                                       <!-- Accordion card -->
-                                       <div class="accordion__item moreBox__item moreBox">
-                                                            
-                                        <!-- Card header -->
-                                        <div class="accordion__head" role="tab" id="eight">
-                                            <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#accord-eight"
-                                            aria-expanded="false" aria-controls="accord-eight">
-                                            <h5>
-                                                What are the benefits of having AREAA as a partner?
+                                </div>
+                                <!-- Accordion card -->
 
-    
-                                            </h5>
-                                            <i class="fas fa-angle-down rotate-icon"></i>
-                                            </a>
-                                        </div>
-    
-                                        <!-- Card body -->
-                                        <div id="accord-eight" class="collapse accordion__content" role="tabpanel" aria-labelledby="eight"
-                                            data-parent="#accordionEx">
-                                            <div class="card-body">
-                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-                                            wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                                            eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
-                                            assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                                            nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-                                            farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                                            labore sustainable VHS.
-                                            </div>
-                                        </div>
-    
+                                <!-- Accordion card -->
+                                <div class="accordion__item moreBox__item moreBox">
+                                                        
+                                    <!-- Card header -->
+                                    <div class="accordion__head" role="tab" id="seven">
+                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#accord-seven"
+                                        aria-expanded="false" aria-controls="accord-seven">
+                                        <h5>
+                                            Can I Become a AREAA.org Member If I Don’t Live In The United States?
+
+                                        </h5>
+                                        <i class="fas fa-angle-down rotate-icon"></i>
+                                        </a>
                                     </div>
-                                    <!-- Accordion card -->
+
+                                    <!-- Card body -->
+                                    <div id="accord-seven" class="collapse accordion__content" role="tabpanel" aria-labelledby="seven"
+                                        data-parent="#accordionEx">
+                                        <div class="card-body">
+                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
+                                        wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
+                                        eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
+                                        assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
+                                        nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
+                                        farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
+                                        labore sustainable VHS.
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!-- Accordion card -->
+
+                                <!-- Accordion card -->
+                                <div class="accordion__item moreBox__item moreBox">
+                                                        
+                                    <!-- Card header -->
+                                    <div class="accordion__head" role="tab" id="eight">
+                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#accord-eight"
+                                        aria-expanded="false" aria-controls="accord-eight">
+                                        <h5>
+                                            What are the benefits of having AREAA as a partner?
+
+
+                                        </h5>
+                                        <i class="fas fa-angle-down rotate-icon"></i>
+                                        </a>
+                                    </div>
+
+                                    <!-- Card body -->
+                                    <div id="accord-eight" class="collapse accordion__content" role="tabpanel" aria-labelledby="eight"
+                                        data-parent="#accordionEx">
+                                        <div class="card-body">
+                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
+                                        wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
+                                        eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
+                                        assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
+                                        nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
+                                        farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
+                                        labore sustainable VHS.
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!-- Accordion card -->
+                            --}}
 
 
 
