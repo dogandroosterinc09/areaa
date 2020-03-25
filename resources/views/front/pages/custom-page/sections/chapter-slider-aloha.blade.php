@@ -12,7 +12,7 @@
                         Aloha Chapter</h1>
                     <h3>Educate. Empower. Expand together</h3>
                     {{-- <img src="{{ url('public/images/chapter-newyork.png') }}"> --}}
-                    <a href="#" class="btn btn--primary">Join AREAA</a>
+                    <a href="{{url('membership-registration')}}" class="btn btn--primary">Join AREAA</a>
                 </div>
             </div>
             <div class="item-right">

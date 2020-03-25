@@ -10,7 +10,7 @@
                 <div class="banner-content-desc">
                     <h1>Welcome to AREAA</h1>
                     <img src="{{ url('public/images/chapter-newyork.png') }}">
-                    <a href="#" class="btn btn--primary">Join AREAA</a>
+                    <a href="{{url('membership-registration')}}" class="btn btn--primary">Join AREAA</a>
                 </div>
             </div>
             <div class="item-right">
