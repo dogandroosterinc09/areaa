@@ -2,7 +2,7 @@
     @include('front.layouts.sections.header')
     {{-- @include('front.pages.custom-page.sections.banner') --}}
 
-
+    
     {{-- need to dynamic this sub  --}}
     <section class="sub-banner">
         <div class="sub-banner__wrapper container-max">
@@ -35,7 +35,7 @@
                     <div class="col-lg-8">
                         <div class="event-details">
                             <div class="event-details__image image-background">
-                                <img src="{{ asset('public/images/our-story-image.jpg') }}" alt="Member Image" class="img-fluid">
+                                <img src="{{ $event->attachment ? optional($event->attachment)->url : asset('public/images/no-image.jpg') }}" alt="Member Image" class="img-fluid">
                             </div>
                             <div class="event-details__description">
                                 <h3>Description</h3>
@@ -53,7 +53,7 @@
                                <div class="container">
                                     <div class="row">
                                         <div class="events-next-preview__image col-sm-3 image-background">
-                                            <img src="{{ asset('public/images/no-image.jpg') }}" alt="Member Image" class="img-fluid">
+                                            <img src="{{ $nextEvent->attachment ? optional($nextEvent->attachment)->url : asset('public/images/no-image.jpg') }}" alt="Member Image" class="img-fluid">
                                         </div>
                                         <div class="events-next-preview__details content-middle col-sm-9">
                                             <div class="events-next-preview__holder">

@@ -52,7 +52,8 @@
                             </div>
                         @endforeach                        
 
-                    <!-- {{-- board-thumbnail --}}
+                    <!-- for reference
+                    {{-- board-thumbnail --}}
                     <div class="board-thumbnail__item col-lg-3 col-md-6">
                     <a href="{{url('board-detail')}}">
                     <div class="board-thumbnail__image image-background">
@@ -222,9 +223,8 @@
                         </div>
                     </a>
                     </div>
-                    {{-- board-thumbnail --}} -->
-
-
+                    {{-- board-thumbnail --}}
+                    -->
 
 
                     </div>
