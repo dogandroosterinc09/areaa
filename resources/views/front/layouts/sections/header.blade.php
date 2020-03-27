@@ -13,7 +13,7 @@
                     <div class="title"><a href="{{url('membership-registration')}}"><span>Join AREAA</span></a></div>
                     <div class="info">
                         <ul>
-                            <li> <a href="tel:619.795.7873"><i class="ic-phone" aria-hidden="true"></i> 619.795.7873</a></li>
+                            <li> <a href="tel:6197957873"><i class="ic-phone" aria-hidden="true"></i> 619.795.7873</a></li>
                             <li> <a href="mailto:contact@areaa.org"><i class="ic-email"></i> contact@areaa.org</a></li>
                             <li>  
                                 <a href="javascript:void(0)" class="dropdown-toggle-menu">
@@ -129,6 +129,12 @@
                 <!-- {{-- MOBILE HEADER --}} -->
                     <div class="mobile-header__wrapper">
 
+                        <div class="login-option">
+                            <a href="{{ route('customer.login') }}" class="">
+                                <i class="fas fa-user"></i>
+                            </a>
+                        </div>
+
                         <div class="mobile-logo">
                             <a href="{{ url('/') }}" class="logo" aria-label="areaa logo">
                                 <img src="{{ asset('public/images/header/header-logo.png') }}" alt="logo">
@@ -143,10 +149,32 @@
                                 <div class="bar3"></div>
                             </div>
                             <div class="mob-nav-menu">
-                                <a href="javascript:void()" class="btn btn--close-menu"> <i class="fa fa-times"
-                                                                                            aria-hidden="true"></i> </a>
+                                <a href="javascript:void()" class="btn btn--close-menu"> 
+                                    <i class="fa fa-times" aria-hidden="true"></i> 
+                                </a>
+
+                                <ul class="contact-icons">
+                                    <li> <a href="tel:6197957873"><i class="fas fa-phone"></i></a></li>
+                                    <li> <a href="mailto:contact@areaa.org"><i class="far fa-envelope"></i></a></li>
+                                </ul>
                                 <ul>
                                     <!-- **************************************** -->
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ url('chapter') }}">Find Chapter<span
+                                                    class="sr-only">(current)</span></a>
+                                        <div class="icon-button icon-button__open">
+                                            <i class="fa fa-plus" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="icon-button icon-button__close">
+                                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                        </div>
+
+                                        <ul class="sub-menu no-mega-sub">
+                                            <li> <a href="{{url('/aloha')}}"> Aloha</a></li>
+                                            <li> <a href="{{url('/atlantametro')}}"> Atlanta Metro</a></li>
+                                            <li> <a href="{{url('/newyorkeast')}}"> New York East</a></li>
+                                        </ul>
+                                    </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="{{ url('/') }}">Home <span
                                                     class="sr-only">(current)</span></a>
@@ -161,9 +189,14 @@
                                         </div>
 
                                         <ul class="sub-menu no-mega-sub">
-                                            <li>
-                                                <a href="#"> Sub menu1</a>
-                                            </li>
+                                                <li><a href="{{url('about-us')}}"> About AREAA </a></li>
+                                                <li><a href="{{url('executive-board')}}"> Executive Board </a></li>
+                                                <li><a href="{{url('delegate-board')}}"> Delegate Board </a></li>
+                                                <li><a href="{{url('our-partners')}}"> Our Partners </a></li>
+                                                <li><a href="{{url('sponsors')}}">Our Sponsors</a></li>
+                                                <li><a href="{{url('FAQ')}}"> FAQ </a></li>
+                                                <li><a href="{{url('photo-gallery')}}"> Photo Gallery </a></li>
+                                                <li><a href="#"> Career </a></li>
                                         </ul>
                                     </li>
 
