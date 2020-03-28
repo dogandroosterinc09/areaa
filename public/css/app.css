@@ -23509,7 +23509,7 @@ _::-webkit-:not(:root:root),
   }
 
   .banner__image-slide .item-left .banner-content-desc {
-    top: inherit;
+    top: inherit !important;
   }
 
   .banner__image-slide .item-left {
