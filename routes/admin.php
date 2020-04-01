@@ -57,6 +57,11 @@ Route::resource('/events', 'EventController');
 
 
 Route::resource('/chapters', 'ChapterController');
+Route::get('/chapters/pages/{id}', 'ChapterController@pages')->name('chapters.pages');
+
 
 
 Route::resource('/benefits', 'BenefitsController');
+
+
+Route::resource('/webinars', 'WebinarsController');

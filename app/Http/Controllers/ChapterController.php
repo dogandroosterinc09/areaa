@@ -71,6 +71,7 @@ class ChapterController extends Controller
 
         $this->validate($request, [
             'name' => 'required',
+            'slug' => 'required',
             'latitude' => 'required',
             'longitude' => 'required',
         ]);
@@ -78,7 +79,8 @@ class ChapterController extends Controller
         $chapter = $this->chapter->create($request->all());
 
         if ($request->hasFile('thumbnail')) {
-            $chapter->attach($request->file('thumbnail'), 'thumbnail');
+            // $chapter->attach($request->file('thumbnail'), 'thumbnail');
+            $chapter->attach($request->file('thumbnail'));
         }
 
         return redirect()->route('admin.chapters.index')->with('flash_message', [
@@ -140,14 +142,14 @@ class ChapterController extends Controller
         $this->validate($request, [
             'name' => 'required|unique:chapters,name,' . $id . ',id,deleted_at,NULL',
             'slug' => 'required|unique:chapters,slug,' . $id . ',id,deleted_at,NULL',
-            'content' => 'required',
+            // 'content' => 'required',
         ]);
 
         $chapter = $this->chapter->findOrFail($id);
 
         $chapter->fill(array_merge($request->all(), [
             'is_active' => $request->has('is_active') ? 1 : 0,
-            'slug' => str_slug($request->input('name'))
+            // 'slug' => str_slug($request->input('name'))
         ]))->save();
 
         return redirect()->route('admin.chapters.index')->with('flash_message', [
@@ -173,5 +175,11 @@ class ChapterController extends Controller
         $chapter->delete();
 
         return response()->json(status()->success('Chapter successfully deleted.', compact('id')));
+    }
+
+    public function pages($id) {
+        $chapter = $this->chapter->findOrFail($id);
+
+        return view('admin.modules.chapter.pages', compact('chapter'));
     }
 }

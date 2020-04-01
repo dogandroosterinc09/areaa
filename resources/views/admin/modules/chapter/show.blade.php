@@ -19,7 +19,7 @@
                         <strong>{{ $chapter->name }}</strong>
                     </h3>
 
-                    <img src="{{ asset($chapter->attachment('thumbnail')->url) }}" alt="{{ $chapter->name }}" class="img-responsive center-block" style="max-width: 100px;">
+                    <img src="{{ $chapter->attachment ? asset($chapter->attachment->url) : '' }}" alt="{{ $chapter->name }}" class="img-responsive center-block" style="max-width: 100px;">
                 </article>
             </div>
         </div>

@@ -110,8 +110,18 @@ class UserController extends Controller
             'email' => 'required|unique:users,email,NULL,id,deleted_at,NULL',
             'password' => 'required|min:8|confirmed',
         ]);
-
-        $user = $this->user->create($request->only('first_name', 'last_name', 'user_name', 'email', 'password'));
+        
+        $role = Role::find($request['roles'])->first();
+        
+        if ($role->name === 'Chapter Admin') {
+            if (!empty($request['chapter'])) {
+                $user = $this->user->create($request->only('first_name', 'last_name', 'user_name', 'email', 'password', 'chapter'));
+            } else {
+                return redirect()->back();
+            }
+        } else {
+            $user = $this->user->create($request->only('first_name', 'last_name', 'user_name', 'email', 'password'));
+        } 
 
         $roles = $request['roles'];
         if (isset($roles)) {
@@ -345,7 +355,7 @@ class UserController extends Controller
                     } else {
                         $users = $this->user
                             ->select('users.*', (DB::raw("CONCAT(`users`.`first_name`, ' ', `users`.`last_name`) as full_name")))
-                            ->role(['Admin', 'Customer'])
+                            ->role(['Admin', 'Customer', 'Chapter Admin'])
                             ->offset($start)
                             ->limit($limit)
                             ->orderBy($order, $dir)

@@ -111,6 +111,18 @@
                         @endif
                     </div>
                 </div>
+                <div id="chapter_wrapper" class="form-group hidden">
+                    <label class="col-md-3 control-label" for="chapter">Chapter</label>
+                    <div class="col-md-9">
+                        <select class="form-control" id="chapter" name="chapter">
+                        @php( $chapters = \App\Models\Chapter::all() )
+                            <option value="">Select Chapter</option>
+                        @foreach($chapters as $chapter)
+                            <option value="{{ $chapter->id }}">{{ $chapter->name }}</option>
+                        @endforeach
+                        </select>
+                    </div>
+                </div>
                 <div class="form-group form-actions">
                     <div class="col-md-9 col-md-offset-3">
                         <a href="{{ route('admin.users.index') }}" class="btn btn-sm btn-warning">Cancel</a>

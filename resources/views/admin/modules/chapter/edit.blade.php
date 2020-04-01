@@ -19,8 +19,9 @@
                 <div class="block-title">
                     <h2><i class="fa fa-pencil"></i> <strong>Edit Chapter "{{$chapter->name}}"</strong></h2>
                 </div>
-                @include('admin.components.attachment', ['label' => 'Thumbnail', 'value' => $chapter->attachment('thumbnail')])
+                @include('admin.components.attachment', ['label' => 'Thumbnail', 'value' => $chapter->attachment ? $chapter->attachment->url : ''])
                 @include('admin.components.input-field', ['label' => 'Name', 'value' => $chapter->name])
+                @include('admin.components.input-field', ['label' => 'Slug', 'value' => $chapter->slug])
                 @include('admin.components.input-field', ['label' => 'Latitude', 'value' => $chapter->latitude])
                 @include('admin.components.input-field', ['label' => 'Longitude', 'value' => $chapter->longitude])
                 <div class="form-group form-actions">

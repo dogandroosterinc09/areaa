@@ -75,7 +75,7 @@ class LoginController extends Controller
             $user = $this->guard()->getLastAttempted();
 
             /* only defined roles can login */
-            if ($user->hasAnyRole(['Super Admin', 'Admin']) && $user->is_active && $this->attemptLogin($request)) {
+            if ($user->hasAnyRole(['Super Admin', 'Admin', 'Chapter Admin']) && $user->is_active && $this->attemptLogin($request)) {
                 $user->last_login = date('Y-m-d H:i:s');
                 $user->save();
                 return $this->sendLoginResponse($request);

@@ -21,6 +21,7 @@
                 </div>
                 @include('admin.components.attachment', ['label' => 'Thumbnail'])
                 @include('admin.components.input-field', ['label' => 'Name'])
+                @include('admin.components.input-field', ['label' => 'Slug'])
                 @include('admin.components.input-field', ['label' => 'Latitude'])
                 @include('admin.components.input-field', ['label' => 'Longitude'])
                 <div class="form-group form-actions">

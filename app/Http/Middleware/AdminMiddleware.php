@@ -31,7 +31,7 @@ class AdminMiddleware
         /*
          * This will determine which roles can access the admin site
          * */
-        if (!auth()->user()->hasAnyRole(['Super Admin', 'Admin'])) {
+        if (!auth()->user()->hasAnyRole(['Super Admin', 'Admin', 'Chapter Admin'])) {
             abort('401', '401');
         }
 

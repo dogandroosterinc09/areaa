@@ -29,4 +29,7 @@ Route::get('/delegate-board/{slug}', 'BoardMemberController@showDelegate')->name
 
 Route::get('/event/{slug}', 'EventController@showEvent')->name('event.show');
 
+Route::get('/{slug}/about', 'ChapterController@showChapterAbout');
+Route::get('/{slug}/events', 'ChapterController@showChapterAbout');
+
 Route::get('/{slug?}', 'PageController')->name('page');

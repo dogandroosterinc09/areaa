@@ -26,9 +26,11 @@
                    class="table table-bordered table-striped table-vcenter">
                 <thead>
                 <tr role="row">
+                @if(auth()->user()->getRoleNames()->first() !== 'Chapter Admin')
                     <th class="text-center">
                         ID
                     </th>
+                @endif
                     <th class="text-left">
                         Name
                     </th>
@@ -44,6 +46,15 @@
                 </tr>
                 </thead>
                 <tbody>
+                @if(auth()->user()->getRoleNames()->first() === 'Chapter Admin')
+                
+                @php( $chapter = \App\Models\Chapter::find(auth()->user()->chapter) )                
+                    <tr>
+                        <td>Home</td>
+                        <td><a href="{{ url($chapter->slug) }}" target="_blank">{{ url($chapter->slug) }}</a></td>
+                        <td></td>
+                    </tr>
+                @else
                 @foreach($pages as $page)
                     <tr data-page-template-id="{{$page->id}}">
                         <td class="text-center">{{ $page->id }}</td>
@@ -73,6 +84,8 @@
                         </td>
                     </tr>
                 @endforeach
+                @endif
+                
                 </tbody>
             </table>
         </div>

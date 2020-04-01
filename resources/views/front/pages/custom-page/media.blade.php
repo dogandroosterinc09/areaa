@@ -57,7 +57,31 @@
                                 <div class="webinars container">
                                     <div class="webinars__list row moreWebinar">
                                         
+                                        @php( $webinars = \App\Models\Webinars::all() )
+
+                                        @forelse($webinars as $webinar)
                                         <div class="col-lg-4 col-md-4 moreWebinar__item moreWebinar">
+
+                                            {{-- media-thumbnail --}}
+                                            <div class="media-thumbnail">
+                                                <div class="media-thumbnail__featured">
+                                                    <iframe width="560" height="315" src="{{$webinar->link}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                </div>
+                                                <div class="media-thumbnail__title">
+                                                    <h3>{{ $webinar->title }}</h3>
+                                                </div>
+                                                <div class="media-thumbnail__button">
+                                                    <h4>Download Webinar Assets: </h4>
+                                                    <a href="#" class="btn btn--primary">Presentation Slides </a>
+                                                </div>
+                                            </div>
+                                             {{-- media-thumbnail --}}
+
+                                        </div>
+                                        @empty
+                                        @endforelse
+
+                                        <!-- <div class="col-lg-4 col-md-4 moreWebinar__item moreWebinar">
 
                                             {{-- media-thumbnail --}}
                                             <div class="media-thumbnail">
@@ -210,7 +234,7 @@
                                                 </div>
                                             </div>
                                              {{-- media-thumbnail --}}
-                                        </div>
+                                        </div> -->
 
 
                                      

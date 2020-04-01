@@ -35,6 +35,7 @@ class User extends Authenticatable
         'last_name',
         'phone',
         'profile_image',
+        'chapter',
         'is_active',
     ];
 
@@ -69,5 +70,5 @@ class User extends Authenticatable
     {
         $user = $this;
         $this->notify(new CustomerResetPassword($token, $user));
-    }
+    }    
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateChaptersTable extends Migration
+class CreateWebinarsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,12 @@ class CreateChaptersTable extends Migration
      */
     public function up()
     {
-        Schema::create('chapters', function (Blueprint $table) {
+        Schema::create('webinars', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('thumbnail');
-            $table->string('name');
-            $table->string('slug');
-            $table->float('latitude')->default(0);
-            $table->float('longitude')->default(0);
-            $table->timestamps();
+            $table->string('link');
+            $table->string('title');
             $table->softDeletes();
+            $table->timestamps();
         });
     }
 
@@ -32,6 +29,6 @@ class CreateChaptersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('chapters');
+        Schema::dropIfExists('webinars');
     }
 }
