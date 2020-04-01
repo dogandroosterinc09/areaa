@@ -23625,6 +23625,35 @@ _::-webkit-:not(:root:root),
   .partnership__left {
     padding-left: 2%;
   }
+
+  section.chapters .btn-wrap {
+    position: inherit;
+    left: 0;
+    bottom: 0;
+    top: inherit;
+  }
+
+  section.chapters .map-content {
+    position: inherit;
+    height: auto !important;
+    left: inherit;
+    min-height: inherit;
+    padding: 0 !important;
+  }
+
+  section.partnership::after {
+    display: none;
+  }
+
+  .big-advertisement {
+    max-width: 80%;
+    width: 80%;
+    height: auto;
+  }
+
+  .big-advertisement img {
+    width: 100%;
+  }
 }
 @media only screen and (max-width: 1100px) {
   section h2 {
@@ -23634,6 +23663,14 @@ _::-webkit-:not(:root:root),
   section.become-member .content-text {
     width: 100%;
     margin: 0;
+  }
+
+  section .sponsors .sponsor-logo {
+    position: inherit;
+    width: 100%;
+    border-radius: 0;
+    margin: 0;
+    top: inherit;
   }
 }
 @media only screen and (max-width: 1024px) {
