@@ -46,7 +46,7 @@
                 @include('admin.components.input-field', ['label' => 'Button1 Link', 'field' => 'sponsors_button1_link', 'value' => $chapter_home->sponsors_button1_link])
                 <div class="form-group form-actions">
                     <div class="col-md-9 col-md-offset-3">
-                        <a href="{{ route('admin.chapter_homes.index') }}" class="btn btn-sm btn-warning">Cancel</a>
+                        <a href="{{ route('admin.chapters.pages', $chapter_home->chapter_id) }}" class="btn btn-sm btn-warning">Cancel</a>
                         <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-floppy-o"></i> Save
                         </button>
                     </div>
