@@ -144,8 +144,8 @@
 
 
 
-        {{-- @elseif ($page['slug'] == 'atlantametro')
-            @include('front.pages.custom-page-chapters.atlantametro') --}}
+        @elseif ($page['slug'] == 'atlantametro')
+            @include('front.pages.custom-page-chapters.atlantametro')
         
         @elseif ($page['slug'] == 'atlantametro-login')
             @include('front.pages.custom-page-chapters.atlantametro-login')
