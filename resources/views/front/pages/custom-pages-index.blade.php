@@ -176,8 +176,7 @@
         @endif
     @else
         @if ( \App\Models\Chapter::where('slug', $chapter['slug']) )
-            @include('front.pages.custom-page.chapter-homepage')
-            {{$chapter['slug']}}
+            @include('front.pages.custom-page.chapter-homepage')            
         @else
             @include('front.pages.custom-page.home')
         @endif
