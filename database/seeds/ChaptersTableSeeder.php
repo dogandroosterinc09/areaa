@@ -25,8 +25,8 @@ class ChaptersTableSeeder extends Seeder
                 'slug' => 'aloha',
                 'latitude' => 0.0,
                 'longitude' => 0.0,
-                'created_at' => '2020-03-31 22:42:47',
-                'updated_at' => '2020-03-31 22:42:47',
+                'created_at' => '2020-04-01 21:57:22',
+                'updated_at' => '2020-04-01 21:57:22',
                 'deleted_at' => NULL,
             ),
         ));

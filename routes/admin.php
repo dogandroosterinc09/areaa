@@ -65,3 +65,6 @@ Route::resource('/benefits', 'BenefitsController');
 
 
 Route::resource('/webinars', 'WebinarsController');
+
+Route::get('/chapters/pages/{id}/home', 'ChapterHomeController@editHome')->name('chapters.pages.edit.home');
+Route::resource('/chapter_homes', 'ChapterHomeController');

@@ -107,14 +107,23 @@
                         </div>
                     </div>
                 </div>
+                
                 <div class="form-group{{ $errors->has('roles') ? ' has-error' : '' }}">
                     <label class="col-md-3 control-label" for="roles">Assign Roles</label>
                     <div class="col-md-9">
                         @if(!$roles->isEmpty())
                             <h4></h4>
                             @foreach ($roles as $role)
-                                {{ Form::radio('roles[]', $role->id, ($user->roles->contains('id', $role->id))) }}
-                                {{ Form::label($role->name, ucfirst($role->name)) }}<br>
+                                @if ($user->roles->pluck('name')[0] !== 'Chapter Admin')
+                                    @if ($role->name === 'Chapter Admin') @continue @endif
+                                    {{ Form::radio('roles[]', $role->id, ($user->roles->contains('id', $role->id))) }}
+                                    {{ Form::label($role->name, ucfirst($role->name)) }}<br>
+                                
+                                @else
+                                    @if ($role->id !== $user->roles->pluck('id')[0]) @continue @endif
+                                    {{ Form::radio('roles[]', $role->id, ($user->roles->contains('id', $role->id))) }}
+                                    {{ Form::label($role->name, ucfirst($role->name)) }}<br>
+                                @endif
                             @endforeach
                         @endif
                         @if($errors->has('roles'))
@@ -122,6 +131,7 @@
                         @endif
                     </div>
                 </div>
+                {{-- @endif --}}
                 <div class="form-group form-actions">
                     <div class="col-md-9 col-md-offset-3">
                         <a href="{{ route('admin.users.index') }}" class="btn btn-sm btn-warning">Cancel</a>

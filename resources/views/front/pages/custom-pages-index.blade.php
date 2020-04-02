@@ -90,8 +90,8 @@
 
 
 
-        @elseif ($page['slug'] == 'aloha')
-            @include('front.pages.custom-page-chapters.aloha')
+        {{-- @elseif ($page['slug'] == 'aloha')
+            @include('front.pages.custom-page-chapters.aloha') --}}
 
         @elseif ($page['slug'] == 'aloha-login')
             @include('front.pages.custom-page-chapters.aloha-login')
@@ -144,8 +144,8 @@
 
 
 
-        @elseif ($page['slug'] == 'atlantametro')
-            @include('front.pages.custom-page-chapters.atlantametro')
+        {{-- @elseif ($page['slug'] == 'atlantametro')
+            @include('front.pages.custom-page-chapters.atlantametro') --}}
         
         @elseif ($page['slug'] == 'atlantametro-login')
             @include('front.pages.custom-page-chapters.atlantametro-login')
@@ -168,12 +168,18 @@
         @elseif ($page['slug'] == 'atlantametro-aboutus')
             @include('front.pages.custom-page-chapters.atlantametro-aboutus')
 
-
-
+        @elseif ( \App\Models\Chapter::where('slug', $page['slug']) )
+            @include('front.pages.custom-page.chapter-homepage')
+            {{$page['slug']}}
         @else
             @include('front.pages.custom-page.default-page')
         @endif
     @else
-        @include('front.pages.custom-page.home')
+        @if ( \App\Models\Chapter::where('slug', $chapter['slug']) )
+            @include('front.pages.custom-page.chapter-homepage')
+            {{$chapter['slug']}}
+        @else
+            @include('front.pages.custom-page.home')
+        @endif
     @endif
 @endsection

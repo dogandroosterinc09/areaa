@@ -426,7 +426,7 @@ class PagesTableSeeder extends Seeder
             array (
                 'id' => 28,
                 'name' => 'aloha',
-                'slug' => 'aloha',
+                'slug' => 'aloha1',
                 'content' => '',
                 'banner_image' => '',
                 'banner_description' => '',

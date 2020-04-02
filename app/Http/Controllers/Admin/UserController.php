@@ -109,15 +109,20 @@ class UserController extends Controller
             'user_name' => 'required|unique:users,user_name,NULL,id,deleted_at,NULL',
             'email' => 'required|unique:users,email,NULL,id,deleted_at,NULL',
             'password' => 'required|min:8|confirmed',
-        ]);
+            'chapter_id' => 'unique:users,chapter_id',
+            'roles' => 'required'
+        ], [
+            'chapter_id.unique' => 'An admin has already been assigned for this chapter.'
+        ]
+        );
         
         $role = Role::find($request['roles'])->first();
         
         if ($role->name === 'Chapter Admin') {
-            if (!empty($request['chapter'])) {
-                $user = $this->user->create($request->only('first_name', 'last_name', 'user_name', 'email', 'password', 'chapter'));
+            if (!empty($request['chapter_id'])) {
+                $user = $this->user->create($request->only('first_name', 'last_name', 'user_name', 'email', 'password', 'chapter_id'));
             } else {
-                return redirect()->back();
+                return redirect()->back()->withInput()->withErrors(['chapter_id' => 'Chapter is required.']);
             }
         } else {
             $user = $this->user->create($request->only('first_name', 'last_name', 'user_name', 'email', 'password'));

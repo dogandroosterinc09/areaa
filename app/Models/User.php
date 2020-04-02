@@ -35,7 +35,7 @@ class User extends Authenticatable
         'last_name',
         'phone',
         'profile_image',
-        'chapter',
+        'chapter_id',
         'is_active',
     ];
 
@@ -70,5 +70,11 @@ class User extends Authenticatable
     {
         $user = $this;
         $this->notify(new CustomerResetPassword($token, $user));
-    }    
+    }
+    
+    public function getChapterAttribute()
+    {
+        $chapter = \App\Models\Chapter::select('name')->where('id',$this->attributes['chapter_id'])->get()->first();
+        return $chapter->name;
+    }
 }

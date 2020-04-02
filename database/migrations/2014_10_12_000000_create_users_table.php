@@ -24,7 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('last_name', 25);
             $table->string('phone', 250);
             $table->string('profile_image', 250);
-            $table->integer('chapter');
+            $table->integer('chapter_id')->nullable();
             $table->tinyInteger('is_active')->default(1);
             $table->timestamp('last_login')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->string('token', 255)->nullable();

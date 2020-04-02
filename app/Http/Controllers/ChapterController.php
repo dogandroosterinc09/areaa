@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Models\Chapter;
+use App\Models\ChapterHome;
 use App\Http\Controllers\Controller;
 
 class ChapterController extends Controller
@@ -14,15 +15,17 @@ class ChapterController extends Controller
      * @var Chapter
      */
     private $chapter;
+    private $chapter_home;
 
     /**
      * Create a new controller instance.
      *
      * @param Chapter $chapter
      */
-    public function __construct(Chapter $chapter)
+    public function __construct(Chapter $chapter, ChapterHome $chapter_home)
     {
         $this->chapter = $chapter;
+        $this->chapter_home = $chapter_home;
     }
 
     /**
@@ -38,6 +41,8 @@ class ChapterController extends Controller
         }
 
         $chapters = $this->chapter->get();
+
+
 
         return view('admin.modules.chapter.index', compact('chapters'));
     }
@@ -77,6 +82,9 @@ class ChapterController extends Controller
         ]);
 
         $chapter = $this->chapter->create($request->all());
+        $chapter_home = $this->chapter_home->create([
+            'chapter_id' => $chapter->id
+        ]);
 
         if ($request->hasFile('thumbnail')) {
             // $chapter->attach($request->file('thumbnail'), 'thumbnail');

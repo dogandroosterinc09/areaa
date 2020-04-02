@@ -107,6 +107,13 @@ class PageController extends Controller
             $page = $this->pageRepository->getActivePageBySlug($slug);
             /* if not in pages */
             if (empty($page)) {
+                
+                //Check if chapter page
+                $chapter = \App\Models\Chapter::where('slug', $slug)->get()->first();                
+                if ($chapter) {
+                    return view('front.pages.custom-pages-index', compact('chapter'));
+                }
+
                 abort('404', '404');
             } else {
                 $seo_meta = $this->getSeoMeta($page);

@@ -32,7 +32,7 @@
                     <td class="text-left">Home</td>
                     <td class="text-left"><a href="{{ url($chapter->slug) }}" target="_blank">{{ url($chapter->slug) }}</a></td>
                     <td class="text-center">
-                        <a href="#"
+                        <a href="{{ route('admin.chapters.pages.edit.home', $chapter->id) }}"
                                        data-toggle="tooltip"
                                        title=""
                                        class="btn btn-default"

@@ -1,13 +1,11 @@
-<section class="page-chapter page-chapter--homepage page-chapter-aloha page-chapter-aloha--homepage">
-    @include('front.layouts.sections.chapter.header_chapter')
+<section class="page-chapter page-chapter--homepage">
+    @include('front.layouts.sections.header')
 
-    @include('front.pages.custom-page.sections.chapter-slider-aloha')
+    @include('front.pages.custom-page.sections.chapter-slider')
 
     <main class="main-content">
-        @php( $chapter = \App\Models\Chapter::where('slug',$chapter['slug'])->get()->first() )
-        @php( $chapter_homes = \App\Models\ChapterHome::where('chapter_id', $chapter->id)->get()->first() )
-        
-        {{-- @include('front.pages.custom-page.sections.chapter-menu') --}}
+
+        @include('front.pages.custom-page.sections.chapter-menu')
 
         <section>
             <div class="container-max">
@@ -15,7 +13,7 @@
 
                         <div class="heading-button">
                             <h2> My Upcoming Events </h2>
-                            <a href="{{url('aloha-events')}}" class="btn btn--view-all"> View all</a>
+                            <a href="#" class="btn btn--view-all"> View all</a>
                         </div>
                         
                         <div class="chapter-events-upcoming">
@@ -23,7 +21,7 @@
                             <div class="chapter-events-upcoming__box">
                                 <div class="row">
                                     <div class="col-md-3 chapter-events-upcoming__image">
-                                        <a href="{{url('aloha-events')}}">
+                                        <a href="#">
                                             <img src="{{ url('public/images/event-preview.jpg') }}" alt="event title" class="img-fluid">
                                         </a>
                                     </div>
@@ -35,7 +33,7 @@
                                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco lab.
                                                  oris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
                                             </div>
-                                             <a href="{{url('aloha-events')}}" class="btn btn--primary"> Read More Details <i class="fas fa-arrow-right"></i> </a>
+                                             <a href="#" class="btn btn--primary"> Read More Details <i class="fas fa-arrow-right"></i> </a>
                                         </div>
                                     </div>
                                 </div>
@@ -63,11 +61,11 @@
                             <video id="video" width="100%" height="100%" poster="{{ section('Who We Are.data.first.cover_image') }}" loop muted controlsList="nodownload" webkitallowfullscreen mozallowfullscreen allowfullscreen>
                                 <!-- MP4 for Safari, IE9, iPhone, iPad, Android, and Windows Phone 7 -->
                                 <source type="video/mp4" src="{{ section('Who We Are.data.first.video') }}" />
-                                {{--
+                                <!--
                                 <source type="video/mp4" src="{{ url('public/images/AREAACentralNewJersey.mp4') }}" />
                                 <source type="video/ogg" src="{{ url('public/images/AREAACentralNewJersey.ogg') }}" />
                                 <source type="video/webm" src="{{ url('public/images/AREAACentralNewJersey.webm') }}" />
-                                --}}
+                                -->
                                 <!-- Flash fallback for non-HTML5 browsers without JavaScript -->
                                 <object width="100%" height="400" type="application/x-shockwave-flash" data="flashmediaelement.swf">
                                     <param name="movie" value="flashmediaelement.swf" />
@@ -82,17 +80,13 @@
                     <div class="col-md-5 video-masking__floater">
 
                         <div class="video-masking__content">
-                            <h2>{{ $chapter_homes->who_we_are_title }}</h2>
+                            <h2>{{ section('Who We Are.data.first.title') }}</h2>
                             <div class="video-masking__content--push">
-                                {!! $chapter_homes->who_we_are_content !!}                                
+                                {!! section('Who We Are.data.first.content') !!}                                
 
                                 <div class="btn-group">
-                                    @if($chapter_homes->who_we_are_button1_text)
-                                        <a href="{{ url($chapter_homes->who_we_are_button1_link) }}" class="btn btn btn--secondary">{{ $chapter_homes->who_we_are_button1_text }}</a>
-                                    @endif
-                                    @if($chapter_homes->who_we_are_button2_text)
-                                        <a href="{{ url($chapter_homes->who_we_are_button2_link) }}" class="btn btn btn--primary">{{ $chapter_homes->who_we_are_button2_text }}</a>
-                                    @endif
+                                    <a href="{{ section('Who We Are.data.first.btn1_link') }}" class="btn btn btn--secondary">{{ section('Who We Are.data.first.btn1_text') }}</a>
+                                    <a href="{{ section('Who We Are.data.first.btn2_link') }}" class="btn btn btn--primary">{{ section('Who We Are.data.first.btn2_text') }}</a>
                                 </div>
                             </div>
                         </div>
@@ -112,8 +106,8 @@
 
                         <div class="col-md-6">
 
-                                <h2>{{ $chapter_homes->member_benefits_title }}</h2>
-                                <p>{{ $chapter_homes->member_benefits_content }}</p>
+                                <h2>{{ section('Member Benefits.data.first.title') }}</h2>
+                                <p>{{ section('Member Benefits.data.first.content') }}</p>
 
                                 {{-- comment insert class on UL  --}}
                                 {{-- use class bullet-style only if you want one col  --}}
@@ -127,12 +121,8 @@
                                 </ul>
 
                                 <div class="btn-group">
-                                @if($chapter_homes->member_benefits_button1_text)
-                                    <a href="{{ url($chapter_homes->member_benefits_button1_link) }}" class="btn btn btn--secondary">{{ $chapter_homes->member_benefits_button1_text }}</a>
-                                    @endif
-                                @if($chapter_homes->member_benefits_button2_text)
-                                    <a href="{{ url($chapter_homes->member_benefits_button2_link) }}" class="btn btn btn--primary">{{ $chapter_homes->member_benefits_button2_text }}</a>
-                                    @endif
+                                    <a href="{{ section('Member Benefits.data.first.btn1_link') }}" class="btn btn btn--secondary">{{ section('Member Benefits.data.first.btn1_text') }}</a>
+                                    <a href="{{ section('Member Benefits.data.first.btn2_link') }}" class="btn btn btn--primary">{{ section('Member Benefits.data.first.btn2_text') }}</a>
                                </div>
 
                         </div>
@@ -172,13 +162,11 @@
 
                     <div class="col-md-4">
                             <div class="sponsors__content">
-                                <h2>{{ $chapter_homes->sponsors_title }}</h2>
-                                <p>{{ $chapter_homes->sponsors_content }}</p>
+                                <h2>{{ section('Sponsors.data.first.title') }}</h2>
+                                <p>{{ section('Sponsors.data.first.content') }}</p>
     
                                 <div class="btn-group">
-                                @if($chapter_homes->sponsors_button1_text)
-                                        <a href="{{ url($chapter_homes->sponsors_button1_link) }}" class="btn btn btn--primary">{{ $chapter_homes->sponsors_button1_text }}</a>
-                                @endif
+                                        <a href="{{ section('Sponsors.data.first.btn_link') }}" class="btn btn btn--primary">{{ section('Sponsors.data.first.btn_text') }}</a>
                                 </div>
                             </div>
                     </div>
@@ -205,7 +193,83 @@
                                             <img src="{{ $data->image }}" alt="{{ $data->alt_text }}" class="img-fluid">
                                         </div>
                                     </div>
-                                    @endforeach                                    
+                                    @endforeach
+                                    <!-- <div class="col-md-4">
+                                        <div class="sponsor-thumbnail">
+                                            <div class="sponsor-thumbnail__badge sponsor-thumbnail__badge--ruby">  </div>
+                                            <img src="{{ url('public/images/sponsor1.jpg') }}" alt="chapter title" class="img-fluid">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="sponsor-thumbnail">
+                                            <div class="sponsor-thumbnail__badge sponsor-thumbnail__badge--emerald">  </div>
+                                            <img src="{{ url('public/images/sponsor2.jpg') }}" alt="chapter title" class="img-fluid">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="sponsor-thumbnail">
+                                            <div class="sponsor-thumbnail__badge sponsor-thumbnail__badge--diamond">  </div>
+                                            <img src="{{ url('public/images/sponsor3.jpg') }}" alt="chapter title" class="img-fluid">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="sponsor-thumbnail">
+                                            <div class="sponsor-thumbnail__badge sponsor-thumbnail__badge--opal">  </div>
+                                            <img src="{{ url('public/images/sponsor4.jpg') }}" alt="chapter title" class="img-fluid">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="sponsor-thumbnail">
+                                            <div class="sponsor-thumbnail__badge sponsor-thumbnail__badge--pearl">  </div>
+                                            <img src="{{ url('public/images/sponsor5.jpg') }}" alt="chapter title" class="img-fluid">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="sponsor-thumbnail">
+                                            <div class="sponsor-thumbnail__badge sponsor-thumbnail__badge--diamond">  </div>
+                                            <img src="{{ url('public/images/sponsor6.jpg') }}" alt="chapter title" class="img-fluid">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="sponsor-thumbnail">
+                                            <div class="sponsor-thumbnail__badge sponsor-thumbnail__badge--opal">  </div>
+                                            <img src="{{ url('public/images/sponsor7.jpg') }}" alt="chapter title" class="img-fluid">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="sponsor-thumbnail">
+                                            <div class="sponsor-thumbnail__badge sponsor-thumbnail__badge--pearl">  </div>
+                                            <img src="{{ url('public/images/sponsor8.jpg') }}" alt="chapter title" class="img-fluid">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="sponsor-thumbnail">
+                                            <div class="sponsor-thumbnail__badge sponsor-thumbnail__badge--diamond">  </div>
+                                            <img src="{{ url('public/images/sponsor9.jpg') }}" alt="chapter title" class="img-fluid">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="sponsor-thumbnail">
+                                            <div class="sponsor-thumbnail__badge sponsor-thumbnail__badge--opal">  </div>
+                                            <img src="{{ url('public/images/sponsor10.jpg') }}" alt="chapter title" class="img-fluid">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="sponsor-thumbnail">
+                                            <div class="sponsor-thumbnail__badge sponsor-thumbnail__badge--pearl">  </div>
+                                            <img src="{{ url('public/images/sponsor11.jpg') }}" alt="chapter title" class="img-fluid">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="sponsor-thumbnail">
+                                            <div class="sponsor-thumbnail__badge sponsor-thumbnail__badge--diamond">  </div>
+                                            <img src="{{ url('public/images/sponsor12.jpg') }}" alt="chapter title" class="img-fluid">
+                                        </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>
@@ -221,5 +285,5 @@
          
 
     </main>
-    @include('front.layouts.sections.chapter.footer_chapter')
+    @include('front.layouts.sections.footer')
 </section>

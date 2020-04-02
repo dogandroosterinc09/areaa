@@ -102,7 +102,7 @@
                         @if(!$roles->isEmpty())
                             <h4></h4>
                             @foreach ($roles as $role)
-                                {{ Form::radio('roles[]', $role->id) }}
+                                {{ Form::radio('roles[]', $role->id, ($role->id == old('roles')[0])) }}
                                 {{ Form::label($role->name, ucfirst($role->name)) }}<br>
                             @endforeach
                         @endif
@@ -111,18 +111,22 @@
                         @endif
                     </div>
                 </div>
-                <div id="chapter_wrapper" class="form-group hidden">
-                    <label class="col-md-3 control-label" for="chapter">Chapter</label>
+                <div id="chapter_wrapper" class="form-group {{ $errors->has('chapter_id') ? ' has-error' : ' hidden' }}">
+                    <label class="col-md-3 control-label" for="chapter_id">Chapter</label>
                     <div class="col-md-9">
-                        <select class="form-control" id="chapter" name="chapter">
+                        <select class="form-control" id="chapter_id" name="chapter_id">
                         @php( $chapters = \App\Models\Chapter::all() )
                             <option value="">Select Chapter</option>
                         @foreach($chapters as $chapter)
-                            <option value="{{ $chapter->id }}">{{ $chapter->name }}</option>
+                            <option {{ old('chapter_id') == $chapter->id ? 'selected' : '' }} value="{{ $chapter->id }}">{{ $chapter->name }}</option>
                         @endforeach
                         </select>
+                        @if($errors->has('chapter_id'))
+                            <span class="help-block animation-slideDown">{{ $errors->first('chapter_id') }}</span>
+                        @endif                        
                     </div>
                 </div>
+                
                 <div class="form-group form-actions">
                     <div class="col-md-9 col-md-offset-3">
                         <a href="{{ route('admin.users.index') }}" class="btn btn-sm btn-warning">Cancel</a>

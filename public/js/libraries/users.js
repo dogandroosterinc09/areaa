@@ -476,9 +476,17 @@
 $(window).on('load', function () {
     platform.user.initialize();
 
+    $('input[name="roles[]"]').each(function(){
+        if ($(this).is(':checked') && $(this).next().text() === 'Chapter Admin') {
+            $('#chapter_wrapper').removeClass('hidden');
+        } else {
+            $('#chapter_wrapper').addClass('hidden');
+        }
+    });
+
     //Show/Hide Chapters Field
     $('input[name="roles[]"]').on('change', function() {
-        if ($(this).next().text() === 'Chapter Admin') {
+        if ($(this).is(':checked') && $(this).next().text() === 'Chapter Admin') {
             $('#chapter_wrapper').removeClass('hidden');
         } else {
             $('#chapter_wrapper').addClass('hidden');

@@ -36,6 +36,12 @@
                         <td class="text-right" style="width: 50%;"><strong>Roles</strong></td>
                         <td>{{ $user->roles()->pluck('name')->implode(', ') }}</td>
                     </tr>
+                    @if($user->chapter_id != 0 && !is_null($user->chapter_id))
+                    <tr>
+                        <td class="text-right" style="width: 50%;"><strong>Chapter</strong></td>
+                        <td>{{ $user->chapter }}</td>
+                    </tr>
+                    @endif
                     <tr>
                         <td class="text-right"><strong>Username</strong></td>
                         <td>{{ $user->user_name }}</td>

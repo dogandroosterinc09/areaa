@@ -48,7 +48,7 @@
                 <tbody>
                 @if(auth()->user()->getRoleNames()->first() === 'Chapter Admin')
                 
-                @php( $chapter = \App\Models\Chapter::find(auth()->user()->chapter) )                
+                @php( $chapter = \App\Models\Chapter::find(auth()->user()->chapter_id) )                
                     <tr>
                         <td>Home</td>
                         <td><a href="{{ url($chapter->slug) }}" target="_blank">{{ url($chapter->slug) }}</a></td>
