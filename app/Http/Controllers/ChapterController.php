@@ -186,6 +186,10 @@ class ChapterController extends Controller
     }
 
     public function pages($id) {
+        if (!auth()->user()->hasPermissionTo('Read Chapter Page')) {
+            abort('401', '401');
+        }
+
         $chapter = $this->chapter->findOrFail($id);
 
         return view('admin.modules.chapter.pages', compact('chapter'));

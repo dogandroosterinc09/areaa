@@ -2,13 +2,14 @@
 
 namespace App\Models;
 
+use App\Http\Traits\Attachments\HasAttachment;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 
 class ChapterHome extends Model
 {
-    use SoftDeletes;
+    use SoftDeletes, HasAttachment;
 
     /**
      * The attributes that are mass assignable.
@@ -36,6 +37,7 @@ class ChapterHome extends Model
         'member_benefits_button1_link',
         'member_benefits_button2_text',
         'member_benefits_button2_link',
+        'member_benefits_items',
 
         'sponsors_title',
         'sponsors_content',

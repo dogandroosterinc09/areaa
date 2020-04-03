@@ -52,7 +52,15 @@
                     <tr>
                         <td>Home</td>
                         <td><a href="{{ url($chapter->slug) }}" target="_blank">{{ url($chapter->slug) }}</a></td>
-                        <td></td>
+                        <td class="text-center">
+                            <div class="btn-group btn-group-xs">
+                            <a href="{{ route('admin.chapters.pages.edit.home', $chapter->id) }}"
+                                       data-toggle="tooltip"
+                                       title=""
+                                       class="btn btn-default"
+                                       data-original-title="Edit"><i class="fa fa-pencil"></i></a>
+                            </div>
+                        </td>
                     </tr>
                 @else
                 @foreach($pages as $page)

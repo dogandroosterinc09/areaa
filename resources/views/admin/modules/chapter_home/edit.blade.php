@@ -2,8 +2,12 @@
 
 @section('content')
     <ul class="breadcrumb breadcrumb-top">
+        @if(auth()->user()->roles->first()->name !== 'Chapter Admin')
         <li><a href="{{ route('admin.chapters.index') }}">Chapter</a></li>
         <li><a href="{{ route('admin.chapters.pages', $chapter_home->chapter_id ) }}">Pages</a></li>
+        @else
+        <li><a href="{{ route('admin.pages.index') }}">Pages</a></li>
+        @endif
         <li><span href="javascript:void(0)">Edit Chapter Home</span></li>
     </ul>
     <div class="row">
@@ -31,6 +35,19 @@
                 @include('admin.components.input-field', ['label' => 'Button2 Link', 'field' => 'who_we_are_button2_link', 'value' => $chapter_home->who_we_are_button2_link])
 
                 @include('admin.components.heading', ['text' => 'Member Benefits'])
+                @include('admin.components.attachment', ['label' => 'Featured Image', 'field' => 'member_benefits_featured_image'])
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="form-group">
+                            <div class="col-md-10 col-md-offset-2">
+                                <a href="{{ $chapter_home->attachment->url }}" class="zoom img-thumbnail" style="cursor: default !important;" data-toggle="lightbox-image">
+                                    <img src="{{ $chapter_home->attachment->url }}" alt="" class="img-responsive center-block" style="max-width: 100px;">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 @include('admin.components.input-field', ['label' => 'Title', 'field' => 'member_benefits_title', 'value' => $chapter_home->member_benefits_title])
                 @include('admin.components.textarea', ['label' => 'Content', 'field' => 'member_benefits_content', 'value' => $chapter_home->member_benefits_content])
                 @include('admin.components.input-field', ['label' => 'Button1 Text', 'field' => 'member_benefits_button1_text', 'value' => $chapter_home->member_benefits_button1_text])
@@ -38,6 +55,12 @@
                 @include('admin.components.input-field', ['label' => 'Button2 Text', 'field' => 'member_benefits_button2_text', 'value' => $chapter_home->member_benefits_button2_text])
                 @include('admin.components.input-field', ['label' => 'Button2 Link', 'field' => 'member_benefits_button2_link', 'value' => $chapter_home->member_benefits_button2_link])
 
+                @include('admin.components.heading', ['text' => 'Member Benefits Items'])
+                
+                @php($items = json_decode($chapter_home->member_benefits_items))
+                @for($counter = 0; $counter < 3; $counter++)
+                    @include('admin.components.editor', ['label' => 'Content', 'field' => 'member_benefits_items[]', 'value' => $items[$counter]])
+                @endfor
 
                 @include('admin.components.heading', ['text' => 'Sponsors'])
                 @include('admin.components.input-field', ['label' => 'Title', 'field' => 'sponsors_title', 'value' => $chapter_home->sponsors_title])
@@ -46,7 +69,7 @@
                 @include('admin.components.input-field', ['label' => 'Button1 Link', 'field' => 'sponsors_button1_link', 'value' => $chapter_home->sponsors_button1_link])
                 <div class="form-group form-actions">
                     <div class="col-md-9 col-md-offset-3">
-                        <a href="{{ route('admin.chapters.pages', $chapter_home->chapter_id) }}" class="btn btn-sm btn-warning">Cancel</a>
+                        <a href="{{ (auth()->user()->roles->first()->name === 'Chapter Admin') ? route('admin.pages.index') : route('admin.chapters.pages', $chapter_home->chapter_id) }}" class="btn btn-sm btn-warning">Cancel</a>
                         <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-floppy-o"></i> Save
                         </button>
                     </div>

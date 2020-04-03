@@ -5,8 +5,8 @@
         <div class="row">
             <div class="col-md-3 footer__item">
                 <div class="footer-logo">
-                    <a href="{{ url('aloha') }}">
-                        <img src="{{ asset('public/images/logos/areaa_aloha.png') }}" alt="logo">
+                    <a href="{{ url($chapter['slug']) }}">
+                        <img src="{{ asset('public/images/logos/areaa_'.$chapter['slug'].'.png') }}" alt="logo">
                     </a>
                 </div>
               
@@ -26,12 +26,12 @@
                         <article>
                             <h4>Menu</h4>
                                 <ul>
-                                    <li><a href="{{ url('aloha') }}">Home</a></li>
-                                    <li><a href="{{ url('aloha-aboutus') }}">About us</a></li>
-                                    <li><a href="{{ url('aloha-events') }}">Events</a></li>
-                                    <li><a href="{{ url('aloha-leadership') }}">Leadership</a></li>
-                                    <li><a href="{{ url('aloha-contactus') }}">Contact us </a></li>
-                                    <li><a href="{{ url('aloha-login') }}">Log in</a></li>
+                                    <li><a href="{{ url($chapter['slug']) }}">Home</a></li>
+                                    <li><a href="{{ url($chapter['slug'].'-aboutus') }}">About us</a></li>
+                                    <li><a href="{{ url($chapter['slug'].'-events') }}">Events</a></li>
+                                    <li><a href="{{ url($chapter['slug'].'-leadership') }}">Leadership</a></li>
+                                    <li><a href="{{ url($chapter['slug'].'-contactus') }}">Contact us </a></li>
+                                    <li><a href="{{ url($chapter['slug'].'-login') }}">Log in</a></li>
                                     <li><a href="{{ url('/') }}"> AREAA National</a></li>
                                 </ul>
                         </article>

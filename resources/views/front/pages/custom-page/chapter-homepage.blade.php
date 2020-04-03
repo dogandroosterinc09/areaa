@@ -121,9 +121,14 @@
                                 {{-- use class bullet-style__col-3 to enable 3cols --}}
                                 {{-- bullet-style--uppercase the strong tag will capitalize --}}
                                 <ul class="bullet-style bullet-style--uppercase">
-                                    @foreach( section('Member Benefits List Items.data') as $data )
-                                    <li>{!! $data->content !!}</li>
-                                    @endforeach                                    
+                                    @php($items = json_decode($chapter_homes->member_benefits_items) )
+                                    @if($items)
+                                    @foreach($items as $item)
+                                        @if(!empty($item))                                        
+                                        <li>{!! $item !!}</li>
+                                        @endif
+                                    @endforeach
+                                    @endif
                                 </ul>
 
                                 <div class="btn-group">
@@ -138,7 +143,7 @@
                         </div>
 
                         <div class="col-md-6">
-                            <img src="{{ section('Member Benefits.data.first.image') }}" alt="{{ section('Member Benefits.data.first.alt_text') }}" class="img-fluid">
+                            <img src="{{ $chapter_homes->attachment ? $chapter_homes->attachment->url : '' }}" alt="{{ $chapter_homes->attachment ? $chapter_homes->attachment->url : '' }}" class="img-fluid">
                         </div>
 
                 
