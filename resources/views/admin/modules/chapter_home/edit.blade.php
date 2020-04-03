@@ -36,6 +36,7 @@
 
                 @include('admin.components.heading', ['text' => 'Member Benefits'])
                 @include('admin.components.attachment', ['label' => 'Featured Image', 'field' => 'member_benefits_featured_image'])
+                @if($chapter_home->attachment)
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
                         <div class="form-group">
@@ -47,6 +48,7 @@
                         </div>
                     </div>
                 </div>
+                @endif
 
                 @include('admin.components.input-field', ['label' => 'Title', 'field' => 'member_benefits_title', 'value' => $chapter_home->member_benefits_title])
                 @include('admin.components.textarea', ['label' => 'Content', 'field' => 'member_benefits_content', 'value' => $chapter_home->member_benefits_content])
