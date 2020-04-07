@@ -1,32 +1,49 @@
-<section class="page-chapter page-chapter-aloha page-chapter-aloha--events">
-    @include('front.layouts.sections.chapter.header_chapter')
+<section class="page-chapter page-chapter--event-details">
+    @include('front.layouts.sections.header')
+    {{-- @include('front.pages.custom-page.sections.banner') --}}
 
-    {{-- @include('front.pages.custom-page.sections.chapter-slider-aloha') --}}
-    
-    {{-- need to dynamic this sub  --}}
-    <section class="sub-banner">
-        <div class="sub-banner__wrapper container-max">
-            <div class="sub-banner__item">
-                <div class="container-max sub-banner__content">
-                    <div class="row">
-                        <div class="col-md-12 sub-banner__content">
-                            {{-- <h3>Aloha</h3> --}}
-                            <h1>Events</h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="sub-banner__image image-background">
-            <img src="{{ url('public/images/events-banner.jpg') }}">
-        </div>
-    </section>
-    
+    @include('front.pages.custom-page.sections.chapter-slider')
 
     <main class="main-content">
 
        
+         {{-- @include('front.pages.custom-page.sections.chapter-menu') --}}
+         <section class="dashboard-nav">
+
+            <div class="dashboard-navigation">
+                <div class="dashboard-navigation__wrapper">
+                    <div class="dashboard-navigation__item">
+                    
+                        <nav class="navbar-bar">
+                            <ul class="navbar-bar__wrapper">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link" href="{{ url('chapter-homepage') }}">Home </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ url('chapter-our-story') }}">About Us</a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="{{ url('chapter-events') }}">Events</a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="{{ url('chapter-leadership') }}">Leadership</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ url('chapter-contact-us') }}">Contact us</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ url('chapter-login') }}">Log in</a>
+                                </li>
+                            </ul>
+                        </nav>
+        
+        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
         <section class="events-section">
             <div class="container-max">
                 <div class="row">
@@ -41,41 +58,8 @@
                     <div class="col-lg-12">
                         
                         <div class="chapter-event-display">
-                            @php($chapter_events = \App\Models\ChapterEvent::where('chapter_id', $chapter->id)->get())
-
-                            @forelse($chapter_events as $chapter_event)
                                 {{-- events-thumbnail --}}
                                 <div class="chapter-events-thumbnail__item">
-                                    <div class="chapter-events-thumbnail__date-range">
-                                        <div class="chapter-events-thumbnail__month">
-                                        Apr
-                                        </div>
-                                        <div class="chapter-events-thumbnail__day chapter-events-thumbnail__day--first"> 27</div>
-                                        to
-                                        <div class="chapter-events-thumbnail__day chapter-events-thumbnail__day--end"> 29</div>
-                                    </div>
-                                    <div class="chapter-events-thumbnail__image">
-                                        <img src="{{ asset('public/images/chapter-book.jpg') }}" alt="Member Image">
-                                    </div>
-                                    <div class="chapter-events-thumbnail__details">
-                                        <h5>{{ $chapter_event->name }}</h5>
-                                        <div class="chapter-events-thumbnail__time">{{ $chapter_event->starts_at }} | {{ $chapter_event->time }}</div>
-                                        <div class="chapter-events-thumbnail__location"><strong>Four Seasons Chicago</strong>, 120 E Delaware Pl, Chicago, CA 60611 United States</div>
-                                        <div class="chapter-events-thumbnail__paragraph">
-                                            <p> Lorem ipsum dolor sit amet, dolor at ligula faucibus imperdiet libero, phasellus nulla sollicitudin in, libero nec venenatis, luctus pretium imperdiet volutpat sit atque. Porttitor ligula vitae ultrices eleifend, felis suscipit iaculis turpis</p>
-                                        </div>
-                                        <div class="chapter-events-thumbnail__buttons">
-                                            <a href="{{route('chapter_event.detail', ['slug'=>'aloha','event_slug'=>'2020-installation-celebration'])}}" class="btn btn--secondary"> View Details</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                {{-- events-thumbnail --}}
-                            @empty
-                            <h3 class="text-danger font-weight-bold text-center w-100 my-5">No Events.</h3>
-                            @endforelse
-
-                                {{-- events-thumbnail --}}
-                                <!-- <div class="chapter-events-thumbnail__item">
                                     <div class="chapter-events-thumbnail__date-range">
                                         <div class="chapter-events-thumbnail__month">
                                             Apr
@@ -95,15 +79,15 @@
                                             <p> Lorem ipsum dolor sit amet, dolor at ligula faucibus imperdiet libero, phasellus nulla sollicitudin in, libero nec venenatis, luctus pretium imperdiet volutpat sit atque. Porttitor ligula vitae ultrices eleifend, felis suscipit iaculis turpis</p>
                                         </div>
                                         <div class="chapter-events-thumbnail__buttons">
-                                            <a href="{{url('aloha-events-detail')}}" class="btn btn--secondary"> View Details</a>
+                                            <a href="{{url('chapter-event-detail')}}" class="btn btn--secondary"> View Details</a>
                                         </div>
                                     </div>
-                                </div> -->
+                                </div>
                                 {{-- events-thumbnail --}}
 
 
-                                {{-- events-thumbnail --}}
-                                <!-- <div class="chapter-events-thumbnail__item">
+                                   {{-- events-thumbnail --}}
+                                   <div class="chapter-events-thumbnail__item">
                                     <div class="chapter-events-thumbnail__date-range">
                                         <div class="chapter-events-thumbnail__month">
                                             Apr
@@ -123,10 +107,10 @@
                                             <p> Lorem ipsum dolor sit amet, dolor at ligula faucibus imperdiet libero, phasellus nulla sollicitudin in, libero nec venenatis, luctus pretium imperdiet volutpat sit atque. Porttitor ligula vitae ultrices eleifend, felis suscipit iaculis turpis</p>
                                         </div>
                                         <div class="chapter-events-thumbnail__buttons">
-                                            <a href="{{url('aloha-events-detail')}}" class="btn btn--secondary"> View Details</a>
+                                            <a href="{{url('chapter-event-detail')}}" class="btn btn--secondary"> View Details</a>
                                         </div>
                                     </div>
-                                </div> -->
+                                </div>
                                 {{-- events-thumbnail --}}
                         </div>
                        
@@ -138,9 +122,8 @@
                 </div>
             </div>
         </section>
-
          
 
     </main>
-    @include('front.layouts.sections.chapter.footer_chapter')
+    @include('front.layouts.sections.footer')
 </section>

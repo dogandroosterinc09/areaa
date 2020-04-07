@@ -94,6 +94,12 @@ class AdminTemplateProvider extends ServiceProvider
                 ]);
            }
 
+            array_push($navigation, [
+                'name' => 'Chapter Events',
+                'url' => url('admin/chapter_events'),
+                'icon' => 'fa fa-phone'
+            ]);
+
            if (auth()->user()->can('Read Chapter')) {
                 array_push($navigation, [
                     'name' => 'Chapters',

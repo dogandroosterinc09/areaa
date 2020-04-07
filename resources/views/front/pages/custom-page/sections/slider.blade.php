@@ -5,6 +5,25 @@
 
     {{-- content slider  --}}
     <div class="banner__image-slide">
+        @foreach(\App\Models\HomeSlide::all() as $home_slide)
+        <div class="banner__image-slide--item">
+            <div class="item-left">
+                <div class="banner-content-desc">
+                    {!! $home_slide->content !!}
+                    <!-- <a href="{{url('our-partners')}}" class="btn btn--primary">Learn More</a> -->
+                    <a href="{{ $home_slide->button_link }}" class="btn btn--primary">{{ $home_slide->button_label }}</a>
+                </div>
+            </div>
+            <div class="item-right">
+                <div class="banner-img-holder image-background">
+                    <!-- <img src="{{ url('public/images/banner/hp-banner-img2.jpg') }}"> -->
+                    <img src="{{ $home_slide->background_image }}">
+                </div>
+            </div>
+        </div>
+        @endforeach
+
+        {{-- comment out for reference 
         <div class="banner__image-slide--item">
             <div class="item-left">
                 <div class="banner-content-desc">
@@ -48,6 +67,7 @@
                 </div>
             </div>
         </div>
+        --}}
     </div>
     {{-- content slider  --}}
 

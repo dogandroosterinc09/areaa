@@ -123,7 +123,7 @@
                         </select>
                         @if($errors->has('chapter_id'))
                             <span class="help-block animation-slideDown">{{ $errors->first('chapter_id') }}</span>
-                        @endif                        
+                        @endif
                     </div>
                 </div>
                 

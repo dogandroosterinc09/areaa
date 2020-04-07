@@ -1044,6 +1044,19 @@ class AttachmentsTableSeeder extends Seeder
                 'updated_at' => '2020-03-25 15:46:15',
                 'deleted_at' => NULL,
             ),
+            79 => 
+            array (
+                'id' => 80,
+                'name' => '',
+                'alias' => '7mo9oaoMSZUYvwHq.jpg',
+                'mime' => 'image/jpeg',
+                'folder' => 'ChapterHome',
+                'extension' => 'jpg',
+                'identifier' => 'default',
+                'created_at' => '2020-04-06 16:43:11',
+                'updated_at' => '2020-04-06 16:43:11',
+                'deleted_at' => NULL,
+            ),
         ));
         
         

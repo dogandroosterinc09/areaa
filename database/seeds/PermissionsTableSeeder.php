@@ -593,6 +593,51 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2020-04-01 18:12:00',
                 'updated_at' => '2020-04-01 18:12:00',
             ),
+            64 => 
+            array (
+                'id' => 65,
+                'name' => 'Read Chapter Page',
+                'guard_name' => 'web',
+                'permission_group_id' => 13,
+                'created_at' => '2020-04-02 15:16:26',
+                'updated_at' => '2020-04-02 15:16:26',
+            ),
+            65 => 
+            array (
+                'id' => 66,
+                'name' => 'Create Chapter Event',
+                'guard_name' => 'web',
+                'permission_group_id' => 17,
+                'created_at' => '2020-04-03 17:13:16',
+                'updated_at' => '2020-04-03 17:13:16',
+            ),
+            66 => 
+            array (
+                'id' => 67,
+                'name' => 'Read Chapter Event',
+                'guard_name' => 'web',
+                'permission_group_id' => 17,
+                'created_at' => '2020-04-03 17:13:16',
+                'updated_at' => '2020-04-03 17:13:16',
+            ),
+            67 => 
+            array (
+                'id' => 68,
+                'name' => 'Update Chapter Event',
+                'guard_name' => 'web',
+                'permission_group_id' => 17,
+                'created_at' => '2020-04-03 17:13:16',
+                'updated_at' => '2020-04-03 17:13:16',
+            ),
+            68 => 
+            array (
+                'id' => 69,
+                'name' => 'Delete Chapter Event',
+                'guard_name' => 'web',
+                'permission_group_id' => 17,
+                'created_at' => '2020-04-03 17:13:16',
+                'updated_at' => '2020-04-03 17:13:16',
+            ),
         ));
         
         

@@ -4,34 +4,18 @@ namespace App\Http\Controllers\Front;
 
 use Illuminate\Http\Request;
 use App\Models\Event;
-use App\Http\Controllers\Front\PageController;
-
-use App\Models\Page;
-use App\Models\PageType;
-use App\Models\PageSection;
-use App\Repositories\PageRepository;
 use App\Http\Controllers\Controller;
-use App\Http\Traits\SystemSettingTrait;
-use App\Repositories\SeoMetaRepository;
-use App\Repositories\HomeSlideRepository;
 
-class EventController extends PageController
+use App\Repositories\PageRepository;
+
+
+class EventController extends Controller
 {
-    public function __construct(Page $page,
-                                PageType $pageType,
-                                SeoMetaRepository $seoMetaRepository,
-                                PageRepository $pageRepository,
-                                PageSection $pageSection,
-                                HomeSlideRepository $homeSlideRepository,
+    public function __construct(PageRepository $pageRepository,
                                 Event $event
     )
     {
-        $this->page = $page;
-        $this->pageType = $pageType;
-        $this->pageSection = $pageSection;
-        $this->seoMetaRepository = $seoMetaRepository;
         $this->pageRepository = $pageRepository;
-        $this->homeSlideRepository = $homeSlideRepository;
         $this->event = $event;
     }
 

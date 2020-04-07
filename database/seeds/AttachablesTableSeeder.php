@@ -101,6 +101,13 @@ class AttachablesTableSeeder extends Seeder
                 'attachable_id' => 1,
                 'attachable_type' => 'App\\Models\\Event',
             ),
+            12 => 
+            array (
+                'id' => 13,
+                'attachment_id' => 80,
+                'attachable_id' => 1,
+                'attachable_type' => 'App\\Models\\ChapterHome',
+            ),
         ));
         
         

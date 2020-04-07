@@ -167,10 +167,7 @@
 
         @elseif ($page['slug'] == 'atlantametro-aboutus')
             @include('front.pages.custom-page-chapters.atlantametro-aboutus')
-
-        @elseif ( \App\Models\Chapter::where('slug', $page['slug']) )
-            @include('front.pages.custom-page.chapter-homepage')
-            {{$page['slug']}}
+        
         @else
             @include('front.pages.custom-page.default-page')
         @endif
