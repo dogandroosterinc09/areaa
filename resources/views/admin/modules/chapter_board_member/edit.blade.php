@@ -76,8 +76,7 @@
                     <div class="col-md-8 col-md-offset-2">
                         <div class="form-group form-actions">
                             <div class="col-md-10 col-md-offset-2">
-                                @php($route = $chapter_board_member->type ? ($chapter_board_member->type == 1 ? 'admin.board_members.executives' : 'admin.board_members.delegates') : 'admin.board_members.index')
-                                <a href="{{ route($route) }}" class="btn btn-sm btn-warning">Cancel</a>
+                                <a href="{{ route('admin.chapter_board_members.index') }}" class="btn btn-sm btn-warning">Cancel</a>
                                 <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-floppy-o"></i> Save
                                 </button>
                             </div>
