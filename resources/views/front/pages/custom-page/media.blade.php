@@ -48,6 +48,7 @@
                                     aria-controls="list-view" aria-selected="false">Research & Reports</a>
                             </li>
                         </ul>
+
                         <div class="tab-content media-tab__content" id="myTabContent">
 
                             <div class="tab-pane media-tab__item fade show active" id="webinar-view" role="tabpanel"
@@ -79,9 +80,10 @@
 
                                         </div>
                                         @empty
+                                        <h3 class="text-danger font-weight-bold text-center w-100 my-5">No Webinars.</h3>
                                         @endforelse
 
-                                        <!-- <div class="col-lg-4 col-md-4 moreWebinar__item moreWebinar">
+                                    <!-- <div class="col-lg-4 col-md-4 moreWebinar__item moreWebinar">
 
                                             {{-- media-thumbnail --}}
                                             <div class="media-thumbnail">
@@ -234,9 +236,8 @@
                                                 </div>
                                             </div>
                                              {{-- media-thumbnail --}}
-                                        </div> -->
-
-
+                                        </div>
+                                    -->
                                      
                                     </div>
 
@@ -282,7 +283,6 @@
                                
 
                             </div>
-
                             
                             <div class="tab-pane media-tab__item fade" id="research-view" role="tabpanel" aria-labelledby="research-view">
 
@@ -318,7 +318,6 @@
                         </div>
                     </div>
                      {{-- media-tab --}}
-
 
                 </div>
             </div>

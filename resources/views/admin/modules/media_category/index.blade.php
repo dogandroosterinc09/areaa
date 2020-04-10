@@ -60,13 +60,13 @@
                         <td class="text-center">{{ $media_category->created_at->format('F d, Y') }}</td>
                         <td class="text-center">
                             <div class="btn-group btn-group-xs">
-                                @if (auth()->user()->can('Read Media Category'))
+                                {{-- @if (auth()->user()->can('Read Media Category'))
                                     <a href="{{ route('admin.media_categories.show', $media_category->id) }}"
                                        data-toggle="tooltip"
                                        title=""
                                        class="btn btn-default"
                                        data-original-title="View"><i class="fa fa-eye"></i></a>
-                                @endif
+                                @endif --}}
                                 @if (auth()->user()->can('Update Media Category'))
                                     <a href="{{ route('admin.media_categories.edit', $media_category->id) }}"
                                        data-toggle="tooltip"

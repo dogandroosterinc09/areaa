@@ -19,9 +19,10 @@
                         <strong>{{ $webinars->title }}</strong>
                     </h3>
 
-                    <img src="{{ asset($webinars->link) }}" alt="{{ $webinars->link }}" class="img-responsive center-block" style="max-width: 100px;">
+                    <div class="form-group center-block">
+                        <iframe class="center-block" width="560" height="315" src="{{$webinars->link}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
 
-                    <p>{!! $webinars->content !!}</p>
                 </article>
             </div>
         </div>

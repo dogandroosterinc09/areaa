@@ -42,7 +42,7 @@
                         Title
                     </th>
                     <th class="text-left">
-                        Link
+                        Video Link
                     </th>                    
                     <th class="text-center">
                         Date Created

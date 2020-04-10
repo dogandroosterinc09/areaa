@@ -19,6 +19,7 @@
                 <div class="block-title">
                     <h2><i class="fa fa-pencil"></i> <strong>Add new Media</strong></h2>
                 </div>
+                
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
                         <div class="form-group{{ $errors->has('media_category_id') ? ' has-error' : '' }}">
@@ -26,7 +27,7 @@
 
                             <div class="col-md-10">
                                 <select class="form-control" id="media_category_id" name="media_category_id">
-                                @php( $categories = \App\Models\MediaCategory::all() )
+                                @php( $categories = \App\Models\MediaCategory::orderBy('name')->get() )
                                     <option value="">Select Category</option>
                                 @foreach($categories as $category)
                                     <option {{ old('media_category_id') == $category->id ? 'selected' : '' }} value="{{ $category->id }}">{{ $category->name }}</option>
@@ -40,8 +41,8 @@
                     </div>
                 </div>
 
-                @include('admin.components.input-field', ['label' => 'Video Link', 'field' => 'link'])
                 @include('admin.components.input-field', ['label' => 'Title'])
+                @include('admin.components.input-field', ['label' => 'Video Link', 'field' => 'link'])
 
                 <div class="form-group form-actions">
                     <div class="col-md-9 col-md-offset-3">
