@@ -44,7 +44,7 @@
                         </li>
                         
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url($chapter['slug'].'-events') }}">Events</a>
+                            <a class="nav-link" href="{{ url($chapter['slug'].'/events') }}">Events</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link" href="{{ url($chapter['slug'].'-leadership') }}">Leadership</a>

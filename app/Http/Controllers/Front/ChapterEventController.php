@@ -53,6 +53,21 @@ class ChapterEventController extends Controller
             abort(404);
         }
 
-        return view('front.pages.custom-pages-index', compact('page'));
+        $nextEvent = $this->nextEvent($chapter_event);
+        $previousEvent = $this->previousEvent($chapter_event);
+
+        return view('front.pages.custom-pages-index', compact('page', 'chapter', 'chapter_event', 'nextEvent', 'previousEvent'));
+    }
+
+    public function previousEvent($chapter_event) {
+        // $current_event_date = \Carbon\Carbon::parse($chapter_event->starts_at)->format('Y-m-d');
+
+        return  $chapter_event->where('id', '<', $chapter_event->id)->get()->first();
+    }
+
+    public function nextEvent($chapter_event) {
+        // $current_event_date = \Carbon\Carbon::parse($chapter_event->starts_at)->format('Y-m-d');
+
+        return  $chapter_event->where('id', '>', $chapter_event->id)->get()->first();
     }
 }

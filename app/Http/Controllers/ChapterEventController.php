@@ -83,15 +83,17 @@ class ChapterEventController extends Controller
             'country' => 'required',
             'latitude' => 'required',
             'longitude' => 'required',
-            'amount' => 'required',
         ], [
             'chapter_id.required' => 'The chapter field is required.'
         ]);
 
         $chapter_event = $this->chapter_event->create(array_merge($request->all(), [
-            'is_active' => $request->has('is_active') ? 1 : 0,
             'slug' => str_slug($request->input('name'))
         ]));
+
+        if ($request->hasFile('thumbnail')) {
+            $chapter_event->attach($request->file('thumbnail'));
+        }
 
         return redirect()->route('admin.chapter_events.index')->with('flash_message', [
             'title' => '',

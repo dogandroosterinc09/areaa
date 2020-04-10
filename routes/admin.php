@@ -72,3 +72,9 @@ Route::resource('/chapter_homes', 'ChapterHomeController');
 
 
 Route::resource('/chapter_events', 'ChapterEventController');
+
+
+Route::resource('/chapter_board_members', 'ChapterBoardMembersController');
+
+
+Route::resource('/chapter_board_members', 'ChapterBoardMemberController');

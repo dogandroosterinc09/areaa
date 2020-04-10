@@ -812,6 +812,21 @@ class PagesTableSeeder extends Seeder
                 'updated_at' => '2020-03-23 21:53:14',
                 'deleted_at' => NULL,
             ),
+            53 => 
+            array (
+                'id' => 54,
+                'name' => 'Chapter Leadership',
+                'slug' => 'chapter-leadership',
+                'content' => '',
+                'banner_image' => '',
+                'banner_description' => '',
+                'is_active' => 1,
+                'seo_meta_id' => 18,
+                'page_type_id' => 0,
+                'created_at' => '2020-04-07 18:53:35',
+                'updated_at' => '2020-04-07 18:53:35',
+                'deleted_at' => NULL,
+            ),
         ));
         
         

@@ -26,7 +26,6 @@
 
     <main class="main-content">
 
-       
         <section class="events-section">
             <div class="container-max">
                 <div class="row">
@@ -37,13 +36,14 @@
                     <div class="col-lg-8">
                         <div class="chapter-event-details">
                             <div class="chapter-event-details__image">
-                                <img src="{{ asset('public/images/chapter-book.jpg') }}" alt="chapter Image" class="img-fluid">
+                                <img src="{{ $chapter_event->attachment ? ($chapter_event->attachment)->url : '' }}" alt="chapter Image" class="img-fluid">
                             </div>
                             <div class="chapter-event-details__description">
                                 <h3>Description</h3>
-                                <p>Lorem ipsum dolor sit amet, justo non porttitor, ornare vel etiam at vulputate, ipsum elit lorem leo quis. Rutrum eu turpis, ultricies nunc, sed fermentum tincidunt nulla. Vel duis arcu a ligula, ultrices neque class pellentesque luctus, ac quis curae luctus adipiscing vulputate imperdiet, vehicula nunc morbi, sodales vel wisi. Consequat mauris sapiente sem leo duis nulla, turpis class dolor, vitae purus arcu dolor, sapien pellentesque etiam fringilla placerat integer. Diam ipsum suspendisse nec. Nunc eu, suscipit quasi optio, ultrices sunt porta orci, et sed vel magnis. Sint eu ornare sed, praesent varius tristique, suscipit eget nunc ut libero ligula quam, maecenas iaculis magna pellentesque venenatis, ligula quisque sit. Pede voluptatum, sagittis tempor porttitor rutrum in felis, nibh condimentum bibendum, ullamcorper et consequat. </p>
-                               
+                                <!-- <p>Lorem ipsum dolor sit amet, justo non porttitor, ornare vel etiam at vulputate, ipsum elit lorem leo quis. Rutrum eu turpis, ultricies nunc, sed fermentum tincidunt nulla. Vel duis arcu a ligula, ultrices neque class pellentesque luctus, ac quis curae luctus adipiscing vulputate imperdiet, vehicula nunc morbi, sodales vel wisi. Consequat mauris sapiente sem leo duis nulla, turpis class dolor, vitae purus arcu dolor, sapien pellentesque etiam fringilla placerat integer. Diam ipsum suspendisse nec. Nunc eu, suscipit quasi optio, ultrices sunt porta orci, et sed vel magnis. Sint eu ornare sed, praesent varius tristique, suscipit eget nunc ut libero ligula quam, maecenas iaculis magna pellentesque venenatis, ligula quisque sit. Pede voluptatum, sagittis tempor porttitor rutrum in felis, nibh condimentum bibendum, ullamcorper et consequat. </p> -->
+                               {!! $chapter_event->description !!}
                             </div>
+                            {{--
                             <div class="chapter-event-details__email">
                                 <h5>Questions?</h5>
                                 <ul>
@@ -52,16 +52,17 @@
                                     <li>jordan@jordanleemortgage.com</li>
                                 </ul>
                             </div>
+                            --}}
     
                             <div class="chapter-events-next-preview">
                                <div class="container">
                                     <div class="row">
-
+                                        @if($previousEvent)
                                         <div class="chapter-events-next-preview__details chapter-events-next-preview__left col-sm-6">
                                             <div class="chapter-events-next-preview__holder">
-                                                <a href="#">
+                                                <a href="{{route('chapter_event.detail', ['slug'=>$chapter->slug,'event_slug'=>$previousEvent->slug])}}">
                                                     <h4>Previous Event</h4>
-                                                    <h3>AREAA Inland Empire’s 10 Year Anniversary Installation Gala</h3>
+                                                    <h3>{{ $previousEvent->name }}</h3>
                                                     {{-- <div class="chapter-events-next-preview__date-time">
                                                         <div class="events-next-preview__month">Oct. 08 - 10</div> 
                                                         <div class="events-next-preview__time">7:00pm - 9:00pm</div>
@@ -71,12 +72,17 @@
                                             
                                             <a href="#" class="btn btn--third"> </a>
                                         </div>
+                                        @else
+                                        <div class="col-sm-6"></div>
+                                        @endif
                                     
+                                        @if($nextEvent)
                                         <div class="chapter-events-next-preview__details chapter-events-next-preview__right col-sm-6">
+                                       
                                             <div class="chapter-events-next-preview__holder">
-                                                <a href="#">
+                                                <a href="{{route('chapter_event.detail', ['slug'=>$chapter->slug,'event_slug'=>$nextEvent->slug])}}">
                                                     <h4>Next Event</h4>
-                                                    <h3>Myths And Facts About iBuyers</h3>
+                                                    <h3>{{ $nextEvent->name }}</h3>
                                                     {{-- <div class="chapter-events-next-preview__date-time">
                                                         <div class="events-next-preview__month">Oct. 08 - 10</div> 
                                                         <div class="events-next-preview__time">7:00pm - 9:00pm</div>
@@ -85,7 +91,8 @@
                                             </div>
                                             
                                             <a href="#" class="btn btn--third"> </a>
-                                        </div>
+                                        </div>                                        
+                                        @endif                                        
                                     </div>
                                </div>
                             </div>
@@ -100,12 +107,11 @@
 
                             <div class="register-info__list">
                                 <ul>
-                                    <li><span><strong>Date</strong></span> <span>December 12 - 16, 2020</span></li>
-                                    <li><span><strong>Time</strong></span> <span>7:00pm - 9:00pm</span></li>
-                                    <li><span><strong>Location</strong></span> <span><strong>Four Seasons Chicago</strong> 
-                                        120 E Delaware Pl, 
-                                        Chicago, CA 60611 United States</span></li>
-                                    <li><span><strong>Cost</strong></span> <span>$70.00</span></li>
+                                    <li><span><strong>Date</strong></span> <span>{{ $chapter_event->dateRange }}</span></li>
+                                    <li><span><strong>Time</strong></span> <span>{{ $chapter_event->time }}</span></li>
+                                    <li><span><strong>Location</strong></span> <span><strong>{{ $chapter_event->location_name }}</strong> 
+                                    {{ $chapter_event->locationAddress }}</span></li>
+                                    <li><span><strong>Cost</strong></span> <span>${{ $chapter_event->amount }}</span></li>
                                 </ul>
                                 <div class="register-info__button">
                                     <a href="#" class="btn btn--secondary"> Register</a>

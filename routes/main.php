@@ -29,8 +29,10 @@ Route::get('/delegate-board/{slug}', 'BoardMemberController@showDelegate')->name
 
 Route::get('/event/{slug}', 'EventController@showEvent')->name('event.show');
 
+//Chapter Routes
 Route::get('/{slug}/about', 'ChapterController@showChapterAbout');
 Route::get('/{slug}/events', 'ChapterEventController@showChapterEvents');
 Route::get('/{slug}/event/{event_slug}', 'ChapterEventController@showChapterEventDetail')->name('chapter_event.detail');
+Route::get('/{slug}/leadership-board', 'ChapterBoardMemberController@showChapterBoardMembers');
 
 Route::get('/{slug?}', 'PageController')->name('page');

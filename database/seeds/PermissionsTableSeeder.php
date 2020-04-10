@@ -638,6 +638,78 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2020-04-03 17:13:16',
                 'updated_at' => '2020-04-03 17:13:16',
             ),
+            69 => 
+            array (
+                'id' => 70,
+                'name' => 'Create Chapter Board Members',
+                'guard_name' => 'web',
+                'permission_group_id' => 18,
+                'created_at' => '2020-04-07 17:18:37',
+                'updated_at' => '2020-04-07 17:18:37',
+            ),
+            70 => 
+            array (
+                'id' => 71,
+                'name' => 'Read Chapter Board Members',
+                'guard_name' => 'web',
+                'permission_group_id' => 18,
+                'created_at' => '2020-04-07 17:18:37',
+                'updated_at' => '2020-04-07 17:18:37',
+            ),
+            71 => 
+            array (
+                'id' => 72,
+                'name' => 'Update Chapter Board Members',
+                'guard_name' => 'web',
+                'permission_group_id' => 18,
+                'created_at' => '2020-04-07 17:18:37',
+                'updated_at' => '2020-04-07 17:18:37',
+            ),
+            72 => 
+            array (
+                'id' => 73,
+                'name' => 'Delete Chapter Board Members',
+                'guard_name' => 'web',
+                'permission_group_id' => 18,
+                'created_at' => '2020-04-07 17:18:37',
+                'updated_at' => '2020-04-07 17:18:37',
+            ),
+            73 => 
+            array (
+                'id' => 74,
+                'name' => 'Create Chapter Board Member',
+                'guard_name' => 'web',
+                'permission_group_id' => 19,
+                'created_at' => '2020-04-07 17:22:12',
+                'updated_at' => '2020-04-07 17:22:12',
+            ),
+            74 => 
+            array (
+                'id' => 75,
+                'name' => 'Read Chapter Board Member',
+                'guard_name' => 'web',
+                'permission_group_id' => 19,
+                'created_at' => '2020-04-07 17:22:12',
+                'updated_at' => '2020-04-07 17:22:12',
+            ),
+            75 => 
+            array (
+                'id' => 76,
+                'name' => 'Update Chapter Board Member',
+                'guard_name' => 'web',
+                'permission_group_id' => 19,
+                'created_at' => '2020-04-07 17:22:12',
+                'updated_at' => '2020-04-07 17:22:12',
+            ),
+            76 => 
+            array (
+                'id' => 77,
+                'name' => 'Delete Chapter Board Member',
+                'guard_name' => 'web',
+                'permission_group_id' => 19,
+                'created_at' => '2020-04-07 17:22:12',
+                'updated_at' => '2020-04-07 17:22:12',
+            ),
         ));
         
         

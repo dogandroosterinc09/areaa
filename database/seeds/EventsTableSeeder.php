@@ -65,10 +65,10 @@ class EventsTableSeeder extends Seeder
             array (
                 'id' => 3,
                 'name' => '2022 Global Luxury Summit',
-                'thumbnail' => '0',
+                'thumbnail' => 'C:\\wamp64\\tmp\\php1562.tmp',
                 'slug' => '2022-global-luxury-summit',
                 'description' => 'Lorem ipsum dolor sit amet, dolor at ligula faucibus imperdiet libero, phasellus nulla sollicitudin in, libero nec venenatis, luctus pretium imperdiet volutpat sit atque. Porttitor ligula vitae ultrices eleifend, felis suscipit iaculis turpis',
-                'starts_at' => '2022-04-27 00:00:00',
+                'starts_at' => '2020-04-08 06:57:17',
                 'ends_at' => '2022-04-29 00:00:00',
                 'time' => '7:00am - 9:00am',
                 'location_name' => 'Four Seasons Chicago',
@@ -80,7 +80,7 @@ class EventsTableSeeder extends Seeder
                 'longitude' => 0.0,
                 'amount' => '123.00',
                 'created_at' => '2020-03-25 16:11:06',
-                'updated_at' => '2020-03-25 16:40:16',
+                'updated_at' => '2020-04-07 15:57:17',
                 'deleted_at' => NULL,
             ),
         ));

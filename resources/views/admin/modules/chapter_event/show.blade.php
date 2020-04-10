@@ -28,9 +28,9 @@
                         </div>
                     </h3>
 
-                    <img src="{{ asset($chapter_event->banner_image) }}" alt="{{ $chapter_event->banner_image }}" class="img-responsive center-block" style="max-width: 100px;">
+                    <img src="{{ optional($chapter_event->attachment)->url }}" alt="" class="img-responsive center-block" style="max-width: 100px;">
 
-                    <p>{!! $chapter_event->content !!}</p>
+                    <p>{!! $chapter_event->description !!}</p>
                 </article>
             </div>
         </div>

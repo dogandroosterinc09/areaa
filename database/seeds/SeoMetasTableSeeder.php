@@ -204,6 +204,17 @@ class SeoMetasTableSeeder extends Seeder
                 'updated_at' => '2020-03-18 20:37:28',
                 'deleted_at' => NULL,
             ),
+            17 => 
+            array (
+                'id' => 18,
+                'meta_title' => '',
+                'meta_keywords' => '',
+                'meta_description' => '',
+                'canonical_link' => '',
+                'created_at' => '2020-04-07 18:53:35',
+                'updated_at' => '2020-04-07 18:53:35',
+                'deleted_at' => NULL,
+            ),
         ));
         
         

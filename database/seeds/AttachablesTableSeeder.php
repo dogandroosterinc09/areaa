@@ -108,6 +108,48 @@ class AttachablesTableSeeder extends Seeder
                 'attachable_id' => 1,
                 'attachable_type' => 'App\\Models\\ChapterHome',
             ),
+            13 => 
+            array (
+                'id' => 14,
+                'attachment_id' => 81,
+                'attachable_id' => 3,
+                'attachable_type' => 'App\\Models\\Event',
+            ),
+            14 => 
+            array (
+                'id' => 15,
+                'attachment_id' => 82,
+                'attachable_id' => 2,
+                'attachable_type' => 'App\\Models\\ChapterEvent',
+            ),
+            15 => 
+            array (
+                'id' => 16,
+                'attachment_id' => 83,
+                'attachable_id' => 3,
+                'attachable_type' => 'App\\Models\\ChapterEvent',
+            ),
+            16 => 
+            array (
+                'id' => 17,
+                'attachment_id' => 84,
+                'attachable_id' => 2,
+                'attachable_type' => 'App\\Models\\ChapterEvent',
+            ),
+            17 => 
+            array (
+                'id' => 18,
+                'attachment_id' => 85,
+                'attachable_id' => 1,
+                'attachable_type' => 'App\\Models\\ChapterEvent',
+            ),
+            18 => 
+            array (
+                'id' => 19,
+                'attachment_id' => 86,
+                'attachable_id' => 1,
+                'attachable_type' => 'App\\Models\\ChapterBoardMember',
+            ),
         ));
         
         

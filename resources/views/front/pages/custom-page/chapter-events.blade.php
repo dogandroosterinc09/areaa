@@ -48,24 +48,28 @@
                                 <div class="chapter-events-thumbnail__item">
                                     <div class="chapter-events-thumbnail__date-range">
                                         <div class="chapter-events-thumbnail__month">
-                                        Apr
+                                        {{ $chapter_event->startMonth }}
                                         </div>
+                                        @if($chapter_event->startDay == $chapter_event->endDay)
+                                        <div class="chapter-events-thumbnail__day chapter-events-thumbnail__day--first"> {{ $chapter_event->startDay }}</div>
+                                        @else
                                         <div class="chapter-events-thumbnail__day chapter-events-thumbnail__day--first"> 27</div>
                                         to
                                         <div class="chapter-events-thumbnail__day chapter-events-thumbnail__day--end"> 29</div>
+                                        @endif                                                                                
                                     </div>
                                     <div class="chapter-events-thumbnail__image">
-                                        <img src="{{ asset('public/images/chapter-book.jpg') }}" alt="Member Image">
+                                        <img src="{{ $chapter_event->attachment->url }}" alt="Member Image">
                                     </div>
                                     <div class="chapter-events-thumbnail__details">
                                         <h5>{{ $chapter_event->name }}</h5>
-                                        <div class="chapter-events-thumbnail__time">{{ $chapter_event->starts_at }} | {{ $chapter_event->time }}</div>
+                                        <div class="chapter-events-thumbnail__time">{{ $chapter_event->dateRange }} | {{ $chapter_event->time }}</div>
                                         <div class="chapter-events-thumbnail__location"><strong>Four Seasons Chicago</strong>, 120 E Delaware Pl, Chicago, CA 60611 United States</div>
                                         <div class="chapter-events-thumbnail__paragraph">
                                             <p> Lorem ipsum dolor sit amet, dolor at ligula faucibus imperdiet libero, phasellus nulla sollicitudin in, libero nec venenatis, luctus pretium imperdiet volutpat sit atque. Porttitor ligula vitae ultrices eleifend, felis suscipit iaculis turpis</p>
                                         </div>
                                         <div class="chapter-events-thumbnail__buttons">
-                                            <a href="{{route('chapter_event.detail', ['slug'=>'aloha','event_slug'=>'2020-installation-celebration'])}}" class="btn btn--secondary"> View Details</a>
+                                            <a href="{{route('chapter_event.detail', ['slug'=>$chapter->slug,'event_slug'=>$chapter_event->slug])}}" class="btn btn--secondary"> View Details</a>
                                         </div>
                                     </div>
                                 </div>

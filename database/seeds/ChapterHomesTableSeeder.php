@@ -33,10 +33,10 @@ class ChapterHomesTableSeeder extends Seeder
                 'who_we_are_button2_text' => 'Contact Us',
                 'who_we_are_button2_link' => '#',
                 'member_benefits_title' => 'Member Benefits',
-                'member_benefits_featured_image' => 'C:\\wamp64\\tmp\\phpB1C9.tmp',
+                'member_benefits_featured_image' => '0',
                 'member_benefits_featured_image_alt' => '',
                 'member_benefits_content' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
-                'member_benefits_items' => '["","",""]',
+                'member_benefits_items' => '["Lorem ipsum dolor sit amet&nbsp;<strong>CONSECTETUR<\\/strong>&nbsp;adipisicing","Aipisicing elit,&nbsp;<strong>SED DO EIUSMOD TEMPOR<\\/strong>&nbsp;incididunt ut labore et","<strong>EIUSMOD&nbsp;<\\/strong>tempor incididunt ut labore et dolore magna aliqua"]',
                 'member_benefits_button1_text' => 'Join Us',
                 'member_benefits_button1_link' => '#',
                 'member_benefits_button2_text' => 'Contact Us',
@@ -47,7 +47,7 @@ class ChapterHomesTableSeeder extends Seeder
                 'sponsors_button1_link' => '#',
                 'deleted_at' => NULL,
                 'created_at' => '2020-04-01 21:57:22',
-                'updated_at' => '2020-04-06 16:43:11',
+                'updated_at' => '2020-04-07 14:45:08',
             ),
         ));
         

@@ -44,5 +44,6 @@ class DatabaseSeeder extends Seeder
         $this->call(WebinarsTableSeeder::class);
         $this->call(ChapterHomesTableSeeder::class);
         $this->call(ChapterEventsTableSeeder::class);
+        $this->call(ChapterBoardMembersTableSeeder::class);
     }
 }
