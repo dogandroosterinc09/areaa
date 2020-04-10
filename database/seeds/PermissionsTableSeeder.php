@@ -710,6 +710,78 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2020-04-07 17:22:12',
                 'updated_at' => '2020-04-07 17:22:12',
             ),
+            77 => 
+            array (
+                'id' => 78,
+                'name' => 'Create Media Category',
+                'guard_name' => 'web',
+                'permission_group_id' => 20,
+                'created_at' => '2020-04-09 20:17:10',
+                'updated_at' => '2020-04-09 20:17:10',
+            ),
+            78 => 
+            array (
+                'id' => 79,
+                'name' => 'Read Media Category',
+                'guard_name' => 'web',
+                'permission_group_id' => 20,
+                'created_at' => '2020-04-09 20:17:10',
+                'updated_at' => '2020-04-09 20:17:10',
+            ),
+            79 => 
+            array (
+                'id' => 80,
+                'name' => 'Update Media Category',
+                'guard_name' => 'web',
+                'permission_group_id' => 20,
+                'created_at' => '2020-04-09 20:17:10',
+                'updated_at' => '2020-04-09 20:17:10',
+            ),
+            80 => 
+            array (
+                'id' => 81,
+                'name' => 'Delete Media Category',
+                'guard_name' => 'web',
+                'permission_group_id' => 20,
+                'created_at' => '2020-04-09 20:17:10',
+                'updated_at' => '2020-04-09 20:17:10',
+            ),
+            81 => 
+            array (
+                'id' => 82,
+                'name' => 'Create Media',
+                'guard_name' => 'web',
+                'permission_group_id' => 21,
+                'created_at' => '2020-04-09 20:47:11',
+                'updated_at' => '2020-04-09 20:47:11',
+            ),
+            82 => 
+            array (
+                'id' => 83,
+                'name' => 'Read Media',
+                'guard_name' => 'web',
+                'permission_group_id' => 21,
+                'created_at' => '2020-04-09 20:47:11',
+                'updated_at' => '2020-04-09 20:47:11',
+            ),
+            83 => 
+            array (
+                'id' => 84,
+                'name' => 'Update Media',
+                'guard_name' => 'web',
+                'permission_group_id' => 21,
+                'created_at' => '2020-04-09 20:47:11',
+                'updated_at' => '2020-04-09 20:47:11',
+            ),
+            84 => 
+            array (
+                'id' => 85,
+                'name' => 'Delete Media',
+                'guard_name' => 'web',
+                'permission_group_id' => 21,
+                'created_at' => '2020-04-09 20:47:11',
+                'updated_at' => '2020-04-09 20:47:11',
+            ),
         ));
         
         

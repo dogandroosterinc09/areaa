@@ -2,13 +2,13 @@
 
 @section('content')
     <ul class="breadcrumb breadcrumb-top">
-        <li><a href="{{ route('admin.webinars.index') }}">Webinars</a></li>
-        <li><span href="javascript:void(0)">View Webinars</span></li>
+        <li><a href="{{ route('admin.webinars.index') }}">Media</a></li>
+        <li><span href="javascript:void(0)">View Media</span></li>
     </ul>
     <div class="content-header">
         <div class="header-section">
-            <h1>{{ $webinars->name }}</h1>
-            <h5>{{ $webinars->slug }}</h5>
+            <h1>{{ $webinars->title }}</h1>
+            <p class="text-muted">Last updated on {{ $webinars->updated_at->format('M d, Y h:i A') }}</p>
         </div>
     </div>
     <div class="row">
@@ -16,19 +16,10 @@
             <div class="block block-alt-noborder">
                 <article>
                     <h3 class="sub-header text-center">
-                        <strong>{{ $webinars->created_at->format('F d, Y') }}</strong>
-                        <div class="btn-group btn-group-xs pull-right">
-                            @if (auth()->user()->can('Update Webinars'))
-                                <a href="{{ route('admin.webinars.edit', $webinars->id) }}"
-                                   data-toggle="tooltip"
-                                   title=""
-                                   class="btn btn-default"
-                                   data-original-title="Edit"><i class="fa fa-pencil"></i> Edit</a>
-                            @endif
-                        </div>
+                        <strong>{{ $webinars->title }}</strong>
                     </h3>
 
-                    <img src="{{ asset($webinars->banner_image) }}" alt="{{ $webinars->banner_image }}" class="img-responsive center-block" style="max-width: 100px;">
+                    <img src="{{ asset($webinars->link) }}" alt="{{ $webinars->link }}" class="img-responsive center-block" style="max-width: 100px;">
 
                     <p>{!! $webinars->content !!}</p>
                 </article>

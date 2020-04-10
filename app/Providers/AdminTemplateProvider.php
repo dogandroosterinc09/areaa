@@ -126,11 +126,18 @@ class AdminTemplateProvider extends ServiceProvider
 
            if (auth()->user()->can('Read Webinars')) {
                 array_push($navigation, [
-                    'name' => 'Webinars',
+                    'name' => 'Media',
                     'url' => url('admin/webinars'),
                     'icon' => 'fa fa-phone'
                 ]);
            }
+        
+            array_push($navigation, [
+                'name' => 'Media Categories',
+                'url' => url('admin/media_categories'),
+                'icon' => 'fa fa-phone'
+            ]);
+
 
            if ($this->hasCrudAccessFor('Board Member')) {
                 $board_member_tab = [];

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateWebinarsTable extends Migration
+class CreateMediaCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateWebinarsTable extends Migration
      */
     public function up()
     {
-        Schema::create('webinars', function (Blueprint $table) {
+        Schema::create('media_categories', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('link');
-            $table->string('title');
-            $table->integer('media_category_id');
+            $table->string('name');
             $table->softDeletes();
             $table->timestamps();
         });
@@ -30,6 +28,6 @@ class CreateWebinarsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('webinars');
+        Schema::dropIfExists('media_categories');
     }
 }

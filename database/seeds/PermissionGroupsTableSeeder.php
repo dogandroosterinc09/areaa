@@ -169,6 +169,22 @@ class PermissionGroupsTableSeeder extends Seeder
                 'updated_at' => '2020-04-07 17:22:12',
                 'deleted_at' => NULL,
             ),
+            19 => 
+            array (
+                'id' => 20,
+                'name' => 'Media Categories',
+                'created_at' => '2020-04-09 20:17:10',
+                'updated_at' => '2020-04-09 20:17:10',
+                'deleted_at' => NULL,
+            ),
+            20 => 
+            array (
+                'id' => 21,
+                'name' => 'Media',
+                'created_at' => '2020-04-09 20:47:11',
+                'updated_at' => '2020-04-09 20:47:11',
+                'deleted_at' => NULL,
+            ),
         ));
         
         

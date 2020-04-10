@@ -78,3 +78,9 @@ Route::resource('/chapter_board_members', 'ChapterBoardMembersController');
 
 
 Route::resource('/chapter_board_members', 'ChapterBoardMemberController');
+
+
+Route::resource('/media_categories', 'MediaCategoryController');
+
+
+Route::resource('/media', 'MediaController');

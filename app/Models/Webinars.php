@@ -15,11 +15,14 @@ class Webinars extends Model
      *
      * @var array
      */
-    protected $fillable = [
-        // 'name',
-        // 'slug',
-        // 'content',
+    protected $fillable = [        
         'link',
-        'title'
+        'title',
+        'media_category_id'
     ];
+
+    public function getMediaCategoryAttribute() {
+        $media_category = \App\Models\MediaCategory::select('name')->where('id',$this->attributes['media_category_id'])->get()->first();
+        return $media_category->name;
+    }
 }

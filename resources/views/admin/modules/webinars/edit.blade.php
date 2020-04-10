@@ -2,8 +2,8 @@
 
 @section('content')
     <ul class="breadcrumb breadcrumb-top">
-        <li><a href="{{ route('admin.webinars.index') }}">Webinars</a></li>
-        <li><span href="javascript:void(0)">Edit Webinars</span></li>
+        <li><a href="{{ route('admin.webinars.index') }}">Media</a></li>
+        <li><span href="javascript:void(0)">Edit Media</span></li>
     </ul>
     <div class="row">
         {{  Form::open([
@@ -17,8 +17,30 @@
         <div class="col-md-12">
             <div class="block">
                 <div class="block-title">
-                    <h2><i class="fa fa-pencil"></i> <strong>Edit Webinars "{{$webinars->name}}"</strong></h2>
+                    <h2><i class="fa fa-pencil"></i> <strong>Edit Media "{{$webinars->title}}"</strong></h2>
                 </div>
+
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="form-group{{ $errors->has('media_category_id') ? ' has-error' : '' }}">
+                            <label class="col-md-2 control-label" for="media_category_id">Category</label>
+
+                            <div class="col-md-10">
+                                <select class="form-control" id="media_category_id" name="media_category_id">
+                                @php( $categories = \App\Models\MediaCategory::all() )
+                                    <option value="">Select Category</option>
+                                @foreach($categories as $category)
+                                    <option {{ $webinars->media_category_id == $category->id ? 'selected' : '' }} value="{{ $category->id }}">{{ $category->name }}</option>
+                                @endforeach
+                                </select>
+                                @if($errors->has('media_category_id'))
+                                    <span class="help-block animation-slideDown">{{ $errors->first('media_category_id') }}</span>
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 @include('admin.components.input-field', ['label' => 'Video Link', 'field' => 'link', 'value' => $webinars->link])
                 @include('admin.components.input-field', ['label' => 'Title', 'value' => $webinars->title])
                 <div class="form-group form-actions">

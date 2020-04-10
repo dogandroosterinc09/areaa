@@ -3,26 +3,26 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use App\Models\Webinars;
+use App\Models\Media;
 use App\Http\Controllers\Controller;
 
-class WebinarsController extends Controller
+class MediaController extends Controller
 {
     /**
-     * Webinars model instance.
+     * Media model instance.
      *
-     * @var Webinars
+     * @var Media
      */
-    private $webinars;
+    private $media;
 
     /**
      * Create a new controller instance.
      *
-     * @param Webinars $webinars
+     * @param Media $media
      */
-    public function __construct(Webinars $webinars)
+    public function __construct(Media $media)
     {
-        $this->webinars = $webinars;
+        $this->media = $media;
     }
 
     /**
@@ -33,13 +33,13 @@ class WebinarsController extends Controller
 
     public function index()
     {
-        if (!auth()->user()->hasPermissionTo('Read Webinars')) {
+        if (!auth()->user()->hasPermissionTo('Read Media')) {
             abort('401', '401');
         }
 
-        $webinars = $this->webinars->get();
+        $media = $this->media->get();
 
-        return view('admin.modules.webinars.index', compact('webinars'));
+        return view('admin.modules.media.index', compact('media'));
     }
 
     /**
@@ -49,11 +49,11 @@ class WebinarsController extends Controller
      */
     public function create()
     {
-        if (!auth()->user()->hasPermissionTo('Create Webinars')) {
+        if (!auth()->user()->hasPermissionTo('Create Media')) {
             abort('401', '401');
         }
 
-        return view('admin.modules.webinars.create');
+        return view('admin.modules.media.create');
     }
 
     /**
@@ -65,26 +65,24 @@ class WebinarsController extends Controller
      */
     public function store(Request $request)
     {
-        if (!auth()->user()->hasPermissionTo('Create Webinars')) {
+        if (!auth()->user()->hasPermissionTo('Create Media')) {
             abort('401', '401');
         }
 
-        $this->validate($request, [            
-            'link' => 'required',
-            'title' => 'required',
-            'media_category_id' => 'required',
-        ],[
-            'media_category_id.required' => 'Category field is required.'
+        $this->validate($request, [
+            'name' => 'required|unique:media,name,NULL,id,deleted_at,NULL',
+            'slug' => 'required|unique:media,slug,NULL,id,deleted_at,NULL',
+            'content' => 'required',
         ]);
 
-        $webinars = $this->webinars->create(array_merge($request->all(), [
+        $media = $this->media->create(array_merge($request->all(), [
             'is_active' => $request->has('is_active') ? 1 : 0,
             'slug' => str_slug($request->input('name'))
         ]));
 
-        return redirect()->route('admin.webinars.index')->with('flash_message', [
+        return redirect()->route('admin.media.index')->with('flash_message', [
             'title' => '',
-            'message' => 'Webinars ' . $webinars->name . ' successfully added.',
+            'message' => 'Media ' . $media->name . ' successfully added.',
             'type' => 'success'
         ]);
     }
@@ -97,13 +95,13 @@ class WebinarsController extends Controller
      */
     public function show($id)
     {
-        if (!auth()->user()->hasPermissionTo('Read Webinars')) {
+        if (!auth()->user()->hasPermissionTo('Read Media')) {
             abort('401', '401');
         }
 
-        $webinars = $this->webinars->findOrFail($id);
+        $media = $this->media->findOrFail($id);
 
-        return view('admin.modules.webinars.show', compact('webinars'));
+        return view('admin.modules.media.show', compact('media'));
     }
 
     /**
@@ -115,13 +113,13 @@ class WebinarsController extends Controller
      */
     public function edit($id)
     {
-        if (!auth()->user()->hasPermissionTo('Update Webinars')) {
+        if (!auth()->user()->hasPermissionTo('Update Media')) {
             abort('401', '401');
         }
 
-        $webinars = $this->webinars->findOrFail($id);
+        $media = $this->media->findOrFail($id);
 
-        return view('admin.modules.webinars.edit', compact('webinars'));
+        return view('admin.modules.media.edit', compact('media'));
     }
 
     /**
@@ -134,27 +132,26 @@ class WebinarsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        if (!auth()->user()->hasPermissionTo('Update Webinars')) {
+        if (!auth()->user()->hasPermissionTo('Update Media')) {
             abort('401', '401');
         }
 
-        $this->validate($request, [            
-            'link' => 'required',
-            'title' => 'required',
-            'media_category_id' => 'required',
-        ],[
-            'media_category_id.required' => 'Category field is required.'
+        $this->validate($request, [
+            'name' => 'required|unique:media,name,' . $id . ',id,deleted_at,NULL',
+            'slug' => 'required|unique:media,slug,' . $id . ',id,deleted_at,NULL',
+            'content' => 'required',
         ]);
 
-        $webinars = $this->webinars->findOrFail($id);
+        $media = $this->media->findOrFail($id);
 
-        $webinars->fill(array_merge($request->all(), [
+        $media->fill(array_merge($request->all(), [
+            'is_active' => $request->has('is_active') ? 1 : 0,
             'slug' => str_slug($request->input('name'))
         ]))->save();
 
-        return redirect()->route('admin.webinars.index')->with('flash_message', [
+        return redirect()->route('admin.media.index')->with('flash_message', [
             'title' => '',
-            'message' => 'Webinars ' . $webinars->name . ' successfully updated.',
+            'message' => 'Media ' . $media->name . ' successfully updated.',
             'type' => 'success'
         ]);
     }
@@ -167,13 +164,13 @@ class WebinarsController extends Controller
      */
     public function destroy($id)
     {
-        if (!auth()->user()->hasPermissionTo('Delete Webinars')) {
+        if (!auth()->user()->hasPermissionTo('Delete Media')) {
             abort('401', '401');
         }
 
-        $webinars = $this->webinars->findOrFail($id);
-        $webinars->delete();
+        $media = $this->media->findOrFail($id);
+        $media->delete();
 
-        return response()->json(status()->success('Webinars successfully deleted.', compact('id')));
+        return response()->json(status()->success('Media successfully deleted.', compact('id')));
     }
 }
