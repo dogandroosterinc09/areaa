@@ -29,15 +29,15 @@ class ChapterEventController extends Controller
         $this->pageRepository = $pageRepository;
     }
 
-    public function showChapterEvents($slug) {
+    public function index($slug) {
         $chapter = \App\Models\Chapter::where('slug',$slug)->get()->first();
-
-        $page = $this->pageRepository->getActivePageBySlug('chapter-events');
         
         //Redirect to 404 when chapter does not exist
         if (!$chapter) {
             abort(404);
         }
+
+        $page = $this->pageRepository->getActivePageBySlug('chapter-events');
 
         return view('front.pages.custom-pages-index', compact('page', 'chapter'));
     }
@@ -45,13 +45,13 @@ class ChapterEventController extends Controller
     public function showChapterEventDetail($slug, $event_slug) {
         $chapter = \App\Models\Chapter::where('slug',$slug)->get()->first();
         $chapter_event = \App\Models\ChapterEvent::where('slug',$event_slug)->get()->first();
-
-        $page = $this->pageRepository->getActivePageBySlug('chapter-event-detail');
         
         //Redirect to 404 when chapter does not exist
         if (!$chapter || !$chapter_event) {
             abort(404);
         }
+
+        $page = $this->pageRepository->getActivePageBySlug('chapter-event-detail');
 
         $nextEvent = $this->nextEvent($chapter_event);
         $previousEvent = $this->previousEvent($chapter_event);

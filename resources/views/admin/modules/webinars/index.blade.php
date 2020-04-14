@@ -28,7 +28,7 @@
             </h2>
         </div>
         <div class="alert alert-info alert-dismissable webinars-empty {{$webinars->count() == 0 ? '' : 'johnCena' }}">
-            <i class="fa fa-info-circle"></i> No Webinars found.
+            <i class="fa fa-info-circle"></i> No Media found.
         </div>
         <div class="table-responsive {{$webinars->count() == 0 ? 'johnCena' : '' }}">
             <table id="webinars-table" class="table table-bordered table-striped table-vcenter">

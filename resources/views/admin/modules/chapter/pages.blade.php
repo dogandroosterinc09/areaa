@@ -7,10 +7,11 @@
 </ul>
 
 <div class="block full">
-    <div class="content-header">
-        <div class="header-section">
-            <h1>{{ $chapter->name }}</h1>
-        </div>
+    <div class="block-title">
+        <h2>
+            <i class="fa fa-newspaper-o sidebar-nav-icon"></i>
+            <strong>Pages {{ $chapter->name }}</strong>
+        </h2>
     </div>
     <div class="table-responsive">
         <table id="" class="table table-bordered table-striped table-vcenter">
@@ -31,6 +32,50 @@
                 <tr>
                     <td class="text-left">Home</td>
                     <td class="text-left"><a href="{{ url($chapter->slug) }}" target="_blank">{{ url($chapter->slug) }}</a></td>
+                    <td class="text-center">
+                        <a href="{{ route('admin.chapters.pages.edit.home', $chapter->id) }}"
+                                       data-toggle="tooltip"
+                                       title=""
+                                       class="btn btn-default"
+                                       data-original-title="Edit"><i class="fa fa-pencil"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-left">About Us</td>
+                    <td class="text-left"><a href="{{ url($chapter->slug).'/aboutus' }}" target="_blank">{{ url($chapter->slug).'/aboutus' }}</a></td>
+                    <td class="text-center">
+                        <a href="{{ route('admin.chapters.pages.edit.home', $chapter->id) }}"
+                                       data-toggle="tooltip"
+                                       title=""
+                                       class="btn btn-default"
+                                       data-original-title="Edit"><i class="fa fa-pencil"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-left">Events</td>
+                    <td class="text-left"><a href="{{ url($chapter->slug).'/events' }}" target="_blank">{{ url($chapter->slug).'/events' }}</a></td>
+                    <td class="text-center">
+                        <a href="{{ route('admin.chapters.pages.edit.home', $chapter->id) }}"
+                                       data-toggle="tooltip"
+                                       title=""
+                                       class="btn btn-default"
+                                       data-original-title="Edit"><i class="fa fa-pencil"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-left">Leadership</td>
+                    <td class="text-left"><a href="{{ url($chapter->slug).'/leadership-board' }}" target="_blank">{{ url($chapter->slug).'/leadership-board' }}</a></td>
+                    <td class="text-center">
+                        <a href="{{ route('admin.chapters.pages.edit.home', $chapter->id) }}"
+                                       data-toggle="tooltip"
+                                       title=""
+                                       class="btn btn-default"
+                                       data-original-title="Edit"><i class="fa fa-pencil"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-left">Contact Us</td>
+                    <td class="text-left"><a href="{{ url($chapter->slug).'/contactus' }}" target="_blank">{{ url($chapter->slug).'/contactus' }}</a></td>
                     <td class="text-center">
                         <a href="{{ route('admin.chapters.pages.edit.home', $chapter->id) }}"
                                        data-toggle="tooltip"

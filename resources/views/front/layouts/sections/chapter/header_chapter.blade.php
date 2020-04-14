@@ -40,17 +40,17 @@
                             <a class="nav-link" href="{{ url($chapter['slug']) }}">Home</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link" href="{{ url($chapter['slug'].'-aboutus') }}">About Us</a>
+                            <a class="nav-link" href="{{ url($chapter['slug'].'/aboutus') }}">About Us</a>
                         </li>
                         
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url($chapter['slug'].'/events') }}">Events</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link" href="{{ url($chapter['slug'].'-leadership') }}">Leadership</a>
+                            <a class="nav-link" href="{{ url($chapter['slug'].'/leadership-board') }}">Leadership</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link" href="{{ url($chapter['slug'].'-contactus') }}">Contact Us</a>
+                            <a class="nav-link" href="{{ url($chapter['slug'].'/contactus') }}">Contact Us</a>
                         </li>
                     </ul>
                 </nav>

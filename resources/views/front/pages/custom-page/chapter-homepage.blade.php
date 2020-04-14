@@ -15,10 +15,11 @@
 
                         <div class="heading-button">
                             <h2> My Upcoming Events </h2>
-                            <a href="{{url('aloha-events')}}" class="btn btn--view-all"> View all</a>
+                            <a href="{{url($chapter['slug'].'/events')}}" class="btn btn--view-all"> View all</a>
                         </div>
                         
                         <div class="chapter-events-upcoming">
+                            
                             {{-- loop here --}}
                             <div class="chapter-events-upcoming__box">
                                 <div class="row">

@@ -27,10 +27,10 @@
                             <h4>Menu</h4>
                                 <ul>
                                     <li><a href="{{ url($chapter['slug']) }}">Home</a></li>
-                                    <li><a href="{{ url($chapter['slug'].'-aboutus') }}">About us</a></li>
-                                    <li><a href="{{ url($chapter['slug'].'-events') }}">Events</a></li>
-                                    <li><a href="{{ url($chapter['slug'].'-leadership') }}">Leadership</a></li>
-                                    <li><a href="{{ url($chapter['slug'].'-contactus') }}">Contact us </a></li>
+                                    <li><a href="{{ url($chapter['slug'].'/aboutus') }}">About us</a></li>
+                                    <li><a href="{{ url($chapter['slug'].'/events') }}">Events</a></li>
+                                    <li><a href="{{ url($chapter['slug'].'/leadership-board') }}">Leadership</a></li>
+                                    <li><a href="{{ url($chapter['slug'].'/contactus') }}">Contact us </a></li>
                                     <li><a href="{{ url($chapter['slug'].'-login') }}">Log in</a></li>
                                     <li><a href="{{ url('/') }}"> AREAA National</a></li>
                                 </ul>
