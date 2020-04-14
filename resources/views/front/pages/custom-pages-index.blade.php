@@ -171,6 +171,9 @@
 
         @elseif ($page['slug'] == 'dashboard-memberdirectory')
             @include('front.pages.custom-page.dashboard-memberdirectory')
+            
+        @elseif ($page['slug'] == 'dashboard-memberdirectory-detail')
+            @include('front.pages.custom-page.dashboard-memberdirectory-detail')
 
 
         

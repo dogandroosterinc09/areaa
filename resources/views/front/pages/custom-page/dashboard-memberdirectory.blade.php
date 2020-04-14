@@ -57,22 +57,18 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ url('dashboard') }}">Events</a>
                             </li>
-                            <li class="nav-item active">
-                                <a class="nav-link" href="{{ url('') }}">Member Directory</a>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url('dashboard-memberdirectory') }}">Membership Directory</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('') }}">Profile</a>
-                                <div class="dropdown-menu">
-                                    <ul class="sub-menu">
-                                        <li>
-                                            <a class="nav-link" href="#"> Sub menu 1</a>
-                                        </li>
-                                    </ul>
-                                </div>
+                                <a class="nav-link" href="#" {{--data-toggle="dropdown"--}}>
+                                    Profile
+                                </a>
                             </li>
-                           
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('') }}">Membership Details</a>
+                                <a class="nav-link" href="{{ url('dashboard-memberdirectory-detail') }}" {{--data-toggle="dropdown"--}}>
+                                    Membership Details
+                                </a>
                             </li>
                            
                             <li class="nav-item">
@@ -162,7 +158,7 @@
                                             <h4> Mary Johnson </h4> </div>
                                         <div class="member-directory-result__location"> San Diego, CA </div>
                                         <div class="member-directory-result__language"> English </div>
-                                        <div class="member-directory-result__action"> <a href="#">View Profile</a> </div>
+                                        <div class="member-directory-result__action"> <a href="{{url('dashboard-memberdirectory-detail')}}">View Profile</a> </div>
                                     </div>
                                      {{-- loop this --}}
 
@@ -175,7 +171,7 @@
                                             <h4> Henry McCalistar </h4> </div>
                                         <div class="member-directory-result__location"> Los Angeles, CA </div>
                                         <div class="member-directory-result__language"> English, Spanish </div>
-                                        <div class="member-directory-result__action"> <a href="#">View Profile</a> </div>
+                                        <div class="member-directory-result__action"> <a href="{{url('dashboard-memberdirectory-detail')}}">View Profile</a> </div>
                                     </div>
                                      {{-- loop this --}}
 
@@ -188,7 +184,7 @@
                                             <h4>Patrisha Kingsley </h4> </div>
                                         <div class="member-directory-result__location"> Seattle, CA </div>
                                         <div class="member-directory-result__language"> English </div>
-                                        <div class="member-directory-result__action"> <a href="#">View Profile</a> </div>
+                                        <div class="member-directory-result__action"> <a href="{{url('dashboard-memberdirectory-detail')}}">View Profile</a> </div>
                                     </div>
                                      {{-- loop this --}}
 
@@ -203,7 +199,7 @@
                                             <h4>Gregory Smith </h4> </div>
                                         <div class="member-directory-result__location"> Dallas, TX </div>
                                         <div class="member-directory-result__language"> English </div>
-                                        <div class="member-directory-result__action"> <a href="#">View Profile</a> </div>
+                                        <div class="member-directory-result__action"> <a href="{{url('dashboard-memberdirectory-detail')}}">View Profile</a> </div>
                                     </div>
                                      {{-- loop this --}}
 
@@ -216,7 +212,7 @@
                                             <h4> Mary Johnson </h4> </div>
                                         <div class="member-directory-result__location"> San Diego, CA </div>
                                         <div class="member-directory-result__language"> English </div>
-                                        <div class="member-directory-result__action"> <a href="#">View Profile</a> </div>
+                                        <div class="member-directory-result__action"> <a href="{{url('dashboard-memberdirectory-detail')}}">View Profile</a> </div>
                                     </div>
                                      {{-- loop this --}}
 
@@ -229,7 +225,7 @@
                                             <h4> Henry McCalistar </h4> </div>
                                         <div class="member-directory-result__location"> Los Angeles, CA </div>
                                         <div class="member-directory-result__language"> English, Spanish </div>
-                                        <div class="member-directory-result__action"> <a href="#">View Profile</a> </div>
+                                        <div class="member-directory-result__action"> <a href="{{url('dashboard-memberdirectory-detail')}}">View Profile</a> </div>
                                     </div>
                                      {{-- loop this --}}
 
@@ -242,7 +238,7 @@
                                             <h4>Patrisha Kingsley </h4> </div>
                                         <div class="member-directory-result__location"> Seattle, CA </div>
                                         <div class="member-directory-result__language"> English </div>
-                                        <div class="member-directory-result__action"> <a href="#">View Profile</a> </div>
+                                        <div class="member-directory-result__action"> <a href="{{url('dashboard-memberdirectory-detail')}}">View Profile</a> </div>
                                     </div>
                                      {{-- loop this --}}
 
@@ -257,11 +253,36 @@
                                             <h4>Gregory Smith </h4> </div>
                                         <div class="member-directory-result__location"> Dallas, TX </div>
                                         <div class="member-directory-result__language"> English </div>
-                                        <div class="member-directory-result__action"> <a href="#">View Profile</a> </div>
+                                        <div class="member-directory-result__action"> <a href="{{url('dashboard-memberdirectory-detail')}}">View Profile</a> </div>
                                     </div>
                                      {{-- loop this --}}
 
                                 </div>
+
+
+                                <div class="col-lg-12 text-center">
+                                    
+                                    <nav aria-label="" class="pagination-section">
+                                        <ul class="pagination">
+                                          <li class="page-item disabled">
+                                            <span class="page-link">Previous</span>
+                                          </li>
+                                          <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                          <li class="page-item active" aria-current="page">
+                                            <span class="page-link">
+                                              2
+                                              <span class="sr-only">(current)</span>
+                                            </span>
+                                          </li>
+                                          <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                          <li class="page-item">
+                                            <a class="page-link" href="#">Next</a>
+                                          </li>
+                                        </ul>
+                                      </nav>
+
+                                </div>
+
                             </div>
                         </div>
                     </div>

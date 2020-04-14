@@ -21665,6 +21665,12 @@ ul.bullet-style li h6 {
 .dashboard-content__memberdirectory .container-max {
   max-width: 1280px;
 }
+.dashboard-content__memberdirectory-detail {
+  margin-top: 50px;
+}
+.dashboard-content__memberdirectory-detail .container-max {
+  max-width: 1280px;
+}
 
 .member-directory-result {
   margin-bottom: 80px;
@@ -21744,6 +21750,100 @@ ul.bullet-style li h6 {
 }
 .member-directory-result__results .member-directory-result__name {
   padding: 10px 20px;
+}
+
+.pagination-section {
+  display: inline-block;
+  margin-top: 25px;
+}
+.pagination-section .pagination .page-link {
+  border: 0;
+  color: #000;
+  background: transparent;
+}
+.pagination-section .pagination .page-item.active .page-link {
+  background-color: #ab1a2d;
+  border-color: #ab1a2d;
+  color: #fff;
+  border-radius: 100%;
+  -moz-border-radius: 100%;
+  width: 35px;
+  height: 35px;
+}
+.pagination-section .pagination .page-item.disabled .page-link {
+  color: #b9b1b2;
+}
+
+.memberdirectory-detail {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin-bottom: 50px;
+  padding: 30px;
+}
+.memberdirectory-detail .container {
+  max-width: 100%;
+}
+.memberdirectory-detail__image {
+  height: 260px;
+  width: 260px;
+  border-ra: 100%;
+  overflow: hidden;
+  border-radius: 100%;
+  margin-bottom: 20px;
+}
+.memberdirectory-detail__badge img {
+  margin-bottom: 25px;
+}
+.memberdirectory-detail__badge-year {
+  display: inline-block;
+  background: url("../images/sprite.png") no-repeat;
+  background-position: -565px -399px;
+  width: 112px;
+  height: 36px;
+  display: flex;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  margin-bottom: 20px;
+}
+.memberdirectory-detail__social-link {
+  border-top: 1px solid #000;
+  padding-top: 10px;
+  text-align: center;
+}
+.memberdirectory-detail__social-link h5 {
+  font-weight: bold;
+}
+.memberdirectory-detail__social-link .socials a {
+  color: #303132;
+  margin-right: 10px;
+}
+.memberdirectory-detail__social-link .socials a:hover {
+  color: #ab1a2d;
+}
+.memberdirectory-detail__date {
+  font-weight: 400;
+}
+.memberdirectory-detail__title {
+  margin-top: 20px;
+}
+.memberdirectory-detail__title h3 {
+  font-weight: 800;
+  margin-bottom: 0;
+  color: #303132;
+}
+.memberdirectory-detail__position {
+  text-transform: uppercase;
+  color: #303132;
+  margin-bottom: 25px;
+}
+
+.information {
+  margin-top: 30px;
+}
+.information .row > div {
+  margin-bottom: 14px;
 }
 
 section.page {
