@@ -26,25 +26,24 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('dashboard') }}">Events</a>
                         </li>
+                       
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('') }}">Profile</a>
-                            <div class="dropdown-menu">
-                                <ul class="sub-menu">
-                                    <li>
-                                        <a class="nav-link" href="#"> Sub menu 1</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('') }}">Membership Details</a>
-                         
+                            <a class="nav-link" href="{{ url('dashboard-memberdirectory') }}">Membership Directory</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#" {{--data-toggle="dropdown"--}}>
                                 Profile
                             </a>
-                           
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('dashboard-memberdirectory-detail') }}" {{--data-toggle="dropdown"--}}>
+                                Membership Details
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" {{--data-toggle="dropdown"--}}>
+                                Support
+                            </a>
                         </li>
                     </ul>
                 </nav>

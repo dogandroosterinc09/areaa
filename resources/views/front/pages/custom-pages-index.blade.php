@@ -169,7 +169,16 @@
             @include('front.pages.custom-page-chapters.atlantametro-contactus')
 
         @elseif ($page['slug'] == 'atlantametro-aboutus')
-            @include('front.pages.custom-page-chapters.atlantametro-aboutus') --}}
+            @include('front.pages.custom-page-chapters.atlantametro-aboutus')
+
+
+        @elseif ($page['slug'] == 'dashboard-memberdirectory')
+            @include('front.pages.custom-page.dashboard-memberdirectory')
+            
+        @elseif ($page['slug'] == 'dashboard-memberdirectory-detail')
+            @include('front.pages.custom-page.dashboard-memberdirectory-detail')
+
+
         
         @else
             @include('front.pages.custom-page.default-page')
