@@ -196,7 +196,7 @@ class ChapterLogoController extends Controller
         $extension = $file->getClientOriginalExtension();
         $file_name = substr((pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME)), 0, 30) . '-' . time() . '.' . $extension;
         $file_name = preg_replace("/[^a-z0-9\_\-\.]/i", '', $file_name);
-        $file_path = '/images/logos';
+        $file_path = '/uploads/logos';
         $directory = public_path() . $file_path;
 
         if (!File::exists($directory)) {
