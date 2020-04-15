@@ -6,7 +6,8 @@
             <div class="col-md-3 footer__item">
                 <div class="footer-logo">
                     <a href="{{ url($chapter['slug']) }}">
-                        <img src="{{ asset('public/images/logos/areaa_'.$chapter['slug'].'.png') }}" alt="logo">
+                        @php( $chapter_logo = \App\Models\ChapterLogo::where('chapter_id', $chapter->id)->get()->last() )
+                        <img src="{{ $chapter_logo ? asset($chapter_logo->image) : asset('public/images/header/header-logo.png') }}" alt="logo">
                     </a>
                 </div>
               

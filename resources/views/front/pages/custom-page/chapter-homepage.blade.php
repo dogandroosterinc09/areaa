@@ -145,7 +145,7 @@
 
                         <div class="col-md-6">
                             {{-- <img src="{{ $chapter_homes->attachment ? $chapter_homes->attachment->url : '' }}" alt="{{ $chapter_homes->attachment ? $chapter_homes->attachment->url : '' }}" class="img-fluid"> --}}
-                            <img src="{{ section('Member Benefits.data.first.image') }}" alt="{{ section('Member Benefits.data.first.alt_text') }}" class="img-fluid">
+                            <img src="{{ $chapter_homes->member_benefits_featured_image }}" alt="{{  $chapter_homes->member_benefits_featured_image_alt }}" class="img-fluid">
                         </div>
 
                 

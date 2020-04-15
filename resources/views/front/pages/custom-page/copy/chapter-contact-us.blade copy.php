@@ -1,10 +1,48 @@
-<section class="page-chapter page-chapter--contactus page-chapter-aloha page-chapter-aloha--contactus">
-    @include('front.layouts.sections.chapter.header_chapter')
+<section class="page-chapter page-chapter--contact-us">
+    @include('front.layouts.sections.header')
+    {{-- @include('front.pages.custom-page.sections.banner') --}}
 
-    {{-- @include('front.pages.custom-page.sections.chapter-slider-aloha') --}}
+    @include('front.pages.custom-page.sections.chapter-slider')
 
     <main class="main-content">
 
+          {{-- @include('front.pages.custom-page.sections.chapter-menu') --}}
+          <section class="dashboard-nav">
+
+            <div class="dashboard-navigation">
+                <div class="dashboard-navigation__wrapper">
+                    <div class="dashboard-navigation__item">
+                    
+                        <nav class="navbar-bar">
+                            <ul class="navbar-bar__wrapper">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link" href="{{ url('chapter-homepage') }}">Home </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ url('chapter-our-story') }}">About Us</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ url('chapter-events') }}">Events</a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="{{ url('chapter-leadership') }}">Leadership</a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="{{ url('chapter-contact-us') }}">Contact us</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ url('chapter-login') }}">Log in</a>
+                                </li>
+                            </ul>
+                        </nav>
+        
+        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
         {{-- individual section  --}}
         <section class="contact-section paper-background curl-tail-bottom">
             <div class="container">
@@ -18,9 +56,9 @@
                             <p>Lorem ipsum dolor sit amet, quam sollicitudin sagittis fringilla lacus enim, leo elit non nec varius sodales. Amet faucibus, id tempor quisque pharetra leo. Curae integer. Diam duis integer vel ut. </p>
 
                             <div class="contact-details">
-                                <div class="contact-details__item"><i class="loc"></i> <span>Chapter President: Abe Lee</span></div>
-                                <div class="contact-details__item"><i class="tel"></i> <a href="tel:8082164999">808-216-4999 </a></div>
-                                <div class="contact-details__item"><i class="mail"></i> <a href="mailto:abelee1948@gmail.com">abelee1948@gmail.com</a></div>
+                                <div class="contact-details__item"><i class="loc"></i> <span>3990 Old Town Avenue C304, San Diego, CA 92110</span></div>
+                                <div class="contact-details__item"><i class="tel"></i> <a href="tel:619.795.7873 ">619.795.7873 </a></div>
+                                <div class="contact-details__item"><i class="mail"></i> <a href="mailto:contact@areaa.org">contact@areaa.org</a></div>
                             </div>
                         </div>
 
@@ -85,9 +123,8 @@
             </div> {{-- end of default-content--row --}}
         </section> {{-- end of default-content --}}
 
-
          
 
     </main>
-    @include('front.layouts.sections.chapter.footer_chapter')
+    @include('front.layouts.sections.footer')
 </section>

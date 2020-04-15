@@ -109,9 +109,14 @@ class PageController extends Controller
             if (empty($page)) {
                 
                 //Check if chapter page
-                $chapter = \App\Models\Chapter::where('slug', $slug)->get()->first();                
+                $chapter = \App\Models\Chapter::where('slug', $slug)->get()->first();
+
                 if ($chapter) {
-                    return view('front.pages.custom-pages-index', compact('chapter'));
+                    $seo_meta =  $this->getSeoMeta(null);
+
+                    //Add other seo_meta here
+                    
+                    return view('front.pages.custom-pages-index', compact('chapter', 'seo_meta'));
                 }
 
                 abort('404', '404');

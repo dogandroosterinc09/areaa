@@ -84,3 +84,7 @@ Route::resource('/media_categories', 'MediaCategoryController');
 
 
 Route::resource('/media', 'MediaController');
+
+
+Route::resource('/chapter_logos', 'ChapterLogoController');
+Route::get('/chapter_logos/upload/{id?}', 'ChapterLogoController@uploadLogo')->name('chapter_logos.upload');

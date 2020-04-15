@@ -1,15 +1,14 @@
 (function () {
     "use strict";
     /* declare global variables within the class */
-    var uiChapterHomesTable,
-        uiCreateChapterHomeForm,
-        uiEditChapterHomeForm,
-        uiChapterHomesDatatable,
+    var uiChapterLogosTable,
+        uiCreateChapterLogoForm,
+        uiEditChapterLogoForm,
+        uiChapterLogosDatatable,
         uiInputImage,
         uiRemoveImgBtn,
-        uiInputBadgeIcon,
+        uiInputFile,
         uiRemoveFileBtn,
-        uiInputBadgeIcons,
         filler;
 
     /* private ajax function that will send request to backend */
@@ -137,34 +136,33 @@
     }
 
     /*
-     * This js file will only contain chapter_home events
+     * This js file will only contain chapter_logo events
      *
      * */
-    CPlatform.prototype.chapter_home = {
+    CPlatform.prototype.chapter_logo = {
 
         initialize: function () {
             /* assign a value to the global variable within this class */
-            uiChapterHomesTable = $('#chapter_homes-table');
-            uiCreateChapterHomeForm = $('#create-chapter_home');
-            uiEditChapterHomeForm = $('#edit-chapter_home');
-            uiChapterHomesDatatable = null;
-            uiInputImage = $('input[name="member_benefits_featured_image"]');
-            uiInputBadgeIcon = $('input[name="top_sponsor_image"]');
-            uiInputBadgeIcons = $('input[name="other_sponsors_image[]"]');
+            uiChapterLogosTable = $('#chapter_logos-table');
+            uiCreateChapterLogoForm = $('#create-chapter_logo');
+            uiEditChapterLogoForm = $('#edit-chapter_logo');
+            uiChapterLogosDatatable = null;
+            uiInputImage = $('input[name="image"]');
+            uiInputFile = $('input[name="file"]');
             uiRemoveImgBtn = $('.remove-image-btn');
             uiRemoveFileBtn = $('.remove-file-btn');
 
-            uiChapterHomesDatatable = platform.chapter_home.initialize_datatable();
+            uiChapterLogosDatatable = platform.chapter_logo.initialize_datatable();
 
-            /* create chapter_home validation */
-            uiCreateChapterHomeForm.find('[type="submit"]').on('click', function () {
+            /* create chapter_logo validation */
+            uiCreateChapterLogoForm.find('[type="submit"]').on('click', function () {
                 if (platform.var_check(CKEDITOR) && platform.var_check(CKEDITOR.instances)) {
                     for (var instance in CKEDITOR.instances) {
                         CKEDITOR.instances[instance].updateElement();
                     }
                 }
             });
-            uiCreateChapterHomeForm.validate({
+            uiCreateChapterLogoForm.validate({
                 errorClass: 'help-block animation-slideDown',
                 errorElement: 'span',
                 ignore: [':hidden:not([type="file"])'],
@@ -184,50 +182,32 @@
                     form.submit();
                 },
                 rules: {
-                    'name': {
-                        required: true
-                    },
-                    'slug': {
+                    'chapter_id': {
                         required: true
                     },
                     'image': {
-                        required: true
-                    },
-                    'file': {
-                        required: true
-                    },
-                    'content': {
                         required: true
                     }
                 },
                 messages: {
-                    'name': {
-                        required: 'Name is required.'
-                    },
-                    'slug': {
-                        required: 'Slug is required.'
+                    'chapter_id': {
+                        required: 'Chapter is required.'
                     },
                     'image': {
                         required: 'Image is required.'
-                    },
-                    'file': {
-                        required: 'File is required.'
-                    },
-                    'content': {
-                        required: 'Content is required.'
                     }
                 }
             });
 
-            /* edit chapter_home validation */
-            uiEditChapterHomeForm.find('[type="submit"]').on('click', function () {
+            /* edit chapter_logo validation */
+            uiEditChapterLogoForm.find('[type="submit"]').on('click', function () {
                 if (platform.var_check(CKEDITOR) && platform.var_check(CKEDITOR.instances)) {
                     for (var instance in CKEDITOR.instances) {
                         CKEDITOR.instances[instance].updateElement();
                     }
                 }
             });
-            uiEditChapterHomeForm.validate({
+            uiEditChapterLogoForm.validate({
                 errorClass: 'help-block animation-slideDown',
                 errorElement: 'span',
                 ignore: [':hidden:not([type="file"])'],
@@ -290,8 +270,8 @@
                 }
             });
 
-            /* delete chapter_home button ajax */
-            $('body').on('click', '.delete-chapter_home-btn', function (e) {
+            /* delete chapter_logo button ajax */
+            $('body').on('click', '.delete-chapter_logo-btn', function (e) {
                 e.preventDefault();
                 var self = $(this);
                 /* open confirmation modal */
@@ -310,8 +290,8 @@
                     /* if confirmed, send request ajax */
                     if (isConfirm) {
                         var oParams = {
-                            'data': {'id': self.attr('data-chapter_home-id')},
-                            'url': self.attr('data-chapter_home-route')
+                            'data': {'id': self.attr('data-chapter_logo-id')},
+                            'url': self.attr('data-chapter_logo-route')
                         };
                         platform.delete.delete(oParams, function (oData) {
                             /* check return of ajax */
@@ -328,17 +308,17 @@
                                                 'type': "success"
                                                 //'confirmButtonColor': "#DD6B55",
                                             }, function () {
-                                                /* remove chapter_home container */
-                                                // $('[data-chapter_home-id="' + oData.data.id + '"]').remove();
-                                                if (platform.var_check(uiChapterHomesDatatable)) {
-                                                    uiChapterHomesDatatable.row(self.parents('tr:first')).remove();
+                                                /* remove chapter_logo container */
+                                                // $('[data-chapter_logo-id="' + oData.data.id + '"]').remove();
+                                                if (platform.var_check(uiChapterLogosDatatable)) {
+                                                    uiChapterLogosDatatable.row(self.parents('tr:first')).remove();
                                                 }
 
-                                                uiChapterHomesDatatable = platform.chapter_home.initialize_datatable();
+                                                uiChapterLogosDatatable = platform.chapter_logo.initialize_datatable();
 
-                                                /* check if there are other chapter_homes to hide the table header and show the no chapter_homes found */
-                                                if ($('tr[data-chapter_home-id]').length == 0) {
-                                                    $('.chapter_home-empty').removeClass('johnCena');
+                                                /* check if there are other chapter_logos to hide the table header and show the no chapter_logos found */
+                                                if ($('tr[data-chapter_logo-id]').length == 0) {
+                                                    $('.chapter_logo-empty').removeClass('johnCena');
                                                     $('.table-responsive').addClass('johnCena');
                                                 }
                                             });
@@ -377,24 +357,6 @@
                 _fileselect($(this), numFiles, label, ext, 'image');
             });
 
-            uiInputBadgeIcon.on('change', function () {
-                var input = $(this),
-                    numFiles = input.get(0).files ? input.get(0).files.length : 1,
-                    label = input.val().replace(/\\/g, '/').replace(/.*\//, ''),
-                    sValue = $(this).val(),
-                    ext = sValue.substring(sValue.lastIndexOf('.') + 1).toLowerCase();
-                _fileselect($(this), numFiles, label, ext, 'image');
-            });
-
-            uiInputBadgeIcons.on('change', function () {
-                var input = $(this),
-                    numFiles = input.get(0).files ? input.get(0).files.length : 1,
-                    label = input.val().replace(/\\/g, '/').replace(/.*\//, ''),
-                    sValue = $(this).val(),
-                    ext = sValue.substring(sValue.lastIndexOf('.') + 1).toLowerCase();
-                _fileselect($(this), numFiles, label, ext, 'image');
-            });
-
             uiRemoveImgBtn.off('click').on('click', function () {
                 var uiImgContainer = $(this).parents('.form-group:first').find('.img-responsive');
                 var input = $(this).parents('.form-group:first').find('.input-group').find(':text');
@@ -407,27 +369,15 @@
                 element.closest('.form-group').find('.remove-image-btn').hide();
                 element.closest('.form-group').find('input.remove-image').val(1);
             });
-
-            uiRemoveFileBtn.off('click').on('click', function () {
-                var uiFileContainer = $(this).parents('.form-group:first').find('.file-anchor');
-                var input = $(this).parents('.form-group:first').find('.input-group').find(':text');
-                var element = $(this).parents('.form-group:first').find('input[type="file"]');
-                uiFileContainer.attr('href', '');
-                uiFileContainer.text('');
-                input.val('');
-                element.val('');
-                element.closest('.form-group').find('.remove-file-btn').hide();
-                element.closest('.form-group').find('input.remove-file').val(1);
-            });
         },
 
         initialize_datatable: function () {
-            if (platform.var_check(uiChapterHomesDatatable)) {
-                uiChapterHomesDatatable.destroy();
+            if (platform.var_check(uiChapterLogosDatatable)) {
+                uiChapterLogosDatatable.destroy();
             }
 
-            /* chapter_homes table initialize datatable */
-            uiChapterHomesDatatable = uiChapterHomesTable.DataTable({
+            /* chapter_logos table initialize datatable */
+            uiChapterLogosDatatable = uiChapterLogosTable.DataTable({
                 "order": [[0, "asc"]],
                 "paging": true,
                 "pageLength": 10,
@@ -441,7 +391,7 @@
                 }]
             });
 
-            return uiChapterHomesDatatable;
+            return uiChapterLogosDatatable;
         },
     }
 
@@ -449,5 +399,5 @@
 
 /* run initialize function on load of window */
 $(window).on('load', function () {
-    platform.chapter_home.initialize();
+    platform.chapter_logo.initialize();
 });

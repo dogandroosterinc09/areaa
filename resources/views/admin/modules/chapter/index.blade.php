@@ -56,6 +56,11 @@
                         <td class="text-center">{{ $chapter->created_at->format('F d, Y') }}</td>
                         <td class="text-center">
                             <div class="btn-group btn-group-xs">
+                                <a href="{{ route('admin.chapter_logos.upload', $chapter->id) }}"
+                                       data-toggle="tooltip"
+                                       title=""
+                                       class="btn btn-default"
+                                       data-original-title="Upload Logo"><i class="fa fa-image"></i></a>
                                 <a href="{{ route('admin.chapters.pages', $chapter->id) }}"
                                        data-toggle="tooltip"
                                        title=""

@@ -43,6 +43,12 @@ class ChapterHome extends Model
         'sponsors_content',
         'sponsors_button1_text',
         'sponsors_button1_link',
+
+        'sponsors_filters',
+
+        'top_sponsor',
+
+        'other_sponsors',
     ];
 
     public function getChapterAttribute() {

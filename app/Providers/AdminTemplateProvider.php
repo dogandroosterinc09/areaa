@@ -47,6 +47,7 @@ class AdminTemplateProvider extends ServiceProvider
             ],
             [
                 'name' => 'Front-end Site',
+                // 'url' => (auth()->user()->getRoleNames()->first() !== 'Chapter Admin' ? url('/') : url('/' . auth()->user()->ChapterSlug)) ,
                 'url' => url('/'),
                 'never_active' => true,
                 'icon' => 'fa fa-paper-plane-o'
@@ -132,12 +133,13 @@ class AdminTemplateProvider extends ServiceProvider
                 ]);
            }
         
+           if (auth()->user()->can('Read Media Category')) {
             array_push($navigation, [
                 'name' => 'Media Categories',
                 'url' => url('admin/media_categories'),
                 'icon' => 'fa fa-phone'
             ]);
-
+           }
 
            if ($this->hasCrudAccessFor('Board Member')) {
                 $board_member_tab = [];
