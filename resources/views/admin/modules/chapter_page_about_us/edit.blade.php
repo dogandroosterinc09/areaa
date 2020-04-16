@@ -2,8 +2,13 @@
 
 @section('content')
     <ul class="breadcrumb breadcrumb-top">
-        <li><a href="{{ route('admin.chapter_page_about_uses.index') }}">Chapter Page About uses</a></li>
-        <li><span href="javascript:void(0)">Edit Chapter Page About Us</span></li>
+        @if(auth()->user()->roles->first()->name !== 'Chapter Admin')
+        <li><a href="{{ route('admin.chapters.index') }}">Chapter</a></li>
+        <li><a href="{{ route('admin.chapters.pages', $chapter_page_about_us->chapter_id ) }}">Pages</a></li>
+        @else
+        <li><a href="{{ route('admin.pages.index') }}">Pages</a></li>
+        @endif
+        <li><span href="javascript:void(0)">Edit Chapter About Us</span></li>
     </ul>
     <div class="row">
         {{  Form::open([
@@ -17,7 +22,7 @@
         <div class="col-md-12">
             <div class="block">
                 <div class="block-title">
-                    <h2><i class="fa fa-pencil"></i> <strong>Edit Chapter Page About Us "{{$chapter_page_about_us->chapter}}"</strong></h2>
+                    <h2><i class="fa fa-pencil"></i> <strong>Edit Chapter About Us "{{$chapter_page_about_us->chapter}}"</strong></h2>
                 </div>
                 
                 @include('admin.components.heading', ['text' => 'Sections'])
@@ -96,7 +101,7 @@
 
                 <div class="form-group form-actions">
                     <div class="col-md-9 col-md-offset-3">
-                        <a href="{{ route('admin.chapter_page_about_uses.index') }}" class="btn btn-sm btn-warning">Cancel</a>
+                        <a href="{{ (auth()->user()->roles->first()->name === 'Chapter Admin') ? route('admin.pages.index') : route('admin.chapters.pages', $chapter_page_about_us->chapter_id) }}" class="btn btn-sm btn-warning">Cancel</a>
                         <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-floppy-o"></i> Save
                         </button>
                     </div>
