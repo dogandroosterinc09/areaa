@@ -24,10 +24,8 @@
 
                     <div class="col-md-9">
                         <select class="form-control" id="chapter_id" name="chapter_id">
-                        @php( $chapters = \App\Models\Chapter::where('id',$id)->get() )                            
-                        @foreach($chapters as $chapter)
-                            <option {{ $chapter_logo ? ($chapter_logo->chapter_id == $chapter->id ? 'selected' : '') : $chapter->id == $id ? 'selected' : '' }} value="{{ $chapter->id }}">{{ $chapter->name }}</option>
-                        @endforeach
+                        @php( $chapter = \App\Models\Chapter::where('id',$id)->get()->first() )
+                            <option {{ $chapter_logo ? ($chapter_logo->chapter_id == $chapter->id ? 'selected' : '') : $chapter->id == $id ? 'selected' : '' }} value="{{ $chapter->id }}">{{ $chapter->name }}</option>                        
                         </select>
                         @if($errors->has('chapter_id'))
                             <span class="help-block animation-slideDown">{{ $errors->first('chapter_id') }}</span>
@@ -57,7 +55,7 @@
                         </a>
                         <br>
                         <a href="javascript:void(0)" class="btn btn-xs btn-danger remove-image-btn"
-                           style="display: {{ $chapter_logo ? ($chapter_logo->image != '' ? '' : 'none') : '' }};"><i class="fa fa-trash"></i> Remove</a>
+                           style="display: {{ $chapter_logo ? ($chapter_logo->image != '' ? '' : 'none') : 'none' }};"><i class="fa fa-trash"></i> Remove</a>
                         <input type="hidden" name="remove_image" class="remove-image" value="0">
                     </div>
                 </div>
