@@ -163,7 +163,7 @@
                     <div class="col-md-12">
                         <div class="filter-stone">
                             <ul class="inline-block">
-                                @foreach( section('Sponsors Filters.data') as $data )
+                                @foreach( json_decode($chapter_homes->sponsors_filters) as $data )
                                 <li class="filter-stone--{{ $data->icon }}"><a href="{{ $data->link }}"> <span> 1 </span>- {{ $data->text }} </a> </li>
                                 @endforeach
                                 <!-- <li class="filter-stone--jade"><a href="#"> <span> 1 </span>- Jade </a> </li>
@@ -190,14 +190,15 @@
                             </div>
                     </div>
 
+                    @php($top_sponsor = json_decode($chapter_homes->top_sponsor))
                     <div class="col-md-8">
                         <div class="logo-display">
                             <div class="logo-display__single">
                                 <div class="row">
                                     <div class="col-md-5">
                                         <div class="sponsor-thumbnail">
-                                            <div class="sponsor-thumbnail__badge sponsor-thumbnail__badge--{{ section('Top Sponsor.data.first.badge_icon') }}">  </div>
-                                            <img src="{{ url('public/images/sponsor0.jpg') }}" alt="chapter title" class="img-fluid">
+                                            <div class="sponsor-thumbnail__badge sponsor-thumbnail__badge--{{ $top_sponsor->badge_icon }}">  </div>
+                                            <img src="{{ asset($top_sponsor->image) }}" alt="{{ $top_sponsor->image_alt }}" class="img-fluid">
                                         </div>
                                     </div>
                                 </div>
@@ -205,11 +206,12 @@
                             </div>
                             <div class="logo-display__col3">
                                 <div class="row">
-                                    @foreach( section('Other Sponsors.data') as $data )
+                                    @php( $other_sponsors = json_decode($chapter_homes->other_sponsors) )
+                                    @foreach( $other_sponsors as $sponsor )
                                     <div class="col-md-4">
                                         <div class="sponsor-thumbnail">
-                                            <div class="sponsor-thumbnail__badge sponsor-thumbnail__badge--{{ $data->badge_icon }}">  </div>
-                                            <img src="{{ $data->image }}" alt="{{ $data->alt_text }}" class="img-fluid">
+                                            <div class="sponsor-thumbnail__badge sponsor-thumbnail__badge--{{ $sponsor->badge_icon }}">  </div>
+                                            <img src="{{ $sponsor->image }}" alt="{{ $sponsor->image_alt }}" class="img-fluid">
                                         </div>
                                     </div>
                                     @endforeach                                    

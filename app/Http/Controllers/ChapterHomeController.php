@@ -98,8 +98,6 @@ class ChapterHomeController extends Controller
 
         $db_other_sponsors = json_decode($chapter_home['other_sponsors']);
 
-        // return json_encode(isset($db_other_sponsors));
-
         for($counter = 0; $counter < count($request->other_sponsors_badge_icon); $counter++) {
             array_push($other_sponsors, [
                 'badge_icon' => $request->other_sponsors_badge_icon[$counter],
@@ -110,10 +108,11 @@ class ChapterHomeController extends Controller
         }
 
         $chapter_home->fill(array_merge($request->all()), [
-            'sponsors_filters' => $sponsors_filters,
             'top_sponsor' => $top_sponsor,
             'other_sponsors' => $other_sponsors
         ])->save();
+
+        $chapter_home->fill(['sponsors_filters' => $sponsors_filters])->save();
 
         //Member Benefits Featured Image
         if ($request->hasFile('member_benefits_featured_image')) {

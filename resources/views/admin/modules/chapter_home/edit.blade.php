@@ -125,7 +125,7 @@
                             </div>
                             <div class="col-md-offset-2 col-md-10">
                                 <a href="{{ $top_sponsor ? asset($top_sponsor->image) : '' }}" class="zoom img-thumbnail" style="cursor: default !important;" data-toggle="lightbox-image">
-                                    <img {{ $top_sponsor ? asset($top_sponsor->image) : '' }} 
+                                    <img src="{{ $top_sponsor ? asset($top_sponsor->image) : '' }} "
                                         alt="{{ $top_sponsor ? asset($top_sponsor->image) : '' }}"
                                         class="img-responsive center-block" style="max-width: 100px;">
                                 </a>                                
@@ -138,7 +138,7 @@
                 @include('admin.components.heading', ['text' => 'Other Sponsors'])
 
                 @php($other_sponsors = json_decode($chapter_home->other_sponsors))
-                @for($counter = 0; $counter < $max = 8; $counter++)
+                @for($counter = 0; $counter < $max = 12; $counter++)
                     @include('admin.components.input-field', ['label' => 'Badge Icon', 'field' => 'other_sponsors_badge_icon[]', 'value' => isset($other_sponsors[$counter]->badge_icon) ? $other_sponsors[$counter]->badge_icon : '' ])
                     <div class="row">
                         <div class="col-md-8 col-md-offset-2">
@@ -159,7 +159,7 @@
                                 </div>
                                 <div class="col-md-offset-2 col-md-10">
                                     <a href="{{ !empty($other_sponsors[$counter]->image) ? asset($other_sponsors[$counter]->image) : '' }}" class="zoom img-thumbnail" style="cursor: default !important;" data-toggle="lightbox-image">
-                                        <img {{ !empty($other_sponsors[$counter]->image) ? 'src='. asset($other_sponsors[$counter]->image) : '' }}                                            
+                                        <img src="{{ !empty($other_sponsors[$counter]->image) ? asset($other_sponsors[$counter]->image) : '' }}"
                                             class="img-responsive center-block" style="max-width: 100px;">
                                     </a>                                
                                 </div>

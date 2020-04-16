@@ -27,8 +27,8 @@ class ChapterPageController extends Controller
             abort(404);
         }
 
-        $page = $this->pageRepository->getActivePageBySlug('chapter-about-us');
-
+        $page = $this->pageRepository->getActivePageBySlug('chapter-aboutus');
+        
         return view('front.pages.custom-pages-index', compact('page', 'chapter'));
     }
 
@@ -40,7 +40,7 @@ class ChapterPageController extends Controller
             abort(404);
         }
 
-        $page = $this->pageRepository->getActivePageBySlug('chapter-contact-us');
+        $page = $this->pageRepository->getActivePageBySlug('chapter-contactus');
 
         return view('front.pages.custom-pages-index', compact('page', 'chapter'));
     }
