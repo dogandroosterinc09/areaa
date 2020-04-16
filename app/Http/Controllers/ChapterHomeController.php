@@ -90,7 +90,7 @@ class ChapterHomeController extends Controller
         //Top Sponsor
         $top_sponsor = new \stdClass();
         $top_sponsor->badge_icon = $request->top_sponsor_badge_icon;
-        $top_sponsor->image = $request->top_sponsor_image;
+        $top_sponsor->image =  isset($chapter_home->top_sponsor_image) ? $chapter_home->top_sponsor_image : $request->top_sponsor_image;
         $top_sponsor->image_alt = $request->top_sponsor_image_alt;
 
         //Other Sponsors

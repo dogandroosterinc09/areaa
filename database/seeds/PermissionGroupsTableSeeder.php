@@ -158,8 +158,8 @@ class PermissionGroupsTableSeeder extends Seeder
                 'id' => 18,
                 'name' => 'Chapter Board Members',
                 'created_at' => '2020-04-07 17:18:37',
-                'updated_at' => '2020-04-07 17:18:37',
-                'deleted_at' => NULL,
+                'updated_at' => '2020-04-15 21:14:49',
+                'deleted_at' => '2020-04-15 21:14:49',
             ),
             18 => 
             array (
@@ -191,6 +191,14 @@ class PermissionGroupsTableSeeder extends Seeder
                 'name' => 'Chapter Logos',
                 'created_at' => '2020-04-13 17:17:56',
                 'updated_at' => '2020-04-13 17:17:56',
+                'deleted_at' => NULL,
+            ),
+            22 => 
+            array (
+                'id' => 23,
+                'name' => 'Chapter Page About Us',
+                'created_at' => '2020-04-15 21:07:19',
+                'updated_at' => '2020-04-15 21:08:34',
                 'deleted_at' => NULL,
             ),
         ));

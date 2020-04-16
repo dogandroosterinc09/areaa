@@ -640,42 +640,6 @@ class PermissionsTableSeeder extends Seeder
             ),
             69 => 
             array (
-                'id' => 70,
-                'name' => 'Create Chapter Board Members',
-                'guard_name' => 'web',
-                'permission_group_id' => 18,
-                'created_at' => '2020-04-07 17:18:37',
-                'updated_at' => '2020-04-07 17:18:37',
-            ),
-            70 => 
-            array (
-                'id' => 71,
-                'name' => 'Read Chapter Board Members',
-                'guard_name' => 'web',
-                'permission_group_id' => 18,
-                'created_at' => '2020-04-07 17:18:37',
-                'updated_at' => '2020-04-07 17:18:37',
-            ),
-            71 => 
-            array (
-                'id' => 72,
-                'name' => 'Update Chapter Board Members',
-                'guard_name' => 'web',
-                'permission_group_id' => 18,
-                'created_at' => '2020-04-07 17:18:37',
-                'updated_at' => '2020-04-07 17:18:37',
-            ),
-            72 => 
-            array (
-                'id' => 73,
-                'name' => 'Delete Chapter Board Members',
-                'guard_name' => 'web',
-                'permission_group_id' => 18,
-                'created_at' => '2020-04-07 17:18:37',
-                'updated_at' => '2020-04-07 17:18:37',
-            ),
-            73 => 
-            array (
                 'id' => 74,
                 'name' => 'Create Chapter Board Member',
                 'guard_name' => 'web',
@@ -683,7 +647,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2020-04-07 17:22:12',
                 'updated_at' => '2020-04-07 17:22:12',
             ),
-            74 => 
+            70 => 
             array (
                 'id' => 75,
                 'name' => 'Read Chapter Board Member',
@@ -692,7 +656,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2020-04-07 17:22:12',
                 'updated_at' => '2020-04-07 17:22:12',
             ),
-            75 => 
+            71 => 
             array (
                 'id' => 76,
                 'name' => 'Update Chapter Board Member',
@@ -701,7 +665,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2020-04-07 17:22:12',
                 'updated_at' => '2020-04-07 17:22:12',
             ),
-            76 => 
+            72 => 
             array (
                 'id' => 77,
                 'name' => 'Delete Chapter Board Member',
@@ -710,7 +674,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2020-04-07 17:22:12',
                 'updated_at' => '2020-04-07 17:22:12',
             ),
-            77 => 
+            73 => 
             array (
                 'id' => 78,
                 'name' => 'Create Media Category',
@@ -719,7 +683,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2020-04-09 20:17:10',
                 'updated_at' => '2020-04-09 20:17:10',
             ),
-            78 => 
+            74 => 
             array (
                 'id' => 79,
                 'name' => 'Read Media Category',
@@ -728,7 +692,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2020-04-09 20:17:10',
                 'updated_at' => '2020-04-09 20:17:10',
             ),
-            79 => 
+            75 => 
             array (
                 'id' => 80,
                 'name' => 'Update Media Category',
@@ -737,7 +701,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2020-04-09 20:17:10',
                 'updated_at' => '2020-04-09 20:17:10',
             ),
-            80 => 
+            76 => 
             array (
                 'id' => 81,
                 'name' => 'Delete Media Category',
@@ -746,7 +710,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2020-04-09 20:17:10',
                 'updated_at' => '2020-04-09 20:17:10',
             ),
-            81 => 
+            77 => 
             array (
                 'id' => 82,
                 'name' => 'Create Media',
@@ -755,7 +719,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2020-04-09 20:47:11',
                 'updated_at' => '2020-04-09 20:47:11',
             ),
-            82 => 
+            78 => 
             array (
                 'id' => 83,
                 'name' => 'Read Media',
@@ -764,7 +728,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2020-04-09 20:47:11',
                 'updated_at' => '2020-04-09 20:47:11',
             ),
-            83 => 
+            79 => 
             array (
                 'id' => 84,
                 'name' => 'Update Media',
@@ -773,7 +737,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2020-04-09 20:47:11',
                 'updated_at' => '2020-04-09 20:47:11',
             ),
-            84 => 
+            80 => 
             array (
                 'id' => 85,
                 'name' => 'Delete Media',
@@ -782,7 +746,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2020-04-09 20:47:11',
                 'updated_at' => '2020-04-09 20:47:11',
             ),
-            85 => 
+            81 => 
             array (
                 'id' => 86,
                 'name' => 'Create Chapter Logo',
@@ -791,7 +755,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2020-04-13 17:17:56',
                 'updated_at' => '2020-04-13 17:17:56',
             ),
-            86 => 
+            82 => 
             array (
                 'id' => 87,
                 'name' => 'Read Chapter Logo',
@@ -800,7 +764,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2020-04-13 17:17:56',
                 'updated_at' => '2020-04-13 17:17:56',
             ),
-            87 => 
+            83 => 
             array (
                 'id' => 88,
                 'name' => 'Update Chapter Logo',
@@ -809,7 +773,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2020-04-13 17:17:56',
                 'updated_at' => '2020-04-13 17:17:56',
             ),
-            88 => 
+            84 => 
             array (
                 'id' => 89,
                 'name' => 'Delete Chapter Logo',
@@ -817,6 +781,42 @@ class PermissionsTableSeeder extends Seeder
                 'permission_group_id' => 22,
                 'created_at' => '2020-04-13 17:17:56',
                 'updated_at' => '2020-04-13 17:17:56',
+            ),
+            85 => 
+            array (
+                'id' => 90,
+                'name' => 'Create Chapter Page About Us',
+                'guard_name' => 'web',
+                'permission_group_id' => 23,
+                'created_at' => '2020-04-15 21:07:19',
+                'updated_at' => '2020-04-15 21:07:19',
+            ),
+            86 => 
+            array (
+                'id' => 91,
+                'name' => 'Read Chapter Page About Us',
+                'guard_name' => 'web',
+                'permission_group_id' => 23,
+                'created_at' => '2020-04-15 21:07:19',
+                'updated_at' => '2020-04-15 21:07:19',
+            ),
+            87 => 
+            array (
+                'id' => 92,
+                'name' => 'Update Chapter Page About Us',
+                'guard_name' => 'web',
+                'permission_group_id' => 23,
+                'created_at' => '2020-04-15 21:07:19',
+                'updated_at' => '2020-04-15 21:07:19',
+            ),
+            88 => 
+            array (
+                'id' => 93,
+                'name' => 'Delete Chapter Page About Us',
+                'guard_name' => 'web',
+                'permission_group_id' => 23,
+                'created_at' => '2020-04-15 21:07:19',
+                'updated_at' => '2020-04-15 21:07:19',
             ),
         ));
         

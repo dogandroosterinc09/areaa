@@ -1,0 +1,113 @@
+@extends('admin.layouts.base')
+
+@section('content')
+    <ul class="breadcrumb breadcrumb-top">
+        <li><a href="{{ route('admin.chapter_page_about_uses.index') }}">Chapter Page About uses</a></li>
+        <li><span href="javascript:void(0)">Edit Chapter Page About Us</span></li>
+    </ul>
+    <div class="row">
+        {{  Form::open([
+            'method' => 'PUT',
+            'id' => 'edit-chapter_page_about_us',
+            'route' => ['admin.chapter_page_about_uses.update', $chapter_page_about_us->id],
+            'class' => 'form-horizontal ',
+            'files' => true
+            ])
+        }}
+        <div class="col-md-12">
+            <div class="block">
+                <div class="block-title">
+                    <h2><i class="fa fa-pencil"></i> <strong>Edit Chapter Page About Us "{{$chapter_page_about_us->chapter}}"</strong></h2>
+                </div>
+                
+                @include('admin.components.heading', ['text' => 'Sections'])
+                @php( $section_1 = json_decode($chapter_page_about_us->section_1) )
+                @include('admin.components.heading', ['text' => 'Section 1'])
+
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="form-group{{ $errors->has('section_1_featured_image') ? ' has-error' : '' }}">
+                            <label class="col-md-2 control-label" for="section_1_featured_image">Featured Image</label>
+                            <div class="col-md-10">
+                                <div class="input-group">
+                                    <label class="input-group-btn">
+                                    <span class="btn btn-primary">
+                                        Choose File <input type="file" name="section_1_featured_image" style="display: none;">
+                                    </span>
+                                    </label>
+                                    <input type="text" class="form-control" readonly>
+                                </div>
+                                @if($errors->has('section_1_featured_image'))
+                                    <span class="help-block animation-slideDown">{{ $errors->first('section_1_featured_image') }}</span>
+                                @endif
+                            </div>
+                            <div class="col-md-offset-2 col-md-10">
+                                <a href="{{ $section_1 ? ($section_1->featured_image ? asset($section_1->featured_image) : '') : '' }}" class="zoom img-thumbnail" style="cursor: default !important;" data-toggle="lightbox-image">
+                                    <img src="{{ $section_1 ? ($section_1->featured_image ? asset($section_1->featured_image) : '') : '' }}"
+                                        alt="{{ $section_1 ? ($section_1->featured_image ? asset($section_1->featured_image) : '') : '' }}"
+                                        class="img-responsive center-block" style="max-width: 100px;">
+                                </a>                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                @include('admin.components.input-field', ['label' => 'Alt Text', 'field' => 'section_1_alt_text', 'value' => $section_1 ? $section_1->alt_text : ''])
+                @include('admin.components.input-field', ['label' => 'Title', 'field' => 'section_1_title', 'value' => $section_1 ? $section_1->title : ''])
+                @include('admin.components.editor', ['label' => 'Content', 'field' => 'section_1_content', 'value' => $section_1 ? $section_1->content : ''])
+                @include('admin.components.input-field', ['label' => 'Button Text', 'field' => 'section_1_button_text', 'value' => $section_1 ? $section_1->button_text : ''])
+                @include('admin.components.input-field', ['label' => 'Button Link', 'field' => 'section_1_button_link', 'value' => $section_1 ? $section_1->button_link : ''])
+
+                @include('admin.components.heading', ['text' => 'Section 2'])
+                @php( $section_2 = json_decode($chapter_page_about_us->section_2) )
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="form-group{{ $errors->has('section_2_featured_image') ? ' has-error' : '' }}">
+                            <label class="col-md-2 control-label" for="section_2_featured_image">Featured Image</label>
+                            <div class="col-md-10">
+                                <div class="input-group">
+                                    <label class="input-group-btn">
+                                    <span class="btn btn-primary">
+                                        Choose File <input type="file" name="section_2_featured_image" style="display: none;">
+                                    </span>
+                                    </label>
+                                    <input type="text" class="form-control" readonly>
+                                </div>
+                                @if($errors->has('section_2_featured_image'))
+                                    <span class="help-block animation-slideDown">{{ $errors->first('section_2_featured_image') }}</span>
+                                @endif
+                            </div>
+                            <div class="col-md-offset-2 col-md-10">
+                                <a href="{{ $section_2 ? ($section_2->featured_image ? asset($section_2->featured_image) : '') : '' }}" class="zoom img-thumbnail" style="cursor: default !important;" data-toggle="lightbox-image">
+                                    <img src="{{ $section_2 ? ($section_2->featured_image ? asset($section_2->featured_image) : '') : '' }}"
+                                        alt="{{ $section_2 ? ($section_2->featured_image ? asset($section_2->featured_image) : '') : '' }}"
+                                        class="img-responsive center-block" style="max-width: 100px;">
+                                </a>                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                @include('admin.components.input-field', ['label' => 'Alt Text', 'field' => 'section_2_alt_text', 'value' => $section_2 ? $section_2->alt_text : ''])
+                @include('admin.components.input-field', ['label' => 'Title', 'field' => 'section_2_title', 'value' => $section_2 ? $section_2->title : ''])
+                @include('admin.components.textarea', ['label' => 'Content', 'field' => 'section_2_content', 'value' => $section_2 ? $section_2->content : ''])
+                @include('admin.components.input-field', ['label' => 'Button Text', 'field' => 'section_2_button_text', 'value' => $section_2 ? $section_2->button_text : ''])
+                @include('admin.components.input-field', ['label' => 'Button Link', 'field' => 'section_2_button_link', 'value' =>   $section_2 ? $section_2->button_link : ''])
+
+                <div class="form-group form-actions">
+                    <div class="col-md-9 col-md-offset-3">
+                        <a href="{{ route('admin.chapter_page_about_uses.index') }}" class="btn btn-sm btn-warning">Cancel</a>
+                        <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-floppy-o"></i> Save
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{ Form::close() }}
+    </div>
+@endsection
+
+@push('extrascripts')
+    <script type="text/javascript" src="{{ asset('public/js/ckeditor/ckeditor.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('public/js/libraries/chapter_page_about_uses.js') }}"></script>
+@endpush
