@@ -73,7 +73,7 @@
                     <td class="text-left"><a href="{{ url($chapter->slug).'/leadership-board' }}" target="_blank">{{ url($chapter->slug).'/leadership-board' }}</a></td>
                     <td class="text-center">
                         <div class="btn-group btn-group-xs">
-                            <a href="{{ route('admin.chapters.pages.edit.home', $chapter->id) }}"
+                            <a href="{{ route('admin.chapters.pages.edit.leadership', $chapter->id) }}"
                                        data-toggle="tooltip"
                                        title=""
                                        class="btn btn-default"
