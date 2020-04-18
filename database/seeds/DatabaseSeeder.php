@@ -49,5 +49,6 @@ class DatabaseSeeder extends Seeder
         $this->call(MediaCategoriesTableSeeder::class);
         $this->call(ChapterLogosTableSeeder::class);
         $this->call(ChapterPageAboutUsTableSeeder::class);
+        $this->call(ChapterPageEventsTableSeeder::class);
     }
 }

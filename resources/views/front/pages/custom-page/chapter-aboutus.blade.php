@@ -11,8 +11,9 @@
                 <div class="container-max sub-banner__content">
                     <div class="row">
                         <div class="col-md-12 sub-banner__content">
-                            <h3>Learn More</h3>
-                            <h1>About Us</h1>
+                            <!-- <h3>Learn More</h3>
+                            <h1>About Us</h1> -->
+                            {!! $chapter_page_aboutus->content !!}
                         </div>
                     </div>
                 </div>
@@ -20,7 +21,8 @@
         </div>
         
         <div class="sub-banner__image image-background">
-            <img src="{{ url('public/images/chapter-aboutus.jpg') }}">
+            <!-- <img src="{{ url('public/images/chapter-aboutus.jpg') }}"> -->
+            <img src="{{ asset($chapter_page_aboutus->banner_image) }}">
         </div>
 
     </section>

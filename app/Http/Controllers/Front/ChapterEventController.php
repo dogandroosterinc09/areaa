@@ -29,19 +29,6 @@ class ChapterEventController extends Controller
         $this->pageRepository = $pageRepository;
     }
 
-    public function index($slug) {
-        $chapter = \App\Models\Chapter::where('slug',$slug)->get()->first();
-        
-        //Redirect to 404 when chapter does not exist
-        if (!$chapter) {
-            abort(404);
-        }
-
-        $page = $this->pageRepository->getActivePageBySlug('chapter-events');
-
-        return view('front.pages.custom-pages-index', compact('page', 'chapter'));
-    }
-
     public function showChapterEventDetail($slug, $event_slug) {
         $chapter = \App\Models\Chapter::where('slug',$slug)->get()->first();
         $chapter_event = \App\Models\ChapterEvent::where('slug',$event_slug)->get()->first();

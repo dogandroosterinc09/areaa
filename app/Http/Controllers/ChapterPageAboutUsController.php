@@ -43,7 +43,7 @@ class ChapterPageAboutUsController extends Controller
 
         if (!isset($chapter_page_about_us)) {
             $chapter_page_about_us = $this->chapter_page_about_us->create(['chapter_id' => $id]);
-        }        
+        }
 
         return view('admin.modules.chapter_page_about_us.edit', compact('chapter_page_about_us'));
     }

@@ -45,12 +45,12 @@ class ChapterHomesTableSeeder extends Seeder
                 'sponsors_content' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
                 'sponsors_button1_text' => 'Interested In Sponsorship?',
                 'sponsors_button1_link' => '#',
-                'sponsors_filters' => '',
-                'top_sponsor' => '',
-                'other_sponsors' => '',
+                'sponsors_filters' => '[{"icon":"jade","text":"Jade","link":"#"},{"icon":"diamond","text":"Diamond","link":"#"},{"icon":"emerald","text":"Emerald","link":"#"},{"icon":"opal","text":"Opal","link":"#"},{"icon":"ruby","text":"Ruby","link":"#"},{"icon":"pearl","text":"Pearl","link":"#"}]',
+                'top_sponsor' => '{"badge_icon":"jade","image":"public\\/uploads\\/sponsor0-1587071957.jpg","image_alt":"chapter title"}',
+                'other_sponsors' => '[{"badge_icon":"ruby","image":"public\\/uploads\\/sponsor1-1587071957.jpg","image_alt":"chapter title"},{"badge_icon":"emerald","image":"public\\/uploads\\/sponsor2-1587071957.jpg","image_alt":"chapter title"},{"badge_icon":"diamond","image":"public\\/uploads\\/sponsor3-1587071957.jpg","image_alt":"chapter title"},{"badge_icon":"opal","image":"public\\/uploads\\/sponsor4-1587071957.jpg","image_alt":"chapter title"},{"badge_icon":"pearl","image":"public\\/uploads\\/sponsor5-1587071957.jpg","image_alt":"chapter title"},{"badge_icon":"opal","image":"public\\/uploads\\/sponsor6-1587071957.jpg","image_alt":"chapter title"},{"badge_icon":"pearl","image":"public\\/uploads\\/sponsor7-1587071957.jpg","image_alt":"chapter title"},{"badge_icon":"diamond","image":"public\\/uploads\\/sponsor9-1587071957.jpg","image_alt":"chapter title"},{"badge_icon":"jade","image":"public\\/uploads\\/sponsor8-1587073636.jpg","image_alt":"chapter title"},{"badge_icon":"opal","image":"public\\/uploads\\/sponsor10-1587073636.jpg","image_alt":"chapter title"},{"badge_icon":"pearl","image":"public\\/uploads\\/sponsor11-1587073636.jpg","image_alt":"chapter title"},{"badge_icon":"diamond","image":"public\\/uploads\\/sponsor12-1587073636.jpg","image_alt":"chapter title"}]',
                 'deleted_at' => NULL,
                 'created_at' => '2020-04-01 21:57:22',
-                'updated_at' => '2020-04-07 14:45:08',
+                'updated_at' => '2020-04-16 17:26:47',
             ),
         ));
         

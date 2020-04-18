@@ -10,8 +10,8 @@
                 <div class="container-max sub-banner__content">
                     <div class="row">
                         <div class="col-md-12 sub-banner__content">
-                            {{-- <h3>Aloha</h3> --}}
-                            <h1>Events</h1>
+                            {{-- <h3>Aloha</h3> --}}                            
+                            {!! $chapter_page_event->content !!}
                         </div>
                     </div>
                 </div>
@@ -19,7 +19,7 @@
         </div>
         
         <div class="sub-banner__image image-background">
-            <img src="{{ url('public/images/events-banner.jpg') }}">
+            <img src="{{ asset($chapter_page_event->banner_image) }}">
         </div>
     </section>
     
