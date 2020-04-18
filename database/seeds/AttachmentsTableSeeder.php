@@ -1106,8 +1106,8 @@ class AttachmentsTableSeeder extends Seeder
                 'extension' => 'jpg',
                 'identifier' => 'default',
                 'created_at' => '2020-04-07 16:37:23',
-                'updated_at' => '2020-04-07 16:37:23',
-                'deleted_at' => NULL,
+                'updated_at' => '2020-04-17 22:50:07',
+                'deleted_at' => '2020-04-17 22:50:07',
             ),
             84 => 
             array (
@@ -1119,8 +1119,8 @@ class AttachmentsTableSeeder extends Seeder
                 'extension' => 'jpg',
                 'identifier' => 'default',
                 'created_at' => '2020-04-07 16:38:11',
-                'updated_at' => '2020-04-07 16:38:11',
-                'deleted_at' => NULL,
+                'updated_at' => '2020-04-17 22:49:54',
+                'deleted_at' => '2020-04-17 22:49:54',
             ),
             85 => 
             array (
@@ -1133,6 +1133,32 @@ class AttachmentsTableSeeder extends Seeder
                 'identifier' => 'default',
                 'created_at' => '2020-04-07 18:23:48',
                 'updated_at' => '2020-04-07 18:23:48',
+                'deleted_at' => NULL,
+            ),
+            86 => 
+            array (
+                'id' => 87,
+                'name' => '',
+                'alias' => 'ZCkhgitN3FFQX4FI.jpg',
+                'mime' => 'image/jpeg',
+                'folder' => 'ChapterEvent',
+                'extension' => 'jpg',
+                'identifier' => 'default',
+                'created_at' => '2020-04-17 22:49:54',
+                'updated_at' => '2020-04-17 22:49:54',
+                'deleted_at' => NULL,
+            ),
+            87 => 
+            array (
+                'id' => 88,
+                'name' => '',
+                'alias' => 'Njj1qpiDJNeDxeIE.jpg',
+                'mime' => 'image/jpeg',
+                'folder' => 'ChapterEvent',
+                'extension' => 'jpg',
+                'identifier' => 'default',
+                'created_at' => '2020-04-17 22:50:07',
+                'updated_at' => '2020-04-17 22:50:07',
                 'deleted_at' => NULL,
             ),
         ));

@@ -150,6 +150,20 @@ class AttachablesTableSeeder extends Seeder
                 'attachable_id' => 1,
                 'attachable_type' => 'App\\Models\\ChapterBoardMember',
             ),
+            19 => 
+            array (
+                'id' => 20,
+                'attachment_id' => 87,
+                'attachable_id' => 1,
+                'attachable_type' => 'App\\Models\\ChapterEvent',
+            ),
+            20 => 
+            array (
+                'id' => 21,
+                'attachment_id' => 88,
+                'attachable_id' => 2,
+                'attachable_type' => 'App\\Models\\ChapterEvent',
+            ),
         ));
         
         
