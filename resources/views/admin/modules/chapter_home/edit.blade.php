@@ -3,7 +3,7 @@
 @section('content')
     <ul class="breadcrumb breadcrumb-top">
         @if(auth()->user()->roles->first()->name !== 'Chapter Admin')
-        <li><a href="{{ route('admin.chapters.index') }}">Chapter</a></li>
+        <li><a href="{{ route('admin.chapters.index') }}">Chapters</a></li>
         <li><a href="{{ route('admin.chapters.pages', $chapter_home->chapter_id ) }}">Pages</a></li>
         @else
         <li><a href="{{ route('admin.pages.index') }}">Pages</a></li>

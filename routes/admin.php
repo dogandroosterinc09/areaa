@@ -96,3 +96,7 @@ Route::get('/chapters/pages/{id}/edit/aboutus', 'ChapterPageAboutUsController@ed
 
 Route::resource('/chapter_page_events', 'ChapterPageEventController');
 Route::get('/chapters/pages/{id}/edit/events', 'ChapterPageEventController@edit')->name('chapters.pages.edit.events');
+
+
+Route::resource('/chapter_page_leaderships', 'ChapterPageLeadershipController');
+Route::get('/chapters/pages/{id}/edit/leadership', 'ChapterPageLeadershipController@edit')->name('chapters.pages.edit.leadership');
