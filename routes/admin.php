@@ -91,7 +91,7 @@ Route::get('/chapter_logos/upload/{id?}', 'ChapterLogoController@uploadLogo')->n
 
 
 Route::resource('/chapter_page_about_uses', 'ChapterPageAboutUsController');
-Route::get('/chapters/pages/{id}/edit/aboutus', 'ChapterPageAboutUsController@edit')->name('chapters.pages.edit.aboutus');
+Route::get('/chapters/pages/{id}/edit/about_us', 'ChapterPageAboutUsController@edit')->name('chapters.pages.edit.about_us');
 
 
 Route::resource('/chapter_page_events', 'ChapterPageEventController');
@@ -100,3 +100,7 @@ Route::get('/chapters/pages/{id}/edit/events', 'ChapterPageEventController@edit'
 
 Route::resource('/chapter_page_leaderships', 'ChapterPageLeadershipController');
 Route::get('/chapters/pages/{id}/edit/leadership', 'ChapterPageLeadershipController@edit')->name('chapters.pages.edit.leadership');
+
+
+Route::resource('/chapter_page_contact_uses', 'ChapterPageContactUsController');
+Route::get('/chapters/pages/{id}/edit/contact_us', 'ChapterPageContactUsController@edit')->name('chapters.pages.edit.contact_us');

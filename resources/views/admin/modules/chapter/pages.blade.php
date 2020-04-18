@@ -47,7 +47,7 @@
                     <td class="text-left"><a href="{{ url($chapter->slug).'/aboutus' }}" target="_blank">{{ url($chapter->slug).'/aboutus' }}</a></td>
                     <td class="text-center">
                         <div class="btn-group btn-group-xs">
-                            <a href="{{ route('admin.chapters.pages.edit.aboutus', $chapter->id) }}"
+                            <a href="{{ route('admin.chapters.pages.edit.about_us', $chapter->id) }}"
                                        data-toggle="tooltip"
                                        title=""
                                        class="btn btn-default"
@@ -73,7 +73,7 @@
                     <td class="text-left"><a href="{{ url($chapter->slug).'/leadership-board' }}" target="_blank">{{ url($chapter->slug).'/leadership-board' }}</a></td>
                     <td class="text-center">
                         <div class="btn-group btn-group-xs">
-                            <a href="{{ route('admin.chapters.pages.edit.leadership', $chapter->id) }}"
+                            <a href="{{ route('admin.chapters.pages.edit.home', $chapter->id) }}"
                                        data-toggle="tooltip"
                                        title=""
                                        class="btn btn-default"
@@ -86,7 +86,7 @@
                     <td class="text-left"><a href="{{ url($chapter->slug).'/contactus' }}" target="_blank">{{ url($chapter->slug).'/contactus' }}</a></td>
                     <td class="text-center">
                         <div class="btn-group btn-group-xs">
-                            <a href="{{ route('admin.chapters.pages.edit.home', $chapter->id) }}"
+                            <a href="{{ route('admin.chapters.pages.edit.contact_us', $chapter->id) }}"
                                        data-toggle="tooltip"
                                        title=""
                                        class="btn btn-default"

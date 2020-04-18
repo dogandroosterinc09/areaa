@@ -6,9 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 
-class ChapterPageLeadership extends Model
+class ChapterPageContactUs extends Model
 {
     use SoftDeletes;
+
+    protected $table = 'chapter_page_contact_us';
 
     /**
      * The attributes that are mass assignable.
