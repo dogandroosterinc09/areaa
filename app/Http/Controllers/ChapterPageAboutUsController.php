@@ -89,12 +89,17 @@ class ChapterPageAboutUsController extends Controller
         $section_2->button_text = $request->section_2_button_text;
         $section_2->button_link = $request->section_2_button_link;
 
-        $chapter_page_about_us->fill([
+        $chapter_page_about_us->fill(array_merge($request->all()), [
             'section_1' => json_encode($section_1),
             'section_2' => json_encode($section_2)
         ])->save();
 
-        if($request->hasFile('section_1_featured_image')) {
+        if ($request->hasFile('banner_image')) {
+            $file_upload_path = $this->upload($request->file('banner_image'));
+            $chapter_page_event->fill(['banner_image' => $file_upload_path])->save();
+        }
+
+        if ($request->hasFile('section_1_featured_image')) {
             $file_upload_path = $this->upload($request->file('section_1_featured_image'));
             
             $section_1->featured_image =  $file_upload_path;
@@ -102,7 +107,7 @@ class ChapterPageAboutUsController extends Controller
             $chapter_page_about_us->fill(['section_1'=>json_encode($section_1)])->save();
         }
 
-        if($request->hasFile('section_2_featured_image')) {
+        if ($request->hasFile('section_2_featured_image')) {
             $file_upload_path = $this->upload($request->file('section_2_featured_image'));
             
             $section_2->featured_image =  $file_upload_path;

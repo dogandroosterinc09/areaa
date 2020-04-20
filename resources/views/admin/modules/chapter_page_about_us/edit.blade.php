@@ -25,10 +25,42 @@
                     <h2><i class="fa fa-pencil"></i> <strong>Edit Chapter About Us "{{$chapter_page_about_us->chapter}}"</strong></h2>
                 </div>
                 
-                @include('admin.components.heading', ['text' => 'Sections'])
-                @php( $section_1 = json_decode($chapter_page_about_us->section_1) )
-                @include('admin.components.heading', ['text' => 'Section 1'])
+                @include('admin.components.heading', ['text' => 'Page Details'])
 
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="form-group{{ $errors->has('banner_image') ? ' has-error' : '' }}">
+                            <label class="col-md-2 control-label" for="banner_image">Banner Image</label>
+                            <div class="col-md-10">
+                                <div class="input-group">
+                                    <label class="input-group-btn">
+                                    <span class="btn btn-primary">
+                                        Choose File <input type="file" name="banner_image" style="display: none;">
+                                    </span>
+                                    </label>
+                                    <input type="text" class="form-control" readonly>
+                                </div>
+                                @if($errors->has('banner_image'))
+                                    <span class="help-block animation-slideDown">{{ $errors->first('banner_image') }}</span>
+                                @endif
+                            </div>
+                            <div class="col-md-offset-2 col-md-10">
+                                <a href="{{ $chapter_page_about_us->banner_image ? asset($chapter_page_about_us->banner_image) : '' }}" class="zoom img-thumbnail" style="cursor: default !important;" data-toggle="lightbox-image">
+                                    <img {{ $chapter_page_about_us->banner_image ? 'src='.asset($chapter_page_about_us->banner_image) : '' }}
+                                        class="img-responsive center-block" style="max-width: 100px;">
+                                </a>                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                @include('admin.components.editor', ['label' => 'Content', 'field' => 'content', 'value' => $chapter_page_about_us->content])
+
+                @include('admin.components.heading', ['text' => 'Sections'])
+                
+                @include('admin.components.heading', ['text' => 'Section 1'])
+                @php( $section_1 = json_decode($chapter_page_about_us->section_1) )
+                
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
                         <div class="form-group{{ $errors->has('section_1_featured_image') ? ' has-error' : '' }}">

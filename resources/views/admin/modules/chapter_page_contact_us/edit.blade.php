@@ -54,12 +54,11 @@
                     </div>
                 </div>
 
-                @php( $section_1 = json_decode($chapter_page_contact_us->section_1) )
-
                 @include('admin.components.editor', ['label' => 'Content', 'field' => 'content', 'value' => $chapter_page_contact_us->content])
                 
                 @include('admin.components.heading', ['text' => 'Sections'])
-                
+                @include('admin.components.heading', ['text' => 'Section 1'])
+                @php( $section_1 = json_decode($chapter_page_contact_us->section_1) )
                 @include('admin.components.input-field', ['label' => 'Location Icon', 'field' => 'location_icon', 'value' => $section_1->location_icon])
                 @include('admin.components.input-field', ['label' => 'Location Text', 'field' => 'location_text', 'value' => $section_1->location_text])
 

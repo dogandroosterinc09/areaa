@@ -19,6 +19,10 @@ class ChapterHome extends Model
     protected $fillable = [
         'chapter_id',
 
+        'content',
+        'banner_image',
+        'seo_meta_id',
+
         'who_we_are_title',
         'who_we_are_featured_image',
         'who_we_are_featured_image_alt',

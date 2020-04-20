@@ -22,4 +22,9 @@ class ChapterPageEvent extends Model
         'seo_meta_id',
         'section_1'
     ];
+
+    public function getChapterAttribute() {
+        $chapter = \App\Models\Chapter::select('name')->where('id',$this->attributes['chapter_id'])->get()->first();
+        return $chapter->name;
+    }
 }

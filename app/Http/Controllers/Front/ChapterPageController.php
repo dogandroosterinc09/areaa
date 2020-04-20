@@ -57,9 +57,7 @@ class ChapterPageController extends Controller
 
         $chapter_page_aboutus->section_1 = $chapter_page_aboutus->section_1 ? json_decode($chapter_page_aboutus->section_1) : new \stdClass() ;
 
-        $chapter_page_aboutus->section_1->title = isset($chapter_page_aboutus->section_1->title) ? $chapter_page_aboutus->section_1->title : 'Our Stories';
-
-        return $chapter_page_aboutus->section_1->title;
+        $chapter_page_aboutus->section_1->title = isset($chapter_page_aboutus->section_1->title) ? $chapter_page_aboutus->section_1->title : 'Our Stories';        
 
         return view('front.pages.custom-pages-index', compact('page', 'chapter', 'chapter_page_aboutus'));
     }
