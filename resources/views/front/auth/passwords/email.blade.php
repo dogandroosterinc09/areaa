@@ -92,10 +92,10 @@
                                                 {{ session()->get('status') }}
                                             </div>
                                         @endif
-                                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                            <div class="col-xs-12">
+                                        
+                                        <div class="form-group row{{ $errors->has('email') ? ' has-error' : '' }}">
+                                            <div class="col-md-12">
                                                 <div class="input-group">
-                                                    <span class="input-group-addon"><i class="gi gi-envelope"></i></span>
                                                     <input type="text" id="email" name="email"
                                                            class="form-control input-lg" placeholder="Email"
                                                            value="{{ old('email') }}" autofocus>
@@ -106,14 +106,14 @@
                                                 </span>
                                                 @endif
                                             </div>
-                                        </div>
-                                        <div class="form-group form-actions">
-                                            <div class="col-md-8 col-md-offset-4 text-right">
-                                                <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-arrow-right"></i>
+                                            <div class="col-md-12 text-right">
+                                                <br>
+                                                <button type="submit" class="btn btn--secondary"><i class="fa fa-arrow-right"></i>
                                                     Send Password Reset Link
                                                 </button>
                                             </div>
                                         </div>
+                                       
                                     {{ Form::close() }}
                                 </form>
                             </div>
