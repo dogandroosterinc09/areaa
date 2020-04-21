@@ -144,7 +144,7 @@
                                             <ul class="custom-checkbox">
                                                 <li class="custom-checkbox__item">
                                                     <label class="custom-checkbox__item--holder">
-                                                        <input type="checkbox">
+                                                        <input type="checkbox" id="remember" name="remember" {{ old('remember') ? 'checked' : ''}}>
                                                             Remember Me
                                                         <span class="checkmark custom-checkbox__checkmark custom-checkbox__checkmark--boxstyle"></span>
                                                     </label>
@@ -157,7 +157,7 @@
                                         </div>
                                         <div class="col-md-6 form-group text-right">
                                             <button type="submit" class="btn btn--secondary">SUBMIT</button>
-                                            <a href="#" class="btn btn--forgot"> Forgot your password? </a>
+                                            <a href="{{ url('customer/password/email') }}" class="btn btn--forgot"> Forgot your password? </a>
                                         </div>
                                     </div>
                                     {{ Form::close() }}
