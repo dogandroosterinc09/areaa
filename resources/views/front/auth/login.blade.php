@@ -19,7 +19,7 @@
 
     
         {{-- need to dynamic this sub  --}}
-        <section class="masking-background login-mask login-section" style="display:none !important;">
+        {{-- <section class="masking-background login-mask login-section" style="display:none !important;">
             <div class="masking-background__wrapper container-max">
                 <div class="masking-background__item">
                     <div class="container-max masking-background__container">
@@ -27,7 +27,6 @@
                             <div class="col-md-6 content-middle login-section__left">
 
                                 <div class="masking-background__content">
-                                      <!-- Log In Form -->
                                     {{  Form::open([
                                         'method' => 'POST',
                                         'id' => 'form-login',
@@ -84,9 +83,7 @@
                                                     <a href="{{url('dashboard-main')}}" class="btn btn--secondary"><i class="fa fa-arrow-right"></i>
                                                         Log In
                                                     </a>
-                                                    {{-- <button type="submit" class="btn btn--secondary"><i class="fa fa-arrow-right"></i>
-                                                        Log In
-                                                    </button> --}}
+                                               
                                                 </div>
                                             </div>
                                         </div>
@@ -95,7 +92,6 @@
                                         </div>
                                     {{ Form::close() }}
                                    
-                                    <!-- END Log In Form -->
                                 </div>
 
                             </div>
@@ -107,7 +103,7 @@
             <div class="masking-background__image image-background">
                 <img src="{{ url('public/images/our-story-image.jpg') }}">
             </div>
-        </section>
+        </section> --}}
 
 
 
