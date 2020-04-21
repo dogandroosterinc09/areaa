@@ -11,7 +11,7 @@
         @endphp
     @endif
     @include('front.layouts.sections.header')
-    @include('front.pages.custom-page.sections.banner')
+    {{-- @include('front.pages.custom-page.sections.banner') --}}
 
     <!-- Reset Form -->
     {{-- <section class="site-content site-section">
