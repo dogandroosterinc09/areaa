@@ -78,6 +78,9 @@
         @elseif ($page['slug'] == 'chapter-leadership')
             @include('front.pages.custom-page.chapter-leadership')
 
+        @elseif ($page['slug'] == 'chapter-leadership-detail')
+            @include('front.pages.custom-page.chapter-leadership-detail')
+
         @elseif ($page['slug'] == 'chapter-our-story')
             @include('front.pages.custom-page.chapter-our-story')
 

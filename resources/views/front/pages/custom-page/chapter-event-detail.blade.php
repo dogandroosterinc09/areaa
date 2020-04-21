@@ -1,5 +1,5 @@
 <section class="page-chapter page-chapter-aloha page-chapter-aloha--events-detail">
-    @include('front.layouts.sections.chapter-aloha.header_chapter_aloha')
+    @include('front.layouts.sections.chapter.header_chapter')
 
     {{-- @include('front.pages.custom-page.sections.chapter-slider-aloha') --}}
     
@@ -132,5 +132,5 @@
          
 
     </main>
-    @include('front.layouts.sections.chapter-aloha.footer_chapter_aloha')
+    @include('front.layouts.sections.chapter.footer_chapter')
 </section>

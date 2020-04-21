@@ -36,5 +36,6 @@ Route::get('/{slug}/leadership-board', 'ChapterPageController@indexLeadershipBoa
 Route::get('/{slug}/contactus', 'ChapterPageController@indexContactUs');
 
 Route::get('/{slug}/event/{event_slug}', 'ChapterEventController@showChapterEventDetail')->name('chapter_event.detail');
+Route::get('/{slug}/leadership-board/{board_slug}', 'ChapterBoardMemberController@showChapterBoardMemberDetail')->name('chapter_board_member.detail');
 
 Route::get('/{slug?}', 'PageController')->name('page');

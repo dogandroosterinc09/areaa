@@ -164,6 +164,69 @@ class AttachablesTableSeeder extends Seeder
                 'attachable_id' => 2,
                 'attachable_type' => 'App\\Models\\ChapterEvent',
             ),
+            21 => 
+            array (
+                'id' => 22,
+                'attachment_id' => 89,
+                'attachable_id' => 3,
+                'attachable_type' => 'App\\Models\\ChapterBoardMember',
+            ),
+            22 => 
+            array (
+                'id' => 23,
+                'attachment_id' => 90,
+                'attachable_id' => 5,
+                'attachable_type' => 'App\\Models\\ChapterBoardMember',
+            ),
+            23 => 
+            array (
+                'id' => 24,
+                'attachment_id' => 91,
+                'attachable_id' => 6,
+                'attachable_type' => 'App\\Models\\ChapterBoardMember',
+            ),
+            24 => 
+            array (
+                'id' => 25,
+                'attachment_id' => 92,
+                'attachable_id' => 7,
+                'attachable_type' => 'App\\Models\\ChapterBoardMember',
+            ),
+            25 => 
+            array (
+                'id' => 26,
+                'attachment_id' => 93,
+                'attachable_id' => 8,
+                'attachable_type' => 'App\\Models\\ChapterBoardMember',
+            ),
+            26 => 
+            array (
+                'id' => 27,
+                'attachment_id' => 94,
+                'attachable_id' => 9,
+                'attachable_type' => 'App\\Models\\ChapterBoardMember',
+            ),
+            27 => 
+            array (
+                'id' => 28,
+                'attachment_id' => 95,
+                'attachable_id' => 10,
+                'attachable_type' => 'App\\Models\\ChapterBoardMember',
+            ),
+            28 => 
+            array (
+                'id' => 29,
+                'attachment_id' => 96,
+                'attachable_id' => 11,
+                'attachable_type' => 'App\\Models\\ChapterBoardMember',
+            ),
+            29 => 
+            array (
+                'id' => 30,
+                'attachment_id' => 97,
+                'attachable_id' => 12,
+                'attachable_type' => 'App\\Models\\ChapterBoardMember',
+            ),
         ));
         
         

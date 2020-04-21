@@ -40,21 +40,25 @@ class ChapterEventController extends Controller
 
         $page = $this->pageRepository->getActivePageBySlug('chapter-event-detail');
 
-        $nextEvent = $this->nextEvent($chapter_event);
-        $previousEvent = $this->previousEvent($chapter_event);
+        $nextEvent = $this->nextEvent($chapter_event, $chapter->id);
+        $previousEvent = $this->previousEvent($chapter_event, $chapter->id);
 
         return view('front.pages.custom-pages-index', compact('page', 'chapter', 'chapter_event', 'nextEvent', 'previousEvent'));
     }
 
-    public function previousEvent($chapter_event) {
+    public function previousEvent($chapter_event, $chapter_id) {
         // $current_event_date = \Carbon\Carbon::parse($chapter_event->starts_at)->format('Y-m-d');
 
-        return  $chapter_event->where('id', '<', $chapter_event->id)->get()->first();
+        return  $chapter_event->where('id', '<', $chapter_event->id)
+                    ->where('chapter_id', $chapter_id)
+                    ->get()->last();
     }
 
-    public function nextEvent($chapter_event) {
+    public function nextEvent($chapter_event, $chapter_id) {
         // $current_event_date = \Carbon\Carbon::parse($chapter_event->starts_at)->format('Y-m-d');
 
-        return  $chapter_event->where('id', '>', $chapter_event->id)->get()->first();
+        return  $chapter_event->where('id', '>', $chapter_event->id)
+                    ->where('chapter_id', $chapter_id)
+                    ->get()->first();
     }
 }

@@ -408,6 +408,24 @@
                 element.closest('.form-group').find('.remove-file-btn').hide();
                 element.closest('.form-group').find('input.remove-file').val(1);
             });
+
+            $('input[name=avatar]').on('change', function (e) {
+                if (e.target.files.length === 0 || !FileReader)
+                    return;
+
+                var fileReader = new FileReader();
+                fileReader.onload = function () {
+                    $('img#avatarContainer').attr('src', fileReader.result);
+                };
+                fileReader.readAsDataURL(e.target.files[0]);
+            });
+
+            $('#btnRemoveAvatar').on('click', function (e) {
+                e.preventDefault();
+
+                $('img#avatarContainer').attr('src', sBaseURI + '/public/images/placeholders/avatars/avatar2.jpg');
+                $('input[name=avatar]').val('');
+            });
         },
 
         initialize_datatable: function () {

@@ -11,6 +11,8 @@ use App\Models\ChapterPageEvent;
 use App\Models\ChapterPageLeadership;
 use App\Models\ChapterPageContactUs;
 
+use App\Models\ChapterBoardMember;
+
 use App\Repositories\PageRepository;
 
 class ChapterPageController extends Controller
@@ -26,14 +28,16 @@ class ChapterPageController extends Controller
             $chapter_page_aboutus,
             $chapter_page_event,
             $chapter_page_leadership,
-            $chapter_page_contactus;
+            $chapter_page_contactus,
+            $chapter_board_member;
 
     public function __construct(PageRepository $pageRepository,
                                 Chapter $chapter,
                                 ChapterPageAboutUs $chapter_page_aboutus,
                                 ChapterPageEvent $chapter_page_event,
                                 ChapterPageLeadership $chapter_page_leadership,
-                                ChapterPageContactUs $chapter_page_contactus)
+                                ChapterPageContactUs $chapter_page_contactus,
+                                ChapterBoardMember $chapter_board_member)
     {
         $this->pageRepository = $pageRepository;
         $this->chapter = $chapter;
@@ -41,6 +45,7 @@ class ChapterPageController extends Controller
         $this->chapter_page_event = $chapter_page_event;
         $this->chapter_page_leadership = $chapter_page_leadership;
         $this->chapter_page_contactus = $chapter_page_contactus;
+        $this->chapter_board_member = $chapter_board_member;
     }
 
     public function indexAboutUs($slug) {
@@ -156,10 +161,18 @@ class ChapterPageController extends Controller
             $chapter_page_leadership->content = $default_content;
         } else {
             $chapter_page_leadership->banner_image = $chapter_page_leadership->banner_image ? $chapter_page_leadership->banner_image : $default_banner_image;
-            $chapter_page_leadership->content = $chapter_page_leadership->content ? $chapter_page_leadership->content : $default_content;
+            $chapter_page_leadership->content = $chapter_page_leadership->content
+            
+            ? $chapter_page_leadership->content : $default_content;
         }
+        
+        $chapter_board = new \stdClass();
+        $chapter_board->executives = $this->chapter_board_member->where('type', $this->chapter_board_member::TYPE_EXECUTIVE)->get();
+        $chapter_board->board_of_directors = $this->chapter_board_member->where('type', $this->chapter_board_member::TYPE_BOARD_OF_DIRECTOR)->get();
+        $chapter_board->advisory = $this->chapter_board_member->where('type',  $this->chapter_board_member::TYPE_ADVISORY)->get();
+        $chapter_board->no_type = $this->chapter_board_member->where('type', 0)->get();
 
-        return view('front.pages.custom-pages-index', compact('page', 'chapter', 'chapter_page_leadership'));
+        return view('front.pages.custom-pages-index', compact('page', 'chapter', 'chapter_page_leadership', 'chapter_board'));
     }
 
     public function verifyChapter($slug) {

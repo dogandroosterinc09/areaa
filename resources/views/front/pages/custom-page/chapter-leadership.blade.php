@@ -25,6 +25,7 @@
 
     <main class="main-content">
 
+        @if(isset($chapter_board->board_of_directors) && $chapter_board->executives->count() > 0)
         <section class="executive-board">
             <div class="container-max">
                 <div class="col-lg-12">
@@ -32,12 +33,11 @@
 
                     {{-- board-thumbnail row --}}
                     <div class="board-thumbnail row">
-                        @php( $executives = \App\Models\ChapterBoardMember::all() )                        
 
-                        @foreach(\App\Models\ChapterBoardMember::all() as $executive)
+                    @foreach( $chapter_board->executives as $executive )
                         {{-- board-thumbnail --}}
                         <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('aloha-leadership-detail')}}">
+                            <a href="{{route('chapter_board_member.detail', ['slug'=>$chapter->slug,'board_slug'=>$executive->slug])}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ optional($executive->attachment)->url ? optional($executive->attachment)->url : asset('public/images/no-pix.jpg') }}" alt="Member Image">
                                 </div>
@@ -48,76 +48,17 @@
                             </a>
                         </div>
                         {{-- board-thumbnail --}}
-                        @endforeach
-                        
+                    @endforeach
 
-                        {{-- board-thumbnail --}}
-                        <!-- <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('aloha-leadership-detail')}}">
-                                <div class="board-thumbnail__image image-background">
-                                    <img src="{{ asset('public/images/aloha-Ronda.jpg') }}" alt="Member Image">
-                                </div>
-                                <div class="board-thumbnail__details">
-                                    <h5>Ronda Ching-Day </h5>
-                                    <h6>President</h6>
-                                </div>
-                            </a>
-                        </div> -->
-                        {{-- board-thumbnail --}}
-
-
-                        {{-- board-thumbnail --}}
-                        <!-- <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('aloha-leadership-detail')}}">
-                                <div class="board-thumbnail__image image-background">
-                                    <img src="{{ asset('public/images/no-pix.jpg') }}" alt="Member Image">
-                                </div>
-                                <div class="board-thumbnail__details">
-                                    <h5>Thomas Tay </h5>
-                                    <h6>Vice President</h6>
-                                </div>
-                            </a>
-                        </div> -->
-                        {{-- board-thumbnail --}}
-
-
-                        {{-- board-thumbnail --}}
-                        <!-- <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('aloha-leadership-detail')}}">
-                                <div class="board-thumbnail__image image-background">
-                                    <img src="{{ asset('public/images/aloha-Abe.jpg') }}" alt="Member Image">
-                                </div>
-                                <div class="board-thumbnail__details">
-                                    <h5>Abe Lee </h5>
-                                    <h6>Secretary</h6>
-                                </div>
-                            </a>
-                        </div> -->
-                        {{-- board-thumbnail --}}
-
-                        
-                        {{-- board-thumbnail --}}
-                        <!-- <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('aloha-leadership-detail')}}">
-                                <div class="board-thumbnail__image image-background">
-                                    <img src="{{ asset('public/images/no-pix.jpg') }}" alt="Member Image">
-                                </div>
-                                <div class="board-thumbnail__details">
-                                    <h5>Sharon Rasos </h5>
-                                    <h6>Treasurer</h6>
-                                </div>
-                            </a>
-                        </div> -->
-                        {{-- board-thumbnail --}}
-
-                        
                     </div>
-                     {{-- board-thumbnail row --}}
+                    {{-- board-thumbnail row --}}
 
                 </div>
             </div>
         </section>
+        @endif
 
+        @if(isset($chapter_board->board_of_directors) && $chapter_board->board_of_directors->count() > 0)
         <section class="board-board">
             <div class="container-max">
                 <div class="col-lg-12">
@@ -125,162 +66,31 @@
 
                     {{-- board-thumbnail row --}}
                     <div class="board-thumbnail row">
-                         {{-- board-thumbnail --}}
-                        <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('aloha-leadership-detail')}}">
-                                <div class="board-thumbnail__image image-background">
-                                    <img src="{{ asset('public/images/aloha-Claire.jpg') }}" alt="Member Image">
-                                </div>
-                                <div class="board-thumbnail__details">
-                                    <h5>Claire Doi </h5>
-                                    <h6></h6>
-                                </div>
-                            </a>
-                        </div>
-                        {{-- board-thumbnail --}}
 
-
-                          {{-- board-thumbnail --}}
-                          <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('aloha-leadership-detail')}}">
-                                <div class="board-thumbnail__image image-background">
-                                    <img src="{{ asset('public/images/aloha-Christine.jpg') }}" alt="Member Image">
-                                </div>
-                                <div class="board-thumbnail__details">
-                                    <h5>Christine Kim </h5>
-                                    <h6></h6>
-                                </div>
-                            </a>
-                        </div>
-                        {{-- board-thumbnail --}}
-
-
-                          {{-- board-thumbnail --}}
-                          <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('aloha-leadership-detail')}}">
-                                <div class="board-thumbnail__image image-background">
-                                    <img src="{{ asset('public/images/aloha-Gina.jpg') }}" alt="Member Image">
-                                </div>
-                                <div class="board-thumbnail__details">
-                                    <h5>Gina Duncan </h5>
-                                    <h6></h6>
-                                </div>
-                            </a>
-                        </div>
-                        {{-- board-thumbnail --}}
-
-                        
-                          {{-- board-thumbnail --}}
-                          <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('baloha-leadership-detail')}}">
-                                <div class="board-thumbnail__image image-background">
-                                    <img src="{{ asset('public/images/aloha-Lisa.jpg') }}" alt="Member Image">
-                                </div>
-                                <div class="board-thumbnail__details">
-                                    <h5>Lisa Van Den Heuval</h5>
-                                    <h6>Publicity Chairperson</h6>
-                                </div>
-                            </a>
-                        </div>
-                        {{-- board-thumbnail --}}
-
-
-                        
-                          {{-- board-thumbnail --}}
-                          <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('aloha-leadership-detail')}}">
-                                <div class="board-thumbnail__image image-background">
-                                    <img src="{{ asset('public/images/aloha-Judy.jpg') }}" alt="Member Image">
-                                </div>
-                                <div class="board-thumbnail__details">
-                                    <h5>Judy Sykes  </h5>
-                                    <h6></h6>
-                                </div>
-                            </a>
-                        </div>
-                        {{-- board-thumbnail --}}
-
-
-                           {{-- board-thumbnail --}}
-                           <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('baloha-leadership-detail')}}">
-                                <div class="board-thumbnail__image image-background">
-                                    <img src="{{ asset('public/images/aloha-Bruce.jpg') }}" alt="Member Image">
-                                </div>
-                                <div class="board-thumbnail__details">
-                                    <h5>Bruce McDonald </h5>
-                                    <h6></h6>
-                                </div>
-                            </a>
-                        </div>
-                        {{-- board-thumbnail --}}
-
+                    @foreach( $chapter_board->board_of_directors as $board_of_director )
                         {{-- board-thumbnail --}}
                         <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('aloha-leadership-detail')}}">
+                            <a href="{{route('chapter_board_member.detail', ['slug'=>$chapter->slug,'board_slug'=>$board_of_director->slug])}}">
                                 <div class="board-thumbnail__image image-background">
-                                    <img src="{{ asset('public/images/aloha-Mami.jpg') }}" alt="Member Image">
+                                    <img src="{{ optional($board_of_director->attachment)->url ? optional($board_of_director->attachment)->url : asset('public/images/no-pix.jpg') }}" alt="Member Image">
                                 </div>
                                 <div class="board-thumbnail__details">
-                                    <h5>Mami Takeda
-                                    </h5>
-                                    <h6></h6>
+                                    <h5>{{ $board_of_director->name }}</h5>
+                                    <h6>{{ $board_of_director->position }}</h6>
                                 </div>
                             </a>
                         </div>
                         {{-- board-thumbnail --}}
-                                 {{-- board-thumbnail --}}
-                                 <div class="board-thumbnail__item col-lg-3 col-md-6">
-                                    <a href="{{url('aloha-leadership-detail')}}">
-                                        <div class="board-thumbnail__image image-background">
-                                            <img src="{{ asset('public/images/aloha-Christina.jpg') }}" alt="Member Image">
-                                        </div>
-                                        <div class="board-thumbnail__details">
-                                            <h5>Christina Berry</h5>
-                                            <h6></h6>
-                                        </div>
-                                    </a>
-                                </div>
-                                {{-- board-thumbnail --}}
+                    @endforeach
 
-                                {{-- board-thumbnail --}}
-                                <div class="board-thumbnail__item col-lg-3 col-md-6">
-                                    <a href="{{url('aloha-leadership-detail')}}">
-                                        <div class="board-thumbnail__image image-background">
-                                            <img src="{{ asset('public/images/no-pix.jpg') }}" alt="Member Image">
-                                        </div>
-                                        <div class="board-thumbnail__details">
-                                            <h5>Rachel-Joy Nisperos</h5>
-                                            <h6></h6>
-                                        </div>
-                                    </a>
-                                </div>
-                                {{-- board-thumbnail --}}
-
-
-                                
-                                {{-- board-thumbnail --}}
-                                <div class="board-thumbnail__item col-lg-3 col-md-6">
-                                    <a href="{{url('aloha-leadership-detail')}}">
-                                        <div class="board-thumbnail__image image-background">
-                                            <img src="{{ asset('public/images/no-pix.jpg') }}" alt="Member Image">
-                                        </div>
-                                        <div class="board-thumbnail__details">
-                                            <h5>Rommel Guzman</h5>
-                                            <h6></h6>
-                                        </div>
-                                    </a>
-                                </div>
-                                {{-- board-thumbnail --}}
-
-                    </div>
-                     {{-- board-thumbnail row --}}
-
+                    </div> 
+                    {{-- board-thumbnail row --}}
                 </div>
             </div>
         </section>
+        @endif
 
-
+        @if(isset($chapter_board->advisory) && $chapter_board->advisory->count() > 0)
         <section class="board-board">
             <div class="container-max">
                 <div class="col-lg-12">
@@ -288,77 +98,63 @@
 
                     {{-- board-thumbnail row --}}
                     <div class="board-thumbnail row">
-                         {{-- board-thumbnail --}}
+
+                    @foreach( $chapter_board->advisory as $advisory )
+                        {{-- board-thumbnail --}}
                         <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('aloha-leadership-detail')}}">
+                            <a href="{{route('chapter_board_member.detail', ['slug'=>$chapter->slug,'board_slug'=>$advisory->slug])}}">
                                 <div class="board-thumbnail__image image-background">
-                                    <img src="{{ asset('public/images/no-pix.jpg') }}" alt="Member Image">
+                                    <img src="{{ optional($advisory->attachment)->url ? optional($advisory->attachment)->url : asset('public/images/no-pix.jpg') }}" alt="Member Image">
                                 </div>
                                 <div class="board-thumbnail__details">
-                                    <h5>Earl Lee </h5>
-                                    <h6></h6>
+                                    <h5>{{ $advisory->name }}</h5>
+                                    <h6>{{ $advisory->position }}</h6>
                                 </div>
                             </a>
                         </div>
                         {{-- board-thumbnail --}}
-
-
-                          {{-- board-thumbnail --}}
-                          <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('aloha-leadership-detail')}}">
-                                <div class="board-thumbnail__image image-background">
-                                    <img src="{{ asset('public/images/no-pix.jpg') }}" alt="Member Image">
-                                </div>
-                                <div class="board-thumbnail__details">
-                                    <h5>Patti Nakagawa</h5>
-                                    <h6></h6>
-                                </div>
-                            </a>
-                        </div>
-                        {{-- board-thumbnail --}}
-
-
-                          {{-- board-thumbnail --}}
-                          <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('aloha-leadership-detail')}}">
-                                <div class="board-thumbnail__image image-background">
-                                    <img src="{{ asset('public/images/no-pix.jpg') }}" alt="Member Image">
-                                </div>
-                                <div class="board-thumbnail__details">
-                                    <h5>Kalama Kim </h5>
-                                    <h6></h6>
-                                </div>
-                            </a>
-                        </div>
-                        {{-- board-thumbnail --}}
-
-                        
-                          {{-- board-thumbnail --}}
-                          <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{url('aloha-leadership-detail')}}">
-                                <div class="board-thumbnail__image image-background">
-                                    <img src="{{ asset('public/images/no-pix.jpg') }}" alt="Member Image">
-                                </div>
-                                <div class="board-thumbnail__details">
-                                    <h5>James Wright </h5>
-                                    <h6></h6>
-                                </div>
-                            </a>
-                        </div>
-                        {{-- board-thumbnail --}}
-
-
-                        
-
+                    @endforeach
                      
                     </div>
-                     {{-- board-thumbnail row --}}
+                    {{-- board-thumbnail row --}}
 
                 </div>
             </div>
         </section>
+        @endif
+        
+        @if(isset($chapter_board->no_type) && $chapter_board->no_type->count() > 0)
+        <section class="board-board">
+            <div class="container-max">
+                <div class="col-lg-12">
+                    <!-- <h2>Advisory Board</h2> -->
 
-         
+                    {{-- board-thumbnail row --}}
+                    <div class="board-thumbnail row">
+
+                    @foreach( $chapter_board->no_type as $no_type )
+                        {{-- board-thumbnail --}}
+                        <div class="board-thumbnail__item col-lg-3 col-md-6">
+                            <a href="{{route('chapter_board_member.detail', ['slug'=>$chapter->slug,'board_slug'=>$no_type->slug])}}">
+                                <div class="board-thumbnail__image image-background">
+                                    <img src="{{ optional($no_type->attachment)->url ? optional($no_type->attachment)->url : asset('public/images/no-pix.jpg') }}" alt="Member Image">
+                                </div>
+                                <div class="board-thumbnail__details">
+                                    <h5>{{ $no_type->name }}</h5>
+                                    <h6>{{ $no_type->position }}</h6>
+                                </div>
+                            </a>
+                        </div>
+                        {{-- board-thumbnail --}}
+                    @endforeach
+                     
+                    </div>
+                    {{-- board-thumbnail row --}}
+
+                </div>
+            </div>
+        </section>
+        @endif
 
     </main>
     @include('front.layouts.sections.chapter.footer_chapter')

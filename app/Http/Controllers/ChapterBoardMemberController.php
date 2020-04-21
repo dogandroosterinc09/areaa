@@ -37,7 +37,11 @@ class ChapterBoardMemberController extends Controller
             abort('401', '401');
         }
 
-        $chapter_board_members = $this->chapter_board_member->get();
+        if (auth()->user()->roles->first()->name === 'Chapter Admin') {
+            $chapter_board_members = $this->chapter_board_member->where('chapter_id',auth()->user()->chapter_id)->get();
+        } else {
+            $chapter_board_members = $this->chapter_board_member->get();
+        }
 
         return view('admin.modules.chapter_board_member.index', compact('chapter_board_members'));
     }
