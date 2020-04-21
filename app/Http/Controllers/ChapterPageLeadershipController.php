@@ -81,11 +81,19 @@ class ChapterPageLeadershipController extends Controller
             $chapter_page_leadership->fill(['banner_image' => $file_upload_path])->save();
         }
 
-        return redirect()->route('admin.chapters.pages',$chapter_page_leadership->chapter_id)->with('flash_message', [
-            'title' => '',
-            'message' => 'Chapter Page Event ' . $chapter_page_leadership->name . ' successfully updated.',
-            'type' => 'success'
-        ]);
+        if (auth()->user()->roles->first()->name === 'Chapter Admin') {
+            return redirect()->route('admin.pages.index')->with('flash_message', [
+                'title' => '',
+                'message' => 'Chapter Page Event ' . $chapter_page_leadership->name . ' successfully updated.',
+                'type' => 'success',
+            ]);
+        } else {
+            return redirect()->route('admin.chapters.pages',$chapter_page_leadership->chapter_id)->with('flash_message', [
+                'title' => '',
+                'message' => 'Chapter Page Event ' . $chapter_page_leadership->name . ' successfully updated.',
+                'type' => 'success'
+            ]);
+        }
     }
 
     /**

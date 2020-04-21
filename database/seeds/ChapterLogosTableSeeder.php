@@ -24,7 +24,7 @@ class ChapterLogosTableSeeder extends Seeder
                 'image' => 'public/uploads/logos/areaa_aloha.png',
                 'deleted_at' => NULL,
                 'created_at' => '2020-04-20 19:27:04',
-                'updated_at' => '2020-04-20 19:27:04',
+                'updated_at' => '2020-04-20 22:56:26',
             ),
         ));
         

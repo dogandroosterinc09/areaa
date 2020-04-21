@@ -2,7 +2,11 @@
 
 @section('content')
     <ul class="breadcrumb breadcrumb-top">
+        @if(auth()->user()->roles->first()->name !== 'Chapter Admin')
         <li><a href="{{ route('admin.chapters.index') }}">Chapters</a></li>
+        @else
+        <li><a href="{{ route('admin.pages.index') }}">Pages</a></li>
+        @endif
         <li><span href="javascript:void(0)">Upload Chapter Logo</span></li>
     </ul>
     <div class="row">
@@ -58,7 +62,7 @@
                 
                 <div class="form-group form-actions">
                     <div class="col-md-9 col-md-offset-3">
-                        <a href="{{ route('admin.chapters.index') }}" class="btn btn-sm btn-warning">Cancel</a>
+                        <a href="{{ (auth()->user()->roles->first()->name === 'Chapter Admin') ? route('admin.pages.index') : route('admin.chapters.index') }}" class="btn btn-sm btn-warning">Cancel</a>
                         <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-floppy-o"></i> Save
                         </button>
                     </div>

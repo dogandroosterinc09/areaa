@@ -1,6 +1,8 @@
 @extends('admin.layouts.base')
 
 @section('content')
+    @php( $chapter = \App\Models\Chapter::find(auth()->user()->chapter_id) )
+
     @if (auth()->user()->can('Create Page'))
         <div class="row text-center">
             <div class="col-sm-12 col-lg-12">
@@ -16,12 +18,21 @@
     @endif
     <div class="block full">
         <div class="block-title">
-            <h2><i class="fa fa-archive sidebar-nav-icon"></i>&nbsp;<strong>Pages</strong></h2>
+            <h2><i class="fa fa-archive sidebar-nav-icon"></i>&nbsp;<strong>Pages</strong></h2>            
         </div>
         <div class="alert alert-info alert-dismissable page-empty {{$pages->count() == 0 ? '' : 'johnCena' }}">
             <i class="fa fa-info-circle"></i> No pages found.
         </div>
         <div class="table-responsive {{$pages->count() == 0 ? 'johnCena' : '' }}">
+            @if(auth()->user()->getRoleNames()->first() === 'Chapter Admin')
+            <div class="btn-group btn-group-xs form-group">
+                <a href="{{ route('admin.chapter_logos.upload', $chapter->id) }}"
+                    data-toggle="tooltip"
+                    title=""
+                    class="btn btn-default"
+                    data-original-title="Upload Logo"><i class="fa fa-image"></i></a>
+            </div>
+            @endif
             <table id="pages-table"
                    class="table table-bordered table-striped table-vcenter">
                 <thead>
@@ -48,8 +59,7 @@
                 <tbody>
 
                 @if(auth()->user()->getRoleNames()->first() === 'Chapter Admin')
-                {{-- Chapter Pages --}}
-                @php( $chapter = \App\Models\Chapter::find(auth()->user()->chapter_id) )                
+                {{-- Chapter Pages --}}                
                     <tr>
                         <td>Home</td>
                         <td><a href="{{ url($chapter->slug) }}" target="_blank">{{ url($chapter->slug) }}</a></td>
@@ -68,7 +78,7 @@
                         <td class="text-left"><a href="{{ url($chapter->slug).'/aboutus' }}" target="_blank">{{ url($chapter->slug).'/aboutus' }}</a></td>
                         <td class="text-center">
                             <div class="btn-group btn-group-xs">
-                                <a href="{{ route('admin.chapters.pages.edit.home', $chapter->id) }}"
+                                <a href="{{ route('admin.chapters.pages.edit.about_us', $chapter->id) }}"
                                         data-toggle="tooltip"
                                         title=""
                                         class="btn btn-default"
@@ -81,7 +91,7 @@
                         <td class="text-left"><a href="{{ url($chapter->slug).'/events' }}" target="_blank">{{ url($chapter->slug).'/events' }}</a></td>
                         <td class="text-center">
                             <div class="btn-group btn-group-xs">
-                                <a href="{{ route('admin.chapters.pages.edit.home', $chapter->id) }}"
+                                <a href="{{ route('admin.chapters.pages.edit.events', $chapter->id) }}"
                                         data-toggle="tooltip"
                                         title=""
                                         class="btn btn-default"
@@ -94,7 +104,7 @@
                         <td class="text-left"><a href="{{ url($chapter->slug).'/leadership-board' }}" target="_blank">{{ url($chapter->slug).'/leadership-board' }}</a></td>
                         <td class="text-center">
                             <div class="btn-group btn-group-xs">
-                                <a href="{{ route('admin.chapters.pages.edit.home', $chapter->id) }}"
+                                <a href="{{ route('admin.chapters.pages.edit.leadership', $chapter->id) }}"
                                         data-toggle="tooltip"
                                         title=""
                                         class="btn btn-default"
@@ -107,7 +117,7 @@
                         <td class="text-left"><a href="{{ url($chapter->slug).'/contactus' }}" target="_blank">{{ url($chapter->slug).'/contactus' }}</a></td>
                         <td class="text-center">
                             <div class="btn-group btn-group-xs">
-                                <a href="{{ route('admin.chapters.pages.edit.home', $chapter->id) }}"
+                                <a href="{{ route('admin.chapters.pages.edit.contact_us', $chapter->id) }}"
                                         data-toggle="tooltip"
                                         title=""
                                         class="btn btn-default"

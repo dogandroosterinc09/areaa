@@ -86,11 +86,19 @@ class ChapterLogoController extends Controller
             $chapter_logo->fill(['image'=>$file_upload_path])->save();
         }
 
-        return redirect()->route('admin.chapters.index')->with('flash_message', [
-            'title' => '',
-            'message' => 'Chapter Logo ' . $chapter_logo->name . ' successfully added.',
-            'type' => 'success'
-        ]);
+        if (auth()->user()->roles->first()->name === 'Chapter Admin') {
+            return redirect()->route('admin.pages.index')->with('flash_message', [
+                'title' => '',
+                'message' => 'Chapter Logo ' . $chapter_logo->name . ' successfully uploaded.',
+                'type' => 'success',
+            ]);
+        } else {
+            return redirect()->route('admin.chapters.index')->with('flash_message', [
+                'title' => '',
+                'message' => 'Chapter Logo ' . $chapter_logo->name . ' successfully uploaded.',
+                'type' => 'success'
+            ]);
+        }
     }
 
     /**

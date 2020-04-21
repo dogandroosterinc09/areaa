@@ -117,11 +117,19 @@ class ChapterPageAboutUsController extends Controller
             $chapter_page_about_us->fill(['section_2'=>json_encode($section_2)])->save();
         }
 
-        return redirect()->route('admin.chapters.pages',$chapter_page_about_us->chapter_id)->with('flash_message', [
-            'title' => '',
-            'message' => 'Chapter Page About Us ' . $chapter_page_about_us->chapter . ' successfully updated.',
-            'type' => 'success'
-        ]);
+        if (auth()->user()->roles->first()->name === 'Chapter Admin') {
+            return redirect()->route('admin.pages.index')->with('flash_message', [
+                'title' => '',
+                'message' => 'Chapter Page About Us ' . $chapter_page_about_us->chapter . ' successfully updated.',
+                'type' => 'success',
+            ]);
+        } else {
+            return redirect()->route('admin.chapters.pages',$chapter_page_about_us->chapter_id)->with('flash_message', [
+                'title' => '',
+                'message' => 'Chapter Page About Us ' . $chapter_page_about_us->chapter . ' successfully updated.',
+                'type' => 'success'
+            ]);
+        }
     }
 
     /**

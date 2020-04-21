@@ -53,7 +53,7 @@ class ChapterHomesTableSeeder extends Seeder
                 'other_sponsors' => '[{"badge_icon":"ruby","image":"public\\/uploads\\/sponsor1-1587071957.jpg","image_alt":"chapter title"},{"badge_icon":"emerald","image":"public\\/uploads\\/sponsor2-1587071957.jpg","image_alt":"chapter title"},{"badge_icon":"diamond","image":"public\\/uploads\\/sponsor3-1587071957.jpg","image_alt":"chapter title"},{"badge_icon":"opal","image":"public\\/uploads\\/sponsor4-1587071957.jpg","image_alt":"chapter title"},{"badge_icon":"pearl","image":"public\\/uploads\\/sponsor5-1587071957.jpg","image_alt":"chapter title"},{"badge_icon":"opal","image":"public\\/uploads\\/sponsor6-1587071957.jpg","image_alt":"chapter title"},{"badge_icon":"pearl","image":"public\\/uploads\\/sponsor7-1587071957.jpg","image_alt":"chapter title"},{"badge_icon":"diamond","image":"public\\/uploads\\/sponsor9-1587071957.jpg","image_alt":"chapter title"},{"badge_icon":"jade","image":"public\\/uploads\\/sponsor8-1587073636.jpg","image_alt":"chapter title"},{"badge_icon":"opal","image":"public\\/uploads\\/sponsor10-1587073636.jpg","image_alt":"chapter title"},{"badge_icon":"pearl","image":"public\\/uploads\\/sponsor11-1587073636.jpg","image_alt":"chapter title"},{"badge_icon":"diamond","image":"public\\/uploads\\/sponsor12-1587073636.jpg","image_alt":"chapter title"}]',
                 'deleted_at' => NULL,
                 'created_at' => '2020-04-01 21:57:22',
-                'updated_at' => '2020-04-20 19:40:01',
+                'updated_at' => '2020-04-21 00:24:12',
             ),
         ));
         

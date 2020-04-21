@@ -220,9 +220,9 @@ class PermissionGroupsTableSeeder extends Seeder
             25 => 
             array (
                 'id' => 26,
-                'name' => 'Chapter Page Contact uses',
+                'name' => 'Chapter Page Contact Us',
                 'created_at' => '2020-04-17 23:27:25',
-                'updated_at' => '2020-04-17 23:27:25',
+                'updated_at' => '2020-04-20 22:30:37',
                 'deleted_at' => NULL,
             ),
         ));

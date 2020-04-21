@@ -32,12 +32,16 @@
 
                     {{-- board-thumbnail row --}}
                     <div class="board-thumbnail row">
+                        @php( $executives = \App\Models\ChapterBoardMember::all() )
+
+                        {{ json_encode($executives) }}
+
                         @foreach(\App\Models\ChapterBoardMember::all() as $executive)
                         {{-- board-thumbnail --}}
                         <div class="board-thumbnail__item col-lg-3 col-md-6">
                             <a href="{{url('aloha-leadership-detail')}}">
                                 <div class="board-thumbnail__image image-background">
-                                    <img src="{{ optional($executive->attachment)->url }}" alt="Member Image">
+                                    <img src="{{ optional($executive->attachment)->url ? optional($executive->attachment)->url : asset('public/images/no-pix.jpg') }}" alt="Member Image">
                                 </div>
                                 <div class="board-thumbnail__details">
                                     <h5>{{ $executive->name }}</h5>
