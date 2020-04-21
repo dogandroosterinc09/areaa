@@ -22,7 +22,7 @@
         <div class="col-md-12">
             <div class="block">
                 <div class="block-title">
-                    <h2><i class="fa fa-pencil"></i> <strong>Edit Chapter Page Event "{{$chapter_page_leadership->chapter}}"</strong></h2>
+                    <h2><i class="fa fa-pencil"></i> <strong>Edit Chapter Page Leadership "{{$chapter_page_leadership->chapter}}"</strong></h2>
                 </div>
                 
                 @include('admin.components.heading', ['text' => 'Page Details'])

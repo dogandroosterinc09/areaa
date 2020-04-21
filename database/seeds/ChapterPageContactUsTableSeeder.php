@@ -29,10 +29,10 @@ class ChapterPageContactUsTableSeeder extends Seeder
 ',
                 'banner_image' => '',
                 'seo_meta_id' => 0,
-                'section_1' => '{"location_icon":"loc","location_text":"3990 Old Town Avenue C304, San Diego, CA 92110","telephone_icon":"tel","telephone_text":"619.795.7873 ","telephone_link":"tel:619.795.7873","mail_icon":"mail","mail_text":"contact@areaa.org","mail_link":"mailto:contact@areaa.org"}',
+                'section_1' => '{"location_icon":"loc","location_text":"Chapter President: Abe Lee","telephone_icon":"tel","telephone_text":"808-216-4999","telephone_link":"tel:8082164999","mail_icon":"mail","mail_text":"abelee1948@gmail.com","mail_link":"mailto:abelee1948@gmail.com"}',
                 'deleted_at' => NULL,
                 'created_at' => '2020-04-17 23:33:04',
-                'updated_at' => '2020-04-18 00:00:40',
+                'updated_at' => '2020-04-20 19:51:42',
             ),
         ));
         

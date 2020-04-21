@@ -13,14 +13,26 @@
 
                     <div class="col-lg-6 contact-section__item contact-section__left curl-tail-side">
                         <div class="contact-details-content">
-                            <h3>Have Questions?</h3>
+                            {!! $chapter_page_contactus->content !!}
+                            <!-- <h3>Have Questions?</h3>
                             <h1>Contact Us</h1>
-                            <p>Lorem ipsum dolor sit amet, quam sollicitudin sagittis fringilla lacus enim, leo elit non nec varius sodales. Amet faucibus, id tempor quisque pharetra leo. Curae integer. Diam duis integer vel ut. </p>
+                            <p>Lorem ipsum dolor sit amet, quam sollicitudin sagittis fringilla lacus enim, leo elit non nec varius sodales. Amet faucibus, id tempor quisque pharetra leo. Curae integer. Diam duis integer vel ut. </p> -->
 
+                            @php($section_1 = json_decode($chapter_page_contactus->section_1))
                             <div class="contact-details">
-                                <div class="contact-details__item"><i class="loc"></i> <span>Chapter President: Abe Lee</span></div>
+                                <!-- <div class="contact-details__item"><i class="loc"></i> <span>Chapter President: Abe Lee</span></div>
                                 <div class="contact-details__item"><i class="tel"></i> <a href="tel:8082164999">808-216-4999 </a></div>
-                                <div class="contact-details__item"><i class="mail"></i> <a href="mailto:abelee1948@gmail.com">abelee1948@gmail.com</a></div>
+                                <div class="contact-details__item"><i class="mail"></i> <a href="mailto:abelee1948@gmail.com">abelee1948@gmail.com</a></div> -->
+
+                                @if($section_1->location_text)
+                                <div class="contact-details__item"><i class="{{ $section_1->location_icon }}"></i> <span>{{ $section_1->location_text }}</span></div>
+                                @endif
+                                @if($section_1->telephone_text)
+                                <div class="contact-details__item"><i class="{{ $section_1->telephone_icon }}"></i> <a href="{{ $section_1->telephone_link }}">{{ $section_1->telephone_text }} </a></div>
+                                @endif
+                                @if($section_1->mail_text)
+                                <div class="contact-details__item"><i class="{{ $section_1->mail_icon }}"></i> <a href="{{ $section_1->mail_link }}">{{ $section_1->mail_text }}</a></div>
+                                @endif
                             </div>
                         </div>
 

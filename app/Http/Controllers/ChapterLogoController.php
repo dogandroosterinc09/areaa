@@ -77,7 +77,9 @@ class ChapterLogoController extends Controller
             'chapter_id.required' => 'Chapter is required.'
         ]);
 
-        $chapter_logo = $this->chapter_logo->create($request->all());
+        $chapter_logo = $this->chapter_logo->where('chapter_id', $request->chapter_id)->get()->first() ? $this->chapter_logo->where('chapter_id', $request->chapter_id)->get()->first() : new $this->chapter_logo;
+
+        $chapter_logo->fill($request->all())->save();        
 
         if ($request->hasFile('image')) {
             $file_upload_path = $this->upload($request->image);
@@ -87,75 +89,6 @@ class ChapterLogoController extends Controller
         return redirect()->route('admin.chapters.index')->with('flash_message', [
             'title' => '',
             'message' => 'Chapter Logo ' . $chapter_logo->name . ' successfully added.',
-            'type' => 'success'
-        ]);
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param int $id
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function show($id)
-    {
-        if (!auth()->user()->hasPermissionTo('Read Chapter Logo')) {
-            abort('401', '401');
-        }
-
-        $chapter_logo = $this->chapter_logo->findOrFail($id);
-
-        return view('admin.modules.chapter_logo.show', compact('chapter_logo'));
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param int $id
-     *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function edit($id)
-    {
-        if (!auth()->user()->hasPermissionTo('Update Chapter Logo')) {
-            abort('401', '401');
-        }
-
-        $chapter_logo = $this->chapter_logo->findOrFail($id);
-
-        return view('admin.modules.chapter_logo.edit', compact('chapter_logo'));
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @param int $id
-     * @return \Illuminate\Http\RedirectResponse
-     * @throws \Illuminate\Validation\ValidationException
-     */
-    public function update(Request $request, $id)
-    {
-        if (!auth()->user()->hasPermissionTo('Update Chapter Logo')) {
-            abort('401', '401');
-        }
-
-        $this->validate($request, [
-            'name' => 'required|unique:chapter_logos,name,' . $id . ',id,deleted_at,NULL',
-            'slug' => 'required|unique:chapter_logos,slug,' . $id . ',id,deleted_at,NULL',
-            'content' => 'required',
-        ]);
-
-        $chapter_logo = $this->chapter_logo->findOrFail($id);
-
-        $chapter_logo->fill(array_merge($request->all(), [
-            'is_active' => $request->has('is_active') ? 1 : 0,
-            'slug' => str_slug($request->input('name'))
-        ]))->save();
-
-        return redirect()->route('admin.chapter_logos.index')->with('flash_message', [
-            'title' => '',
-            'message' => 'Chapter Logo ' . $chapter_logo->name . ' successfully updated.',
             'type' => 'success'
         ]);
     }
@@ -184,7 +117,7 @@ class ChapterLogoController extends Controller
         if (!auth()->user()->hasPermissionTo('Create Chapter Logo')) {
             abort('401', '401');
         }
-        
+
         $chapter_logo = $this->chapter_logo->where('chapter_id', $id)->get()->last();
 
         return view('admin.modules.chapter_logo.create', compact('chapter_logo','id'));
@@ -194,7 +127,7 @@ class ChapterLogoController extends Controller
     */
     public function upload($file) {
         $extension = $file->getClientOriginalExtension();
-        $file_name = substr((pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME)), 0, 30) . '-' . time() . '.' . $extension;
+        $file_name = substr((pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME)), 0, 30) . '.' . $extension;
         $file_name = preg_replace("/[^a-z0-9\_\-\.]/i", '', $file_name);
         $file_path = '/uploads/logos';
         $directory = public_path() . $file_path;

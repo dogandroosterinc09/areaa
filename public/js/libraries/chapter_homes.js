@@ -197,7 +197,7 @@
                         required: true
                     },
                     'content': {
-                        required: true
+                        // required: true
                     }
                 },
                 messages: {
@@ -268,7 +268,7 @@
                         }
                     },
                     'content': {
-                        required: true
+                        // required: true
                     }
                 },
                 messages: {

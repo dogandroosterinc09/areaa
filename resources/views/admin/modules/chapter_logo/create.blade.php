@@ -52,11 +52,7 @@
                             <img src="{{ $chapter_logo ? ($chapter_logo->image != '' ? asset($chapter_logo->image) : '') : '' }}"
                                  alt="{{ $chapter_logo ? ($chapter_logo->image != '' ? asset($chapter_logo->image) : '') : '' }}"
                                  class="img-responsive center-block" style="max-width: 100px;">
-                        </a>
-                        <br>
-                        <a href="javascript:void(0)" class="btn btn-xs btn-danger remove-image-btn"
-                           style="display: {{ $chapter_logo ? ($chapter_logo->image != '' ? '' : 'none') : 'none' }};"><i class="fa fa-trash"></i> Remove</a>
-                        <input type="hidden" name="remove_image" class="remove-image" value="0">
+                        </a>                                                
                     </div>
                 </div>
                 

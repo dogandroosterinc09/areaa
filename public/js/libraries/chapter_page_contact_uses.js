@@ -266,7 +266,7 @@
                         }
                     },
                     'content': {
-                        required: true
+                        // required: true
                     }
                 },
                 messages: {

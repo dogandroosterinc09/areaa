@@ -4,9 +4,6 @@
     @include('front.pages.custom-page.sections.chapter-slider-aloha')
 
     <main class="main-content">
-        @php( $chapter = \App\Models\Chapter::where('slug',$chapter['slug'])->get()->first() )
-        @php( $chapter_homes = \App\Models\ChapterHome::where('chapter_id', $chapter->id)->get()->first() )
-        
         {{-- @include('front.pages.custom-page.sections.chapter-menu') --}}
 
         <section>
@@ -83,16 +80,16 @@
                     <div class="col-md-5 video-masking__floater">
 
                         <div class="video-masking__content">
-                            <h2>{{ $chapter_homes->who_we_are_title }}</h2>
+                            <h2>{{ $chapter_home->who_we_are_title }}</h2>
                             <div class="video-masking__content--push">
-                                {!! $chapter_homes->who_we_are_content !!}                                
+                                {!! $chapter_home->who_we_are_content !!}                                
 
                                 <div class="btn-group">
-                                    @if($chapter_homes->who_we_are_button1_text)
-                                        <a href="{{ url($chapter_homes->who_we_are_button1_link) }}" class="btn btn btn--secondary">{{ $chapter_homes->who_we_are_button1_text }}</a>
+                                    @if($chapter_home->who_we_are_button1_text)
+                                        <a href="{{ url($chapter_home->who_we_are_button1_link) }}" class="btn btn btn--secondary">{{ $chapter_home->who_we_are_button1_text }}</a>
                                     @endif
-                                    @if($chapter_homes->who_we_are_button2_text)
-                                        <a href="{{ url($chapter_homes->who_we_are_button2_link) }}" class="btn btn btn--primary">{{ $chapter_homes->who_we_are_button2_text }}</a>
+                                    @if($chapter_home->who_we_are_button2_text)
+                                        <a href="{{ url($chapter_home->who_we_are_button2_link) }}" class="btn btn btn--primary">{{ $chapter_home->who_we_are_button2_text }}</a>
                                     @endif
                                 </div>
                             </div>
@@ -113,8 +110,8 @@
 
                         <div class="col-md-6">
 
-                                <h2>{{ $chapter_homes->member_benefits_title }}</h2>
-                                <p>{{ $chapter_homes->member_benefits_content }}</p>
+                                <h2>{{ $chapter_home->member_benefits_title }}</h2>
+                                <p>{{ $chapter_home->member_benefits_content }}</p>
 
                                 {{-- comment insert class on UL  --}}
                                 {{-- use class bullet-style only if you want one col  --}}
@@ -122,7 +119,7 @@
                                 {{-- use class bullet-style__col-3 to enable 3cols --}}
                                 {{-- bullet-style--uppercase the strong tag will capitalize --}}
                                 <ul class="bullet-style bullet-style--uppercase">
-                                    @php($items = json_decode($chapter_homes->member_benefits_items) )
+                                    @php($items = json_decode($chapter_home->member_benefits_items) )
                                     @if($items)
                                     @foreach($items as $item)
                                         @if(!empty($item))                                        
@@ -133,19 +130,19 @@
                                 </ul>
 
                                 <div class="btn-group">
-                                @if($chapter_homes->member_benefits_button1_text)
-                                    <a href="{{ url($chapter_homes->member_benefits_button1_link) }}" class="btn btn btn--secondary">{{ $chapter_homes->member_benefits_button1_text }}</a>
+                                @if($chapter_home->member_benefits_button1_text)
+                                    <a href="{{ url($chapter_home->member_benefits_button1_link) }}" class="btn btn btn--secondary">{{ $chapter_home->member_benefits_button1_text }}</a>
                                     @endif
-                                @if($chapter_homes->member_benefits_button2_text)
-                                    <a href="{{ url($chapter_homes->member_benefits_button2_link) }}" class="btn btn btn--primary">{{ $chapter_homes->member_benefits_button2_text }}</a>
+                                @if($chapter_home->member_benefits_button2_text)
+                                    <a href="{{ url($chapter_home->member_benefits_button2_link) }}" class="btn btn btn--primary">{{ $chapter_home->member_benefits_button2_text }}</a>
                                     @endif
                                </div>
 
                         </div>
 
                         <div class="col-md-6">
-                            {{-- <img src="{{ $chapter_homes->attachment ? $chapter_homes->attachment->url : '' }}" alt="{{ $chapter_homes->attachment ? $chapter_homes->attachment->url : '' }}" class="img-fluid"> --}}
-                            <img src="{{ $chapter_homes->member_benefits_featured_image }}" alt="{{  $chapter_homes->member_benefits_featured_image_alt }}" class="img-fluid">
+                            {{-- <img src="{{ $chapter_home->attachment ? $chapter_home->attachment->url : '' }}" alt="{{ $chapter_home->attachment ? $chapter_home->attachment->url : '' }}" class="img-fluid"> --}}
+                            <img src="{{ $chapter_home->member_benefits_featured_image }}" alt="{{  $chapter_home->member_benefits_featured_image_alt }}" class="img-fluid">
                         </div>
 
                 
@@ -163,7 +160,8 @@
                     <div class="col-md-12">
                         <div class="filter-stone">
                             <ul class="inline-block">
-                                @foreach( json_decode($chapter_homes->sponsors_filters) as $data )
+                                @php( $sponsor_filters = $chapter_home->sponsors_filters ? json_decode($chapter_home->sponsors_filters) : [] )
+                                @foreach( $sponsor_filters as $data )
                                 <li class="filter-stone--{{ $data->icon }}"><a href="{{ $data->link }}"> <span> 1 </span>- {{ $data->text }} </a> </li>
                                 @endforeach
                                 <!-- <li class="filter-stone--jade"><a href="#"> <span> 1 </span>- Jade </a> </li>
@@ -179,20 +177,21 @@
 
                     <div class="col-md-4">
                             <div class="sponsors__content">
-                                <h2>{{ $chapter_homes->sponsors_title }}</h2>
-                                <p>{{ $chapter_homes->sponsors_content }}</p>
+                                <h2>{{ $chapter_home->sponsors_title }}</h2>
+                                <p>{{ $chapter_home->sponsors_content }}</p>
     
                                 <div class="btn-group">
-                                @if($chapter_homes->sponsors_button1_text)
-                                        <a href="{{ url($chapter_homes->sponsors_button1_link) }}" class="btn btn btn--primary">{{ $chapter_homes->sponsors_button1_text }}</a>
+                                @if($chapter_home->sponsors_button1_text)
+                                        <a href="{{ url($chapter_home->sponsors_button1_link) }}" class="btn btn btn--primary">{{ $chapter_home->sponsors_button1_text }}</a>
                                 @endif
                                 </div>
                             </div>
                     </div>
 
-                    @php($top_sponsor = json_decode($chapter_homes->top_sponsor))
+                    @php($top_sponsor = json_decode($chapter_home->top_sponsor))
                     <div class="col-md-8">
                         <div class="logo-display">
+                            @if($top_sponsor->image)
                             <div class="logo-display__single">
                                 <div class="row">
                                     <div class="col-md-5">
@@ -202,11 +201,11 @@
                                         </div>
                                     </div>
                                 </div>
-                               
                             </div>
+                            @endif
                             <div class="logo-display__col3">
                                 <div class="row">
-                                    @php( $other_sponsors = json_decode($chapter_homes->other_sponsors) )
+                                    @php( $other_sponsors = $chapter_home->other_sponsors ? json_decode($chapter_home->other_sponsors) : [] )
                                     @foreach( $other_sponsors as $sponsor )
                                     <div class="col-md-4">
                                         <div class="sponsor-thumbnail">

@@ -25,6 +25,7 @@
                     <h2><i class="fa fa-pencil"></i> <strong>Edit Chapter Home "{{$chapter_home->chapter}}"</strong></h2>
                 </div>
 
+                {{--
                 @include('admin.components.heading', ['text' => 'Page Details'])
 
                 <div class="row">
@@ -55,7 +56,7 @@
                 </div>
 
                 @include('admin.components.editor', ['label' => 'Content', 'field' => 'content', 'value' => $chapter_home->content])
-
+                --}}
 
                 @include('admin.components.heading', ['text' => 'Sections'])
                 @include('admin.components.heading', ['text' => 'Who We Are'])

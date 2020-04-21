@@ -27,6 +27,7 @@
                 
                 @include('admin.components.heading', ['text' => 'Page Details'])
 
+                {{--
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
                         <div class="form-group{{ $errors->has('banner_image') ? ' has-error' : '' }}">
@@ -53,6 +54,7 @@
                         </div>
                     </div>
                 </div>
+                --}}
 
                 @include('admin.components.editor', ['label' => 'Content', 'field' => 'content', 'value' => $chapter_page_contact_us->content])
                 

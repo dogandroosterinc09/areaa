@@ -9,16 +9,17 @@
                     <div class="container-max sub-banner__content">
                         <div class="row">
                             <div class="col-md-12 sub-banner__content">
-                                <h3>Meet Our </h3>
+                                {!! $chapter_page_leadership->content !!}
+                                <!-- <h3>Meet Our </h3>
                                 <h1>Leadership <br>
-                                    Board</h1>
+                                    Board</h1> -->
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="sub-banner__image image-background">
-                <img src="{{ url('public/images/executive-banner.jpg') }}">
+                <img src="{{ asset($chapter_page_leadership->banner_image) }}">
             </div>
         </section>
 

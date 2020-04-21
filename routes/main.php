@@ -32,9 +32,8 @@ Route::get('/event/{slug}', 'EventController@showEvent')->name('event.show');
 //Chapter Routes
 Route::get('/{slug}/aboutus', 'ChapterPageController@indexAboutUs');
 Route::get('/{slug}/events', 'ChapterPageController@indexEvents');
+Route::get('/{slug}/leadership-board', 'ChapterPageController@indexLeadershipBoard');
 Route::get('/{slug}/contactus', 'ChapterPageController@indexContactUs');
-
-Route::get('/{slug}/leadership-board', 'ChapterBoardMemberController@showChapterBoardMembers');
 
 Route::get('/{slug}/event/{event_slug}', 'ChapterEventController@showChapterEventDetail')->name('chapter_event.detail');
 
