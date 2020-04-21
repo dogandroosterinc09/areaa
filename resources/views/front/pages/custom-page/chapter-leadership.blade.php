@@ -32,9 +32,7 @@
 
                     {{-- board-thumbnail row --}}
                     <div class="board-thumbnail row">
-                        @php( $executives = \App\Models\ChapterBoardMember::all() )
-
-                        {{ json_encode($executives) }}
+                        @php( $executives = \App\Models\ChapterBoardMember::all() )                        
 
                         @foreach(\App\Models\ChapterBoardMember::all() as $executive)
                         {{-- board-thumbnail --}}
