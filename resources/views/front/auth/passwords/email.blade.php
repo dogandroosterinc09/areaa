@@ -12,7 +12,7 @@
     @endif
    
 
-<section class="page page--login">
+<section class="page page--email">
 
     @include('front.layouts.sections.header')
     {{-- @include('front.pages.custom-page.sections.banner') --}}
@@ -107,8 +107,9 @@
 
 
 
-               {{-- individual section  --}}
-               <section class="login-section login-section-main">
+
+             {{-- individual section  --}}
+             <section class="login-section login-section-main">
                 <div class="container-max">
                     <div class="row">
     
@@ -119,47 +120,38 @@
                                 <form>
                                     {{  Form::open([
                                         'method' => 'POST',
-                                        'id' => 'form-login',
-                                        'route' => ['customer.login.post'],
+                                        'id' => 'form-email',
+                                        'route' => ['customer.password.email.post'],
                                         'class' => 'form-horizontal'
                                         ])
                                     }}
-                                    <div class="row">
-                                        <div class="col-md-12 form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                                            {{-- <label for="email">Email</label> --}}
-                                            <input id="email" type="text" class="form-control " name="email" placeholder="Username or Email Address *">
-                                            @if($errors->has('email'))
-                                                <span class="help-block animation-slideDown">{{ $errors->first('email') }}</span>
-                                            @endif
-                                        </div>
-                                        <div class="col-md-12 form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                                            {{-- <label for="password">Subject</label> --}}
-                                            <input id="password" type="password" class="form-control " name="password" placeholder="Password*">
-                                            @if($errors->has('password'))
-                                                <span class="help-block animation-slideDown">{{ $errors->first('password') }}</span>
-                                            @endif
-                                        </div>
-                                        <div class="col-md-6 form-group{{ $errors->has('rember') ? ' has-error' : '' }}">
-                                          
-                                            <ul class="custom-checkbox">
-                                                <li class="custom-checkbox__item">
-                                                    <label class="custom-checkbox__item--holder">
-                                                        <input type="checkbox" id="remember" name="remember" {{ old('remember') ? 'checked' : ''}}>
-                                                            Remember Me
-                                                        <span class="checkmark custom-checkbox__checkmark custom-checkbox__checkmark--boxstyle"></span>
-                                                    </label>
-                                                </li>
-                                            </ul>
+                                        @if (session()->has('status'))
+                                            <div class="alert alert-success">
+                                                {{ session()->get('status') }}
+                                            </div>
+                                        @endif
                                         
-                                            @if($errors->has('subject'))
-                                                <span class="help-block animation-slideDown">{{ $errors->first('subject') }}</span>
-                                            @endif
+                                        <div class="form-group row{{ $errors->has('email') ? ' has-error' : '' }}">
+                                            <div class="col-md-12">
+                                                <div class="input-group">
+                                                    <input type="text" id="email" name="email"
+                                                           class="form-control input-lg" placeholder="Email"
+                                                           value="{{ old('email') }}" autofocus>
+                                                </div>
+                                                @if ($errors->has('email'))
+                                                    <span id="email-error" class="help-block animation-slideDown">
+                                                    {{ $errors->first('email') }}
+                                                </span>
+                                                @endif
+                                            </div>
+                                            <div class="col-md-12 text-right">
+                                                <br>
+                                                <button type="submit" class="btn btn--secondary"><i class="fa fa-arrow-right"></i>
+                                                    Send Password Reset Link
+                                                </button>
+                                            </div>
                                         </div>
-                                        <div class="col-md-6 form-group text-right">
-                                            <button type="submit" class="btn btn--secondary">SUBMIT</button>
-                                            <a href="{{ url('customer/password/email') }}" class="btn btn--forgot"> Forgot your password? </a>
-                                        </div>
-                                    </div>
+                                       
                                     {{ Form::close() }}
                                 </form>
                             </div>
@@ -173,10 +165,10 @@
                                 <img src="{{ url('public/images/our-story-image.jpg') }}" alt="event title" class="img-fluid">
                                 
                                 <div class="login-section__content">
-                                    <h4>Not a member yet? Join us today!</h4>
+                                    <h4>Did you remember your password?</h4>
                                     <p>Lorem ipsum dolor sit amet, quam sollicitudin sagittis fringilla lacus enim, leo elit non nec varius sodales. Amet faucibus, id tempor quisque pharetra leo. Curae integer. Diam duis integer vel ut. </p>
                                     <div class="btn-group text-right">
-                                    <a href="{{url('membership-registration')}}" class="btn btn btn--secondary">Join AREAA!</a>
+                                    <a href="{{ url('/customer/login') }}" class="btn btn btn--secondary">Login</a>
                                    </div>
                                 </div>
     
@@ -187,8 +179,6 @@
                     </div>
                 </div> {{-- end of default-content--row --}}
             </section> {{-- end of default-content --}}
-    
-
 
 
 
