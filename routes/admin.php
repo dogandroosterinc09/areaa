@@ -104,3 +104,6 @@ Route::get('/chapters/pages/{id}/edit/leadership', 'ChapterPageLeadershipControl
 
 Route::resource('/chapter_page_contact_uses', 'ChapterPageContactUsController');
 Route::get('/chapters/pages/{id}/edit/contact_us', 'ChapterPageContactUsController@edit')->name('chapters.pages.edit.contact_us');
+
+
+Route::resource('/members', 'MembersController');

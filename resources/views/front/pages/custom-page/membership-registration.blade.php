@@ -29,8 +29,16 @@
      
         {{-- need to dynamic this sub  --}}
         <section class="masking-background masking-background__equal masking-background--plain">
+                        
                     <div class="container-max masking-background__container">
                         <div class="row">
+                            {{  Form::open([
+                                'method' => 'POST',
+                                'id' => '',
+                                'route' => ['membership-registration.post'],
+                                'class' => ''
+                                ])
+                            }}
                             <div class="col-md-12">
 
                                         {{-- ****************************** --}}
@@ -86,8 +94,8 @@
                                                                     <div class="steps-wizard__box">
                                                                         <label>Select Your Chapter *</label>
                                                                         <div class="select-box">
-                                                                            <select>
-                                                                                <option>San Diego $49.50 now & then $99.00 per Year starting July 1, 2020.</option>
+                                                                            <select name="chapter_id">
+                                                                                <option value="1">San Diego $49.50 now & then $99.00 per Year starting July 1, 2020.</option>
                                                                             </select>
                                                                         </div>
                                                                     </div>
@@ -124,49 +132,70 @@
                                                                 <div class="col-md-12 steps-wizard__form--field">
                                                                     <h4>Account Info</h4>
                                                                 </div>
-
+                                                                
                                                                 <div class="col-md-12 steps-wizard__form--field">
-                                                                    <input type="text" placeholder="username*">
+                                                                    <input type="text" placeholder="username*" name="user_name" value="{{ old('user_name') }}">
+                                                                    @if ($errors->has('user_name'))
+                                                                        <span id="" class="help-block animation-slideDown">{{ $errors->first('user_name') }}</span>
+                                                                    @endif
                                                                 </div>
 
                                                                 <div class="col-md-6 steps-wizard__form--field">
-                                                                    <input type="text" placeholder="Password*">
+                                                                    <input type="password" placeholder="Password*" name="password" value="{{ old('password') }}">
+                                                                    @if ($errors->has('password'))
+                                                                        <span id="" class="help-block animation-slideDown">{{ $errors->first('password') }}</span>
+                                                                    @endif
                                                                 </div>
 
                                                                 <div class="col-md-6 steps-wizard__form--field">
-                                                                    <input type="text" placeholder="Confirm Password*">
+                                                                    <input type="password" placeholder="Confirm Password*" name="password_confirmation" value="{{ old('password_confirmation') }}">                                                                    
                                                                 </div>
 
                                                                 <div class="col-md-6 steps-wizard__form--field">
-                                                                    <input type="text" placeholder="First Name*">
+                                                                    <input type="text" placeholder="First Name*" name="first_name" value="{{ old('first_name') }}">
+                                                                    @if ($errors->has('first_name'))
+                                                                        <span id="" class="help-block animation-slideDown">{{ $errors->first('first_name') }}</span>
+                                                                    @endif
                                                                 </div>
 
                                                                 <div class="col-md-6 steps-wizard__form--field">
-                                                                    <input type="text" placeholder="Last Name*">
+                                                                    <input type="text" placeholder="Last Name*" name="last_name" value="{{ old('last_name') }}">
+                                                                    @if ($errors->has('last_name'))
+                                                                        <span id="" class="help-block animation-slideDown">{{ $errors->first('last_name') }}</span>
+                                                                    @endif
                                                                 </div>
 
                                                                 <div class="col-md-6 steps-wizard__form--field">
-                                                                    <input type="text" placeholder="Email Address*">
+                                                                    <input type="text" placeholder="Email Address*" name="email" value="{{ old('email') }}">
+                                                                    @if ($errors->has('email'))
+                                                                        <span id="" class="help-block animation-slideDown">{{ $errors->first('email') }}</span>
+                                                                    @endif
                                                                 </div>
 
                                                                 <div class="col-md-6 steps-wizard__form--field">
-                                                                    <input type="text" placeholder="Confirm Email Address*">
+                                                                    <input type="text" placeholder="Confirm Email Address*" name="email_confirmation" value="{{ old('email_confirmation') }}">
                                                                 </div>
 
                                                                 
                                                                 <div class="col-md-6 steps-wizard__form--field">
-                                                                    <input type="text" placeholder="Phone Number*">
+                                                                    <input type="text" placeholder="Phone Number*" name="phone" value="{{ old('phone') }}">
+                                                                    @if ($errors->has('phone'))
+                                                                        <span id="" class="help-block animation-slideDown">{{ $errors->first('phone') }}</span>
+                                                                    @endif
                                                                 </div>
 
                                                                 <div class="col-md-6 steps-wizard__form--field">
-                                                                    <input type="text" placeholder="Company*">
+                                                                    <input type="text" placeholder="Company*" name="company" value="{{ old('company') }}">
+                                                                    @if ($errors->has('company'))
+                                                                        <span id="" class="help-block animation-slideDown">{{ $errors->first('company') }}</span>
+                                                                    @endif
                                                                 </div>
 
                                                                 <div class="col-md-6 steps-wizard__form--field">
                                                                     <div class="selector-option">
                                                                         <label> I am a... </label>
                                                                         <div class="select-box">
-                                                                            <select>
+                                                                            <select name="position">
                                                                                 <option>Realtor</option>
                                                                                 <option>Realtor</option>
                                                                             </select>
@@ -175,6 +204,7 @@
                                                                 </div>  
 
                                                             </div>
+
                                                     </div>
                                                     {{-- steps-wizard__form --}}
                                                 
@@ -284,7 +314,9 @@
                                                             </div>
 
                                                             <div class="col-md-6 text-right">
-                                                                <a href="#tab3" data-toggle="tab" class="btn btn--next">Submit</a>
+                                                                <!-- <a href="#tab3" data-toggle="tab" class="btn btn--next">Submit</a> -->                                                                
+                                                                <button type="submit" class="btn btn--next">Submit</button>
+                                                                
                                                             </div>
                                                         </div>
                                                     </div>
@@ -302,8 +334,12 @@
                                         {{-- ****************************** --}}
 
                             </div>
+                        
+                        
                         </div>
+                    {{ Form::close() }}
                     </div>
+            
         </section>
 
 

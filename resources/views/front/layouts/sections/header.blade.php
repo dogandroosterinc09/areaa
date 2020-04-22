@@ -29,7 +29,11 @@
                                  </div>
                              </li>
                             <li> 
+                                @auth
+                                <a href="{{ route('customer.logout') }}"><i class="ic-user"></i> Log Out</a>
+                                @else
                                 <a href="{{ route('customer.login') }}"><i class="ic-user"></i> Log In</a>
+                                @endauth                                
                             </li>
                         </ul>
                     </div>

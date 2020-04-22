@@ -19,6 +19,7 @@ Route::group([
     Route::get('/', 'FrontDashboardController@index')->name('dashboard');
 
     Route::get('/dashboard', 'FrontDashboardController@index')->name('dashboard');
+    Route::get('/member_directory', 'FrontDashboardController@showMemberDirectory')->name('dashboard.member_directory');
 });
 
 Route::post('/contact/store', 'ContactController@store')->name('contact.store');

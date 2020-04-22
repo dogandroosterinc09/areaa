@@ -14,7 +14,7 @@
                 <nav class="navbar-bar">
                     <ul class="navbar-bar__wrapper">
                         <li class="nav-item dropdown active">
-                            <a class="nav-link dropdown-toggle" href="{{ url('dashboard-main') }}">Dashboard <span class="sr-only">(current)</span></a>
+                            <a class="nav-link dropdown-toggle" href="{{ route('customer.dashboard') }}">Dashboard <span class="sr-only">(current)</span></a>
                             <div class="dropdown-menu">
                                 <ul class="sub-menu">
                                     <li>
@@ -28,7 +28,7 @@
                         </li>
                        
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('dashboard-memberdirectory') }}">Membership Directory</a>
+                            <a class="nav-link" href="{{ route('customer.dashboard.member_directory') }}">Membership Directory</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#" {{--data-toggle="dropdown"--}}>

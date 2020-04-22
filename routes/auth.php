@@ -53,6 +53,8 @@ Route::group(
     Route::get('/customer/register', ['as' => 'customer.register', 'uses' => 'Front\Auth\RegisterController@showRegistrationForm']);
     Route::post('/customer/register', ['as' => 'customer.register.post', 'uses' => 'Front\Auth\RegisterController@register']);
 
+    Route::post('/membership-registration', ['as' => 'membership-registration.post', 'uses' => 'Front\Auth\RegisterController@registerMember']);
+
     /* Forgot Password Routes */
     Route::get('/customer/password/email', ['as' => 'customer.password.email', 'uses' => 'Front\Auth\ForgotPasswordController@showLinkRequestForm']);
     Route::post('/customer/password/email', ['as' => 'customer.password.email.post', 'uses' => 'Front\Auth\ForgotPasswordController@sendResetLinkEmail']);

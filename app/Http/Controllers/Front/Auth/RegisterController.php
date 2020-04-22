@@ -5,12 +5,14 @@ namespace App\Http\Controllers\Front\Auth;
 use App\Http\Controllers\Controller;
 use App\Http\Traits\SystemSettingTrait;
 use App\Models\User;
+use App\Models\Members;
 use App\Repositories\PageRepository;
 use App\Repositories\UserRepository;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Input;
 use Spatie\Permission\Models\Role;
 
 /**
@@ -50,6 +52,7 @@ class RegisterController extends Controller
      */
     public function __construct(User $user_model,
                                 Role $role_model,
+                                Members $member,
                                 PageRepository $page_repository,
                                 UserRepository $user_repository
     )
@@ -60,6 +63,7 @@ class RegisterController extends Controller
         * */
         $this->user_model = $user_model;
         $this->role_model = $role_model;
+        $this->member = $member;
         $this->page_repository = $page_repository;
         $this->user_repository = $user_repository;
 
@@ -166,6 +170,41 @@ class RegisterController extends Controller
             $email_data['subject'] = 'New Registration';
             $this->user_repository->sendEmail($email_data);
         }
+
+        return $this->registered($request, $user)
+            ?: redirect($this->redirectPath());
+    }
+
+    public function registerMember(Request $request) {
+        $this->validate($request, [
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'user_name' => 'required|unique:users,user_name,NULL,id,deleted_at,NULL',
+            'email' => 'required|unique:users,email,NULL,id,deleted_at,NULL|confirmed',
+            'password' => 'required|min:8|confirmed',
+            'phone' => 'required',
+            'company' => 'required',
+            'chapter_id' => 'required'
+        ]);
+
+        $user = $this->user_model->create($request->only('first_name', 'last_name', 'user_name', 'email', 'phone', 'password', 'chapter_id'));
+
+        /* customer role */
+        $roles = [3];
+        if (isset($roles)) {
+            foreach ($roles as $role) {
+                $role_r = $this->role_model->where('id', '=', $role)->firstOrFail();
+                $user->assignRole($role_r);
+            }
+        }
+
+        $member = $this->member->create([
+            'user_id' => $user->id,
+            'position' => $request->position,
+            'company' => $request->company
+        ]);
+
+        $this->guard()->login($user);
 
         return $this->registered($request, $user)
             ?: redirect($this->redirectPath());
