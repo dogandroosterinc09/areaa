@@ -98,7 +98,7 @@
                 <div class="row">
 
                     <div class="col-md-3">
-                        <a href="{{url('dashboard-memberdirectory')}}" class="btn btn--back">   <i href="#" class="btn btn--third"> </i> Back To Members </a>
+                        <a href="{{url('customer/member_directory')}}" class="btn btn--back">   <i href="#" class="btn btn--third"> </i> Back To Members </a>
                     </div>
     
                     <div class="col-md-9">
@@ -117,7 +117,7 @@
 
                                     <div class="col-md-3 memberdirectory-detail__left">
                                         <div class="memberdirectory-detail__image image-background">
-                                            <img src="{{ url('public/images/member-detail.jpg') }}" alt=""> 
+                                            <img src="{{ url('public/images/no-pix.jpg') }}" alt=""> 
                                         </div>
 
                                         <div class="memberdirectory-detail__year">
@@ -148,11 +148,11 @@
 
                                     <div class="col-md-9 memberdirectory-detail__right">
                                         <div class="memberdirectory-detail__content">
-                                             <div class="memberdirectory-detail__date">Member Since 2011</div>
-                                             <div class="memberdirectory-detail__title"> <h3> Patrisha Kingsley </h3> </div>
+                                             <div class="memberdirectory-detail__date">Member Since {{ $member->membership_year }}</div>
+                                             <div class="memberdirectory-detail__title"> <h3> {{ $member->name }} </h3> </div>
                                              <div class="memberdirectory-detail__position"> AREAA Leadership Role </div>
                                              <div class="memberdirectory-detail__description">
-                                                Lorem ipsum dolor sit amet, praesent placerat donec, tristique interdum vestibulum dui varius eget donec, sit pede nec mollis, tincidunt adipiscing varius, at lectus pellentesque viverra quis pellentesque dictumst. Luctus wisi sit natoque, est consectetuer porta, mauris porttitor id arcu faucibus felis. Montes faucibus tempor nec, quam est aenean porta tortor nunc, nisl per erat lobortis ex massa sit, sed purus platea rhoncus mattis. Sed donec commodo. Felis lobortis, turpis tellus sapien, vestibulum etiam eleifend, vestibulum amet quis. Tincidunt a sociis vitae risus veniam elit, mauris aliquam quis, dapibus perspiciatis massa, a in et erat aliquam luctus. Dolor amet mattis, a lorem, libero lorem laoreet vel fusce integer netus, convallis lacinia, sodales posuere nunc vel eget nullam libero. Non ipsum fermentum felis pede tortor imperdiet, malesuada odio sed orci, neque auctor. Hendrerit vehicula nec leo in. Cursus turpis in ut in iaculis, congue fermentum turpis tristique vestibulum, sociosqu porttitor, mauris enim ipsum vestibulum, metus massa ipsum fusce sed. Ut nunc neque libero imperdiet vel, urna libero adipiscing asperiores turpis, interdum donec, scelerisque eget vitae phasellus sollicitudin sit pede, nunc nec class mauris ad in tellus.
+                                                {{ $member->bio }}
                                              </div>
                                              <div class="information">
                                                  <div class="row">
@@ -161,21 +161,21 @@
                                                          <b>Location</b>
                                                      </div>
                                                      <div class="col-md-6">
-                                                        Seattle, CA
+                                                        {{ $member->location }}
                                                      </div>
 
                                                      <div class="col-md-6">
                                                         <b>Company</b>
                                                     </div>
                                                     <div class="col-md-6">
-                                                        Lorem Ipsum Elite
+                                                        {{ $member->company }}
                                                     </div>
 
                                                     <div class="col-md-6">
                                                         <b>Email</b>
                                                     </div>
                                                     <div class="col-md-6">
-                                                        P.Kingsley@gmail.com
+                                                        {{ $member->user->email }}
                                                     </div>
 
 
@@ -183,28 +183,28 @@
                                                         <b>Phone</b>
                                                     </div>
                                                     <div class="col-md-6">
-                                                        (123) 456-7890
+                                                        {{ $member->user->phone }}
                                                     </div>
 
                                                     <div class="col-md-6">
                                                         <b>Language Spoken</b>
                                                     </div>
                                                     <div class="col-md-6">
-                                                        English, Spanish, Mandarine
+                                                        {{ $member->language_spoken }}
                                                     </div>
 
                                                     <div class="col-md-6">
                                                         <b>Designations</b>
                                                     </div>
                                                     <div class="col-md-6">
-                                                        Lorem Ipsum Elite
+                                                        {{ $member->designations }}
                                                     </div>
 
                                                     <div class="col-md-6">
                                                         <b>Area of Specialty</b>
                                                     </div>
                                                     <div class="col-md-6">
-                                                        Lorem Ipsum, Dolor Sup Melis, Vellis Lorem
+                                                        {{ $member->area_of_specialty }}
                                                     </div>
 
 

@@ -20,6 +20,7 @@ Route::group([
 
     Route::get('/dashboard', 'FrontDashboardController@index')->name('dashboard');
     Route::get('/member_directory', 'FrontDashboardController@showMemberDirectory')->name('dashboard.member_directory');
+    Route::get('/member/{id}', 'FrontDashboardController@showMemberDetail')->name('dashboard.member_detail');
 });
 
 Route::post('/contact/store', 'ContactController@store')->name('contact.store');

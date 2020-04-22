@@ -149,6 +149,77 @@
                                         <div class="member-directory-result__action"> <h3>Action</h3> </div>
                                     </div>
 
+                                    @php( $members = \App\Models\Members::all() )                                    
+                                    @foreach($members as $member)
+                                    {{-- loop this --}}
+                                    <div class="member-directory-result__item member-directory-result__results">
+                                        <div class="member-directory-result__name"> 
+                                            <div class="member-directory-result__avatar image-background">
+                                                <img src="{{ asset($member->avatar) }}" alt=""> 
+                                            </div>
+                                            <h4> {{ $member->name }} </h4> </div>
+                                        <div class="member-directory-result__location">{{ $member->location }}</div>
+                                        <div class="member-directory-result__language">{{ $member->language_spoken }}</div>
+                                        <div class="member-directory-result__action"> <a href="{{ route('customer.dashboard.member_detail', $member->id) }}">View Profile</a> </div>
+                                    </div>
+                                    {{-- loop this --}}
+
+                                    @endforeach
+
+                                    <!-- {{-- loop this --}}
+                                    <div class="member-directory-result__item member-directory-result__results">
+                                        <div class="member-directory-result__name"> 
+                                            <div class="member-directory-result__avatar image-background">
+                                                <img src="{{ url('public/images/member-avatar.jpg') }}" alt=""> 
+                                            </div>
+                                            <h4> Mary Johnson </h4> </div>
+                                        <div class="member-directory-result__location"> San Diego, CA </div>
+                                        <div class="member-directory-result__language"> English </div>
+                                        <div class="member-directory-result__action"> <a href="{{url('dashboard-memberdirectory-detail')}}">View Profile</a> </div>
+                                    </div>
+                                     {{-- loop this --}}
+
+                                    {{-- loop this --}}
+                                    <div class="member-directory-result__item member-directory-result__results">
+                                        <div class="member-directory-result__name"> 
+                                            <div class="member-directory-result__avatar image-background">
+                                                <img src="{{ url('public/images/member-avatar2.jpg') }}" alt=""> 
+                                            </div>
+                                            <h4> Henry McCalistar </h4> </div>
+                                        <div class="member-directory-result__location"> Los Angeles, CA </div>
+                                        <div class="member-directory-result__language"> English, Spanish </div>
+                                        <div class="member-directory-result__action"> <a href="{{url('dashboard-memberdirectory-detail')}}">View Profile</a> </div>
+                                    </div>
+                                     {{-- loop this --}}
+
+                                    {{-- loop this --}}
+                                    <div class="member-directory-result__item member-directory-result__results">
+                                        <div class="member-directory-result__name"> 
+                                            <div class="member-directory-result__avatar image-background">
+                                                <img src="{{ url('public/images/member-avatar3.jpg') }}" alt=""> 
+                                            </div>
+                                            <h4>Patrisha Kingsley </h4> </div>
+                                        <div class="member-directory-result__location"> Seattle, CA </div>
+                                        <div class="member-directory-result__language"> English </div>
+                                        <div class="member-directory-result__action"> <a href="{{url('dashboard-memberdirectory-detail')}}">View Profile</a> </div>
+                                    </div>
+                                     {{-- loop this --}}
+
+                                  
+                                     
+                                    {{-- loop this --}}
+                                    <div class="member-directory-result__item member-directory-result__results">
+                                        <div class="member-directory-result__name"> 
+                                            <div class="member-directory-result__avatar image-background">
+                                                <img src="{{ url('public/images/member-avatar4.jpg') }}" alt=""> 
+                                            </div>
+                                            <h4>Gregory Smith </h4> </div>
+                                        <div class="member-directory-result__location"> Dallas, TX </div>
+                                        <div class="member-directory-result__language"> English </div>
+                                        <div class="member-directory-result__action"> <a href="{{url('dashboard-memberdirectory-detail')}}">View Profile</a> </div>
+                                    </div>
+                                     {{-- loop this --}}
+
                                     {{-- loop this --}}
                                     <div class="member-directory-result__item member-directory-result__results">
                                         <div class="member-directory-result__name"> 
@@ -162,7 +233,7 @@
                                     </div>
                                      {{-- loop this --}}
 
-                                         {{-- loop this --}}
+                                    {{-- loop this --}}
                                     <div class="member-directory-result__item member-directory-result__results">
                                         <div class="member-directory-result__name"> 
                                             <div class="member-directory-result__avatar image-background">
@@ -175,7 +246,7 @@
                                     </div>
                                      {{-- loop this --}}
 
-                                         {{-- loop this --}}
+                                    {{-- loop this --}}
                                     <div class="member-directory-result__item member-directory-result__results">
                                         <div class="member-directory-result__name"> 
                                             <div class="member-directory-result__avatar image-background">
@@ -201,61 +272,7 @@
                                         <div class="member-directory-result__language"> English </div>
                                         <div class="member-directory-result__action"> <a href="{{url('dashboard-memberdirectory-detail')}}">View Profile</a> </div>
                                     </div>
-                                     {{-- loop this --}}
-
-                                      {{-- loop this --}}
-                                    <div class="member-directory-result__item member-directory-result__results">
-                                        <div class="member-directory-result__name"> 
-                                            <div class="member-directory-result__avatar image-background">
-                                                <img src="{{ url('public/images/member-avatar.jpg') }}" alt=""> 
-                                            </div>
-                                            <h4> Mary Johnson </h4> </div>
-                                        <div class="member-directory-result__location"> San Diego, CA </div>
-                                        <div class="member-directory-result__language"> English </div>
-                                        <div class="member-directory-result__action"> <a href="{{url('dashboard-memberdirectory-detail')}}">View Profile</a> </div>
-                                    </div>
-                                     {{-- loop this --}}
-
-                                         {{-- loop this --}}
-                                    <div class="member-directory-result__item member-directory-result__results">
-                                        <div class="member-directory-result__name"> 
-                                            <div class="member-directory-result__avatar image-background">
-                                                <img src="{{ url('public/images/member-avatar2.jpg') }}" alt=""> 
-                                            </div>
-                                            <h4> Henry McCalistar </h4> </div>
-                                        <div class="member-directory-result__location"> Los Angeles, CA </div>
-                                        <div class="member-directory-result__language"> English, Spanish </div>
-                                        <div class="member-directory-result__action"> <a href="{{url('dashboard-memberdirectory-detail')}}">View Profile</a> </div>
-                                    </div>
-                                     {{-- loop this --}}
-
-                                         {{-- loop this --}}
-                                    <div class="member-directory-result__item member-directory-result__results">
-                                        <div class="member-directory-result__name"> 
-                                            <div class="member-directory-result__avatar image-background">
-                                                <img src="{{ url('public/images/member-avatar3.jpg') }}" alt=""> 
-                                            </div>
-                                            <h4>Patrisha Kingsley </h4> </div>
-                                        <div class="member-directory-result__location"> Seattle, CA </div>
-                                        <div class="member-directory-result__language"> English </div>
-                                        <div class="member-directory-result__action"> <a href="{{url('dashboard-memberdirectory-detail')}}">View Profile</a> </div>
-                                    </div>
-                                     {{-- loop this --}}
-
-                                  
-                                     
-                                         {{-- loop this --}}
-                                    <div class="member-directory-result__item member-directory-result__results">
-                                        <div class="member-directory-result__name"> 
-                                            <div class="member-directory-result__avatar image-background">
-                                                <img src="{{ url('public/images/member-avatar4.jpg') }}" alt=""> 
-                                            </div>
-                                            <h4>Gregory Smith </h4> </div>
-                                        <div class="member-directory-result__location"> Dallas, TX </div>
-                                        <div class="member-directory-result__language"> English </div>
-                                        <div class="member-directory-result__action"> <a href="{{url('dashboard-memberdirectory-detail')}}">View Profile</a> </div>
-                                    </div>
-                                     {{-- loop this --}}
+                                     {{-- loop this --}} -->
 
                                 </div>
 

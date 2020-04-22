@@ -25,4 +25,25 @@ class Members extends Model
         'designations',
         'area_of_specialty'
     ];
+
+    public function getAvatarAttribute() {
+        $user = \App\Models\User::where('id',$this->attributes['user_id'])->get()->first();
+
+        return $user->profile_image;
+    }
+
+    public function getNameAttribute() {
+        $user = \App\Models\User::where('id',$this->attributes['user_id'])->get()->first();
+
+        return $user->first_name . ' ' . $user->last_name;
+    }
+
+    public function getMembershipYearAttribute() {
+        return \Carbon\Carbon::parse($this->attributes['created_at'])->format('Y');;
+        
+    }
+
+    public function user() {
+        return $this->belongsTo('App\Models\User');
+    }
 }

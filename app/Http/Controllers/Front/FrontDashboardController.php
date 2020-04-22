@@ -33,4 +33,16 @@ class FrontDashboardController extends Controller
 
         return view('front.pages.custom-pages-index', compact('page'));
     }
+
+    public function showMemberDetail($id) {
+        $page = $this->pageRepository->getActivePageBySlug('dashboard-memberdirectory-detail');
+
+        $member = \App\Models\Members::find($id);
+        
+        if (!$member) {
+            abort('404', '404');
+        }
+
+        return view('front.pages.custom-pages-index', compact('page', 'member'));
+    }
 }
