@@ -32,7 +32,7 @@ require('./static/custom/jquery.chain-height.js');
 require('./static/custom/custom-slick-carousel.js');
 // custom scripts mixed
 require('./static/custom/custom-scripts.js');
-require('./static/custom/custom-datatable.js');
+// require('./static/custom/custom-datatable.js');
 // mobile navigation
 require('./static/custom/custom-mobile-menu.js');
 // target chrome on safari and pc

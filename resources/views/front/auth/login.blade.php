@@ -83,15 +83,14 @@
 
                     <div class="col-lg-6 login-section__left login-section__item">
                       
-                        <div class="login-section__form">
-                            <form>
+                        <div class="login-section__form">                            
                                 {{  Form::open([
                                     'method' => 'POST',
                                     'id' => 'form-login',
                                     'route' => ['customer.login.post'],
                                     'class' => 'form-horizontal'
                                     ])
-                                }}
+                                }}                                
                                 <div class="row">
                                     <div class="col-md-12 form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                                         {{-- <label for="email">Email</label> --}}
@@ -128,8 +127,7 @@
                                         <a href="{{ url('customer/password/email') }}" class="btn btn--forgot"> Forgot your password? </a>
                                     </div>
                                 </div>
-                                {{ Form::close() }}
-                            </form>
+                                {{ Form::close() }}                            
                         </div>
 
                     </div>
