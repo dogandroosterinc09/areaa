@@ -233,6 +233,14 @@ class PermissionGroupsTableSeeder extends Seeder
                 'updated_at' => '2020-04-21 17:50:16',
                 'deleted_at' => NULL,
             ),
+            27 => 
+            array (
+                'id' => 28,
+                'name' => 'Chapter Page Homesliders',
+                'created_at' => '2020-04-23 18:53:10',
+                'updated_at' => '2020-04-23 18:53:10',
+                'deleted_at' => NULL,
+            ),
         ));
         
         

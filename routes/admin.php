@@ -107,3 +107,6 @@ Route::get('/chapters/pages/{id}/edit/contact_us', 'ChapterPageContactUsControll
 
 
 Route::resource('/members', 'MembersController');
+
+
+Route::resource('/chapter_page_homesliders', 'ChapterPageHomesliderController');

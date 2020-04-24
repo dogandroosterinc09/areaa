@@ -99,22 +99,28 @@
                     </div>
 
                     <div class="search-member-directory">
-                        <form>
+                    {{  Form::open([
+                        'method' => 'GET',
+                        'id' => '',
+                        'route' => ['customer.dashboard.member_directory.search'],
+                        'class' => ''
+                        ])
+                    }}
                             <div class="search-member-directory__wrapper container">
                                 <div class="row">
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <input type="text" placeholder="Keyword Search"> 
+                                            <input type="text" placeholder="Keyword Search" name="keyword" value="{{ Request::get('keyword') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <input type="text" placeholder="Name"> 
+                                            <input type="text" placeholder="Name" name="name" value="{{ Request::get('name') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <input type="text" placeholder="Location: City and/or Zip"> 
+                                            <input type="text" placeholder="Location: City and/or Zip" name="location"> 
                                         </div>
                                     </div>
                                     <div class="col-md-3">
@@ -133,7 +139,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </form>
+                        {{ Form::close() }}
                     </div>
 
 
@@ -148,9 +154,8 @@
                                         <div class="member-directory-result__language"> <h3>Language Spoken</h3>  </div>
                                         <div class="member-directory-result__action"> <h3>Action</h3> </div>
                                     </div>
-
-                                    @php( $members = \App\Models\Members::all() )                                    
-                                    @foreach($members as $member)
+                                                                        
+                                    @forelse($members as $member)
                                     {{-- loop this --}}
                                     <div class="member-directory-result__item member-directory-result__results">
                                         <div class="member-directory-result__name"> 
@@ -163,8 +168,11 @@
                                         <div class="member-directory-result__action"> <a href="{{ route('customer.dashboard.member_detail', $member->id) }}">View Profile</a> </div>
                                     </div>
                                     {{-- loop this --}}
-
-                                    @endforeach
+                                    @empty
+                                    <div class="member-directory-result__item">
+                                        <div>No member found.</div>
+                                    </div>
+                                    @endforelse
 
                                     <!-- {{-- loop this --}}
                                     <div class="member-directory-result__item member-directory-result__results">
@@ -275,9 +283,38 @@
                                      {{-- loop this --}} -->
 
                                 </div>
-
-
+                                
                                 <div class="col-lg-12 text-center">
+                                    <nav aria-label="" class="pagination-section">
+                                        <ul class="pagination">
+                                          <li class="page-item {{$members->previousPageUrl() ? '' : 'disabled'}}">
+                                            @if($members->previousPageUrl())
+                                            <a class="page-link" href="{{$members->previousPageUrl() . $params}}">Previous</a>
+                                            @else
+                                            <span class="page-link">Previous</span>
+                                            @endif
+                                          </li>
+                                            @for($ctr = 1; $ctr <= $members->lastPage(); $ctr++)
+                                            <li class="page-item {{ $ctr == $members->currentPage() ? 'active' : '' }}" >
+                                                @if($ctr == intval($members->currentPage()))
+                                                <span class="page-link">{{$ctr}}<span class="sr-only">(current)</span></span>
+                                                @else
+                                                <a class="page-link" href="{{$members->url($ctr) . $params}}">{{$ctr}}</a>
+                                                @endif
+                                            </li>
+                                            @endfor
+                                          <li class="page-item {{$members->nextPageUrl() ? '' : 'disabled'}}">
+                                            @if($members->nextPageUrl())
+                                            <a class="page-link" href="{{$members->nextPageUrl() . $params}}">Next</a>
+                                            @else
+                                            <span class="page-link">Next</span>
+                                            @endif                                            
+                                          </li>
+                                        </ul>
+                                      </nav>
+                                </div>
+
+                                <div class="col-lg-12 text-center d-none">
                                     
                                     <nav aria-label="" class="pagination-section">
                                         <ul class="pagination">

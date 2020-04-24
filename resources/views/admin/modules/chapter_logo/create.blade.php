@@ -35,7 +35,7 @@
                             <span class="help-block animation-slideDown">{{ $errors->first('chapter_id') }}</span>
                         @endif
                     </div>
-                </div>             
+                </div>
                 <div class="form-group{{ $errors->has('image') ? ' has-error' : '' }}">
                     <label class="col-md-3 control-label" for="chapter_logo_image">Image</label>
                     <div class="col-md-9">

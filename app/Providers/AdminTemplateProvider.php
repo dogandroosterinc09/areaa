@@ -71,6 +71,14 @@ class AdminTemplateProvider extends ServiceProvider
                 ]);
             }
 
+            if ($this->hasCrudAccessFor('Chapter Page Homeslider')) {
+                array_push($navigation, [
+                    'name' => 'Chapter Home Slides',
+                    'url' => url('admin/chapter_page_homesliders'),
+                    'icon' => 'fa fa-sliders'
+                ]);
+            }
+
             if (auth()->user()->can('Read Contact')) {
                 array_push($navigation, [
                     'name' => 'Contacts',

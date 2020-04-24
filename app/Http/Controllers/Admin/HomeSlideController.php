@@ -81,8 +81,7 @@ class HomeSlideController extends Controller
 
         $this->validate($request, [
             'name' => 'required',
-            'button_label' => 'required',
-            'button_link' => 'required',
+            'content' => 'required',            
             'background_image' => 'mimes:jpg,jpeg,png',
         ]);
 
