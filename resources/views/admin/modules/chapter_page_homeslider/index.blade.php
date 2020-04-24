@@ -67,14 +67,7 @@
                         <td class="text-left">{!! str_limit(strip_tags($chapter_page_homeslider->content), 50) !!}</td>
                         <td class="text-center">{{ $chapter_page_homeslider->created_at->format('F d, Y') }}</td>
                         <td class="text-center">
-                            <div class="btn-group btn-group-xs">
-                                @if (auth()->user()->can('Read Chapter Page Homeslider'))
-                                    <a href="{{ route('admin.chapter_page_homesliders.show', $chapter_page_homeslider->id) }}"
-                                       data-toggle="tooltip"
-                                       title=""
-                                       class="btn btn-default"
-                                       data-original-title="View"><i class="fa fa-eye"></i></a>
-                                @endif
+                            <div class="btn-group btn-group-xs">                                
                                 @if (auth()->user()->can('Update Chapter Page Homeslider'))
                                     <a href="{{ route('admin.chapter_page_homesliders.edit', $chapter_page_homeslider->id) }}"
                                        data-toggle="tooltip"

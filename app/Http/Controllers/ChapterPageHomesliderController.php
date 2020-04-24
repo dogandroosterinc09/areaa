@@ -74,7 +74,8 @@ class ChapterPageHomesliderController extends Controller
             'chapter_id' => 'required',
             'name' => 'required',
             'content' => 'required',
-            'background_image' => 'mimes:jpg,jpeg,png'
+            'background_image' => 'mimes:jpg,jpeg,png',
+            'thumbnail_image' =>  'mimes:jpg,jpeg,png'
         ],[
             'chapter_id.required' => 'Chapter is required.'
         ]);
@@ -151,9 +152,13 @@ class ChapterPageHomesliderController extends Controller
         }
 
         $this->validate($request, [
-            'name' => 'required|unique:chapter_page_homesliders,name,' . $id . ',id,deleted_at,NULL',
-            'slug' => 'required|unique:chapter_page_homesliders,slug,' . $id . ',id,deleted_at,NULL',
+            'chapter_id' => 'required',
+            'name' => 'required',
             'content' => 'required',
+            'background_image' => 'mimes:jpg,jpeg,png',
+            'thumbnail_image' =>  'mimes:jpg,jpeg,png'
+        ],[
+            'chapter_id.required' => 'Chapter is required.'
         ]);
 
         $chapter_page_homeslider = $this->chapter_page_homeslider->findOrFail($id);
@@ -162,6 +167,16 @@ class ChapterPageHomesliderController extends Controller
             'is_active' => $request->has('is_active') ? 1 : 0,
             'slug' => str_slug($request->input('name'))
         ]))->save();
+
+        if ($request->hasFile('background_image')) {
+            $file_upload_path = $this->upload($request->background_image, '');
+            $chapter_page_homeslider->fill(['background_image'=>$file_upload_path])->save();
+        }
+
+        if ($request->hasFile('thumbnail_image')) {
+            $file_upload_path = $this->upload($request->thumbnail_image, '/thumbnail');
+            $chapter_page_homeslider->fill(['thumbnail_image'=>$file_upload_path])->save();
+        }
 
         return redirect()->route('admin.chapter_page_homesliders.index')->with('flash_message', [
             'title' => '',

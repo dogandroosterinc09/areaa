@@ -40,8 +40,8 @@
                     <label class="col-md-3 control-label" for="home_slide_name">Name</label>
 
                     <div class="col-md-9">
-                        <input type="text" class="form-control" id="home_slide_name" name="name" value="{{ $chapter_page_homeslider->name }}"
-                               placeholder="Enter Home Slide name.." value="{{ old('name') }}">
+                        <input type="text" class="form-control" id="home_slide_name" name="name" 
+                               placeholder="Enter Home Slide name.." value="{{ Request::old('name') ? : $chapter_page_homeslider->name }}">
                         @if($errors->has('name'))
                             <span class="help-block animation-slideDown">{{ $errors->first('name') }}</span>
                         @endif
@@ -64,8 +64,8 @@
                         @endif
                     </div>
                     <div class="col-md-offset-3 col-md-9">
-                        <a href="" class="zoom img-thumbnail" style="cursor: default !important;" data-toggle="lightbox-image">
-                            <img src="" alt="" class="img-responsive center-block" style="max-width: 100px;">
+                        <a href="{{ $chapter_page_homeslider->background_image != '' ? asset($chapter_page_homeslider->background_image) : '' }}" class="zoom img-thumbnail" style="cursor: default !important;" data-toggle="lightbox-image">
+                            <img src="{{ $chapter_page_homeslider->background_image != '' ? asset($chapter_page_homeslider->background_image) : '' }}" alt="" class="img-responsive center-block" style="max-width: 100px;">
                         </a>
                         <br>
                         <a href="javascript:void(0)" class="btn btn-xs btn-danger remove-image-btn" style="display: none;"><i class="fa fa-trash"></i> Remove</a>
@@ -89,8 +89,8 @@
                         @endif
                     </div>
                     <div class="col-md-offset-3 col-md-9">
-                        <a href="" class="zoom img-thumbnail" style="cursor: default !important;" data-toggle="lightbox-image">
-                            <img src="" alt="" class="img-responsive center-block" style="max-width: 100px;">
+                        <a href="{{ $chapter_page_homeslider->thumbnail_image != '' ? asset($chapter_page_homeslider->thumbnail_image) : '' }}" class="zoom img-thumbnail" style="cursor: default !important;" data-toggle="lightbox-image">
+                            <img src="{{ $chapter_page_homeslider->thumbnail_image != '' ? asset($chapter_page_homeslider->thumbnail_image) : '' }}" alt="" class="img-responsive center-block" style="max-width: 100px;">
                         </a>
                         <br>
                         <a href="javascript:void(0)" class="btn btn-xs btn-danger remove-image-btn" style="display: none;"><i class="fa fa-trash"></i> Remove</a>
