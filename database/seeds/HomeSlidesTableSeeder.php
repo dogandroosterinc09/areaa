@@ -28,9 +28,9 @@ class HomeSlidesTableSeeder extends Seeder
 ',
                 'button_label' => 'Learn More',
                 'button_link' => 'about-us',
-                'is_active' => 1,
+                'is_active' => 0,
                 'created_at' => '2020-04-06 21:08:39',
-                'updated_at' => '2020-04-06 23:17:34',
+                'updated_at' => '2020-04-23 18:55:50',
                 'deleted_at' => NULL,
             ),
             1 => 
@@ -64,6 +64,22 @@ class HomeSlidesTableSeeder extends Seeder
                 'created_at' => '2020-04-06 21:12:14',
                 'updated_at' => '2020-04-06 23:18:17',
                 'deleted_at' => NULL,
+            ),
+            3 => 
+            array (
+                'id' => 4,
+                'name' => 'Fulfilling the American Dream.',
+                'background_image' => 'public/uploads/home_slide_images/hp-banner-img1-1587694775.jpg',
+                'content' => '<h1>The Voice of the AAPI community</h1>
+
+<h2>Fulfilling the American Dream.</h2>
+',
+                'button_label' => 'label 1',
+                'button_link' => 'label 2',
+                'is_active' => 1,
+                'created_at' => '2020-04-23 19:19:35',
+                'updated_at' => '2020-04-23 19:19:46',
+                'deleted_at' => '2020-04-23 19:19:46',
             ),
         ));
         
