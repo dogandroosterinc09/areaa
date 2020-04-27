@@ -10,6 +10,8 @@ use Illuminate\Http\Request;
 
 use App\Repositories\PageRepository;
 
+use DB;
+
 class FrontDashboardController extends Controller
 {
     public function __construct(PageRepository $pageRepository, Members $members)
@@ -30,20 +32,24 @@ class FrontDashboardController extends Controller
 
         $page = $this->pageRepository->getActivePageBySlug('dashboard-main');
 
-        return view('front.pages.custom-pages-index', compact('page'));
+        $active = 'dashboard';
+
+        return view('front.pages.custom-pages-index', compact('page', 'active'));
     }
 
     public function showMemberDirectory() {
         $page = $this->pageRepository->getActivePageBySlug('dashboard-memberdirectory');
         $members = $this->members->paginate(10);
-        return view('front.pages.custom-pages-index', compact('page', 'members'));
+        $active = 'member_directory';
+
+        return view('front.pages.custom-pages-index', compact('page', 'members', 'active'));
     }
 
     public function showMemberDetail($id) {
         $page = $this->pageRepository->getActivePageBySlug('dashboard-memberdirectory-detail');
 
-        $member = $this->members->find($id);
-        
+        $member = $this->members->where('user_id', $id)->get()->first();
+
         if (!$member) {
             abort('404', '404');
         }
@@ -52,25 +58,35 @@ class FrontDashboardController extends Controller
     }
 
     public function searchMemberDirectory(Request $request) {
-        $page = $this->pageRepository->getActivePageBySlug('dashboard-memberdirectory');        
+        $page = $this->pageRepository->getActivePageBySlug('dashboard-memberdirectory');
+        $active = 'member_directory';
 
-        // $request->location = 'los';
+        $keyword = $request->keyword;
+        $name = $request->name;
+        $location = $request->location;
 
         $members = $this->members->join('users','users.id','=','members.user_id')
-            // ->where('users.first_name','like','%' . $request->name .'%' )
-            // ->orWhere('users.last_name','like','%' . $request->name .'%' )
-            // ->orWhereRaw("CONCAT(users.first_name, ' ', users.last_name) LIKE ?", '%'.$request->name.'%')
-
-            // ->where('location','like', '%' . $request->location .'%')
-            ->where('language_spoken','like','%'.$request->keyword.'%')
+            ->when(!empty($keyword), function($query) use ($keyword) {
+                return $query->where('language_spoken','like','%'.$keyword.'%');
+            })
+            ->when(!empty($name), function($query) use ($name) {
+                return $query->where(function ($query2) use ($name) {
+                    return $query2->where('users.first_name','like','%' . $name .'%' )
+                                  ->orWhere('users.last_name','like','%' . $name .'%' )
+                                  ->orWhereRaw("CONCAT(users.first_name, ' ', users.last_name) LIKE ?", '%'.$name.'%');
+                });
+            })
+            ->when(!empty($location), function($query) use ($location) {
+                return $query->where('location','like', '%' . $location .'%');
+            })           
             ->paginate(10);
-        
+
         $params = "";
-        
+
         foreach($request->except('page') as $k=>$v) {
             $params .= '&'. $k . '=' . $v ;
-        };        
+        };
 
-        return view('front.pages.custom-pages-index', compact('page', 'members', 'params'));
+        return view('front.pages.custom-pages-index', compact('page', 'members', 'params', 'active'));
     }
 }

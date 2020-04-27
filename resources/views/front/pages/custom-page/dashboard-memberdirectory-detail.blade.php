@@ -117,7 +117,7 @@
 
                                     <div class="col-md-3 memberdirectory-detail__left">
                                         <div class="memberdirectory-detail__image image-background">
-                                            <img src="{{ url('public/images/no-pix.jpg') }}" alt=""> 
+                                            <img src="{{ $member->avatar ? asset($member->avatar) : url('public/images/no-pix.jpg') }}" alt=""> 
                                         </div>
 
                                         <div class="memberdirectory-detail__year">

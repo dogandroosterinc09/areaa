@@ -13,7 +13,7 @@
 
                 <nav class="navbar-bar">
                     <ul class="navbar-bar__wrapper">
-                        <li class="nav-item dropdown active">
+                        <li class="nav-item dropdown {{ $active == 'dashboard' ? 'active' : '' }}">
                             <a class="nav-link dropdown-toggle" href="{{ route('customer.dashboard') }}">Dashboard <span class="sr-only">(current)</span></a>
                             <div class="dropdown-menu">
                                 <ul class="sub-menu">
@@ -24,10 +24,10 @@
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('dashboard') }}">Events</a>
+                            <a class="nav-link" href="{{ route('customer.dashboard') }}">Events</a>
                         </li>
                        
-                        <li class="nav-item">
+                        <li class="nav-item {{ $active == 'member_directory' ? 'active' : '' }}">
                             <a class="nav-link" href="{{ route('customer.dashboard.member_directory') }}">Membership Directory</a>
                         </li>
                         <li class="nav-item">
@@ -35,11 +35,11 @@
                                 Profile
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a class="nav-link" href="{{ url('dashboard-memberdirectory-detail') }}" {{--data-toggle="dropdown"--}}>
                                 Membership Details
                             </a>
-                        </li>
+                        </li> -->
                         <li class="nav-item">
                             <a class="nav-link" href="#" {{--data-toggle="dropdown"--}}>
                                 Support

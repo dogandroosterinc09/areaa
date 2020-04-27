@@ -81,7 +81,7 @@
                                 <div class="col-lg-4">
                                     <div class="navigation-icon__item">
                                         <div class="navigation-icon__watermark">
-                                            <a href="#">
+                                            <a href="{{ route('customer.dashboard.member_directory') }}">
                                                 <h3>Membership Directory</h3>
                                             </a>
                                         </div>

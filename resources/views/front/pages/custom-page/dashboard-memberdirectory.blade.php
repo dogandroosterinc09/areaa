@@ -28,66 +28,65 @@
 
     <main class="main-content">
 
-       {{-- @include('front.pages.custom-page.sections.dashboard-menu') --}}
-       <section class="dashboard-nav">
+        {{-- @include('front.pages.custom-page.sections.dashboard-menu') --}}
+        @include('front.pages.custom-page.sections.dashboard-menu')
+        
+        <!-- <section class="dashboard-nav">
 
-        <div class="dashboard-navigation">
-            <div class="dashboard-navigation__wrapper">
-                <div class="dashboard-navigation__item">
-                    {{-- <ul>
-                        <li><a href="#"> Dashboard</a> </li>
-                        <li><a href="#"> Events</a> </li>
-                        <li><a href="#"> Profile</a> </li>
-                        <li><a href="#"> Membership Details</a> </li>
-                        <li><a href="#"> Support</a> </li>
-                    </ul> --}}
-    
-                    <nav class="navbar-bar">
-                        <ul class="navbar-bar__wrapper">
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="{{ url('dashboard-main') }}">Dashboard <span class="sr-only">(current)</span></a>
-                                <div class="dropdown-menu">
-                                    <ul class="sub-menu">
-                                        <li>
-                                            <a class="nav-link" href="#"> Sub menu 1</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ url('dashboard') }}">Events</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ url('dashboard-memberdirectory') }}">Membership Directory</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#" {{--data-toggle="dropdown"--}}>
-                                    Profile
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ url('dashboard-memberdirectory-detail') }}" {{--data-toggle="dropdown"--}}>
-                                    Membership Details
-                                </a>
-                            </li>
-                           
-                            <li class="nav-item">
-                                <a class="nav-link" href="#" {{--data-toggle="dropdown"--}}>
-                                    Support
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-    
-    
+            <div class="dashboard-navigation">
+                <div class="dashboard-navigation__wrapper">
+                    <div class="dashboard-navigation__item">
+                        {{-- <ul>
+                            <li><a href="#"> Dashboard</a> </li>
+                            <li><a href="#"> Events</a> </li>
+                            <li><a href="#"> Profile</a> </li>
+                            <li><a href="#"> Membership Details</a> </li>
+                            <li><a href="#"> Support</a> </li>
+                        </ul> --}}
+        
+                        <nav class="navbar-bar">
+                            <ul class="navbar-bar__wrapper">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="{{ url('dashboard-main') }}">Dashboard <span class="sr-only">(current)</span></a>
+                                    <div class="dropdown-menu">
+                                        <ul class="sub-menu">
+                                            <li>
+                                                <a class="nav-link" href="#"> Sub menu 1</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ url('dashboard') }}">Events</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ url('dashboard-memberdirectory') }}">Membership Directory</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#" {{--data-toggle="dropdown"--}}>
+                                        Profile
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ url('dashboard-memberdirectory-detail') }}" {{--data-toggle="dropdown"--}}>
+                                        Membership Details
+                                    </a>
+                                </li>
+                            
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#" {{--data-toggle="dropdown"--}}>
+                                        Support
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+        
+        
+                    </div>
                 </div>
             </div>
-        </div>
     
-    </section>
-
-
-
+        </section> -->
 
         <section class="dashboard-content dashboard-content__memberdirectory">
             <div class="container-max">
@@ -120,7 +119,7 @@
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <input type="text" placeholder="Location: City and/or Zip" name="location"> 
+                                            <input type="text" placeholder="Location: City and/or Zip" name="location" value="{{ Request::get('location') }}"> 
                                         </div>
                                     </div>
                                     <div class="col-md-3">
@@ -160,12 +159,12 @@
                                     <div class="member-directory-result__item member-directory-result__results">
                                         <div class="member-directory-result__name"> 
                                             <div class="member-directory-result__avatar image-background">
-                                                <img src="{{ asset($member->avatar) }}" alt=""> 
+                                                <img src="{{ $member->avatar ? asset($member->avatar) : url('public/images/no-pix.jpg') }}" alt=""> 
                                             </div>
                                             <h4> {{ $member->name }} </h4> </div>
                                         <div class="member-directory-result__location">{{ $member->location }}</div>
                                         <div class="member-directory-result__language">{{ $member->language_spoken }}</div>
-                                        <div class="member-directory-result__action"> <a href="{{ route('customer.dashboard.member_detail', $member->id) }}">View Profile</a> </div>
+                                        <div class="member-directory-result__action"> <a href="{{ route('customer.dashboard.member_detail', $member->user_id) }}">View Profile</a> </div>
                                     </div>
                                     {{-- loop this --}}
                                     @empty

@@ -39,8 +39,7 @@ class Members extends Model
     }
 
     public function getMembershipYearAttribute() {
-        return \Carbon\Carbon::parse($this->attributes['created_at'])->format('Y');;
-        
+        return \Carbon\Carbon::parse($this->attributes['created_at'])->format('Y');;        
     }
 
     public function user() {
