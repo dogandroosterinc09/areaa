@@ -178,7 +178,7 @@
                     platform.show_spinner($(form).find('[type="submit"]'), true);
                     form.submit();
                 },
-                rules: {
+                rules: {                    
                     'name': {
                         required: true
                     },
@@ -195,7 +195,7 @@
                         required: true
                     },
                 },
-                messages: {
+                messages: {                    
                     'name': {
                         required: 'Name is required.'
                     },

@@ -45,10 +45,12 @@ class ContactController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required',
+            // 'name' => 'required',
+            'first_name' => 'required',
+            'last_name' => 'required',
             'email' => 'required|email',
             'message' => 'required',
-            'subject' => 'required',
+            // 'subject' => 'required',
             'g-recaptcha-response' => 'required|captcha'
         ]);
 

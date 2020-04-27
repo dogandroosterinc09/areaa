@@ -26,4 +26,9 @@ class ChapterPageHomeslider extends Model
         'button_link',
         'is_active',
     ];
+
+    public function getChapterAttribute() {
+        $chapter = \App\Models\Chapter::select('name')->where('id',$this->attributes['chapter_id'])->get()->first();
+        return $chapter->name;
+    }
 }

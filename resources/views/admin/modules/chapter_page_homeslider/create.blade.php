@@ -2,8 +2,8 @@
 
 @section('content')
     <ul class="breadcrumb breadcrumb-top">
-        <li><a href="{{ route('admin.chapter_page_homesliders.index') }}">Chapter Page Homesliders</a></li>
-        <li><span href="javascript:void(0)">Add New Chapter Page Homeslider</span></li>
+        <li><a href="{{ route('admin.chapter_page_homesliders.index') }}">Chapter Home Slides</a></li>
+        <li><span href="javascript:void(0)">Add New Chapter Home Slide</span></li>
     </ul>
     <div class="row">
         {{  Form::open([
@@ -17,18 +17,23 @@
         <div class="col-md-12">
             <div class="block">
                 <div class="block-title">
-                    <h2><i class="fa fa-pencil"></i> <strong>Add new Chapter Page Homeslider</strong></h2>
+                    <h2><i class="fa fa-pencil"></i> <strong>Add new Chapter Home Slide</strong></h2>
                 </div>
                 <div class="form-group{{ $errors->has('chapter_id') ? ' has-error' : '' }}">
                     <label class="col-md-3 control-label" for="chapter_id">Chapter</label>
 
                     <div class="col-md-9">
                         <select class="form-control" id="chapter_id" name="chapter_id">
-                        @php( $chapters = \App\Models\Chapter::all() )
+                        @if(auth()->user()->roles->first()->name == 'Chapter Admin')
+                            @php( $chapter = \App\Models\Chapter::where('id', auth()->user()->chapter_id)->get()->first() )
+                            <option value="{{ $chapter->id }}">{{ $chapter->name }}</option>
+                        @else
+                            @php( $chapters = \App\Models\Chapter::all() )
                             <option value="">Select Chapter</option>
-                        @foreach($chapters as $chapter)
-                            <option value="{{ $chapter->id }}">{{ $chapter->name }}</option>                        
-                        @endforeach
+                            @foreach($chapters as $chapter)
+                            <option value="{{ $chapter->id }}">{{ $chapter->name }}</option>
+                            @endforeach
+                        @endif
                             
                         </select>
                         @if($errors->has('chapter_id'))

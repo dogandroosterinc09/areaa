@@ -61,7 +61,7 @@
                                  class="img-responsive img-thumbnail center-block" style="max-width: 100px;">
                             {{--</a>--}}
                         </td>
-                        <td class="text-left">{!! str_limit($home_slide->content, 50) !!}</td>
+                        <td class="text-left">{!! str_limit(strip_tags($home_slide->content), 50) !!}</td>
                         <td class="text-center">{{ $home_slide->created_at->format('F d, Y') }}</td>
                         <td class="text-center">
                             <div class="btn-group btn-group-xs">

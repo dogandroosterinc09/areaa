@@ -8,7 +8,7 @@
                     <div class="widget-extra themed-background">
                         <h4 class="widget-content-light">
                             <strong>Add New</strong>
-                            Chapter Page Homeslider
+                            Chapter Home Slide
                         </h4>
                     </div>
                     <div class="widget-extra-full">
@@ -23,8 +23,8 @@
     <div class="block full">
         <div class="block-title">
             <h2>
-                <i class="fa fa-newspaper-o sidebar-nav-icon"></i>
-                <strong>Chapter Page Homesliders</strong>
+            <i class="fa fa-sliders sidebar-nav-icon"></i>
+                <strong>Chapter Home Slides</strong>
             </h2>
         </div>
         <div class="alert alert-info alert-dismissable chapter_page_homeslider-empty {{$chapter_page_homesliders->count() == 0 ? '' : 'johnCena' }}">
@@ -34,14 +34,14 @@
             <table id="chapter_page_homesliders-table" class="table table-bordered table-striped table-vcenter">
                 <thead>
                 <tr role="row">
-                    <th class="text-center">
+                <th class="text-center">
                         ID
                     </th>
                     <th class="text-center">
-                        Name
+                        Chapter
                     </th>
-                    <th class="text-left">
-                        Slug
+                    <th class="text-center">
+                        Background Image
                     </th>
                     <th class="text-left">
                         Content
@@ -58,11 +58,10 @@
                 @foreach($chapter_page_homesliders as $chapter_page_homeslider)
                     <tr data-chapter_page_homeslider-id="{{$chapter_page_homeslider->id}}">
                         <td class="text-center"><strong>{{ $chapter_page_homeslider->id }}</strong></td>
-                        <td class="text-center"><strong>{{ $chapter_page_homeslider->name }}</strong></td>
-                        <td class="text-left">
-                            @if($chapter_page_homeslider->slug && $chapter_page_homeslider->slug != '')
-                                <a target="_blank" href="{{ add_http($chapter_page_homeslider->slug) }}">{{ add_http($chapter_page_homeslider->slug) }}</a>
-                            @endif
+                        <td class="text-center"><strong>{{ $chapter_page_homeslider->chapter }}</strong></td>
+                        <td class="text-center">
+                            <img src="{{ asset($chapter_page_homeslider->background_image) }}" alt="{{ asset($chapter_page_homeslider->background_image) }}"
+                                 class="img-responsive img-thumbnail center-block" style="max-width: 100px;">
                         </td>
                         <td class="text-left">{!! str_limit(strip_tags($chapter_page_homeslider->content), 50) !!}</td>
                         <td class="text-center">{{ $chapter_page_homeslider->created_at->format('F d, Y') }}</td>

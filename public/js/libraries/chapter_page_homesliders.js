@@ -184,10 +184,10 @@
                     form.submit();
                 },
                 rules: {
-                    'name': {
+                    'chapter_id': {
                         required: true
                     },
-                    'slug': {
+                    'name': {
                         required: true
                     },
                     'background_image': {
@@ -196,32 +196,44 @@
                     'thumbnail_image': {
                         required: true
                     },
-                    'file': {
+                    'thumbnail_text': {
                         required: true
                     },
                     'content': {
                         required: true
-                    }
+                    },
+                    'button_label': {
+                        required: true
+                    },
+                    'button_link': {
+                        required: true
+                    },
                 },
                 messages: {
+                    'chapter_id': {
+                        required: 'Chapter is required.'
+                    },
                     'name': {
                         required: 'Name is required.'
                     },
-                    'slug': {
-                        required: 'Slug is required.'
-                    },
                     'background_image': {
                         required: 'Image is required.'
                     },
                     'thumbnail_image': {
                         required: 'Image is required.'
                     },
-                    'file': {
-                        required: 'File is required.'
+                    'thumbnail_text': {
+                        required: 'Thumbnail text is required.'
                     },
                     'content': {
                         required: 'Content is required.'
-                    }
+                    },
+                    'button_label': {
+                        required: 'Button Label is required.'
+                    },
+                    'button_link': {
+                        required: 'Button Link is required.'
+                    },
                 }
             });
 
@@ -253,10 +265,10 @@
                     form.submit();
                 },
                 rules: {
-                    'name': {
+                    'chapter_id': {
                         required: true
                     },
-                    'slug': {
+                    'name': {
                         required: true
                     },
                     'background_image': {
@@ -273,36 +285,44 @@
                             }
                         }
                     },
-                    'file': {
-                        required: {
-                            depends: function (element) {
-                                return $(element).closest('.form-group').find('input.remove-file').val() == 1;
-                            }
-                        }
+                    'thumbnail_text': {
+                        required: true
                     },
                     'content': {
                         required: true
-                    }
+                    },
+                    'button_label': {
+                        required: true
+                    },
+                    'button_link': {
+                        required: true
+                    },
                 },
                 messages: {
+                    'chapter_id': {
+                        required: 'Chapter is required.'
+                    },
                     'name': {
                         required: 'Name is required.'
                     },
-                    'slug': {
-                        required: 'Slug is required.'
-                    },
                     'background_image': {
                         required: 'Image is required.'
                     },
                     'thumbnail_image': {
                         required: 'Image is required.'
                     },
-                    'file': {
-                        required: 'File is required.'
+                    'thumbnail_text': {
+                        required: 'Thumbnail text is required.'
                     },
                     'content': {
                         required: 'Content is required.'
-                    }
+                    },
+                    'button_label': {
+                        required: 'Button Label is required.'
+                    },
+                    'button_link': {
+                        required: 'Button Link is required.'
+                    },
                 }
             });
 

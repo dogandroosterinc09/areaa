@@ -169,17 +169,21 @@ class AdminTemplateProvider extends ServiceProvider
                 ]);
            }
 
-            array_push($navigation, [
-                'name' => 'Chapter Board',
-                'url' => url('admin/chapter_board_members'),
-                'icon' => 'fa fa-users'
-            ]);
+            if (auth()->user()->can('Read Chapter Board Member')) {
+                array_push($navigation, [
+                    'name' => 'Chapter Board',
+                    'url' => url('admin/chapter_board_members'),
+                    'icon' => 'fa fa-users'
+                ]);
+            }
 
-            array_push($navigation, [
-                'name' => 'Members',
-                'url' => url('admin/members'),
-                'icon' => 'fa fa-users'
-            ]);
+            if (auth()->user()->can('Read Members')) {
+                array_push($navigation, [
+                    'name' => 'Members',
+                    'url' => url('admin/members'),
+                    'icon' => 'fa fa-users'
+                ]);
+            }
 
             if ($this->hasCrudAccessFor('User') || $this->hasCrudAccessFor('Permission') || $this->hasCrudAccessFor('Permission Group') || $this->hasCrudAccessFor('Role')) {
                 $user_management_tab = [];

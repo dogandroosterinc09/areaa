@@ -2,8 +2,8 @@
 
 @section('content')
     <ul class="breadcrumb breadcrumb-top">
-        <li><a href="{{ route('admin.chapter_page_homesliders.index') }}">Chapter Page Homesliders</a></li>
-        <li><span href="javascript:void(0)">Edit Chapter Page Homeslider</span></li>
+        <li><a href="{{ route('admin.chapter_page_homesliders.index') }}">Chapter Home Slides</a></li>
+        <li><span href="javascript:void(0)">Edit Chapter Home Slide</span></li>
     </ul>
     <div class="row">
         {{  Form::open([
@@ -17,19 +17,23 @@
         <div class="col-md-12">
             <div class="block">
                 <div class="block-title">
-                    <h2><i class="fa fa-pencil"></i> <strong>Edit Chapter Page Homeslider "{{$chapter_page_homeslider->name}}"</strong></h2>
+                    <h2><i class="fa fa-pencil"></i> <strong>Edit Chapter Home Slide "{{$chapter_page_homeslider->name}}"</strong></h2>
                 </div>
                 <div class="form-group{{ $errors->has('chapter_id') ? ' has-error' : '' }}">
                     <label class="col-md-3 control-label" for="chapter_id">Chapter</label>
 
                     <div class="col-md-9">
                         <select class="form-control" id="chapter_id" name="chapter_id">
-                        @php( $chapters = \App\Models\Chapter::all() )
+                        @if(auth()->user()->roles->first()->name == 'Chapter Admin')
+                            @php( $chapter = \App\Models\Chapter::where('id', $chapter_page_homeslider->chapter_id)->get()->first() )
+                            <option {{ $chapter_page_homeslider->chapter_id == $chapter->id ? 'selected' : ''  }} value="{{ $chapter->id }}">{{ $chapter->name }}</option>
+                        @else
+                            @php( $chapters = \App\Models\Chapter::all() )
                             <option value="">Select Chapter</option>
-                        @foreach($chapters as $chapter)
+                            @foreach($chapters as $chapter)
                             <option {{ $chapter_page_homeslider->chapter_id == $chapter->id ? 'selected' : ''  }} value="{{ $chapter->id }}">{{ $chapter->name }}</option>                        
-                        @endforeach
-                            
+                            @endforeach
+                        @endif
                         </select>
                         @if($errors->has('chapter_id'))
                             <span class="help-block animation-slideDown">{{ $errors->first('chapter_id') }}</span>

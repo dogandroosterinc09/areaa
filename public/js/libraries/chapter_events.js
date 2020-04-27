@@ -182,37 +182,43 @@
                     form.submit();
                 },
                 rules: {
+                    'chapter_id': {
+                        required: true
+                    },
                     'name': {
                         required: true
                     },
-                    'slug': {
+                    'starts_at': {
                         required: true
                     },
-                    'banner_image': {
+                    'ends_at': {
                         required: true
                     },
-                    'file': {
+                    'time': {
                         required: true
                     },
-                    'content': {
+                    'description': {
                         required: true
                     }
                 },
                 messages: {
+                    'chapter_id': {
+                        required: 'THe chapter field is required.'  
+                    },
                     'name': {
                         required: 'Name is required.'
                     },
-                    'slug': {
-                        required: 'Slug is required.'
+                    'starts_at': {
+                        required: 'The starts at field is required.'
                     },
-                    'banner_image': {
-                        required: 'Image is required.'
+                    'ends_at': {
+                        required: 'The ends at field is required.'
                     },
-                    'file': {
-                        required: 'File is required.'
+                    'time': {
+                        required: 'The time field is required.'
                     },
-                    'content': {
-                        required: 'Content is required.'
+                    'description': {
+                        required: 'The description field is required.'
                     }
                 }
             });
@@ -426,7 +432,7 @@
                 "searching": true,
                 "aoColumnDefs": [{
                     'bSortable': false,
-                    'aTargets': [5]
+                    'aTargets': [6]
                 }]
             });
 

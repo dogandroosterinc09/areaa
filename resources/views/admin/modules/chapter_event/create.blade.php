@@ -29,11 +29,16 @@
 
                             <div class="col-md-10">
                                 <select class="form-control" id="chapter_id" name="chapter_id">
-                                @php( $chapters = \App\Models\Chapter::all() )
+                                @if(auth()->user()->roles->first()->name == 'Chapter Admin')
+                                    @php( $chapter = \App\Models\Chapter::where('id', auth()->user()->chapter_id)->get()->first() )
+                                    <option value="{{ $chapter->id }}">{{ $chapter->name }}</option>
+                                @else
+                                    @php( $chapters = \App\Models\Chapter::all() )
                                     <option value="">Select Chapter</option>
-                                @foreach($chapters as $chapter)
+                                    @foreach($chapters as $chapter)
                                     <option {{ old('chapter_id') == $chapter->id ? 'selected' : '' }} value="{{ $chapter->id }}">{{ $chapter->name }}</option>
-                                @endforeach
+                                    @endforeach
+                                @endif
                                 </select>
                                 @if($errors->has('chapter_id'))
                                     <span class="help-block animation-slideDown">{{ $errors->first('chapter_id') }}</span>

@@ -38,7 +38,11 @@ class ChapterPageHomesliderController extends Controller
             abort('401', '401');
         }
 
-        $chapter_page_homesliders = $this->chapter_page_homeslider->get();
+        if (auth()->user()->roles->first()->name == 'Chapter Admin') {
+            $chapter_page_homesliders = $this->chapter_page_homeslider->where('chapter_id', auth()->user()->chapter_id)->get();
+        } else {
+            $chapter_page_homesliders = $this->chapter_page_homeslider->get();
+        }
 
         return view('admin.modules.chapter_page_homeslider.index', compact('chapter_page_homesliders'));
     }

@@ -37,7 +37,12 @@ class ChapterEventController extends Controller
             abort('401', '401');
         }
 
-        $chapter_events = $this->chapter_event->get();
+        if (auth()->user()->roles->first()->name == 'Chapter Admin') {
+            $chapter_events = $this->chapter_event->where('chapter_id', auth()->user()->chapter_id)->get();
+        } else {
+            $chapter_events = $this->chapter_event->get();
+        }
+        
 
         return view('admin.modules.chapter_event.index', compact('chapter_events'));
     }
