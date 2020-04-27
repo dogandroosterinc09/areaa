@@ -54,7 +54,9 @@ class FrontDashboardController extends Controller
             abort('404', '404');
         }
 
-        return view('front.pages.custom-pages-index', compact('page', 'member'));
+        $active = 'member_directory';
+
+        return view('front.pages.custom-pages-index', compact('page', 'member', 'active'));
     }
 
     public function searchMemberDirectory(Request $request) {

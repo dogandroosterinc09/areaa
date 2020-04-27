@@ -28,8 +28,8 @@
 
     <main class="main-content">
 
-       {{-- @include('front.pages.custom-page.sections.dashboard-menu') --}}
-       <section class="dashboard-nav">
+    @include('front.pages.custom-page.sections.dashboard-menu')
+    <!-- <section class="dashboard-nav">
 
         <div class="dashboard-navigation">
             <div class="dashboard-navigation__wrapper">
@@ -88,7 +88,7 @@
             </div>
         </div>
     
-    </section>
+    </section> -->
 
 
 
