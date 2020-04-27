@@ -23,8 +23,8 @@
                             <div class="chapter-events-upcoming__box">
                                 <div class="row">
                                     <div class="col-md-3 chapter-events-upcoming__image">
-                                        <a href="{{url('aloha-events')}}">
-                                            <img src="{{  $chapter_event->attachment->url }}" alt="event title" class="img-fluid">
+                                        <a href="{{url($chapter['slug'].'/events')}}">
+                                            <img src="{{ $chapter_event->attachment->url }}" alt="event title" class="img-fluid">
                                         </a>
                                     </div>
                                     <div class="col-md-9 content-middle">
