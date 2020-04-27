@@ -30,7 +30,7 @@
                                  </div> --}}
                              </li>
                             <li> 
-                                <a href="{{ url('aloha-login') }}"><i class="ic-user"></i> Log In</a>
+                                <a href="{{ url($chapter['slug'].'/login') }}"><i class="ic-user"></i> Log In</a>
                             </li>
                         </ul>
                     </div>
@@ -41,7 +41,7 @@
                             <a class="nav-link" href="{{ url($chapter['slug']) }}">Home</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link" href="{{ url($chapter['slug'].'/aboutus') }}">About Us</a>
+                            <a class="nav-link" href="{{ url($chapter['slug'].'/about-us') }}">About Us</a>
                         </li>
                         
                         <li class="nav-item">
@@ -51,7 +51,7 @@
                             <a class="nav-link" href="{{ url($chapter['slug'].'/leadership-board') }}">Leadership</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link" href="{{ url($chapter['slug'].'/contactus') }}">Contact Us</a>
+                            <a class="nav-link" href="{{ url($chapter['slug'].'/contact-us') }}">Contact Us</a>
                         </li>
                     </ul>
                 </nav>

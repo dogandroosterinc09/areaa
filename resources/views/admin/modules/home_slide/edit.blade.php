@@ -52,10 +52,48 @@
                                  alt="{{ $home_slide->background_image != '' ? asset($home_slide->background_image) : '' }}"
                                  class="img-responsive center-block" style="max-width: 100px;">
                         </a>
-                        <br>
+                        <!-- <br>
                         <a href="javascript:void(0)" class="btn btn-xs btn-danger remove-image-btn"
                            style="display: {{ $home_slide->background_image != '' ? '' : 'none' }};"><i class="fa fa-trash"></i> Remove</a>
-                        <input type="hidden" name="remove_background_image" class="remove-image" value="0">
+                        <input type="hidden" name="remove_background_image" class="remove-image" value="0"> -->
+                    </div>
+                </div>
+
+                <div class="form-group{{ $errors->has('thumbnail_image') ? ' has-error' : '' }}">
+                    <label class="col-md-3 control-label" for="home_slide_thumbnail_image">Thumbnail Image</label>
+                    <div class="col-md-9">
+                        <div class="input-group">
+                            <label class="input-group-btn">
+                            <span class="btn btn-primary">
+                                Choose File <input type="file" name="thumbnail_image" style="display: none;">
+                            </span>
+                            </label>
+                            <input type="text" class="form-control" readonly>
+                        </div>
+                        @if($errors->has('thumbnail_image'))
+                            <span class="help-block animation-slideDown">{{ $errors->first('thumbnail_image') }}</span>
+                        @endif
+                    </div>
+                    <div class="col-md-offset-3 col-md-9">
+                        <a href="{{ $home_slide->thumbnail_image != '' ? asset($home_slide->thumbnail_image) : '' }}" class="zoom img-thumbnail" style="cursor: default !important;" data-toggle="lightbox-image">
+                            <img src="{{ $home_slide->thumbnail_image != '' ? asset($home_slide->thumbnail_image) : '' }}" alt="" class="img-responsive center-block" style="max-width: 100px;">
+                        </a>
+                        <br>
+                        <a href="javascript:void(0)" class="btn btn-xs btn-danger remove-image-btn" style="display: none;"><i class="fa fa-trash"></i> Remove</a>
+                        <input type="hidden" name="remove_banner_image" class="remove-image" value="0">
+                    </div>
+                </div>
+
+                <div class="form-group{{ $errors->has('thumbnail_text') ? ' has-error' : '' }}">
+                    <label class="col-md-3 control-label" for="home_slide_thumbnail_text">Thumbnail Text</label>
+
+                    <div class="col-md-9">
+                        <textarea id="home_slide_thumbnail_text" name="thumbnail_text" rows="9"
+                                  style="resize: vertical; min-height: 150px;"
+                                  class="form-control " placeholder="Enter Home Slide button link..">{{ $home_slide->thumbnail_text }}</textarea>
+                        @if($errors->has('thumbnail_text'))
+                            <span class="help-block animation-slideDown">{{ $errors->first('thumbnail_text') }}</span>
+                        @endif
                     </div>
                 </div>
 

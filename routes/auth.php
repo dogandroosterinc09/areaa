@@ -60,4 +60,6 @@ Route::group(
     Route::post('/customer/password/email', ['as' => 'customer.password.email.post', 'uses' => 'Front\Auth\ForgotPasswordController@sendResetLinkEmail']);
     Route::get('/customer/password/reset/{token}', ['as' => 'customer.password.reset', 'uses' => 'Front\Auth\ResetPasswordController@showResetForm']);
     Route::post('/customer/password/reset', ['as' => 'customer.password.reset.post', 'uses' => 'Front\Auth\ResetPasswordController@reset']);
+
+    Route::get('/{slug?}/login', ['as' => 'chapter.login', 'uses' => 'Front\Auth\LoginController@showChapterLoginForm']);
 });

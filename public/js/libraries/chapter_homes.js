@@ -6,6 +6,8 @@
         uiEditChapterHomeForm,
         uiChapterHomesDatatable,
         uiInputImage,
+        uiInputVideo,
+        uiInputCoverImage,
         uiRemoveImgBtn,
         uiInputBadgeIcon,
         uiRemoveFileBtn,
@@ -62,6 +64,27 @@
         } else {
             if (platform.var_check(filetype) && filetype == 'file') {
                 if (ext == 'docx' || ext == 'doc' || ext == 'pdf') {
+                    element.closest('.form-group').find('.help-block').remove();
+                    element.closest('.form-group').removeClass('has-success has-error');
+                    element.closest('.form-group').find('.remove-file-btn').show();
+                    element.closest('.form-group').find('input.remove-file').val(0);
+
+                    if (input.length) {
+                        input.val(log);
+                    } else {
+                        if (log) {
+                            console.log(log);
+                        }
+                    }
+                } else {
+                    uiFileContainer.attr('href', '');
+                    uiFileContainer.text('');
+                    element.closest('.form-group').find('.remove-image-btn').hide();
+                    element.closest('.form-group').find('.remove-file-btn').hide();
+                    _fileselect_error(element, input, 'The upload file must be a file of type: docx, doc, pdf.');
+                }
+            } else if (platform.var_check(filetype) && filetype == 'video'){
+                if (ext == 'mp4') {
                     element.closest('.form-group').find('.help-block').remove();
                     element.closest('.form-group').removeClass('has-success has-error');
                     element.closest('.form-group').find('.remove-file-btn').show();
@@ -149,6 +172,8 @@
             uiEditChapterHomeForm = $('#edit-chapter_home');
             uiChapterHomesDatatable = null;
             uiInputImage = $('input[name="member_benefits_featured_image"]');
+            uiInputCoverImage = $('input[name="who_we_are_video_cover_image"]');
+            uiInputVideo = $('input[name="who_we_are_featured_video"]');
             uiInputBadgeIcon = $('input[name="top_sponsor_image"]');
             uiInputBadgeIcons = $('input[name="other_sponsors_image[]"]');
             uiRemoveImgBtn = $('.remove-image-btn');
@@ -377,6 +402,24 @@
                 _fileselect($(this), numFiles, label, ext, 'image');
             });
 
+            uiInputVideo.on('change', function () {
+                var input = $(this),
+                    numFiles = input.get(0).files ? input.get(0).files.length : 1,
+                    label = input.val().replace(/\\/g, '/').replace(/.*\//, ''),
+                    sValue = $(this).val(),
+                    ext = sValue.substring(sValue.lastIndexOf('.') + 1).toLowerCase();
+                _fileselect($(this), numFiles, label, ext, 'video');
+            });
+
+            uiInputCoverImage.on('change', function () {
+                var input = $(this),
+                    numFiles = input.get(0).files ? input.get(0).files.length : 1,
+                    label = input.val().replace(/\\/g, '/').replace(/.*\//, ''),
+                    sValue = $(this).val(),
+                    ext = sValue.substring(sValue.lastIndexOf('.') + 1).toLowerCase();
+                _fileselect($(this), numFiles, label, ext, 'image');
+            });
+
             uiInputBadgeIcon.on('change', function () {
                 var input = $(this),
                     numFiles = input.get(0).files ? input.get(0).files.length : 1,
@@ -450,4 +493,17 @@
 /* run initialize function on load of window */
 $(window).on('load', function () {
     platform.chapter_home.initialize();
+
+    $('#video').prev().children('button').on('click', function() {
+        var video = document.getElementById('video');
+
+        if (video.paused) {
+            video.play();
+            $(this).text('pause');
+        } else {
+            video.pause();
+            $(this).text('play');
+        }
+    });
+    
 });

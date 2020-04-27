@@ -110,3 +110,6 @@ Route::resource('/members', 'MembersController');
 
 
 Route::resource('/chapter_page_homesliders', 'ChapterPageHomesliderController');
+
+
+Route::resource('/chapter_contacts', 'ChapterContactController');

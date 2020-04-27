@@ -18,8 +18,8 @@ class CreateChapterHomesTable extends Migration
             $table->integer('chapter_id')->unique();
 
             $table->string('who_we_are_title');
-            $table->string('who_we_are_featured_image');
-            $table->string('who_we_are_featured_image_alt');
+            $table->string('who_we_are_featured_video');
+            $table->string('who_we_are_video_cover_image');
             $table->text('who_we_are_content');
             $table->string('who_we_are_button1_text');
             $table->string('who_we_are_button1_link');

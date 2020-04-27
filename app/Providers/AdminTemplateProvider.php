@@ -87,13 +87,21 @@ class AdminTemplateProvider extends ServiceProvider
                 ]);
             }
 
+            if (auth()->user()->can('Read Chapter Contact')) {
+                array_push($navigation, [
+                    'name' => 'Chapter Contacts',
+                    'url' => url('admin/chapter_contacts'),
+                    'icon' => 'fa fa-phone'
+                ]);
+            }
+
             if (auth()->user()->can('Read Faq')) {
                 array_push($navigation, [
                     'name' => 'FAQs',
                     'url' => url('admin/faqs'),
                     'icon' => 'fa fa-phone'
                 ]);
-           }
+            }
 
            if (auth()->user()->can('Read Event')) {
                 array_push($navigation, [

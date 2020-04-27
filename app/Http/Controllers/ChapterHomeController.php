@@ -112,6 +112,16 @@ class ChapterHomeController extends Controller
             'other_sponsors' => $other_sponsors
         ])->save();
 
+        if ($request->hasFile('who_we_are_featured_video')) {
+            $file_upload_path = $this->upload($request->file('who_we_are_featured_video'));
+            $chapter_home->fill(['who_we_are_featured_video'=>$file_upload_path])->save();
+        }
+
+        if ($request->hasFile('who_we_are_video_cover_image')) {
+            $file_upload_path = $this->upload($request->file('who_we_are_video_cover_image'));
+            $chapter_home->fill(['who_we_are_video_cover_image'=>$file_upload_path])->save();
+        }
+
         $chapter_home->fill(['sponsors_filters' => $sponsors_filters])->save();
 
         //Member Benefits Featured Image

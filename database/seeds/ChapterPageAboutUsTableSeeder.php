@@ -33,6 +33,19 @@ class ChapterPageAboutUsTableSeeder extends Seeder
                 'created_at' => '2020-04-15 21:34:14',
                 'updated_at' => '2020-04-20 19:48:34',
             ),
+            1 => 
+            array (
+                'id' => 2,
+                'chapter_id' => 2,
+                'content' => '',
+                'banner_image' => '',
+                'seo_meta_id' => 0,
+                'section_1' => '',
+                'section_2' => '',
+                'deleted_at' => NULL,
+                'created_at' => '2020-04-26 23:23:44',
+                'updated_at' => '2020-04-26 23:23:44',
+            ),
         ));
         
         

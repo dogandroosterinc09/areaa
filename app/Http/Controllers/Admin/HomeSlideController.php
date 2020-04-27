@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Repositories\HomeSlideRepository;
 
+use File;
 
 class HomeSlideController extends Controller
 {
@@ -83,6 +84,7 @@ class HomeSlideController extends Controller
             'name' => 'required',
             'content' => 'required',            
             'background_image' => 'mimes:jpg,jpeg,png',
+            'thumbnail_image' =>  'mimes:jpg,jpeg,png'
         ]);
 
         $input = $request->all();
@@ -93,6 +95,11 @@ class HomeSlideController extends Controller
         if ($request->hasFile('background_image')) {
             $file_upload_path = $this->homeSlideRepository->uploadFile($request->file('background_image'));
             $home_slide->fill(['background_image' => $file_upload_path])->save();
+        }
+
+        if ($request->hasFile('thumbnail_image')) {
+            $file_upload_path = $this->upload($request->thumbnail_image, '/thumbnail');
+            $home_slide->fill(['thumbnail_image'=>$file_upload_path])->save();
         }
 
         return redirect()->route('admin.home_slides.index')->with('flash_message', [
@@ -149,6 +156,7 @@ class HomeSlideController extends Controller
             'button_label' => 'required',
             'button_link' => 'required',
             'background_image' => 'required_if:remove_background_image,==,1|mimes:jpg,jpeg,png',
+            'thumbnail_image' =>  'mimes:jpg,jpeg,png'
         ]);
 
         $home_slide = $this->homeSlide->findOrFail($id);
@@ -161,6 +169,11 @@ class HomeSlideController extends Controller
         }
 
         $home_slide->fill($input)->save();
+
+        if ($request->hasFile('thumbnail_image')) {
+            $file_upload_path = $this->upload($request->thumbnail_image, '/thumbnail');
+            $home_slide->fill(['thumbnail_image'=>$file_upload_path])->save();
+        }
 
         return redirect()->route('admin.home_slides.index')->with('flash_message', [
             'title' => '',
@@ -189,5 +202,21 @@ class HomeSlideController extends Controller
             'data' => compact('id'),
             'message' => ['Home Slide successfully deleted.']
         ]);
+    }
+
+    public function upload($file, $dir) {
+        $extension = $file->getClientOriginalExtension();
+        $file_name = substr((pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME)), 0, 30) . '.' . $extension;
+        $file_name = preg_replace("/[^a-z0-9\_\-\.]/i", '', $file_name);
+        $file_path = '/uploads/homeslides' . $dir;
+        $directory = public_path() . $file_path;
+
+        if (!File::exists($directory)) {
+            File::makeDirectory($directory, 0777);
+        }
+
+        $file->move($directory, $file_name);
+        $file_upload_path = 'public' . $file_path . '/' . $file_name;
+        return $file_upload_path;
     }
 }

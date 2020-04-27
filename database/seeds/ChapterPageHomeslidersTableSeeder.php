@@ -35,7 +35,7 @@ Aloha Chapter</h1>
                 'button_link' => '#',
                 'is_active' => 1,
                 'created_at' => '2020-04-23 19:59:04',
-                'updated_at' => '2020-04-23 19:59:04',
+                'updated_at' => '2020-04-27 02:16:43',
                 'deleted_at' => NULL,
             ),
             1 => 

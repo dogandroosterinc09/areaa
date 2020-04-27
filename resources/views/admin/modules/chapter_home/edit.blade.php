@@ -61,6 +61,64 @@
                 @include('admin.components.heading', ['text' => 'Sections'])
                 @include('admin.components.heading', ['text' => 'Who We Are'])
                 
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="form-group{{ $errors->has('who_we_are_featured_video') ? ' has-error' : '' }}">
+                            <label class="col-md-2 control-label" for="who_we_are_featured_video">Featured Video</label>
+                            <div class="col-md-10">
+                                <div class="input-group">
+                                    <label class="input-group-btn">
+                                    <span class="btn btn-primary">
+                                        Choose File <input type="file" name="who_we_are_featured_video" style="display: none;">
+                                    </span>
+                                    </label>
+                                    <input type="text" class="form-control" readonly>
+                                </div>
+                                @if($errors->has('who_we_are_featured_video'))
+                                    <span class="help-block animation-slideDown">{{ $errors->first('who_we_are_featured_video') }}</span>
+                                @endif
+                            </div>
+                            @if($chapter_home->who_we_are_featured_video)
+                            <div class="col-md-offset-2 col-md-3">
+                                <div class="html-video"> 
+                                    <video width="100%" controls muted id="video">
+                                        <source type="video/mp4" src="{{ asset($chapter_home->who_we_are_featured_video) }}" >
+                                    </video>
+                                </div>
+                            </div>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="form-group{{ $errors->has('who_we_are_video_cover_image') ? ' has-error' : '' }}">
+                            <label class="col-md-2 control-label" for="who_we_are_video_cover_image">Video Cover Image</label>
+                            <div class="col-md-10">
+                                <div class="input-group">
+                                    <label class="input-group-btn">
+                                    <span class="btn btn-primary">
+                                        Choose File <input type="file" name="who_we_are_video_cover_image" style="display: none;">
+                                    </span>
+                                    </label>
+                                    <input type="text" class="form-control" readonly>
+                                </div>
+                                @if($errors->has('image'))
+                                    <span class="help-block animation-slideDown">{{ $errors->first('image') }}</span>
+                                @endif
+                            </div>
+                            <div class="col-md-offset-2 col-md-10">
+                                <a href="{{ asset( $chapter_home->who_we_are_video_cover_image ?$chapter_home->who_we_are_video_cover_image : '') }}" class="zoom img-thumbnail" style="cursor: default !important;" data-toggle="lightbox-image">
+                                    <img src="{{ $chapter_home->who_we_are_video_cover_image ? ($chapter_home->who_we_are_video_cover_image != '' ? asset($chapter_home->who_we_are_video_cover_image) : '') : '' }}"
+                                        alt="{{ $chapter_home->who_we_are_video_cover_image ? ($chapter_home->who_we_are_video_cover_image != '' ? asset($chapter_home->who_we_are_video_cover_image) : '') : '' }}"
+                                        class="img-responsive center-block" style="max-width: 100px;">
+                                </a>                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 @include('admin.components.input-field', ['label' => 'Title', 'field' => 'who_we_are_title', 'value' => $chapter_home->who_we_are_title])
                 @include('admin.components.editor', ['label' => 'Content', 'field' => 'who_we_are_content', 'value' => $chapter_home->who_we_are_content])
                 @include('admin.components.input-field', ['label' => 'Button1 Text', 'field' => 'who_we_are_button1_text', 'value' => $chapter_home->who_we_are_button1_text])

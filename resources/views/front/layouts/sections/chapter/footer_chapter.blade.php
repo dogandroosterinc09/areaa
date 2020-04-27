@@ -15,11 +15,14 @@
             <div class="col-md-9 footer__item">
                 <div class="row">
                     <div class="col-md-4 footer__item">
+                        
+                        @php($contact_details = \App\Models\ChapterPageContactUs::select('section_1')->where('chapter_id', $chapter->id)->get()->first())
+                        @php($contact = json_decode($contact_details->section_1) ? : new \stdClass())
 
                         <div class="footer-contacts">
-                            <div class="item"><i class="loc"></i> <span>Chapter President: Abe Lee</span></div>
-                            <div class="item"><i class="tel"></i> <a href="tel:8082164999 ">808-216-4999 </a></div>
-                            <div class="item"><i class="mail"></i> <a href="mailto:contact@areaa.org">abelee1948@gmail.com</a></div>
+                            <div class="item"><i class="loc"></i> <span>{{ isset($contact->location_text) ? $contact->location_text : '' }}</span></div>
+                            <div class="item"><i class="tel"></i> <a href="{{ isset($contact->telephone_link) ? $contact->telephone_link : '' }}">{{ isset($contact->telephone_text) ? $contact->telephone_text : '' }}</a></div>
+                            <div class="item"><i class="mail"></i> <a href="{{ isset($contact->mail_link) ? $contact->mail_link : '' }}">{{ isset($contact->mail_text) ? $contact->mail_text : '' }}</a></div>
                         </div>
 
                     </div>
@@ -28,11 +31,11 @@
                             <h4>Menu</h4>
                                 <ul>
                                     <li><a href="{{ url($chapter['slug']) }}">Home</a></li>
-                                    <li><a href="{{ url($chapter['slug'].'/aboutus') }}">About us</a></li>
+                                    <li><a href="{{ url($chapter['slug'].'/about-us') }}">About us</a></li>
                                     <li><a href="{{ url($chapter['slug'].'/events') }}">Events</a></li>
                                     <li><a href="{{ url($chapter['slug'].'/leadership-board') }}">Leadership</a></li>
-                                    <li><a href="{{ url($chapter['slug'].'/contactus') }}">Contact us </a></li>
-                                    <li><a href="{{ url($chapter['slug'].'-login') }}">Log in</a></li>
+                                    <li><a href="{{ url($chapter['slug'].'/contact-us') }}">Contact us </a></li>
+                                    <li><a href="{{ url($chapter['slug'].'/login') }}">Log in</a></li>
                                     <li><a href="{{ url('/') }}"> AREAA National</a></li>
                                 </ul>
                         </article>

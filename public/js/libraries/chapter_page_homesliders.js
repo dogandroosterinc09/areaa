@@ -217,10 +217,10 @@
                         required: 'Name is required.'
                     },
                     'background_image': {
-                        required: 'Image is required.'
+                        required: 'Background Image is required.'
                     },
                     'thumbnail_image': {
-                        required: 'Image is required.'
+                        required: 'Thumbnail Image is required.'
                     },
                     'thumbnail_text': {
                         required: 'Thumbnail text is required.'
@@ -306,10 +306,10 @@
                         required: 'Name is required.'
                     },
                     'background_image': {
-                        required: 'Image is required.'
+                        required: 'Background Image is required.'
                     },
                     'thumbnail_image': {
-                        required: 'Image is required.'
+                        required: 'Thumbnail Image is required.'
                     },
                     'thumbnail_text': {
                         required: 'Thumbnail text is required.'

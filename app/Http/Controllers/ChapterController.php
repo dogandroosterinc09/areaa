@@ -5,6 +5,10 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Models\Chapter;
 use App\Models\ChapterHome;
+use App\Models\ChapterPageAboutUs;
+use App\Models\ChapterPageContactUs;
+use App\Models\ChapterPageEvent;
+use App\Models\ChapterPageLeadership;
 use App\Http\Controllers\Controller;
 
 class ChapterController extends Controller
@@ -16,16 +20,29 @@ class ChapterController extends Controller
      */
     private $chapter;
     private $chapter_home;
+    private $chapter_page_about_us;
+    private $chapter_page_contact_us;
+    private $chapter_page_event;
+    private $chapter_page_leadership;
 
     /**
      * Create a new controller instance.
      *
      * @param Chapter $chapter
      */
-    public function __construct(Chapter $chapter, ChapterHome $chapter_home)
+    public function __construct(Chapter $chapter,
+                                ChapterHome $chapter_home,
+                                ChapterPageAboutUs $chapter_page_about_us,
+                                ChapterPageContactus $chapter_page_contact_us,
+                                ChapterPageEvent $chapter_page_event,
+                                ChapterPageLeadership $chapter_page_leadership)
     {
         $this->chapter = $chapter;
         $this->chapter_home = $chapter_home;
+        $this->chapter_page_about_us = $chapter_page_about_us;
+        $this->chapter_page_contact_us = $chapter_page_contact_us;
+        $this->chapter_page_event = $chapter_page_event;
+        $this->chapter_page_leadership = $chapter_page_leadership;
     }
 
     /**
@@ -82,9 +99,11 @@ class ChapterController extends Controller
         ]);
 
         $chapter = $this->chapter->create($request->all());
-        $chapter_home = $this->chapter_home->create([
-            'chapter_id' => $chapter->id
-        ]);
+        $chapter_home = $this->chapter_home->create(['chapter_id' => $chapter->id]);
+        $chapter_page_about_us = $this->chapter_page_about_us->create(['chapter_id' => $chapter->id]);
+        $chapter_page_contact_us = $this->chapter_page_contact_us->create(['chapter_id' => $chapter->id]);
+        $chapter_page_event = $this->chapter_page_event->create(['chapter_id' => $chapter->id]);
+        $chapter_page_leadership = $this->chapter_page_leadership->create(['chapter_id' => $chapter->id]);
 
         if ($request->hasFile('thumbnail')) {
             // $chapter->attach($request->file('thumbnail'), 'thumbnail');

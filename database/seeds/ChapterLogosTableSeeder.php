@@ -26,6 +26,15 @@ class ChapterLogosTableSeeder extends Seeder
                 'created_at' => '2020-04-20 19:27:04',
                 'updated_at' => '2020-04-20 22:56:26',
             ),
+            1 => 
+            array (
+                'id' => 2,
+                'chapter_id' => 2,
+                'image' => 'public/uploads/logos/areaa_atlanta_metro.png',
+                'deleted_at' => NULL,
+                'created_at' => '2020-04-26 23:27:52',
+                'updated_at' => '2020-04-26 23:27:52',
+            ),
         ));
         
         

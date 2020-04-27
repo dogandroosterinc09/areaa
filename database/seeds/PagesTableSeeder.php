@@ -576,7 +576,7 @@ class PagesTableSeeder extends Seeder
             array (
                 'id' => 38,
                 'name' => 'atlantametro',
-                'slug' => 'atlantametro',
+                'slug' => 'atlantametro1',
                 'content' => '',
                 'banner_image' => '',
                 'banner_description' => '',

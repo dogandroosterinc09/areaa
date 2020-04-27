@@ -24,8 +24,8 @@ class ChapterHome extends Model
         'seo_meta_id',
 
         'who_we_are_title',
-        'who_we_are_featured_image',
-        'who_we_are_featured_image_alt',
+        'who_we_are_featured_video',
+        'who_we_are_video_cover_image',
         'who_we_are_content',
         'who_we_are_button1_text',
         'who_we_are_button1_link',

@@ -6,6 +6,7 @@
         uiEditHomeSlideForm,
         uiHomeSlidesDatatable,
         uiInputBackgroundImage,
+        uiInputThumbnailImage,
         uiRemoveImgBtn,
         filler;
 
@@ -147,6 +148,7 @@
             uiEditHomeSlideForm = $('#edit-home_slide');
             uiHomeSlidesDatatable = null;
             uiInputBackgroundImage = $('input[name="background_image"]');
+            uiInputThumbnailImage = $('input[name="thumbnail_image"]');
             uiRemoveImgBtn = $('.remove-image-btn');
 
             uiHomeSlidesDatatable = platform.home_slide.initialize_datatable();
@@ -194,6 +196,12 @@
                     'background_image': {
                         required: true
                     },
+                    'thumbnail_image': {
+                        required: true
+                    },
+                    'thumbnail_text': {
+                        required: true
+                    },
                 },
                 messages: {                    
                     'name': {
@@ -210,6 +218,12 @@
                     },
                     'background_image': {
                         required: 'Background Image is required.'
+                    },
+                    'thumbnail_image': {
+                        required: 'Thumbnail Image is required.'
+                    },
+                    'thumbnail_text': {
+                        required: 'Thumbnail text is required.'
                     },
                 }
             });
@@ -261,6 +275,16 @@
                             }
                         }
                     },
+                    'thumbnail_image': {
+                        required: {
+                            depends: function (element) {
+                                return $(element).closest('.form-group').find('input.remove-image').val() == 1;
+                            }
+                        }
+                    },
+                    'thumbnail_text': {
+                        required: true
+                    },
                 },
                 messages: {
                     'name': {
@@ -277,6 +301,12 @@
                     },
                     'background_image': {
                         required: 'Background Image is required.'
+                    },
+                    'thumbnail_image': {
+                        required: 'Thumbnail Image is required.'
+                    },
+                    'thumbnail_text': {
+                        required: 'Thumbnail text is required.'
                     },
                 }
             });
@@ -359,6 +389,15 @@
             });
 
             uiInputBackgroundImage.on('change', function () {
+                var input = $(this),
+                    numFiles = input.get(0).files ? input.get(0).files.length : 1,
+                    label = input.val().replace(/\\/g, '/').replace(/.*\//, ''),
+                    sValue = $(this).val(),
+                    ext = sValue.substring(sValue.lastIndexOf('.') + 1).toLowerCase();
+                _fileselect($(this), numFiles, label, ext);
+            });
+
+            uiInputThumbnailImage.on('change', function () {
                 var input = $(this),
                     numFiles = input.get(0).files ? input.get(0).files.length : 1,
                     label = input.val().replace(/\\/g, '/').replace(/.*\//, ''),

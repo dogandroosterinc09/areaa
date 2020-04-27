@@ -42,6 +42,7 @@
                             </div>
                             {{-- loop here --}}
                             @empty
+                            <h3 class="text-danger font-weight-bold text-center w-100 my-5">No Events.</h3>
                             @endforelse
                         </div>
 
@@ -49,21 +50,20 @@
             </div>
         </section>
 
-
-
         {{-- need to dynamic this sub  --}}
         <section class="video-masking video-masking__fullwidth">
             <div class="container-max">
                 <div class="row">
 
-                    <div class="col-md-7 video-masking__video-frame">
+                    <div class="col-md-7 video-masking__video-frame">                        
                         <div class="html-video">
+                        @if($chapter_home->who_we_are_featured_video)
                             <div class="html-video__button">
                                 <button class="active">play</button>
-                            </div>                            
-                            <video id="video" width="100%" height="100%" poster="{{ section('Who We Are.data.first.cover_image') }}" loop muted controlsList="nodownload" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+                            </div>
+                            <video id="video" width="100%" height="100%" poster="{{ asset($chapter_home->who_we_are_video_cover_image) }}" loop muted controlsList="nodownload" webkitallowfullscreen mozallowfullscreen allowfullscreen>
                                 <!-- MP4 for Safari, IE9, iPhone, iPad, Android, and Windows Phone 7 -->
-                                <source type="video/mp4" src="{{ section('Who We Are.data.first.video') }}" />
+                                <source type="video/mp4" src="{{ asset($chapter_home->who_we_are_featured_video) }}" />
                                 {{--
                                 <source type="video/mp4" src="{{ url('public/images/AREAACentralNewJersey.mp4') }}" />
                                 <source type="video/ogg" src="{{ url('public/images/AREAACentralNewJersey.ogg') }}" />
@@ -77,7 +77,8 @@
                                     <img src="{{ url('public/images/video-cover.jpg') }}" width="320" height="240" title="No video playback capabilities" />
                                 </object>
                             </video> 
-                        </div>
+                        @endif
+                        </div>                        
                     </div>
 
                     <div class="col-md-5 video-masking__floater">

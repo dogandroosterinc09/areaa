@@ -8,6 +8,8 @@ use App\Repositories\PageRepository;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 
+use App\Models\Chapter;
+
 /**
  * Class LoginController
  * @package App\Http\Controllers\Auth
@@ -34,14 +36,17 @@ class LoginController extends Controller
      */
     protected $redirectTo = '/customer/dashboard';
 
+    private $chapter;
+
     /**
      * Create a new controller instance.
      *
      * @param PageRepository $page_repository
      *
      */
-    public function __construct(PageRepository $page_repository)
+    public function __construct(PageRepository $page_repository, Chapter $chapter)
     {
+        $this->chapter = $chapter;
         $this->page_repository = $page_repository;
         $this->middleware('isFront.guest', ['except' => 'logout']);
     }
@@ -60,6 +65,18 @@ class LoginController extends Controller
         }
 
         return view('front.auth.login', compact('page'));
+    }
+
+    public function showChapterLoginForm($slug)
+    {
+        $page = $this->page_repository->getActivePageBySlug('customer/login');
+        $chapter = $this->verifyChapter($slug);
+        
+        if (!empty($page)) {
+            $seo_meta = $this->getSeoMeta($page);
+        }
+
+        return view('front.auth.chapter-login', compact('page', 'chapter'));
     }
 
     /**
@@ -178,5 +195,16 @@ class LoginController extends Controller
     protected function guard()
     {
         return auth()->guard();
+    }
+
+    public function verifyChapter($slug) {
+        $chapter = $this->chapter->where('slug',$slug)->get()->first();
+
+        //Redirect to 404 when chapter does not exist
+        if (!$chapter) {
+            abort(404);
+        }
+
+        return $chapter;
     }
 }

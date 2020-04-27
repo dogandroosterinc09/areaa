@@ -45,10 +45,12 @@
                             {{  Form::open([
                                 'method' => 'POST',
                                 'id' => 'create-contact',
-                                'route' => ['contact.store'],
+                                'route' => ['chapter_contact.store', 'slug' => $chapter->slug],
                                 'class' => '',
                                 ])
                             }}
+
+                            {{ $chapter->slug }}
                             <div class="form-box row">
                                 <div class="col-md-6 form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                                     <label for="name">Name</label>

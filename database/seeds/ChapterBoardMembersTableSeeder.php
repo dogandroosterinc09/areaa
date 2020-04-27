@@ -31,7 +31,7 @@ class ChapterBoardMembersTableSeeder extends Seeder
                 'type' => 1,
                 'slug' => 'ronda-ching-day',
                 'created_at' => '2020-04-07 18:01:09',
-                'updated_at' => '2020-04-07 18:32:42',
+                'updated_at' => '2020-04-27 01:13:03',
                 'deleted_at' => NULL,
             ),
             1 => 

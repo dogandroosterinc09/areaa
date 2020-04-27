@@ -150,7 +150,7 @@ class ChapterPageController extends Controller
 
         $page = $this->pageRepository->getActivePageBySlug('chapter-leadership');
         $chapter_page_leadership = $this->chapter_page_leadership->where('chapter_id', $chapter->id)->get()->first();
-
+        
         //Page Defaults
         $default_content = '<h3>Meet Our</h3><h1>Leadership<br />Board</h1>';
         $default_banner_image = 'public/images/executive-banner.jpg';
@@ -167,10 +167,14 @@ class ChapterPageController extends Controller
         }
         
         $chapter_board = new \stdClass();
-        $chapter_board->executives = $this->chapter_board_member->where('type', $this->chapter_board_member::TYPE_EXECUTIVE)->get();
-        $chapter_board->board_of_directors = $this->chapter_board_member->where('type', $this->chapter_board_member::TYPE_BOARD_OF_DIRECTOR)->get();
-        $chapter_board->advisory = $this->chapter_board_member->where('type',  $this->chapter_board_member::TYPE_ADVISORY)->get();
-        $chapter_board->no_type = $this->chapter_board_member->where('type', 0)->get();
+        $chapter_board->executives = $this->chapter_board_member->where('type', $this->chapter_board_member::TYPE_EXECUTIVE)
+                                          ->where('chapter_id', $chapter->id)->get();
+        $chapter_board->board_of_directors = $this->chapter_board_member->where('type', $this->chapter_board_member::TYPE_BOARD_OF_DIRECTOR)
+                                          ->where('chapter_id', $chapter->id)->get();
+        $chapter_board->advisory = $this->chapter_board_member->where('type',  $this->chapter_board_member::TYPE_ADVISORY)
+                                          ->where('chapter_id', $chapter->id)->get();
+        $chapter_board->no_type = $this->chapter_board_member->where('type', 0)
+                                          ->where('chapter_id', $chapter->id)->get();
 
         return view('front.pages.custom-pages-index', compact('page', 'chapter', 'chapter_page_leadership', 'chapter_board'));
     }

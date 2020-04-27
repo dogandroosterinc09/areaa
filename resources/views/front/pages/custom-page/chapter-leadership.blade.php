@@ -56,6 +56,8 @@
                 </div>
             </div>
         </section>
+        @else
+        <h3 class="text-danger font-weight-bold text-center w-100 my-5">No Executive Members.</h3>
         @endif
 
         @if(isset($chapter_board->board_of_directors) && $chapter_board->board_of_directors->count() > 0)

@@ -24,6 +24,8 @@ class HomeSlide extends Model
     protected $fillable = [
         'name',
         'background_image',
+        'thumbnail_image',
+        'thumbnail_text',
         'content',
         'button_label',
         'button_link',

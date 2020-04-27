@@ -143,13 +143,12 @@ class PageController extends Controller
                         $top_sponsor->image_alt = isset($top_sponsor->image_alt) ? $top_sponsor->image_alt : '';
 
 
-                        $chapter_home->top_sponsor = json_encode($top_sponsor);
-
-                        // return json_encode($top_sponsor);
+                        $chapter_home->top_sponsor = json_encode($top_sponsor);                        
                     }
 
+                    $contact = 'test contact variable';
 
-                    return view('front.pages.custom-pages-index', compact('chapter', 'seo_meta', 'chapter_home'));
+                    return view('front.pages.custom-pages-index', compact('chapter', 'seo_meta', 'chapter_home', 'contact'));
                 }
 
                 abort('404', '404');

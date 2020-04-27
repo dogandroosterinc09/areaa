@@ -283,9 +283,9 @@ class PermissionsTableSeeder extends Seeder
                 'id' => 30,
                 'name' => 'Read Contact',
                 'guard_name' => 'web',
-                'permission_group_id' => 7,
+                'permission_group_id' => 8,
                 'created_at' => '2019-10-04 22:04:34',
-                'updated_at' => '2019-10-04 22:04:34',
+                'updated_at' => '2020-04-26 22:32:40',
             ),
             30 => 
             array (
@@ -997,6 +997,42 @@ class PermissionsTableSeeder extends Seeder
                 'permission_group_id' => 28,
                 'created_at' => '2020-04-23 18:53:10',
                 'updated_at' => '2020-04-23 18:53:10',
+            ),
+            109 => 
+            array (
+                'id' => 114,
+                'name' => 'Create Chapter Contact',
+                'guard_name' => 'web',
+                'permission_group_id' => 29,
+                'created_at' => '2020-04-26 22:08:34',
+                'updated_at' => '2020-04-26 22:08:34',
+            ),
+            110 => 
+            array (
+                'id' => 115,
+                'name' => 'Read Chapter Contact',
+                'guard_name' => 'web',
+                'permission_group_id' => 29,
+                'created_at' => '2020-04-26 22:08:34',
+                'updated_at' => '2020-04-26 22:08:34',
+            ),
+            111 => 
+            array (
+                'id' => 116,
+                'name' => 'Update Chapter Contact',
+                'guard_name' => 'web',
+                'permission_group_id' => 29,
+                'created_at' => '2020-04-26 22:08:34',
+                'updated_at' => '2020-04-26 22:08:34',
+            ),
+            112 => 
+            array (
+                'id' => 117,
+                'name' => 'Delete Chapter Contact',
+                'guard_name' => 'web',
+                'permission_group_id' => 29,
+                'created_at' => '2020-04-26 22:08:34',
+                'updated_at' => '2020-04-26 22:08:34',
             ),
         ));
         
