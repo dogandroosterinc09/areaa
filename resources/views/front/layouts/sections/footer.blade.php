@@ -10,9 +10,9 @@
                     </a>
                 </div>
                 <div class="footer-contacts footer-contacts__main">
-                    <div class="item"><i class="loc"></i> <span>3990 Old Town Avenue C304, San Diego, CA 92110</span></div>
-                    <div class="item"><i class="tel"></i> <a href="tel:619.795.7873 ">619.795.7873 </a></div>
-                    <div class="item"><i class="mail"></i> <a href="mailto:contact@areaa.org">contact@areaa.org</a></div>
+                    <div class="item"><i class="loc"></i> <span>{{ section('Contact Us.data.first.loc_text') }}</span></div>
+                    <div class="item"><i class="tel"></i> <a href="{{ section('Contact Us.data.first.tel_link') }}">{{ section('Contact Us.data.first.tel_text') }} </a></div>
+                    <div class="item"><i class="mail"></i> <a href="{{ section('Contact Us.data.first.mail_link') }}">{{ section('Contact Us.data.first.mail_text') }}</a></div>
                 </div>
 
                 <div class="join-content join-content__left">
@@ -76,7 +76,7 @@
                                 <li><a href="#"> Why join </a></li>
                                 <li><a href="{{url('areabenefits')}}"> Benefits </a></li>
                                 <li><a href="#"> Find a Member </a></li>
-                                <li><a href="#"> Chapter Locations </a></li>
+                                <li><a href="{{url('chapter')}}"> Chapter Locations </a></li>
                                 <li><a href="{{url('membership-registration')}}"> A-List </a></li>
                             </ul>
                         </article>
