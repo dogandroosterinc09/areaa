@@ -113,3 +113,6 @@ Route::resource('/chapter_page_homesliders', 'ChapterPageHomesliderController');
 
 
 Route::resource('/chapter_contacts', 'ChapterContactController');
+
+
+Route::resource('/event_registrations', 'EventRegistrationController');

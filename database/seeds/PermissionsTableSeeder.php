@@ -1034,6 +1034,42 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2020-04-26 22:08:34',
                 'updated_at' => '2020-04-26 22:08:34',
             ),
+            113 => 
+            array (
+                'id' => 118,
+                'name' => 'Create Event Registration',
+                'guard_name' => 'web',
+                'permission_group_id' => 30,
+                'created_at' => '2020-04-28 01:17:57',
+                'updated_at' => '2020-04-28 01:17:57',
+            ),
+            114 => 
+            array (
+                'id' => 119,
+                'name' => 'Read Event Registration',
+                'guard_name' => 'web',
+                'permission_group_id' => 30,
+                'created_at' => '2020-04-28 01:17:57',
+                'updated_at' => '2020-04-28 01:17:57',
+            ),
+            115 => 
+            array (
+                'id' => 120,
+                'name' => 'Update Event Registration',
+                'guard_name' => 'web',
+                'permission_group_id' => 30,
+                'created_at' => '2020-04-28 01:17:57',
+                'updated_at' => '2020-04-28 01:17:57',
+            ),
+            116 => 
+            array (
+                'id' => 121,
+                'name' => 'Delete Event Registration',
+                'guard_name' => 'web',
+                'permission_group_id' => 30,
+                'created_at' => '2020-04-28 01:17:57',
+                'updated_at' => '2020-04-28 01:17:57',
+            ),
         ));
         
         
