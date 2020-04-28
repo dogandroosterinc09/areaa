@@ -147,7 +147,7 @@
             uiCreateChapterForm = $('#create-chapter');
             uiEditChapterForm = $('#edit-chapter');
             uiChaptersDatatable = null;
-            uiInputBannerImage = $('input[name="banner_image"]');
+            uiInputBannerImage = $('input[name="thumbnail"]');
             uiInputFile = $('input[name="file"]');
             uiRemoveImgBtn = $('.remove-image-btn');
             uiRemoveFileBtn = $('.remove-file-btn');

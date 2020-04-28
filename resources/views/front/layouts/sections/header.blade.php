@@ -22,9 +22,12 @@
                                 </a>
                                 <div class="info__menu">
                                     <ul>
-                                        <li> <a href="{{url('/aloha')}}"> Aloha</a></li>
+                                        @foreach(\App\Models\Chapter::all() as $chapter)
+                                        <li> <a href="{{url('/'.$chapter->slug)}}">{{$chapter->name}}</a></li>
+                                        @endforeach
+                                        <!-- <li> <a href="{{url('/aloha')}}"> Aloha</a></li>
                                         <li> <a href="{{url('/atlantametro')}}"> Atlanta Metro</a></li>
-                                        <li> <a href="{{url('/newyorkeast')}}"> New York East</a></li>
+                                        <li> <a href="{{url('/newyorkeast')}}"> New York East</a></li> -->
                                     </ul>
                                  </div>
                              </li>
