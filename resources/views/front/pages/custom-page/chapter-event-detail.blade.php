@@ -114,7 +114,7 @@
                                     <li><span><strong>Cost</strong></span> <span>${{ $chapter_event->amount }}</span></li>
                                 </ul>
                                 <div class="register-info__button">
-                                    <a href="#" class="btn btn--secondary"> Register</a>
+                                    <a href="#" class="btn btn--secondary" data-toggle="modal" data-target="#registerModal"> Register</a>
                                 </div>
                             </div>
                         </div>
@@ -134,3 +134,5 @@
     </main>
     @include('front.layouts.sections.chapter.footer_chapter')
 </section>
+
+@include('front.pages.custom-page.sections.event-registration-modal')
