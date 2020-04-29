@@ -7,30 +7,31 @@
     </ul>
     <div class="content-header">
         <div class="header-section">
-            <h1>{{ $event_registration->name }}</h1>
-            <h5>{{ $event_registration->slug }}</h5>
+            <!-- <h1>{{ $event_registration->name }}</h1>
+            <h5>{{ $event_registration->slug }}</h5> -->
         </div>
     </div>
     <div class="row">
         <div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
             <div class="block block-alt-noborder">
                 <article>
-                    <h3 class="sub-header text-center">
-                        <strong>{{ $event_registration->created_at->format('F d, Y') }}</strong>
-                        <div class="btn-group btn-group-xs pull-right">
-                            @if (auth()->user()->can('Update Event Registration'))
-                                <a href="{{ route('admin.event_registrations.edit', $event_registration->id) }}"
-                                   data-toggle="tooltip"
-                                   title=""
-                                   class="btn btn-default"
-                                   data-original-title="Edit"><i class="fa fa-pencil"></i> Edit</a>
-                            @endif
-                        </div>
-                    </h3>
-
-                    <img src="{{ asset($event_registration->banner_image) }}" alt="{{ $event_registration->banner_image }}" class="img-responsive center-block" style="max-width: 100px;">
-
-                    <p>{!! $event_registration->content !!}</p>
+                    <!-- <h3 class="sub-header text-center">
+                        <strong>{{ $event_registration->created_at->format('F d, Y') }}</strong>                         
+                    </h3> -->
+                    <h5>{{$event_registration->name}}</h5>
+                    <h5>{{$event_registration->is_member}}</h5>
+                    @if($event_registration->chapter_id != 0)
+                    <h5>{{$event_registration->chapter->name}}</h5>
+                    @endif
+                    <h5>{{$event_registration->email}}</h5>
+                    <h5>{{$event_registration->phone}}</h5>
+                    <hr>
+                    <h5>{{$event_registration->event->name}}</h5>                    
+                    <h5>{{$event_registration->event->chapter}}</h5>
+                    <h5>{{$event_registration->event->date_range}}</h5>                    
+                    <h5>{{$event_registration->event->time}}</h5>
+                    <h5>{{$event_registration->event->location_name}}</h5>
+                    <h5>{{$event_registration->event->amount}}</h5>
                 </article>
             </div>
         </div>

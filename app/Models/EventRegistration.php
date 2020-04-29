@@ -32,7 +32,7 @@ class EventRegistration extends Model
         'member_chapter_id'
     ];
 
-    public function getEventAttribute() {
+    public function getEventNameAttribute() {
         $event = $this->attributes['event_id'] != 0 ? Event::find($this->attributes['event_id']) : ChapterEvent::find($this->attributes['chapter_event_id']);
         
         return $event->name;
@@ -50,5 +50,22 @@ class EventRegistration extends Model
         else
 
         return 'PAID';
+    }
+
+    public function getIsMemberAttribute() {
+        return $this->attributes['is_member'] == 1 ? 'Member' : 'Non Member';
+    }
+
+    public function event() {
+        if ($this->attributes['event_id'] != 0) {
+            return $this->hasOne('App\Models\Event', 'id', 'event_id');
+        } else {
+            return $this->hasOne('App\Models\ChapterEvent', 'id', 'chapter_event_id');
+        }
+        
+    }    
+
+    public function chapter() {
+        return $this->hasOne('App\Models\Chapter', 'id', 'member_chapter_id');
     }
 }
