@@ -116,3 +116,5 @@ Route::resource('/chapter_contacts', 'ChapterContactController');
 
 
 Route::resource('/event_registrations', 'EventRegistrationController');
+
+Route::post('/gallery_upload', 'GalleryController@upload_images');

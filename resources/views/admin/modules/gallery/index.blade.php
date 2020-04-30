@@ -38,13 +38,10 @@
                         ID
                     </th>
                     <th class="text-center">
-                        Name
-                    </th>
+                        Title
+                    </th>                    
                     <th class="text-left">
-                        Slug
-                    </th>
-                    <th class="text-left">
-                        Content
+                        Description
                     </th>
                     <th class="text-center">
                         Date Created
@@ -58,13 +55,8 @@
                 @foreach($galleries as $gallery)
                     <tr data-gallery-id="{{$gallery->id}}">
                         <td class="text-center"><strong>{{ $gallery->id }}</strong></td>
-                        <td class="text-center"><strong>{{ $gallery->name }}</strong></td>
-                        <td class="text-left">
-                            @if($gallery->slug && $gallery->slug != '')
-                                <a target="_blank" href="{{ add_http($gallery->slug) }}">{{ add_http($gallery->slug) }}</a>
-                            @endif
-                        </td>
-                        <td class="text-left">{!! str_limit(strip_tags($gallery->content), 50) !!}</td>
+                        <td class="text-center"><strong>{{ $gallery->title }}</strong></td>                        
+                        <td class="text-left">{!! str_limit(strip_tags($gallery->description), 50) !!}</td>
                         <td class="text-center">{{ $gallery->created_at->format('F d, Y') }}</td>
                         <td class="text-center">
                             <div class="btn-group btn-group-xs">

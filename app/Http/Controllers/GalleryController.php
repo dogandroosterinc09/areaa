@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 use App\Models\Gallery;
 use App\Http\Controllers\Controller;
 
+use Illuminate\Support\Facades\Storage;
+
+use File;
+
 class GalleryController extends Controller
 {
     /**
@@ -68,21 +72,22 @@ class GalleryController extends Controller
         if (!auth()->user()->hasPermissionTo('Create Gallery')) {
             abort('401', '401');
         }
-
+        
         $this->validate($request, [
-            'name' => 'required|unique:galleries,name,NULL,id,deleted_at,NULL',
-            'slug' => 'required|unique:galleries,slug,NULL,id,deleted_at,NULL',
-            'content' => 'required',
+            'title' => 'required',
+            'description' => 'required'
         ]);
 
+        $photos = $this->moveImage($request);
+
         $gallery = $this->gallery->create(array_merge($request->all(), [
-            'is_active' => $request->has('is_active') ? 1 : 0,
-            'slug' => str_slug($request->input('name'))
+            'photos' => implode(',',$photos),
+            'user_id' => auth()->user()->id
         ]));
 
         return redirect()->route('admin.galleries.index')->with('flash_message', [
             'title' => '',
-            'message' => 'Gallery ' . $gallery->name . ' successfully added.',
+            'message' => 'Gallery ' . $gallery->title . ' successfully added.',
             'type' => 'success'
         ]);
     }
@@ -137,21 +142,24 @@ class GalleryController extends Controller
         }
 
         $this->validate($request, [
-            'name' => 'required|unique:galleries,name,' . $id . ',id,deleted_at,NULL',
-            'slug' => 'required|unique:galleries,slug,' . $id . ',id,deleted_at,NULL',
-            'content' => 'required',
+            'title' => 'required',
+            'description' => 'required'
         ]);
 
         $gallery = $this->gallery->findOrFail($id);
 
+        $photos = $this->moveImage($request);
+
+        if (!empty($gallery->photos)) $photos = array_merge(explode(',',$gallery->photos),$photos);
+
         $gallery->fill(array_merge($request->all(), [
-            'is_active' => $request->has('is_active') ? 1 : 0,
-            'slug' => str_slug($request->input('name'))
+            'photos' => implode(',',$photos),
+            'user_id' => auth()->user()->id
         ]))->save();
 
         return redirect()->route('admin.galleries.index')->with('flash_message', [
             'title' => '',
-            'message' => 'Gallery ' . $gallery->name . ' successfully updated.',
+            'message' => 'Gallery ' . $gallery->title . ' successfully updated.',
             'type' => 'success'
         ]);
     }
@@ -172,5 +180,64 @@ class GalleryController extends Controller
         $gallery->delete();
 
         return response()->json(status()->success('Gallery successfully deleted.', compact('id')));
+    }
+
+    public function upload_images(Request $request) {        
+        // $path = storage_path('tmp/gallery');
+        $path = public_path('tmp/gallery');
+
+        if (!file_exists($path)) {
+            mkdir($path, 0777, true);
+        }
+
+        $file = $request->file('file');
+
+        $name = uniqid() . '_' . trim($file->getClientOriginalName());
+
+        $file->move($path, $name);
+
+        return response()->json([
+            'name'          => $name,
+            'original_name' => $file->getClientOriginalName(),
+        ]);
+    }
+
+    private function upload($file) {
+        // $extension = $file->getClientOriginalExtension();
+        // $file_name = substr((pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME)), 0, 30) . '.' . $extension;
+        $file_name = storage_path('tmp/gallery/') . $file;
+        // return $file_name;
+        // $file_name = preg_replace("/[^a-z0-9\_\-\.]/i", '', $file_name);
+        $file_path = '/uploads/gallery' . $file;
+        $directory = public_path() . $file_path;
+
+        // return $directory;
+
+        if (!File::exists($directory)) {
+            File::makeDirectory($directory, 0777);
+        }        
+
+        // $file->move($directory, $file_name);
+        $file_upload_path = 'public' . $file_path . '/' . $file_name;
+        return $file_upload_path;
+    }
+
+    private function moveImage(Request $request) {
+        $photos = [];
+
+        foreach ($request->input('document', []) as $file) {
+            $old_path = public_path('tmp/gallery/') . $file;
+            $file_path = '/uploads/gallery/' . $file;
+            $new_path = public_path() . $file_path;
+            $move = File::move($old_path, $new_path);
+
+            $file_upload_path = 'public' . $file_path;
+
+            if ($move) {
+                array_push($photos, $file_upload_path);
+            }
+        }
+
+        return $photos;
     }
 }
