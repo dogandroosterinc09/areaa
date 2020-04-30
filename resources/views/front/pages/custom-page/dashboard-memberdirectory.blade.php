@@ -137,6 +137,23 @@
                                        </ul>
                                     </div>
                                 </div>
+                                <div class="row mt-3 advance-search {{ Request::get('company') || Request::get('chapter') || Request::get('designation') ? '' : 'd-none' }}">
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <input type="text" placeholder="Company" name="company" value="{{ Request::get('company') }}">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <input type="text" placeholder="Chapter" name="chapter" value="{{ Request::get('chapter') }}">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <input type="text" placeholder="Designation" name="designation" value="{{ Request::get('designation') }}">
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         {{ Form::close() }}
                     </div>
@@ -352,3 +369,20 @@
     </main>
     @include('front.layouts.sections.footer')
 </section>
+
+@push('extrascripts')
+<script>
+    $(function() {
+        $('.advance-tool a').on('click', function(e) {
+            e.preventDefault();
+            
+            if ($('.advance-search').hasClass('d-none')) {
+                $('.advance-search').removeClass('d-none');
+            } else {
+                $('.advance-search').addClass('d-none');
+            }
+            
+        });
+    });
+</script>
+@endpush

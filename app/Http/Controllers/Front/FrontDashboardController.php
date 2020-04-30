@@ -66,8 +66,12 @@ class FrontDashboardController extends Controller
         $keyword = $request->keyword;
         $name = $request->name;
         $location = $request->location;
+        $company = $request->company;
+        $chapter = $request->chapter;
+        $designation = $request->designation;
 
         $members = $this->members->join('users','users.id','=','members.user_id')
+            ->join('chapters','chapters.id','=','users.chapter_id')
             ->when(!empty($keyword), function($query) use ($keyword) {                
                 return $query->where(function ($query2) use ($keyword) {
                     return $query2->where('users.first_name','like','%' . $keyword .'%' )
@@ -87,8 +91,16 @@ class FrontDashboardController extends Controller
             ->when(!empty($location), function($query) use ($location) {
                 return $query->where('location','like', '%' . $location .'%');
             })
-            // ->toSql();
-            // return $members;
+            ->when(!empty($company), function($query) use ($company) {
+                return $query->where('company','like', '%' . $company .'%');
+            })
+            ->when(!empty($chapter), function($query) use ($chapter) {
+                return $query->where('chapters.name','like', '%' . $chapter .'%');
+            })
+            ->when(!empty($designation), function($query) use ($designation) {
+                return $query->where('designations','like', '%' . $designation .'%');
+            })
+            
             ->paginate(10);
 
         $params = "";
