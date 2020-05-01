@@ -11,6 +11,8 @@ use App\Models\ChapterPageEvent;
 use App\Models\ChapterPageLeadership;
 use App\Http\Controllers\Controller;
 
+use File;
+
 class ChapterController extends Controller
 {
     /**
@@ -179,6 +181,11 @@ class ChapterController extends Controller
             // 'slug' => str_slug($request->input('name'))
         ]))->save();
 
+        if ($request->hasFile('thumbnail')) {
+            $file_upload_path = $this->upload($request->thumbnail);
+            $chapter->fill(['thumbnail'=>$file_upload_path])->save();
+        }
+
         return redirect()->route('admin.chapters.index')->with('flash_message', [
             'title' => '',
             'message' => 'Chapter ' . $chapter->name . ' successfully updated.',
@@ -212,5 +219,21 @@ class ChapterController extends Controller
         $chapter = $this->chapter->findOrFail($id);
 
         return view('admin.modules.chapter.pages', compact('chapter'));
+    }
+
+    public function upload($file) {
+        $extension = $file->getClientOriginalExtension();
+        $file_name = substr((pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME)), 0, 30) . '.' . $extension;
+        $file_name = preg_replace("/[^a-z0-9\_\-\.]/i", '', $file_name);
+        $file_path = '/uploads';
+        $directory = public_path() . $file_path;
+
+        if (!File::exists($directory)) {
+            File::makeDirectory($directory, 0777);
+        }
+
+        $file->move($directory, $file_name);
+        $file_upload_path = 'public' . $file_path . '/' . $file_name;
+        return $file_upload_path;
     }
 }

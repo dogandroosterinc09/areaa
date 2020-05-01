@@ -13,8 +13,8 @@
                     <div class="title"><a href="{{url('membership-registration')}}"><span>Join AREAA</span></a></div>
                     <div class="info">
                         <ul>
-                            <li> <a href="tel:6197957873"><i class="ic-phone" aria-hidden="true"></i> 619.795.7873</a></li>
-                            <li> <a href="mailto:contact@areaa.org"><i class="ic-email"></i> contact@areaa.org</a></li>
+                            <li> <a href="{{section('Contact Us.data.first.tel_link')}}"><i class="ic-phone" aria-hidden="true"></i> {{section('Contact Us.data.first.tel_text')}}</a></li>
+                            <li> <a href="{{section('Contact Us.data.first.mail_link')}}"><i class="ic-email"></i> {{section('Contact Us.data.first.mail_text')}}</a></li>
                             <li>  
                                 <a href="javascript:void(0)" class="dropdown-toggle-menu">
                                 <i class="ic-pin"></i> 
@@ -22,9 +22,12 @@
                                 </a>
                                 <div class="info__menu">
                                     <ul>
-                                        <li> <a href="{{url('/aloha')}}"> Aloha</a></li>
+                                        @foreach(\App\Models\Chapter::all() as $chapter)
+                                        <li> <a href="{{url('/'.$chapter->slug)}}">{{$chapter->name}}</a></li>
+                                        @endforeach
+                                        <!-- <li> <a href="{{url('/aloha')}}"> Aloha</a></li>
                                         <li> <a href="{{url('/atlantametro')}}"> Atlanta Metro</a></li>
-                                        <li> <a href="{{url('/newyorkeast')}}"> New York East</a></li>
+                                        <li> <a href="{{url('/newyorkeast')}}"> New York East</a></li> -->
                                     </ul>
                                  </div>
                              </li>

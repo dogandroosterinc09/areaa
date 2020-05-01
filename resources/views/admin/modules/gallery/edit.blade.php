@@ -17,106 +17,41 @@
         <div class="col-md-12">
             <div class="block">
                 <div class="block-title">
-                    <h2><i class="fa fa-pencil"></i> <strong>Edit Gallery "{{$gallery->name}}"</strong></h2>
+                    <h2><i class="fa fa-pencil"></i> <strong>Edit Gallery "{{$gallery->title}}"</strong></h2>
                 </div>
-                <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                    <label class="col-md-3 control-label" for="gallery_name">Name</label>
+                
+                @include('admin.components.heading', ['text' => 'Gallery Information'])
+                @include('admin.components.input-field', ['label' => 'Title', 'value' => $gallery->title])
+                @include('admin.components.editor', ['label' => 'Description', 'value' => $gallery->description])
+                @include('admin.components.heading', ['text' => 'Photos'])                                
 
-                    <div class="col-md-9">
-                        <input type="text" class="form-control" id="gallery_name" name="name"
-                               value="{{  Request::old('name') ? : $gallery->name }}"
-                               placeholder="Enter Gallery name..">
-                        @if($errors->has('name'))
-                            <span class="help-block animation-slideDown">{{ $errors->first('name') }}</span>
-                        @endif
-                    </div>
-                </div>
-                <div class="form-group{{ $errors->has('slug') ? ' has-error' : '' }}">
-                    <label class="col-md-3 control-label" for="gallery_slug">Slug</label>
-
-                    <div class="col-md-9">
-                        <input type="text" class="form-control" id="gallery_slug" name="slug"
-                               value="{{  Request::old('slug') ? : $gallery->slug }}"
-                               placeholder="Enter Gallery slug..">
-                        @if($errors->has('slug'))
-                            <span class="help-block animation-slideDown">{{ $errors->first('slug') }}</span>
-                        @endif
-                    </div>
-                </div>
-                <div class="form-group{{ $errors->has('banner_image') ? ' has-error' : '' }}">
-                    <label class="col-md-3 control-label" for="gallery_banner_image">Banner Image</label>
-                    <div class="col-md-9">
-                        <div class="input-group">
-                            <label class="input-group-btn">
-                                <span class="btn btn-primary">
-                                    Choose File <input type="file" name="banner_image" style="display: none;">
-                                </span>
-                            </label>
-                            <input type="text" class="form-control" readonly>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="col-md-10 col-md-offset-2">
+                            <form action="{{ url('admin/gallery_upload') }}" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                <div class="form-group">
+                                    <div class="needsclick dropzone" id="document-dropzone"></div>
+                                </div>                                
+                            </form>
                         </div>
-                        @if($errors->has('banner_image'))
-                            <span class="help-block animation-slideDown">{{ $errors->first('banner_image') }}</span>
-                        @endif
-                    </div>
-                    <div class="col-md-offset-3 col-md-9">
-                        <a href="{{ asset($gallery->banner_image) }}" class="zoom img-thumbnail" style="cursor: default !important;" data-toggle="lightbox-image">
-                            <img src="{{ $gallery->banner_image != '' ? asset($gallery->banner_image) : '' }}"
-                                 alt="{{ $gallery->banner_image != '' ? asset($gallery->banner_image) : '' }}"
-                                 class="img-responsive center-block" style="max-width: 100px;">
-                        </a>
-                        <br>
-                        <a href="javascript:void(0)" class="btn btn-xs btn-danger remove-image-btn"
-                           style="display: {{ $gallery->banner_image != '' ? '' : 'none' }};"><i class="fa fa-trash"></i> Remove</a>
-                        <input type="hidden" name="remove_banner_image" class="remove-image" value="0">
                     </div>
                 </div>
-                <div class="form-group file-container {{ $errors->has('file') ? ' has-error' : '' }}">
-                    <label class="col-md-3 control-label" for="gallery_file">File</label>
-                    <div class="col-md-9">
-                        <div class="input-group">
-                            <label class="input-group-btn">
-                                <span class="btn btn-primary">
-                                    Choose File <input type="file" name="file" style="display: none;">
-                                </span>
-                            </label>
-                            <input type="text" class="form-control" readonly>
+
+                <div class="row form-group">               
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="col-md-10 col-md-offset-2">
+                        @if(!empty($gallery->photos))
+                            @foreach(explode(',',$gallery->photos) as $photo)
+                            <div class="col-md-3">
+                                <img src="{{asset($photo)}}" class="img-responsive">
+                            </div>
+                            @endforeach
+                        @endif
                         </div>
-                        @if($errors->has('file'))
-                            <span class="help-block animation-slideDown">{{ $errors->first('file') }}</span>
-                        @endif
-                    </div>
-                    <div class="col-md-offset-3 col-md-9">
-                        <a target="_blank" href="{{ asset($gallery->file) }}" class="file-anchor">
-                            {{ $gallery->file }}
-                        </a>
-                        <br>
-                        <a href="javascript:void(0)" class="btn btn-xs btn-danger remove-file-btn"
-                           style="display: {{ $gallery->file != '' ? '' : 'none' }};"><i class="fa fa-trash"></i> Remove</a>
-                        <input type="hidden" name="remove_file" class="remove-file" value="0">
                     </div>
                 </div>
-                <div class="form-group{{ $errors->has('content') ? ' has-error' : '' }}">
-                    <label class="col-md-3 control-label" for="gallery_content">Content</label>
 
-                    <div class="col-md-9">
-                    <textarea id="gallery_content" name="content" rows="9" class="form-control ckeditor"
-                              placeholder="Enter Gallery content..">{!! Request::old('content') ? : $gallery->content !!}</textarea>
-                        @if($errors->has('content'))
-                            <span class="help-block animation-slideDown">{{ $errors->first('content') }}</span>
-                        @endif
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-md-3 control-label">Is Active?</label>
-
-                    <div class="col-md-9">
-                        <label class="switch switch-primary">
-                            <input type="checkbox" id="is_active" name="is_active"
-                                   value="1" {{ Request::old('is_active') ? : ($gallery->is_active ? 'checked' : '') }}>
-                            <span></span>
-                        </label>
-                    </div>
-                </div>
                 <div class="form-group form-actions">
                     <div class="col-md-9 col-md-offset-3">
                         <a href="{{ route('admin.galleries.index') }}" class="btn btn-sm btn-warning">Cancel</a>
@@ -130,7 +65,52 @@
     </div>
 @endsection
 
+@push('extrastylesheets')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.0/min/dropzone.min.css">
+@endpush
+
 @push('extrascripts')
     <script type="text/javascript" src="{{ asset('public/js/ckeditor/ckeditor.js') }}"></script>
     <script type="text/javascript" src="{{ asset('public/js/libraries/galleries.js') }}"></script>
+    <script>
+        // Dropzone.autoDiscover = false;
+        // var url = "{{ url('admin/gallery_upload') }}";
+        // var myDropzone = new Dropzone(".dropzone", { url: url });
+
+        var uploadedDocumentMap = {}
+        Dropzone.options.documentDropzone = {
+            url: '{{ url('admin/gallery_upload') }}',
+            maxFilesize: 2, // MB
+            addRemoveLinks: true,
+            headers: {
+            'X-CSRF-TOKEN': "{{ csrf_token() }}"
+            },
+            success: function (file, response) {
+            $('form').append('<input type="hidden" name="document[]" value="' + response.name + '">')
+            uploadedDocumentMap[file.name] = response.name
+            },
+            removedfile: function (file) {
+            file.previewElement.remove()
+            var name = ''
+            if (typeof file.file_name !== 'undefined') {
+                name = file.file_name
+            } else {
+                name = uploadedDocumentMap[file.name]
+            }
+            $('form').find('input[name="document[]"][value="' + name + '"]').remove()
+            },
+            init: function () {
+            @if(isset($project) && $project->document)
+                var files =
+                {!! json_encode($project->document) !!}
+                for (var i in files) {
+                var file = files[i]
+                this.options.addedfile.call(this, file)
+                file.previewElement.classList.add('dz-complete')
+                $('form').append('<input type="hidden" name="document[]" value="' + file.file_name + '">')
+                }
+            @endif
+            }
+        }
+    </script>
 @endpush

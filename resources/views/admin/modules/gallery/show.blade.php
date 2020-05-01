@@ -7,8 +7,8 @@
     </ul>
     <div class="content-header">
         <div class="header-section">
-            <h1>{{ $gallery->name }}</h1>
-            <h5>{{ $gallery->slug }}</h5>
+            <h1>{{ $gallery->title }}</h1>
+            <h5>{{ $gallery->created_at->format('M d, Y h:s a') }}</h5>
         </div>
     </div>
     <div class="row">
@@ -16,21 +16,20 @@
             <div class="block block-alt-noborder">
                 <article>
                     <h3 class="sub-header text-center">
-                        <strong>{{ $gallery->created_at->format('F d, Y') }}</strong>
-                        <div class="btn-group btn-group-xs pull-right">
-                            @if (auth()->user()->can('Update Gallery'))
-                                <a href="{{ route('admin.galleries.edit', $gallery->id) }}"
-                                   data-toggle="tooltip"
-                                   title=""
-                                   class="btn btn-default"
-                                   data-original-title="Edit"><i class="fa fa-pencil"></i> Edit</a>
-                            @endif
-                        </div>
+                        <strong>{{ $gallery->title }}</strong>
                     </h3>
 
-                    <img src="{{ asset($gallery->banner_image) }}" alt="{{ $gallery->banner_image }}" class="img-responsive center-block" style="max-width: 100px;">
+                    <p>{!! $gallery->description !!}</p>
 
-                    <p>{!! $gallery->content !!}</p>
+                    <div class="row form-group">
+                        @if(!empty($gallery->photos))
+                            @foreach(explode(',',$gallery->photos) as $photo)
+                            <div class="col-md-3">
+                                <img src="{{asset($photo)}}" class="img-responsive">
+                            </div>
+                            @endforeach
+                        @endif
+                    </div>
                 </article>
             </div>
         </div>

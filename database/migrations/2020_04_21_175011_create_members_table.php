@@ -18,11 +18,13 @@ class CreateMembersTable extends Migration
             $table->integer('user_id');
             $table->longText('bio');
             $table->string('position', 255);
+            $table->string('role', 255);
             $table->string('location', 255);
             $table->string('company', 255);
             $table->text('language_spoken');
             $table->text('designations');
-            $table->text('area_of_specialty');
+            $table->text('area_of_specialty');            
+            $table->text('badges');
             $table->tinyInteger('is_active')->default(1);
             $table->softDeletes();
             $table->timestamps();

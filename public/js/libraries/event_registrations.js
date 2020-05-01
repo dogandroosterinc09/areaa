@@ -1,10 +1,10 @@
 (function () {
     "use strict";
     /* declare global variables within the class */
-    var uiChaptersTable,
-        uiCreateChapterForm,
-        uiEditChapterForm,
-        uiChaptersDatatable,
+    var uiEventRegistrationsTable,
+        uiCreateEventRegistrationForm,
+        uiEditEventRegistrationForm,
+        uiEventRegistrationsDatatable,
         uiInputBannerImage,
         uiRemoveImgBtn,
         uiInputFile,
@@ -136,33 +136,33 @@
     }
 
     /*
-     * This js file will only contain chapter events
+     * This js file will only contain event_registration events
      *
      * */
-    CPlatform.prototype.chapter = {
+    CPlatform.prototype.event_registration = {
 
         initialize: function () {
             /* assign a value to the global variable within this class */
-            uiChaptersTable = $('#chapters-table');
-            uiCreateChapterForm = $('#create-chapter');
-            uiEditChapterForm = $('#edit-chapter');
-            uiChaptersDatatable = null;
-            uiInputBannerImage = $('input[name="thumbnail"]');
+            uiEventRegistrationsTable = $('#event_registrations-table');
+            uiCreateEventRegistrationForm = $('#create-event_registration');
+            uiEditEventRegistrationForm = $('#edit-event_registration');
+            uiEventRegistrationsDatatable = null;
+            uiInputBannerImage = $('input[name="banner_image"]');
             uiInputFile = $('input[name="file"]');
             uiRemoveImgBtn = $('.remove-image-btn');
             uiRemoveFileBtn = $('.remove-file-btn');
 
-            uiChaptersDatatable = platform.chapter.initialize_datatable();
+            uiEventRegistrationsDatatable = platform.event_registration.initialize_datatable();
 
-            /* create chapter validation */
-            uiCreateChapterForm.find('[type="submit"]').on('click', function () {
+            /* create event_registration validation */
+            uiCreateEventRegistrationForm.find('[type="submit"]').on('click', function () {
                 if (platform.var_check(CKEDITOR) && platform.var_check(CKEDITOR.instances)) {
                     for (var instance in CKEDITOR.instances) {
                         CKEDITOR.instances[instance].updateElement();
                     }
                 }
             });
-            uiCreateChapterForm.validate({
+            uiCreateEventRegistrationForm.validate({
                 errorClass: 'help-block animation-slideDown',
                 errorElement: 'span',
                 ignore: [':hidden:not([type="file"])'],
@@ -217,15 +217,15 @@
                 }
             });
 
-            /* edit chapter validation */
-            uiEditChapterForm.find('[type="submit"]').on('click', function () {
+            /* edit event_registration validation */
+            uiEditEventRegistrationForm.find('[type="submit"]').on('click', function () {
                 if (platform.var_check(CKEDITOR) && platform.var_check(CKEDITOR.instances)) {
                     for (var instance in CKEDITOR.instances) {
                         CKEDITOR.instances[instance].updateElement();
                     }
                 }
             });
-            uiEditChapterForm.validate({
+            uiEditEventRegistrationForm.validate({
                 errorClass: 'help-block animation-slideDown',
                 errorElement: 'span',
                 ignore: [':hidden:not([type="file"])'],
@@ -288,8 +288,8 @@
                 }
             });
 
-            /* delete chapter button ajax */
-            $('body').on('click', '.delete-chapter-btn', function (e) {
+            /* delete event_registration button ajax */
+            $('body').on('click', '.delete-event_registration-btn', function (e) {
                 e.preventDefault();
                 var self = $(this);
                 /* open confirmation modal */
@@ -308,8 +308,8 @@
                     /* if confirmed, send request ajax */
                     if (isConfirm) {
                         var oParams = {
-                            'data': {'id': self.attr('data-chapter-id')},
-                            'url': self.attr('data-chapter-route')
+                            'data': {'id': self.attr('data-event_registration-id')},
+                            'url': self.attr('data-event_registration-route')
                         };
                         platform.delete.delete(oParams, function (oData) {
                             /* check return of ajax */
@@ -326,17 +326,17 @@
                                                 'type': "success"
                                                 //'confirmButtonColor': "#DD6B55",
                                             }, function () {
-                                                /* remove chapter container */
-                                                // $('[data-chapter-id="' + oData.data.id + '"]').remove();
-                                                if (platform.var_check(uiChaptersDatatable)) {
-                                                    uiChaptersDatatable.row(self.parents('tr:first')).remove();
+                                                /* remove event_registration container */
+                                                // $('[data-event_registration-id="' + oData.data.id + '"]').remove();
+                                                if (platform.var_check(uiEventRegistrationsDatatable)) {
+                                                    uiEventRegistrationsDatatable.row(self.parents('tr:first')).remove();
                                                 }
 
-                                                uiChaptersDatatable = platform.chapter.initialize_datatable();
+                                                uiEventRegistrationsDatatable = platform.event_registration.initialize_datatable();
 
-                                                /* check if there are other chapters to hide the table header and show the no chapters found */
-                                                if ($('tr[data-chapter-id]').length == 0) {
-                                                    $('.chapter-empty').removeClass('johnCena');
+                                                /* check if there are other event_registrations to hide the table header and show the no event_registrations found */
+                                                if ($('tr[data-event_registration-id]').length == 0) {
+                                                    $('.event_registration-empty').removeClass('johnCena');
                                                     $('.table-responsive').addClass('johnCena');
                                                 }
                                             });
@@ -411,12 +411,12 @@
         },
 
         initialize_datatable: function () {
-            if (platform.var_check(uiChaptersDatatable)) {
-                uiChaptersDatatable.destroy();
+            if (platform.var_check(uiEventRegistrationsDatatable)) {
+                uiEventRegistrationsDatatable.destroy();
             }
 
-            /* chapters table initialize datatable */
-            uiChaptersDatatable = uiChaptersTable.DataTable({
+            /* event_registrations table initialize datatable */
+            uiEventRegistrationsDatatable = uiEventRegistrationsTable.DataTable({
                 "order": [[0, "asc"]],
                 "paging": true,
                 "pageLength": 10,
@@ -426,11 +426,11 @@
                 "searching": true,
                 "aoColumnDefs": [{
                     'bSortable': false,
-                    'aTargets': [3]
+                    'aTargets': [5]
                 }]
             });
 
-            return uiChaptersDatatable;
+            return uiEventRegistrationsDatatable;
         },
     }
 
@@ -438,5 +438,5 @@
 
 /* run initialize function on load of window */
 $(window).on('load', function () {
-    platform.chapter.initialize();
+    platform.event_registration.initialize();
 });

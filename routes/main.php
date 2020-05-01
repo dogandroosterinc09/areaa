@@ -32,6 +32,10 @@ Route::get('/delegate-board/{slug}', 'BoardMemberController@showDelegate')->name
 
 Route::get('/event/{slug}', 'EventController@showEvent')->name('event.show');
 
+Route::post('/event/event-register', 'EventController@registerToEvent')->name('event.register');
+
+Route::get('/get-gallery', 'GalleryController@getGallery')->name('gallery.get');
+
 //Chapter Routes
 Route::get('/{slug}/about-us', 'ChapterPageController@indexAboutUs');
 Route::get('/{slug}/events', 'ChapterPageController@indexEvents');

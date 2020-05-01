@@ -40,13 +40,13 @@
                             <div class="event-details__description">
                                 <h3>Description</h3>
                                 <p>{!! $event->description !!}</p>
-                               
                             </div>
-                            <div class="event-details__email">
+                            
+                            <!-- <div class="event-details__email">
                                 <h5>For more information, contact our admin assistant Mary Johnson: </h5>
                              
                                 <a href="mailto:adminassistant@areaa.org"> <i></i> adminassistant@areaa.org</a>
-                            </div>
+                            </div> -->
     
                             @if ($nextEvent)
                             <div class="events-next-preview">
@@ -90,13 +90,16 @@
                                     <li><span><strong>Cost</strong></span> <span>${{ $event->amount }}</span></li>
                                 </ul>
                                 <div class="register-info__button">
-                                    <a href="#" class="btn btn--secondary"> Register</a>
+                                    <a href="#" class="btn btn--secondary" data-toggle="modal" data-target="#registerModal"> Register</a>
                                 </div>
                             </div>
                         </div>
 
                         <div class="event-single-map">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11603365.99775855!2d-118.20713936747744!3d32.39640988632438!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dc7361593c7e91%3A0x583eee0359e56260!2sAsian%20Real%20Estate%20Association%20of%20America%20(AREAA)!5e0!3m2!1sen!2sph!4v1580871072564!5m2!1sen!2sph" width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                            <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11603365.99775855!2d-118.20713936747744!3d32.39640988632438!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dc7361593c7e91%3A0x583eee0359e56260!2sAsian%20Real%20Estate%20Association%20of%20America%20(AREAA)!5e0!3m2!1sen!2sph!4v1580871072564!5m2!1sen!2sph" width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen=""></iframe> -->
+
+                            <iframe width="100%" height="300" frameborder="0" style="border:0" allowfullscreen
+                            src="https://www.google.com/maps/embed/v1/place?q={{$event->location_name}}&key={{env('GOOGLE_MAP_API_KEY')}}"></iframe>
                         </div>
                     </div>
 
@@ -110,3 +113,5 @@
     </main>
     @include('front.layouts.sections.footer')
 </section>
+
+@include('front.pages.custom-page.sections.event-registration-modal')

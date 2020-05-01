@@ -28,8 +28,8 @@
 
     <main class="main-content">
 
-       {{-- @include('front.pages.custom-page.sections.dashboard-menu') --}}
-       <section class="dashboard-nav">
+    @include('front.pages.custom-page.sections.dashboard-menu')
+    <!-- <section class="dashboard-nav">
 
         <div class="dashboard-navigation">
             <div class="dashboard-navigation__wrapper">
@@ -88,7 +88,7 @@
             </div>
         </div>
     
-    </section>
+    </section> -->
 
 
 
@@ -122,13 +122,16 @@
 
                                         <div class="memberdirectory-detail__year">
                                             <div class="memberdirectory-detail__badge-year">
-                                                2020
+                                                {{ $member->membership_year }}
                                             </div>
                                         </div>
 
-                                        <div class="memberdirectory-detail__badge">
-                                            <img src="{{ url('public/images/area-list.png') }}" alt="" class="img-fluid"> 
-                                            <img src="{{ url('public/images/area-lux.jpg') }}" alt=""  class="img-fluid"> 
+                                        <div class="memberdirectory-detail__badge">                                            
+                                            @foreach(explode(',',$member->badges) as $badge)                                            
+                                            <img src="{{ url($badge) }}" alt="" class="img-fluid"> 
+                                            @endforeach
+                                            <!-- <img src="{{ url('public/images/area-list.png') }}" alt="" class="img-fluid"> 
+                                            <img src="{{ url('public/images/area-lux.jpg') }}" alt=""  class="img-fluid">  -->
                                         </div>
 
                                         <div class="memberdirectory-detail__social-link">
@@ -150,7 +153,7 @@
                                         <div class="memberdirectory-detail__content">
                                              <div class="memberdirectory-detail__date">Member Since {{ $member->membership_year }}</div>
                                              <div class="memberdirectory-detail__title"> <h3> {{ $member->name }} </h3> </div>
-                                             <div class="memberdirectory-detail__position"> AREAA Leadership Role </div>
+                                             <div class="memberdirectory-detail__position"> {{ $member->role }} </div>
                                              <div class="memberdirectory-detail__description">
                                                 {{ $member->bio }}
                                              </div>

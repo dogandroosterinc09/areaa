@@ -39,20 +39,20 @@ bership',
             1 => 
             array (
                 'id' => 2,
-                'name' => 'Become a Partnership.',
+                'name' => 'Become a Partner.',
                 'background_image' => 'public/uploads/home_slide_images/hp-banner-img2-1586232607.jpg',
                 'thumbnail_image' => 'public/uploads/homeslides/thumbnail/thumb-2.jpg',
-                'thumbnail_text' => 'part-
+                'thumbnail_text' => 'Part-
 nership',
                 'content' => '<h1>Become a</h1>
 
-<h2>Partnership.</h2>
+<h2>Partner.</h2>
 ',
                 'button_label' => 'Learn More',
                 'button_link' => 'http://52.24.144.212/areaa/our-partners',
                 'is_active' => 1,
                 'created_at' => '2020-04-06 21:10:07',
-                'updated_at' => '2020-04-27 02:55:43',
+                'updated_at' => '2020-04-27 18:39:20',
                 'deleted_at' => NULL,
             ),
             2 => 

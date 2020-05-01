@@ -1,4 +1,4 @@
-<div class="col-lg-3 col-sm-6">
+<!-- <div class="col-lg-3 col-sm-6">
 
     {{-- chapter-list-view --}}
     <div class="chapter-list-view">
@@ -80,4 +80,27 @@
     </div>
      {{-- chapter-list-view --}}
 
+</div> -->
+
+@foreach(\App\Models\Chapter::all() as $chapter)
+<div class="col-lg-3 col-sm-6">
+
+    {{-- chapter-list-view --}}
+    <div class="chapter-list-view">
+        <div class="chapter-list-view__item">
+            <div class="chapter-list-view__image image-background">
+                <a href="{{url($chapter->slug)}}">
+                     <img src="{{ asset($chapter->thumbnail) }}" alt="chapter">
+                </a>
+            </div>
+            <div class="chapter-list-view__title">
+                <a href="{{url($chapter->slug)}}">
+                     <h3>{{$chapter->name}}</h3>
+                </a>
+            </div>
+        </div>
+    </div>
+     {{-- chapter-list-view --}}
+
 </div>
+@endforeach

@@ -182,6 +182,12 @@
                     form.submit();
                 },
                 rules: {
+                    'title': {
+                        required: true
+                    },
+                    'description': {
+                        required: true
+                    },
                     'name': {
                         required: true
                     },
@@ -199,6 +205,12 @@
                     }
                 },
                 messages: {
+                    'title': {
+                        required: 'Title is required.'
+                    },
+                    'description': {
+                        required: 'Description is required'
+                    },
                     'name': {
                         required: 'Name is required.'
                     },
@@ -245,7 +257,13 @@
                     form.submit();
                 },
                 rules: {
+                    'title': {
+                        required: true
+                    },
                     'name': {
+                        required: true
+                    },
+                    'description': {
                         required: true
                     },
                     'slug': {
@@ -270,8 +288,14 @@
                     }
                 },
                 messages: {
+                    'title': {
+                        required: 'Title is required.'
+                    },
                     'name': {
                         required: 'Name is required.'
+                    },
+                    'description': {
+                        required: 'Description is required'
                     },
                     'slug': {
                         required: 'Slug is required.'
@@ -426,7 +450,7 @@
                 "searching": true,
                 "aoColumnDefs": [{
                     'bSortable': false,
-                    'aTargets': [5]
+                    'aTargets': [4]
                 }]
             });
 

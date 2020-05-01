@@ -62,9 +62,11 @@
                                     <div class="row">
 
                                         @include('front.pages.custom-page.sections.section-listview')
+                                        {{--
                                         @include('front.pages.custom-page.sections.section-listview')
                                         @include('front.pages.custom-page.sections.section-listview')
                                         @include('front.pages.custom-page.sections.section-listview')
+                                        --}}
 
                                         <div class="col-lg-12 text-center">
                                             <a href="#" class="btn btn--primary"> Load more </a>
