@@ -18247,6 +18247,9 @@ header .main-nagivation-desktop .navbar-bar ul > li .dropdown-menu ul li a {
 header .main-nagivation-desktop .navbar-bar ul > li .dropdown-menu ul li a:hover {
   background: #841523;
 }
+header .main-nagivation-desktop .navbar-bar ul > li:last-child .dropdown-menu {
+  left: -70px;
+}
 header .main-nagivation-desktop .navbar-bar .mega-menu {
   width: 400px;
   background: #2f2f2f !important;
@@ -21855,6 +21858,10 @@ ul.bullet-style li h6 {
   margin-bottom: 14px;
 }
 
+.registration-login-steps form {
+  width: 100%;
+}
+
 section.page {
   overflow: hidden;
 }
@@ -21884,6 +21891,9 @@ section.page--events-detail .sub-banner__image.image-background {
 }
 section.page--events-detail .sub-banner {
   height: 310px;
+}
+section.page--events-detail .events-section {
+  margin-bottom: 50px !important;
 }
 section.page--login .site-content {
   margin: 200px 0;
@@ -22840,6 +22850,8 @@ section.page--login .site-content {
 .steps-wizard__header ul li a {
   text-decoration: none;
   color: #b9b1b2;
+  pointer-events: none !important;
+  cursor: auto;
 }
 .steps-wizard__header ul li a strong {
   display: block;

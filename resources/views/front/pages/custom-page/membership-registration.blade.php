@@ -30,7 +30,7 @@
         {{-- need to dynamic this sub  --}}
         <section class="masking-background masking-background__equal masking-background--plain">
                         
-                    <div class="container-max masking-background__container">
+                    <div class="container-max masking-background__container registration-login-steps">
                         <div class="row">
                             {{  Form::open([
                                 'method' => 'POST',
@@ -53,19 +53,19 @@
                                                     <div class="container">
                                                         <ul>
                                                             <li>
-                                                                <a href="#tab1" data-toggle="tab" class="active">
+                                                                <a href="#tab1" data-toggle="tab" class="tab--one active">
                                                                     <strong> 1</strong> 
                                                                     <p>Select Chapter</p>
                                                                 </a>
                                                             </li>
                                                             <li>
-                                                                <a href="#tab2" data-toggle="tab">
+                                                                <a href="#tab2" data-toggle="tab" class="tab--two">
                                                                     <strong> 2</strong> 
                                                                     <p>Account Info</p>
                                                                 </a>
                                                             </li>
                                                             <li>
-                                                                <a href="#tab3" data-toggle="tab">
+                                                                <a href="#tab3" data-toggle="tab" class="tab--three">
                                                                     <strong> 3</strong> 
                                                                     <p>Billing & Payment</p>
                                                                 </a>
@@ -112,7 +112,7 @@
                                                     <div class="steps-wizard__button container">
                                                         <div class="row">
                                                             <div class="col-md-12 text-center">
-                                                                <a href="#tab2" data-toggle="tab" class="btn btn--next">Next</a>
+                                                                <a href="#tab2" data-toggle="tab" class="btn btn--next btn--tab-two">Next</a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -212,11 +212,11 @@
                                                     <div class="steps-wizard__button container">
                                                         <div class="row">
                                                             <div class="col-md-6 text-left">
-                                                                <a href="#tab1" data-toggle="tab" class="btn btn--back">Back</a>
+                                                                <a href="#tab1" data-toggle="tab" class="btn btn--back btn--tab-one">Back</a>
                                                             </div>
 
                                                             <div class="col-md-6 text-right">
-                                                                <a href="#tab3" data-toggle="tab" class="btn btn--next">Next</a>
+                                                                <a href="#tab3" data-toggle="tab" class="btn btn--next btn--tab-three">Next</a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -310,7 +310,7 @@
                                                     <div class="steps-wizard__button container">
                                                         <div class="row">
                                                             <div class="col-md-6 text-left">
-                                                                <a href="#tab1" data-toggle="tab" class="btn btn--back">Back</a>
+                                                                <a href="#tab1" data-toggle="tab" class="btn btn--back ">Back</a>
                                                             </div>
 
                                                             <div class="col-md-6 text-right">

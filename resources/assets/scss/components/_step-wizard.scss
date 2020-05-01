@@ -20,6 +20,8 @@
                 a {
                     text-decoration: none;
                     color: $color-gray;
+                    pointer-events: none !important;
+                    cursor: auto;
                     strong {
                         display: block;
                         text-align: center;
