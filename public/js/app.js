@@ -81171,9 +81171,9 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;function _typeof
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\wamp64\www\areaa\resources\assets\js\app.js */"./resources/assets/js/app.js");
-__webpack_require__(/*! C:\wamp64\www\areaa\resources\assets\scss\app.scss */"./resources/assets/scss/app.scss");
-module.exports = __webpack_require__(/*! C:\wamp64\www\areaa\resources\assets\scss\admin-control.scss */"./resources/assets/scss/admin-control.scss");
+__webpack_require__(/*! C:\xampp\htdocs\areaa\resources\assets\js\app.js */"./resources/assets/js/app.js");
+__webpack_require__(/*! C:\xampp\htdocs\areaa\resources\assets\scss\app.scss */"./resources/assets/scss/app.scss");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\areaa\resources\assets\scss\admin-control.scss */"./resources/assets/scss/admin-control.scss");
 
 
 /***/ })
