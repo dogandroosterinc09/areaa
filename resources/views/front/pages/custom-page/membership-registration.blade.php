@@ -95,7 +95,11 @@
                                                                         <label>Select Your Chapter *</label>
                                                                         <div class="select-box">
                                                                             <select name="chapter_id">
-                                                                                <option value="1">San Diego $49.50 now & then $99.00 per Year starting July 1, 2020.</option>
+                                                                                <option value="0">National $49.50 now & then $99.00 per Year starting July 1, 2020.</option>
+                                                                                @foreach(\App\Models\Chapter::all() as $chapter)
+                                                                                <option value="{{$chapter->id}}">{{$chapter->name}} $49.50 now & then $99.00 per Year starting July 1, 2020.</option>
+                                                                                @endforeach
+                                                                                <!-- <option value="1">San Diego $49.50 now & then $99.00 per Year starting July 1, 2020.</option> -->
                                                                             </select>
                                                                         </div>
                                                                     </div>
