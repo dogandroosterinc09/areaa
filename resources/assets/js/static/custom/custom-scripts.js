@@ -154,8 +154,89 @@ $(".accordion__item").click(function() {
 
 
 
+// Custom steps from tab 
+$(".steps-wizard__button #steps-wizard-two").click(function() {
+    $(".first-step-visible").removeClass('first-step-visible');
+    $(".second-step-visible").removeClass('second-step-visible');
+    $(".three-step-visible").removeClass('three-step-visible');
+    $(".steps-wizard").addClass('second-step-visible');
+    $(".steps-wizard__items--two .btn--tab-one.active").removeClass('active');
+    $(".steps-wizard__items--two .btn--tab-three.active").removeClass('active');
 
-// $(".info .dropdown-toggle-menu").click(function() {
-//     $(".dropdown-toggle-menu--active").removeClass("dropdown-toggle-menu--active");
-//     $(parent).find(this).toggleClass('dropdown-toggle-menu--active');
+    // for the header 
+    $(".steps-wizard__header .tab--three").removeClass('active');
+    $(".steps-wizard__header .tab--two").addClass('active');
+});
+
+
+$(".steps-wizard__button #steps-wizard-one").click(function() {
+    $(".first-step-visible").removeClass('first-step-visible');
+    $(".second-step-visible").removeClass('second-step-visible');
+    $(".three-step-visible").removeClass('three-step-visible');
+    $(".steps-wizard").addClass('first-step-visible');
+    $(".steps-wizard__items--one .btn--tab-two.active").removeClass('active');
+
+    // for the header 
+    $(".steps-wizard__header .tab--two").removeClass('active');
+    $(".steps-wizard__header .tab--three").removeClass('active');
+});
+
+
+$(".steps-wizard__button #steps-wizard-three").click(function() {
+    $(".first-step-visible").removeClass('first-step-visible');
+    $(".second-step-visible").removeClass('second-step-visible');
+    $(".three-step-visible").removeClass('three-step-visible');
+    $(".steps-wizard").addClass('third-step-visible');
+    $(".steps-wizard__items--three .btn--back.active").removeClass('active');
+
+    // for the header 
+    $(".steps-wizard__header .tab--two").addClass('active');
+    $(".steps-wizard__header .tab--three").addClass('active');
+});
+
+
+
+// $(".steps-wizard__button #steps-wizard-one").click(function() {
+//     $(".first-step-visible").removeClass('second-step-visible');
+//     $(".second-step-visible").removeClass('second-step-visible');
+//     $(".three-step-visible").removeClass('three-step-visible');
+//     $(".steps-wizard").addClass('first-step-visible');
+//     $(".steps-wizard__items--one .btn--tab-two.active").removeClass('active');
+// });
+
+
+
+
+// $(".steps-wizard__button #steps-wizard-two").click(function() {
+//     $(".first-step-visible").removeClass('second-step-visible');
+//     $(".second-step-visible").removeClass('second-step-visible');
+//     $(".three-step-visible").removeClass('three-step-visible');
+//     $(".steps-wizard").addClass('second-step-visible');
+//     $("#steps-wizard-two .btn--tab-three.active").removeClass('active');
+//     $(".steps-wizard__items--two .btn--tab-three.active").removeClass('active');
+// });
+
+// $(".steps-wizard__button #steps-wizard-three").click(function() {
+//     $(".first-step-visible").removeClass('second-step-visible');
+//     $(".second-step-visible").removeClass('second-step-visible');
+//     $(".three-step-visible").removeClass('three-step-visible');
+//     $(".steps-wizard").addClass('three-step-visible');
+//     $("#steps-wizard-three .btn--tab-three.active").removeClass('active');
+//     $("#steps-wizard-three .btn--back.active").removeClass('active');
+//     $(".steps-wizard__items--three .btn--tab-three.active").removeClass('active');
+// });
+
+
+
+// $(".register__parent #register-tab-two").click(function() {
+//     $(".second-three-visible").removeClass('second-three-visible');
+//     $(".register__tab").addClass('second-step-visible');
+//     $("#register-two .btn--primary.active").removeClass('active');
+// });
+
+
+// $(".register__parent #register-tab-three").click(function() {
+//     $(".second-step-visible").removeClass('second-step-visible');
+//     $(".register__tab").addClass('second-three-visible');
+//     $("#register-three .btn--primary.active").removeClass('active');
 // });
