@@ -116,7 +116,7 @@
                                                     <div class="steps-wizard__button container">
                                                         <div class="row">
                                                             <div class="col-md-12 text-center">
-                                                                <a href="#tab2" data-toggle="tab" class="btn btn--next btn--tab-two">Next</a>
+                                                                <a href="#tab2" id="steps-wizard-two" data-toggle="tab" class="btn btn--next btn--tab-two">Next</a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -212,15 +212,15 @@
                                                     </div>
                                                     {{-- steps-wizard__form --}}
                                                 
-                                                    {{-- steps-wizard__button --}}
+                                                    {{-- steps-wizard__button --}} 
                                                     <div class="steps-wizard__button container">
                                                         <div class="row">
                                                             <div class="col-md-6 text-left">
-                                                                <a href="#tab1" data-toggle="tab" class="btn btn--back btn--tab-one">Back</a>
+                                                                <a href="#tab1" id="steps-wizard-one" data-toggle="tab" class="btn btn--back btn--tab-one">Back</a>
                                                             </div>
 
                                                             <div class="col-md-6 text-right">
-                                                                <a href="#tab3" data-toggle="tab" class="btn btn--next btn--tab-three">Next</a>
+                                                                <a href="#tab3" id="steps-wizard-three" data-toggle="tab" class="btn btn--next btn--tab-three">Next</a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -314,7 +314,7 @@
                                                     <div class="steps-wizard__button container">
                                                         <div class="row">
                                                             <div class="col-md-6 text-left">
-                                                                <a href="#tab1" data-toggle="tab" class="btn btn--back ">Back</a>
+                                                                <a href="#tab2" id="steps-wizard-two" data-toggle="tab" class="btn btn--back ">Back</a>
                                                             </div>
 
                                                             <div class="col-md-6 text-right">
