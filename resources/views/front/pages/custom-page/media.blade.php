@@ -34,21 +34,6 @@
                     {{-- media-tab --}}
                     <div class="media-tab">
 
-                        <!-- <ul class="nav nav-tabs media-tab__tab" id="myTab" role="tablist">
-                            <li class="nav-item">
-                                <a class="nav-link active" id="webinar-view-tab" data-toggle="tab" href="#webinar-view"
-                                    role="tab" aria-controls="webinar-view" aria-selected="true">Webinars</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="podcast-view-tab" data-toggle="tab" href="#podcast-view" role="tab"
-                                    aria-controls="podcast-view" aria-selected="false">Podcast</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="research-view-tab" data-toggle="tab" href="#research-view" role="tab"
-                                    aria-controls="list-view" aria-selected="false">Research & Reports</a>
-                            </li>
-                        </ul> -->
-
                         @php( $media_category = \App\Models\MediaCategory::all() )
 
                         <ul class="nav nav-tabs media-tab__tab" id="myTab" role="tablist">
@@ -75,7 +60,9 @@
                                             {{-- media-thumbnail --}}
                                             <div class="media-thumbnail">
                                                 <div class="media-thumbnail__featured">
+                                                    @if($media_item->link != '#')
                                                     <iframe width="560" height="315" src="{{$media_item->link}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                    @endif
                                                 </div>
                                                 <div class="media-thumbnail__title">
                                                     <h3>{{ $media_item->title }}</h3>
