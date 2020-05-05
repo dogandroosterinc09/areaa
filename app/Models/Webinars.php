@@ -18,7 +18,8 @@ class Webinars extends Model
     protected $fillable = [        
         'link',
         'title',
-        'media_category_id'
+        'media_category_id',
+        'tags'
     ];
 
     public function getMediaCategoryAttribute() {

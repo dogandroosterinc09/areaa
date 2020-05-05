@@ -149,21 +149,29 @@ class AdminTemplateProvider extends ServiceProvider
                 ]);
            }
 
-           if (auth()->user()->can('Read Webinars')) {
-                array_push($navigation, [
-                    'name' => 'Media',
-                    'url' => url('admin/webinars'),
+            $media_tab = [];
+
+            if (auth()->user()->can('Read Webinars')) {
+                    array_push($media_tab, [
+                        'name' => 'Media',
+                        'url' => url('admin/webinars'),
+                        'icon' => 'fa fa-phone'
+                    ]);
+            }
+        
+            if (auth()->user()->can('Read Media Category')) {
+                array_push($media_tab, [
+                    'name' => 'Media Categories',
+                    'url' => url('admin/media_categories'),
                     'icon' => 'fa fa-phone'
                 ]);
-           }
-        
-           if (auth()->user()->can('Read Media Category')) {
+            }
+
             array_push($navigation, [
-                'name' => 'Media Categories',
-                'url' => url('admin/media_categories'),
-                'icon' => 'fa fa-phone'
+                'name' => 'Media',
+                'icon' => 'fa fa-phone',
+                'sub' => $media_tab
             ]);
-           }
 
            if ($this->hasCrudAccessFor('Board Member')) {
                 $board_member_tab = [];

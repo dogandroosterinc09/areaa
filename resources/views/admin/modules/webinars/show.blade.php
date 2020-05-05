@@ -19,10 +19,20 @@
                         <strong>{{ $webinars->title }}</strong>
                     </h3>
 
+                    @if($webinars->link != '#')                    
                     <div class="form-group center-block">
                         <iframe class="center-block" width="560" height="315" src="{{$webinars->link}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
+                    @endif
 
+                    @php( $tags = explode(',', $webinars->tags) )
+                    <div class="form-group center-block text-center">
+                    @foreach($tags as $tag)
+                        @if(!empty(trim($tag)))
+                        <span>{{ trim($tag) }}</span>
+                        @endif
+                    @endforeach
+                    </div>
                 </article>
             </div>
         </div>

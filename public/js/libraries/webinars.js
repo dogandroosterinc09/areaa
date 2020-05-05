@@ -182,6 +182,15 @@
                     form.submit();
                 },
                 rules: {
+                    'media_category_id': {
+                        required: true
+                    },
+                    'title': {
+                        required: true
+                    },
+                    'link': {
+                        required: true
+                    },
                     'name': {
                         required: true
                     },
@@ -199,6 +208,15 @@
                     }
                 },
                 messages: {
+                    'media_category_id': {
+                        required: 'Category is required.'
+                    },
+                    'title': {
+                        required: 'Title is required.'
+                    },
+                    'link': {
+                        required: 'Video Link is required.'
+                    },
                     'name': {
                         required: 'Name is required.'
                     },
@@ -245,6 +263,15 @@
                     form.submit();
                 },
                 rules: {
+                    'media_category_id': {
+                        required: true
+                    },
+                    'title': {
+                        required: true
+                    },
+                    'link': {
+                        required: true
+                    },
                     'name': {
                         required: true
                     },
@@ -270,6 +297,15 @@
                     }
                 },
                 messages: {
+                    'media_category_id': {
+                        required: 'Category is required.'
+                    },
+                    'title': {
+                        required: 'Title is required.'
+                    },
+                    'link': {
+                        required: 'Video Link is required.'
+                    },
                     'name': {
                         required: 'Name is required.'
                     },

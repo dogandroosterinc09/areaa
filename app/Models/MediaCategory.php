@@ -18,4 +18,8 @@ class MediaCategory extends Model
     protected $fillable = [
         'name'
     ];
+
+    public function getSlugAttribute() {
+        return str_slug($this->attributes['name']);
+    }
 }

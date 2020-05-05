@@ -34,7 +34,7 @@
                     {{-- media-tab --}}
                     <div class="media-tab">
 
-                        <ul class="nav nav-tabs media-tab__tab" id="myTab" role="tablist">
+                        <!-- <ul class="nav nav-tabs media-tab__tab" id="myTab" role="tablist">
                             <li class="nav-item">
                                 <a class="nav-link active" id="webinar-view-tab" data-toggle="tab" href="#webinar-view"
                                     role="tab" aria-controls="webinar-view" aria-selected="true">Webinars</a>
@@ -47,274 +47,62 @@
                                 <a class="nav-link" id="research-view-tab" data-toggle="tab" href="#research-view" role="tab"
                                     aria-controls="list-view" aria-selected="false">Research & Reports</a>
                             </li>
+                        </ul> -->
+
+                        @php( $media_category = \App\Models\MediaCategory::all() )
+
+                        <ul class="nav nav-tabs media-tab__tab" id="myTab" role="tablist">
+                            @foreach($media_category as $category)
+                            <li class="nav-item">
+                                <a class="nav-link {{ $loop->first ? 'active' : '' }}" id="{{$category->slug}}-view-tab" data-toggle="tab" href="#{{$category->slug}}-view"
+                                    role="tab" aria-controls="{{$category->slug}}-view" aria-selected="true">{{ $category->name }}</a>
+                            </li>
+                            @endforeach                            
                         </ul>
 
                         <div class="tab-content media-tab__content" id="myTabContent">
-
-                            <div class="tab-pane media-tab__item fade show active" id="webinar-view" role="tabpanel"
-                                aria-labelledby="webinar-view">
-                                {{-- <img src="{{ url('public/images/map.jpg') }}"> --}}
-                               
-                                <div class="webinars container">
-                                    <div class="webinars__list row moreWebinar">
+                            @foreach($media_category as $category)
+                            <div class="tab-pane media-tab__item fade {{ $loop->first ? 'show active' : '' }}" id="{{$category->slug}}-view" role="tabpanel"
+                                aria-labelledby="{{$category->slug}}-view">
+                                <div class="{{$category->slug}} container">
+                                    <div class="{{$category->slug}}__list row moreWebinar">
                                         
-                                        @php( $webinars = \App\Models\Webinars::all() )
+                                        @php( $media = \App\Models\Webinars::where('media_category_id', $category->id)->get() )
 
-                                        @forelse($webinars as $webinar)
+                                        @forelse($media as $media_item)
                                         <div class="col-lg-4 col-md-4 moreWebinar__item moreWebinar">
 
                                             {{-- media-thumbnail --}}
                                             <div class="media-thumbnail">
                                                 <div class="media-thumbnail__featured">
-                                                    <iframe width="560" height="315" src="{{$webinar->link}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                    <iframe width="560" height="315" src="{{$media_item->link}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                                 </div>
                                                 <div class="media-thumbnail__title">
-                                                    <h3>{{ $webinar->title }}</h3>
+                                                    <h3>{{ $media_item->title }}</h3>
                                                 </div>
                                                 <div class="media-thumbnail__button">
-                                                    <h4>Download Webinar Assets: </h4>
+                                                    <h4>Download {{$category->name}} Assets: </h4>
                                                     <a href="#" class="btn btn--primary">Presentation Slides </a>
                                                 </div>
                                             </div>
-                                             {{-- media-thumbnail --}}
+                                            {{-- media-thumbnail --}}
 
                                         </div>
                                         @empty
-                                        <h3 class="text-danger font-weight-bold text-center w-100 my-5">No Webinars.</h3>
+                                        <h3 class="text-danger font-weight-bold text-center w-100 my-5">No {{$category->name}}.</h3>
                                         @endforelse
-
-                                    <!-- <div class="col-lg-4 col-md-4 moreWebinar__item moreWebinar">
-
-                                            {{-- media-thumbnail --}}
-                                            <div class="media-thumbnail">
-                                                <div class="media-thumbnail__featured">
-                                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/cLLfmOeX16Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                                </div>
-                                                <div class="media-thumbnail__title">
-                                                    <h3>2019 State of Asia Year-End Webinar
-                                                    </h3>
-                                                </div>
-                                                <div class="media-thumbnail__button">
-                                                    <h4>Download Webinar Assets: </h4>
-                                                    <a href="#" class="btn btn--primary">Presentation Slides </a>
-                                                </div>
-                                            </div>
-                                             {{-- media-thumbnail --}}
-
-                                        </div>
-
-
-                                        <div class="col-lg-4 col-md-4 moreWebinar__item moreWebinar">
-
-                                            {{-- media-thumbnail --}}
-                                            <div class="media-thumbnail">
-                                                <div class="media-thumbnail__featured">
-                                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/cLLfmOeX16Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                                </div>
-                                                <div class="media-thumbnail__title">
-                                                    <h3>2019 State of Asia America Report </h3>
-                                                </div>
-                                                <div class="media-thumbnail__button">
-                                                    <h4>Download Webinar Assets: </h4>
-                                                    <a href="#" class="btn btn--primary">Download Report</a>
-                                                    <a href="#" class="btn btn--primary">Download Presentation Slides </a>
-                                                </div>
-                                            </div>
-                                             {{-- media-thumbnail --}}
-
-                                        </div>
-
-
-                                        <div class="col-lg-4 col-md-4 moreWebinar__item moreWebinar">
-                                            {{-- media-thumbnail --}}
-                                            <div class="media-thumbnail">
-                                                <div class="media-thumbnail__featured">
-                                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/cLLfmOeX16Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                                </div>
-                                                <div class="media-thumbnail__title">
-                                                    <h3>2019 State of Asia America Report </h3>
-                                                </div>
-                                                <div class="media-thumbnail__button">
-                                                    <h4>Download Webinar Assets: </h4>
-                                                    <a href="#" class="btn btn--primary">Download Report</a>
-                                                    <a href="#" class="btn btn--primary">Download Presentation Slides </a>
-                                                </div>
-                                            </div>
-                                             {{-- media-thumbnail --}}
-                                        </div>
-
                                         
-                                        <div class="col-lg-4 col-md-4 moreWebinar__item moreWebinar">
-                                            {{-- media-thumbnail --}}
-                                            <div class="media-thumbnail">
-                                                <div class="media-thumbnail__featured">
-                                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/cLLfmOeX16Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                                </div>
-                                                <div class="media-thumbnail__title">
-                                                    <h3>2019 State of Asia America Report </h3>
-                                                </div>
-                                                <div class="media-thumbnail__button">
-                                                    <h4>Download Webinar Assets: </h4>
-                                                    <a href="#" class="btn btn--primary">Download Report</a>
-                                                    <a href="#" class="btn btn--primary">Download Presentation Slides </a>
-                                                </div>
-                                            </div>
-                                             {{-- media-thumbnail --}}
-                                        </div>
-
-                                        <div class="col-lg-4 col-md-4 moreWebinar__item moreWebinar">
-                                            {{-- media-thumbnail --}}
-                                            <div class="media-thumbnail">
-                                                <div class="media-thumbnail__featured">
-                                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/cLLfmOeX16Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                                </div>
-                                                <div class="media-thumbnail__title">
-                                                    <h3>2019 State of Asia America Report </h3>
-                                                </div>
-                                                <div class="media-thumbnail__button">
-                                                    <h4>Download Webinar Assets: </h4>
-                                                    <a href="#" class="btn btn--primary">Download Report</a>
-                                                    <a href="#" class="btn btn--primary">Download Presentation Slides </a>
-                                                </div>
-                                            </div>
-                                             {{-- media-thumbnail --}}
-                                        </div>
-
-
-
-                                        <div class="col-lg-4 col-md-4 moreWebinar__item moreWebinar">
-                                            {{-- media-thumbnail --}}
-                                            <div class="media-thumbnail">
-                                                <div class="media-thumbnail__featured">
-                                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/cLLfmOeX16Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                                </div>
-                                                <div class="media-thumbnail__title">
-                                                    <h3>2019 State of Asia America Report </h3>
-                                                </div>
-                                                <div class="media-thumbnail__button">
-                                                    <h4>Download Webinar Assets: </h4>
-                                                    <a href="#" class="btn btn--primary">Download Report</a>
-                                                    <a href="#" class="btn btn--primary">Download Presentation Slides </a>
-                                                </div>
-                                            </div>
-                                             {{-- media-thumbnail --}}
-                                        </div>
-
-                                        
-                                        <div class="col-lg-4 col-md-4 moreWebinar__item moreWebinar">
-                                            {{-- media-thumbnail --}}
-                                            <div class="media-thumbnail">
-                                                <div class="media-thumbnail__featured">
-                                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/cLLfmOeX16Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                                </div>
-                                                <div class="media-thumbnail__title">
-                                                    <h3>2019 State of Asia America Report </h3>
-                                                </div>
-                                                <div class="media-thumbnail__button">
-                                                    <h4>Download Webinar Assets: </h4>
-                                                    <a href="#" class="btn btn--primary">Download Report</a>
-                                                    <a href="#" class="btn btn--primary">Download Presentation Slides </a>
-                                                </div>
-                                            </div>
-                                             {{-- media-thumbnail --}}
-                                        </div>
-
-                                        
-                                        <div class="col-lg-4 col-md-4 moreWebinar__item moreWebinar">
-                                            {{-- media-thumbnail --}}
-                                            <div class="media-thumbnail">
-                                                <div class="media-thumbnail__featured">
-                                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/cLLfmOeX16Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                                </div>
-                                                <div class="media-thumbnail__title">
-                                                    <h3>2019 State of Asia America Report </h3>
-                                                </div>
-                                                <div class="media-thumbnail__button">
-                                                    <h4>Download Webinar Assets: </h4>
-                                                    <a href="#" class="btn btn--primary">Download Report</a>
-                                                    <a href="#" class="btn btn--primary">Download Presentation Slides </a>
-                                                </div>
-                                            </div>
-                                             {{-- media-thumbnail --}}
-                                        </div>
-                                    -->
-                                     
                                     </div>
 
-                                    <div class="webinars__bottom row">
+                                    <div class="{{$category->slug}}__bottom row">
                                         <div class="col-lg-12 col-md-12 text-center">
                                             <a href="#" id="loadMore" class="btn btn--primary"> load more</a>
                                         </div>
                                     </div>
 
                                 </div>
-
-
                             </div>
-
-                            <div class="tab-pane media-tab__item fade" id="podcast-view" role="tabpanel" aria-labelledby="podcast-view">
-                               
-                                <div class="container">
-                                    <div class="row">
-                                        
-                                        <div class="col-lg-4 col-md-4">
-                                               {{-- media-thumbnail --}}
-                                            <div class="media-thumbnail">
-                                                <div class="media-thumbnail__featured">
-                                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/cLLfmOeX16Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                                </div>
-                                                <div class="media-thumbnail__title">
-                                                    <h3>2019 Commercial Webinar: Opportunity Zones
-
-
-                                                    </h3>
-                                                </div>
-                                                <div class="media-thumbnail__button">
-                                                    <h4>Download Webinar Assets: </h4>
-                                                    <a href="#" class="btn btn--primary">2018 CRE Review</a>
-                                                    <a href="#" class="btn btn--primary">Download Presentation Slides </a>
-                                                </div>
-                                            </div>
-                                            {{-- media-thumbnail --}}
-                                        </div>
-                                    </div>
-                                </div>
-
-                               
-
-                            </div>
-                            
-                            <div class="tab-pane media-tab__item fade" id="research-view" role="tabpanel" aria-labelledby="research-view">
-
-                                <div class="container">
-                                    <div class="row">
-                                        
-                                        <div class="col-lg-4 col-md-4">
-                                               {{-- media-thumbnail --}}
-                                        <div class="media-thumbnail">
-                                            <div class="media-thumbnail__featured">
-                                                <iframe width="560" height="315" src="https://www.youtube.com/embed/cLLfmOeX16Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                            </div>
-                                            <div class="media-thumbnail__title">
-                                                <h3>2019 Commercial Webinar: Opportunity Zones
-
-
-                                                </h3>
-                                            </div>
-                                            <div class="media-thumbnail__button">
-                                                <h4>Download Webinar Assets: </h4>
-                                                <a href="#" class="btn btn--primary">2018 CRE Review</a>
-                                                <a href="#" class="btn btn--primary">Download Presentation Slides </a>
-                                            </div>
-                                        </div>
-                                        {{-- media-thumbnail --}}
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                            </div>
-
+                            @endforeach
                         </div>
                     </div>
                      {{-- media-tab --}}
