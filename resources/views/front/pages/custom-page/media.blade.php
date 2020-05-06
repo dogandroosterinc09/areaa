@@ -31,7 +31,7 @@
             <div class="container-max">
 
                 <div class="col-lg-12">
-                    
+
                     <div class="search-member-directory">
                         {{  Form::open([
                             'method' => 'GET',
@@ -42,21 +42,17 @@
                         }}
                                 <div class="search-member-directory__wrapper container">
                                     <div class="row">
-                                        <div class="col-md-3">
+                                        <div class="col-md-6">
                                             <div class="form-group">
                                                 <input type="text" placeholder="Keyword Search" name="keyword" value="{{ Request::get('keyword') }}">
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <input type="text" placeholder="Name" name="name" value="{{ Request::get('name') }}">
+                                                <input type="text" placeholder="Tags" name="Tags" value="{{ Request::get('name') }}">
                                             </div>
                                         </div>
-                                        <div class="col-md-3">
-                                            <div class="form-group">
-                                                <input type="text" placeholder="Location: City and/or Zip" name="location" value="{{ Request::get('location') }}"> 
-                                            </div>
-                                        </div>
+                                      
                                         <div class="col-md-3">
                                            <ul class="inline-flex inline-flex__extend">
                                                <li>
