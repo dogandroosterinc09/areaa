@@ -47,21 +47,21 @@
                                                 <input type="text" placeholder="Keyword Search" name="keyword" value="{{ Request::get('keyword') }}">
                                             </div>
                                         </div>
-                                        <div class="col-md-3">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <input type="text" placeholder="Tags" name="Tags" value="{{ Request::get('name') }}">
                                             </div>
                                         </div>
                                       
-                                        <div class="col-md-3">
+                                        <div class="col-md-2">
                                            <ul class="inline-flex inline-flex__extend">
-                                               <li>
+                                               {{-- <li>
                                                     <div class="advance-tool">
                                                         <a href="#">
                                                             <i class="fas fa-cog"></i> Advanced
                                                         </a>
                                                     </div>
-                                               </li>
+                                               </li> --}}
                                                <li>
                                                     <button class="btn btn--secondary">search</button> 
                                                </li>
