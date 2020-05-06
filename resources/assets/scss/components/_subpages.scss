@@ -41,5 +41,16 @@ section {
                 margin: 200px 0;
             }
         }
+        &--media {
+            .inline-flex li {
+                width: 100%;
+            }
+            .inline-flex li .btn {
+                width: 100%;
+            }
+            .search-member-directory {
+                margin-top: 50px;
+            }
+        }
     }
 }

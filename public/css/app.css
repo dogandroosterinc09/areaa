@@ -21898,6 +21898,15 @@ section.page--events-detail .events-section {
 section.page--login .site-content {
   margin: 200px 0;
 }
+section.page--media .inline-flex li {
+  width: 100%;
+}
+section.page--media .inline-flex li .btn {
+  width: 100%;
+}
+section.page--media .search-member-directory {
+  margin-top: 50px;
+}
 
 .global-featured-slider__top {
   position: relative;
