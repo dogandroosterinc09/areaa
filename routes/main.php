@@ -36,6 +36,8 @@ Route::post('/event/event-register', 'EventController@registerToEvent')->name('e
 
 Route::get('/get-gallery', 'GalleryController@getGallery')->name('gallery.get');
 
+Route::get('/media/search','MediaController@searchMedia')->name('media.search');
+
 //Chapter Routes
 Route::get('/{slug}/about-us', 'ChapterPageController@indexAboutUs');
 Route::get('/{slug}/events', 'ChapterPageController@indexEvents');

@@ -36,7 +36,7 @@
                         {{  Form::open([
                             'method' => 'GET',
                             'id' => '',
-                            'route' => ['customer.dashboard.member_directory.search'],
+                            'route' => ['media.search'],
                             'class' => ''
                             ])
                         }}
@@ -44,12 +44,12 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <input type="text" placeholder="Keyword Search" name="keyword" value="{{ Request::get('keyword') }}">
+                                                <input type="text" placeholder="Title" name="title" value="{{ Request::get('title') }}">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <input type="text" placeholder="Tags" name="Tags" value="{{ Request::get('name') }}">
+                                                <input type="text" placeholder="Tags" name="tags" value="{{ Request::get('tags') }}">
                                             </div>
                                         </div>
                                       
@@ -68,7 +68,7 @@
                                            </ul>
                                         </div>
                                     </div>
-                                    <div class="row mt-3 advance-search {{ Request::get('company') || Request::get('chapter') || Request::get('designation') ? '' : 'd-none' }}">
+                                    {{-- <div class="row mt-3 advance-search {{ Request::get('company') || Request::get('chapter') || Request::get('designation') ? '' : 'd-none' }}">
                                         <div class="col-md-3">
                                             <div class="form-group">
                                                 <input type="text" placeholder="Company" name="company" value="{{ Request::get('company') }}">
@@ -84,14 +84,13 @@
                                                 <input type="text" placeholder="Designation" name="designation" value="{{ Request::get('designation') }}">
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             {{ Form::close() }}
                         </div>
 
                 </div>
-
-
+                
                 <div class="col-lg-12">
 
                     {{-- media-tab --}}
@@ -115,7 +114,14 @@
                                 <div class="{{$category->slug}} container">
                                     <div class="{{$category->slug}}__list row moreWebinar">
                                         
-                                        @php( $media = \App\Models\Webinars::where('media_category_id', $category->id)->get() )
+                                        @if(Request::all())
+                                            @php( $media = \App\Models\Webinars::where('title','like','%'.Request::get('title').'%')
+                                                ->where('tags','like','%'.Request::get('tags').'%')
+                                                ->where('media_category_id', $category->id)
+                                                ->get() )
+                                        @else
+                                            @php( $media = \App\Models\Webinars::where('media_category_id', $category->id)->get() )
+                                        @endif
 
                                         @forelse($media as $media_item)
                                         <div class="col-lg-4 col-md-4 moreWebinar__item moreWebinar">
