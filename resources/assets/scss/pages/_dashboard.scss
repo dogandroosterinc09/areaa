@@ -361,3 +361,20 @@
         background-position: -288px -345px;
     }
 }
+
+.logout-dropdown {
+    .dropdown-menu {
+        background: #880a1a;
+        margin-top: 19px;
+        a {
+            padding: 5px 10px;
+            box-sizing: border-box;
+            font-size: .8em !important;
+            margin: 0 !important;
+            &:hover {
+                background: #880a1a;
+                color: #fff;
+            }
+        }
+    }
+}

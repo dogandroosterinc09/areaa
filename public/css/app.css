@@ -18180,6 +18180,12 @@ header.scrolling .logo {
 header.scrolling .dropdown-menu {
   padding-top: 12px !important;
 }
+header.scrolling .logout-dropdown .dropdown-menu a {
+  font-size: 1em !important;
+}
+header.scrolling .logout-dropdown .dropdown-menu {
+  margin-left: 60px;
+}
 header .main-nagivation-desktop .logo {
   display: inline-block;
   margin-top: 10px;
@@ -22565,6 +22571,21 @@ section.page--media .search-member-directory {
 }
 .menu-icon--email {
   background-position: -288px -345px;
+}
+
+.logout-dropdown .dropdown-menu {
+  background: #880a1a;
+  margin-top: 19px;
+}
+.logout-dropdown .dropdown-menu a {
+  padding: 5px 10px;
+  box-sizing: border-box;
+  font-size: 0.8em !important;
+  margin: 0 !important;
+}
+.logout-dropdown .dropdown-menu a:hover {
+  background: #880a1a;
+  color: #fff;
 }
 
 .chapter-tab {

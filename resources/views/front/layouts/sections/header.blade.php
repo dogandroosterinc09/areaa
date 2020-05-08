@@ -33,8 +33,28 @@
                              </li>
                             <li> 
                                 @auth
-                                <a href="{{ route('customer.logout') }}"><i class="ic-user"></i> Log Out</a>
+                                {{-- <a href="{{ route('customer.logout') }}"><i class="ic-user"></i> Log Out</a> --}}
+
+                                <div class="logout-dropdown">
+                                    <a class="dropdown-toggle" href="" role="button" id="logout-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="ic-user"></i> Welcome
+                                    </a>
+                                  
+                                    <div class="dropdown-menu" aria-labelledby="logout-button">
+                                      <a class="dropdown-item" href="{{ route('customer.dashboard') }}">Dashboad</a>
+                                      <a class="dropdown-item" href="#">Events</a>
+                                      <a class="dropdown-item" href="{{ route('customer.dashboard.member_directory') }}">Membership Directory </a>
+                                      <a class="dropdown-item" href="#">Profile </a>
+                                      <a class="dropdown-item" href="#">Support </a>
+                                      <div class="dropdown-divider"></div>
+                                      <a class="dropdown-item" href="{{ route('customer.logout') }}"> <i class="fas fa-power-off"></i> Logout </a>
+                                    </div>
+                                </div>
+
+
                                 @else
+
+
                                 <a href="{{ route('customer.login') }}"><i class="ic-user"></i> Log In</a>
                                 @endauth                                
                             </li>

@@ -44,6 +44,12 @@ header {
         .dropdown-menu {
             padding-top: 12px !important;
         }
+        .logout-dropdown .dropdown-menu a {
+            font-size: 1em !important;
+        }
+        .logout-dropdown .dropdown-menu {
+            margin-left: 60px;
+        }
     }
     .main-nagivation-desktop {
         .logo {
