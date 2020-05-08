@@ -39,9 +39,9 @@
                             <div class="row">
                                 {{-- loop here  --}}
                                 <div class="col-lg-4">
-                                    <div class="navigation-icon__item">
+                                    <div class="navigation-icon__item navigation-icon__item--imagehover">
                                         <div class="navigation-icon__watermark">
-                                            <a href="#">
+                                            <a href="javascipt:void()" data-toggle="modal" data-target="#areamembershipcard">
                                                 <h3> Areaa Membership Card </h3>
                                             </a>
                                         </div>
@@ -60,7 +60,7 @@
                                          {{-- loop here  --}}
                                 <div class="col-lg-4">
                                     <div class="navigation-icon__item">
-                                        <div class="navigation-icon__watermark">
+                                        <div class="navigation-icon__hover">
                                             <a href="#">
                                                 <h3> Events</h3>
                                             </a>
@@ -80,7 +80,7 @@
                                          {{-- loop here  --}}
                                 <div class="col-lg-4">
                                     <div class="navigation-icon__item">
-                                        <div class="navigation-icon__watermark">
+                                        <div class="navigation-icon__hover">
                                             <a href="{{ route('customer.dashboard.member_directory') }}">
                                                 <h3>Membership Directory</h3>
                                             </a>
@@ -100,8 +100,8 @@
                                          {{-- loop here  --}}
                                 <div class="col-lg-4">
                                     <div class="navigation-icon__item">
-                                        <div class="navigation-icon__watermark">
-                                            <a href="#">
+                                        <div class="navigation-icon__hover">
+                                            <a href="{{url('areabenefits')}}">
                                                 <h3> My Benefits </h3>
                                             </a>
                                         </div>
@@ -121,7 +121,7 @@
                                          {{-- loop here  --}}
                                 <div class="col-lg-4">
                                     <div class="navigation-icon__item">
-                                        <div class="navigation-icon__watermark">
+                                        <div class="navigation-icon__hover">
                                             <a href="#">
                                                 <h3> Profile </h3>
                                             </a>
@@ -142,7 +142,7 @@
                                          {{-- loop here  --}}
                                 <div class="col-lg-4">
                                     <div class="navigation-icon__item">
-                                        <div class="navigation-icon__watermark">
+                                        <div class="navigation-icon__hover">
                                             <a href="#">
                                                 <h3> My Inbox </h3>
                                             </a>
@@ -162,7 +162,7 @@
                                                 {{-- loop here  --}}
                                 <div class="col-lg-4">
                                     <div class="navigation-icon__item">
-                                        <div class="navigation-icon__watermark">
+                                        <div class="navigation-icon__hover">
                                             <a href="#">
                                                 <h3>My Committee </h3>
                                             </a>
@@ -182,7 +182,7 @@
                                                 {{-- loop here  --}}
                                 <div class="col-lg-4">
                                     <div class="navigation-icon__item">
-                                        <div class="navigation-icon__watermark">
+                                        <div class="navigation-icon__hover">
                                             <a href="#">
                                                 <h3> Membership Details </h3>
                                             </a>
@@ -203,7 +203,7 @@
                                                 {{-- loop here  --}}
                                 <div class="col-lg-4">
                                     <div class="navigation-icon__item">
-                                        <div class="navigation-icon__watermark">
+                                        <div class="navigation-icon__hover">
                                             <a href="#">
                                                 <h3>Support</h3>
                                             </a>
@@ -360,6 +360,9 @@
                 </div>
             </div>
         </section>
+
+
+        @include('front.pages.custom-page.sections.modal-membership')
          
         @include('front.pages.custom-page.sections.follow-us')
 

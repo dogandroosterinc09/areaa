@@ -213,11 +213,46 @@
             display: block;
             margin: 0;
         }
+        &--imagehover {
+            &:hover {
+                .navigation-icon__watermark {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
         &:hover {
-            .navigation-icon__watermark {
+            .navigation-icon__hover {
                 opacity: 1;
                 visibility: visible;
             }
+        }
+    }
+    &__hover {
+        background: #303132;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        @include flex;
+        @include flex-align-items(center);
+        @include flex-justify-content(center);
+        opacity: 0;
+        visibility: hidden;
+        @include transition(.5s);
+        a {
+            text-decoration: none;
+            &:hover {
+                h3 {
+                    color: $color-secondary;
+                }
+            }
+        }
+        h3 {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #fff;
         }
     }
     &__watermark {
