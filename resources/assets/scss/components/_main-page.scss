@@ -2423,3 +2423,96 @@ ul.bullet-style {
         width: 100%;
     }
 }
+
+.profile {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 50px;
+    padding: 30px;
+    .container {
+        max-width: 100%;
+    }
+    &__upload {
+        margin-bottom: 25px;
+        button {
+            margin-top: 20px;
+        }
+    }
+    &__image {
+        height: 260px;
+        width: 260px;
+        border-ra: 100%;
+        overflow: hidden;
+        border-radius: 100%;
+        margin-bottom: 20px;
+        margin: auto;
+    }
+    &__badge {
+        img {
+            margin-bottom: 25px;
+        }
+    }
+    &__badge-year {
+        display: inline-block;
+        background: $sprite-all;
+        background-position: -565px -399px;
+        width: 112px;
+        height: 36px;
+        display: flex;
+        margin: auto;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        margin-bottom: 20px;
+    }
+    &__social-link {
+        border-top: 1px solid #000;
+        padding-top: 10px;
+        text-align: center;
+        h5 {
+            font-weight: bold;
+        }
+        .socials {
+            a {
+                color: $color-dark;
+                margin-right: 10px;
+                &:hover {
+                    color: $color-secondary;
+                }
+            }
+        }
+    }
+    &__date {
+        font-weight: 400;
+    }
+    &__title {
+        margin-top: 20px;
+        h3 {
+            font-weight: 800;
+            margin-bottom: 0;
+            color: $color-dark;
+        }
+    }
+    &__position {
+        text-transform: uppercase;
+        color: $color-dark;
+        margin-bottom: 25px;
+    }
+    .information {
+        .row {
+            >div {
+                @include flex;
+                @include flex-align-items(center);
+            }
+        }
+        input {
+            padding: 10px 20px;
+            width: 100%;
+            @include border-radius(10px);
+            border: 1px solid #ddd;
+        }
+        .btn-group {
+            margin-top: 50px;
+        }
+    }
+}

@@ -42,10 +42,10 @@
                                   
                                     <div class="dropdown-menu" aria-labelledby="logout-button">
                                       <a class="dropdown-item" href="{{ route('customer.dashboard') }}">Dashboad</a>
-                                      <a class="dropdown-item" href="#">Events</a>
+                                      <a class="dropdown-item" href="{{url('events')}}">Events</a>
                                       <a class="dropdown-item" href="{{ route('customer.dashboard.member_directory') }}">Membership Directory </a>
-                                      <a class="dropdown-item" href="#">Profile </a>
-                                      <a class="dropdown-item" href="#">Support </a>
+                                      <a class="dropdown-item" href="{{url('dashboard-profile')}}">Profile </a>
+                                      <a class="dropdown-item" href="{{url('contact-us')}}">Support </a>
                                       <div class="dropdown-divider"></div>
                                       <a class="dropdown-item" href="{{ route('customer.logout') }}"> <i class="fas fa-power-off"></i> Logout </a>
                                     </div>

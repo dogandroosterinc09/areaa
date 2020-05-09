@@ -21868,6 +21868,93 @@ ul.bullet-style li h6 {
   width: 100%;
 }
 
+.profile {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin-bottom: 50px;
+  padding: 30px;
+}
+.profile .container {
+  max-width: 100%;
+}
+.profile__upload {
+  margin-bottom: 25px;
+}
+.profile__upload button {
+  margin-top: 20px;
+}
+.profile__image {
+  height: 260px;
+  width: 260px;
+  border-ra: 100%;
+  overflow: hidden;
+  border-radius: 100%;
+  margin-bottom: 20px;
+  margin: auto;
+}
+.profile__badge img {
+  margin-bottom: 25px;
+}
+.profile__badge-year {
+  display: inline-block;
+  background: url("../images/sprite.png") no-repeat;
+  background-position: -565px -399px;
+  width: 112px;
+  height: 36px;
+  display: flex;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  margin-bottom: 20px;
+}
+.profile__social-link {
+  border-top: 1px solid #000;
+  padding-top: 10px;
+  text-align: center;
+}
+.profile__social-link h5 {
+  font-weight: bold;
+}
+.profile__social-link .socials a {
+  color: #303132;
+  margin-right: 10px;
+}
+.profile__social-link .socials a:hover {
+  color: #ab1a2d;
+}
+.profile__date {
+  font-weight: 400;
+}
+.profile__title {
+  margin-top: 20px;
+}
+.profile__title h3 {
+  font-weight: 800;
+  margin-bottom: 0;
+  color: #303132;
+}
+.profile__position {
+  text-transform: uppercase;
+  color: #303132;
+  margin-bottom: 25px;
+}
+.profile .information .row > div {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center;
+}
+.profile .information input {
+  padding: 10px 20px;
+  width: 100%;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  border: 1px solid #ddd;
+}
+.profile .information .btn-group {
+  margin-top: 50px;
+}
+
 section.page {
   overflow: hidden;
 }

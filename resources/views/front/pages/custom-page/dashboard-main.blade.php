@@ -61,7 +61,7 @@
                                 <div class="col-lg-4">
                                     <div class="navigation-icon__item">
                                         <div class="navigation-icon__hover">
-                                            <a href="#">
+                                            <a href="{{url('events')}}">
                                                 <h3> Events</h3>
                                             </a>
                                         </div>
@@ -122,7 +122,7 @@
                                 <div class="col-lg-4">
                                     <div class="navigation-icon__item">
                                         <div class="navigation-icon__hover">
-                                            <a href="#">
+                                            <a href="{{url('dashboard-profile')}}">
                                                 <h3> Profile </h3>
                                             </a>
                                         </div>
@@ -204,7 +204,7 @@
                                 <div class="col-lg-4">
                                     <div class="navigation-icon__item">
                                         <div class="navigation-icon__hover">
-                                            <a href="#">
+                                            <a href="{{url('contact-us')}}">
                                                 <h3>Support</h3>
                                             </a>
                                         </div>
