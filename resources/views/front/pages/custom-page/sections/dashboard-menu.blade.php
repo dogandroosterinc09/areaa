@@ -10,6 +10,10 @@
                     <li><a href="#"> Membership Details</a> </li>
                     <li><a href="#"> Support</a> </li>
                 </ul> --}}
+                
+                @if(!isset($active))
+                    @php($active = '')
+                @endif
 
                 <nav class="navbar-bar">
                     <ul class="navbar-bar__wrapper">
@@ -30,8 +34,8 @@
                         <li class="nav-item {{ $active == 'member_directory' ? 'active' : '' }}">
                             <a class="nav-link" href="{{ route('customer.dashboard.member_directory') }}">Membership Directory</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" {{--data-toggle="dropdown"--}}>
+                        <li class="nav-item {{ $active == 'profile' ? 'active' : '' }}">
+                            <a class="nav-link" href="{{ route('customer.dashboard.profile') }}" {{--data-toggle="dropdown"--}}>
                                 Profile
                             </a>
                         </li>

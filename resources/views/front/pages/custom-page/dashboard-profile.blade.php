@@ -5,10 +5,9 @@
 
 <main class="main-content">
 
-    {{-- @include('front.pages.custom-page.sections.dashboard-menu') --}}
-
-
-    <section class="dashboard-nav">
+    @include('front.pages.custom-page.sections.dashboard-menu')
+    
+    <section class="dashboard-nav d-none">
 
         <div class="dashboard-navigation">
             <div class="dashboard-navigation__wrapper">
@@ -45,11 +44,11 @@
                                     Profile
                                 </a>
                             </li>
-                            <!-- <li class="nav-item">
+                            <li class="nav-item">
                                 <a class="nav-link" href="{{ url('dashboard-memberdirectory-detail') }}" {{--data-toggle="dropdown"--}}>
                                     Membership Details
                                 </a>
-                            </li> -->
+                            </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#" {{--data-toggle="dropdown"--}}>
                                     Support
@@ -64,7 +63,6 @@
         </div>
     
     </section>
-
 
 
 

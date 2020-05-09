@@ -5,19 +5,22 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\Controller;
 
 use App\Models\Members;
+use App\Models\User;
 
 use Illuminate\Http\Request;
 
 use App\Repositories\PageRepository;
 
+use File;
 use DB;
 
 class FrontDashboardController extends Controller
 {
-    public function __construct(PageRepository $pageRepository, Members $members)
+    public function __construct(PageRepository $pageRepository, Members $members, User $user)
     {
         $this->pageRepository = $pageRepository;
         $this->members = $members;
+        $this->user = $user;
     }
 
 
@@ -110,5 +113,51 @@ class FrontDashboardController extends Controller
         };
 
         return view('front.pages.custom-pages-index', compact('page', 'members', 'params', 'active'));
+    }
+
+    public function showProfile() {
+        $page = $this->pageRepository->getActivePageBySlug('dashboard-profile');
+        $active = 'profile';
+        $profile = $this->members->where('user_id', auth()->user()->id)->get()->first();
+
+        return view('front.pages.custom-pages-index', compact('page', 'active', 'profile'));
+    }
+
+    public function updateProfile(Request $request) {        
+        $member = $this->members->where('user_id', auth()->user()->id)->get()->first();
+        $user = $this->user->find(auth()->user()->id);
+        
+        $member->fill($request->all())->save();
+        $user->fill([
+            'email' => $request->email,
+            'phone' => $request->phone
+        ])->save();
+
+        if ($request->hasFile('avatar')) {
+            $file_upload_path = $this->upload($request->file('avatar'));
+            $user->fill(['profile_image' => $file_upload_path])->save();            
+        }
+
+        return redirect()->back()->with('flash_message', [
+            'title' => '',
+            'message' => 'Profile successfully updated.',
+            'type' => 'success'
+        ]);;
+    }
+
+    public function upload($file) {
+        $extension = $file->getClientOriginalExtension();
+        $file_name = substr((pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME)), 0, 30) . '-' . time() . '.' . $extension;
+        $file_name = preg_replace("/[^a-z0-9\_\-\.]/i", '', $file_name);
+        $file_path = '/uploads/profile_image';
+        $directory = public_path() . $file_path;
+
+        if (!File::exists($directory)) {
+            File::makeDirectory($directory, 0777);
+        }
+
+        $file->move($directory, $file_name);
+        $file_upload_path = 'public' . $file_path . '/' . $file_name;
+        return $file_upload_path;
     }
 }

@@ -122,7 +122,7 @@
                                 <div class="col-lg-4">
                                     <div class="navigation-icon__item">
                                         <div class="navigation-icon__hover">
-                                            <a href="{{url('dashboard-profile')}}">
+                                            <a href="{{ route('customer.dashboard.profile') }}">
                                                 <h3> Profile </h3>
                                             </a>
                                         </div>
