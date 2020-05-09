@@ -42,28 +42,28 @@
                             <div class="form-box row">
                                 <div class="col-md-6 form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                                     <label for="name">Name</label>
-                                    <input id="name" type="text" class="form-control " name="first_name" placeholder="First Name" value="{{old('first_name')}}">
+                                    <input id="name" type="text" class="form-control " name="first_name" placeholder="First Name *" value="{{old('first_name')}}">
                                     @if($errors->has('first_name'))
                                         <span class="help-block animation-slideDown">{{ $errors->first('first_name') }}</span>
                                     @endif
                                 </div>
                                 <div class="col-md-6 form-group{{ $errors->has('subject') ? ' has-error' : '' }}">
                                     <label for="subject">Subject</label>
-                                    <input id="subject" type="text" class="form-control " name="last_name" placeholder="Last name" value="{{old('last_name')}}">
+                                    <input id="subject" type="text" class="form-control " name="last_name" placeholder="Last name *" value="{{old('last_name')}}">
                                     @if($errors->has('last_name'))
                                         <span class="help-block animation-slideDown">{{ $errors->first('last_name') }}</span>
                                     @endif
                                 </div>
                                 <div class="col-md-12 form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                                     <label for="email">Email</label>
-                                    <input id="email" type="text" class="form-control " name="email" placeholder="Email" value="{{old('email')}}">
+                                    <input id="email" type="text" class="form-control " name="email" placeholder="Email *" value="{{old('email')}}">
                                     @if($errors->has('email'))
                                         <span class="help-block animation-slideDown">{{ $errors->first('email') }}</span>
                                     @endif
                                 </div>
                                 <div class="col-md-12 form-group {{ $errors->has('message') ? ' has-error' : '' }}">
-                                    <label for="message">Message</label>
-                                    <textarea id="message" name="message" class="form-control">{{old('message') ? : 'Message'}}</textarea>
+                                    <label for="message">Message *</label>
+                                    <textarea id="message" name="message" class="form-control">{{old('message') ? : 'Message'}}*</textarea>
                                     @if($errors->has('message'))
                                         <span class="help-block animation-slideDown">{{ $errors->first('message') }}</span>
                                     @endif

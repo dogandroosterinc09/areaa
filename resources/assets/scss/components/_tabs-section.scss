@@ -121,6 +121,15 @@
         overflow: hidden !important;
         border: 1px solid #ddd;
         @include border-radius(5px);
+        &:hover {
+            .image-thumbnail-hover__overlay {
+                opacity: 1;
+                visibility: visible;
+                a {
+                    color: #fff;
+                }
+            }
+        }
     }
     &__overlay {
         position: absolute;
@@ -128,6 +137,7 @@
         height: 100%;
         top: 0;
         left: 0;
+        @include transition(.4s);
         a {
             @include t-color(178, 30, 40, .8);
             width: 100%;

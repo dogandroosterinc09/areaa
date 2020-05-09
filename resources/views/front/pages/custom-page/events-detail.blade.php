@@ -41,6 +41,12 @@
                                 <h3>Description</h3>
                                 <p>{!! $event->description !!}</p>
                             </div>
+
+                            <div class="event-details__contacts">
+                                <p>For more information, contact our admin assistan Mary Jonson:</p>
+                                <p><i class="fas fa-envelope-open-text"></i>adminassistant@areaa.org</p>
+
+                            </div>
                             
                             <!-- <div class="event-details__email">
                                 <h5>For more information, contact our admin assistant Mary Johnson: </h5>

@@ -1258,6 +1258,7 @@ ul.bullet-style {
                 height: 21px;
                 background: url("../images/sprite.png") no-repeat;
                 background-position: -240px -8px;
+                transform: rotate(100deg);
             }
             &.mail {
                 display: inline-block;
@@ -1490,6 +1491,17 @@ ul.bullet-style {
         background-position: top center !important;
         img {
             width: 100%;
+        }
+    }
+    &__contacts {
+        margin-top: 40px;
+        p {
+            margin: 0 !important;
+            font-weight: 600;
+            font-size: 1em;
+        }
+        i {
+            margin-right: 10px;
         }
     }
     &__description {
