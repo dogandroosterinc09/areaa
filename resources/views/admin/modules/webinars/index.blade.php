@@ -42,7 +42,7 @@
                         Title
                     </th>
                     <th class="text-left">
-                        Video Link
+                        Tags
                     </th>                    
                     <th class="text-center">
                         Date Created
@@ -58,7 +58,7 @@
                         <td class="text-center"><strong>{{ $webinars->id }}</strong></td>
                         <td class="text-center"><strong>{{ $webinars->media_category }}</strong></td>
                         <td class="text-center"><strong>{{ $webinars->title }}</strong></td>
-                        <td class="text-left">{{ $webinars->link }}</td>
+                        <td class="text-left">{{ $webinars->tags }}</td>
                         <td class="text-center">{{ $webinars->created_at->format('F d, Y') }}</td>
                         <td class="text-center">
                             <div class="btn-group btn-group-xs">
