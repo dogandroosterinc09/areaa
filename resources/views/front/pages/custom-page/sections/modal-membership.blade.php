@@ -12,7 +12,7 @@
         </div>
         <div class="modal-body">
          
-            <img src="{{ asset('public/images/watermark.jpg') }}" alt="membership card">
+            <img src="{{ asset('public/images/membership-model.png') }}" alt="membership card">
 
         </div>
       </div>

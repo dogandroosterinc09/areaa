@@ -79,11 +79,14 @@
            <section class="login-section login-section-main">
             <div class="container-max">
                 <div class="row">
-
+                  
 
                     <div class="col-lg-6 login-section__left login-section__item">
+
                       
-                        <div class="login-section__form">                            
+                        <div class="login-section__form">        
+                                <h2>Account Login</h2>   
+
                                 {{  Form::open([
                                     'method' => 'POST',
                                     'id' => 'form-login',

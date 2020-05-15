@@ -17,15 +17,15 @@
 
                 <nav class="navbar-bar">
                     <ul class="navbar-bar__wrapper">
-                        <li class="nav-item dropdown {{ $active == 'dashboard' ? 'active' : '' }}">
+                        <li class="nav-item {{ $active == 'dashboard' ? 'active' : '' }}">
                             <a class="nav-link dropdown-toggle" href="{{ route('customer.dashboard') }}">Dashboard <span class="sr-only">(current)</span></a>
-                            <div class="dropdown-menu">
+                            {{-- <div class="dropdown-menu">
                                 <ul class="sub-menu">
                                     <li>
                                         <a class="nav-link" href="#"> Sub menu 1</a>
                                     </li>
                                 </ul>
-                            </div>
+                            </div> --}}
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('customer.dashboard') }}">Events</a>

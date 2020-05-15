@@ -111,8 +111,8 @@
                             <a class="nav-link dropdown-toggle" href="{{ url('events') }}">Events</a>
                             <div class="dropdown-menu">
                                 <ul class="sub-menu mega-menu">
-                                    <li><a href="#">National Events</a></li>
-                                    <li><a href="#">Chapter Events</a></li>
+                                    <li><a href="{{url('events')}}">National Events</a></li>
+                                    <li><a href="#{{url('events-chapter')}}">Chapter Events</a></li>
                                     {{-- <li><a href="#"> Leadership Summit</a></li>
                                     <li><a href="#">Global & Luxury Summit</a></li>
                                     <li><a href="#">Regional Retreats</a></li>
@@ -135,7 +135,7 @@
                                         <a class="nav-link" href="{{ url('resource-asia-america-report')}}"> State of Asia America Report</a>
                                     </li>
                                     <li>
-                                        <a href="{{ url('media')}}"> Webinars</a>
+                                        <a href="{{ url('media')}}"> Media</a>
                                     </li>
                                 </ul>
                             </div>

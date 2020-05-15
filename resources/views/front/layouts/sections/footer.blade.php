@@ -100,18 +100,28 @@
                          <div class="small-advertisement ">
                             <div class="small-advertisement__slick">
                                 <div class="small-advertisement__slick--item">
-                                    <a href="#">
-                                        <img src="{{ asset('public/images/advertisement-big.jpg') }}" alt="ads"> 
+                                    <a href="#" target="_blank">
+                                        <img src="{{ asset('public/images/advertisement-big.jpg') }}" alt="areaa run with us"> 
+                                    </a>  
+                                </div>
+                                <div class="small-advertisement__slick--item">
+                                    <a href="https://www.wellsfargo.com/mortgage/" target="_blank">
+                                        <img src="{{ asset('public/images/advertisement-wellfargo.jpg') }}" alt="wellfargo"> 
+                                    </a>  
+                                </div>
+                                <div class="small-advertisement__slick--item">
+                                    <a href="https://www.wellsfargo.com/mortgage/" target="_blank">
+                                        <img src="{{ asset('public/images/advertisement-bankamerica.jpg') }}" alt="bankamerica"> 
                                     </a>  
                                 </div>
                                 <div class="small-advertisement__slick--item">
                                     <a href="#">
-                                        <img src="{{ asset('public/images/advertisement-big.jpg') }}" alt="ads"> 
+                                        <img src="{{ asset('public/images/advertisement-citi.jpg') }}" alt="citi"> 
                                     </a>  
                                 </div>
                                 <div class="small-advertisement__slick--item">
                                     <a href="#">
-                                        <img src="{{ asset('public/images/advertisement-big.jpg') }}" alt="ads"> 
+                                        <img src="{{ asset('public/images/advertisement-usbank.jpg') }}" alt="usbank"> 
                                     </a>  
                                 </div>
                             </div>
