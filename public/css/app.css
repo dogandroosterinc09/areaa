@@ -22327,6 +22327,13 @@ section.page--media .search-member-directory {
 .page--board .executive-board {
   padding: 60px 0;
 }
+.page--membership-registration .masking-background__equal {
+  max-width: 1020px;
+  margin-bottom: 50px;
+}
+.page--areaa-benefit .side-tab-equal__tab ul li a {
+  pointer-events: none !important;
+}
 
 .homepage--main .sponsors {
   background: transparent;
@@ -22792,8 +22799,18 @@ section.page--media .search-member-directory {
   font-weight: bold;
   padding-left: 0;
 }
+.side-tab-container__tab ul li a i {
+  display: none;
+  margin-left: 5px;
+}
 .side-tab-container__tab ul li a.active {
   color: #ab1a2d !important;
+}
+.side-tab-container__tab ul li a.active i {
+  display: inline-block;
+}
+.image-thumbnail-hover {
+  margin-bottom: 50px;
 }
 .image-thumbnail-hover__image {
   position: relative;
@@ -22809,6 +22826,7 @@ section.page--media .search-member-directory {
 }
 .image-thumbnail-hover__image:hover .image-thumbnail-hover__overlay a {
   color: #fff;
+  text-decoration: none;
 }
 .image-thumbnail-hover__overlay {
   position: absolute;
@@ -22837,9 +22855,12 @@ section.page--media .search-member-directory {
   font-size: 1.2em;
   font-weight: bold;
   margin: 0;
+  margin-bottom: 5px;
 }
 .image-thumbnail-hover__content p {
   font-size: 0.9em;
+  color: #303132;
+  font-weight: 600;
 }
 
 .side-tab-equal {
@@ -22984,6 +23005,7 @@ section.page--media .search-member-directory {
   width: calc(100%/2);
   display: block;
   height: 100px;
+  cursor: pointer;
 }
 .photo-modal__big-image {
   height: 550px;
@@ -23096,11 +23118,11 @@ section.page--media .search-member-directory {
   background: #fff;
   padding: 20px;
   border-radius: 20px;
-  border: 1px solid #ddd;
+  border: 1px solid #c6c6c6;
 }
 .steps-wizard__box input,
 .steps-wizard__box select {
-  border: 1px solid #b9b1b2;
+  border: 1px solid #c6c6c6;
   background: #fff;
 }
 .steps-wizard__box select {
@@ -23109,6 +23131,9 @@ section.page--media .search-member-directory {
   padding: 10px 20px;
   -webkit-appearance: none;
   font-weight: 600;
+}
+.steps-wizard__box label span {
+  color: #ab1a2d;
 }
 .steps-wizard__progress {
   position: absolute;
@@ -24022,6 +24047,15 @@ _::-webkit-:not(:root:root),
     flex-wrap: wrap !important;
     align-items: center;
     flex-wrap: inherit !important;
+  }
+}
+@media only screen and (max-width: 1600px) {
+  section.events-camp .events-camp-slider .slick-prev {
+    left: 29%;
+  }
+
+  section.chapters .btn-wrap {
+    left: 10%;
   }
 }
 @media only screen and (max-width: 1400px) {

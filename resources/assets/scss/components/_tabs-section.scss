@@ -104,8 +104,15 @@
                     border: 0 !important;
                     font-weight: bold;
                     padding-left: 0;
+                    i {
+                        display: none;
+                        margin-left: 5px;
+                    }
                     &.active {
                         color: $color-secondary !important;
+                        i {
+                            display: inline-block;
+                        }
                     }
                 }
             }
@@ -115,6 +122,7 @@
 }
 
 .image-thumbnail-hover {
+    margin-bottom: 50px;
     &__image {
         position: relative;
         margin-bottom: 10px;
@@ -127,6 +135,7 @@
                 visibility: visible;
                 a {
                     color: #fff;
+                    text-decoration: none;
                 }
             }
         }
@@ -157,9 +166,12 @@
             font-size: 1.2em;
             font-weight: bold;
             margin: 0;
+            margin-bottom: 5px;
         }
         p {
             font-size: .9em;
+            color: #303132;
+            font-weight: 600;
         }
     }
 }

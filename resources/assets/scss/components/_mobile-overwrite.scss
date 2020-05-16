@@ -70,6 +70,15 @@
     }
 }
 
+@media only screen and (max-width:1600px) {
+    section.events-camp .events-camp-slider .slick-prev {
+        left: 29%;
+    }
+    section.chapters .btn-wrap {
+        left: 10%;
+    }
+}
+
 @media only screen and (max-width:1400px) {
     .banner__image-slide .item-left .banner-content-desc h2 {
         font-size: 50px;

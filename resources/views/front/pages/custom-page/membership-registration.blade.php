@@ -92,10 +92,10 @@
 
 
                                                                     <div class="steps-wizard__box">
-                                                                        <label>Select Your Chapter *</label>
+                                                                        <label>Select Your Chapter <span>*</span> </label>
                                                                         <div class="select-box">
                                                                             <select name="chapter_id">
-                                                                                <option value="0">National $49.50 now & then $99.00 per Year starting July 1, 2020.</option>
+                                                                                <option value="0"><b>National</b> $49.50 now & then $99.00 per Year starting July 1, 2020.</option>
                                                                                 @foreach(\App\Models\Chapter::all() as $chapter)
                                                                                 <option value="{{$chapter->id}}">{{$chapter->name}} $49.50 now & then $99.00 per Year starting July 1, 2020.</option>
                                                                                 @endforeach
@@ -200,8 +200,9 @@
                                                                         <label> I am a... </label>
                                                                         <div class="select-box">
                                                                             <select name="position">
-                                                                                <option>Realtor</option>
-                                                                                <option>Realtor</option>
+                                                                                <option>Realtor    </option>
+                                                                                <option>Lender</option>
+                                                                                <option>Other</option>
                                                                             </select>
                                                                         </div>
                                                                     </div>

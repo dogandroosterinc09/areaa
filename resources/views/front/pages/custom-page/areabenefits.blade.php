@@ -46,16 +46,28 @@
                                             <ul class="nav nav-tabs md-tabs" id="myTabMD" role="tablist">
                                                 <li class="nav-item">
                                                   <a class="nav-link active" id="sidetab-one" data-toggle="tab" href="#sidetab-box-one" role="tab" aria-controls="sidetab-box-one"
-                                                    aria-selected="true">Travel & Automotive</a>
+                                                    aria-selected="true">Travel & Automotive <i class="fas fa-arrow-right"></i></a>
                                                 </li>
-                                                <li class="nav-item">
+                                                <li class="nav-item"> 
                                                   <a class="nav-link" id="sidetab-two" data-toggle="tab" href="#sidetab-box-two" role="tab" aria-controls="sidetab-box-two"
-                                                    aria-selected="false">Risk Management</a>
+                                                    aria-selected="false">Risk Management <i class="fas fa-arrow-right"></i></a>
                                                 </li>
                                                 <li class="nav-item">
                                                   <a class="nav-link" id="sidetab-three" data-toggle="tab" href="#sidetab-box-three" role="tab" aria-controls="sidetab-box-three"
-                                                    aria-selected="false">Office Supplies & Services</a>
+                                                    aria-selected="false">Office Supplies & Services <i class="fas fa-arrow-right"></i></a>
                                                 </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" id="sidetab-four" data-toggle="tab" href="#sidetab-box-four" role="tab" aria-controls="sidetab-box-four"
+                                                      aria-selected="false">Transaction Management <i class="fas fa-arrow-right"></i></a>
+                                                  </li>
+                                                  <li class="nav-item">
+                                                    <a class="nav-link" id="sidetab-five" data-toggle="tab" href="#sidetab-box-five" role="tab" aria-controls="sidetab-box-five"
+                                                      aria-selected="false">Marketing Tools <i class="fas fa-arrow-right"></i></a>
+                                                  </li>
+                                                  <li class="nav-item">
+                                                    <a class="nav-link" id="sidetab-six" data-toggle="tab" href="#sidetab-box-six" role="tab" aria-controls="sidetab-box-six"
+                                                      aria-selected="false">Gifting <i class="fas fa-arrow-right"></i></a>
+                                                  </li>
                                               </ul>
                                         </div>
                                     </div>
@@ -68,10 +80,19 @@
                                                 @include('front.pages.custom-page.sections.sidetab-thumbnail')
                                             </div>
                                             <div class="tab-pane fade" id="sidetab-box-two" role="tabpanel" aria-labelledby="sidetab-two">
-                                                @include('front.pages.custom-page.sections.sidetab-thumbnail')
+                                                @include('front.pages.custom-page.sections.sidetab-thumbnail-riskmanagement')
                                             </div>
                                             <div class="tab-pane fade" id="sidetab-box-three" role="tabpanel" aria-labelledby="sidetab-three">
-                                                @include('front.pages.custom-page.sections.sidetab-thumbnail')
+                                                @include('front.pages.custom-page.sections.sidetab-thumbnail-office')
+                                            </div>
+                                            <div class="tab-pane fade" id="sidetab-box-four" role="tabpanel" aria-labelledby="sidetab-four">
+                                                @include('front.pages.custom-page.sections.sidetab-thumbnail-transaction')
+                                            </div>
+                                            <div class="tab-pane fade" id="sidetab-box-five" role="tabpanel" aria-labelledby="sidetab-five">
+                                                @include('front.pages.custom-page.sections.sidetab-thumbnail-marketing')
+                                            </div>
+                                            <div class="tab-pane fade" id="sidetab-box-six" role="tabpanel" aria-labelledby="sidetab-six">
+                                                @include('front.pages.custom-page.sections.sidetab-thumbnail-gifting')
                                             </div>
                                           </div>
                                          {{-- tab-content --}}
@@ -175,7 +196,7 @@
                                         <div class="side-tab-equal__tab">
                                             <ul class="nav nav-tabs md-tabs" id="myEqualTab" role="tablist">
                                                 <li class="nav-item">
-                                                  <a class="nav-link active" id="sidetab-equal-one" data-toggle="tab" href="#sidetab-equal-box-one" role="tab" aria-controls="sidetab-equal-box-one"
+                                                  <a class="nav-link" id="sidetab-equal-one" data-toggle="tab" href="#sidetab-equal-box-one" role="tab" aria-controls="sidetab-equal-box-one"
                                                     aria-selected="true">
                                                     <h3>$14 Off Concerts</h3>
                                                     <p>Ticket value of $200. </p>

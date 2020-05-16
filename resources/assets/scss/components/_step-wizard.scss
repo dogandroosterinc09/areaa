@@ -56,10 +56,10 @@
         background: #fff;
         padding: 20px;
         border-radius: 20px;
-        border: 1px solid #ddd;
+        border: 1px solid #c6c6c6;
         input,
         select {
-            border: 1px solid $color-gray;
+            border: 1px solid #c6c6c6;
             background: $color-white;
         }
         select {
@@ -68,6 +68,11 @@
             padding: 10px 20px;
             -webkit-appearance: none;
             font-weight: 600;
+        }
+        label {
+            span {
+                color: $color-red;
+            }
         }
     }
     &__progress {

@@ -96,6 +96,17 @@
             padding: 60px 0;
         }
     }
+    &--membership-registration {
+        .masking-background__equal {
+            max-width: 1020px;
+            margin-bottom: 50px;
+        }
+    }
+    &--areaa-benefit {
+        .side-tab-equal__tab ul li a {
+            pointer-events: none !important;
+        }
+    }
 }
 
 .homepage {
