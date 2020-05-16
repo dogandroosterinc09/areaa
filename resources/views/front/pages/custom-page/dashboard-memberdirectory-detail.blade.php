@@ -138,9 +138,9 @@
                                             <h5>Stay Connected:</h5>
 
                                             <div class="socials">
-                                                <a href="#" title="facebook" class="fb"><i class="fab fa-facebook-f"></i></a>
-                                                <a href="#" title="twitter" class="tw"><i class="fab fa-twitter"></i></a>
-                                                <a href="#" title="instagram" class="ig"><i class="fab fa-instagram"></i></a>
+                                                <a href="https://facebook.com/{{$social_media->facebook}}" target="_blank" title="facebook" class="fb"><i class="fab fa-facebook-f"></i></a>
+                                                <a href="https://twitter.com/{{$social_media->twitter}}" target="_blank" title="twitter" class="tw"><i class="fab fa-twitter"></i></a>
+                                                <a href="https://instagram.com/{{$social_media->instagram}}" target="_blank" title="instagram" class="ig"><i class="fab fa-instagram"></i></a>
                                             </div>
                                         </div>
 

@@ -53,13 +53,19 @@ class FrontDashboardController extends Controller
 
         $member = $this->members->where('user_id', $id)->get()->first();
 
+        $social_media = json_decode($member->social_media) ? : new \stdClass();
+
+        $social_media->facebook = isset($social_media->facebook) ? $social_media->facebook : '' ;
+        $social_media->instagram = isset($social_media->instagram) ? $social_media->instagram : '' ;
+        $social_media->twitter = isset($social_media->twitter) ? $social_media->twitter : '' ;
+
         if (!$member) {
             abort('404', '404');
         }
 
         $active = 'member_directory';
 
-        return view('front.pages.custom-pages-index', compact('page', 'member', 'active'));
+        return view('front.pages.custom-pages-index', compact('page', 'member', 'active', 'social_media'));
     }
 
     public function searchMemberDirectory(Request $request) {
@@ -112,7 +118,13 @@ class FrontDashboardController extends Controller
             $params .= '&'. $k . '=' . $v ;
         };
 
-        return view('front.pages.custom-pages-index', compact('page', 'members', 'params', 'active'));
+        $social_media = json_decode($member->social_media) ? : new \stdClass();
+
+        $social_media->facebook = isset($social_media->facebook) ? $social_media->facebook : '' ;
+        $social_media->instagram = isset($social_media->instagram) ? $social_media->instagram : '' ;
+        $social_media->twitter = isset($social_media->twitter) ? $social_media->twitter : '' ;
+
+        return view('front.pages.custom-pages-index', compact('page', 'members', 'params', 'active', 'social_media'));
     }
 
     public function showProfile() {
@@ -120,14 +132,32 @@ class FrontDashboardController extends Controller
         $active = 'profile';
         $profile = $this->members->where('user_id', auth()->user()->id)->get()->first();
 
-        return view('front.pages.custom-pages-index', compact('page', 'active', 'profile'));
+        $social_media = json_decode($profile->social_media) ? : new \stdClass;
+
+        $social_media->facebook = isset($social_media->facebook) ? $social_media->facebook : '' ;
+        $social_media->instagram = isset($social_media->instagram) ? $social_media->instagram : '' ;
+        $social_media->twitter = isset($social_media->twitter) ? $social_media->twitter : '' ;
+
+        return view('front.pages.custom-pages-index', compact('page', 'active', 'profile', 'social_media'));
     }
 
-    public function updateProfile(Request $request) {        
+    public function updateProfile(Request $request) {      
+        // return $request->all();
+
+        $social_media = new \stdClass;
+
+        $social_media->facebook = $request->facebook;
+        $social_media->instagram = $request->instagram;
+        $social_media->twitter = $request->twitter;
+
+        // return json_encode($social_media);
+
         $member = $this->members->where('user_id', auth()->user()->id)->get()->first();
         $user = $this->user->find(auth()->user()->id);
         
-        $member->fill($request->all())->save();
+        $member->fill(array_merge($request->all(),[
+            'social_media' => json_encode($social_media)
+        ]))->save();
         $user->fill([
             'email' => $request->email,
             'phone' => $request->phone

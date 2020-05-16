@@ -43,13 +43,8 @@ class EventRegistration extends Model
     }
 
     public function getStatusAttribute() {
-        if ($this->attributes['status'] == 0)
-
-        return 'UNPAID';
-
-        else
-
-        return 'PAID';
+        if ($this->attributes['status'] == 0) return 'UNPAID';
+        else return 'PAID';
     }
 
     public function getIsMemberAttribute() {

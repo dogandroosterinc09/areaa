@@ -23,7 +23,8 @@ class Members extends Model
         'company',
         'language_spoken',
         'designations',
-        'area_of_specialty'
+        'area_of_specialty',
+        'social_media'
     ];
 
     public function getAvatarAttribute() {

@@ -24,7 +24,7 @@
 
                 <div class="profile__year">
                     <div class="memberdirectory-detail__badge-year">
-                        2011
+                        {{ $profile->membership_year }}
                     </div>
                 </div>
 
@@ -42,11 +42,9 @@
                     <h5>Stay Connected:</h5>
 
                     <div class="socials">
-                        <a href="#" title="facebook" class="fb"><i
-                                class="fab fa-facebook-f"></i></a>
-                        <a href="#" title="twitter" class="tw"><i class="fab fa-twitter"></i></a>
-                        <a href="#" title="instagram" class="ig"><i
-                                class="fab fa-instagram"></i></a>
+                        <a href="https://facebook.com/{{ $social_media->facebook }}" target="_blank" title="facebook" class="fb"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/{{ $social_media->twitter }}" target="_blank" title="twitter" class="tw"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com/{{ $social_media->instagram }}" target="_blank" title="instagram" class="ig"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
 
@@ -58,8 +56,7 @@
             <div class="col-md-9 profile__right">
                     
                 <div class="profile__content">
-                    <div class="profile__date">Member Since
-                        Member Since 2011</div>
+                    <div class="profile__date">Member Since {{ $profile->membership_year }}</div>
                     <div class="profile__title">
                         <h3> 
                             {{ $profile->name }}
@@ -138,9 +135,34 @@
                                 <input type="text" name="area_of_specialty" value="{{ $profile->area_of_specialty }}">
                             </div>
 
+                            <div class="col-md-3 align-self-start">
+                                <b>Social Media Accounts</b>
+                            </div>                                                        
+                            <div class="col-md-9">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">facebook.com/</span>
+                                            </div><input type="text" name="facebook" value="{{ $social_media->facebook }}" class="form-control" style="width:1%">
+                                        </div>
+                                        <div class="form-group input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">instagram.com/</span>
+                                            </div><input type="text" name="instagram" value="{{ $social_media->instagram }}" class="form-control" style="width:1%">
+                                        </div>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">twitter.com/</span>
+                                            </div><input type="text" name="twitter" value="{{ $social_media->twitter }}" class="form-control" style="width:1%">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="col-md-12 text-right">
                                 {{-- {{ $profile->area_of_specialty }} --}}
-                                <div class="btn-group">                                    
+                                <div class="btn-group">
                                     <button type="submit" class="btn btn--secondary">Save</button>
                                     
                                     <!-- <a href="#" class="btn btn--primary"> Edit </a>
