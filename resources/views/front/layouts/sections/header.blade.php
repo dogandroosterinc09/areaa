@@ -112,7 +112,7 @@
                             <div class="dropdown-menu">
                                 <ul class="sub-menu mega-menu">
                                     <li><a href="{{url('events')}}">National Events</a></li>
-                                    <li><a href="#{{url('events-chapter')}}">Chapter Events</a></li>
+                                    <li><a href="{{url('events-chapter')}}">Chapter Events</a></li>
                                     {{-- <li><a href="#"> Leadership Summit</a></li>
                                     <li><a href="#">Global & Luxury Summit</a></li>
                                     <li><a href="#">Regional Retreats</a></li>
