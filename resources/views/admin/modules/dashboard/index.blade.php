@@ -51,8 +51,7 @@
                         @foreach($event_registrations as $event_registration)
                         <tr>
                             <td>{{$event_registration->name}}</td>
-                            <td>{{$event_registration->event_name}}</td>
-                            <td>{{$event_registration->event}}</td>
+                            <td>{{$event_registration->event_name}}</td>                            
                         </tr>
                         @endforeach
                     </tbody>
