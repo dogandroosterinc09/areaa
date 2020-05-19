@@ -1066,6 +1066,11 @@ ul.bullet-style {
     &__item {
         height: 200px;
     }
+    &__slide {
+        button {
+            display: none !important;
+        }
+    }
 }
 
 .board-thumbnail {

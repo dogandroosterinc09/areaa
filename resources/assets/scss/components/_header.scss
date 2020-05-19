@@ -18,7 +18,7 @@ header {
     background: $header-background !important;
     @include flex;
     @include flex-align-items(center);
-    @include transition-all(all 0.5s ease-in-out);
+    // @include transition-all(all 0.5s ease-in-out);
     &.scrolling {
         position: fixed !important;
         height: auto;
@@ -28,6 +28,7 @@ header {
         z-index: 99;
         -webkit-box-shadow: 1px 0 5px 1px rgba(0, 0, 0, .6);
         box-shadow: 1px 0 5px 1px rgba(0, 0, 0, .6);
+        height: 100px;
         .contact-details-wrap {
             transform: scale(.8) translate(0, -9px);
             z-index: 22;
@@ -184,10 +185,13 @@ header {
             border-bottom-left-radius: 100px;
             color: $color-white;
             font: bold 18px $font-primary;
-            margin-right: -50px;
+            // margin-right: -50px;
             position: absolute;
-            left: 115px;
+            // left: 115px;
             height: 50px;
+            left: -27% !important;
+            z-index: -1;
+            top: 0;
             a {
                 color: $color-white;
                 text-decoration: none;
@@ -204,6 +208,8 @@ header {
                 display: block;
                 list-style: none;
                 padding: 0;
+                position: relative;
+                z-index: 4;
                 >li {
                     display: inline-block;
                     height: 40px;
@@ -219,7 +225,7 @@ header {
                 background: #3b3d40;
                 width: 100%;
                 left: 0;
-                top: 50px;
+                top: 40px;
                 z-index: 999;
                 display: none;
                 padding: 20px;

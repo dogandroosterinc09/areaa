@@ -11,8 +11,9 @@
             </div>
             <div class="col-lg-8">
                 <div class="contact-details-wrap">
-                    <div class="title"><a href="{{url('membership-registration')}}"><span>Join AREAA</span></a></div>
+                   
                     <div class="info">
+                        <div class="title"><a href="{{url('membership-registration')}}"><span>Join AREAA</span></a></div>
                         <ul>
                             <li> <a href="{{section('Contact Us.data.first.tel_link')}}"><i class="ic-phone" aria-hidden="true"></i> {{section('Contact Us.data.first.tel_text')}}</a></li>
                             <li> <a href="{{section('Contact Us.data.first.mail_link')}}"><i class="ic-email"></i> {{section('Contact Us.data.first.mail_text')}}</a></li>

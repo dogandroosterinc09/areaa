@@ -1,0 +1,88 @@
+// $btn-color: #ab1a2d;
+.btn {
+    &--primary {
+        background: transparent;
+        padding: 11px 46px;
+        min-width: 200px;
+        font-weight: 900;
+        font-size: 18px;
+        color: $color-secondary;
+        border: 1px solid $color-secondary;
+        @include border-radius(100px);
+        @include transition(.3);
+        @media only screen and (max-width: $mobile) {
+            padding: 10px 30px;
+            font-size: .9em;
+            width: 90%;
+            display: block;
+            margin: auto;
+        }
+        &:hover {
+            color: $color-white;
+            // background: $color-darkred;
+            background: $color-darkred;
+        }
+    }
+    &--secondary {
+        background: $color-secondary;
+        padding: 11px 46px;
+        min-width: 200px;
+        font-weight: 900;
+        font-size: 18px;
+        color: $color-white;
+        border: 1px solid $color-secondary;
+        @include border-radius(100px);
+        @include transition(.3);
+        @media only screen and (max-width: $mobile) {
+            padding: 10px 30px;
+            font-size: .9em;
+            width: 90%;
+            display: block;
+            margin: auto;
+        }
+        &:hover {
+            color: $color-darkred;
+            // background: $color-darkred;
+            background: transparent;
+        }
+    }
+    &--third {
+        height: 22px;
+        width: 34px;
+        padding: 0;
+        background: $sprite-all;
+        background-position: -75px -182px;
+        padding: 0;
+    }
+    &--back {
+        @include flex;
+        @include flex-align-items(center);
+        padding: 0;
+        border: 0;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: $color-secondary;
+        i {
+            -webkit-transform: rotate(180deg) scale(.7);
+            -ms-transform: rotate(180deg) scale(.7);
+            transform: rotate(180deg) scale(.7);
+            margin-right: 10px;
+        }
+    }
+    &--forgot {
+        border: 0;
+        outline: none;
+        color: $color-secondary;
+        text-align: right;
+        padding: 0;
+        margin-top: 15px;
+        font-weight: 600;
+    }
+}
+
+#loadMore {
+    border: 1px solid #b9b1b2;
+    color: #b9b1b2;
+    margin-bottom: 25px;
+}

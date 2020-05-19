@@ -15,6 +15,22 @@
             .form-control {
                 height: auto;
             }
+             ::-webkit-input-placeholder {
+                /* Chrome/Opera/Safari */
+                color: #495057;
+            }
+             ::-moz-placeholder {
+                /* Firefox 19+ */
+                color: #495057;
+            }
+             :-ms-input-placeholder {
+                /* IE 10+ */
+                color: #495057;
+            }
+             :-moz-placeholder {
+                /* Firefox 18- */
+                color: #495057;
+            }
             .form-group {
                 padding: 0;
                 margin-bottom: 5px;
@@ -89,12 +105,14 @@
                     // border: 2px solid $color-gray2;
                     @include border-radius(100px);
                     padding-left: 20px;
+                    border: 1px solid #c6c6c6;
                 }
                 textarea {
                     height: 185px;
                     @include border-radius(20px);
                     padding-left: 20px;
                     padding-top: 15px;
+                    border: 1px solid #c6c6c6;
                 }
             }
             li {

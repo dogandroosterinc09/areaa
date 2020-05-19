@@ -1,0 +1,118 @@
+.page-chapter {
+    overflow: hidden;
+    &--homepage {
+        .footer__wrapper {
+            background: #f8f6f6;
+        }
+        .main-content {
+            padding-bottom: 0 !important;
+        }
+    }
+    .dashboard-nav {
+        margin-bottom: 50px;
+        margin-top: -20px;
+    }
+    &--contact-us {
+        .dashboard-nav {
+            margin-bottom: 0;
+        }
+        .contact-section {
+            margin-top: -15px;
+        }
+        .col-lg-6.contact-section__item.contact-section__right {
+            background: #f8f6f6 !important;
+        }
+        .contact-section__left.curl-tail-side:before {
+            width: 100%;
+        }
+    }
+    &--login {
+        .contact-form {
+            .form-group {
+                padding: 0 !important;
+                &:nth-child(2) {
+                    padding: 0;
+                }
+            }
+        }
+    }
+    &--resources-american-report {
+        main.main-content {
+            padding: 50px 0;
+        }
+    }
+    header {
+        .main-nagivation-desktop {
+            .logo {
+                display: inline-block;
+                margin-top: 10px;
+                width: 130px;
+            }
+        }
+    }
+    .footer__item {
+        .footer-contacts {
+            margin-top: 40px !important;
+        }
+    }
+    .main-content {
+        padding: 80px 0;
+    }
+    &--detail {
+        .sub-banner__image {
+            width: 400px;
+            height: 400px;
+            position: absolute;
+            z-index: 6;
+            border-radius: 100%;
+            right: 10%;
+        }
+        .sub-banner__wrapper:before {
+            display: none;
+        }
+        .sub-banner:before {
+            left: inherit;
+            right: 10%;
+        }
+    }
+    &--contactus {
+        .main-content {
+            padding-top: 0 !important;
+        }
+        .contact-section.paper-background {
+            background: transparent !important;
+        }
+        .contact-section__right {
+            background: #f8f6f6 !important;
+            -webkit-border-radius: 0 0 0 20px;
+            border-radius: 0 0 0 20px;
+        }
+    }
+}
+
+.page {
+    &--board {
+        .executive-board {
+            padding: 60px 0;
+        }
+    }
+    &--membership-registration {
+        .masking-background__equal {
+            max-width: 1020px;
+            margin-bottom: 50px;
+        }
+    }
+    &--areaa-benefit {
+        .side-tab-equal__tab ul li a {
+            pointer-events: none !important;
+        }
+    }
+}
+
+.homepage {
+    &--main {
+        .sponsors {
+            background: transparent;
+        }
+    }
+}

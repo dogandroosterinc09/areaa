@@ -88,6 +88,13 @@
             border-radius: 0 0 0 20px;
         }
     }
+    header {
+        &.scrolling {
+            .logo {
+                width: 120px !important;
+            }
+        }
+    }
 }
 
 .page {

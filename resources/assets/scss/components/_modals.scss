@@ -62,14 +62,16 @@
 .membership-card-modal {
     .modal-dialog {
         /* width: 70%; */
-        max-width: 70%;
+        max-width: 30%;
         border-radius: 0;
+        top: 20%;
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         .modal-body {
+            padding: 20px !important;
             .container {
                 padding: 0;
                 width: 100%;

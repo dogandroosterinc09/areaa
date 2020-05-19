@@ -68,6 +68,18 @@
         @include flex-align-items(center);
         flex-wrap: inherit !important;
     }
+    .follow-us .container {
+        max-width: 95%;
+    }
+    .banner__chapter .banner-content-desc h3 {
+        max-width: 100%;
+    }
+    .page-chapter .banner__thumb-slide .slick-list .slick-track {
+        width: 100px !important;
+    }
+    .banner__image-slide .item-left .banner-content-desc {
+        width: 90%;
+    }
 }
 
 @media only screen and (max-width:1600px) {
@@ -76,6 +88,9 @@
     }
     section.chapters .btn-wrap {
         left: 10%;
+    }
+    .follow-us__wrapper .primary-heading h2 {
+        font-size: 3em;
     }
 }
 

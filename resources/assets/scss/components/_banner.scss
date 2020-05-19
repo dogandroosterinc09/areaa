@@ -323,17 +323,19 @@ $banner-background-color:#000;
         position: relative;
         height: 100%;
         max-width: 100%;
-        &:before {
-            content: '';
-            background: url('../images/paper-transparent.png');
-            height: 100%;
-            left: 0;
-            bottom: 0;
-            width: 53%;
-            z-index: 3;
-            position: absolute;
-            background-size: cover;
-        }
+        // &:before {
+        //     content: '';
+        //     // background: url('../images/paper-transparent.png');
+        //     height: 100%;
+        //     width: 100%;
+        //     // background: url('../images/subpage-cover.png');
+        //     left: 0;
+        //     bottom: 0;
+        //     // width: 53%;
+        //     z-index: 3;
+        //     position: absolute;
+        //     background-size: cover;
+        // }
     }
     &__item {
         position: absolute;
@@ -360,9 +362,11 @@ $banner-background-color:#000;
         position: absolute;
         right: 0;
         top: 0;
-        width: 63%;
+        // width: 63%;
+        width: 65%;
         height: 100%;
-        background-position: left center !important;
+        // background-position: left center !important;
+        background-position: center;
         background-size: cover !important;
         z-index: 2;
     }
@@ -373,18 +377,20 @@ $banner-background-color:#000;
         left: 0;
         position: absolute;
         bottom: 0;
-        background: url('../images/bottom-style-white.png');
+        // background: url('../images/bottom-style-white.png');
         z-index: 5;
     }
     &:before {
         content: "";
-        width: 517px;
+        width: 100%;
+        background: url('../images/subpage-cover.png');
         height: 100%;
-        background: url(../images/red-stripe.png);
+        // background: url(../images/red-stripe.png);
         position: absolute;
-        z-index: 6;
-        background-size: contain !important;
+        z-index: 3;
+        // background-size: contain !important;
+        background-size: 100% 100%;
         background-repeat: no-repeat;
-        left: 30%;
+        // left: 30%;
     }
 }
