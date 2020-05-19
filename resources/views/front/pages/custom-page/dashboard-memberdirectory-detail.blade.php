@@ -134,15 +134,23 @@
                                             <img src="{{ url('public/images/area-lux.jpg') }}" alt=""  class="img-fluid">  -->
                                         </div>
 
+                                        @if( !(empty($social_media->facebook) && empty($social_media->twitter) && empty($social_media->instagram)) )
                                         <div class="memberdirectory-detail__social-link">
                                             <h5>Stay Connected:</h5>
 
                                             <div class="socials">
+                                                @if(!empty($social_media->facebook))
                                                 <a href="https://facebook.com/{{$social_media->facebook}}" target="_blank" title="facebook" class="fb"><i class="fab fa-facebook-f"></i></a>
+                                                @endif
+                                                @if(!empty($social_media->twitter))
                                                 <a href="https://twitter.com/{{$social_media->twitter}}" target="_blank" title="twitter" class="tw"><i class="fab fa-twitter"></i></a>
+                                                @endif
+                                                @if(!empty($social_media->instagram))
                                                 <a href="https://instagram.com/{{$social_media->instagram}}" target="_blank" title="instagram" class="ig"><i class="fab fa-instagram"></i></a>
+                                                @endif
                                             </div>
                                         </div>
+                                        @endif
 
                                     </div>
 
