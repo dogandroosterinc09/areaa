@@ -72,13 +72,13 @@
                             <a class="nav-link dropdown-toggle" href="{{ url('about-us') }}">About Us <span class="sr-only">(current)</span></a>
                             <div class="dropdown-menu">
                                 <ul class="sub-menu mega-menu">
-                                    <li><a href="{{url('about-us')}}"> About AREAA </a></li>
-                                    <li><a href="{{url('executive-board')}}"> Executive Board </a></li>
-                                    <li><a href="{{url('delegate-board')}}"> Delegate Board </a></li>
-                                    <li><a href="{{url('our-partners')}}"> Our Partners </a></li>
-                                    <li><a href="{{url('sponsors')}}">Our Sponsors</a></li>
-                                    <li><a href="{{url('FAQ')}}"> FAQ </a></li>
-                                    <li><a href="{{url('photo-gallery')}}"> Photo Gallery </a></li>
+                                    <li class="{{ $page->slug == 'about-us' ? 'active' : '' }}" ><a href="{{url('about-us')}}"> About AREAA </a></li>
+                                    <li class="{{ $page->slug == 'executive-board' ? 'active' : '' }}" ><a href="{{url('executive-board')}}"> Executive Board </a></li>
+                                    <li class="{{ $page->slug == 'delegate-board' ? 'active' : '' }}" ><a href="{{url('delegate-board')}}"> Delegate Board </a></li>
+                                    <li class="{{ $page->slug == 'our-partners' ? 'active' : '' }}" ><a href="{{url('our-partners')}}"> Our Partners </a></li>
+                                    <li class="{{ $page->slug == 'sponsors' ? 'active' : '' }}" ><a href="{{url('sponsors')}}">Our Sponsors</a></li>
+                                    <li class="{{ $page->slug == 'FAQ' ? 'active' : '' }}" ><a href="{{url('FAQ')}}"> FAQ </a></li>
+                                    <li class="{{ $page->slug == 'photo-gallery' ? 'active' : '' }}" ><a href="{{url('photo-gallery')}}"> Photo Gallery </a></li>
                                     <li><a href="#"> Career </a></li>
 
                                 </ul>
@@ -89,9 +89,9 @@
                             <div class="dropdown-menu">
                                 <ul class="sub-menu mega-menu">
                                     <li><a href="{{url('about-us')}}"> Why join </a></li>
-                                    <li><a href="{{url('areabenefits')}}"> Benefits </a></li>
+                                    <li class="{{ $page->slug == 'areabenefits' ? 'active' : '' }}" ><a href="{{url('areabenefits')}}"> Benefits </a></li>
                                     <li><a href="{{ route('customer.login') }}"> Find a Member </a></li>
-                                    <li><a href="{{url('chapter')}}"> Chapter Locations </a></li>
+                                    <li class="{{ $page->slug == 'chapter' ? 'active' : '' }}" ><a href="{{url('chapter')}}"> Chapter Locations </a></li>
                                     <li><a href="{{url('membership-registration')}}"> A-List </a></li>
                                 </ul>
                             </div>
@@ -116,8 +116,8 @@
                             <a class="nav-link dropdown-toggle" href="{{ url('events') }}">Events</a>
                             <div class="dropdown-menu">
                                 <ul class="sub-menu mega-menu">
-                                    <li><a href="{{url('events')}}">National Events</a></li>
-                                    <li><a href="{{url('events-chapter')}}">Chapter Events</a></li>
+                                    <li class="{{ $page->slug == 'events' ? 'active' : '' }}" ><a href="{{url('events')}}">National Events</a></li>
+                                    <li class="{{ $page->slug == 'events-chapter' ? 'active' : '' }}" ><a href="{{url('events-chapter')}}">Chapter Events</a></li>
                                     {{-- <li><a href="#"> Leadership Summit</a></li>
                                     <li><a href="#">Global & Luxury Summit</a></li>
                                     <li><a href="#">Regional Retreats</a></li>
@@ -139,7 +139,7 @@
                                     <li>
                                         <a class="nav-link" href="{{ url('resource-asia-america-report')}}"> State of Asia America Report</a>
                                     </li>
-                                    <li>
+                                    <li class="{{ $page->slug == 'media' ? 'active' : '' }}" >
                                         <a href="{{ url('media')}}"> Media</a>
                                     </li>
                                 </ul>
