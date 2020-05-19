@@ -96,6 +96,11 @@ header {
                         font-size: 1em;
                         font-weight: 500;
                     }
+                    &.active {
+                        a {
+                            color: $color-secondary !important;
+                        }
+                    }
                     .dropdown-menu {
                         background: transparent;
                         padding: 0;

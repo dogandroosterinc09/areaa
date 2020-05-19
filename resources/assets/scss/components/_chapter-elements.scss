@@ -135,6 +135,7 @@
             position: absolute;
             z-index: 2;
             background-size: 100% 100%;
+            left: 0;
         }
     }
     &__floater {
@@ -188,6 +189,12 @@
     min-height: 700px;
     video {
         height: 100%;
+        -o-object-fit: fill !important;
+        object-fit: fill !important;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
     }
     &__button {
         position: absolute;

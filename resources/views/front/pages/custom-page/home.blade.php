@@ -4,7 +4,7 @@
 
     <main class="main-content">
         {{-- Start  --}}
-        <section class="events-camp wrapper padding-top90">
+        <section class="events-camp wrapper padding-top90" data-aos="fade-up">
             <div class="container-max">
                 <div class="row">
                     <div class="col-md-10">
@@ -64,7 +64,7 @@
         <section class="become-member wrapper margin-top90">
             <div class="container-max">
                 <div class="row">
-                    <div class="col-md-7">
+                    <div class="col-md-7" data-aos="fade-right">>
 
                         <div class="become-member__content">
                             <h2>{{ section('Become a Member.data.first.title') }}</h2>
@@ -84,7 +84,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="members-count">
+                        <div class="members-count" data-aos="fade-down">
                             
                             @foreach(section('Member Count.data') as $data)
                                 @if ($loop->first)
@@ -105,7 +105,7 @@
                     </div>
                 </div>
             </div>
-            <div class="img-holder">
+            <div class="img-holder" data-aos="fade-left">
                 <img src="{{ section('Become a Member.data.first.image') }}" alt="{{ section('Become a Member.data.first.alt_text') }}">
             </div>
         </section>
@@ -115,11 +115,11 @@
  
 
         {{-- Start  --}}
-        <section class="partnership wrapper image-background margin-top60">
+        <section class="partnership wrapper image-background margin-top60"> 
             <img src="{{ section('Partnership.data.first.image') }}" alt="{{ section('Partnership.data.first.alt_text') }}">
             <div class="container-max">
                 <div class="row">
-                    <div class="col-md-6 partnership__left">
+                    <div class="col-md-6 partnership__left"  data-aos="fade-up">
                         <div class="title">
                             <h2>{{ section('Partnership.data.first.title') }}</h2>
                             {{-- <p>We have more than 30 partners fromLocal to International.</p> --}}
@@ -145,7 +145,7 @@
                     <div class="col-md-6 partnership__right content-middle">
                         
                         {{-- big-advertisement --}}
-                        <div class="big-advertisement">
+                        <div class="big-advertisement" data-aos="fade-up">
                             <div class="big-advertisement__slick">
                                 <div class="big-advertisement__slick--item">
                                     <a href="#">
@@ -187,23 +187,23 @@
         <section class="growing wrapper margin-top40">
             <div class="container-max">
                 <div class="row">
-                    <div class="col-md-12 text-center">
+                    <div class="col-md-12 text-center" data-aos="fade-up">
                         <h2>{{ section('Growing Opportunities.data.first.title') }}</h2>
                         {!! section('Growing Opportunities.data.first.content') !!}
                     </div>
                 </div>
                 <div class="row margin-top40">
-                    <div class="col-md-6">
+                    <div class="col-md-6" data-aos="fade-right">
                         <div class="list padding-top60">
                             @foreach ( section('Growing Opportunities List Items.data') as $data )
                             {!! $data->content !!}
                             @endforeach                            
                         </div>
-                        <div class="btn-wrap text-center margin-top80">
+                        <div class="btn-wrap text-center margin-top50">
                             <a href="{{ section('Growing Opportunities.data.first.btn1_link') }}" class="btn btn--secondary margin-right20">{{ section('Growing Opportunities.data.first.btn1_text') }}</a> <a href="{{ section('Growing Opportunities.data.first.btn2_link') }}" class="btn btn--primary">{{ section('Growing Opportunities.data.first.btn2_text') }}</a>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6" data-aos="fade-left">
                         <img src="{{ section('Growing Opportunities.data.first.image') }}" alt="{{ section('Growing Opportunities.data.first.alt_text') }}">
                     </div>
                 </div>

@@ -119,8 +119,9 @@
                             <div class="col-md-6 content-middle">
 
                                 <div class="masking-background__content">
-                                    <h2>Your Membership
-                                        Could Help Pay For Itself</h2>
+                                    <h2>Your Membership <br>
+                                        Could Help Pay For <br>
+                                         Itself</h2>
                                         <p>When you’re getting discounts on everyday purchases all year, the savings can really add up.
                                         </p>
                                 </div>
@@ -133,8 +134,8 @@
                                     <div class="slider-mask__slick">
                                         
                                         <div class="slider-mask__slick--item">
-                                            <div class="slider-mask__image">    
-                                                <img src="{{ url('public/images/member1.jpg') }}">
+                                            <div class="slider-mask__image image-background">    
+                                                <img src="{{ url('public/images/testimonial-image.png') }}">
                                             </div>
                                             <div class="slider-mask__text"> 
                                                 <div class="slider-mask__text--content">
@@ -150,8 +151,8 @@
                                         </div>
 
                                         <div class="slider-mask__slick--item">
-                                            <div class="slider-mask__image">    
-                                                <img src="{{ url('public/images/member1.jpg') }}">
+                                            <div class="slider-mask__image image-background">    
+                                                <img src="{{ url('public/images/testimonial-image.png') }}">
                                             </div>
                                             <div class="slider-mask__text"> 
                                                 <div class="slider-mask__text--content">

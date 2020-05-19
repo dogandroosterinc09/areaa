@@ -1863,6 +1863,13 @@ ul.bullet-style {
         padding: 0;
         padding-left: 7%;
     }
+    .masking-background__wrapper:after {
+        z-index: 1 !important;
+    }
+    &:after {
+        z-index: 1;
+        background-size: 100% 100%;
+    }
 }
 
 .american-report {

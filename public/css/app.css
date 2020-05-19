@@ -18227,6 +18227,9 @@ header .main-nagivation-desktop .navbar-bar ul > li > a {
   font-size: 1em;
   font-weight: 500;
 }
+header .main-nagivation-desktop .navbar-bar ul > li.active a {
+  color: #ab1a2d !important;
+}
 header .main-nagivation-desktop .navbar-bar ul > li .dropdown-menu {
   background: transparent;
   padding: 0;
@@ -21360,6 +21363,13 @@ ul.bullet-style li h6 {
   padding: 0;
   padding-left: 7%;
 }
+.membership-slider .masking-background__wrapper:after {
+  z-index: 1 !important;
+}
+.membership-slider:after {
+  z-index: 1;
+  background-size: 100% 100%;
+}
 
 .american-report {
   margin-bottom: 100px;
@@ -22101,16 +22111,96 @@ section.page--media .search-member-directory {
   }
 }
 
+.slider-mask__slick {
+  /* Slick Dots */
+}
 .slider-mask__slick--item {
   height: 550px;
   position: relative;
+}
+.slider-mask__slick .slick-dots {
+  position: absolute;
+  bottom: -25px;
+  right: 0;
+  display: block;
+  width: 100%;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+  right: -8% !important;
+}
+.slider-mask__slick .slick-dots li {
+  position: relative;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 10px;
+  padding: 0;
+  cursor: pointer;
+  border-radius: 100%;
+}
+.slider-mask__slick .slick-dots li button {
+  background: transparent;
+  width: 10px;
+  height: 10px;
+  border: none;
+  font-size: 0;
+  line-height: 0;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  border-radius: 100%;
+}
+.slider-mask__slick .slick-dots li button::before {
+  font-family: slick;
+  font-size: 6px;
+  line-height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  opacity: 1;
+  background: #b6b7b7;
+  text-align: center;
+  content: "";
+  display: block;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 100%;
+}
+.slider-mask__slick .slick-dots li.slick-active button {
+  width: 22px;
+  height: 22px;
+}
+.slider-mask__slick .slick-dots li.slick-active button:before {
+  background: #000000;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+}
+.slider-mask__slick .slick-dots li.slick-active button:after {
+  content: "";
+  position: relative;
+  top: -11px;
+  left: -11px;
+  right: 0;
+  display: block;
+  border: 1px solid #000000;
+  width: 22px;
+  height: 22px;
+  border-radius: 100%;
+}
+.slider-mask__slick button.slick-next.slick-arrow,
+.slider-mask__slick button.slick-prev.slick-arrow {
+  display: none !important;
 }
 .slider-mask__text {
   background: url("../images/sprite.png") no-repeat;
   width: 571px;
   height: 571px;
   position: absolute;
-  bottom: -108px;
+  bottom: -116px;
   right: 170px;
   background-position: -4px -443px;
   -webkit-transform: scale(0.7);
@@ -22119,23 +22209,32 @@ section.page--media .search-member-directory {
   flex-wrap: wrap !important;
   align-items: center;
   justify-content: center;
+  z-index: 3;
 }
 .slider-mask__text--content {
   width: 70%;
   text-align: center;
   color: #fff;
+  font-size: 1.3em;
+  padding-right: 15px;
+  padding-top: 12px;
+}
+.slider-mask__text--name h6 {
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 0;
 }
 .slider-mask__image {
-  width: 550px;
-  height: 550px;
+  width: 600px;
+  height: 600px;
   right: -23px;
   top: -20px;
   position: absolute;
+  background-size: 90% !important;
 }
 .slider-mask__image img {
   -webkit-mask-box-image: url("../images/masking.png") 10;
-  -webkit-transform: scale(0.9);
-          transform: scale(0.9);
 }
 
 .custom-radio,
@@ -22337,6 +22436,9 @@ section.page--media .search-member-directory {
 .page-chapter header.scrolling .logo {
   width: 120px !important;
 }
+.page-chapter .chapter-benefits ul.bullet-style {
+  margin-bottom: 0;
+}
 
 .page--board .executive-board {
   padding: 60px 0;
@@ -22347,6 +22449,18 @@ section.page--media .search-member-directory {
 }
 .page--areaa-benefit .side-tab-equal__tab ul li a {
   pointer-events: none !important;
+}
+.page--login .login-section__item {
+  background: transparent;
+  min-height: 700px;
+}
+.page--login .login-section {
+  margin: 0;
+}
+.page--login .login-section .container-max {
+  max-width: 100%;
+  border-radius: 0 !important;
+  padding: 0;
 }
 
 .homepage--main .sponsors {
@@ -23453,6 +23567,7 @@ section.page--media .search-member-directory {
   position: absolute;
   z-index: 2;
   background-size: 100% 100%;
+  left: 0;
 }
 .video-masking__floater {
   display: flex !important;
@@ -23485,6 +23600,12 @@ section.page--media .search-member-directory {
 }
 .html-video video {
   height: 100%;
+  -o-object-fit: fill !important;
+  object-fit: fill !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 .html-video__button {
   position: absolute;
