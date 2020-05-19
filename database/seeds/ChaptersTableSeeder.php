@@ -25,8 +25,8 @@ class ChaptersTableSeeder extends Seeder
                 'slug' => 'aloha',
                 'latitude' => 0.0,
                 'longitude' => 0.0,
-                'created_at' => '2020-04-01 21:57:22',
-                'updated_at' => '2020-04-27 16:53:18',
+                'created_at' => '2020-04-02 05:57:22',
+                'updated_at' => '2020-04-28 00:53:18',
                 'deleted_at' => NULL,
             ),
             1 => 
@@ -37,8 +37,8 @@ class ChaptersTableSeeder extends Seeder
                 'slug' => 'atlantametro',
                 'latitude' => 0.0,
                 'longitude' => 0.0,
-                'created_at' => '2020-04-26 23:23:44',
-                'updated_at' => '2020-04-27 16:53:42',
+                'created_at' => '2020-04-27 07:23:44',
+                'updated_at' => '2020-04-28 00:53:42',
                 'deleted_at' => NULL,
             ),
         ));

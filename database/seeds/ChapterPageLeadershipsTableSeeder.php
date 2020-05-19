@@ -30,8 +30,8 @@ Board</h1>
                 'seo_meta_id' => 0,
                 'section_1' => '',
                 'deleted_at' => NULL,
-                'created_at' => '2020-04-17 23:14:37',
-                'updated_at' => '2020-04-20 21:31:30',
+                'created_at' => '2020-04-18 07:14:37',
+                'updated_at' => '2020-04-21 05:31:30',
             ),
             1 => 
             array (
@@ -42,8 +42,8 @@ Board</h1>
                 'seo_meta_id' => 0,
                 'section_1' => '',
                 'deleted_at' => NULL,
-                'created_at' => '2020-04-26 23:23:44',
-                'updated_at' => '2020-04-26 23:23:44',
+                'created_at' => '2020-04-27 07:23:44',
+                'updated_at' => '2020-04-27 07:23:44',
             ),
         ));
         

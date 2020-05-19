@@ -23,8 +23,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Create Role',
                 'guard_name' => 'web',
                 'permission_group_id' => 1,
-                'created_at' => '2019-10-04 22:04:34',
-                'updated_at' => '2019-10-04 22:04:34',
+                'created_at' => '2019-10-05 06:04:34',
+                'updated_at' => '2019-10-05 06:04:34',
             ),
             1 => 
             array (
@@ -32,8 +32,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Read Role',
                 'guard_name' => 'web',
                 'permission_group_id' => 1,
-                'created_at' => '2019-10-04 22:04:34',
-                'updated_at' => '2019-10-04 22:04:34',
+                'created_at' => '2019-10-05 06:04:34',
+                'updated_at' => '2019-10-05 06:04:34',
             ),
             2 => 
             array (
@@ -41,8 +41,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Update Role',
                 'guard_name' => 'web',
                 'permission_group_id' => 1,
-                'created_at' => '2019-10-04 22:04:34',
-                'updated_at' => '2019-10-04 22:04:34',
+                'created_at' => '2019-10-05 06:04:34',
+                'updated_at' => '2019-10-05 06:04:34',
             ),
             3 => 
             array (
@@ -50,8 +50,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Delete Role',
                 'guard_name' => 'web',
                 'permission_group_id' => 1,
-                'created_at' => '2019-10-04 22:04:34',
-                'updated_at' => '2019-10-04 22:04:34',
+                'created_at' => '2019-10-05 06:04:34',
+                'updated_at' => '2019-10-05 06:04:34',
             ),
             4 => 
             array (
@@ -59,8 +59,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Create Permission',
                 'guard_name' => 'web',
                 'permission_group_id' => 2,
-                'created_at' => '2019-10-04 22:04:34',
-                'updated_at' => '2019-10-04 22:04:34',
+                'created_at' => '2019-10-05 06:04:34',
+                'updated_at' => '2019-10-05 06:04:34',
             ),
             5 => 
             array (
@@ -68,8 +68,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Read Permission',
                 'guard_name' => 'web',
                 'permission_group_id' => 2,
-                'created_at' => '2019-10-04 22:04:34',
-                'updated_at' => '2019-10-04 22:04:34',
+                'created_at' => '2019-10-05 06:04:34',
+                'updated_at' => '2019-10-05 06:04:34',
             ),
             6 => 
             array (
@@ -77,8 +77,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Update Permission',
                 'guard_name' => 'web',
                 'permission_group_id' => 2,
-                'created_at' => '2019-10-04 22:04:34',
-                'updated_at' => '2019-10-04 22:04:34',
+                'created_at' => '2019-10-05 06:04:34',
+                'updated_at' => '2019-10-05 06:04:34',
             ),
             7 => 
             array (
@@ -86,8 +86,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Delete Permission',
                 'guard_name' => 'web',
                 'permission_group_id' => 2,
-                'created_at' => '2019-10-04 22:04:34',
-                'updated_at' => '2019-10-04 22:04:34',
+                'created_at' => '2019-10-05 06:04:34',
+                'updated_at' => '2019-10-05 06:04:34',
             ),
             8 => 
             array (
@@ -95,8 +95,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Create Permission Group',
                 'guard_name' => 'web',
                 'permission_group_id' => 3,
-                'created_at' => '2019-10-04 22:04:34',
-                'updated_at' => '2019-10-04 22:04:34',
+                'created_at' => '2019-10-05 06:04:34',
+                'updated_at' => '2019-10-05 06:04:34',
             ),
             9 => 
             array (
@@ -104,8 +104,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Read Permission Group',
                 'guard_name' => 'web',
                 'permission_group_id' => 3,
-                'created_at' => '2019-10-04 22:04:34',
-                'updated_at' => '2019-10-04 22:04:34',
+                'created_at' => '2019-10-05 06:04:34',
+                'updated_at' => '2019-10-05 06:04:34',
             ),
             10 => 
             array (
@@ -113,8 +113,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Update Permission Group',
                 'guard_name' => 'web',
                 'permission_group_id' => 3,
-                'created_at' => '2019-10-04 22:04:34',
-                'updated_at' => '2019-10-04 22:04:34',
+                'created_at' => '2019-10-05 06:04:34',
+                'updated_at' => '2019-10-05 06:04:34',
             ),
             11 => 
             array (
@@ -122,8 +122,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Delete Permission Group',
                 'guard_name' => 'web',
                 'permission_group_id' => 3,
-                'created_at' => '2019-10-04 22:04:34',
-                'updated_at' => '2019-10-04 22:04:34',
+                'created_at' => '2019-10-05 06:04:34',
+                'updated_at' => '2019-10-05 06:04:34',
             ),
             12 => 
             array (
@@ -131,8 +131,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Create User',
                 'guard_name' => 'web',
                 'permission_group_id' => 4,
-                'created_at' => '2019-10-04 22:04:34',
-                'updated_at' => '2019-10-04 22:04:34',
+                'created_at' => '2019-10-05 06:04:34',
+                'updated_at' => '2019-10-05 06:04:34',
             ),
             13 => 
             array (
@@ -140,8 +140,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Read User',
                 'guard_name' => 'web',
                 'permission_group_id' => 4,
-                'created_at' => '2019-10-04 22:04:34',
-                'updated_at' => '2019-10-04 22:04:34',
+                'created_at' => '2019-10-05 06:04:34',
+                'updated_at' => '2019-10-05 06:04:34',
             ),
             14 => 
             array (
@@ -149,8 +149,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Update User',
                 'guard_name' => 'web',
                 'permission_group_id' => 4,
-                'created_at' => '2019-10-04 22:04:34',
-                'updated_at' => '2019-10-04 22:04:34',
+                'created_at' => '2019-10-05 06:04:34',
+                'updated_at' => '2019-10-05 06:04:34',
             ),
             15 => 
             array (
@@ -158,8 +158,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Delete User',
                 'guard_name' => 'web',
                 'permission_group_id' => 4,
-                'created_at' => '2019-10-04 22:04:34',
-                'updated_at' => '2019-10-04 22:04:34',
+                'created_at' => '2019-10-05 06:04:34',
+                'updated_at' => '2019-10-05 06:04:34',
             ),
             16 => 
             array (
@@ -167,8 +167,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Create System Setting',
                 'guard_name' => 'web',
                 'permission_group_id' => 5,
-                'created_at' => '2019-10-04 22:04:34',
-                'updated_at' => '2019-10-04 22:04:34',
+                'created_at' => '2019-10-05 06:04:34',
+                'updated_at' => '2019-10-05 06:04:34',
             ),
             17 => 
             array (
@@ -176,8 +176,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Read System Setting',
                 'guard_name' => 'web',
                 'permission_group_id' => 5,
-                'created_at' => '2019-10-04 22:04:34',
-                'updated_at' => '2019-10-04 22:04:34',
+                'created_at' => '2019-10-05 06:04:34',
+                'updated_at' => '2019-10-05 06:04:34',
             ),
             18 => 
             array (
@@ -185,8 +185,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Update System Setting',
                 'guard_name' => 'web',
                 'permission_group_id' => 5,
-                'created_at' => '2019-10-04 22:04:34',
-                'updated_at' => '2019-10-04 22:04:34',
+                'created_at' => '2019-10-05 06:04:34',
+                'updated_at' => '2019-10-05 06:04:34',
             ),
             19 => 
             array (
@@ -194,8 +194,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Delete System Setting',
                 'guard_name' => 'web',
                 'permission_group_id' => 5,
-                'created_at' => '2019-10-04 22:04:34',
-                'updated_at' => '2019-10-04 22:04:34',
+                'created_at' => '2019-10-05 06:04:34',
+                'updated_at' => '2019-10-05 06:04:34',
             ),
             20 => 
             array (
@@ -203,8 +203,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Create Page',
                 'guard_name' => 'web',
                 'permission_group_id' => 6,
-                'created_at' => '2019-10-04 22:04:34',
-                'updated_at' => '2019-10-04 22:04:34',
+                'created_at' => '2019-10-05 06:04:34',
+                'updated_at' => '2019-10-05 06:04:34',
             ),
             21 => 
             array (
@@ -212,8 +212,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Read Page',
                 'guard_name' => 'web',
                 'permission_group_id' => 6,
-                'created_at' => '2019-10-04 22:04:34',
-                'updated_at' => '2019-10-04 22:04:34',
+                'created_at' => '2019-10-05 06:04:34',
+                'updated_at' => '2019-10-05 06:04:34',
             ),
             22 => 
             array (
@@ -221,8 +221,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Update Page',
                 'guard_name' => 'web',
                 'permission_group_id' => 6,
-                'created_at' => '2019-10-04 22:04:34',
-                'updated_at' => '2019-10-04 22:04:34',
+                'created_at' => '2019-10-05 06:04:34',
+                'updated_at' => '2019-10-05 06:04:34',
             ),
             23 => 
             array (
@@ -230,8 +230,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Delete Page',
                 'guard_name' => 'web',
                 'permission_group_id' => 6,
-                'created_at' => '2019-10-04 22:04:34',
-                'updated_at' => '2019-10-04 22:04:34',
+                'created_at' => '2019-10-05 06:04:34',
+                'updated_at' => '2019-10-05 06:04:34',
             ),
             24 => 
             array (
@@ -239,8 +239,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Create Home Slide',
                 'guard_name' => 'web',
                 'permission_group_id' => 7,
-                'created_at' => '2019-10-04 22:04:34',
-                'updated_at' => '2019-10-04 22:04:34',
+                'created_at' => '2019-10-05 06:04:34',
+                'updated_at' => '2019-10-05 06:04:34',
             ),
             25 => 
             array (
@@ -248,8 +248,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Read Home Slide',
                 'guard_name' => 'web',
                 'permission_group_id' => 7,
-                'created_at' => '2019-10-04 22:04:34',
-                'updated_at' => '2019-10-04 22:04:34',
+                'created_at' => '2019-10-05 06:04:34',
+                'updated_at' => '2019-10-05 06:04:34',
             ),
             26 => 
             array (
@@ -257,8 +257,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Update Home Slide',
                 'guard_name' => 'web',
                 'permission_group_id' => 7,
-                'created_at' => '2019-10-04 22:04:34',
-                'updated_at' => '2019-10-04 22:04:34',
+                'created_at' => '2019-10-05 06:04:34',
+                'updated_at' => '2019-10-05 06:04:34',
             ),
             27 => 
             array (
@@ -266,8 +266,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Delete Home Slide',
                 'guard_name' => 'web',
                 'permission_group_id' => 7,
-                'created_at' => '2019-10-04 22:04:34',
-                'updated_at' => '2019-10-04 22:04:34',
+                'created_at' => '2019-10-05 06:04:34',
+                'updated_at' => '2019-10-05 06:04:34',
             ),
             28 => 
             array (
@@ -275,8 +275,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Create Contact',
                 'guard_name' => 'web',
                 'permission_group_id' => 8,
-                'created_at' => '2019-10-04 22:04:34',
-                'updated_at' => '2019-10-04 22:04:34',
+                'created_at' => '2019-10-05 06:04:34',
+                'updated_at' => '2019-10-05 06:04:34',
             ),
             29 => 
             array (
@@ -284,8 +284,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Read Contact',
                 'guard_name' => 'web',
                 'permission_group_id' => 8,
-                'created_at' => '2019-10-04 22:04:34',
-                'updated_at' => '2020-04-26 22:32:40',
+                'created_at' => '2019-10-05 06:04:34',
+                'updated_at' => '2020-04-27 06:32:40',
             ),
             30 => 
             array (
@@ -293,8 +293,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Update Contact',
                 'guard_name' => 'web',
                 'permission_group_id' => 8,
-                'created_at' => '2019-10-04 22:04:34',
-                'updated_at' => '2019-10-04 22:04:34',
+                'created_at' => '2019-10-05 06:04:34',
+                'updated_at' => '2019-10-05 06:04:34',
             ),
             31 => 
             array (
@@ -302,8 +302,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Delete Contact',
                 'guard_name' => 'web',
                 'permission_group_id' => 8,
-                'created_at' => '2019-10-04 22:04:34',
-                'updated_at' => '2019-10-04 22:04:34',
+                'created_at' => '2019-10-05 06:04:34',
+                'updated_at' => '2019-10-05 06:04:34',
             ),
             32 => 
             array (
@@ -311,8 +311,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Create Board Member',
                 'guard_name' => 'web',
                 'permission_group_id' => 9,
-                'created_at' => '2020-02-18 16:01:59',
-                'updated_at' => '2020-02-18 16:01:59',
+                'created_at' => '2020-02-19 00:01:59',
+                'updated_at' => '2020-02-19 00:01:59',
             ),
             33 => 
             array (
@@ -320,8 +320,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Read Board Member',
                 'guard_name' => 'web',
                 'permission_group_id' => 9,
-                'created_at' => '2020-02-18 16:01:59',
-                'updated_at' => '2020-02-18 16:01:59',
+                'created_at' => '2020-02-19 00:01:59',
+                'updated_at' => '2020-02-19 00:01:59',
             ),
             34 => 
             array (
@@ -329,8 +329,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Update Board Member',
                 'guard_name' => 'web',
                 'permission_group_id' => 9,
-                'created_at' => '2020-02-18 16:01:59',
-                'updated_at' => '2020-02-18 16:01:59',
+                'created_at' => '2020-02-19 00:01:59',
+                'updated_at' => '2020-02-19 00:01:59',
             ),
             35 => 
             array (
@@ -338,8 +338,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Delete Board Member',
                 'guard_name' => 'web',
                 'permission_group_id' => 9,
-                'created_at' => '2020-02-18 16:01:59',
-                'updated_at' => '2020-02-18 16:01:59',
+                'created_at' => '2020-02-19 00:01:59',
+                'updated_at' => '2020-02-19 00:01:59',
             ),
             36 => 
             array (
@@ -347,8 +347,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Create Faq',
                 'guard_name' => 'web',
                 'permission_group_id' => 10,
-                'created_at' => '2020-02-21 18:18:58',
-                'updated_at' => '2020-02-21 18:18:58',
+                'created_at' => '2020-02-22 02:18:58',
+                'updated_at' => '2020-02-22 02:18:58',
             ),
             37 => 
             array (
@@ -356,8 +356,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Read Faq',
                 'guard_name' => 'web',
                 'permission_group_id' => 10,
-                'created_at' => '2020-02-21 18:18:59',
-                'updated_at' => '2020-02-21 18:18:59',
+                'created_at' => '2020-02-22 02:18:59',
+                'updated_at' => '2020-02-22 02:18:59',
             ),
             38 => 
             array (
@@ -365,8 +365,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Update Faq',
                 'guard_name' => 'web',
                 'permission_group_id' => 10,
-                'created_at' => '2020-02-21 18:18:59',
-                'updated_at' => '2020-02-21 18:18:59',
+                'created_at' => '2020-02-22 02:18:59',
+                'updated_at' => '2020-02-22 02:18:59',
             ),
             39 => 
             array (
@@ -374,8 +374,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Delete Faq',
                 'guard_name' => 'web',
                 'permission_group_id' => 10,
-                'created_at' => '2020-02-21 18:18:59',
-                'updated_at' => '2020-02-21 18:18:59',
+                'created_at' => '2020-02-22 02:18:59',
+                'updated_at' => '2020-02-22 02:18:59',
             ),
             40 => 
             array (
@@ -383,8 +383,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Create Gallery',
                 'guard_name' => 'web',
                 'permission_group_id' => 11,
-                'created_at' => '2020-02-21 19:05:56',
-                'updated_at' => '2020-02-21 19:05:56',
+                'created_at' => '2020-02-22 03:05:56',
+                'updated_at' => '2020-02-22 03:05:56',
             ),
             41 => 
             array (
@@ -392,8 +392,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Read Gallery',
                 'guard_name' => 'web',
                 'permission_group_id' => 11,
-                'created_at' => '2020-02-21 19:05:56',
-                'updated_at' => '2020-02-21 19:05:56',
+                'created_at' => '2020-02-22 03:05:56',
+                'updated_at' => '2020-02-22 03:05:56',
             ),
             42 => 
             array (
@@ -401,8 +401,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Update Gallery',
                 'guard_name' => 'web',
                 'permission_group_id' => 11,
-                'created_at' => '2020-02-21 19:05:56',
-                'updated_at' => '2020-02-21 19:05:56',
+                'created_at' => '2020-02-22 03:05:56',
+                'updated_at' => '2020-02-22 03:05:56',
             ),
             43 => 
             array (
@@ -410,8 +410,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Delete Gallery',
                 'guard_name' => 'web',
                 'permission_group_id' => 11,
-                'created_at' => '2020-02-21 19:05:56',
-                'updated_at' => '2020-02-21 19:05:56',
+                'created_at' => '2020-02-22 03:05:56',
+                'updated_at' => '2020-02-22 03:05:56',
             ),
             44 => 
             array (
@@ -419,8 +419,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Create Event',
                 'guard_name' => 'web',
                 'permission_group_id' => 12,
-                'created_at' => '2020-02-25 16:43:13',
-                'updated_at' => '2020-02-25 16:43:13',
+                'created_at' => '2020-02-26 00:43:13',
+                'updated_at' => '2020-02-26 00:43:13',
             ),
             45 => 
             array (
@@ -428,8 +428,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Read Event',
                 'guard_name' => 'web',
                 'permission_group_id' => 12,
-                'created_at' => '2020-02-25 16:43:13',
-                'updated_at' => '2020-02-25 16:43:13',
+                'created_at' => '2020-02-26 00:43:13',
+                'updated_at' => '2020-02-26 00:43:13',
             ),
             46 => 
             array (
@@ -437,8 +437,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Update Event',
                 'guard_name' => 'web',
                 'permission_group_id' => 12,
-                'created_at' => '2020-02-25 16:43:13',
-                'updated_at' => '2020-02-25 16:43:13',
+                'created_at' => '2020-02-26 00:43:13',
+                'updated_at' => '2020-02-26 00:43:13',
             ),
             47 => 
             array (
@@ -446,8 +446,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Delete Event',
                 'guard_name' => 'web',
                 'permission_group_id' => 12,
-                'created_at' => '2020-02-25 16:43:13',
-                'updated_at' => '2020-02-25 16:43:13',
+                'created_at' => '2020-02-26 00:43:13',
+                'updated_at' => '2020-02-26 00:43:13',
             ),
             48 => 
             array (
@@ -455,8 +455,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Create Chapter',
                 'guard_name' => 'web',
                 'permission_group_id' => 13,
-                'created_at' => '2020-02-25 17:09:07',
-                'updated_at' => '2020-02-25 17:09:07',
+                'created_at' => '2020-02-26 01:09:07',
+                'updated_at' => '2020-02-26 01:09:07',
             ),
             49 => 
             array (
@@ -464,8 +464,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Read Chapter',
                 'guard_name' => 'web',
                 'permission_group_id' => 13,
-                'created_at' => '2020-02-25 17:09:07',
-                'updated_at' => '2020-02-25 17:09:07',
+                'created_at' => '2020-02-26 01:09:07',
+                'updated_at' => '2020-02-26 01:09:07',
             ),
             50 => 
             array (
@@ -473,8 +473,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Update Chapter',
                 'guard_name' => 'web',
                 'permission_group_id' => 13,
-                'created_at' => '2020-02-25 17:09:07',
-                'updated_at' => '2020-02-25 17:09:07',
+                'created_at' => '2020-02-26 01:09:07',
+                'updated_at' => '2020-02-26 01:09:07',
             ),
             51 => 
             array (
@@ -482,8 +482,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Delete Chapter',
                 'guard_name' => 'web',
                 'permission_group_id' => 13,
-                'created_at' => '2020-02-25 17:09:07',
-                'updated_at' => '2020-02-25 17:09:07',
+                'created_at' => '2020-02-26 01:09:07',
+                'updated_at' => '2020-02-26 01:09:07',
             ),
             52 => 
             array (
@@ -491,8 +491,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Create Benefits',
                 'guard_name' => 'web',
                 'permission_group_id' => 14,
-                'created_at' => '2020-03-18 16:56:12',
-                'updated_at' => '2020-03-18 16:56:12',
+                'created_at' => '2020-03-19 00:56:12',
+                'updated_at' => '2020-03-19 00:56:12',
             ),
             53 => 
             array (
@@ -500,8 +500,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Read Benefits',
                 'guard_name' => 'web',
                 'permission_group_id' => 14,
-                'created_at' => '2020-03-18 16:56:12',
-                'updated_at' => '2020-03-18 16:56:12',
+                'created_at' => '2020-03-19 00:56:12',
+                'updated_at' => '2020-03-19 00:56:12',
             ),
             54 => 
             array (
@@ -509,8 +509,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Update Benefits',
                 'guard_name' => 'web',
                 'permission_group_id' => 14,
-                'created_at' => '2020-03-18 16:56:12',
-                'updated_at' => '2020-03-18 16:56:12',
+                'created_at' => '2020-03-19 00:56:12',
+                'updated_at' => '2020-03-19 00:56:12',
             ),
             55 => 
             array (
@@ -518,8 +518,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Delete Benefits',
                 'guard_name' => 'web',
                 'permission_group_id' => 14,
-                'created_at' => '2020-03-18 16:56:12',
-                'updated_at' => '2020-03-18 16:56:12',
+                'created_at' => '2020-03-19 00:56:12',
+                'updated_at' => '2020-03-19 00:56:12',
             ),
             56 => 
             array (
@@ -527,8 +527,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Create Webinars',
                 'guard_name' => 'web',
                 'permission_group_id' => 15,
-                'created_at' => '2020-03-25 17:21:12',
-                'updated_at' => '2020-03-25 17:21:12',
+                'created_at' => '2020-03-26 01:21:12',
+                'updated_at' => '2020-03-26 01:21:12',
             ),
             57 => 
             array (
@@ -536,8 +536,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Read Webinars',
                 'guard_name' => 'web',
                 'permission_group_id' => 15,
-                'created_at' => '2020-03-25 17:21:12',
-                'updated_at' => '2020-03-25 17:21:12',
+                'created_at' => '2020-03-26 01:21:12',
+                'updated_at' => '2020-03-26 01:21:12',
             ),
             58 => 
             array (
@@ -545,8 +545,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Update Webinars',
                 'guard_name' => 'web',
                 'permission_group_id' => 15,
-                'created_at' => '2020-03-25 17:21:12',
-                'updated_at' => '2020-03-25 17:21:12',
+                'created_at' => '2020-03-26 01:21:12',
+                'updated_at' => '2020-03-26 01:21:12',
             ),
             59 => 
             array (
@@ -554,8 +554,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Delete Webinars',
                 'guard_name' => 'web',
                 'permission_group_id' => 15,
-                'created_at' => '2020-03-25 17:21:12',
-                'updated_at' => '2020-03-25 17:21:12',
+                'created_at' => '2020-03-26 01:21:12',
+                'updated_at' => '2020-03-26 01:21:12',
             ),
             60 => 
             array (
@@ -563,8 +563,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Create Chapter Home',
                 'guard_name' => 'web',
                 'permission_group_id' => 16,
-                'created_at' => '2020-04-01 18:12:00',
-                'updated_at' => '2020-04-01 18:12:00',
+                'created_at' => '2020-04-02 02:12:00',
+                'updated_at' => '2020-04-02 02:12:00',
             ),
             61 => 
             array (
@@ -572,8 +572,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Read Chapter Home',
                 'guard_name' => 'web',
                 'permission_group_id' => 16,
-                'created_at' => '2020-04-01 18:12:00',
-                'updated_at' => '2020-04-01 18:12:00',
+                'created_at' => '2020-04-02 02:12:00',
+                'updated_at' => '2020-04-02 02:12:00',
             ),
             62 => 
             array (
@@ -581,8 +581,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Update Chapter Home',
                 'guard_name' => 'web',
                 'permission_group_id' => 16,
-                'created_at' => '2020-04-01 18:12:00',
-                'updated_at' => '2020-04-01 18:12:00',
+                'created_at' => '2020-04-02 02:12:00',
+                'updated_at' => '2020-04-02 02:12:00',
             ),
             63 => 
             array (
@@ -590,8 +590,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Delete Chapter Home',
                 'guard_name' => 'web',
                 'permission_group_id' => 16,
-                'created_at' => '2020-04-01 18:12:00',
-                'updated_at' => '2020-04-01 18:12:00',
+                'created_at' => '2020-04-02 02:12:00',
+                'updated_at' => '2020-04-02 02:12:00',
             ),
             64 => 
             array (
@@ -599,8 +599,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Read Chapter Page',
                 'guard_name' => 'web',
                 'permission_group_id' => 13,
-                'created_at' => '2020-04-02 15:16:26',
-                'updated_at' => '2020-04-02 15:16:26',
+                'created_at' => '2020-04-02 23:16:26',
+                'updated_at' => '2020-04-02 23:16:26',
             ),
             65 => 
             array (
@@ -608,8 +608,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Create Chapter Event',
                 'guard_name' => 'web',
                 'permission_group_id' => 17,
-                'created_at' => '2020-04-03 17:13:16',
-                'updated_at' => '2020-04-03 17:13:16',
+                'created_at' => '2020-04-04 01:13:16',
+                'updated_at' => '2020-04-04 01:13:16',
             ),
             66 => 
             array (
@@ -617,8 +617,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Read Chapter Event',
                 'guard_name' => 'web',
                 'permission_group_id' => 17,
-                'created_at' => '2020-04-03 17:13:16',
-                'updated_at' => '2020-04-03 17:13:16',
+                'created_at' => '2020-04-04 01:13:16',
+                'updated_at' => '2020-04-04 01:13:16',
             ),
             67 => 
             array (
@@ -626,8 +626,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Update Chapter Event',
                 'guard_name' => 'web',
                 'permission_group_id' => 17,
-                'created_at' => '2020-04-03 17:13:16',
-                'updated_at' => '2020-04-03 17:13:16',
+                'created_at' => '2020-04-04 01:13:16',
+                'updated_at' => '2020-04-04 01:13:16',
             ),
             68 => 
             array (
@@ -635,8 +635,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Delete Chapter Event',
                 'guard_name' => 'web',
                 'permission_group_id' => 17,
-                'created_at' => '2020-04-03 17:13:16',
-                'updated_at' => '2020-04-03 17:13:16',
+                'created_at' => '2020-04-04 01:13:16',
+                'updated_at' => '2020-04-04 01:13:16',
             ),
             69 => 
             array (
@@ -644,8 +644,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Create Chapter Board Member',
                 'guard_name' => 'web',
                 'permission_group_id' => 19,
-                'created_at' => '2020-04-07 17:22:12',
-                'updated_at' => '2020-04-07 17:22:12',
+                'created_at' => '2020-04-08 01:22:12',
+                'updated_at' => '2020-04-08 01:22:12',
             ),
             70 => 
             array (
@@ -653,8 +653,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Read Chapter Board Member',
                 'guard_name' => 'web',
                 'permission_group_id' => 19,
-                'created_at' => '2020-04-07 17:22:12',
-                'updated_at' => '2020-04-07 17:22:12',
+                'created_at' => '2020-04-08 01:22:12',
+                'updated_at' => '2020-04-08 01:22:12',
             ),
             71 => 
             array (
@@ -662,8 +662,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Update Chapter Board Member',
                 'guard_name' => 'web',
                 'permission_group_id' => 19,
-                'created_at' => '2020-04-07 17:22:12',
-                'updated_at' => '2020-04-07 17:22:12',
+                'created_at' => '2020-04-08 01:22:12',
+                'updated_at' => '2020-04-08 01:22:12',
             ),
             72 => 
             array (
@@ -671,8 +671,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Delete Chapter Board Member',
                 'guard_name' => 'web',
                 'permission_group_id' => 19,
-                'created_at' => '2020-04-07 17:22:12',
-                'updated_at' => '2020-04-07 17:22:12',
+                'created_at' => '2020-04-08 01:22:12',
+                'updated_at' => '2020-04-08 01:22:12',
             ),
             73 => 
             array (
@@ -680,8 +680,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Create Media Category',
                 'guard_name' => 'web',
                 'permission_group_id' => 20,
-                'created_at' => '2020-04-09 20:17:10',
-                'updated_at' => '2020-04-09 20:17:10',
+                'created_at' => '2020-04-10 04:17:10',
+                'updated_at' => '2020-04-10 04:17:10',
             ),
             74 => 
             array (
@@ -689,8 +689,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Read Media Category',
                 'guard_name' => 'web',
                 'permission_group_id' => 20,
-                'created_at' => '2020-04-09 20:17:10',
-                'updated_at' => '2020-04-09 20:17:10',
+                'created_at' => '2020-04-10 04:17:10',
+                'updated_at' => '2020-04-10 04:17:10',
             ),
             75 => 
             array (
@@ -698,8 +698,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Update Media Category',
                 'guard_name' => 'web',
                 'permission_group_id' => 20,
-                'created_at' => '2020-04-09 20:17:10',
-                'updated_at' => '2020-04-09 20:17:10',
+                'created_at' => '2020-04-10 04:17:10',
+                'updated_at' => '2020-04-10 04:17:10',
             ),
             76 => 
             array (
@@ -707,8 +707,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Delete Media Category',
                 'guard_name' => 'web',
                 'permission_group_id' => 20,
-                'created_at' => '2020-04-09 20:17:10',
-                'updated_at' => '2020-04-09 20:17:10',
+                'created_at' => '2020-04-10 04:17:10',
+                'updated_at' => '2020-04-10 04:17:10',
             ),
             77 => 
             array (
@@ -716,8 +716,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Create Media',
                 'guard_name' => 'web',
                 'permission_group_id' => 21,
-                'created_at' => '2020-04-09 20:47:11',
-                'updated_at' => '2020-04-09 20:47:11',
+                'created_at' => '2020-04-10 04:47:11',
+                'updated_at' => '2020-04-10 04:47:11',
             ),
             78 => 
             array (
@@ -725,8 +725,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Read Media',
                 'guard_name' => 'web',
                 'permission_group_id' => 21,
-                'created_at' => '2020-04-09 20:47:11',
-                'updated_at' => '2020-04-09 20:47:11',
+                'created_at' => '2020-04-10 04:47:11',
+                'updated_at' => '2020-04-10 04:47:11',
             ),
             79 => 
             array (
@@ -734,8 +734,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Update Media',
                 'guard_name' => 'web',
                 'permission_group_id' => 21,
-                'created_at' => '2020-04-09 20:47:11',
-                'updated_at' => '2020-04-09 20:47:11',
+                'created_at' => '2020-04-10 04:47:11',
+                'updated_at' => '2020-04-10 04:47:11',
             ),
             80 => 
             array (
@@ -743,8 +743,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Delete Media',
                 'guard_name' => 'web',
                 'permission_group_id' => 21,
-                'created_at' => '2020-04-09 20:47:11',
-                'updated_at' => '2020-04-09 20:47:11',
+                'created_at' => '2020-04-10 04:47:11',
+                'updated_at' => '2020-04-10 04:47:11',
             ),
             81 => 
             array (
@@ -752,8 +752,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Create Chapter Logo',
                 'guard_name' => 'web',
                 'permission_group_id' => 22,
-                'created_at' => '2020-04-13 17:17:56',
-                'updated_at' => '2020-04-13 17:17:56',
+                'created_at' => '2020-04-14 01:17:56',
+                'updated_at' => '2020-04-14 01:17:56',
             ),
             82 => 
             array (
@@ -761,8 +761,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Read Chapter Logo',
                 'guard_name' => 'web',
                 'permission_group_id' => 22,
-                'created_at' => '2020-04-13 17:17:56',
-                'updated_at' => '2020-04-13 17:17:56',
+                'created_at' => '2020-04-14 01:17:56',
+                'updated_at' => '2020-04-14 01:17:56',
             ),
             83 => 
             array (
@@ -770,8 +770,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Update Chapter Logo',
                 'guard_name' => 'web',
                 'permission_group_id' => 22,
-                'created_at' => '2020-04-13 17:17:56',
-                'updated_at' => '2020-04-13 17:17:56',
+                'created_at' => '2020-04-14 01:17:56',
+                'updated_at' => '2020-04-14 01:17:56',
             ),
             84 => 
             array (
@@ -779,8 +779,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Delete Chapter Logo',
                 'guard_name' => 'web',
                 'permission_group_id' => 22,
-                'created_at' => '2020-04-13 17:17:56',
-                'updated_at' => '2020-04-13 17:17:56',
+                'created_at' => '2020-04-14 01:17:56',
+                'updated_at' => '2020-04-14 01:17:56',
             ),
             85 => 
             array (
@@ -788,8 +788,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Create Chapter Page About Us',
                 'guard_name' => 'web',
                 'permission_group_id' => 23,
-                'created_at' => '2020-04-15 21:07:19',
-                'updated_at' => '2020-04-15 21:07:19',
+                'created_at' => '2020-04-16 05:07:19',
+                'updated_at' => '2020-04-16 05:07:19',
             ),
             86 => 
             array (
@@ -797,8 +797,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Read Chapter Page About Us',
                 'guard_name' => 'web',
                 'permission_group_id' => 23,
-                'created_at' => '2020-04-15 21:07:19',
-                'updated_at' => '2020-04-15 21:07:19',
+                'created_at' => '2020-04-16 05:07:19',
+                'updated_at' => '2020-04-16 05:07:19',
             ),
             87 => 
             array (
@@ -806,8 +806,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Update Chapter Page About Us',
                 'guard_name' => 'web',
                 'permission_group_id' => 23,
-                'created_at' => '2020-04-15 21:07:19',
-                'updated_at' => '2020-04-15 21:07:19',
+                'created_at' => '2020-04-16 05:07:19',
+                'updated_at' => '2020-04-16 05:07:19',
             ),
             88 => 
             array (
@@ -815,8 +815,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Delete Chapter Page About Us',
                 'guard_name' => 'web',
                 'permission_group_id' => 23,
-                'created_at' => '2020-04-15 21:07:19',
-                'updated_at' => '2020-04-15 21:07:19',
+                'created_at' => '2020-04-16 05:07:19',
+                'updated_at' => '2020-04-16 05:07:19',
             ),
             89 => 
             array (
@@ -824,8 +824,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Create Chapter Page Event',
                 'guard_name' => 'web',
                 'permission_group_id' => 24,
-                'created_at' => '2020-04-16 16:27:48',
-                'updated_at' => '2020-04-16 16:27:48',
+                'created_at' => '2020-04-17 00:27:48',
+                'updated_at' => '2020-04-17 00:27:48',
             ),
             90 => 
             array (
@@ -833,8 +833,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Read Chapter Page Event',
                 'guard_name' => 'web',
                 'permission_group_id' => 24,
-                'created_at' => '2020-04-16 16:27:48',
-                'updated_at' => '2020-04-16 16:27:48',
+                'created_at' => '2020-04-17 00:27:48',
+                'updated_at' => '2020-04-17 00:27:48',
             ),
             91 => 
             array (
@@ -842,8 +842,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Update Chapter Page Event',
                 'guard_name' => 'web',
                 'permission_group_id' => 24,
-                'created_at' => '2020-04-16 16:27:48',
-                'updated_at' => '2020-04-16 16:27:48',
+                'created_at' => '2020-04-17 00:27:48',
+                'updated_at' => '2020-04-17 00:27:48',
             ),
             92 => 
             array (
@@ -851,8 +851,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Delete Chapter Page Event',
                 'guard_name' => 'web',
                 'permission_group_id' => 24,
-                'created_at' => '2020-04-16 16:27:48',
-                'updated_at' => '2020-04-16 16:27:48',
+                'created_at' => '2020-04-17 00:27:48',
+                'updated_at' => '2020-04-17 00:27:48',
             ),
             93 => 
             array (
@@ -860,8 +860,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Create Chapter Page Leadership',
                 'guard_name' => 'web',
                 'permission_group_id' => 25,
-                'created_at' => '2020-04-17 23:07:13',
-                'updated_at' => '2020-04-17 23:07:13',
+                'created_at' => '2020-04-18 07:07:13',
+                'updated_at' => '2020-04-18 07:07:13',
             ),
             94 => 
             array (
@@ -869,8 +869,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Read Chapter Page Leadership',
                 'guard_name' => 'web',
                 'permission_group_id' => 25,
-                'created_at' => '2020-04-17 23:07:13',
-                'updated_at' => '2020-04-17 23:07:13',
+                'created_at' => '2020-04-18 07:07:13',
+                'updated_at' => '2020-04-18 07:07:13',
             ),
             95 => 
             array (
@@ -878,8 +878,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Update Chapter Page Leadership',
                 'guard_name' => 'web',
                 'permission_group_id' => 25,
-                'created_at' => '2020-04-17 23:07:13',
-                'updated_at' => '2020-04-17 23:07:13',
+                'created_at' => '2020-04-18 07:07:13',
+                'updated_at' => '2020-04-18 07:07:13',
             ),
             96 => 
             array (
@@ -887,8 +887,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Delete Chapter Page Leadership',
                 'guard_name' => 'web',
                 'permission_group_id' => 25,
-                'created_at' => '2020-04-17 23:07:13',
-                'updated_at' => '2020-04-17 23:07:13',
+                'created_at' => '2020-04-18 07:07:13',
+                'updated_at' => '2020-04-18 07:07:13',
             ),
             97 => 
             array (
@@ -896,8 +896,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Create Chapter Page Contact Us',
                 'guard_name' => 'web',
                 'permission_group_id' => 26,
-                'created_at' => '2020-04-17 23:27:25',
-                'updated_at' => '2020-04-17 23:27:25',
+                'created_at' => '2020-04-18 07:27:25',
+                'updated_at' => '2020-04-18 07:27:25',
             ),
             98 => 
             array (
@@ -905,8 +905,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Read Chapter Page Contact Us',
                 'guard_name' => 'web',
                 'permission_group_id' => 26,
-                'created_at' => '2020-04-17 23:27:25',
-                'updated_at' => '2020-04-17 23:27:25',
+                'created_at' => '2020-04-18 07:27:25',
+                'updated_at' => '2020-04-18 07:27:25',
             ),
             99 => 
             array (
@@ -914,8 +914,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Update Chapter Page Contact Us',
                 'guard_name' => 'web',
                 'permission_group_id' => 26,
-                'created_at' => '2020-04-17 23:27:25',
-                'updated_at' => '2020-04-17 23:27:25',
+                'created_at' => '2020-04-18 07:27:25',
+                'updated_at' => '2020-04-18 07:27:25',
             ),
             100 => 
             array (
@@ -923,8 +923,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Delete Chapter Page Contact Us',
                 'guard_name' => 'web',
                 'permission_group_id' => 26,
-                'created_at' => '2020-04-17 23:27:25',
-                'updated_at' => '2020-04-17 23:27:25',
+                'created_at' => '2020-04-18 07:27:25',
+                'updated_at' => '2020-04-18 07:27:25',
             ),
             101 => 
             array (
@@ -932,8 +932,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Create Members',
                 'guard_name' => 'web',
                 'permission_group_id' => 27,
-                'created_at' => '2020-04-21 17:50:16',
-                'updated_at' => '2020-04-21 17:50:16',
+                'created_at' => '2020-04-22 01:50:16',
+                'updated_at' => '2020-04-22 01:50:16',
             ),
             102 => 
             array (
@@ -941,8 +941,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Read Members',
                 'guard_name' => 'web',
                 'permission_group_id' => 27,
-                'created_at' => '2020-04-21 17:50:16',
-                'updated_at' => '2020-04-21 17:50:16',
+                'created_at' => '2020-04-22 01:50:16',
+                'updated_at' => '2020-04-22 01:50:16',
             ),
             103 => 
             array (
@@ -950,8 +950,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Update Members',
                 'guard_name' => 'web',
                 'permission_group_id' => 27,
-                'created_at' => '2020-04-21 17:50:16',
-                'updated_at' => '2020-04-21 17:50:16',
+                'created_at' => '2020-04-22 01:50:16',
+                'updated_at' => '2020-04-22 01:50:16',
             ),
             104 => 
             array (
@@ -959,8 +959,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Delete Members',
                 'guard_name' => 'web',
                 'permission_group_id' => 27,
-                'created_at' => '2020-04-21 17:50:16',
-                'updated_at' => '2020-04-21 17:50:16',
+                'created_at' => '2020-04-22 01:50:16',
+                'updated_at' => '2020-04-22 01:50:16',
             ),
             105 => 
             array (
@@ -968,8 +968,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Create Chapter Page Homeslider',
                 'guard_name' => 'web',
                 'permission_group_id' => 28,
-                'created_at' => '2020-04-23 18:53:10',
-                'updated_at' => '2020-04-23 18:53:10',
+                'created_at' => '2020-04-24 02:53:10',
+                'updated_at' => '2020-04-24 02:53:10',
             ),
             106 => 
             array (
@@ -977,8 +977,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Read Chapter Page Homeslider',
                 'guard_name' => 'web',
                 'permission_group_id' => 28,
-                'created_at' => '2020-04-23 18:53:10',
-                'updated_at' => '2020-04-23 18:53:10',
+                'created_at' => '2020-04-24 02:53:10',
+                'updated_at' => '2020-04-24 02:53:10',
             ),
             107 => 
             array (
@@ -986,8 +986,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Update Chapter Page Homeslider',
                 'guard_name' => 'web',
                 'permission_group_id' => 28,
-                'created_at' => '2020-04-23 18:53:10',
-                'updated_at' => '2020-04-23 18:53:10',
+                'created_at' => '2020-04-24 02:53:10',
+                'updated_at' => '2020-04-24 02:53:10',
             ),
             108 => 
             array (
@@ -995,8 +995,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Delete Chapter Page Homeslider',
                 'guard_name' => 'web',
                 'permission_group_id' => 28,
-                'created_at' => '2020-04-23 18:53:10',
-                'updated_at' => '2020-04-23 18:53:10',
+                'created_at' => '2020-04-24 02:53:10',
+                'updated_at' => '2020-04-24 02:53:10',
             ),
             109 => 
             array (
@@ -1004,8 +1004,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Create Chapter Contact',
                 'guard_name' => 'web',
                 'permission_group_id' => 29,
-                'created_at' => '2020-04-26 22:08:34',
-                'updated_at' => '2020-04-26 22:08:34',
+                'created_at' => '2020-04-27 06:08:34',
+                'updated_at' => '2020-04-27 06:08:34',
             ),
             110 => 
             array (
@@ -1013,8 +1013,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Read Chapter Contact',
                 'guard_name' => 'web',
                 'permission_group_id' => 29,
-                'created_at' => '2020-04-26 22:08:34',
-                'updated_at' => '2020-04-26 22:08:34',
+                'created_at' => '2020-04-27 06:08:34',
+                'updated_at' => '2020-04-27 06:08:34',
             ),
             111 => 
             array (
@@ -1022,8 +1022,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Update Chapter Contact',
                 'guard_name' => 'web',
                 'permission_group_id' => 29,
-                'created_at' => '2020-04-26 22:08:34',
-                'updated_at' => '2020-04-26 22:08:34',
+                'created_at' => '2020-04-27 06:08:34',
+                'updated_at' => '2020-04-27 06:08:34',
             ),
             112 => 
             array (
@@ -1031,8 +1031,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Delete Chapter Contact',
                 'guard_name' => 'web',
                 'permission_group_id' => 29,
-                'created_at' => '2020-04-26 22:08:34',
-                'updated_at' => '2020-04-26 22:08:34',
+                'created_at' => '2020-04-27 06:08:34',
+                'updated_at' => '2020-04-27 06:08:34',
             ),
             113 => 
             array (
@@ -1040,8 +1040,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Create Event Registration',
                 'guard_name' => 'web',
                 'permission_group_id' => 30,
-                'created_at' => '2020-04-28 01:17:57',
-                'updated_at' => '2020-04-28 01:17:57',
+                'created_at' => '2020-04-28 09:17:57',
+                'updated_at' => '2020-04-28 09:17:57',
             ),
             114 => 
             array (
@@ -1049,8 +1049,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Read Event Registration',
                 'guard_name' => 'web',
                 'permission_group_id' => 30,
-                'created_at' => '2020-04-28 01:17:57',
-                'updated_at' => '2020-04-28 01:17:57',
+                'created_at' => '2020-04-28 09:17:57',
+                'updated_at' => '2020-04-28 09:17:57',
             ),
             115 => 
             array (
@@ -1058,8 +1058,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Update Event Registration',
                 'guard_name' => 'web',
                 'permission_group_id' => 30,
-                'created_at' => '2020-04-28 01:17:57',
-                'updated_at' => '2020-04-28 01:17:57',
+                'created_at' => '2020-04-28 09:17:57',
+                'updated_at' => '2020-04-28 09:17:57',
             ),
             116 => 
             array (
@@ -1067,8 +1067,8 @@ class PermissionsTableSeeder extends Seeder
                 'name' => 'Delete Event Registration',
                 'guard_name' => 'web',
                 'permission_group_id' => 30,
-                'created_at' => '2020-04-28 01:17:57',
-                'updated_at' => '2020-04-28 01:17:57',
+                'created_at' => '2020-04-28 09:17:57',
+                'updated_at' => '2020-04-28 09:17:57',
             ),
         ));
         

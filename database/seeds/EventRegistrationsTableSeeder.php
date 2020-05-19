@@ -31,8 +31,8 @@ class EventRegistrationsTableSeeder extends Seeder
                 'is_member' => 1,
                 'status' => 0,
                 'member_chapter_id' => 1,
-                'created_at' => '2020-04-28 02:09:13',
-                'updated_at' => '2020-04-28 02:09:13',
+                'created_at' => '2020-04-28 10:09:13',
+                'updated_at' => '2020-04-28 10:09:13',
                 'deleted_at' => NULL,
             ),
         ));
