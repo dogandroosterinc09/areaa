@@ -34,8 +34,8 @@ Aloha Chapter</h1>
                 'button_label' => 'Join AREAA',
                 'button_link' => '#',
                 'is_active' => 1,
-                'created_at' => '2020-04-23 19:59:04',
-                'updated_at' => '2020-04-27 02:16:43',
+                'created_at' => '2020-04-24 03:59:04',
+                'updated_at' => '2020-04-27 10:16:43',
                 'deleted_at' => NULL,
             ),
             1 => 
@@ -54,8 +54,26 @@ Aloha Chapter</h1>
                 'button_label' => 'View More',
                 'button_link' => '#',
                 'is_active' => 1,
-                'created_at' => '2020-04-23 20:00:34',
-                'updated_at' => '2020-04-23 20:00:34',
+                'created_at' => '2020-04-24 04:00:34',
+                'updated_at' => '2020-04-24 04:00:34',
+                'deleted_at' => NULL,
+            ),
+            2 => 
+            array (
+                'id' => 3,
+                'chapter_id' => 2,
+                'name' => 'Atlanta Metro 1st Slide',
+                'background_image' => '/tmp/phpV9pFU2',
+                'thumbnail_image' => '/tmp/phpnTrB70',
+                'thumbnail_text' => 'Welcome to AREAA Atlanta Metro ',
+                'content' => '<h1>Welcome to AREAA<br />
+Atlanta Metrp Chapter</h1>
+',
+                'button_label' => 'Join AREAA',
+                'button_link' => 'http://52.24.144.212/areaa/atlantametro/login',
+                'is_active' => 1,
+                'created_at' => '2020-05-18 21:38:02',
+                'updated_at' => '2020-05-18 21:38:53',
                 'deleted_at' => NULL,
             ),
         ));
