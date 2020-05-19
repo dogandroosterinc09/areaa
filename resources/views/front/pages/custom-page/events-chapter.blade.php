@@ -32,11 +32,11 @@
                 <div class="col-lg-12">
 
                     <div class="events-thumbnail">
-                        @php($events = \App\Models\Event::all())                        
+                        @php($events = \App\Models\ChapterEvent::all())                        
                         @if ($events->isEmpty())
                             <h3 class="text-danger font-weight-bold text-center w-100 my-5">No Events.</h3>
                         @endif
-                        @foreach($events as $event) 
+                        @foreach($events as $event)                        
                         <div class="events-thumbnail__item">
                             <div class="events-thumbnail__date-range">
                                 <div class="events-thumbnail__month">
@@ -47,12 +47,13 @@
                                 <div class="events-thumbnail__day events-thumbnail__day--end"> {{ $event->endDay }}</Div>
                             </div>
                             <div class="events-thumbnail__image">
-                                <a href="{{ $event->url }}" class="image-background">
+                                <a href="{{route('chapter_event.detail', ['slug'=>$event->chapter_slug,'event_slug'=>$event->slug])}}" class="image-background">
                                     <img src="{{ $event->attachment ? optional($event->attachment)->url : asset('public/images/no-image.jpg') }}" alt="Member Image">
                                 </a>
                             </div>
                             <div class="events-thumbnail__details">
-                                <a href="{{url('events-detail')}}">
+                                <h6>{{ $event->chapter }}</h6>
+                                <a href="{{route('chapter_event.detail', ['slug'=>$event->chapter_slug,'event_slug'=>$event->slug])}}">
                                         <h5>{{ $event->name }}</h5>
                                 </a>
                                 <div class="events-thumbnail__time">{{ $event->time }}</div>
@@ -61,7 +62,7 @@
                                     {{ $event->description }}
                                 </div>
                                 <div class="events-thumbnail__buttons">
-                                    <a href="{{ $event->url }}" class="btn btn--secondary"> View Details</a>
+                                    <a href="{{route('chapter_event.detail', ['slug'=>$event->chapter_slug,'event_slug'=>$event->slug])}}" class="btn btn--secondary"> View Details</a>
                                 </div>
                             </div>
                         </div>                            

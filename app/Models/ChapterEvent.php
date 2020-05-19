@@ -43,10 +43,14 @@ class ChapterEvent extends Model
      */
     protected $dates = ['starts_at', 'ends_at'];
 
-    public function getChapterAttribute()
-    {
+    public function getChapterAttribute() {
         $chapter = \App\Models\Chapter::select('name')->where('id',$this->attributes['chapter_id'])->get()->first();
         return $chapter->name;
+    }
+
+    public function getChapterSlugAttribute() {
+        $chapter = \App\Models\Chapter::select('slug')->where('id',$this->attributes['chapter_id'])->get()->first();
+        return $chapter->slug;
     }
 
     public function getLocationAddressAttribute() {
