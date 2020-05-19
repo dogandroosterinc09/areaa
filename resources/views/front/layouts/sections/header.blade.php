@@ -47,7 +47,7 @@
                                   
                                     <div class="dropdown-menu" aria-labelledby="logout-button">
                                       <a class="dropdown-item" href="{{ route('customer.dashboard') }}">Dashboad</a>
-                                      <a class="dropdown-item" href="{{url('events')}}">Events</a>
+                                      <a class="dropdown-item" href="{{ url( (auth()->user()->chapter == 'national' ? '' : auth()->user()->chapter_slug) . '/events' ) }}">Events</a>
                                       <a class="dropdown-item" href="{{ route('customer.dashboard.member_directory') }}">Membership Directory </a>
                                       <a class="dropdown-item" href="{{url('dashboard-profile')}}">Profile </a>
                                       <a class="dropdown-item" href="{{url('contact-us')}}">Support </a>

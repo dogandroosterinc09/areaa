@@ -28,7 +28,7 @@
                             </div> --}}
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('customer.dashboard') }}">Events</a>
+                            <a class="nav-link" href="{{ url( (auth()->user()->chapter == 'national' ? '' : auth()->user()->chapter_slug) . '/events' ) }}">Events</a>
                         </li>
                        
                         <li class="nav-item {{ $active == 'member_directory' ? 'active' : '' }}">
@@ -45,7 +45,7 @@
                             </a>
                         </li> -->
                         <li class="nav-item">
-                            <a class="nav-link" href="#" {{--data-toggle="dropdown"--}}>
+                            <a class="nav-link" href="{{url('contact-us')}}" {{--data-toggle="dropdown"--}}>
                                 Support
                             </a>
                         </li>

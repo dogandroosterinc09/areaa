@@ -75,7 +75,12 @@ class User extends Authenticatable
     public function getChapterAttribute()
     {
         $chapter = \App\Models\Chapter::select('name')->where('id',$this->attributes['chapter_id'])->get()->first();
-        return $chapter->name;
+
+        if ($chapter) {
+            return $chapter->name;
+        } else {
+            return 'national';
+        }
     }
 
     public function getChapterSlugAttribute()
