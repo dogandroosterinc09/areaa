@@ -164,16 +164,17 @@
                     <div class="col-md-12">
                         <div class="filter-stone">
                             <ul class="inline-block">
-                                @php( $sponsor_filters = $chapter_home->sponsors_filters ? json_decode($chapter_home->sponsors_filters) : [] )
+                                {{-- @php( $sponsor_filters = $chapter_home->sponsors_filters ? json_decode($chapter_home->sponsors_filters) : [] )
                                 @foreach( $sponsor_filters as $data )
                                 <li class="filter-stone--{{ $data->icon }}"><a href="{{ $data->link }}"> <span> 1 </span>- {{ $data->text }} </a> </li>
                                 @endforeach
-                                <!-- <li class="filter-stone--jade"><a href="#"> <span> 1 </span>- Jade </a> </li>
+                                --}}
+                                <li class="filter-stone--jade"><a href="#"> <span> 1 </span>- Jade </a> </li>
                                 <li class="filter-stone--diamond"><a href="#"> <span> 1 </span>- Diamond </a> </li>
                                 <li class="filter-stone--emerald"><a href="#"> <span> 1 </span>- Emerald </a> </li>
                                 <li class="filter-stone--opal"><a href="#"> <span> 1 </span>- Opal </a> </li>
                                 <li class="filter-stone--ruby"><a href="#"> <span> 1 </span>- Ruby </a> </li>
-                                <li class="filter-stone--pearl"><a href="#"> <span> 1 </span>- Pearl </a> </li> -->
+                                <li class="filter-stone--pearl"><a href="#"> <span> 1 </span>- Pearl </a> </li>
                             </ul>
                         </div>
                     </div>
@@ -211,13 +212,15 @@
                                 <div class="row">
                                     @php( $other_sponsors = $chapter_home->other_sponsors ? json_decode($chapter_home->other_sponsors) : [] )
                                     @foreach( $other_sponsors as $sponsor )
-                                    <div class="col-md-4">
-                                        <div class="sponsor-thumbnail">
-                                            <div class="sponsor-thumbnail__badge sponsor-thumbnail__badge--{{ $sponsor->badge_icon }}">  </div>
-                                            <img src="{{ $sponsor->image }}" alt="{{ $sponsor->image_alt }}" class="img-fluid">
+                                        @if(!empty($sponsor->image))
+                                        <div class="col-md-4">
+                                            <div class="sponsor-thumbnail">
+                                                <div class="sponsor-thumbnail__badge sponsor-thumbnail__badge--{{ $sponsor->badge_icon }}">  </div>
+                                                <img src="{{ $sponsor->image }}" alt="{{ $sponsor->image_alt }}" class="img-fluid">
+                                            </div>
                                         </div>
-                                    </div>
-                                    @endforeach                                    
+                                        @endif
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
