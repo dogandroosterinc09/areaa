@@ -79775,6 +79775,7 @@ $('.slider-mask__slick').slick({
   autoplay: true,
   autoplaySpeed: 5000,
   cssEase: 'linear',
+  fade: true,
   arrows: true
 });
 $('.big-advertisement__slick').slick(_defineProperty({

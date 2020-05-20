@@ -22462,6 +22462,14 @@ section.page--media .search-member-directory {
   border-radius: 0 !important;
   padding: 0;
 }
+.page--login .login-section__left {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center;
+}
+.page--login .login-section__left .login-section__form {
+  height: auto;
+}
 
 .homepage--main .sponsors {
   background: transparent;

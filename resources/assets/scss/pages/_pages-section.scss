@@ -132,6 +132,13 @@
                 padding: 0;
             }
         }
+        .login-section__left {
+            @include flex;
+            @include flex-align-items(center);
+        }
+        .login-section__left .login-section__form {
+            height: auto;
+        }
     }
 }
 
