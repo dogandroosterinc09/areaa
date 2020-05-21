@@ -82,8 +82,12 @@
                         <!-- Lorem ipsum dolor sit amet, praesent placerat donec, tristique interdum vestibulum dui varius eget donec, sit pede nec mollis, tincidunt adipiscing varius, at lectus pellentesque viverra quis pellentesque dictumst. Luctus wisi sit natoque, est consectetuer porta, mauris porttitor id arcu faucibus felis. Montes faucibus tempor nec, quam est aenean porta tortor nunc, nisl per erat lobortis ex massa sit, sed purus platea rhoncus mattis. Sed donec commodo. Felis lobortis, turpis tellus sapien, vestibulum etiam eleifend, vestibulum amet quis. Tincidunt a sociis vitae risus veniam elit, mauris aliquam quis, dapibus perspiciatis massa, a in et erat aliquam luctus. Dolor amet mattis, a lorem, libero lorem laoreet vel fusce integer netus, convallis lacinia, sodales posuere nunc vel eget nullam libero. Non ipsum fermentum felis pede tortor imperdiet, malesuada odio sed orci, neque auctor. Hendrerit vehicula nec leo in. Cursus turpis in ut in iaculis, congue fermentum turpis tristique vestibulum, sociosqu porttitor, mauris enim ipsum vestibulum, metus massa ipsum fusce sed. Ut nunc neque libero imperdiet vel, urna libero adipiscing asperiores turpis, interdum donec, scelerisque eget vitae phasellus sollicitudin sit pede, nunc nec class mauris ad in tellus. -->
                     </div>
 
-                    <div class="information">
+                    <div class="profile__info profile__border information">
                         <div class="row">
+
+                            <div class="col-md-12">
+                                <h3><i class="fas fa-cog"></i>Basic Profile</h3>
+                            </div>
 
                             <div class="col-md-3">
                                 <b>Location</b>
@@ -169,20 +173,111 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-12 text-right">
-                                {{-- {{ $profile->area_of_specialty }} --}}
-                                <div class="btn-group">
-                                    <button type="submit" class="btn btn--secondary">Save</button>
-                                    
-                                    <!-- <a href="#" class="btn btn--primary"> Edit </a>
-                                    <a href="#" class="btn btn--secondary"> save </a> -->
-                                    
-                                </div>
-                            </div>
-
+                          
 
                         </div>
                     </div>
+
+
+                    <div class="profile__billing profile__border">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h3><i class="fa fa-key" aria-hidden="true"></i>Billing Address</h3>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="address1"> Billing Address 1</label>
+                                        <input type="text" name="address1" value="">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="address2"> Billing Address 2</label>
+                                        <input type="text" name="address2" value="">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="Country"> Country </label>
+                                        <input type="text" name="Country" value="">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="zipcode"> Zipcode </label>
+                                        <input type="text" name="zipcode" value="">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="city"> City </label>
+                                        <input type="text" name="city" value="">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="state"> States </label>
+                                        <input type="text" name="state" value="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="profile__account-settings profile__border">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h3><i class="fa fa-key" aria-hidden="true"></i>Change Password</h3>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="current_password"> Current Password </label>
+                                        <input type="password" name="current_password" value="">
+                                    </div>
+                                    
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group view-password">
+                                        <label for="new_password"> New Password </label>
+                                        <input class="pass_log_id" type="new_password" name="pass" value="MySecretPass">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group view-password">
+                                        <label for="new_password"> Confirm Password </label>
+                                        <input class="pass_log_id" type="password" name="pass" value="MySecretPass">
+                                        <span toggle="#password-field" class="fa fa-fw fa-eye field_icon toggle-password"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    {{-- profile__submit --}}
+                    <div class="profile__submit">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12 text-right">
+                                    {{-- {{ $profile->area_of_specialty }} --}}
+                                    <div class="btn-group">
+                                        <button type="submit" class="btn btn--secondary">Update Profile</button>
+                                        
+                                        <!-- <a href="#" class="btn btn--primary"> Edit </a>
+                                        <a href="#" class="btn btn--secondary"> save </a> -->
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{-- profile__submit --}}
+
+
                 </div>
             </div>
 
@@ -207,5 +302,16 @@
         };
         fileReader.readAsDataURL(e.target.files[0]);            
     });
+</script>
+
+
+<script>
+  $(document).on('click', '.toggle-password', function() {
+
+$(this).toggleClass("fa-eye fa-eye-slash");
+
+var input = $(".pass_log_id");
+input.attr('type') === 'password' ? input.attr('type','text') : input.attr('type','password')
+});
 </script>
 @endpush

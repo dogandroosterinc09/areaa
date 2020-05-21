@@ -2547,4 +2547,57 @@ ul.bullet-style {
             margin-top: 50px;
         }
     }
+    &__info {
+        h3 {
+            font-size: 1.4em;
+            font-weight: bold;
+        }
+        i {
+            margin-right: 10px;
+        }
+    }
+    &__billing {
+        h3 {
+            font-size: 1.4em;
+            font-weight: bold;
+        }
+        i {
+            margin-right: 10px;
+        }
+        input {
+            padding: 10px 20px;
+            width: 100%;
+            @include border-radius(10px);
+            border: 1px solid #ddd;
+        }
+    }
+    &__account-settings {
+        h3 {
+            font-size: 1.4em;
+            font-weight: bold;
+        }
+        i {
+            margin-right: 10px;
+        }
+        input {
+            padding: 10px 20px;
+            width: 100%;
+            @include border-radius(10px);
+            border: 1px solid #ddd;
+        }
+        .form-group {
+            position: relative;
+        }
+        .toggle-password {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            color: #a2a0a0;
+        }
+    }
+    &__border {
+        margin-bottom: 25px;
+        background: #f9f7f7;
+        padding: 30px;
+    }
 }

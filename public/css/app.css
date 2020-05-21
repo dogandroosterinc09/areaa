@@ -22015,6 +22015,55 @@ ul.bullet-style li h6 {
 .profile .information .btn-group {
   margin-top: 50px;
 }
+.profile__info h3 {
+  font-size: 1.4em;
+  font-weight: bold;
+}
+.profile__info i {
+  margin-right: 10px;
+}
+.profile__billing h3 {
+  font-size: 1.4em;
+  font-weight: bold;
+}
+.profile__billing i {
+  margin-right: 10px;
+}
+.profile__billing input {
+  padding: 10px 20px;
+  width: 100%;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  border: 1px solid #ddd;
+}
+.profile__account-settings h3 {
+  font-size: 1.4em;
+  font-weight: bold;
+}
+.profile__account-settings i {
+  margin-right: 10px;
+}
+.profile__account-settings input {
+  padding: 10px 20px;
+  width: 100%;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  border: 1px solid #ddd;
+}
+.profile__account-settings .form-group {
+  position: relative;
+}
+.profile__account-settings .toggle-password {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  color: #a2a0a0;
+}
+.profile__border {
+  margin-bottom: 25px;
+  background: #f9f7f7;
+  padding: 30px;
+}
 
 section.page {
   overflow: hidden;
