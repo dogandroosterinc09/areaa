@@ -64,7 +64,7 @@
         <section class="become-member wrapper margin-top90">
             <div class="container-max">
                 <div class="row">
-                    <div class="col-md-7" data-aos="fade-right">>
+                    <div class="col-md-7" data-aos="fade-right">
 
                         <div class="become-member__content">
                             <h2>{{ section('Become a Member.data.first.title') }}</h2>
