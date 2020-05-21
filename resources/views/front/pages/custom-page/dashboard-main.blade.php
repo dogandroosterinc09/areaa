@@ -61,7 +61,7 @@
                                 <div class="col-lg-4">
                                     <div class="navigation-icon__item">
                                         <div class="navigation-icon__hover">
-                                            <a href="{{url('events')}}">
+                                            <a href="#upcoming-envents-owner">
                                                 <h3> Events</h3>
                                             </a>
                                         </div>
@@ -204,7 +204,7 @@
                                 <div class="col-lg-4">
                                     <div class="navigation-icon__item">
                                         <div class="navigation-icon__hover">
-                                            <a href="{{url('contact-us')}}">
+                                            <a href="{{url('support')}}">
                                                 <h3>Support</h3>
                                             </a>
                                         </div>
@@ -228,7 +228,7 @@
 
                 <div class="col-lg-12">
                         
-                        <div class="events-upcoming">
+                        <div class="events-upcoming" id="upcoming-envents-owner">
 
                             <div class="side-by-side">
                                 <div class="primary-heading text-center">

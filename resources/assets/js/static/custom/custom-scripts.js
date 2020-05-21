@@ -240,3 +240,13 @@ $(".steps-wizard__button #steps-wizard-three").click(function() {
 //     $(".register__tab").addClass('second-three-visible');
 //     $("#register-three .btn--primary.active").removeClass('active');
 // });
+
+
+
+$(document).on('click', 'a[href^="#upcoming-envents-owner"]', function(event) {
+    event.preventDefault();
+
+    $('html, body').animate({
+        scrollTop: $($.attr(this, 'href')).offset().top - 300
+    }, 500);
+});

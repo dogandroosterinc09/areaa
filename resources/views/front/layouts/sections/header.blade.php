@@ -21,7 +21,7 @@
                             <li> <a href="{{section('Contact Us.data.first.tel_link')}}"><i class="ic-phone" aria-hidden="true"></i> {{section('Contact Us.data.first.tel_text')}}</a></li>
                             <li> <a href="{{section('Contact Us.data.first.mail_link')}}"><i class="ic-email"></i> {{section('Contact Us.data.first.mail_text')}}</a></li>
                             <li>  
-                                <a href="javascript:void(0)" class="dropdown-toggle-menu">
+                                <a href="{{url('chapter')}}" class="dropdown-toggle-menu">
                                 <i class="ic-pin"></i> 
                                 Find your Chapter
                                 </a>
@@ -79,7 +79,7 @@
                                     <li class="{{ $page->slug == 'sponsors' ? 'active' : '' }}" ><a href="{{url('sponsors')}}">Our Sponsors</a></li>
                                     <li class="{{ $page->slug == 'FAQ' ? 'active' : '' }}" ><a href="{{url('FAQ')}}"> FAQ </a></li>
                                     <li class="{{ $page->slug == 'photo-gallery' ? 'active' : '' }}" ><a href="{{url('photo-gallery')}}"> Photo Gallery </a></li>
-                                    <li><a href="#"> Career </a></li>
+                                    {{-- <li><a href="#"> Career </a></li> --}}
 
                                 </ul>
                             </div>
@@ -133,9 +133,9 @@
                             </a>
                             <div class="dropdown-menu">
                                 <ul class="sub-menu mega-menu">
-                                    <li>
+                                    {{-- <li>
                                         <a class="nav-link" href="#"> a | r | e Magazine</a>
-                                    </li>
+                                    </li> --}}
                                     <li>
                                         <a class="nav-link" href="{{ url('resource-asia-america-report')}}"> State of Asia America Report</a>
                                     </li>

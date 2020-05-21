@@ -6,6 +6,7 @@
         }
         .main-content {
             padding-bottom: 0 !important;
+            padding-top: 0 !important;
         }
     }
     .dashboard-nav {
@@ -98,6 +99,11 @@
     .chapter-benefits {
         ul.bullet-style {
             margin-bottom: 0;
+        }
+    }
+    &--support {
+        .main-content {
+            padding-top: 0;
         }
     }
 }

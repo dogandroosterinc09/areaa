@@ -160,6 +160,11 @@
             @include('front.pages.custom-page-chapters.newyorkeast-aboutus')
 
 
+        @elseif ($page['slug'] == 'support')
+            @include('front.pages.custom-page-chapters.support')
+
+
+
 
         {{-- @elseif ($page['slug'] == 'atlantametro')
             @include('front.pages.custom-page-chapters.atlantametro')

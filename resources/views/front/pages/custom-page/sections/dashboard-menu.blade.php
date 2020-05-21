@@ -28,7 +28,8 @@
                             </div> --}}
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url( (auth()->user()->chapter == 'national' ? '' : auth()->user()->chapter_slug) . '/events' ) }}">Events</a>
+                            {{-- <a class="nav-link" href="{{ url( (auth()->user()->chapter == 'national' ? '' : auth()->user()->chapter_slug) . '/events' ) }}">Events</a> --}}
+                            <a class="nav-link" href="#upcoming-envents-owner">Events</a>
                         </li>
                        
                         <li class="nav-item {{ $active == 'member_directory' ? 'active' : '' }}">

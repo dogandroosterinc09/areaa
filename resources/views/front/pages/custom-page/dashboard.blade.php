@@ -45,14 +45,14 @@
                         <nav class="navbar-bar">
                             <ul class="navbar-bar__wrapper">
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="{{ url('dashboard-main') }}">Dashboard <span class="sr-only">(current)</span></a>
-                                    <div class="dropdown-menu">
+                                    <a class="nav-link" href="{{ url('dashboard-main') }}">Dashboard <span class="sr-only">(current)</span></a>
+                                    {{-- <div class="dropdown-menu">
                                         <ul class="sub-menu">
                                             <li>
                                                 <a class="nav-link" href="#"> Sub menu 1</a>
                                             </li>
                                         </ul>
-                                    </div>
+                                    </div> --}}
                                 </li>
                                 <li class="nav-item active">
                                     <a class="nav-link" href="{{ url('dashboard') }}">Events</a>
@@ -95,7 +95,7 @@
             <div class="container-max">
                 <div class="col-lg-12">
                         
-                        <div class="events-upcoming">
+                        <div class="events-upcoming" id="upcoming-envents-owner">
                             <div class="primary-heading text-center">
                                 <h3> My Upcoming Events </h3>
                             </div>
