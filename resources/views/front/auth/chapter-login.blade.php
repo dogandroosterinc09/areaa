@@ -11,7 +11,8 @@
         @endphp
     @endif
 
-<section class="page-chapter page-chapter-aloha page-chapter-aloha--login">
+{{-- page-chapter page-chapter-aloha page-chapter--login --}}
+<section class="page-chapter page-chapter--login">
 @include('front.layouts.sections.chapter.header_chapter')
 
     {{-- @include('front.pages.custom-page.sections.chapter-slider-aloha') --}}

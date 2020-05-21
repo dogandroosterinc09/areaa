@@ -1251,10 +1251,12 @@ ul.bullet-style {
             &.loc {
                 display: inline-block;
                 vertical-align: middle;
-                width: 25px;
+                // width: 25px;
+                width: 26px;
                 height: 37px;
                 background: url("../images/sprite.png") no-repeat;
-                background-position: -97px -8px;
+                // background-position: -97px -8px;
+                background-position: -95px -8px;
             }
             &.tel {
                 display: inline-block;
@@ -1329,6 +1331,13 @@ ul.bullet-style {
     }
     .contact-details {
         margin-top: 65px;
+    }
+    &__international {
+        margin-top: 30px;
+        h4 {
+            font-size: 2em;
+            font-weight: bold;
+        }
     }
 }
 

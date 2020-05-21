@@ -47,10 +47,12 @@
                                   
                                     <div class="dropdown-menu" aria-labelledby="logout-button">
                                       <a class="dropdown-item" href="{{ route('customer.dashboard') }}">Dashboad</a>
-                                      <a class="dropdown-item" href="{{ url( (auth()->user()->chapter == 'national' ? '' : auth()->user()->chapter_slug) . '/events' ) }}">Events</a>
+                                      {{-- <a class="dropdown-item" href="{{ url( (auth()->user()->chapter == 'national' ? '' : auth()->user()->chapter_slug) . '/events' ) }}">Events</a> --}}
+                                      <a class="dropdown-item" href="{{url('dashboard-events-login')}}">Events</a>
+                                     
                                       <a class="dropdown-item" href="{{ route('customer.dashboard.member_directory') }}">Membership Directory </a>
                                       <a class="dropdown-item" href="{{ route('customer.dashboard.profile') }}">Profile </a>
-                                      <a class="dropdown-item" href="{{url('contact-us')}}">Support </a>
+                                      <a class="dropdown-item" href="{{url('support')}}">Support </a>
                                       <div class="dropdown-divider"></div>
                                       <a class="dropdown-item" href="{{ route('customer.logout') }}"> <i class="fas fa-power-off"></i> Logout </a>
                                     </div>

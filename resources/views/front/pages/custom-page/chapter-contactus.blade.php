@@ -1,4 +1,5 @@
-<section class="page-chapter page-chapter--contactus page-chapter-aloha page-chapter-aloha--contactus">
+{{-- page-chapter page-chapter--contactus page-chapter-aloha page-chapter-aloha--contactus --}}
+<section class="page-chapter page-chapter--contactus">
     @include('front.layouts.sections.chapter.header_chapter')
 
     {{-- @include('front.pages.custom-page.sections.chapter-slider-aloha') --}}

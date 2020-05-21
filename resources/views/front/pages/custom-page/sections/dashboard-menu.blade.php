@@ -27,7 +27,7 @@
                                 </ul>
                             </div> --}}
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item {{ $active == 'dashboard-events-login' ? 'active' : '' }}">
                             {{-- <a class="nav-link" href="{{ url( (auth()->user()->chapter == 'national' ? '' : auth()->user()->chapter_slug) . '/events' ) }}">Events</a> --}}
                             <a class="nav-link" href="{{url('dashboard-events-login')}}">Events</a>
                         </li>
