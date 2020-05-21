@@ -20888,6 +20888,13 @@ ul.bullet-style li h6 {
 .contact-details-content .contact-details {
   margin-top: 65px;
 }
+.contact-details-content__international {
+  margin-top: 30px;
+}
+.contact-details-content__international h4 {
+  font-size: 2em;
+  font-weight: bold;
+}
 
 .paper-background {
   background: url("../images/white-paper-texture.jpg") no-repeat;
@@ -22511,6 +22518,9 @@ section.page--media .search-member-directory {
 .page-chapter--login .contact-form .form-group:nth-child(2) {
   padding: 0;
 }
+.page-chapter--login .main-content {
+  padding: 0px 0 !important;
+}
 .page-chapter--resources-american-report main.main-content {
   padding: 50px 0;
 }
@@ -22559,6 +22569,9 @@ section.page--media .search-member-directory {
 .page-chapter--support .main-content {
   padding-top: 0;
 }
+.page-chapter--support .contact-details-content .contact-details {
+  margin-top: 25px;
+}
 
 .page--board .executive-board {
   padding: 60px 0;
@@ -22589,6 +22602,9 @@ section.page--media .search-member-directory {
 }
 .page--login .login-section__left .login-section__form {
   height: auto;
+}
+.page--login .login-section__left .login-section__form h2 {
+  margin-bottom: 25px !important;
 }
 
 .homepage--main .sponsors {

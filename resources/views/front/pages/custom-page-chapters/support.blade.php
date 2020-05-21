@@ -13,7 +13,7 @@
 
                     <div class="col-lg-6 contact-section__item contact-section__left curl-tail-side">
                         <div class="contact-details-content">
-                            <h1>Support</h1>
+                            <h1>Chapter Support</h1>
                             <p>Lorem ipsum dolor sit amet, quam sollicitudin sagittis fringilla lacus enim, leo elit non nec varius sodales. Amet faucibus, id tempor quisque pharetra leo. Curae integer. Diam duis integer vel ut. </p>
                             <div class="contact-details">
                                 <div class="contact-details__item"><i class="loc"></i> <span>Chapter President: Abe Lee</span></div>
@@ -22,7 +22,7 @@
                             </div>
                         </div>
 
-                        <div class="contact-details">
+                        <div class="contact-details-content contact-details-content__international">
                             <h4>International</h4> 
                             <div class="contact-details__item"><i class="loc"></i> <span>3990 Old Town Avenue C304, San Diego, CA 92110</span></div>
                             <div class="contact-details__item"><i class="tel"></i> <a href="tel:619.795.7873">619.795.7873</a></div>

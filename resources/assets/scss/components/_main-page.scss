@@ -1330,6 +1330,13 @@ ul.bullet-style {
     .contact-details {
         margin-top: 65px;
     }
+    &__international {
+        margin-top: 30px;
+        h4 {
+            font-size: 2em;
+            font-weight: bold;
+        }
+    }
 }
 
 .paper-background {
