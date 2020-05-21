@@ -164,6 +164,9 @@
             @include('front.pages.custom-page-chapters.support')
 
 
+        @elseif ($page['slug'] == 'dashboard-events-login')
+            @include('front.pages.custom-page.dashboard-events-login')
+        
 
 
         {{-- @elseif ($page['slug'] == 'atlantametro')

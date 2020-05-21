@@ -8,6 +8,9 @@
             padding-bottom: 0 !important;
             padding-top: 0 !important;
         }
+        .banner__chapter .banner__image-slide .banner-img-holder:before {
+            left: -60px;
+        }
     }
     .dashboard-nav {
         margin-bottom: 50px;

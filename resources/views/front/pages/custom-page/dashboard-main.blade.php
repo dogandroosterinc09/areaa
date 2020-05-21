@@ -61,7 +61,7 @@
                                 <div class="col-lg-4">
                                     <div class="navigation-icon__item">
                                         <div class="navigation-icon__hover">
-                                            <a href="#upcoming-envents-owner">
+                                            <a href="{{url('dashboard-events-login')}}">
                                                 <h3> Events</h3>
                                             </a>
                                         </div>
@@ -226,6 +226,9 @@
                     </div>
                 </div>
 
+
+
+                 {{-- events end --}}
                 <div class="col-lg-12">
                         
                         <div class="events-upcoming" id="upcoming-envents-owner">
@@ -235,7 +238,7 @@
                                     <h3> My Upcoming Events </h3>
                                 </div>
 
-                                <a href="#" class="btn btn--primary">View All Events</a>
+                                <a href="{{url('dashboard-events-login')}}" class="btn btn--primary">View All Events</a>
                             </div>
                                 
 
@@ -265,99 +268,10 @@
                         </div>
 
 
-                        <div class="attended-events">
-
-                            <div class="primary-heading text-center">
-                                <h3> Previously Attended Events</h3>
-                            </div>
-
-                            <div class="attended-events__label">
-                                <ul>
-                                    <li class="attended-events__title">
-                                       Name
-                                    </li>
-                                    <li class="attended-events__date">Start Date</li>
-                                    <li class="attended-events__date">End Date</li>
-                                    <li class="attended-events__action">
-                                        Action
-                                    </li>
-                                </ul>
-                            </div>
-                            {{-- loop here  --}}
-                            <div class="attended-events__item">
-                                <div class="attended-events__content">
-                                    <ul>
-                                        <li class="attended-events__title">
-                                            <label>Title</label>
-                                            <h3>Northwest Regional Retreat </h3>
-                                        </li>
-                                        <li class="attended-events__date">
-                                            <label>Start Date</label>
-                                            01/02/2020</li>
-                                        <li class="attended-events__date">
-                                            <label>Start Date</label>
-                                            01/03/2020</li>
-                                        <li class="attended-events__action">
-                                            <label>actions</label>
-                                            <a href="#"> View Invoice  <i class="fas fa-sort-down"></i></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            {{-- loop here  --}}
-
-                               {{-- loop here  --}}
-                            <div class="attended-events__item">
-                                <div class="attended-events__content">
-                                    <ul>
-                                        <li class="attended-events__title">
-                                            <label>Title</label>
-                                            <h3>2019 Global Luxury Summit
-                                            </h3>
-                                        </li>
-                                        <li class="attended-events__date">
-                                            <label>Start Date</label>
-                                            01/02/2020</li>
-                                        <li class="attended-events__date">
-                                            <label>Start Date</label>
-                                            01/03/2020</li>
-                                        <li class="attended-events__action">
-                                            <label>actions</label>
-                                            <a href="#"> View Invoice  <i class="fas fa-sort-down"></i></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            {{-- loop here  --}}
-
-                                {{-- loop here  --}}
-                            <div class="attended-events__item">
-                                <div class="attended-events__content">
-                                    <ul>
-                                        <li class="attended-events__title">
-                                            <label>Title</label>
-                                            <h3>AREAA Commercial Summit
-                                            </h3>
-                                        </li>
-                                        <li class="attended-events__date">
-                                            <label>Start Date</label>
-                                            01/02/2020</li>
-                                        <li class="attended-events__date">
-                                            <label>Start Date</label>
-                                            01/03/2020</li>
-                                        <li class="attended-events__action">
-                                            <label>actions</label>
-                                            <a href="#"> View Invoice  <i class="fas fa-sort-down"></i></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            {{-- loop here  --}}
-
-
-                        </div>
-
                 </div>
+                {{-- events end --}}
+
+
             </div>
         </section>
 

@@ -18715,8 +18715,10 @@ header .contact-details-wrap .info a i.ic-chapter {
 .banner__chapter .banner-content-desc .btn--primary {
   margin-top: 20px;
 }
-.banner__chapter .banner__image-slide .banner-img-holder {
-  min-height: 500px !important;
+@media only screen and (max-width: 1600px) {
+  .banner__chapter .banner__image-slide .banner-img-holder {
+    min-height: 500px !important;
+  }
 }
 .banner__chapter .banner__image-slide .banner-img-holder:before {
   content: "";
@@ -22395,6 +22397,9 @@ section.page--media .search-member-directory {
   padding-bottom: 0 !important;
   padding-top: 0 !important;
 }
+.page-chapter--homepage .banner__chapter .banner__image-slide .banner-img-holder:before {
+  left: -60px;
+}
 .page-chapter .dashboard-nav {
   margin-bottom: 50px;
   margin-top: -20px;
@@ -24259,6 +24264,10 @@ _::-webkit-:not(:root:root),
     font-size: 50px;
     line-height: 60px;
     margin-bottom: 35px;
+  }
+
+  .banner__chapter .banner-content-desc h3 {
+    font-size: 2.7rem !important;
   }
 }
 @media only screen and (max-width: 1300px) {

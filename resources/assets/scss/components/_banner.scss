@@ -306,7 +306,10 @@ $banner-background-color:#000;
         }
         .banner__image-slide {
             .banner-img-holder {
-                min-height: 500px !important;
+                // min-height: 500px !important;
+                @media only screen and (max-width: 1600px) {
+                    min-height: 500px !important;
+                }
                 &:before {
                     content: '';
                     width: 100px;
