@@ -177,6 +177,7 @@
                 @include('admin.components.input-field', ['label' => 'Button1 Text', 'field' => 'sponsors_button1_text', 'value' => $chapter_home->sponsors_button1_text])
                 @include('admin.components.input-field', ['label' => 'Button1 Link', 'field' => 'sponsors_button1_link', 'value' => $chapter_home->sponsors_button1_link])
 
+                {{--
                 @include('admin.components.heading', ['text' => 'Sponsors Filters'])
 
                 @php($filters = json_decode($chapter_home->sponsors_filters))                
@@ -192,6 +193,7 @@
                     @endif 
 
                 @endfor
+                --}}
                 
                 @include('admin.components.heading', ['text' => 'Top Sponsor'])
 

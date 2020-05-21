@@ -130,12 +130,12 @@ class PageController extends Controller
                         $chapter_home->who_we_are_title = $default_who_we_are_title;
                         $chapter_home->member_benefits_title = $default_member_benefits_title;
                         $chapter_home->member_benefits_featured_image = $default_member_benefits_featured_image;
-                        $chapter_home->sponsors_title = $default_sponsors_title;
+                        // $chapter_home->sponsors_title = $default_sponsors_title;
                     } else {
                         $chapter_home->who_we_are_title = !empty($chapter_home->who_we_are_title) ? $chapter_home->who_we_are_title : $default_who_we_are_title;
                         $chapter_home->member_benefits_title = !empty($chapter_home->member_benefits_title) ? $chapter_home->member_benefits_title : $default_member_benefits_title;
                         $chapter_home->member_benefits_featured_image = !empty($chapter_home->member_benefits_featured_image) ? $chapter_home->member_benefits_featured_image : $default_member_benefits_featured_image;
-                        $chapter_home->sponsors_title = !empty($chapter_home->sponsors_title) ? $chapter_home->sponsors_title : $default_sponsors_title;
+                        // $chapter_home->sponsors_title = !empty($chapter_home->sponsors_title) ? $chapter_home->sponsors_title : $default_sponsors_title;
 
                         $top_sponsor = !empty($chapter_home->top_sponsor) ? json_decode($chapter_home->top_sponsor) : new \stdClass();
                         $top_sponsor->badge_icon = isset($top_sponsor->badge_icon) ? $top_sponsor->badge_icon : '';

@@ -156,8 +156,9 @@
 
 
 
-    {{-- story section  --}}
-    <section class="sponsors">
+        {{-- story section  --}}
+        @if(!empty($chapter_home->sponsors_title) && !empty($chapter_home->sponsors_content))        
+        <section class="sponsors">
             <div class="container-max">
                 <div class="row">
 
@@ -231,7 +232,7 @@
                 </div>
             </div> {{-- end of default-content--row --}}
         </section> {{-- end of default-content --}}
-
+        @endif
 
          
 
