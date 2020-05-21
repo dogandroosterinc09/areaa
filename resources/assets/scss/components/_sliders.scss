@@ -70,22 +70,30 @@
 }
 
 .slider-mask {
+    position: relative;
+    z-index: 2;
+    transform: scale(1.1)translate(20%, 0px);
     &__slick {
         &--item {
-            height: 550px;
+            // height: 550px;
+            // height: 590px;
+            height: 617px;
             position: relative;
         }
         /* Slick Dots */
         .slick-dots {
             position: absolute;
-            bottom: -25px;
+            // bottom: -25px;
+            bottom: 2%;
             right: 0;
             display: block;
             width: 100%;
             padding: 0;
             list-style: none;
-            text-align: center;
-            right: -8% !important;
+            // right: -8% !important;
+            text-align: left;
+            right: 14%;
+            width: 200px;
         }
         .slick-dots li {
             position: relative;
@@ -198,8 +206,11 @@
         // width: 550px;
         // height: 550px;
         // right: -23px;
-        width: 600px;
-        height: 600px;
+        // width: 600px;
+        // height: 600px;
+        // right: -23px;
+        width: 650px;
+        height: 650px;
         right: -23px;
         top: -20px;
         position: absolute;

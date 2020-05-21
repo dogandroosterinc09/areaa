@@ -21385,7 +21385,6 @@ ul.bullet-style li h6 {
 .membership-slider .container-max {
   max-width: 100%;
   padding: 0;
-  padding-left: 7%;
 }
 .membership-slider .masking-background__wrapper:after {
   z-index: 1 !important;
@@ -22053,6 +22052,7 @@ ul.bullet-style li h6 {
 .profile__account-settings .form-group {
   position: relative;
 }
+.profile__account-settings .toggle-password-new,
 .profile__account-settings .toggle-password {
   position: absolute;
   bottom: 15px;
@@ -22063,6 +22063,39 @@ ul.bullet-style li h6 {
   margin-bottom: 25px;
   background: #f9f7f7;
   padding: 30px;
+}
+
+.white-cover {
+  background: url("../images/white-paper.jpg") repeat;
+  position: relative;
+}
+.white-cover .container-max {
+  max-width: 1500px;
+}
+.white-cover:before {
+  width: 100%;
+  height: 11%;
+  background: url("../images/top-white-small.png");
+  background-size: 100% 100% !important;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+}
+.white-cover:after {
+  width: 100%;
+  height: 10%;
+  background: url("../images/bottom-white-small.png");
+  background-size: 100% 100% !important;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-position: top;
+  content: "";
+  bottom: 0;
+  left: 0;
+  z-index: 1;
 }
 
 section.page {
@@ -22184,23 +22217,30 @@ section.page--media .search-member-directory {
   }
 }
 
+.slider-mask {
+  position: relative;
+  z-index: 2;
+  -webkit-transform: scale(1.1) translate(20%, 0px);
+          transform: scale(1.1) translate(20%, 0px);
+}
 .slider-mask__slick {
   /* Slick Dots */
 }
 .slider-mask__slick--item {
-  height: 550px;
+  height: 617px;
   position: relative;
 }
 .slider-mask__slick .slick-dots {
   position: absolute;
-  bottom: -25px;
+  bottom: 2%;
   right: 0;
   display: block;
   width: 100%;
   padding: 0;
   list-style: none;
-  text-align: center;
-  right: -8% !important;
+  text-align: left;
+  right: 14%;
+  width: 200px;
 }
 .slider-mask__slick .slick-dots li {
   position: relative;
@@ -22299,8 +22339,8 @@ section.page--media .search-member-directory {
   margin-bottom: 0;
 }
 .slider-mask__image {
-  width: 600px;
-  height: 600px;
+  width: 650px;
+  height: 650px;
   right: -23px;
   top: -20px;
   position: absolute;

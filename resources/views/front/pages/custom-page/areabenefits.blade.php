@@ -111,14 +111,14 @@
 
 
         {{-- need to dynamic this sub  --}}
-        <section class="masking-background masking-background--plain membership-slider">
-            <div class="masking-background__wrapper container-max">
-                <div class="masking-background__item">
-                    <div class="container-max masking-background__container">
+        <section class="white-cover membership-slider">
+            <div class="white-cover__wrapper container-max">
+                <div class="white-cover__item">
+                    <div class="container-max">
                         <div class="row">
                             <div class="col-md-6 content-middle">
 
-                                <div class="masking-background__content">
+                                <div class="white-cover__content">
                                     <h2>Your Membership <br>
                                         Could Help Pay For <br>
                                          Itself</h2>
