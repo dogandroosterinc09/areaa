@@ -148,7 +148,7 @@
             uiEditWebinarsForm = $('#edit-webinars');
             uiWebinarsDatatable = null;
             uiInputBannerImage = $('input[name="banner_image"]');
-            uiInputFile = $('input[name="file"]');
+            uiInputFile = $('input[name="file[]"]');
             uiRemoveImgBtn = $('.remove-image-btn');
             uiRemoveFileBtn = $('.remove-file-btn');
 

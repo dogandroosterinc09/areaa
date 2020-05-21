@@ -69,6 +69,8 @@ class WebinarsController extends Controller
             abort('401', '401');
         }
 
+        return $request->all();
+
         $this->validate($request, [            
             'link' => 'required',
             'title' => 'required',
