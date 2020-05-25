@@ -98,13 +98,16 @@
 
                         @php( $media_category = \App\Models\MediaCategory::all() )
 
+                        @if( empty(Request::get('title')) && empty(Request::get('tags')) )
+
+                        {{-- Media Categories --}}
                         <ul class="nav nav-tabs media-tab__tab" id="myTab" role="tablist">
                             @foreach($media_category as $category)
                             <li class="nav-item">
                                 <a class="nav-link {{ $loop->first ? 'active' : '' }}" id="{{$category->slug}}-view-tab" data-toggle="tab" href="#{{$category->slug}}-view"
                                     role="tab" aria-controls="{{$category->slug}}-view" aria-selected="true">{{ $category->name }}</a>
                             </li>
-                            @endforeach                            
+                            @endforeach
                         </ul>
 
                         <div class="tab-content media-tab__content" id="myTabContent">
@@ -136,10 +139,10 @@
                                                 <div class="media-thumbnail__title">
                                                     <h3>{{ $media_item->title }}</h3>
                                                 </div>
-                                                <div class="media-thumbnail__button">
+                                                <!-- <div class="media-thumbnail__button">
                                                     <h4>Download {{$category->name}} Assets: </h4>
                                                     <a href="#" class="btn btn--primary">Presentation Slides </a>
-                                                </div>
+                                                </div> -->
                                             </div>
                                             {{-- media-thumbnail --}}
 
@@ -150,18 +153,86 @@
                                         
                                     </div>
 
-                                    <div class="{{$category->slug}}__bottom row">
+                                    <!-- <div class="{{$category->slug}}__bottom row">
                                         <div class="col-lg-12 col-md-12 text-center">
                                             <a href="#" id="loadMore" class="btn btn--primary"> load more</a>
                                         </div>
-                                    </div>
+                                    </div> -->
 
                                 </div>
                             </div>
                             @endforeach
                         </div>
+
+                        @else
+
+                        <div class="tab-content media-tab__content" id="myTabContent">
+                            
+                            <div class="tab-pane media-tab__item fade show active" id="-view" role="tabpanel"
+                                aria-labelledby="-view">
+                                <div class="container">
+                                    <div class="__list row moreWebinar">
+                                        
+                                        @php( $media = \App\Models\Webinars::where('title','like','%'.Request::get('title').'%')
+                                                ->where('tags','like','%'.Request::get('tags').'%')                                                
+                                                ->get() )
+                                        
+                                        @forelse($media as $media_item)
+                                        <div class="col-lg-4 col-md-4 moreWebinar__item moreWebinar">
+
+                                            {{-- media-thumbnail --}}
+                                            <div class="media-thumbnail">
+                                                <div class="media-thumbnail__featured">
+                                                    @if($media_item->link != '#')
+                                                    <iframe width="560" height="315" src="{{$media_item->link}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                    @endif
+                                                </div>
+                                                <div class="media-thumbnail__title">
+                                                    <h3>{{ $media_item->title }}</h3>
+                                                </div>
+
+                                                @if( !empty($media_item->assets) )
+                                                <div class="media-thumbnail__button">
+                                                    <h4>Download Assets: </h4>
+                                                    
+                                                    @foreach(json_decode($media_item->assets) as $asset)
+                                                    <a href="{{$asset->link}}" class="btn btn--primary">{{$asset->title}}</a>
+                                                    @endforeach
+                                                </div>
+                                                @endif
+
+                                                {{--
+                                                <div class="media-thumbnail__button">
+                                                    <h4>Download {{$category->name}} Assets: </h4>
+                                                    <a href="#" class="btn btn--primary">Presentation Slides </a>
+                                                </div>
+                                                --}}
+                                            </div>
+                                            {{-- media-thumbnail --}}
+
+                                        </div>
+                                        @empty
+                                        <h3 class="text-danger font-weight-bold text-center w-100 my-5">No media found.</h3>
+                                        @endforelse
+                                        
+                                    </div>
+
+                                    {{--
+                                    <div class="__bottom row">
+                                        <div class="col-lg-12 col-md-12 text-center">
+                                            <a href="#" id="loadMore" class="btn btn--primary"> load more</a>
+                                        </div>
+                                    </div>
+                                    --}}
+
+                                </div>
+                            </div>
+                        </div>
+
+                        @endif
+                        
                     </div>
-                     {{-- media-tab --}}
+                    {{-- media-tab --}}
 
                 </div>
             </div>

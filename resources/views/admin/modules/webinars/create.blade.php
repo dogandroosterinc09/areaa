@@ -107,8 +107,8 @@
                                         <input class="external-link" type="radio" id="external-link" name="asset-type"
                                             value=""> External Link
                                     </label>
-                                </div>                                
-                            </div>                            
+                                </div>
+                            </div>
                         </div>
                     </div> -->
                 </div>
@@ -162,23 +162,41 @@
 
                             '<label class="radio-inline" for="external-link-' + ctr + '">' + 
                                 '<input class="external-link" type="radio" id="external-link-' + ctr + '" name="asset-type-' + ctr + '" value=""> External Link' + 
-                            '</label>' + 
+                            '</label>' +
                         '</div>' + 
                     '</div>' + 
-                '</div>' + 
+                    '<div class="form-group">' +
+                        '<div class="col-md-10 col-md-offset-2">' + 
+                            '<button type="button" class="btn-remove-asset btn btn-sm btn-danger">Remove</button>' +
+                        '</div>' +
+                    '</div>' +
+                '</div>' +
             '</div>'
             )
             ctr++;
         });
 
         $(document).on('click', '.upload-a-file', function() {
-            $(this).parent().parent().children('input').addClass('hidden');
-            $(this).parent().parent().children('div').removeClass('hidden');
+            var external_link = $(this).parent().parent().children('input');
+            var upload_link = $(this).parent().parent().children('div');
+
+            external_link.addClass('hidden');
+            external_link.val('');
+
+            upload_link.removeClass('hidden');
         });
 
         $(document).on('click', '.external-link', function() {
-            $(this).parent().parent().children('div').addClass('hidden');
-            $(this).parent().parent().children('input').removeClass('hidden');
+            var external_link = $(this).parent().parent().children('input');
+            var upload_link = $(this).parent().parent().children('div');
+
+            external_link.removeClass('hidden');
+
+            upload_link.addClass('hidden');
+            upload_link.find('input[type="file"]').val('');
+            upload_link.find('input[type="text"]').removeAttr('readonly');
+            upload_link.find('input[type="text"]').val('');
+            upload_link.find('input[type="text"]').attr('readonly', true);
         });
 
         $(document).on('change', 'input[name="file[]"]', function () {
@@ -188,6 +206,10 @@
                 sValue = $(this).val(),
                 ext = sValue.substring(sValue.lastIndexOf('.') + 1).toLowerCase();
             _fileselect($(this), numFiles, label, ext, 'file');
+        });
+
+        $(document).on('click', '.btn-remove-asset', function() {
+            $(this).parent().parent().parent().parent().remove();
         });
     });
 

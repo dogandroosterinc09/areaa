@@ -19,7 +19,8 @@ class Webinars extends Model
         'link',
         'title',
         'media_category_id',
-        'tags'
+        'tags',
+        'assets'
     ];
 
     public function getMediaCategoryAttribute() {

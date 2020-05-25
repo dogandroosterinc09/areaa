@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Webinars;
 use App\Http\Controllers\Controller;
 
+use File;
+
 class WebinarsController extends Controller
 {
     /**
@@ -67,11 +69,9 @@ class WebinarsController extends Controller
     {
         if (!auth()->user()->hasPermissionTo('Create Webinars')) {
             abort('401', '401');
-        }
+        }        
 
-        return $request->all();
-
-        $this->validate($request, [            
+        $this->validate($request, [
             'link' => 'required',
             'title' => 'required',
             'media_category_id' => 'required',
@@ -83,6 +83,31 @@ class WebinarsController extends Controller
             'is_active' => $request->has('is_active') ? 1 : 0,
             'slug' => str_slug($request->input('name'))
         ]));
+
+        $assets = array();
+
+        if (isset($request->asset_title)) {
+            for($ctr = 0; $ctr < count($request->asset_title); $ctr++) {
+                $asset_item = new \stdClass;
+                $asset_item->title = $request->asset_title[$ctr];
+                
+                $asset_item->link = $request->asset_link[$ctr];
+                $asset_item->isExternal = true;
+
+                if (isset($request->file[$ctr])) {
+                    $asset_item->link = $this->upload($request->file[$ctr]);
+                    $asset_item->isExternal = false;
+                }
+
+                if (!empty($request->asset_title[$ctr])) {
+                    array_push($assets, $asset_item);
+                }
+            }
+
+            $webinars->fill([
+                'assets' => json_encode($assets)
+            ])->save();
+        }
 
         return redirect()->route('admin.webinars.index')->with('flash_message', [
             'title' => '',
@@ -177,5 +202,25 @@ class WebinarsController extends Controller
         $webinars->delete();
 
         return response()->json(status()->success('Webinars successfully deleted.', compact('id')));
+    }
+
+    public function upload($file) {
+        if ($file) {
+            $extension = $file->getClientOriginalExtension();
+            $file_name = substr((pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME)), 0, 30) . '.' . $extension;
+            $file_name = preg_replace("/[^a-z0-9\_\-\.]/i", '', $file_name);
+            $file_path = '/uploads';
+            $directory = public_path() . $file_path;
+
+            if (!File::exists($directory)) {
+                File::makeDirectory($directory, 0777);
+            }
+
+            $file->move($directory, $file_name);
+            $file_upload_path = 'public' . $file_path . '/' . $file_name;
+            return $file_upload_path;
+        }
+
+        return $file;
     }
 }
