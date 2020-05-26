@@ -205,6 +205,9 @@
                     },
                     'content': {
                         required: true
+                    },
+                    'asset_title[]': {
+                        required: true
                     }
                 },
                 messages: {
@@ -231,6 +234,9 @@
                     },
                     'content': {
                         required: 'Content is required.'
+                    },
+                    'asset_title[]': {
+                        required: 'Asset Title is required.'
                     }
                 }
             });
@@ -294,6 +300,9 @@
                     },
                     'content': {
                         required: true
+                    },
+                    'asset_title[]': {
+                        required: true
                     }
                 },
                 messages: {
@@ -320,6 +329,9 @@
                     },
                     'content': {
                         required: 'Content is required.'
+                    },
+                    'asset_title[]': {
+                        required: 'Asset Title is required.'
                     }
                 }
             });

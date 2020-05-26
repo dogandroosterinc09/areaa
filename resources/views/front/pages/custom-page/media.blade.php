@@ -139,10 +139,15 @@
                                                 <div class="media-thumbnail__title">
                                                     <h3>{{ $media_item->title }}</h3>
                                                 </div>
-                                                <!-- <div class="media-thumbnail__button">
-                                                    <h4>Download {{$category->name}} Assets: </h4>
-                                                    <a href="#" class="btn btn--primary">Presentation Slides </a>
-                                                </div> -->
+                                                @if( !empty($media_item->assets) )
+                                                <div class="media-thumbnail__button">
+                                                    <h4>Download Assets: </h4>
+                                                    
+                                                    @foreach(json_decode($media_item->assets) as $asset)
+                                                    <a href="{{ asset($asset->link) }}" class="btn btn--primary">{{$asset->title}}</a>
+                                                    @endforeach
+                                                </div>
+                                                @endif
                                             </div>
                                             {{-- media-thumbnail --}}
 
@@ -196,7 +201,7 @@
                                                     <h4>Download Assets: </h4>
                                                     
                                                     @foreach(json_decode($media_item->assets) as $asset)
-                                                    <a href="{{$asset->link}}" class="btn btn--primary">{{$asset->title}}</a>
+                                                    <a href="{{ asset($asset->link) }}" class="btn btn--primary">{{$asset->title}}</a>
                                                     @endforeach
                                                 </div>
                                                 @endif

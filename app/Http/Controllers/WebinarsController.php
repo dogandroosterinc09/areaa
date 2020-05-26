@@ -92,11 +92,9 @@ class WebinarsController extends Controller
                 $asset_item->title = $request->asset_title[$ctr];
                 
                 $asset_item->link = $request->asset_link[$ctr];
-                $asset_item->isExternal = true;
 
                 if (isset($request->file[$ctr])) {
                     $asset_item->link = $this->upload($request->file[$ctr]);
-                    $asset_item->isExternal = false;
                 }
 
                 if (!empty($request->asset_title[$ctr])) {
@@ -178,6 +176,33 @@ class WebinarsController extends Controller
         $webinars->fill(array_merge($request->all(), [
             'slug' => str_slug($request->input('name'))
         ]))->save();
+
+        $assets = array();
+
+        if (isset($request->asset_title)) {
+            for($ctr = 0; $ctr < count($request->asset_title); $ctr++) {
+                $asset_item = new \stdClass;
+                $asset_item->title = $request->asset_title[$ctr];
+                
+                $asset_item->link = $request->asset_link[$ctr];
+
+                if (isset($request->file[$ctr])) {
+                    $asset_item->link = $this->upload($request->file[$ctr]);
+                }
+
+                if (!empty($request->asset_title[$ctr])) {
+                    array_push($assets, $asset_item);
+                }
+            }
+
+            $webinars->fill([
+                'assets' => json_encode($assets)
+            ])->save();
+        } else {
+            $webinars->fill([
+                'assets' => ''
+            ])->save();
+        }
 
         return redirect()->route('admin.webinars.index')->with('flash_message', [
             'title' => '',

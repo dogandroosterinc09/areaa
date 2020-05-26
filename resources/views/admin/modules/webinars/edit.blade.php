@@ -103,28 +103,17 @@
                                 <div class="form-group">
                                     <label class="col-md-2 control-label" for="assets">File</label>
                                     <div class="col-md-10">
-                                        <div class="input-group {{ $item->isExternal ? 'hidden' : '' }}">
-                                            <label class="input-group-btn">
-                                            <span class="btn btn-primary">
-                                                Choose File <input type="file" name="file[]" style="display: none;">
-                                            </span>
-                                            </label>
-                                            <input type="text" class="form-control" value="{{ $item->link }}" readonly>
-                                        </div>
-
-                                        <input type="text" class="form-control {{ !$item->isExternal ? 'hidden' : '' }}" id="" name="asset_link[]" value="{{ $item->link }}" placeholder="Enter Link..">
-
-                                        <label class="radio-inline" for="upload-a-file-{{$ctr}}">
-                                            <input {{ !$item->isExternal ? 'checked' : '' }} class="upload-a-file" type="radio" id="upload-a-file-{{$ctr}}" name="asset-type-{{$ctr}}"
-                                                value=""> Upload a File
-                                        </label>
-
-                                        <label class="radio-inline" for="external-link-{{$ctr}}">
-                                            <input {{ $item->isExternal ? 'checked' : '' }} class="external-link" type="radio" id="external-link-{{$ctr}}" name="asset-type-{{$ctr}}"
-                                                value=""> External Link
-                                        </label>
+                                        <input readonly type="text" class="form-control" id="" name="asset_link[]" value="{{ $item->link }}" placeholder="Enter Link..">
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                    <div class="col-md-10 col-md-offset-2">
+                                        <button type="button" class="btn-remove-asset btn btn-sm btn-danger">Remove</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-8 col-md-offset-2">
+                                <hr>
                             </div>
                         </div>                        
                         @php($ctr++)
@@ -147,4 +136,5 @@
 @push('extrascripts')
     <script type="text/javascript" src="{{ asset('public/js/ckeditor/ckeditor.js') }}"></script>
     <script type="text/javascript" src="{{ asset('public/js/libraries/webinars.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('public/js/libraries/webinars_assets.js') }}"></script>
 @endpush
