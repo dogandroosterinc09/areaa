@@ -113,11 +113,10 @@
 
             {{-- story section  --}}
             <section class="fullwidth fullwidth__left-push chapter-benefits">
-                <div class="container-max">
-                    <div class="row">
+                <div class="container-max" >
+                    <div class="row {{ !$chapter_home->attachment ? 'd-flex justify-content-center' : '' }}">
 
-
-                        <div class="col-md-6">
+                        <div class="col-md-6" {{ !$chapter_home->attachment ? 'style=margin-left:-12%;' : '' }}>
 
                                 <h2>{{ $chapter_home->member_benefits_title }}</h2>
                                 <p>{{ $chapter_home->member_benefits_content }}</p>
@@ -149,11 +148,12 @@
 
                         </div>
 
+                        @if($chapter_home->attachment)
                         <div class="col-md-6">
                             {{-- <img src="{{ $chapter_home->attachment ? $chapter_home->attachment->url : '' }}" alt="{{ $chapter_home->attachment ? $chapter_home->attachment->url : '' }}" class="img-fluid"> --}}
                             <img src="{{ $chapter_home->member_benefits_featured_image }}" alt="{{  $chapter_home->member_benefits_featured_image_alt }}" class="img-fluid">
                         </div>
-
+                        @endif
                 
                     </div>
                 </div> {{-- end of default-content--row --}}
