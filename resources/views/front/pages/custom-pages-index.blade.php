@@ -61,8 +61,8 @@
         @elseif ($page['slug'] == 'dashboard-profile') 
             @include('front.pages.custom-page.dashboard-profile')
 
-
-
+        @elseif ($page['slug'] == 'dashboard-events-login')
+            @include('front.pages.custom-page.dashboard-events-login')
 
         @elseif ($page['slug'] == 'sponsors')
             @include('front.pages.custom-page.sponsors')

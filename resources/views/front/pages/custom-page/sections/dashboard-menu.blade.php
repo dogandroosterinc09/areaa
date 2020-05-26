@@ -27,9 +27,9 @@
                                 </ul>
                             </div> --}}
                         </li>
-                        <li class="nav-item {{ $active == 'dashboard-events-login' ? 'active' : '' }}">
+                        <li class="nav-item {{ $active == 'events' ? 'active' : '' }}">
                             {{-- <a class="nav-link" href="{{ url( (auth()->user()->chapter == 'national' ? '' : auth()->user()->chapter_slug) . '/events' ) }}">Events</a> --}}
-                            <a class="nav-link" href="{{url('dashboard-events-login')}}">Events</a>
+                            <a class="nav-link" href="{{ route('customer.dashboard.events') }}">Events</a>
                         </li>
                        
                         <li class="nav-item {{ $active == 'member_directory' ? 'active' : '' }}">
@@ -46,7 +46,7 @@
                             </a>
                         </li> -->
                         <li class="nav-item">
-                            <a class="nav-link" href="{{url('contact-us')}}" {{--data-toggle="dropdown"--}}>
+                            <a class="nav-link" href="{{url('support')}}" {{--data-toggle="dropdown"--}}>
                                 Support
                             </a>
                         </li>

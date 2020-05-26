@@ -61,7 +61,7 @@
                                 <div class="col-lg-4">
                                     <div class="navigation-icon__item">
                                         <div class="navigation-icon__hover">
-                                            <a href="{{url('dashboard-events-login')}}">
+                                            <a href="{{ route('customer.dashboard.events') }}">
                                                 <h3> Events</h3>
                                             </a>
                                         </div>
@@ -238,7 +238,7 @@
                                     <h3> My Upcoming Events </h3>
                                 </div>
 
-                                <a href="{{url('dashboard-events-login')}}" class="btn btn--primary">View All Events</a>
+                                <a href="{{ route('customer.dashboard.events') }}" class="btn btn--primary">View All Events</a>
                             </div>
                                 
 

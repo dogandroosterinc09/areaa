@@ -21,6 +21,7 @@ Route::group([
     Route::get('/dashboard', 'FrontDashboardController@index')->name('dashboard');
     Route::get('/member_directory', 'FrontDashboardController@showMemberDirectory')->name('dashboard.member_directory');
     Route::get('/member_directory/search', 'FrontDashboardController@searchMemberDirectory')->name('dashboard.member_directory.search');
+    Route::get('/events', 'FrontDashboardController@showEvents')->name('dashboard.events');
     Route::get('/member/{id}', 'FrontDashboardController@showMemberDetail')->name('dashboard.member_detail');
     Route::get('/profile', 'FrontDashboardController@showProfile')->name('dashboard.profile');
     Route::post('/profile/update', 'FrontDashboardController@updateProfile')->name('profile.update');

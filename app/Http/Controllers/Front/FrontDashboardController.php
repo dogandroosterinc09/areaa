@@ -40,6 +40,14 @@ class FrontDashboardController extends Controller
         return view('front.pages.custom-pages-index', compact('page', 'active'));
     }
 
+    public function showEvents() {
+        $page = $this->pageRepository->getActivePageBySlug('dashboard-events-login');
+
+        $active = 'events';
+        
+        return view('front.pages.custom-pages-index', compact('page', 'active'));
+    }
+
     public function showMemberDirectory() {
         $page = $this->pageRepository->getActivePageBySlug('dashboard-memberdirectory');
         $members = $this->members->paginate(10);
