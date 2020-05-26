@@ -197,6 +197,16 @@
     }
 }
 
+@media only screen and (max-width:1190px) {
+    .memberdirectory-detail__image {
+        height: 200px;
+        width: 200px;
+        min-height: inherit;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+}
+
 @media only screen and (max-width:1100px) {
     section h2 {
         font-size: 2.7em;
@@ -211,6 +221,16 @@
         border-radius: 0;
         margin: 0;
         top: inherit;
+    }
+}
+
+@media only screen and (max-width:1060px) {
+    .advance-tool i {
+        font-size: 1.7em;
+    }
+    .dashboard-navigation .navbar-bar__wrapper>li>a {
+        padding: 15px 25px;
+        font-size: .8em;
     }
 }
 
@@ -256,7 +276,19 @@
     }
 }
 
+@media only screen and (max-width:991px) {
+    .search-member-directory .form-group {
+        margin-bottom: 10px !important;
+    }
+}
+
 @media only screen and (max-width:768px) {
+    .dashboard-nav {
+        display: none;
+    }
+    .dashboard-mobile {
+        display: block;
+    }
     .banner__image-slide--item {
         top: 0;
         height: 400px;
@@ -324,10 +356,66 @@
         height: auto !important;
         min-height: inherit;
     }
+    .member-directory-result__name {
+        display: block;
+        width: 100% !important;
+        max-width: 100%;
+        flex: 100%;
+        border-bottom: 1px solid #ddd;
+    }
+    .member-directory-result__location {
+        display: block;
+        width: 100% !important;
+        max-width: 100%;
+        flex: 100%;
+        padding: 5px 15px;
+        border-bottom: 1px solid #ddd;
+    }
+    .member-directory-result__language {
+        display: block;
+        width: 100% !important;
+        max-width: 100%;
+        flex: 100%;
+        padding: 5px 15px;
+        border-bottom: 1px solid #ddd;
+    }
+    .member-directory-result__action {
+        display: block;
+        max-width: 100%;
+        width: 100%;
+        flex: 0 0 100%;
+        padding: 15px;
+        border-bottom: 1px solid #ddd;
+    }
+    .member-directory-result__label-mobile {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        flex: 0 0 100%;
+    }
+    .member-directory-result__action a {
+        display: inline-block;
+        background: $color-secondary !important;
+        padding: 15px;
+        font-size: .8em;
+        color: $color-white;
+    }
+    .member-directory-result__item.member-directory-result__label {
+        display: none;
+    }
+    .member-directory-result__results {
+        border: 2px solid #ddd;
+    }
+    ul.inline-flex.inline-flex__extend {
+        margin-top: 25px;
+    }
 }
 
 @media only screen and (max-width:600px) {
     section h2 {
         font-size: 2em;
+    }
+    .memberdirectory-detail {
+        padding: 10px;
     }
 }

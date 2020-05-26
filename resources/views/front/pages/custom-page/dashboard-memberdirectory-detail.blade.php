@@ -97,11 +97,11 @@
             <div class="container-max">
                 <div class="row">
 
-                    <div class="col-md-3">
+                    <div class="col-lg-3">
                         <a href="{{url('customer/member_directory')}}" class="btn btn--back">   <i href="#" class="btn btn--third"> </i> Back To Members </a>
                     </div>
     
-                    <div class="col-md-9">
+                    <div class="col-lg-9">
                         <div class="primary-heading">
                             <h3> Member Directory </h3>
                         </div>
@@ -115,7 +115,7 @@
                                 <div class="row">
 
 
-                                    <div class="col-md-3 memberdirectory-detail__left">
+                                    <div class="col-lg-3 memberdirectory-detail__left">
                                         <div class="memberdirectory-detail__image image-background">
                                             <img src="{{ $member->avatar ? asset($member->avatar) : url('public/images/no-pix.jpg') }}" alt=""> 
                                         </div>
@@ -157,7 +157,7 @@
 
 
 
-                                    <div class="col-md-9 memberdirectory-detail__right">
+                                    <div class="col-lg-9 memberdirectory-detail__right">
                                         <div class="memberdirectory-detail__content">
                                              <div class="memberdirectory-detail__date">Member Since {{ $member->membership_year }}</div>
                                              <div class="memberdirectory-detail__title"> <h3> {{ $member->name }} </h3> </div>

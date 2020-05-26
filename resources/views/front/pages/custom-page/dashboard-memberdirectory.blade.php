@@ -107,27 +107,27 @@
                     }}
                             <div class="search-member-directory__wrapper container">
                                 <div class="row">
-                                    <div class="col-md-3">
+                                    <div class="col-lg-3">
                                         <div class="form-group">
                                             <input type="text" placeholder="Keyword Search" name="keyword" value="{{ Request::get('keyword') }}">
                                         </div>
                                     </div>
-                                    <div class="col-md-3">
+                                    <div class="col-lg-3">
                                         <div class="form-group">
                                             <input type="text" placeholder="Name" name="name" value="{{ Request::get('name') }}">
                                         </div>
                                     </div>
-                                    <div class="col-md-3">
+                                    <div class="col-lg-3">
                                         <div class="form-group">
                                             <input type="text" placeholder="Location: City and/or Zip" name="location" value="{{ Request::get('location') }}"> 
                                         </div>
                                     </div>
-                                    <div class="col-md-3">
+                                    <div class="col-lg-3">
                                        <ul class="inline-flex inline-flex__extend">
                                            <li>
-                                                <div class="advance-tool">
+                                                <div class="advance-tool text-center">
                                                     <a href="#">
-                                                        <i class="fas fa-cog"></i> Advanced
+                                                        <i class="fas fa-cog"></i> <span>Advanced</span>
                                                     </a>
                                                 </div>
                                            </li>
@@ -138,17 +138,17 @@
                                     </div>
                                 </div>
                                 <div class="row mt-3 advance-search {{ Request::get('company') || Request::get('chapter') || Request::get('designation') ? '' : 'd-none' }}">
-                                    <div class="col-md-3">
+                                    <div class="col-lg-3">
                                         <div class="form-group">
                                             <input type="text" placeholder="Company" name="company" value="{{ Request::get('company') }}">
                                         </div>
                                     </div>
-                                    <div class="col-md-3">
+                                    <div class="col-lg-3">
                                         <div class="form-group">
                                             <input type="text" placeholder="Chapter" name="chapter" value="{{ Request::get('chapter') }}">
                                         </div>
                                     </div>
-                                    <div class="col-md-3">
+                                    <div class="col-lg-3">
                                         <div class="form-group">
                                             <input type="text" placeholder="Designation" name="designation" value="{{ Request::get('designation') }}">
                                         </div>
@@ -174,14 +174,25 @@
                                     @forelse($members as $member)
                                     {{-- loop this --}}
                                     <div class="member-directory-result__item member-directory-result__results">
+                                       
                                         <div class="member-directory-result__name"> 
+                                            <div class="member-directory-result__label-mobile"><h4>Name</h4></div>
                                             <div class="member-directory-result__avatar image-background">
                                                 <img src="{{ $member->avatar ? asset($member->avatar) : url('public/images/no-pix.jpg') }}" alt=""> 
                                             </div>
                                             <h4> {{ $member->name }} </h4> </div>
-                                        <div class="member-directory-result__location">{{ $member->location }}</div>
-                                        <div class="member-directory-result__language">{{ $member->language_spoken }}</div>
-                                        <div class="member-directory-result__action"> <a href="{{ route('customer.dashboard.member_detail', $member->user_id) }}">View Profile</a> </div>
+                                        <div class="member-directory-result__location">
+                                            <div class="member-directory-result__label-mobile"><h4>Location</h4></div>
+                                            {{ $member->location }}
+                                        </div>
+                                        <div class="member-directory-result__language">
+                                            <div class="member-directory-result__label-mobile"><h4>Language Spoken</h4></div>
+                                            {{ $member->language_spoken }}
+                                        </div>
+                                        <div class="member-directory-result__action"> 
+                                            <div class="member-directory-result__label-mobile"><h4>Action</h4></div>
+                                            <a href="{{ route('customer.dashboard.member_detail', $member->user_id) }}">View Profile</a> 
+                                        </div>
                                     </div>
                                     {{-- loop this --}}
                                     @empty

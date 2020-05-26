@@ -2357,6 +2357,19 @@ ul.bullet-style {
             padding: 10px 20px;
         }
     }
+    &__label-mobile {
+        display: none;
+        h4 {
+            font-size: .9em !important;
+            padding: 5px 0;
+            width: 100%;
+            padding-bottom: 5px;
+            display: inline-block;
+            border-bottom: 2px solid $color-secondary;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+    }
 }
 
 .pagination-section {
@@ -2649,5 +2662,30 @@ ul.bullet-style {
         bottom: 0;
         left: 0;
         z-index: 1;
+    }
+}
+
+.dashboard-mobile {
+    display: none;
+    margin-top: 35px;
+    .dropdown-menu.show {
+        display: block;
+        width: 100%;
+    }
+    a {
+        color: $color-dark;
+    }
+    .container {
+        max-width: 95%;
+    }
+}
+
+#dashboard-mobile-menu {
+    display: block;
+    width: 100%;
+    text-transform: uppercase;
+    font-weight: bold;
+    i {
+        margin-left: 10px;
     }
 }
