@@ -6,7 +6,7 @@
     {{-- content slider  --}}
     <div class="banner__image-slide">
        
-        @foreach(\App\Models\ChapterPageHomeslider::where('chapter_id', $chapter->id)->get() as $slider)
+        @foreach(\App\Models\ChapterPageHomeslider::where('chapter_id', $chapter->id)->where('is_active', 1)->get() as $slider)
         
         <div class="banner__image-slide--item">
             <div class="item-left">
@@ -62,7 +62,7 @@
 
     {{-- slider controller  --}}
     <div class="banner__thumb-slide">
-    @foreach(\App\Models\ChapterPageHomeslider::where('chapter_id', $chapter->id)->get() as $slider)
+    @foreach(\App\Models\ChapterPageHomeslider::where('chapter_id', $chapter->id)->where('is_active', 1)->get() as $slider)
         <div class="banner__thumb-slide--item">
             <div class="thumb-holder">
                 <a href="#" class="image-background">

@@ -155,7 +155,7 @@
                     <div class="col-md-9">
                         <label class="switch switch-primary">
                             <input type="checkbox" id="is_active" name="is_active"
-                                   value="1" checked>
+                                   value="{{ $chapter_page_homeslider->is_active }}" {{ $chapter_page_homeslider->is_active ? 'checked' : '' }}>
                             <span></span>
                         </label>
                     </div>
