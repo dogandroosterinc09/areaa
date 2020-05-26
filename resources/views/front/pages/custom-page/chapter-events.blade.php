@@ -11,7 +11,7 @@
                 <div class="container-max sub-banner__content">
                     <div class="row">
                         <div class="col-md-12 sub-banner__content">
-                            {{-- <h3>Aloha</h3> --}}                            
+                            {{-- <h3>Aloha</h3> --}}
                             {!! $chapter_page_event->content !!}
                         </div>
                     </div>
@@ -35,14 +35,16 @@
                         <h2>Upcoming Events</h2>
                     </div>
 
+                    @if(count($chapter_events_previous))
                     <div class="col-lg-12">
                         <a href="#" class="btn btn--back">   <i href="#" class="btn btn--third"> </i> view previous events </a>
                     </div>
+                    @endif                    
     
                     <div class="col-lg-12">
                         
                         <div class="chapter-event-display">
-                            @php($chapter_events = \App\Models\ChapterEvent::where('chapter_id', $chapter->id)->get())
+                            {{-- @php($chapter_events = \App\Models\ChapterEvent::where('chapter_id', $chapter->id)->get()) --}}
 
                             @forelse($chapter_events as $chapter_event)
                                 {{-- events-thumbnail --}}
@@ -51,13 +53,18 @@
                                         <div class="chapter-events-thumbnail__month">
                                         {{ $chapter_event->startMonth }}
                                         </div>
-                                        @if($chapter_event->startDay == $chapter_event->endDay)
+                                        @if( $chapter_event->startMonth == $chapter_event->endMonth && $chapter_event->startDay == $chapter_event->endDay)
                                         <div class="chapter-events-thumbnail__day chapter-events-thumbnail__day--first"> {{ $chapter_event->startDay }}</div>
                                         @else
-                                        <div class="chapter-events-thumbnail__day chapter-events-thumbnail__day--first"> 27</div>
+                                        <div class="chapter-events-thumbnail__day chapter-events-thumbnail__day--first"> {{ $chapter_event->startDay }}</div>
                                         to
-                                        <div class="chapter-events-thumbnail__day chapter-events-thumbnail__day--end"> 29</div>
-                                        @endif                                                                                
+                                        @if($chapter_event->startMonth != $chapter_event->endMonth)
+                                        <div class="chapter-events-thumbnail__month">
+                                        {{ $chapter_event->endMonth }}
+                                        </div>
+                                        @endif
+                                        <div class="chapter-events-thumbnail__day chapter-events-thumbnail__day--end"> {{ $chapter_event->endDay }}</div>
+                                        @endif
                                     </div>
                                     <div class="chapter-events-thumbnail__image">
                                         <img src="{{ $chapter_event->attachment->url }}" alt="Member Image">

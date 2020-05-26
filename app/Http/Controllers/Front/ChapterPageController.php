@@ -142,7 +142,19 @@ class ChapterPageController extends Controller
             $chapter_page_event->content = $chapter_page_event->content ? $chapter_page_event->content : $default_content;
         }
 
-        return view('front.pages.custom-pages-index', compact('page', 'chapter', 'chapter_page_event'));
+        $chapter_events = \App\Models\ChapterEvent::where('chapter_id', $chapter->id)
+            ->where('starts_at', '>=', date('Y-m-d'))
+            ->orderBy('starts_at')
+            ->orderBy('ends_at')
+            ->get();
+
+        $chapter_events_previous = \App\Models\ChapterEvent::where('chapter_id', $chapter->id)
+        ->where('starts_at', '<', date('Y-m-d'))
+        ->orderBy('starts_at')
+        ->orderBy('ends_at')
+        ->get();
+        
+        return view('front.pages.custom-pages-index', compact('page', 'chapter', 'chapter_page_event', 'chapter_events', 'chapter_events_previous'));
     }
 
     public function indexLeadershipBoard($slug) {

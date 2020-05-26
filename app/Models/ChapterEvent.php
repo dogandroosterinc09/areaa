@@ -70,6 +70,10 @@ class ChapterEvent extends Model
         return \Carbon\Carbon::parse($this->attributes['starts_at'])->format('d');
     }
 
+    public function getEndMonthAttribute() {
+        return \Carbon\Carbon::parse($this->attributes['ends_at'])->format('M');
+    }
+
     public function getEndDayAttribute() {
         return \Carbon\Carbon::parse($this->attributes['ends_at'])->format('d');
     }

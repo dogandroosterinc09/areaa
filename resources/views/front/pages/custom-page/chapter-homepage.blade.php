@@ -14,11 +14,14 @@
                             <h2> My Upcoming Events </h2>
                             <a href="{{url($chapter['slug'].'/events')}}" class="btn btn--view-all"> View all</a>
                         </div>
-                        
-                        <div class="chapter-events-upcoming">
-                            @php($chapter_events = \App\Models\ChapterEvent::where('chapter_id', $chapter->id)->get())
 
-                            @forelse($chapter_events as $chapter_event)
+                        <div class="chapter-events-upcoming">
+                            @php( $chapter_event = \App\Models\ChapterEvent::where('chapter_id', $chapter->id)
+                                    ->where('starts_at', '>=', date('Y-m-d'))
+                                    ->orderBy('starts_at')
+                                    ->first() )
+                            
+                            @if(!empty($chapter_event))
                             {{-- loop here --}}
                             <div class="chapter-events-upcoming__box">
                                 <div class="row">
@@ -32,18 +35,20 @@
                                             <h4>{{ $chapter_event->name }}</h4>
                                             <h5>{{ $chapter_event->dateRange }} | {{ $chapter_event->time }}</h5>
                                             <div class="chapter-events-upcoming__description limit-me">
-                                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco lab.
-                                                 oris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+                                            <p>
+                                            {{ $chapter_event->description }}
+                                            </p>                                             
                                             </div>
                                              <a href="{{url($chapter['slug'].'/events')}}" class="btn btn--primary"> Read More Details <i class="fas fa-arrow-right"></i> </a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            {{-- loop here --}}
-                            @empty
+                            {{-- loop here --}}                            
+                            @else
                             <h3 class="text-danger font-weight-bold text-center w-100 my-5">No Events.</h3>
-                            @endforelse
+                            @endif
+                            
                         </div>
 
                 </div>
