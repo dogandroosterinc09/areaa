@@ -12,7 +12,7 @@
                 <div class="row">
 
 
-                    <div class="col-lg-6 contact-section__item contact-section__left curl-tail-side">
+                    <div class="col-lg-6 contact-section__item contact-section__left curl-tail-side" data-aos="fade-right">
                         <div class="contact-details-content">
                             {!! $chapter_page_contactus->content !!}
                             <!-- <h3>Have Questions?</h3>
@@ -40,7 +40,7 @@
                     </div>
 
 
-                    <div class="col-lg-6 contact-section__item contact-section__right">
+                    <div class="col-lg-6 contact-section__item contact-section__right" data-aos="fade-left">
                         <h4>Fill out the form below and someone will be in contact with you shortly.</h4>
                         <div class="contact-form">
                             {{  Form::open([

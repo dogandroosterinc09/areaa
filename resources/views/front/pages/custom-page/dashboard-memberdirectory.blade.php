@@ -88,7 +88,7 @@
     
         </section> -->
 
-        <section class="dashboard-content dashboard-content__memberdirectory">
+        <section class="dashboard-content dashboard-content__memberdirectory" data-aos="fade-up">
             <div class="container-max">
 
                 <div class="col-lg-12">

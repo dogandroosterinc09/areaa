@@ -1,4 +1,4 @@
-<section class="page-chapter page-chapter--homepage page-chapter-aloha page-chapter-aloha--homepage">
+<section class="page-chapter page-chapter--homepage">
     @include('front.layouts.sections.chapter.header_chapter')
 
     @include('front.pages.custom-page.sections.chapter-slider')
@@ -7,7 +7,7 @@
         {{-- @include('front.pages.custom-page.sections.chapter-menu') --}}
 
         <section>
-            <div class="container-max">
+            <div class="container-max" data-aos="fade-up">
                 <div class="col-lg-12">
 
                         <div class="heading-button">
@@ -56,7 +56,7 @@
         </section>
 
         {{-- need to dynamic this sub  --}}
-        <section class="video-masking video-masking__fullwidth">
+        <section class="video-masking video-masking__fullwidth" data-aos="fade-up">
             <div class="container-max">
                 <div class="row">
 
@@ -116,7 +116,7 @@
                 <div class="container-max" >
                     <div class="row {{ !$chapter_home->attachment ? 'd-flex justify-content-center' : '' }}">
 
-                        <div class="col-md-6" {{ !$chapter_home->attachment ? 'style=margin-left:-12%;' : '' }}>
+                        <div data-aos="fade-right" class="col-md-6" {{ !$chapter_home->attachment ? 'style=margin-left:-12%;' : '' }}>
 
                                 <h2>{{ $chapter_home->member_benefits_title }}</h2>
                                 <p>{{ $chapter_home->member_benefits_content }}</p>
@@ -149,7 +149,7 @@
                         </div>
 
                         @if($chapter_home->attachment)
-                        <div class="col-md-6">
+                        <div class="col-md-6" data-aos="fade-left">
                             {{-- <img src="{{ $chapter_home->attachment ? $chapter_home->attachment->url : '' }}" alt="{{ $chapter_home->attachment ? $chapter_home->attachment->url : '' }}" class="img-fluid"> --}}
                             <img src="{{ $chapter_home->member_benefits_featured_image }}" alt="{{  $chapter_home->member_benefits_featured_image_alt }}" class="img-fluid">
                         </div>
@@ -163,7 +163,7 @@
 
         {{-- story section  --}}
         @if(!empty($chapter_home->sponsors_title) && !empty($chapter_home->sponsors_content))        
-        <section class="sponsors">
+        <section class="sponsors" data-aos="fade-up">
             <div class="container-max">
                 <div class="row">
 

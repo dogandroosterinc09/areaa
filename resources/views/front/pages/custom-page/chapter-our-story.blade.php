@@ -7,7 +7,7 @@
     <main class="main-content">
 
                 {{-- @include('front.pages.custom-page.sections.chapter-menu') --}}
-                <section class="dashboard-nav">
+                <section class="dashboard-nav" data-aos="fade-up">
 
                     <div class="dashboard-navigation">
                         <div class="dashboard-navigation__wrapper">
@@ -52,7 +52,7 @@
                     <div class="row">
 
 
-                        <div class="col-md-6">
+                        <div class="col-md-6" data-aos="fade-right">
                            
                             <div class="dynamic-content chapter-story">
                                 <h2>Our Story</h2>
@@ -69,7 +69,7 @@
                         </div>
 
 
-                        <div class="col-md-6">
+                        <div class="col-md-6" data-aos="fade-left">
                             <div class="chapter-story__image">
                                 <img src="{{ url('public/images/chapter-about-image.jpg') }}" alt="chapter title" class="img-fluid img-dropshadow">
                             </div>
@@ -89,14 +89,14 @@
                     <div class="row">
 
 
-                        <div class="col-md-6 fullwidth__left">
+                        <div class="col-md-6 fullwidth__left" data-aos="fade-right">
                             <div class="fullwidth__image image-background">
                                 <img src="{{ url('public/images/our-story-image.jpg') }}" alt="chapter title" class="img-fluid">
                             </div>
                         </div>
 
 
-                        <div class="col-md-6 fullwidth__right">
+                        <div class="col-md-6 fullwidth__right" data-aos="fade-left">
                             
                             <div class="fullwidth__content">
                                 <h2>AREAA National</h2>

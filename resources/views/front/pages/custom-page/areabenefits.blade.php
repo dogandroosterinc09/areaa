@@ -4,7 +4,7 @@
 
 
     {{-- need to dynamic this sub  --}}
-    <section class="sub-banner">
+    <section class="sub-banner" data-aos="fade-up">
         <div class="sub-banner__wrapper container-max">
             <div class="sub-banner__item">
                 <div class="container-max sub-banner__content">
@@ -26,7 +26,7 @@
 
     <main class="main-content">
 
-        <section>
+        <section data-aos="fade-up">
             <div class="container-max">
                <div class="row">
                     <div class="col-lg-12 text-center">
@@ -111,7 +111,7 @@
 
 
         {{-- need to dynamic this sub  --}}
-        <section class="white-cover membership-slider">
+        <section class="white-cover membership-slider" data-aos="fade-up">
             <div class="white-cover__wrapper container-max">
                 <div class="white-cover__item">
                     <div class="container-max">
@@ -183,7 +183,7 @@
 
 
 
-        <section>
+        <section data-aos="fade-up">
             <div class="container-max">
                 <div class="row">
                     <div class="col-md-12">

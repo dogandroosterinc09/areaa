@@ -2,7 +2,7 @@
 @include('front.layouts.sections.chapter.header_chapter')
 
     {{-- need to dynamic this sub  --}}
-    <section class="sub-banner">
+    <section class="sub-banner" data-aos="fade-up">
         <div class="sub-banner__wrapper container-max">
             <div class="sub-banner__item">
                 <div class="container-max sub-banner__content">
@@ -25,7 +25,7 @@
 
     <main class="main-content">
 
-        <section class="board-detail-content">
+        <section class="board-detail-content" data-aos="fade-up">
             <div class="container-max">
                 <div class="col-lg-12 text-center">
                     @if($chapter_board_member->bio)
@@ -48,7 +48,7 @@
         <section class="next-board">
             <div class="container-max">
                 <div class="row">
-                    <div class="col-lg-6 next-board__left">
+                    <div class="col-lg-6 next-board__left" data-aos="fade-right">
                         <div class="next-board__item">
                             @if($previousBoardMember)
                             <div class="next-board__image">
@@ -63,7 +63,7 @@
                             @endif
                         </div>
                     </div>
-                    <div class="col-lg-6 next-board__right">
+                    <div class="col-lg-6 next-board__right" data-aos="fade-left">
                         <div class="next-board__item">
                             @if($nextBoardMember)
                             <div class="next-board__content">

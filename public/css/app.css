@@ -21197,6 +21197,9 @@ ul.bullet-style li h6 {
   overflow: hidden;
   margin-bottom: 25px;
 }
+.chapter-list-view__item .image-background a img {
+  display: none;
+}
 .chapter-list-view__image {
   min-height: 225px;
 }

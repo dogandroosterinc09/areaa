@@ -29,7 +29,7 @@
     <main class="main-content">
 
         {{-- @include('front.pages.custom-page.sections.dashboard-menu') --}}
-        <section class="dashboard-nav">
+        <section class="dashboard-nav" data-aos="fade-up">
 
             <div class="dashboard-navigation">
                 <div class="dashboard-navigation__wrapper">
@@ -91,7 +91,7 @@
 
 
 
-        <section class="dashboard-content dashboard-content__events">
+        <section class="dashboard-content dashboard-content__events" data-aos="fade-up">
             <div class="container-max">
                 <div class="col-lg-12">
                         

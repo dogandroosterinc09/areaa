@@ -93,7 +93,7 @@
 
 
 
-        <section class="dashboard-content dashboard-content__memberdirectory-detail">
+        <section class="dashboard-content dashboard-content__memberdirectory-detail" data-aos="fade-up">
             <div class="container-max">
                 <div class="row">
 

@@ -4,7 +4,7 @@
 
     {{-- @include('front.pages.custom-page.sections.chapter-slider-aloha') --}}
         {{-- @include('front.pages.custom-page.sections.banner') --}}
-        <section class="sub-banner">
+        <section class="sub-banner" data-aos="fade-up">
             <div class="sub-banner__wrapper container-max">
                 <div class="sub-banner__item">
                     <div class="container-max sub-banner__content">
@@ -27,7 +27,7 @@
     <main class="main-content">
 
         @if(isset($chapter_board->board_of_directors) && $chapter_board->executives->count() > 0)
-        <section class="executive-board">
+        <section class="executive-board" data-aos="fade-up">
             <div class="container-max">
                 <div class="col-lg-12">
                     <h2>Executive board</h2>

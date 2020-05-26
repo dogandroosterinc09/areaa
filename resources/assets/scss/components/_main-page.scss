@@ -1656,6 +1656,13 @@ ul.bullet-style {
         @include border-radius(10px);
         overflow: hidden;
         margin-bottom: 25px;
+        .image-background {
+            a {
+                img {
+                    display: none;
+                }
+            }
+        }
     }
     &__image {
         min-height: 225px;

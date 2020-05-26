@@ -264,14 +264,14 @@
         <section class="feat-members wrapper margin-both90">
             <div class="container-max">
                 <div class="row">
-                    <div class="col-md-6 feat-members__left">
+                    <div class="col-md-6 feat-members__left" data-aos="fade-right">
                         <h2>{{ section('Featured Members.data.first.title') }}</h2>
                     </div>
-                    <div class="col-md-6 feat-members__right content-middle">
+                    <div class="col-md-6 feat-members__right content-middle" data-aos="fade-left">
                         <p>{{ section('Featured Members.data.first.content') }}</p>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row" data-aos="fade-up">
                     <div class="col-md-12">
                         <div class="feat-members-slider">
                             <div class="feat-members-slider--item">
@@ -348,7 +348,7 @@
         {{-- End of Feaured Members --}}
 
         {{-- Start  --}}
-        <section class="sponsors wrapper margin-both90">
+        <section class="sponsors wrapper margin-both90" data-aos="fade-up">
             <div class="container-max">
                 <div class="row">
                     <div class="col-md-12">

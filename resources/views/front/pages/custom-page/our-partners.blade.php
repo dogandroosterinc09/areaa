@@ -4,7 +4,7 @@
 
 
     {{-- need to dynamic this sub  --}}
-    <section class="sub-banner">
+    <section class="sub-banner" data-aos="fade-up">
         <div class="sub-banner__wrapper container-max">
             <div class="sub-banner__item">
                 <div class="container-max sub-banner__content">
@@ -29,7 +29,7 @@
 
 
         {{-- our partners section  --}}
-        <section class="goals">
+        <section class="goals" data-aos="fade-up">
             <div class="container-max">
                 <div class="row">
 

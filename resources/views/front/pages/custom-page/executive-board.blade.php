@@ -1,7 +1,7 @@
 <section class="page page--board">
     @include('front.layouts.sections.header')
     {{-- @include('front.pages.custom-page.sections.banner') --}}
-    <section class="sub-banner">
+    <section class="sub-banner" data-aos="fade-up">
         <div class="sub-banner__wrapper container-max">
             <div class="sub-banner__item">
                 <div class="container-max sub-banner__content">
@@ -20,7 +20,7 @@
         </div>
     </section>
     <main class="main-content">
-        <section class="executive-board">
+        <section class="executive-board" data-aos="fade-up">
             <div class="container-max">
                 <div class="col-lg-12">
                     <div class="board-thumbnail">

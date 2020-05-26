@@ -66,7 +66,7 @@
 
 
 
-    <section class="dashboard-content dashboard-content__profile">
+    <section class="dashboard-content dashboard-content__profile" data-aos="fade-up">
         <div class="container-max">
             <div class="row">
 
