@@ -90,7 +90,7 @@
         <div class="chapter-list-view__item">
             <div class="chapter-list-view__image image-background">
                 <a href="{{url($chapter->slug)}}">
-                     <img src="{{ asset($chapter->thumbnail) }}" alt="chapter">
+                     <img src={{ $chapter->thumbnail != "0" ? asset($chapter->thumbnail) : url('public/images/no-image.jpg') }} alt="chapter">
                 </a>
             </div>
             <div class="chapter-list-view__title">
