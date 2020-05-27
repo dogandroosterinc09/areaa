@@ -166,9 +166,40 @@
                     <div class="mobile-header__wrapper">
 
                         <div class="login-option">
-                            <a href="{{ route('customer.login') }}" class="">
+                            <a href="{{ route('customer.login') }}" class="dropdown-toggle" href="" role="button" id="logout-button-mobile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-user"></i>
                             </a>
+
+                            @auth
+                            {{-- <a href="{{ route('customer.logout') }}"><i class="ic-user"></i> Log Out</a> --}}
+
+                            <div class="logout-dropdown">
+                                <a class="dropdown-toggle" href="" role="button" id="logout-button-mobile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="ic-user"></i> Welcome
+                                </a>
+                              
+                                <div class="dropdown-menu" aria-labelledby="logout-button-mobilen">
+                                  <a class="dropdown-item" href="{{ route('customer.dashboard') }}">Dashboad</a>
+                                  {{-- <a class="dropdown-item" href="{{ url( (auth()->user()->chapter == 'national' ? '' : auth()->user()->chapter_slug) . '/events' ) }}">Events</a> --}}
+                                  <a class="dropdown-item" href="{{url('dashboard-events-login')}}">Events</a>
+                                 
+                                  <a class="dropdown-item" href="{{ route('customer.dashboard.member_directory') }}">Membership Directory </a>
+                                  <a class="dropdown-item" href="{{ route('customer.dashboard.profile') }}">Profile </a>
+                                  <a class="dropdown-item" href="{{url('support')}}">Support </a>
+                                  <div class="dropdown-divider"></div>
+                                  <a class="dropdown-item" href="{{ route('customer.logout') }}"> <i class="fas fa-power-off"></i> Logout </a>
+                                </div>
+                            </div>
+
+
+                            @else
+
+
+                            <a href="{{ route('customer.login') }}"><i class="ic-user"></i> Log In</a>
+                            @endauth   
+
+
+
                         </div>
 
                         <div class="mobile-logo">
@@ -240,7 +271,7 @@
                                                 <li><a href="{{url('sponsors')}}">Our Sponsors</a></li>
                                                 <li><a href="{{url('FAQ')}}"> FAQ </a></li>
                                                 <li><a href="{{url('photo-gallery')}}"> Photo Gallery </a></li>
-                                                <li><a href="#"> Career </a></li>
+                                                {{-- <li><a href="#"> Career </a></li> --}}
                                         </ul>
                                     </li>
 
@@ -257,7 +288,10 @@
 
                                         <ul class="sub-menu no-mega-sub">
                                             <li>
-                                                <a href="#"> Sub menu1</a>
+                                                <li><a href="{{url('about-us')}}"> Why join </a></li>
+                                                <li class="{{ $page->slug == 'areabenefits' ? 'active' : '' }}" ><a href="{{url('areabenefits')}}"> Benefits </a></li>
+                                                <li><a href="{{ route('customer.login') }}"> Find a Member </a></li>
+                                                <li class="{{ $page->slug == 'chapter' ? 'active' : '' }}" ><a href="{{url('chapter')}}"> Chapter Locations </a></li>
                                             </li>
                                         </ul>
                                     </li>
@@ -275,7 +309,7 @@
 
                                         <ul class="sub-menu no-mega-sub">
                                             <li>
-                                                <a href="#"> Sub menu1</a>
+                                                <a class="nav-link" href="#"> How to get involved</a>
                                             </li>
                                         </ul>
                                     </li>
@@ -291,9 +325,8 @@
                                             <i class="fa fa-angle-down" aria-hidden="true"></i>
                                         </div>
                                         <ul class="sub-menu no-mega-sub">
-                                            <li>
-                                                <a href="#"> Sub menu1</a>
-                                            </li>
+                                            <li class="{{ $page->slug == 'events' ? 'active' : '' }}" ><a href="{{url('events')}}">National Events</a></li>
+                                            <li class="{{ $page->slug == 'events-chapter' ? 'active' : '' }}" ><a href="{{url('events-chapter')}}">Chapter Events</a></li>
                                         </ul>
                                     </li>
                                     <li class="nav-item">
@@ -309,7 +342,10 @@
                                         </div>
                                         <ul class="sub-menu no-mega-sub">
                                             <li>
-                                                <a href="#"> Sub menu1</a>
+                                                <a class="nav-link" href="{{ url('resource-asia-america-report')}}"> State of Asia America Report</a>
+                                            </li>
+                                            <li class="{{ $page->slug == 'media' ? 'active' : '' }}" >
+                                                <a href="{{ url('media')}}"> Media</a>
                                             </li>
                                         </ul>
                                     </li>

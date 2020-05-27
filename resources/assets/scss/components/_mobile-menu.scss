@@ -97,9 +97,18 @@ $mobile-font:arial;
         @include flex;
         @include flex-align-items(center);
         @include flex-justify-content(center);
+        a {
+            color: $color-white;
+        }
         i {
             font-size: 21px;
             color: #000;
+            // color: $color-white;
+        }
+        .dropdown-menu {
+            i {
+                color: $color-white;
+            }
         }
     }
 }
