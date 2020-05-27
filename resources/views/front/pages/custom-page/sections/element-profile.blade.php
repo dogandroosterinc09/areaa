@@ -86,7 +86,7 @@
                         <div class="row">
 
                             <div class="col-md-12">
-                                <h3><i class="fas fa-cog"></i>Basic Profile</h3>
+                                <h3><i class="fas fa-cog"></i>Profile & Account Info</h3>
                             </div>
 
                             <div class="col-md-3">
