@@ -24751,7 +24751,7 @@ _::-webkit-:not(:root:root),
   }
 
   .member-directory-result__item.member-directory-result__label {
-    display: none;
+    display: none !important;
   }
 
   .member-directory-result__results {

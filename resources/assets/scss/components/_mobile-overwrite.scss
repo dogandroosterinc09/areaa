@@ -401,7 +401,7 @@
         color: $color-white;
     }
     .member-directory-result__item.member-directory-result__label {
-        display: none;
+        display: none !important;
     }
     .member-directory-result__results {
         border: 2px solid #ddd;
