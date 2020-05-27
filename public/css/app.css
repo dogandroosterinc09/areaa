@@ -21848,7 +21848,7 @@ ul.bullet-style li h6 {
   width: 100%;
   padding-bottom: 5px;
   display: inline-block;
-  border-bottom: 2px solid #ab1a2d;
+  border-bottom: 1px dotted #ab1a2d;
   margin-bottom: 5px;
   text-transform: uppercase;
 }
@@ -24705,6 +24705,7 @@ _::-webkit-:not(:root:root),
     width: 100% !important;
     max-width: 100%;
     flex: 100%;
+    padding: 15px;
     border-bottom: 1px solid #ddd;
   }
 
@@ -24713,7 +24714,7 @@ _::-webkit-:not(:root:root),
     width: 100% !important;
     max-width: 100%;
     flex: 100%;
-    padding: 5px 15px;
+    padding: 15px;
     border-bottom: 1px solid #ddd;
   }
 
@@ -24722,7 +24723,7 @@ _::-webkit-:not(:root:root),
     width: 100% !important;
     max-width: 100%;
     flex: 100%;
-    padding: 5px 15px;
+    padding: 15px;
     border-bottom: 1px solid #ddd;
   }
 
@@ -24733,6 +24734,9 @@ _::-webkit-:not(:root:root),
     flex: 0 0 100%;
     padding: 15px;
     border-bottom: 1px solid #ddd;
+  }
+  .member-directory-result__action .member-directory-result__label-mobile {
+    display: none !important;
   }
 
   .member-directory-result__label-mobile {
