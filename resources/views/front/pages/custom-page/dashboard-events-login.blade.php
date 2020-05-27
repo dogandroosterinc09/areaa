@@ -30,7 +30,7 @@
 
         @include('front.pages.custom-page.sections.dashboard-menu')
 
-        <section class="dashboard-content dashboard-content__events">
+        <section class="dashboard-content dashboard-content__events" data-aos="fade-up">
             <div class="container-max">
 
                  {{-- events end --}}

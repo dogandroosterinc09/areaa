@@ -4,7 +4,7 @@
 
 
     {{-- need to dynamic this sub  --}}
-    <section class="sub-banner">
+    <section class="sub-banner" data-aos="fade-up">
         <div class="sub-banner__wrapper container-max">
             <div class="sub-banner__item">
                 <div class="container-max sub-banner__content">
@@ -26,7 +26,7 @@
     
     <main class="main-content">        
 
-        <section class="board-detail-content">
+        <section class="board-detail-content" data-aos="fade-up">
             <div class="container-max">
                 <div class="col-lg-12 text-center">
                     @if($boardMember->bio) {{-- remove this condition when there is already content --}}
@@ -48,7 +48,7 @@
         </section>
 
         
-        <section class="next-board">
+        <section class="next-board" data-aos="fade-up">
             <div class="container-max">
                 <div class="row">
                     

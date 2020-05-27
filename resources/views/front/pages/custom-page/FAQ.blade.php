@@ -4,7 +4,7 @@
 
 
     {{-- need to dynamic this sub  --}}
-    <section class="sub-banner">
+    <section class="sub-banner" data-aos="fade-up">
         <div class="sub-banner__wrapper container-max">
             <div class="sub-banner__item">
                 <div class="container-max sub-banner__content">
@@ -28,7 +28,7 @@
     <main class="main-content">
 
 
-        <section class="faq-navigation">
+        <section class="faq-navigation" data-aos="fade-up">
             <div class="container-max">
                 <div class="row">
                     <div class="col-lg-4 text-center">
@@ -84,7 +84,7 @@
 
 
         <section>
-            <div class="container-max">
+            <div class="container-max" data-aos="fade-up">
                 <div class="row">
                     <div class="col-lg-12">
                         <!--Accordion wrapper-->

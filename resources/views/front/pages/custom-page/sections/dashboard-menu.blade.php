@@ -59,3 +59,36 @@
     </div>
 
 </section>
+
+
+<section class="dashboard-mobile">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+
+                <div class="dropdown">
+                    <button class="btn btn-secondary" type="button" id="dashboard-mobile-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dashboard Menu
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    @if(!isset($active))
+                        @php($active = '')
+                    @endif
+                    <div class="dropdown-menu" aria-labelledby="dashboard-mobile-menu">
+                        <a class="nav-link dropdown-item" href="{{ route('customer.dashboard') }}">Dashboard <span class="sr-only">(current)</span></a>
+                        <a class="nav-link dropdown-item" href="{{ route('customer.dashboard.events') }}">Events</a>
+                        <a class="nav-link dropdown-item" href="{{ route('customer.dashboard.member_directory') }}">Membership Directory</a>
+                        <a class="nav-link dropdown-item" href="{{ route('customer.dashboard.profile') }}" {{--data-toggle="dropdown"--}}>
+                            Profile
+                        </a>
+                        <a class="nav-link dropdown-item" href="{{url('support')}}" {{--data-toggle="dropdown"--}}>
+                            Support
+                        </a>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</section>

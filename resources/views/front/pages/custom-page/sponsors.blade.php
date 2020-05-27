@@ -4,7 +4,7 @@
 
 
     {{-- need to dynamic this sub  --}}
-    <section class="sub-banner">
+    <section class="sub-banner" data-aos="fade-up">
         <div class="sub-banner__wrapper container-max">
             <div class="sub-banner__item">
                 <div class="container-max sub-banner__content">
@@ -28,7 +28,7 @@
 
         
     {{-- story section  --}}
-    <section class="sponsors margin-m100">
+    <section class="sponsors margin-m100" data-aos="fade-up">
         <div class="container-max">
             <div class="row">
 

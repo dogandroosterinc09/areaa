@@ -4,7 +4,7 @@
 
 
     {{-- need to dynamic this sub  --}}
-    <section class="sub-banner">
+    <section class="sub-banner" data-aos="fade-up">
         <div class="sub-banner__wrapper container-max">
             <div class="sub-banner__item">
                 <div class="container-max sub-banner__content">
@@ -31,10 +31,10 @@
         <section class="our-mission">
             <div class="container-max">
                 <div class="row">
-                    <div class="col-md-6 our-mission__left">
+                    <div class="col-md-6 our-mission__left" data-aos="fade-right">
                         <img src="{{ section('Our Mission.data.first.image') }}" alt="{{ section('Our Mission.data.first.alt_text') }}">
                     </div>
-                    <div class="col-md-6 our-mission__right content-middle">
+                    <div class="col-md-6 our-mission__right content-middle" data-aos="fade-left">
                         <div class="our-mission__content">
 
                             <h2>{{ section('Our Mission.data.first.title') }}</h2>
@@ -51,7 +51,7 @@
 
 
         {{-- need to dynamic this sub  --}}
-        <section class="masking-background">
+        <section class="masking-background" data-aos="fade-up">
             <div class="masking-background__wrapper container-max">
                 <div class="masking-background__item">
                     <div class="container-max masking-background__container">
@@ -80,7 +80,7 @@
 
 
         {{-- story section  --}}
-        <section class="goals">
+        <section class="goals" data-aos="fade-up">
             <div class="container-max">
                 <div class="row">
 
@@ -120,7 +120,7 @@
                 <div class="container">
                     <div class="row">
     
-                        <div class="col-lg-6">
+                        <div class="col-lg-6" data-aos="fade-right">
                             <div class="hightlight__left">
                                 <h4>{{ section('Membership.data.first.title') }}</h4>
                                 <div class="btn-group">
@@ -131,7 +131,7 @@
                           
                         </div>
 
-                        <div class="col-lg-6">
+                        <div class="col-lg-6" data-aos="fade-left">
                             <div class="hightlight__right">
                                  <p>{{ section('Membership.data.first.content') }}</p>
                             </div>
@@ -142,58 +142,8 @@
             </section> {{-- end of default-content --}}
 
 
-
-              {{-- story section  --}}
-              <section class="follow-us">
-                <div class="container">
-                    <div class="row">
-    
-
-                        <div class="col-lg-12 follow-us__wrapper">
-                            <div class="primary-heading">
-                                <h2>Follow Us</h4>
-                                <p>On Instagram </p>
-                            </div>
-
-                            <div class="insta-gram">
-                                <div class="insta-gram__slide">
-                                        <div class="insta-gram__item image-background"> 
-                                            <img src="{{ url('public/images/instagram1.jpg') }}"> 
-                                        </div>
-                                        <div class="insta-gram__item image-background"> 
-                                                <img src="{{ url('public/images/instagram2.jpg') }}"> 
-                                        </div>
-                                        <div class="insta-gram__item image-background"> 
-                                                    <img src="{{ url('public/images/instagram3.jpg') }}"> 
-                                        </div>
-                                        <div class="insta-gram__item image-background"> 
-                                            <img src="{{ url('public/images/instagram4.jpg') }}"> 
-                                        </div>
-                                        <div class="insta-gram__item image-background"> 
-                                                <img src="{{ url('public/images/our-story-image.jpg') }}"> 
-                                        </div>
-                                        <div class="insta-gram__item image-background"> 
-                                                    <img src="{{ url('public/images/instagram1.jpg') }}"> 
-                                        </div>
-                                        <div class="insta-gram__item image-background"> 
-                                            <img src="{{ url('public/images/our-story-image.jpg') }}"> 
-                                        </div>
-                                        <div class="insta-gram__item image-background"> 
-                                                <img src="{{ url('public/images/instagram2.jpg') }}"> 
-                                        </div>
-                                        <div class="insta-gram__item image-background"> 
-                                                    <img src="{{ url('public/images/our-story-image.jpg') }}"> 
-                                        </div>
-                                </div>
-                            </div>
-                        </div>
-    
-                    </div>
-                </div> {{-- end of default-content--row --}}
-            </section> {{-- end of default-content --}}
-    
-
-
+        
+            @include('front.pages.custom-page.sections.follow-us')
 
     </main>
     @include('front.layouts.sections.footer')

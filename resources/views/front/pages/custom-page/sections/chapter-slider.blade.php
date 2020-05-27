@@ -1,4 +1,4 @@
-<section class="banner banner__chapter">
+<section class="banner banner__chapter" data-aos="fade-up">
     {{--<div class="banner-overlay image-background">
         <img src="{{ url('public/images/banner/hp-banner-overlay.png') }}">
     </div>--}}        

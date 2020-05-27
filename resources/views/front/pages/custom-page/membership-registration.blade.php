@@ -28,7 +28,7 @@
 
      
         {{-- need to dynamic this sub  --}}
-        <section class="masking-background masking-background__equal masking-background--plain">
+        <section class="masking-background masking-background__equal masking-background--plain" data-aos="fade-up">
                         
                     <div class="container-max masking-background__container registration-login-steps">
                         <div class="row">

@@ -94,7 +94,7 @@
                                     <li class="{{ $page->slug == 'areabenefits' ? 'active' : '' }}" ><a href="{{url('areabenefits')}}"> Benefits </a></li>
                                     <li><a href="{{ route('customer.login') }}"> Find a Member </a></li>
                                     <li class="{{ $page->slug == 'chapter' ? 'active' : '' }}" ><a href="{{url('chapter')}}"> Chapter Locations </a></li>
-                                    <li><a href="{{url('membership-registration')}}"> A-List </a></li>
+                                    {{-- <li><a href="{{url('membership-registration')}}"> A-List </a></li> --}}
                                 </ul>
                             </div>
                         </li>
@@ -102,15 +102,15 @@
                             <a class="nav-link dropdown-toggle" href="{{ url('about-us') }}">Advocacy</a>
                             <div class="dropdown-menu">
                                 <ul class="sub-menu mega-menu">
-                                    <li>
+                                    {{-- <li>
                                         <a class="nav-link" href="#"> AREAA Timeline</a>
-                                    </li>
+                                    </li> --}}
                                     <li>
                                         <a class="nav-link" href="#"> How to get involved</a>
                                     </li>
-                                    <li>
+                                    {{-- <li>
                                         <a class="nav-link" href="#"> 3 Point Plan</a>
-                                    </li>
+                                    </li> --}}
                                 </ul>
                             </div>
                         </li>
@@ -206,9 +206,17 @@
                                         </div>
 
                                         <ul class="sub-menu no-mega-sub">
-                                            <li> <a href="{{url('/aloha')}}"> Aloha</a></li>
+                                            {{-- <li> <a href="{{url('/aloha')}}"> Aloha</a></li>
                                             <li> <a href="{{url('/atlantametro')}}"> Atlanta Metro</a></li>
-                                            <li> <a href="{{url('/newyorkeast')}}"> New York East</a></li>
+                                            <li> <a href="{{url('/newyorkeast')}}"> New York East</a></li> --}}
+
+                                            @foreach(\App\Models\Chapter::all() as $chapter)
+                                            <li> <a href="{{url('/'.$chapter->slug)}}">{{$chapter->name}}</a></li>
+                                            @endforeach
+                                            <!-- <li> <a href="{{url('/aloha')}}"> Aloha</a></li>
+                                            <li> <a href="{{url('/atlantametro')}}"> Atlanta Metro</a></li>
+                                            <li> <a href="{{url('/newyorkeast')}}"> New York East</a></li> -->
+
                                         </ul>
                                     </li>
                                     <li class="nav-item">

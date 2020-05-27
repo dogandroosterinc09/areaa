@@ -30,7 +30,7 @@
 
         @include('front.pages.custom-page.sections.dashboard-menu')
 
-        <section class="dashboard-content dashboard-content__events">
+        <section class="dashboard-content dashboard-content__events" data-aos="fade-up">
             <div class="container-max">
 
                 <div class="col-lg-12">
@@ -235,7 +235,7 @@
 
                             <div class="side-by-side">
                                 <div class="primary-heading text-center">
-                                    <h3> My Upcoming Events </h3>
+                                    <h3> Upcoming Event </h3>
                                 </div>
 
                                 <a href="{{ route('customer.dashboard.events') }}" class="btn btn--primary">View All Events</a>

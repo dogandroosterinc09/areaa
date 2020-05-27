@@ -7,7 +7,7 @@
     <main class="main-content">
 
          {{-- @include('front.pages.custom-page.sections.chapter-menu') --}}
-         <section class="dashboard-nav">
+         <section class="dashboard-nav" data-aos="fade-up">
 
             <div class="dashboard-navigation">
                 <div class="dashboard-navigation__wrapper">
@@ -49,7 +49,7 @@
                 <div class="row">
 
 
-                    <div class="col-lg-6 login-section__left login-section__item">
+                    <div class="col-lg-6 login-section__left login-section__item" data-aos="fade-right">
                       
                         <div class="login-section__form">
                             <form>
@@ -103,7 +103,7 @@
                     </div>
 
 
-                    <div class="col-lg-6 login-section__right login-section__item">
+                    <div class="col-lg-6 login-section__right login-section__item" data-aos="fade-left">
 
                         <div class="login-section__message image-background">
                             <img src="{{ url('public/images/form-background.jpg') }}" alt="event title" class="img-fluid">

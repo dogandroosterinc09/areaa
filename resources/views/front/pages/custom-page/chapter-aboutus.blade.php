@@ -6,7 +6,7 @@
 
     
     {{-- need to dynamic this sub  --}}
-    <section class="sub-banner">
+    <section class="sub-banner" data-aos="fade-up">
         <div class="sub-banner__wrapper container-max">
             <div class="sub-banner__item">
                 <div class="container-max sub-banner__content">
@@ -38,7 +38,7 @@
             <div class="row">
 
                 @php( $section_1 = json_decode($chapter_page_aboutus->section_1) )
-                <div class="col-md-6">
+                <div class="col-md-6" data-aos="fade-right">
                    
                     <div class="dynamic-content chapter-story">
                         <h2>{{ $section_1->title }}</h2>
@@ -58,7 +58,7 @@
                 </div>
 
 
-                <div class="col-md-6">
+                <div class="col-md-6" data-aos="fade-left">
                     @if($section_1->featured_image)
                     <div class="chapter-story__image">
                         <!-- <img src="{{ url('public/images/chapter-about-image.jpg') }}" alt="chapter title" class="img-fluid img-dropshadow"> -->
@@ -81,7 +81,7 @@
             <div class="row">
 
                 @php( $section_2 = json_decode($chapter_page_aboutus->section_2) )
-                <div class="col-md-6 fullwidth__left">
+                <div class="col-md-6 fullwidth__left" data-aos="fade-right">
                     @if($section_2->featured_image)
                     <div class="fullwidth__image image-background">
                         <!-- <img src="{{ url('public/images/our-story-image.jpg') }}" alt="chapter title" class="img-fluid"> -->
@@ -91,7 +91,7 @@
                 </div>
 
 
-                <div class="col-md-6 fullwidth__right">
+                <div class="col-md-6 fullwidth__right" data-aos="fade-left">
                     
                     <div class="fullwidth__content">
                         <h2>{{ $section_2->title }}</h2>
