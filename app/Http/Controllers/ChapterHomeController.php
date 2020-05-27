@@ -77,15 +77,15 @@ class ChapterHomeController extends Controller
         $chapter_home = $this->chapter_home->findOrFail($id);
 
         //Sponsors Filters
-        $sponsors_filters = array();
+        // $sponsors_filters = array();
 
-        for($counter = 0; $counter < count($request->sponsor_filter_icon); $counter++) {
-            array_push($sponsors_filters, [
-                'icon' => $request->sponsor_filter_icon[$counter],
-                'text' => $request->sponsor_filter_text[$counter],
-                'link' => $request->sponsor_filter_link[$counter]
-            ]);
-        }
+        // for($counter = 0; $counter < count($request->sponsor_filter_icon); $counter++) {
+        //     array_push($sponsors_filters, [
+        //         'icon' => $request->sponsor_filter_icon[$counter],
+        //         'text' => $request->sponsor_filter_text[$counter],
+        //         'link' => $request->sponsor_filter_link[$counter]
+        //     ]);
+        // }
 
         //Top Sponsor
         $top_sponsor = new \stdClass();
@@ -122,7 +122,7 @@ class ChapterHomeController extends Controller
             $chapter_home->fill(['who_we_are_video_cover_image'=>$file_upload_path])->save();
         }
 
-        $chapter_home->fill(['sponsors_filters' => $sponsors_filters])->save();
+        // $chapter_home->fill(['sponsors_filters' => $sponsors_filters])->save();
 
         //Member Benefits Featured Image
         if ($request->hasFile('member_benefits_featured_image')) {
