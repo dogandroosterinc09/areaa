@@ -46,4 +46,17 @@ class Members extends Model
     public function user() {
         return $this->belongsTo('App\Models\User');
     }
+
+    public function getChapterAttribute() {
+        $user = \App\Models\User::where('id',$this->attributes['user_id'])->get()->first();
+
+        $chapter = \App\Models\Chapter::find($user->chapter_id);
+
+        if ($chapter) {
+            return $chapter->name;
+        } else {
+            return 'National';
+        }
+        
+    }
 }

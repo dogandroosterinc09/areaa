@@ -39,15 +39,12 @@
                     </th>
                     <th class="text-center">
                         Name
-                    </th>
-                    <th class="text-left">
-                        Slug
-                    </th>
-                    <th class="text-left">
-                        Content
+                    </th>   
+                    <th class="text-center">
+                        Chapter
                     </th>
                     <th class="text-center">
-                        Date Created
+                        Date Registered
                     </th>
                     <th class="text-center">
                         Action
@@ -59,12 +56,7 @@
                     <tr data-members-id="{{$members->id}}">
                         <td class="text-center"><strong>{{ $members->id }}</strong></td>
                         <td class="text-center"><strong>{{ $members->name }}</strong></td>
-                        <td class="text-left">
-                            @if($members->slug && $members->slug != '')
-                                <a target="_blank" href="{{ add_http($members->slug) }}">{{ add_http($members->slug) }}</a>
-                            @endif
-                        </td>
-                        <td class="text-left">{!! str_limit(strip_tags($members->content), 50) !!}</td>
+                        <td class="text-center"><strong>{{ $members->chapter }}</strong></td>
                         <td class="text-center">{{ $members->created_at->format('F d, Y') }}</td>
                         <td class="text-center">
                             <div class="btn-group btn-group-xs">
