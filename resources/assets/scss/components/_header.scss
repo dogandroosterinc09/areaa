@@ -97,8 +97,12 @@ header {
                         font-weight: 500;
                     }
                     &.active {
-                        a {
+                        >a {
                             color: $color-secondary !important;
+                            font-weight: 600;
+                            &:after {
+                                color: $color-secondary !important;
+                            }
                         }
                     }
                     .dropdown-menu {
@@ -113,6 +117,11 @@ header {
                                 padding: 0;
                                 margin: 0;
                                 width: 100%;
+                                &.active {
+                                    >a {
+                                        color: $color-secondary !important;
+                                    }
+                                }
                                 a {
                                     background: $color-secondary;
                                     text-align: left;

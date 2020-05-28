@@ -1823,10 +1823,14 @@ ul.bullet-style {
     }
     &__title {
         h3 {
-            font-size: 1em;
+            // font-size: 1em;
             font-weight: bold;
             padding: 18px 0;
             border-bottom: 1px solid #ddd;
+            font-size: 1.5em;
+            padding-left: 15px;
+            padding-right: 15px;
+            text-align: center;
         }
     }
     &__button {
