@@ -46,14 +46,14 @@
                     </div>
                     @endif                    
     
-                    <div class="col-lg-12" data-aos="fade-up">
+                    <div class="col-lg-12">
                         
                         <div class="chapter-event-display">
                             {{-- @php($chapter_events = \App\Models\ChapterEvent::where('chapter_id', $chapter->id)->get()) --}}
 
                             @forelse($chapter_events as $chapter_event)
                                 {{-- events-thumbnail --}}
-                                <div class="chapter-events-thumbnail__item">
+                                <div class="chapter-events-thumbnail__item" data-aos="fade-up">
                                     <div class="chapter-events-thumbnail__date-range">
                                         <div class="chapter-events-thumbnail__month">
                                         {{ $chapter_event->startMonth }}

@@ -43,6 +43,15 @@
             // padding-top: 0;
             // margin-top: -60px;
             padding-top: 40px;
+            .events-section {
+                .row {
+                    .col-lg-12 {
+                        >h2 {
+                            margin-bottom: 60px !important;
+                        }
+                    }
+                }
+            }
         }
     }
     &--leadership {
