@@ -27,19 +27,24 @@
                                 </ul>
                             </div> --}}
                         </li>
+                      
                         <li class="nav-item {{ $active == 'events' ? 'active' : '' }}">
                             {{-- <a class="nav-link" href="{{ url( (auth()->user()->chapter == 'national' ? '' : auth()->user()->chapter_slug) . '/events' ) }}">Events</a> --}}
                             <a class="nav-link" href="{{ route('customer.dashboard.events') }}">Events</a>
                         </li>
-                       
-                        <li class="nav-item {{ $active == 'member_directory' ? 'active' : '' }}">
-                            <a class="nav-link" href="{{ route('customer.dashboard.member_directory') }}">Membership Directory</a>
-                        </li>
+
                         <li class="nav-item {{ $active == 'profile' ? 'active' : '' }}">
                             <a class="nav-link" href="{{ route('customer.dashboard.profile') }}" {{--data-toggle="dropdown"--}}>
                                 Profile
                             </a>
                         </li>
+                       
+                        <li class="nav-item {{ $active == 'member_directory' ? 'active' : '' }}">
+                            {{-- <a class="nav-link" href="{{ route('customer.dashboard.member_directory') }}">Membership Directory</a> --}}
+
+                            <a class="nav-link" href="#">Membership Details</a> 
+                        </li>
+                
                         <!-- <li class="nav-item">
                             <a class="nav-link" href="{{ url('dashboard-memberdirectory-detail') }}" {{--data-toggle="dropdown"--}}>
                                 Membership Details
