@@ -4,7 +4,7 @@
 
     {{-- @include('front.pages.custom-page.sections.chapter-slider-aloha') --}}
         {{-- @include('front.pages.custom-page.sections.banner') --}}
-        <section class="sub-banner" data-aos="fade-up">
+        {{-- <section class="sub-banner" data-aos="fade-up">
             <div class="sub-banner__wrapper container-max">
                 <div class="sub-banner__item">
                     <div class="container-max sub-banner__content">
@@ -22,9 +22,14 @@
             <div class="sub-banner__image image-background">
                 <img src="{{ asset($chapter_page_leadership->banner_image) }}">
             </div>
-        </section>
+        </section> --}}
+
+        @include('front.pages.custom-page.sections.chapter-slider')
+
 
     <main class="main-content">
+
+        @include('front.pages.custom-page.sections.chapter-menu-black') 
 
         @if(isset($chapter_board->board_of_directors) && $chapter_board->executives->count() > 0)
         <section class="executive-board" data-aos="fade-up">

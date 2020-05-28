@@ -4,7 +4,11 @@
 
     {{-- @include('front.pages.custom-page.sections.chapter-slider-aloha') --}}
 
+    @include('front.pages.custom-page.sections.chapter-slider')
+
     <main class="main-content">
+
+        @include('front.pages.custom-page.sections.chapter-menu-black') 
 
         {{-- individual section  --}}
         <section class="contact-section paper-background curl-tail-bottom">

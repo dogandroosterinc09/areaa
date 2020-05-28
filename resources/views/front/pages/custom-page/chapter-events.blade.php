@@ -5,28 +5,33 @@
     {{-- @include('front.pages.custom-page.sections.chapter-slider-aloha') --}}
     
     {{-- need to dynamic this sub  --}}
-    <section class="sub-banner" data-aos="fade-up">
+    {{-- <section class="sub-banner" data-aos="fade-up">
         <div class="sub-banner__wrapper container-max">
             <div class="sub-banner__item">
                 <div class="container-max sub-banner__content">
                     <div class="row">
                         <div class="col-md-12 sub-banner__content">
                             {{-- <h3>Aloha</h3> --}}
-                            {!! $chapter_page_event->content !!}
-                        </div>
+                            {{-- {!! $chapter_page_event->content !!} --}}
+                        {{-- </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         
-        <div class="sub-banner__image image-background">
+        {{-- <div class="sub-banner__image image-background">
             <img src="{{ asset($chapter_page_event->banner_image) }}">
         </div>
-    </section>
+
+    </section>  --}}
     
+    @include('front.pages.custom-page.sections.chapter-slider')
+
+
 
     <main class="main-content">
 
+        @include('front.pages.custom-page.sections.chapter-menu-black') 
        
         <section class="events-section" data-aos="fade-up">
             <div class="container-max">
