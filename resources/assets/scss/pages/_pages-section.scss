@@ -21,7 +21,8 @@
         }
         .main-content {
             position: relative;
-            margin-top: -60px;
+            // margin-top: -60px;
+            padding-top: 40px;
         }
     }
     .dashboard-nav {
@@ -31,22 +32,25 @@
     &--aboutus {
         .main-content {
             position: relative;
-            padding-top: 0;
-            margin-top: -60px;
+            // padding-top: 0;
+            // margin-top: -60px;
+            padding-top: 40px;
         }
     }
     &--events {
         .main-content {
             position: relative;
-            padding-top: 0;
-            margin-top: -60px;
+            // padding-top: 0;
+            // margin-top: -60px;
+            padding-top: 40px;
         }
     }
     &--leadership {
         .main-content {
             position: relative;
-            padding-top: 0;
-            margin-top: -60px;
+            // padding-top: 0;
+            // margin-top: -60px;
+            padding-top: 40px;
         }
     }
     &--contact-us {

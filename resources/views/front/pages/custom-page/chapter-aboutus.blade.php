@@ -33,7 +33,7 @@
 
     <main class="main-content">
 
-        @include('front.pages.custom-page.sections.chapter-menu-black') 
+        {{-- @include('front.pages.custom-page.sections.chapter-menu-black')  --}}
 
        {{-- story section  --}}
        <section class="default-content chapter-ourstory-section">

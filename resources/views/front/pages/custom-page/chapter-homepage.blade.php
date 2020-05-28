@@ -6,11 +6,11 @@
     <main class="main-content">
         {{-- @include('front.pages.custom-page.sections.chapter-menu') --}}
 
-        @include('front.pages.custom-page.sections.chapter-menu-black') 
+        {{-- @include('front.pages.custom-page.sections.chapter-menu-black')  --}}
 
 
         <section>
-            <div class="container-max" data-aos="fade-up">
+            <div class="container-max">
                 <div class="col-lg-12">
 
                         <div class="heading-button">

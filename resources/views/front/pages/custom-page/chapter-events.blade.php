@@ -31,9 +31,9 @@
 
     <main class="main-content">
 
-        @include('front.pages.custom-page.sections.chapter-menu-black') 
+        {{-- @include('front.pages.custom-page.sections.chapter-menu-black')  --}}
        
-        <section class="events-section" data-aos="fade-up">
+        <section class="events-section">
             <div class="container-max">
                 <div class="row">
                     <div class="col-lg-12">
@@ -46,7 +46,7 @@
                     </div>
                     @endif                    
     
-                    <div class="col-lg-12">
+                    <div class="col-lg-12" data-aos="fade-up">
                         
                         <div class="chapter-event-display">
                             {{-- @php($chapter_events = \App\Models\ChapterEvent::where('chapter_id', $chapter->id)->get()) --}}
