@@ -79139,9 +79139,8 @@ __webpack_require__(/*! ./static/vendors/scrolling-nav.js */ "./resources/assets
 
 __webpack_require__(/*! ./static/custom/image_on_error.js */ "./resources/assets/js/static/custom/image_on_error.js");
 
-__webpack_require__(/*! ./static/custom/menu_nav.js */ "./resources/assets/js/static/custom/menu_nav.js");
+__webpack_require__(/*! ./static/custom/menu_nav.js */ "./resources/assets/js/static/custom/menu_nav.js"); // require('./static/custom/jquery_validation.js');
 
-__webpack_require__(/*! ./static/custom/jquery_validation.js */ "./resources/assets/js/static/custom/jquery_validation.js");
 
 __webpack_require__(/*! ./static/custom/jquery.chain-height.js */ "./resources/assets/js/static/custom/jquery.chain-height.js");
 
@@ -79951,23 +79950,6 @@ $(window).on('load', function () {
     }
   }
 })();
-
-/***/ }),
-
-/***/ "./resources/assets/js/static/custom/jquery_validation.js":
-/*!****************************************************************!*\
-  !*** ./resources/assets/js/static/custom/jquery_validation.js ***!
-  \****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-$(window).on('load', function () {
-  $.validator.setDefaults({
-    normalizer: function normalizer(value) {
-      return $.trim(value);
-    }
-  });
-});
 
 /***/ }),
 
