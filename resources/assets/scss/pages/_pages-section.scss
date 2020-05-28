@@ -1,5 +1,13 @@
 .page-chapter {
     overflow: hidden;
+    .footer__item {
+        .footer-contacts {
+            margin-top: 40px !important;
+        }
+    }
+    .main-content {
+        padding: 80px 0;
+    }
     &--homepage {
         .footer__wrapper {
             background: #f8f6f6;
@@ -11,10 +19,35 @@
         .banner__chapter .banner__image-slide .banner-img-holder:before {
             left: -60px;
         }
+        .main-content {
+            position: relative;
+            margin-top: -60px;
+        }
     }
     .dashboard-nav {
         margin-bottom: 50px;
         margin-top: -20px;
+    }
+    &--aboutus {
+        .main-content {
+            position: relative;
+            padding-top: 0;
+            margin-top: -60px;
+        }
+    }
+    &--events {
+        .main-content {
+            position: relative;
+            padding-top: 0;
+            margin-top: -60px;
+        }
+    }
+    &--leadership {
+        .main-content {
+            position: relative;
+            padding-top: 0;
+            margin-top: -60px;
+        }
     }
     &--contact-us {
         .dashboard-nav {
@@ -57,14 +90,6 @@
             }
         }
     }
-    .footer__item {
-        .footer-contacts {
-            margin-top: 40px !important;
-        }
-    }
-    .main-content {
-        padding: 80px 0;
-    }
     &--detail {
         .sub-banner__image {
             width: 400px;
@@ -85,6 +110,10 @@
     &--contactus {
         .main-content {
             padding-top: 0 !important;
+            .dashboard-nav {
+                margin-bottom: 0;
+                margin-top: 0;
+            }
         }
         .contact-section.paper-background {
             background: transparent !important;
@@ -93,6 +122,14 @@
             background: #f8f6f6 !important;
             -webkit-border-radius: 0 0 0 20px;
             border-radius: 0 0 0 20px;
+        }
+        .main-content {
+            position: relative;
+            padding-top: 0;
+            margin-top: -60px;
+        }
+        .contact-section {
+            margin-top: -20px;
         }
     }
     header {

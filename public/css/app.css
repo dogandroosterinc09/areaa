@@ -22533,6 +22533,12 @@ section.page--media .search-member-directory {
 .page-chapter {
   overflow: hidden;
 }
+.page-chapter .footer__item .footer-contacts {
+  margin-top: 40px !important;
+}
+.page-chapter .main-content {
+  padding: 80px 0;
+}
 .page-chapter--homepage .footer__wrapper {
   background: #f8f6f6;
 }
@@ -22543,9 +22549,28 @@ section.page--media .search-member-directory {
 .page-chapter--homepage .banner__chapter .banner__image-slide .banner-img-holder:before {
   left: -60px;
 }
+.page-chapter--homepage .main-content {
+  position: relative;
+  margin-top: -60px;
+}
 .page-chapter .dashboard-nav {
   margin-bottom: 50px;
   margin-top: -20px;
+}
+.page-chapter--aboutus .main-content {
+  position: relative;
+  padding-top: 0;
+  margin-top: -60px;
+}
+.page-chapter--events .main-content {
+  position: relative;
+  padding-top: 0;
+  margin-top: -60px;
+}
+.page-chapter--leadership .main-content {
+  position: relative;
+  padding-top: 0;
+  margin-top: -60px;
 }
 .page-chapter--contact-us .dashboard-nav {
   margin-bottom: 0;
@@ -22576,12 +22601,6 @@ section.page--media .search-member-directory {
   margin-top: 10px;
   width: 130px;
 }
-.page-chapter .footer__item .footer-contacts {
-  margin-top: 40px !important;
-}
-.page-chapter .main-content {
-  padding: 80px 0;
-}
 .page-chapter--detail .sub-banner__image {
   width: 400px;
   height: 400px;
@@ -22600,12 +22619,24 @@ section.page--media .search-member-directory {
 .page-chapter--contactus .main-content {
   padding-top: 0 !important;
 }
+.page-chapter--contactus .main-content .dashboard-nav {
+  margin-bottom: 0;
+  margin-top: 0;
+}
 .page-chapter--contactus .contact-section.paper-background {
   background: transparent !important;
 }
 .page-chapter--contactus .contact-section__right {
   background: #f8f6f6 !important;
   border-radius: 0 0 0 20px;
+}
+.page-chapter--contactus .main-content {
+  position: relative;
+  padding-top: 0;
+  margin-top: -60px;
+}
+.page-chapter--contactus .contact-section {
+  margin-top: -20px;
 }
 .page-chapter header.scrolling .logo {
   width: 120px !important;
