@@ -49,14 +49,9 @@ class ChapterPageContactUsController extends Controller
         if (!$chapter_page_contact_us->section_1) {
             $section_1 = new \stdClass();
 
-            $section_1->location_icon = '';
             $section_1->location_text = '';
-            $section_1->telephone_icon = '';
             $section_1->telephone_text = '';
-            $section_1->telephone_link = '';
-            $section_1->mail_icon = '';
             $section_1->mail_text = '';
-            $section_1->mail_link = '';
 
             $chapter_page_contact_us->section_1 = json_encode($section_1);
         }
@@ -91,14 +86,9 @@ class ChapterPageContactUsController extends Controller
 
         $section_1 = new \stdClass();
 
-        $section_1->location_icon = $request->location_icon;
         $section_1->location_text = $request->location_text;
-        $section_1->telephone_icon = $request->telephone_icon;
         $section_1->telephone_text = $request->telephone_text;
-        $section_1->telephone_link = $request->telephone_link;
-        $section_1->mail_icon = $request->mail_icon;
         $section_1->mail_text = $request->mail_text;
-        $section_1->mail_link = $request->mail_link;
 
         $chapter_page_contact_us->fill(array_merge($request->all(),[
             'section_1' => json_encode($section_1)

@@ -20,9 +20,15 @@
                         @php($contact = json_decode($contact_details->section_1) ? : new \stdClass())
 
                         <div class="footer-contacts">
+                            @if( isset($contact->location_text) && !empty($contact->location_text) )
                             <div class="item"><i class="loc"></i> <span>{{ isset($contact->location_text) ? $contact->location_text : '' }}</span></div>
-                            <div class="item"><i class="tel"></i> <a href="{{ isset($contact->telephone_link) ? $contact->telephone_link : '' }}">{{ isset($contact->telephone_text) ? $contact->telephone_text : '' }}</a></div>
-                            <div class="item"><i class="mail"></i> <a href="{{ isset($contact->mail_link) ? $contact->mail_link : '' }}">{{ isset($contact->mail_text) ? $contact->mail_text : '' }}</a></div>
+                            @endif
+                            @if( isset($contact->telephone_text) && !empty($contact->telephone_text) )
+                            <div class="item"><i class="tel"></i> <a href="{{ isset($contact->telephone_text) ? 'tel:'.str_replace('-','',$contact->telephone_text) : '' }}">{{ isset($contact->telephone_text) ? $contact->telephone_text : '' }}</a></div>
+                            @endif
+                            @if( isset($contact->mail_text) && !empty($contact->mail_text) )
+                            <div class="item"><i class="mail"></i> <a href="{{ isset($contact->mail_text) ? 'mailto:'.$contact->mail_text : '' }}">{{ isset($contact->mail_text) ? $contact->mail_text : '' }}</a></div>
+                            @endif
                         </div>
 
                     </div>

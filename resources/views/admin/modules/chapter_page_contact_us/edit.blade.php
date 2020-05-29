@@ -60,17 +60,10 @@
                 
                 @include('admin.components.heading', ['text' => 'Sections'])
                 @include('admin.components.heading', ['text' => 'Section 1'])
-                @php( $section_1 = json_decode($chapter_page_contact_us->section_1) )
-                @include('admin.components.input-field', ['label' => 'Location Icon', 'field' => 'location_icon', 'value' => $section_1->location_icon])
+                @php( $section_1 = json_decode($chapter_page_contact_us->section_1) )                
                 @include('admin.components.input-field', ['label' => 'Location Text', 'field' => 'location_text', 'value' => $section_1->location_text])
-
-                @include('admin.components.input-field', ['label' => 'Telephone Icon', 'field' => 'telephone_icon', 'value' => $section_1->telephone_icon])
-                @include('admin.components.input-field', ['label' => 'Telephone Text', 'field' => 'telephone_text', 'value' => $section_1->telephone_text])
-                @include('admin.components.input-field', ['label' => 'Telephone Link', 'field' => 'telephone_link', 'value' => $section_1->telephone_link])
-
-                @include('admin.components.input-field', ['label' => 'Mail Icon', 'field' => 'mail_icon', 'value' => $section_1->mail_icon])
-                @include('admin.components.input-field', ['label' => 'Mail Text', 'field' => 'mail_text', 'value' => $section_1->mail_text])
-                @include('admin.components.input-field', ['label' => 'Mail Link', 'field' => 'mail_link', 'value' => $section_1->mail_link])
+                @include('admin.components.input-field', ['label' => 'Telephone Text', 'field' => 'telephone_text', 'value' => $section_1->telephone_text])                
+                @include('admin.components.input-field', ['label' => 'Mail Text', 'field' => 'mail_text', 'value' => $section_1->mail_text])                
 
                 <div class="form-group form-actions">
                     <div class="col-md-9 col-md-offset-3">
