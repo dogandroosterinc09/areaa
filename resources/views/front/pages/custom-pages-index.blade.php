@@ -108,7 +108,7 @@
 
 
         {{-- @elseif ($page['slug'] == 'aloha')
-            @include('front.pages.custom-page-chapters.aloha') --}}
+            @include('front.pages.custom-page-chapters.aloha') 
 
         @elseif ($page['slug'] == 'aloha-login')
             @include('front.pages.custom-page-chapters.aloha-login')
@@ -130,11 +130,12 @@
 
         @elseif ($page['slug'] == 'aloha-aboutus')
             @include('front.pages.custom-page-chapters.aloha-aboutus')
+        --}}
 
 
 
 
-        @elseif ($page['slug'] == 'newyorkeast')
+         {{-- @elseif ($page['slug'] == 'newyorkeast')
             @include('front.pages.custom-page-chapters.newyorkeast')
         
         @elseif ($page['slug'] == 'newyorkeast-login')
@@ -151,6 +152,7 @@
 
         @elseif ($page['slug'] == 'newyorkeast-leadership-detail')
             @include('front.pages.custom-page-chapters.newyorkeast-leadership-detail')
+        --}}
         
         
         @elseif ($page['slug'] == 'newyorkeast-contactus')
