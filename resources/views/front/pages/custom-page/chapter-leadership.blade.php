@@ -4,7 +4,7 @@
 
     {{-- @include('front.pages.custom-page.sections.chapter-slider-aloha') --}}
         {{-- @include('front.pages.custom-page.sections.banner') --}}
-        <section class="sub-banner" data-aos="fade-up">
+        {{-- <section class="sub-banner" data-aos="fade-up">
             <div class="sub-banner__wrapper container-max">
                 <div class="sub-banner__item">
                     <div class="container-max sub-banner__content">
@@ -22,12 +22,17 @@
             <div class="sub-banner__image image-background">
                 <img src="{{ asset($chapter_page_leadership->banner_image) }}">
             </div>
-        </section>
+        </section> --}}
+
+        @include('front.pages.custom-page.sections.chapter-slider')
+
 
     <main class="main-content">
 
+        {{-- @include('front.pages.custom-page.sections.chapter-menu-black')  --}}
+
         @if(isset($chapter_board->board_of_directors) && $chapter_board->executives->count() > 0)
-        <section class="executive-board" data-aos="fade-up">
+        <section class="executive-board">
             <div class="container-max">
                 <div class="col-lg-12">
                     <h2>Executive board</h2>
@@ -37,7 +42,7 @@
 
                     @foreach( $chapter_board->executives as $executive )
                         {{-- board-thumbnail --}}
-                        <div class="board-thumbnail__item col-lg-3 col-md-6">
+                        <div class="board-thumbnail__item col-lg-3 col-md-6" data-aos="fade-up">
                             <a href="{{route('chapter_board_member.detail', ['slug'=>$chapter->slug,'board_slug'=>$executive->slug])}}">
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ optional($executive->attachment)->url ? optional($executive->attachment)->url : asset('public/images/no-pix.jpg') }}" alt="Member Image">

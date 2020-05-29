@@ -26,7 +26,7 @@ require('./static/vendors/scrolling-nav.js');
 
 require('./static/custom/image_on_error.js');
 require('./static/custom/menu_nav.js');
-require('./static/custom/jquery_validation.js');
+// require('./static/custom/jquery_validation.js');
 require('./static/custom/jquery.chain-height.js');
 
 require('./static/custom/custom-slick-carousel.js');

@@ -5,9 +5,10 @@
     @include('front.pages.custom-page.sections.chapter-slider')
 
     <main class="main-content">
-
+        
+        @include('front.pages.custom-page.sections.chapter-menu-black') 
          {{-- @include('front.pages.custom-page.sections.chapter-menu') --}}
-         <section class="dashboard-nav" data-aos="fade-up">
+         {{-- <section class="dashboard-nav" data-aos="fade-up">
 
             <div class="dashboard-navigation">
                 <div class="dashboard-navigation__wrapper">
@@ -40,7 +41,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> --}}
 
         
         {{-- individual section  --}}
