@@ -52,8 +52,8 @@ class FrontDashboardController extends Controller
         $page = $this->pageRepository->getActivePageBySlug('dashboard-memberdirectory');
         $members = $this->members->paginate(10);
         $active = 'member_directory';
-
-        return view('front.pages.custom-pages-index', compact('page', 'members', 'active'));
+        $params = '';
+        return view('front.pages.custom-pages-index', compact('page', 'members', 'active', 'params'));
     }
 
     public function showMemberDetail($id) {
