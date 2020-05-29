@@ -183,6 +183,14 @@ class FrontDashboardController extends Controller
         ]);;
     }
 
+    public function showSupport() {
+        $page = $this->pageRepository->getActivePageBySlug('dashboard-support');
+
+        $active = 'support';
+
+        return view('front.pages.custom-pages-index', compact('page', 'active'));
+    }
+
     public function upload($file) {
         $extension = $file->getClientOriginalExtension();
         $file_name = substr((pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME)), 0, 30) . '-' . time() . '.' . $extension;

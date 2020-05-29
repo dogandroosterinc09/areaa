@@ -202,7 +202,8 @@
         @elseif ($page['slug'] == 'dashboard-memberdirectory-detail')
             @include('front.pages.custom-page.dashboard-memberdirectory-detail')
 
-
+        @elseif ($page['slug'] == 'dashboard-support')
+            @include('front.pages.custom-page.dashboard-support')
         
         @else
             @include('front.pages.custom-page.default-page')

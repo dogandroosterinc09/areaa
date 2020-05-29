@@ -25,6 +25,7 @@ Route::group([
     Route::get('/member/{id}', 'FrontDashboardController@showMemberDetail')->name('dashboard.member_detail');
     Route::get('/profile', 'FrontDashboardController@showProfile')->name('dashboard.profile');
     Route::post('/profile/update', 'FrontDashboardController@updateProfile')->name('profile.update');
+    Route::get('/support', 'FrontDashboardController@showSupport')->name('dashboard.support');
 });
 
 Route::post('/contact/store', 'ContactController@store')->name('contact.store');

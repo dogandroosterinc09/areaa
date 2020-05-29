@@ -50,8 +50,8 @@
                                 Membership Details
                             </a>
                         </li> -->
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{url('support')}}" {{--data-toggle="dropdown"--}}>
+                        <li class="nav-item {{ $active == 'support' ? 'active' : '' }}">
+                            <a class="nav-link" href="{{ route('customer.dashboard.support') }}" {{--data-toggle="dropdown"--}}>
                                 Support
                             </a>
                         </li>
