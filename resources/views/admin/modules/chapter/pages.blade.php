@@ -83,7 +83,7 @@
                 </tr>
                 <tr>
                     <td class="text-left">Contact Us</td>
-                    <td class="text-left"><a href="{{ url($chapter->slug).'/contactus' }}" target="_blank">{{ url($chapter->slug).'/contactus' }}</a></td>
+                    <td class="text-left"><a href="{{ url($chapter->slug).'/contact-us' }}" target="_blank">{{ url($chapter->slug).'/contact-us' }}</a></td>
                     <td class="text-center">
                         <div class="btn-group btn-group-xs">
                             <a href="{{ route('admin.chapters.pages.edit.contact_us', $chapter->id) }}"
