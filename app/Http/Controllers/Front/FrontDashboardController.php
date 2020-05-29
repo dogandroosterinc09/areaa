@@ -126,13 +126,13 @@ class FrontDashboardController extends Controller
             $params .= '&'. $k . '=' . $v ;
         };
 
-        $social_media = json_decode($member->social_media) ? : new \stdClass();
+        // $social_media = json_decode($member->social_media) ? : new \stdClass();
 
-        $social_media->facebook = isset($social_media->facebook) ? $social_media->facebook : '' ;
-        $social_media->instagram = isset($social_media->instagram) ? $social_media->instagram : '' ;
-        $social_media->twitter = isset($social_media->twitter) ? $social_media->twitter : '' ;
+        // $social_media->facebook = isset($social_media->facebook) ? $social_media->facebook : '' ;
+        // $social_media->instagram = isset($social_media->instagram) ? $social_media->instagram : '' ;
+        // $social_media->twitter = isset($social_media->twitter) ? $social_media->twitter : '' ;
 
-        return view('front.pages.custom-pages-index', compact('page', 'members', 'params', 'active', 'social_media'));
+        return view('front.pages.custom-pages-index', compact('page', 'members', 'params', 'active'));
     }
 
     public function showProfile() {
