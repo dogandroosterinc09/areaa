@@ -30,13 +30,13 @@
                                 <div class="contact-details__item"><i class="mail"></i> <a href="mailto:abelee1948@gmail.com">abelee1948@gmail.com</a></div> -->
 
                                 @if($section_1->location_text)
-                                <div class="contact-details__item"><i class="{{ $section_1->location_icon }}"></i> <span>{{ $section_1->location_text }}</span></div>
+                                <div class="contact-details__item"><i class="loc"></i> <span>{{ $section_1->location_text }}</span></div>
                                 @endif
                                 @if($section_1->telephone_text)
-                                <div class="contact-details__item"><i class="{{ $section_1->telephone_icon }}"></i> <a href="{{ $section_1->telephone_link }}">{{ $section_1->telephone_text }} </a></div>
+                                <div class="contact-details__item"><i class="tel"></i> <a href="{{ 'tel:'.str_replace('-','',$section_1->telephone_text) }}">{{ $section_1->telephone_text }} </a></div>
                                 @endif
                                 @if($section_1->mail_text)
-                                <div class="contact-details__item"><i class="{{ $section_1->mail_icon }}"></i> <a href="{{ $section_1->mail_link }}">{{ $section_1->mail_text }}</a></div>
+                                <div class="contact-details__item"><i class="mail"></i> <a href="{{ 'mailto:'.$section_1->mail_text }}">{{ $section_1->mail_text }}</a></div>
                                 @endif
                             </div>
                         </div>
