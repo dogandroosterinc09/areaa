@@ -17,7 +17,7 @@
 
     {{-- @include('front.pages.custom-page.sections.chapter-slider-aloha') --}}
      {{-- need to dynamic this sub  --}}
-     <section class="sub-banner">
+     {{-- <section class="sub-banner">
         <div class="sub-banner__wrapper container-max">
             <div class="sub-banner__item">
                 <div class="container-max sub-banner__content">
@@ -35,7 +35,9 @@
             <img src="{{ url('public/images/about-banner.jpg') }}">
         </div>
         
-    </section>
+    </section> --}}
+
+    @include('front.pages.custom-page.sections.chapter-slider')
 
     <main class="main-content">
 

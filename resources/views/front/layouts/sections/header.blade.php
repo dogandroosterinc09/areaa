@@ -81,6 +81,7 @@
                                     <li class="{{ $page->slug == 'sponsors' ? 'active' : '' }}" ><a href="{{url('sponsors')}}">Our Sponsors</a></li>
                                     <li class="{{ $page->slug == 'FAQ' ? 'active' : '' }}" ><a href="{{url('FAQ')}}"> FAQ </a></li>
                                     <li class="{{ $page->slug == 'photo-gallery' ? 'active' : '' }}" ><a href="{{url('photo-gallery')}}"> Photo Gallery </a></li>
+                                    <li class="{{ $page->slug == 'contact-us' ? 'active' : '' }}" ><a href="{{url('contact-us')}}"> Contact Us </a></li>
                                     {{-- <li><a href="#"> Career </a></li> --}}
 
                                 </ul>

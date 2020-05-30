@@ -41,7 +41,7 @@
                                 <li><a href="{{url('sponsors')}}">Our Sponsors</a></li>
                                 <li><a href="{{url('FAQ')}}"> FAQ </a></li>
                                 <li><a href="{{url('photo-gallery')}}"> Photo Gallery </a></li>
-                                <li><a href="#"> Career </a></li>
+                                <li><a href="{{url('contact-us')}}"> Contact Us </a></li>
                             </ul>
                         </article>
                     </div>
@@ -49,9 +49,9 @@
                         <article>
                             <h4>Advocacy</h4>
                             <ul>
-                                <li><a href="#"> AREAA Timeline </a></li>
+                                {{-- <li><a href="#"> AREAA Timeline </a></li> --}}
                                 <li><a href="#"> How to get involved </a></li>
-                                <li><a href="#"> 3 Point Plan </a></li>
+                                {{-- <li><a href="#"> 3 Point Plan </a></li> --}}
                             </ul>
                         </article>
                     </div>
@@ -59,11 +59,11 @@
                         <article>
                             <h4>Resources</h4>
                             <ul>
-                                <li><a href="#"> a | r | e Magazine </a></li>
+                                {{-- <li><a href="#"> a | r | e Magazine </a></li> --}}
                                 <li><a href="#"> State of Asia America report </a></li>
                                 {{-- <li><a href="{{url('photo-gallery')}}"> Photo gallery </a></li> --}}
-                                <li><a href="{{url('media')}}"> Webinars </a></li>
-                                <li><a href="#"> In Language Support </a></li>
+                                <li><a href="{{url('media')}}"> Media </a></li>
+                                {{-- <li><a href="#"> In Language Support </a></li> --}}
                             </ul>
                         </article>
                     </div>
@@ -77,7 +77,7 @@
                                 <li><a href="{{url('areabenefits')}}"> Benefits </a></li>
                                 <li><a href="#"> Find a Member </a></li>
                                 <li><a href="{{url('chapter')}}"> Chapter Locations </a></li>
-                                <li><a href="{{url('membership-registration')}}"> A-List </a></li>
+                                {{-- <li><a href="{{url('membership-registration')}}"> A-List </a></li> --}}
                             </ul>
                         </article>
                     </div>
@@ -85,11 +85,11 @@
                         <article>
                             <h4>Events</h4>
                             <ul>
-                                <li><a href="#"> Leadership Summit</a></li>
-                                <li><a href="#">Global & Luxury Summit</a></li>
-                                <li><a href="#">Regional Retreats</a></li>
-                                <li><a href="#">National Convention</a></li>
-                                <li><a href="#">Chapter Events </a></li>
+                                {{-- <li><a href="#"> Leadership Summit</a></li>
+                                <li><a href="#">Global & Luxury Summit</a></li> --}}
+                                {{-- <li><a href="#">Regional Retreats</a></li> --}}
+                                <li><a href="{{url('events')}}">National Convention</a></li>
+                                <li><a href="{{url('events-chapter')}}">Chapter Events </a></li>
                                 {{-- <li><a href="#">How to get involved </a></li> --}}
                             </ul>
                         </article>
