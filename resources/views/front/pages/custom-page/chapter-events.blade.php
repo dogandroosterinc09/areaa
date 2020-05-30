@@ -72,7 +72,7 @@
                                         @endif
                                     </div>
                                     <div class="chapter-events-thumbnail__image">
-                                        <img src="{{ !empty($chapter_event->attachment->url) ? $chapter_event->attachment->ur : '' }}" alt="Member Image">
+                                        <img src="{{ !empty($chapter_event->attachment->url) ? $chapter_event->attachment->url : '' }}" alt="Member Image">
                                     </div>
                                     <div class="chapter-events-thumbnail__details">
                                         <h5>{{ $chapter_event->name }}</h5>
