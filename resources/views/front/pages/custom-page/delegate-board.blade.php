@@ -10,9 +10,10 @@
                 <div class="container-max sub-banner__content">
                     <div class="row">
                         <div class="col-md-12 sub-banner__content">
-                            <h3>Meet Our </h3>
+                            {!! $page->content !!}
+                            <!-- <h3>Meet Our </h3>
                             <h1>Delegate <br>
-                                Board</h1>
+                                Board</h1> -->
                         </div>
                     </div>
                 </div>
@@ -20,7 +21,8 @@
         </div>
         
         <div class="sub-banner__image image-background">
-            <img src="{{ url('public/images/delagate-banner.jpg') }}">
+            <img src="{{ url($page->attachment) }}">
+            <!-- <img src="{{ url('public/images/delagate-banner.jpg') }}"> -->
         </div>
     </section>
 

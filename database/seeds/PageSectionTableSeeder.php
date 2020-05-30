@@ -20,7 +20,7 @@ class PageSectionTableSeeder extends Seeder
             0 => 
             array (
                 'id' => 17,
-                'page_id' => 22,
+                'page_id' => 52,
                 'section_id' => 18,
                 'order' => 1,
             ),
@@ -153,14 +153,14 @@ class PageSectionTableSeeder extends Seeder
             19 => 
             array (
                 'id' => 38,
-                'page_id' => 22,
+                'page_id' => 52,
                 'section_id' => 20,
                 'order' => 1,
             ),
             20 => 
             array (
                 'id' => 39,
-                'page_id' => 22,
+                'page_id' => 52,
                 'section_id' => 21,
                 'order' => 1,
             ),

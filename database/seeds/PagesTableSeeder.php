@@ -37,14 +37,17 @@ class PagesTableSeeder extends Seeder
                 'id' => 2,
                 'name' => 'About Us',
                 'slug' => 'about-us',
-                'content' => '',
-                'banner_image' => '0',
+                'content' => '<h3>Learn More</h3>
+
+<h1>About Us</h1>
+',
+                'banner_image' => 'C:\\wamp64\\tmp\\phpC2D0.tmp',
                 'banner_description' => '',
                 'is_active' => 1,
                 'seo_meta_id' => 2,
                 'page_type_id' => 2,
                 'created_at' => '2019-10-06 22:04:34',
-                'updated_at' => '2020-03-15 12:01:25',
+                'updated_at' => '2020-05-30 03:37:44',
                 'deleted_at' => NULL,
             ),
             2 => 
@@ -142,14 +145,18 @@ class PagesTableSeeder extends Seeder
                 'id' => 9,
                 'name' => 'executive-board',
                 'slug' => 'executive-board',
-                'content' => '',
-                'banner_image' => '/tmp/phpA3Xmiy',
+                'content' => '<h3>Meet Our</h3>
+
+<h1>Executive<br />
+Board</h1>
+',
+                'banner_image' => 'C:\\wamp64\\tmp\\phpCAE4.tmp',
                 'banner_description' => '',
                 'is_active' => 1,
                 'seo_meta_id' => 9,
                 'page_type_id' => 0,
                 'created_at' => '2020-02-01 21:35:47',
-                'updated_at' => '2020-02-01 21:35:47',
+                'updated_at' => '2020-05-30 03:55:14',
                 'deleted_at' => NULL,
             ),
             9 => 
@@ -157,14 +164,18 @@ class PagesTableSeeder extends Seeder
                 'id' => 10,
                 'name' => 'delegate-board',
                 'slug' => 'delegate-board',
-                'content' => '',
-                'banner_image' => '',
+                'content' => '<h3>Meet Our</h3>
+
+<h1>Delegate<br />
+Board</h1>
+',
+                'banner_image' => 'C:\\wamp64\\tmp\\php711D.tmp',
                 'banner_description' => '',
                 'is_active' => 1,
                 'seo_meta_id' => 10,
                 'page_type_id' => 0,
                 'created_at' => '2020-02-01 21:36:25',
-                'updated_at' => '2020-02-01 21:36:25',
+                'updated_at' => '2020-05-30 03:39:34',
                 'deleted_at' => NULL,
             ),
             10 => 
@@ -187,14 +198,17 @@ class PagesTableSeeder extends Seeder
                 'id' => 12,
                 'name' => 'Events',
                 'slug' => 'events',
-                'content' => '',
-                'banner_image' => '',
+                'content' => '<h3>National</h3>
+
+<h1>Events</h1>
+',
+                'banner_image' => 'C:\\wamp64\\tmp\\php96C2.tmp',
                 'banner_description' => '',
                 'is_active' => 1,
                 'seo_meta_id' => 12,
                 'page_type_id' => 0,
                 'created_at' => '2020-02-05 23:12:26',
-                'updated_at' => '2020-02-05 23:12:26',
+                'updated_at' => '2020-05-30 04:03:45',
                 'deleted_at' => NULL,
             ),
             12 => 
@@ -232,14 +246,17 @@ class PagesTableSeeder extends Seeder
                 'id' => 15,
                 'name' => 'chapter',
                 'slug' => 'chapter',
-                'content' => '',
-                'banner_image' => '',
+                'content' => '<h3>Find your</h3>
+
+<h1>Chapter</h1>
+',
+                'banner_image' => 'C:\\wamp64\\tmp\\php645B.tmp',
                 'banner_description' => '',
                 'is_active' => 1,
                 'seo_meta_id' => 15,
                 'page_type_id' => 0,
                 'created_at' => '2020-02-22 21:39:09',
-                'updated_at' => '2020-02-22 21:39:09',
+                'updated_at' => '2020-05-30 04:02:27',
                 'deleted_at' => NULL,
             ),
             15 => 
@@ -262,14 +279,17 @@ class PagesTableSeeder extends Seeder
                 'id' => 17,
                 'name' => 'FAQ',
                 'slug' => 'FAQ',
-                'content' => '',
-                'banner_image' => '0',
+                'content' => '<h1>Frequently<br />
+Asked<br />
+Questions</h1>
+',
+                'banner_image' => 'C:\\wamp64\\tmp\\php141C.tmp',
                 'banner_description' => '',
                 'is_active' => 1,
                 'seo_meta_id' => 17,
                 'page_type_id' => 0,
                 'created_at' => '2020-02-29 18:58:28',
-                'updated_at' => '2020-03-20 04:37:28',
+                'updated_at' => '2020-05-30 04:01:01',
                 'deleted_at' => NULL,
             ),
             17 => 
@@ -277,14 +297,17 @@ class PagesTableSeeder extends Seeder
                 'id' => 18,
                 'name' => 'media',
                 'slug' => 'media',
-                'content' => '',
-                'banner_image' => '',
+                'content' => '<h3>Areaa</h3>
+
+<h1>Media</h1>
+',
+                'banner_image' => 'C:\\wamp64\\tmp\\phpD9E8.tmp',
                 'banner_description' => '',
                 'is_active' => 1,
                 'seo_meta_id' => 18,
                 'page_type_id' => 0,
                 'created_at' => '2020-02-29 22:55:29',
-                'updated_at' => '2020-02-29 22:55:29',
+                'updated_at' => '2020-05-30 04:11:41',
                 'deleted_at' => NULL,
             ),
             18 => 
@@ -292,14 +315,17 @@ class PagesTableSeeder extends Seeder
                 'id' => 19,
                 'name' => 'photo-gallery',
                 'slug' => 'photo-gallery',
-                'content' => '',
-                'banner_image' => '',
+                'content' => '<h3>Photo</h3>
+
+<h1>Gallery</h1>
+',
+                'banner_image' => 'C:\\wamp64\\tmp\\php4B0E.tmp',
                 'banner_description' => '',
                 'is_active' => 1,
                 'seo_meta_id' => 19,
                 'page_type_id' => 0,
                 'created_at' => '2020-03-08 23:10:58',
-                'updated_at' => '2020-03-08 23:10:58',
+                'updated_at' => '2020-05-30 03:52:31',
                 'deleted_at' => NULL,
             ),
             19 => 
@@ -370,14 +396,17 @@ class PagesTableSeeder extends Seeder
                 'id' => 24,
                 'name' => 'chapter-events',
                 'slug' => 'chapter-events',
-                'content' => '',
-                'banner_image' => '',
+                'content' => '<h3>Chapter</h3>
+
+<h1>Events</h1>
+',
+                'banner_image' => 'C:\\wamp64\\tmp\\php1DC0.tmp',
                 'banner_description' => '',
                 'is_active' => 1,
                 'seo_meta_id' => 24,
                 'page_type_id' => 0,
                 'created_at' => '2020-03-15 03:01:08',
-                'updated_at' => '2020-03-15 03:01:08',
+                'updated_at' => '2020-05-30 04:05:25',
                 'deleted_at' => NULL,
             ),
             24 => 
@@ -400,14 +429,15 @@ class PagesTableSeeder extends Seeder
                 'id' => 26,
                 'name' => 'resource-page',
                 'slug' => 'resource-page',
-                'content' => '',
-                'banner_image' => '',
+                'content' => '<h1>Resources</h1>
+',
+                'banner_image' => 'C:\\wamp64\\tmp\\php6A1F.tmp',
                 'banner_description' => '',
                 'is_active' => 1,
                 'seo_meta_id' => 18,
                 'page_type_id' => 0,
                 'created_at' => '2020-03-19 06:20:57',
-                'updated_at' => '2020-03-19 06:20:57',
+                'updated_at' => '2020-05-30 04:09:02',
                 'deleted_at' => NULL,
             ),
             26 => 
@@ -415,14 +445,17 @@ class PagesTableSeeder extends Seeder
                 'id' => 27,
                 'name' => 'resource-asia-america-report',
                 'slug' => 'resource-asia-america-report',
-                'content' => '',
-                'banner_image' => '',
+                'content' => '<h3>Report</h3>
+
+<h1>Asia America</h1>
+',
+                'banner_image' => 'C:\\wamp64\\tmp\\phpCBF2.tmp',
                 'banner_description' => '',
                 'is_active' => 1,
                 'seo_meta_id' => 19,
                 'page_type_id' => 0,
                 'created_at' => '2020-03-19 07:15:03',
-                'updated_at' => '2020-03-19 07:15:03',
+                'updated_at' => '2020-05-30 04:10:32',
                 'deleted_at' => NULL,
             ),
             27 => 
@@ -790,14 +823,17 @@ class PagesTableSeeder extends Seeder
                 'id' => 52,
                 'name' => 'sponsors',
                 'slug' => 'sponsors',
-                'content' => '',
-                'banner_image' => '',
+                'content' => '<h3>Areaa</h3>
+
+<h1>Sponsors</h1>
+',
+                'banner_image' => '102',
                 'banner_description' => '',
                 'is_active' => 1,
                 'seo_meta_id' => 18,
                 'page_type_id' => 0,
                 'created_at' => '2020-03-24 05:51:05',
-                'updated_at' => '2020-03-24 05:51:05',
+                'updated_at' => '2020-05-30 03:48:06',
                 'deleted_at' => NULL,
             ),
             52 => 
@@ -805,14 +841,15 @@ class PagesTableSeeder extends Seeder
                 'id' => 53,
                 'name' => 'our-partners',
                 'slug' => 'our-partners',
-                'content' => '',
-                'banner_image' => '',
+                'content' => '<h1>Our Partners</h1>
+',
+                'banner_image' => 'C:\\wamp64\\tmp\\php277E.tmp',
                 'banner_description' => '',
                 'is_active' => 1,
                 'seo_meta_id' => 19,
                 'page_type_id' => 0,
                 'created_at' => '2020-03-24 05:53:14',
-                'updated_at' => '2020-03-24 05:53:14',
+                'updated_at' => '2020-05-30 03:58:55',
                 'deleted_at' => NULL,
             ),
             53 => 
@@ -925,14 +962,17 @@ class PagesTableSeeder extends Seeder
                 'id' => 61,
                 'name' => 'events-chapter',
                 'slug' => 'events-chapter',
-                'content' => '',
-                'banner_image' => '',
+                'content' => '<h3>Chapter</h3>
+
+<h1>Events</h1>
+',
+                'banner_image' => 'C:\\wamp64\\tmp\\php8996.tmp',
                 'banner_description' => '',
                 'is_active' => 1,
                 'seo_meta_id' => 25,
                 'page_type_id' => 0,
                 'created_at' => '2020-05-18 21:55:49',
-                'updated_at' => '2020-05-18 21:55:49',
+                'updated_at' => '2020-05-30 04:06:59',
                 'deleted_at' => NULL,
             ),
             61 => 

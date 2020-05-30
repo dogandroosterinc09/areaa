@@ -194,7 +194,7 @@ class SectionsTableSeeder extends Seeder
                 'type' => 3,
                 'value' => '{"options":{"create":false},"fields":[{"name":"Title","type":"text"},{"name":"Content","type":"textarea"},{"name":"Button Text","type":"text","alias":"btn_text"},{"name":"Button Link","type":"text","alias":"btn_link"}],"data":[{"title":"Sponsors","content":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.","btn_text":"Interested In Sponsorship?","btn_link":"#"}]}',
                 'created_at' => '2020-03-18 08:17:00',
-                'updated_at' => '2020-03-18 09:41:39',
+                'updated_at' => '2020-05-30 03:48:21',
                 'deleted_at' => NULL,
             ),
             18 => 

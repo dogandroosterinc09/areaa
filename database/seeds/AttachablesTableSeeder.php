@@ -234,6 +234,104 @@ class AttachablesTableSeeder extends Seeder
                 'attachable_id' => 20,
                 'attachable_type' => 'App\\Models\\Page',
             ),
+            31 => 
+            array (
+                'id' => 32,
+                'attachment_id' => 100,
+                'attachable_id' => 2,
+                'attachable_type' => 'App\\Models\\Page',
+            ),
+            32 => 
+            array (
+                'id' => 33,
+                'attachment_id' => 101,
+                'attachable_id' => 10,
+                'attachable_type' => 'App\\Models\\Page',
+            ),
+            33 => 
+            array (
+                'id' => 34,
+                'attachment_id' => 102,
+                'attachable_id' => 52,
+                'attachable_type' => 'App\\Models\\Page',
+            ),
+            34 => 
+            array (
+                'id' => 35,
+                'attachment_id' => 103,
+                'attachable_id' => 19,
+                'attachable_type' => 'App\\Models\\Page',
+            ),
+            35 => 
+            array (
+                'id' => 36,
+                'attachment_id' => 104,
+                'attachable_id' => 9,
+                'attachable_type' => 'App\\Models\\Page',
+            ),
+            36 => 
+            array (
+                'id' => 37,
+                'attachment_id' => 105,
+                'attachable_id' => 53,
+                'attachable_type' => 'App\\Models\\Page',
+            ),
+            37 => 
+            array (
+                'id' => 38,
+                'attachment_id' => 106,
+                'attachable_id' => 17,
+                'attachable_type' => 'App\\Models\\Page',
+            ),
+            38 => 
+            array (
+                'id' => 39,
+                'attachment_id' => 107,
+                'attachable_id' => 15,
+                'attachable_type' => 'App\\Models\\Page',
+            ),
+            39 => 
+            array (
+                'id' => 40,
+                'attachment_id' => 108,
+                'attachable_id' => 12,
+                'attachable_type' => 'App\\Models\\Page',
+            ),
+            40 => 
+            array (
+                'id' => 41,
+                'attachment_id' => 109,
+                'attachable_id' => 24,
+                'attachable_type' => 'App\\Models\\Page',
+            ),
+            41 => 
+            array (
+                'id' => 42,
+                'attachment_id' => 110,
+                'attachable_id' => 61,
+                'attachable_type' => 'App\\Models\\Page',
+            ),
+            42 => 
+            array (
+                'id' => 43,
+                'attachment_id' => 111,
+                'attachable_id' => 26,
+                'attachable_type' => 'App\\Models\\Page',
+            ),
+            43 => 
+            array (
+                'id' => 44,
+                'attachment_id' => 112,
+                'attachable_id' => 27,
+                'attachable_type' => 'App\\Models\\Page',
+            ),
+            44 => 
+            array (
+                'id' => 45,
+                'attachment_id' => 113,
+                'attachable_id' => 18,
+                'attachable_type' => 'App\\Models\\Page',
+            ),
         ));
         
         

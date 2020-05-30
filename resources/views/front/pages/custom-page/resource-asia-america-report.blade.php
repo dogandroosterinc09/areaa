@@ -10,8 +10,9 @@
                 <div class="container-max sub-banner__content">
                     <div class="row">
                         <div class="col-md-12 sub-banner__content">
-                            <h3>Report</h3>
-                            <h1>Asia America </h1>
+                            {!! $page->content !!}
+                            <!-- <h3>Report</h3>
+                            <h1>Asia America </h1> -->
                         </div>
                     </div>
                 </div>
@@ -19,7 +20,8 @@
         </div>
         
         <div class="sub-banner__image image-background">
-            <img src="{{ url('public/images/about-banner.jpg') }}">
+            <img src="{{ url($page->attachment) }}">
+            <!-- <img src="{{ url('public/images/about-banner.jpg') }}"> -->
         </div>
     </section>
 

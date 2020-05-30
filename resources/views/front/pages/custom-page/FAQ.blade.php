@@ -10,9 +10,10 @@
                 <div class="container-max sub-banner__content">
                     <div class="row">
                         <div class="col-md-12 sub-banner__content">
-                            <h1>Frequently </br>
+                            {!! $page->content !!}
+                            <!-- <h1>Frequently </br>
                                 Asked </br>
-                                Questions</h1>
+                                Questions</h1> -->
                         </div>
                     </div>
                 </div>
@@ -20,7 +21,8 @@
         </div>
         
         <div class="sub-banner__image image-background">
-            <img src="{{ url('public/images/FAQ-banner.jpg') }}">
+            <img src="{{ url($page->attachment) }}">
+            <!-- <img src="{{ url('public/images/FAQ-banner.jpg') }}"> -->
         </div>
     </section>
 

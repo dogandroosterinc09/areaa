@@ -70,7 +70,15 @@
                 </div>
                 <nav class="navbar-bar">
                     <ul class="navbar-bar__wrapper">
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown
+                            {{ ($page->slug == 'about-us' || 
+                               $page->slug == 'executive-board' ||
+                               $page->slug == 'delegate-board' ||
+                               $page->slug == 'our-partners' ||
+                               $page->slug == 'sponsors' ||
+                               $page->slug == 'FAQ' ||
+                               $page->slug == 'photo-gallery' ||
+                               $page->slug == 'contact-us') ? 'active' : '' }}">
                             <a class="nav-link dropdown-toggle" href="{{ url('about-us') }}">About Us <span class="sr-only">(current)</span></a>
                             <div class="dropdown-menu">
                                 <ul class="sub-menu mega-menu">
@@ -87,7 +95,10 @@
                                 </ul>
                             </div>
                         </li>
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown
+                            {{ ($page->slug == 'membership-registration' ||
+                                $page->slug == 'areabenefits' || 
+                                $page->slug == 'chapter') ? 'active' : '' }}">
                             <a class="nav-link dropdown-toggle" href="{{ url('membership-registration') }}">Membership</a>
                             <div class="dropdown-menu">
                                 <ul class="sub-menu mega-menu">
@@ -115,7 +126,9 @@
                                 </ul>
                             </div>
                         </li>
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown
+                            {{ ($page->slug == 'events' || 
+                               $page->slug == 'events-chapter') ? 'active' : '' }}">
                             <a class="nav-link dropdown-toggle" href="{{ url('events') }}">Events</a>
                             <div class="dropdown-menu">
                                 <ul class="sub-menu mega-menu">
@@ -130,7 +143,10 @@
                                 </ul>
                             </div>
                         </li>
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown
+                            {{ ($page->slug == 'resource-page' || 
+                               $page->slug == 'resource-asia-america-report' ||
+                               $page->slug == 'media') ? 'active' : '' }}">
                             <a class="nav-link dropdown-toggle" href="{{ url('resource-page')}}">
                                 Resources
                             </a>
@@ -139,7 +155,7 @@
                                     {{-- <li>
                                         <a class="nav-link" href="#"> a | r | e Magazine</a>
                                     </li> --}}
-                                    <li>
+                                    <li class="{{ $page->slug == 'resource-asia-america-report' ? 'active' : '' }}">
                                         <a class="nav-link" href="{{ url('resource-asia-america-report')}}"> State of Asia America Report</a>
                                     </li>
                                     <li class="{{ $page->slug == 'media' ? 'active' : '' }}" >
