@@ -205,6 +205,7 @@
                                     <div class="navigation-icon__item">
                                         <div class="navigation-icon__hover">
                                             <a href="{{url('support')}}">
+                                            <a href="{{ route('customer.dashboard.support') }}">
                                                 <h3>Support</h3>
                                             </a>
                                         </div>
