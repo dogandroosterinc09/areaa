@@ -141,13 +141,29 @@ class AdminTemplateProvider extends ServiceProvider
                 ]);
            }
 
-           if (auth()->user()->can('Read Benefits')) {
-                array_push($navigation, [
+            $benefits_tab = [];
+
+            if (auth()->user()->can('Read Benefits')) {
+                array_push($benefits_tab, [
                     'name' => 'Benefits',
                     'url' => url('admin/benefits'),
                     'icon' => 'fa fa-phone'
                 ]);
-           }
+            }
+
+            if (auth()->user()->can('Read Benefits')) {
+                array_push($benefits_tab, [
+                    'name' => 'Benefits Categories',
+                    'url' => url('admin/benefits_categories'),
+                    'icon' => 'fa fa-phone'
+                ]);
+            }
+
+            array_push($navigation, [
+                'name' => 'Benefits',
+                'icon' => 'fa fa-phone',
+                'sub' => $benefits_tab
+            ]);
 
             $media_tab = [];
 

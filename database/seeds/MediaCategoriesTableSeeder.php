@@ -41,6 +41,14 @@ class MediaCategoriesTableSeeder extends Seeder
                 'created_at' => '2020-04-10 08:26:02',
                 'updated_at' => '2020-04-10 08:26:02',
             ),
+            3 => 
+            array (
+                'id' => 4,
+                'name' => 'Category',
+                'deleted_at' => NULL,
+                'created_at' => '2020-05-29 23:52:36',
+                'updated_at' => '2020-05-29 23:52:36',
+            ),
         ));
         
         

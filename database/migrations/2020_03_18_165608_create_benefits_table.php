@@ -15,9 +15,12 @@ class CreateBenefitsTable extends Migration
     {
         Schema::create('benefits', function (Blueprint $table) {
             $table->bigIncrements('id');            
-            $table->string('thumbnail');
-            $table->string('title');
-            $table->longText('description');
+            $table->string('name');
+            $table->string('thumbnail');            
+            $table->text('short_description');
+            $table->longText('content');
+            $table->string('slug');
+            $table->tinyInteger('is_active')->default(1);
             $table->timestamps();
             $table->softDeletes();
         });

@@ -292,6 +292,39 @@ class SeoMetasTableSeeder extends Seeder
                 'updated_at' => '2020-05-18 21:55:49',
                 'deleted_at' => NULL,
             ),
+            25 => 
+            array (
+                'id' => 26,
+                'meta_title' => '',
+                'meta_keywords' => '',
+                'meta_description' => '',
+                'canonical_link' => '',
+                'created_at' => '2020-05-21 03:50:40',
+                'updated_at' => '2020-05-21 03:50:40',
+                'deleted_at' => NULL,
+            ),
+            26 => 
+            array (
+                'id' => 27,
+                'meta_title' => '',
+                'meta_keywords' => '',
+                'meta_description' => '',
+                'canonical_link' => '',
+                'created_at' => '2020-05-21 05:15:15',
+                'updated_at' => '2020-05-21 05:15:15',
+                'deleted_at' => NULL,
+            ),
+            27 => 
+            array (
+                'id' => 28,
+                'meta_title' => '',
+                'meta_keywords' => '',
+                'meta_description' => '',
+                'canonical_link' => '',
+                'created_at' => '2020-05-29 23:11:28',
+                'updated_at' => '2020-05-29 23:11:28',
+                'deleted_at' => NULL,
+            ),
         ));
         
         

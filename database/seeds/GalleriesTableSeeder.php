@@ -24,9 +24,9 @@ class GalleriesTableSeeder extends Seeder
                 'title' => '2019 State of Asia Year-End Webinar',
                 'description' => 'Lorem ipsum dolor sit amet, a aliquam at. Egestas aliquam. Dignissim ridiculus, metus sit risus pulvinar duis commodo, condimentum massa neque dui urna mi sed. Sed duis lacinia ac felis elit, morbi lobortis leo vestibulum sapien tellus varius, amet ea nunc integer arcu, mauris pulvinar, arcu leo aliquet fuga sed. In ligula nisl non ut luctus neque. Aliquam ridiculus eget in porttitor, et justo, ut luctus a felis, scelerisque magna. Vestibulum magnis viverra eu aliquam. Amet vel erat in lorem id id, mi et, nec facilisis porta nullam sed nec cum. Integer pharetra et praesent habitasse dolor, mi pede suspendisse sed nec varius, duis fusce etiam ante orci eu.',
                 'thumbnail' => '',
-                'photos' => 'public/uploads/gallery/5eaa7a5042f65_photo2.jpg,public/uploads/gallery/5eaa7a5042f16_photo1.jpg',
+                'photos' => 'public/uploads/gallery/5eaa7a5042f65_photo2.jpg,public/uploads/gallery/5eaa7a5042f16_photo1.jpg,public/uploads/gallery/5ed1ae228a112_labelin_test_material.jpg',
                 'created_at' => '2020-04-30 05:49:00',
-                'updated_at' => '2020-04-30 08:12:18',
+                'updated_at' => '2020-05-30 01:51:50',
                 'deleted_at' => NULL,
             ),
             1 => 

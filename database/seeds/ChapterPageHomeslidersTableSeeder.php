@@ -71,9 +71,9 @@ Atlanta Metrp Chapter</h1>
 ',
                 'button_label' => 'Join AREAA',
                 'button_link' => 'http://52.24.144.212/areaa/atlantametro/login',
-                'is_active' => 1,
+                'is_active' => 0,
                 'created_at' => '2020-05-18 21:38:02',
-                'updated_at' => '2020-05-18 21:38:53',
+                'updated_at' => '2020-05-26 06:48:59',
                 'deleted_at' => NULL,
             ),
         ));

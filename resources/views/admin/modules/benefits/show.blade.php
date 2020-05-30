@@ -8,6 +8,8 @@
     <div class="content-header">
         <div class="header-section">
             <h1>{{ $benefits->name }}</h1>
+            <h5>{{ $benefits->category }}</h5>
+            <h5><em>{{ $benefits->short_description }}</em></h5>
             <h5>{{ $benefits->slug }}</h5>
         </div>
     </div>
@@ -15,8 +17,7 @@
         <div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
             <div class="block block-alt-noborder">
                 <article>
-                    <h3 class="sub-header text-center">
-                        <strong>{{ $benefits->created_at->format('F d, Y') }}</strong>
+                    <h3 class="sub-header text-center">                        
                         <div class="btn-group btn-group-xs pull-right">
                             @if (auth()->user()->can('Update Benefits'))
                                 <a href="{{ route('admin.benefits.edit', $benefits->id) }}"
@@ -28,9 +29,9 @@
                         </div>
                     </h3>
 
-                    <img src="{{ asset($benefits->banner_image) }}" alt="{{ $benefits->banner_image }}" class="img-responsive center-block" style="max-width: 100px;">
+                    <img src="{{ asset($benefits->thumbnail) }}" alt="{{ $benefits->thumbnail }}" class="img-responsive center-block" style="max-width: 100px;">
 
-                    <p>{!! $benefits->content !!}</p>
+                    {!! $benefits->content !!}
                 </article>
             </div>
         </div>

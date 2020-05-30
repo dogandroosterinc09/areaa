@@ -1,11 +1,11 @@
 (function () {
     "use strict";
     /* declare global variables within the class */
-    var uiBenefitsTable,
-        uiCreateBenefitsForm,
-        uiEditBenefitsForm,
-        uiBenefitsDatatable,
-        uiInputThumbnail,
+    var uiBenefitsCategoriesTable,
+        uiCreateBenefitsCategoriesForm,
+        uiEditBenefitsCategoriesForm,
+        uiBenefitsCategoriesDatatable,
+        uiInputBannerImage,
         uiRemoveImgBtn,
         uiInputFile,
         uiRemoveFileBtn,
@@ -136,33 +136,33 @@
     }
 
     /*
-     * This js file will only contain benefits events
+     * This js file will only contain benefits_categories events
      *
      * */
-    CPlatform.prototype.benefits = {
+    CPlatform.prototype.benefits_categories = {
 
         initialize: function () {
             /* assign a value to the global variable within this class */
-            uiBenefitsTable = $('#benefits-table');
-            uiCreateBenefitsForm = $('#create-benefits');
-            uiEditBenefitsForm = $('#edit-benefits');
-            uiBenefitsDatatable = null;
-            uiInputThumbnail = $('input[name="thumbnail"]');
+            uiBenefitsCategoriesTable = $('#benefits_categories-table');
+            uiCreateBenefitsCategoriesForm = $('#create-benefits_categories');
+            uiEditBenefitsCategoriesForm = $('#edit-benefits_categories');
+            uiBenefitsCategoriesDatatable = null;
+            uiInputBannerImage = $('input[name="banner_image"]');
             uiInputFile = $('input[name="file"]');
             uiRemoveImgBtn = $('.remove-image-btn');
             uiRemoveFileBtn = $('.remove-file-btn');
 
-            uiBenefitsDatatable = platform.benefits.initialize_datatable();
+            uiBenefitsCategoriesDatatable = platform.benefits_categories.initialize_datatable();
 
-            /* create benefits validation */
-            uiCreateBenefitsForm.find('[type="submit"]').on('click', function () {
+            /* create benefits_categories validation */
+            uiCreateBenefitsCategoriesForm.find('[type="submit"]').on('click', function () {
                 if (platform.var_check(CKEDITOR) && platform.var_check(CKEDITOR.instances)) {
                     for (var instance in CKEDITOR.instances) {
                         CKEDITOR.instances[instance].updateElement();
                     }
                 }
             });
-            uiCreateBenefitsForm.validate({
+            uiCreateBenefitsCategoriesForm.validate({
                 errorClass: 'help-block animation-slideDown',
                 errorElement: 'span',
                 ignore: [':hidden:not([type="file"])'],
@@ -183,102 +183,19 @@
                 },
                 rules: {
                     'name': {
-                        required: true
-                    },
-                    'slug': {
-                        required: true
-                    },
-                    'thumbnail': {
-                        required: true
-                    },
-                    'short_description': {
-                        required: true
-                    },
-                    'file': {
-                        required: true
-                    },
-                    'content': {
-                        required: true
-                    }
-                },
-                messages: {
-                    'name': {
-                        required: 'Name is required.'
-                    },
-                    'slug': {
-                        required: 'Slug is required.'
-                    },
-                    'thumbnail': {
-                        required: 'Thumbnail is required.'
-                    },
-                    'short_description': {
-                        required: 'Short Description is required.'
-                    },
-                    'file': {
-                        required: 'File is required.'
-                    },
-                    'content': {
-                        required: 'Content is required.'
-                    }
-                }
-            });
-
-            /* edit benefits validation */
-            uiEditBenefitsForm.find('[type="submit"]').on('click', function () {
-                if (platform.var_check(CKEDITOR) && platform.var_check(CKEDITOR.instances)) {
-                    for (var instance in CKEDITOR.instances) {
-                        CKEDITOR.instances[instance].updateElement();
-                    }
-                }
-            });
-            uiEditBenefitsForm.validate({
-                errorClass: 'help-block animation-slideDown',
-                errorElement: 'span',
-                ignore: [':hidden:not([type="file"])'],
-                errorPlacement: function (error, e) {
-                    e.parents('.form-group > div').append(error);
-                },
-                highlight: function (e) {
-                    $(e).closest('.form-group').removeClass('has-success has-error').addClass('has-error');
-                    $(e).closest('.form-group').find('.help-block').remove();
-                },
-                success: function (e) {
-                    e.closest('.form-group').removeClass('has-success has-error');
-                    e.closest('.form-group').find('.help-block').remove();
-                },
-                submitHandler: function (form) {
-                    platform.show_spinner($(form).find('[type="submit"]'), true);
-                    form.submit();
-                },
-                rules: {
-                    'category_id': {
-                        required: true
-                    },
-                    'name': {
-                        required: true
-                    },
-                    'short_description': {
-                        required: true
-                    },
-                    'content': {
                         required: true
                     },
                     'slug': {
                         required: true
                     },
                     'banner_image': {
-                        required: {
-                            depends: function (element) {
-                                return $(element).closest('.form-group').find('input.remove-image').val() == 1;
-                            }
-                        }
+                        required: true
                     },
                     'file': {
-                        required: {
-                            depends: function (element) {
-                                return $(element).closest('.form-group').find('input.remove-file').val() == 1;
-                            }
-                        }
+                        required: true
+                    },
+                    'content': {
+                        required: true
                     }
                 },
                 messages: {
@@ -300,8 +217,79 @@
                 }
             });
 
-            /* delete benefits button ajax */
-            $('body').on('click', '.delete-benefits-btn', function (e) {
+            /* edit benefits_categories validation */
+            uiEditBenefitsCategoriesForm.find('[type="submit"]').on('click', function () {
+                if (platform.var_check(CKEDITOR) && platform.var_check(CKEDITOR.instances)) {
+                    for (var instance in CKEDITOR.instances) {
+                        CKEDITOR.instances[instance].updateElement();
+                    }
+                }
+            });
+            uiEditBenefitsCategoriesForm.validate({
+                errorClass: 'help-block animation-slideDown',
+                errorElement: 'span',
+                ignore: [':hidden:not([type="file"])'],
+                errorPlacement: function (error, e) {
+                    e.parents('.form-group > div').append(error);
+                },
+                highlight: function (e) {
+                    $(e).closest('.form-group').removeClass('has-success has-error').addClass('has-error');
+                    $(e).closest('.form-group').find('.help-block').remove();
+                },
+                success: function (e) {
+                    e.closest('.form-group').removeClass('has-success has-error');
+                    e.closest('.form-group').find('.help-block').remove();
+                },
+                submitHandler: function (form) {
+                    platform.show_spinner($(form).find('[type="submit"]'), true);
+                    form.submit();
+                },
+                rules: {
+                    'name': {
+                        required: true
+                    },
+                    'slug': {
+                        required: true
+                    },
+                    'banner_image': {
+                        required: {
+                            depends: function (element) {
+                                return $(element).closest('.form-group').find('input.remove-image').val() == 1;
+                            }
+                        }
+                    },
+                    'file': {
+                        required: {
+                            depends: function (element) {
+                                return $(element).closest('.form-group').find('input.remove-file').val() == 1;
+                            }
+                        }
+                    },
+                    'content': {
+                        required: true
+                    }
+                },
+                messages: {
+                    'name': {
+                        required: 'Name is required.'
+                    },
+                    'slug': {
+                        required: 'Slug is required.'
+                    },
+                    'banner_image': {
+                        required: 'Image is required.'
+                    },
+                    'file': {
+                        required: 'File is required.'
+                    },
+                    'content': {
+                        required: 'Content is required.'
+                    }
+                }
+            });
+
+            /* delete benefits_categories button ajax */
+            $('body').on('click', '.delete-benefits_categories-btn', function (e) {
                 e.preventDefault();
                 var self = $(this);
                 /* open confirmation modal */
@@ -320,8 +308,8 @@
                     /* if confirmed, send request ajax */
                     if (isConfirm) {
                         var oParams = {
-                            'data': {'id': self.attr('data-benefits-id')},
-                            'url': self.attr('data-benefits-route')
+                            'data': {'id': self.attr('data-benefits_categories-id')},
+                            'url': self.attr('data-benefits_categories-route')
                         };
                         platform.delete.delete(oParams, function (oData) {
                             /* check return of ajax */
@@ -338,17 +326,17 @@
                                                 'type': "success"
                                                 //'confirmButtonColor': "#DD6B55",
                                             }, function () {
-                                                /* remove benefits container */
-                                                // $('[data-benefits-id="' + oData.data.id + '"]').remove();
-                                                if (platform.var_check(uiBenefitsDatatable)) {
-                                                    uiBenefitsDatatable.row(self.parents('tr:first')).remove();
+                                                /* remove benefits_categories container */
+                                                // $('[data-benefits_categories-id="' + oData.data.id + '"]').remove();
+                                                if (platform.var_check(uiBenefitsCategoriesDatatable)) {
+                                                    uiBenefitsCategoriesDatatable.row(self.parents('tr:first')).remove();
                                                 }
 
-                                                uiBenefitsDatatable = platform.benefits.initialize_datatable();
+                                                uiBenefitsCategoriesDatatable = platform.benefits_categories.initialize_datatable();
 
-                                                /* check if there are other benefits to hide the table header and show the no benefits found */
-                                                if ($('tr[data-benefits-id]').length == 0) {
-                                                    $('.benefits-empty').removeClass('johnCena');
+                                                /* check if there are other benefits_categories to hide the table header and show the no benefits_categories found */
+                                                if ($('tr[data-benefits_categories-id]').length == 0) {
+                                                    $('.benefits_categories-empty').removeClass('johnCena');
                                                     $('.table-responsive').addClass('johnCena');
                                                 }
                                             });
@@ -378,7 +366,7 @@
             });
 
             /* input file event */
-            uiInputThumbnail.on('change', function () {
+            uiInputBannerImage.on('change', function () {
                 var input = $(this),
                     numFiles = input.get(0).files ? input.get(0).files.length : 1,
                     label = input.val().replace(/\\/g, '/').replace(/.*\//, ''),
@@ -423,12 +411,12 @@
         },
 
         initialize_datatable: function () {
-            if (platform.var_check(uiBenefitsDatatable)) {
-                uiBenefitsDatatable.destroy();
+            if (platform.var_check(uiBenefitsCategoriesDatatable)) {
+                uiBenefitsCategoriesDatatable.destroy();
             }
 
-            /* benefits table initialize datatable */
-            uiBenefitsDatatable = uiBenefitsTable.DataTable({
+            /* benefits_categories table initialize datatable */
+            uiBenefitsCategoriesDatatable = uiBenefitsCategoriesTable.DataTable({
                 "order": [[0, "asc"]],
                 "paging": true,
                 "pageLength": 10,
@@ -438,11 +426,11 @@
                 "searching": true,
                 "aoColumnDefs": [{
                     'bSortable': false,
-                    'aTargets': [5]
+                    'aTargets': [3]
                 }]
             });
 
-            return uiBenefitsDatatable;
+            return uiBenefitsCategoriesDatatable;
         },
     }
 
@@ -450,5 +438,5 @@
 
 /* run initialize function on load of window */
 $(window).on('load', function () {
-    platform.benefits.initialize();
+    platform.benefits_categories.initialize();
 });

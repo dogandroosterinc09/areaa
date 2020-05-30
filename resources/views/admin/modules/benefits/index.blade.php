@@ -40,9 +40,12 @@
                     <th class="text-center">
                         Name
                     </th>
-                    <th class="text-left">
-                        Slug
+                    <th class="text-center">
+                        Category
                     </th>
+                    {{-- <th class="text-left">
+                        Slug
+                    </th> --}}
                     <th class="text-left">
                         Content
                     </th>
@@ -59,11 +62,12 @@
                     <tr data-benefits-id="{{$benefits->id}}">
                         <td class="text-center"><strong>{{ $benefits->id }}</strong></td>
                         <td class="text-center"><strong>{{ $benefits->name }}</strong></td>
-                        <td class="text-left">
+                        <td class="text-center"><strong>{{ $benefits->category }}</strong></td>
+                        {{--<td class="text-left">
                             @if($benefits->slug && $benefits->slug != '')
                                 <a target="_blank" href="{{ add_http($benefits->slug) }}">{{ add_http($benefits->slug) }}</a>
                             @endif
-                        </td>
+                        </td>--}}
                         <td class="text-left">{!! str_limit(strip_tags($benefits->content), 50) !!}</td>
                         <td class="text-center">{{ $benefits->created_at->format('F d, Y') }}</td>
                         <td class="text-center">

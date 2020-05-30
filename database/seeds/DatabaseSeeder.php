@@ -56,5 +56,6 @@ class DatabaseSeeder extends Seeder
         $this->call(ChapterPageHomeslidersTableSeeder::class);
         $this->call(ChapterContactsTableSeeder::class);
         $this->call(EventRegistrationsTableSeeder::class);
+        $this->call(BenefitsCategoriesTableSeeder::class);
     }
 }

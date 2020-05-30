@@ -22,10 +22,10 @@ class SystemSettingsTableSeeder extends Seeder
                 'id' => 1,
                 'code' => 'SS0001',
                 'name' => 'Website Name',
-                'value' => 'Dog and Rooster',
+                'value' => 'AREAA',
                 'type' => 'input',
                 'created_at' => '2018-03-01 21:14:05',
-                'updated_at' => '2018-03-01 21:14:05',
+                'updated_at' => '2020-05-28 22:30:35',
                 'deleted_at' => NULL,
             ),
             1 => 

@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Benefits;
 use App\Http\Controllers\Controller;
 
+use File;
+
 class BenefitsController extends Controller
 {
     /**
@@ -70,23 +72,32 @@ class BenefitsController extends Controller
         }
 
         $this->validate($request, [
-            'image' => 'required',
-            'title' => 'required',
-            'details' => 'required',
-            // 'name' => 'required|unique:benefits,name,NULL,id,deleted_at,NULL',
+            'category_id' => 'required',
+            'name' => 'required',
+            'thumbnail' => 'required',
+            'short_description' => 'required',
+            'content' => 'required'
+            
             // 'slug' => 'required|unique:benefits,slug,NULL,id,deleted_at,NULL',
             // 'content' => 'required',
 
         ]);
 
-        $benefits = $this->benefits->create(array_merge($request->all(), [
-            'is_active' => $request->has('is_active') ? 1 : 0,
-            'slug' => str_slug($request->input('name'))
-        ]));
+        $benefits = $this->benefits->create(array_merge($request->all()));
+
+        if ($request->hasFile('thumbnail')) {
+            $file_upload_path = $this->upload($request->thumbnail);
+            $benefits->fill(['thumbnail'=>$file_upload_path])->save();
+        }
+
+        // $benefits = $this->benefits->create(array_merge($request->all(), [
+        //     'is_active' => $request->has('is_active') ? 1 : 0,
+        //     'slug' => str_slug($request->input('name'))
+        // ]));
 
         return redirect()->route('admin.benefits.index')->with('flash_message', [
             'title' => '',
-            'message' => 'Benefits ' . $benefits->name . ' successfully added.',
+            'message' => 'Benefit ' . $benefits->name . ' successfully added.',
             'type' => 'success'
         ]);
     }
@@ -141,21 +152,30 @@ class BenefitsController extends Controller
         }
 
         $this->validate($request, [
-            'name' => 'required|unique:benefits,name,' . $id . ',id,deleted_at,NULL',
-            'slug' => 'required|unique:benefits,slug,' . $id . ',id,deleted_at,NULL',
-            'content' => 'required',
+            'category_id' => 'required',
+            'name' => 'required',
+            // 'thumbnail' => 'required',
+            'short_description' => 'required',
+            'content' => 'required'
+
+            // 'slug' => 'required|unique:benefits,slug,' . $id . ',id,deleted_at,NULL',
         ]);
 
         $benefits = $this->benefits->findOrFail($id);
 
         $benefits->fill(array_merge($request->all(), [
-            'is_active' => $request->has('is_active') ? 1 : 0,
-            'slug' => str_slug($request->input('name'))
+            // 'is_active' => $request->has('is_active') ? 1 : 0,
+            // 'slug' => str_slug($request->input('name'))
         ]))->save();
+
+        if ($request->hasFile('thumbnail')) {
+            $file_upload_path = $this->upload($request->thumbnail);
+            $benefits->fill(['thumbnail'=>$file_upload_path])->save();
+        }
 
         return redirect()->route('admin.benefits.index')->with('flash_message', [
             'title' => '',
-            'message' => 'Benefits ' . $benefits->name . ' successfully updated.',
+            'message' => 'Benefit ' . $benefits->name . ' successfully updated.',
             'type' => 'success'
         ]);
     }
@@ -176,5 +196,21 @@ class BenefitsController extends Controller
         $benefits->delete();
 
         return response()->json(status()->success('Benefits successfully deleted.', compact('id')));
+    }
+
+    public function upload($file) {
+        $extension = $file->getClientOriginalExtension();
+        $file_name = substr((pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME)), 0, 30) . '-' . time() . '.' . $extension;
+        $file_name = preg_replace("/[^a-z0-9\_\-\.]/i", '', $file_name);
+        $file_path = '/uploads/benefits';
+        $directory = public_path() . $file_path;
+
+        if (!File::exists($directory)) {
+            File::makeDirectory($directory, 0777);
+        }
+
+        $file->move($directory, $file_name);
+        $file_upload_path = 'public' . $file_path . '/' . $file_name;
+        return $file_upload_path;
     }
 }
