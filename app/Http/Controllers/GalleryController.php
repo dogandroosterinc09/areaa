@@ -205,7 +205,7 @@ class GalleryController extends Controller
     private function upload($file) {
         // $extension = $file->getClientOriginalExtension();
         // $file_name = substr((pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME)), 0, 30) . '.' . $extension;
-        $file_name = storage_path('tmp/gallery/') . $file;
+        $file_name = public_path('tmp/gallery/') . $file;
         // return $file_name;
         // $file_name = preg_replace("/[^a-z0-9\_\-\.]/i", '', $file_name);
         $file_path = '/uploads/gallery' . $file;
