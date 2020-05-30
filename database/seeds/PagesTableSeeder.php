@@ -307,14 +307,17 @@ class PagesTableSeeder extends Seeder
                 'id' => 20,
                 'name' => 'areabenefits',
                 'slug' => 'areabenefits',
-                'content' => '',
-                'banner_image' => '',
+                'content' => '<h3>AREAA</h3>
+
+<h1>Benefits</h1>
+',
+                'banner_image' => 'C:\\wamp64\\tmp\\php8DC0.tmp',
                 'banner_description' => '',
                 'is_active' => 1,
                 'seo_meta_id' => 20,
                 'page_type_id' => 0,
                 'created_at' => '2020-03-12 00:09:21',
-                'updated_at' => '2020-03-12 00:09:21',
+                'updated_at' => '2020-05-30 03:20:02',
                 'deleted_at' => NULL,
             ),
             20 => 

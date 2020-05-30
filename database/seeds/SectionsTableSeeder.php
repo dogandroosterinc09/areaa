@@ -247,6 +247,46 @@ class SectionsTableSeeder extends Seeder
                 'updated_at' => '2020-03-19 12:37:28',
                 'deleted_at' => NULL,
             ),
+            23 => 
+            array (
+                'id' => 24,
+                'name' => 'Benefits Section 1',
+                'type' => 3,
+            'value' => '{"options":{"create":false},"fields":[{"name":"Content","type":"textarea"}],"data":[{"content":"With over 17,000 members in 41 chapters across the US and Canada, AREAA is the largest Asian American and Pacific Islander (AAPI) trade organization in North America. As a member, you’ll receive discounted pricing to all AREAA events, FREE webinar training to help fine-tune your skill sets, and be able to participate in International Trade missions. The benefits don’t stop there; below are more reasons as to why it pays to be an AREAA Member."}]}',
+                'created_at' => '2020-05-30 02:40:45',
+                'updated_at' => '2020-05-30 02:52:40',
+                'deleted_at' => NULL,
+            ),
+            24 => 
+            array (
+                'id' => 25,
+                'name' => 'Benefits Section 2',
+                'type' => 3,
+                'value' => '{"options":{"create":false},"fields":[{"name":"Featured Image","type":"attachment","alias":"image"},{"name":"Alt Text","type":"text","alias":"alt_text"},{"name":"Quote","type":"editor"},{"name":"Content","type":"editor"}],"data":[{"image":"98","alt_text":"","quote":"“Hazel Rosete referred me to Darell and my experience with ADT was nothing short from outstanding. Darell was very transparent with services and costs and also very generous with discounts because of the partnership with AREAA. The installer was punctual and informative. I was very happy and satisfied with the services provided.”\\n<div class=\\"slider-mask__text--name\\">\\n<h6>Eric Tai</h6>\\n\\n<p>San Diego Chapter</p>\\n</div>\\n","content":"<h2>Your Membership<br />\\nCould Help Pay For<br />\\nItself</h2>\\n\\n<p>When you’re getting discounts on everyday purchases all year, the savings can really add up.</p>\\n"}]}',
+                'created_at' => '2020-05-30 02:42:00',
+                'updated_at' => '2020-05-30 02:55:33',
+                'deleted_at' => NULL,
+            ),
+            25 => 
+            array (
+                'id' => 26,
+                'name' => 'Benefits Section 3 List Items',
+                'type' => 3,
+                'value' => '{"options":{"create":false},"fields":[{"name":"Title","type":"text"},{"name":"Sub Title","type":"text","alias":"sub_title"}],"data":[{"title":"$14 Off Concerts","sub_title":"Ticket value of $200."},{"title":"$50 Off Anniversary Gifts","sub_title":"Gift value of $149."},{"title":"$129 Off Cell Phone Bill","sub_title":"Total annual amount off"},{"title":"$150 Off Car Insurance","sub_title":"Total annual amount off"},{"title":"$24.95 Identity Theft Protection","sub_title":"Total value of $299.14."}]}',
+                'created_at' => '2020-05-30 02:45:30',
+                'updated_at' => '2020-05-30 03:14:47',
+                'deleted_at' => NULL,
+            ),
+            26 => 
+            array (
+                'id' => 27,
+                'name' => 'Benefits Section 3 Right Content',
+                'type' => 3,
+                'value' => '{"options":{"create":false},"fields":[{"name":"Content","type":"editor"},{"name":"Button Text","type":"text","alias":"button_text"},{"name":"Button Link","type":"text","alias":"button_link"}],"data":[{"content":"<p>ANNUAL SAVINGS</p>\\n\\n<h4>$376.95</h4>\\n\\n<p>TOTAL SAVINGS AFTER<br />\\nAREAA $99 MEMBERSHIP</p>\\n\\n<h4>$268.95</h4>\\n","button_text":"Become a Member Today !","button_link":"http://52.24.144.212/areaa/membership-registration"}]}',
+                'created_at' => '2020-05-30 02:50:06',
+                'updated_at' => '2020-05-30 03:14:47',
+                'deleted_at' => NULL,
+            ),
         ));
         
         

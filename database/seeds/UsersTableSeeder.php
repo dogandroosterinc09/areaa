@@ -75,7 +75,7 @@ class UsersTableSeeder extends Seeder
                 'is_active' => 1,
                 'last_login' => '2020-05-29 21:58:04',
                 'token' => NULL,
-                'remember_token' => 'RSVxvemp6HnRLVwFgbCg46teg8rWqWpIiQYyrAoBbu1oO2uusSvKdDnC5d6d',
+                'remember_token' => 'BJOW2dyQ8DFYFgduE6IsojxBMMu29wBNWlCe3dqlrkgomy3Qo5uOoD6GgBJ0',
                 'created_at' => '2018-03-01 21:14:05',
                 'updated_at' => '2020-05-29 21:58:04',
                 'deleted_at' => NULL,

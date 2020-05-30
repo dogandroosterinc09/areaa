@@ -9,9 +9,10 @@
             <div class="sub-banner__item">
                 <div class="container-max sub-banner__content">
                     <div class="row">
-                        <div class="col-md-12 sub-banner__content">
-                            <h3>AREAA</h3>
-                            <h1>Benefits</h1>
+                        <div class="col-md-12 sub-banner__content">                            
+                            {!! $page->content !!}
+                            <!-- <h3>AREAA</h3>
+                            <h1>Benefits</h1> -->
                         </div>
                     </div>
                 </div>
@@ -19,7 +20,8 @@
         </div>
 
         <div class="sub-banner__image image-background">
-            <img src="{{ url('public/images/benefits-banner.jpg') }}">
+            <img src="{{ url($page->attachment) }}">
+            <!-- <img src="{{ url('public/images/benefits-banner.jpg') }}"> -->
         </div>
     </section>
 
@@ -31,8 +33,11 @@
                <div class="row">
                     <div class="col-lg-12 text-center">
                         <div class="benefit-message">
-                            <p>With over 17,000 members in 41 chapters across the US and Canada, AREAA is the largest Asian American and Pacific Islander (AAPI) trade organization in North America. As a member, you’ll receive discounted pricing to all AREAA events, FREE webinar training to help fine-tune your skill sets, and be able to participate in International Trade missions. The benefits don’t stop there; below are more reasons as to why it pays to be an AREAA Member.
-                            </p>
+                        <p>
+                        {{ section('Benefits Section 1.data.first.content') }}
+                        </p>
+                            <!-- <p>With over 17,000 members in 41 chapters across the US and Canada, AREAA is the largest Asian American and Pacific Islander (AAPI) trade organization in North America. As a member, you’ll receive discounted pricing to all AREAA events, FREE webinar training to help fine-tune your skill sets, and be able to participate in International Trade missions. The benefits don’t stop there; below are more reasons as to why it pays to be an AREAA Member.
+                            </p> -->
                         </div>
                     </div>
 
@@ -153,11 +158,12 @@
                             <div class="col-md-6 content-middle">
 
                                 <div class="white-cover__content">
-                                    <h2>Your Membership <br>
+                                    {!! section('Benefits Section 2.data.first.content') !!}
+                                    <!-- <h2>Your Membership <br>
                                         Could Help Pay For <br>
                                          Itself</h2>
                                         <p>When you’re getting discounts on everyday purchases all year, the savings can really add up.
-                                        </p>
+                                        </p> -->
                                 </div>
 
                             </div>
@@ -169,17 +175,19 @@
                                         
                                         <div class="slider-mask__slick--item">
                                             <div class="slider-mask__image image-background">    
-                                                <img src="{{ url('public/images/testimonial-image.png') }}">
+                                                <img src="{{ url(section('Benefits Section 2.data.first.image')) }}">
                                             </div>
                                             <div class="slider-mask__text"> 
+                                                
                                                 <div class="slider-mask__text--content">
-                                                    “Hazel Rosete referred me to Darell and my experience with ADT was nothing short from outstanding. Darell was very transparent with services and costs and also very generous with discounts because of the partnership with AREAA. The installer was punctual and informative. I was very happy and satisfied with the services provided.”
+                                                    {!! section('Benefits Section 2.data.first.quote') !!}
+                                                    <!-- “Hazel Rosete referred me to Darell and my experience with ADT was nothing short from outstanding. Darell was very transparent with services and costs and also very generous with discounts because of the partnership with AREAA. The installer was punctual and informative. I was very happy and satisfied with the services provided.”
 
                                                     <div class="slider-mask__text--name">
                                                         <h6>
                                                             Eric Tai</h6>
                                                             <p>San Diego Chapter</p>
-                                                    </div>
+                                                    </div> -->
                                                 </div>
                                             </div>
                                         </div>
@@ -190,13 +198,14 @@
                                             </div>
                                             <div class="slider-mask__text"> 
                                                 <div class="slider-mask__text--content">
-                                                    “Hazel Rosete referred me to Darell and my experience with ADT was nothing short from outstanding. Darell was very transparent with services and costs and also very generous with discounts because of the partnership with AREAA. The installer was punctual and informative. I was very happy and satisfied with the services provided.”
+                                                    {!! section('Benefits Section 2.data.first.quote') !!}
+                                                    <!-- “Hazel Rosete referred me to Darell and my experience with ADT was nothing short from outstanding. Darell was very transparent with services and costs and also very generous with discounts because of the partnership with AREAA. The installer was punctual and informative. I was very happy and satisfied with the services provided.”
 
                                                     <div class="slider-mask__text--name">
                                                         <h6>
                                                             Eric Tai</h6>
                                                             <p>San Diego Chapter</p>
-                                                    </div>
+                                                    </div> -->
                                                 </div>
                                             </div>
                                         </div>
@@ -230,7 +239,16 @@
                                     <div class="col-md-5 side-tab-equal__left">
                                         <div class="side-tab-equal__tab">
                                             <ul class="nav nav-tabs md-tabs" id="myEqualTab" role="tablist">
-                                                <li class="nav-item">
+                                                @foreach(section('Benefits Section 3 List Items.data') as $item)
+                                                <li class="nav-item">                                                    
+                                                    <a class="nav-link" id="sidetab-equal-one" data-toggle="tab" href="#sidetab-equal-box-one" role="tab" aria-controls="sidetab-equal-box-one"
+                                                    aria-selected="true">
+                                                        <h3>{{ $item->title }}</h3>
+                                                        <p>{{ $item->sub_title }}</p>
+                                                    </a>
+                                                </li>
+                                                @endforeach
+                                                <!-- <li class="nav-item">
                                                   <a class="nav-link" id="sidetab-equal-one" data-toggle="tab" href="#sidetab-equal-box-one" role="tab" aria-controls="sidetab-equal-box-one"
                                                     aria-selected="true">
                                                     <h3>$14 Off Concerts</h3>
@@ -265,7 +283,7 @@
                                                       <h3>$24.95 Identity Theft Protection</h3>
                                                       <p>Total value of $299.14. </p>
                                                   </a>
-                                                  </li>
+                                                  </li> -->
                                               </ul>
                                         </div>
                                     </div>
@@ -286,6 +304,27 @@
                                                 <div class="red-box">
                                                      <div class="red-box__wrapper">
                                                          <div class="red-box__top">
+                                                            {!! section('Benefits Section 3 Right Content.data.first.content') !!}
+                                                            <!-- <p>Annual Savings</p>
+                                                            <h4>$376.95</h4>
+                                                            <p>Total Savings After <br>
+                                                               AREAA $99 Membership</p>
+                                                            <h4>$268.95</h4> -->
+                                                         </div>
+                                                         <div class="red-box__bottom">
+                                                            <a href="{{url( section('Benefits Section 3 Right Content.data.first.button_link') )}}" class="btn btn--primary">{{ section('Benefits Section 3 Right Content.data.first.button_text') }}</a>
+                                                         </div>
+                                                     </div>
+                                                 </div>
+                                                 {{-- red-box --}}
+
+                                            </div>
+                                            <!-- <div class="tab-pane fade show active" id="sidetab-equal-box-one" role="tabpanel" aria-labelledby="sidetab-equal-one">
+                                              
+                                                {{-- red-box --}}
+                                                <div class="red-box">
+                                                     <div class="red-box__wrapper">
+                                                         <div class="red-box__top">
                                                             <p>Annual Savings</p>
                                                             <h4>$376.95</h4>
                                                             <p>Total Savings After <br>
@@ -299,8 +338,8 @@
                                                  </div>
                                                  {{-- red-box --}}
 
-                                            </div>
-                                            <div class="tab-pane fade" id="sidetab-equal-box-two" role="tabpanel" aria-labelledby="sidetab-equaltwo">
+                                            </div> -->
+                                            <!-- <div class="tab-pane fade" id="sidetab-equal-box-two" role="tabpanel" aria-labelledby="sidetab-equaltwo">
                                                 
                                                 {{-- red-box --}}
                                                  <div class="red-box">
@@ -382,7 +421,7 @@
                                                 </div>
                                                 {{-- red-box --}}
 
-                                            </div>
+                                            </div> -->
 
 
                                           </div>

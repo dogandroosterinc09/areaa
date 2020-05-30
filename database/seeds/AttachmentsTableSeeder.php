@@ -1278,6 +1278,32 @@ class AttachmentsTableSeeder extends Seeder
                 'updated_at' => '2020-04-22 00:08:36',
                 'deleted_at' => NULL,
             ),
+            97 => 
+            array (
+                'id' => 98,
+                'name' => 'testimonial-image.png',
+                'alias' => 'mqWSy7LOm0wddpt4.png',
+                'mime' => 'image/png',
+                'folder' => 'Form',
+                'extension' => 'png',
+                'identifier' => 'default',
+                'created_at' => '2020-05-30 02:51:32',
+                'updated_at' => '2020-05-30 02:51:32',
+                'deleted_at' => NULL,
+            ),
+            98 => 
+            array (
+                'id' => 99,
+                'name' => '',
+                'alias' => '1LmEtpnASrRdc4Ay.jpg',
+                'mime' => 'image/jpeg',
+                'folder' => 'Page',
+                'extension' => 'jpg',
+                'identifier' => 'default',
+                'created_at' => '2020-05-30 03:20:02',
+                'updated_at' => '2020-05-30 03:20:02',
+                'deleted_at' => NULL,
+            ),
         ));
         
         

@@ -227,6 +227,13 @@ class AttachablesTableSeeder extends Seeder
                 'attachable_id' => 12,
                 'attachable_type' => 'App\\Models\\ChapterBoardMember',
             ),
+            30 => 
+            array (
+                'id' => 31,
+                'attachment_id' => 99,
+                'attachable_id' => 20,
+                'attachable_type' => 'App\\Models\\Page',
+            ),
         ));
         
         
