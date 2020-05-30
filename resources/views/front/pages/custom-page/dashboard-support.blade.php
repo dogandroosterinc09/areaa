@@ -1,4 +1,4 @@
-<section class="page page--dashboard page--dashboard--profile">
+<section class="page page--dashboard page--dashboard--support">
     @include('front.layouts.sections.header')
     {{-- @include('front.pages.custom-page.sections.banner') --}}
 
