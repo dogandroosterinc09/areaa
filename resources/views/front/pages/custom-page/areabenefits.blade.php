@@ -44,7 +44,15 @@
                                     <div class="col-md-3">
                                         <div class="side-tab-container__tab">
                                             <ul class="nav nav-tabs md-tabs" id="myTabMD" role="tablist">
+                                                @foreach(\App\Models\BenefitsCategories::all() as $benefits_category)
+                                                @php( $category_slug = str_slug($benefits_category->name) )
                                                 <li class="nav-item">
+                                                  <a class="nav-link {{ $loop->first ? 'active' : '' }}" id="sidetab-{{ $category_slug }}" data-toggle="tab" href="#sidetab-box-{{ $category_slug }}" role="tab" aria-controls="sidetab-box-{{ $category_slug }}"
+                                                    aria-selected="{{ $loop->first ? 'true' : 'false' }}">{{ $benefits_category->name }} <i class="fas fa-arrow-right"></i></a>
+                                                </li>
+                                                @endforeach
+
+                                                {{-- <li class="nav-item">
                                                   <a class="nav-link active" id="sidetab-one" data-toggle="tab" href="#sidetab-box-one" role="tab" aria-controls="sidetab-box-one"
                                                     aria-selected="true">Travel & Automotive <i class="fas fa-arrow-right"></i></a>
                                                 </li>
@@ -67,7 +75,7 @@
                                                   <li class="nav-item">
                                                     <a class="nav-link" id="sidetab-six" data-toggle="tab" href="#sidetab-box-six" role="tab" aria-controls="sidetab-box-six"
                                                       aria-selected="false">Gifting <i class="fas fa-arrow-right"></i></a>
-                                                  </li>
+                                                  </li> --}}
                                               </ul>
                                         </div>
                                     </div>
@@ -76,7 +84,33 @@
 
                                         {{-- tab-content --}}
                                         <div class="tab-content side-tab-container__content" id="myTabContentMD">
-                                            <div class="tab-pane fade show active" id="sidetab-box-one" role="tabpanel" aria-labelledby="sidetab-one">
+                                            
+                                            @foreach(\App\Models\BenefitsCategories::all() as $benefits_category)
+                                            @php( $category_slug = str_slug($benefits_category->name) )
+                                            <div class="tab-pane fade {{ $loop->first ? 'show active' : '' }}" id="sidetab-box-{{ $category_slug }}" role="tabpanel" aria-labelledby="sidetab-{{ $category_slug }}">
+                                                <div class="row">
+                                                    @foreach(\App\Models\Benefits::where('category_id',$benefits_category->id)->get() as $benefit)
+                                                    <div class="col-md-4">
+                                                        <div class="image-thumbnail-hover">
+                                                            <div class="image-thumbnail-hover__image image-background">
+                                                                <img src="{{ asset($benefit->thumbnail) }}" class="img-fluid">
+                                                                <div class="image-thumbnail-hover__overlay">
+                                                                    <a data-id="{{ $benefit->id }}"  href="{{ !empty($benefit->external_link) ? url($benefit->external_link) : 'javascript:void(0)' }}" target="{{ !empty($benefit->external_link) ? '_blank' : '' }}" class="btn btn--view-detail"> View Details</a>
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                            <div class="image-thumbnail-hover__content">
+                                                                <h4>{{ $benefit->name }}</h4>
+                                                                <p>{{ $benefit->short_description }}</p>                                                                
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    @endforeach
+                                                </div>
+                                            </div>
+                                            @endforeach
+
+                                            {{-- <div class="tab-pane fade show active" id="sidetab-box-one" role="tabpanel" aria-labelledby="sidetab-one">
                                                 @include('front.pages.custom-page.sections.sidetab-thumbnail')
                                             </div>
                                             <div class="tab-pane fade" id="sidetab-box-two" role="tabpanel" aria-labelledby="sidetab-two">
@@ -93,9 +127,9 @@
                                             </div>
                                             <div class="tab-pane fade" id="sidetab-box-six" role="tabpanel" aria-labelledby="sidetab-six">
                                                 @include('front.pages.custom-page.sections.sidetab-thumbnail-gifting')
-                                            </div>
-                                          </div>
-                                         {{-- tab-content --}}
+                                            </div> --}}
+                                        </div>
+                                        {{-- tab-content --}}
 
                                     </div>
                                 </div>
@@ -366,13 +400,38 @@
         </section>
 
 
-
-
-
-
-
         @include('front.pages.custom-page.sections.follow-us')
 
     </main>
+
+    @include('front.pages.custom-page.sections.modal-benefits')
+
     @include('front.layouts.sections.footer')
 </section>
+
+@push('extrascripts')
+<script>
+    $(function(){
+
+        $('.image-thumbnail-hover__overlay a').on('click', function() {
+            if ($(this).attr('href') == 'javascript:void(0)') {
+                var id = $(this).attr('data-id');                
+                $.ajax({
+                type:'GET',
+                url: '{{ route('benefit.get') }}',
+                data:{                    
+                    'id' : id
+                },
+                success:function(data) {
+                    var result = JSON.parse(data);
+                    $('.modal-title').html(result.name);
+                    $('.modal-body').html(result.content);
+                    $('#benefitModal').modal('show');    
+                }
+            });
+            }
+        });
+        
+    });
+</script>
+@endpush

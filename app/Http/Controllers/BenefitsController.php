@@ -76,7 +76,7 @@ class BenefitsController extends Controller
             'name' => 'required',
             'thumbnail' => 'required',
             'short_description' => 'required',
-            'content' => 'required'
+            // 'content' => 'required'
             
             // 'slug' => 'required|unique:benefits,slug,NULL,id,deleted_at,NULL',
             // 'content' => 'required',
@@ -156,7 +156,7 @@ class BenefitsController extends Controller
             'name' => 'required',
             // 'thumbnail' => 'required',
             'short_description' => 'required',
-            'content' => 'required'
+            // 'content' => 'required'
 
             // 'slug' => 'required|unique:benefits,slug,' . $id . ',id,deleted_at,NULL',
         ]);

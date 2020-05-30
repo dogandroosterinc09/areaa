@@ -74,6 +74,7 @@
                 @include('admin.components.input-field', ['label' => 'Name'])
                 @include('admin.components.textarea', ['label' => 'Short Description'])
                 @include('admin.components.editor', ['label' => 'Content'])
+                @include('admin.components.input-field', ['label' => 'External Link'])
                 
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">

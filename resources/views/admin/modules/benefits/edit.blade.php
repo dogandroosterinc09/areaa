@@ -74,6 +74,7 @@
                 @include('admin.components.input-field', ['label' => 'Name', 'value' => $benefits->name ])
                 @include('admin.components.textarea', ['label' => 'Short Description', 'value' => $benefits->short_description])
                 @include('admin.components.editor', ['label' => 'Content', 'value' => $benefits->content])
+                @include('admin.components.input-field', ['label' => 'External Link', 'value' => $benefits->external_link])
 
                 {{-- Is Active Hide Temporary
                 <div class="form-group">

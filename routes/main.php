@@ -39,6 +39,7 @@ Route::get('/event/{slug}', 'EventController@showEvent')->name('event.show');
 Route::post('/event/event-register', 'EventController@registerToEvent')->name('event.register');
 
 Route::get('/get-gallery', 'GalleryController@getGallery')->name('gallery.get');
+Route::get('/get-benefit', 'BenefitsController@getBenefit')->name('benefit.get');
 
 Route::get('/media/search','MediaController@searchMedia')->name('media.search');
 

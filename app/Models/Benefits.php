@@ -21,6 +21,7 @@ class Benefits extends Model
         'thumbnail',
         'short_description',
         'content',
+        'external_link',
         'slug',
         'is_active'
     ];

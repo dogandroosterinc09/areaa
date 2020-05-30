@@ -196,9 +196,6 @@
                     },
                     'file': {
                         required: true
-                    },
-                    'content': {
-                        required: true
                     }
                 },
                 messages: {
@@ -216,9 +213,6 @@
                     },
                     'file': {
                         required: 'File is required.'
-                    },
-                    'content': {
-                        required: 'Content is required.'
                     }
                 }
             });
@@ -260,9 +254,6 @@
                     'short_description': {
                         required: true
                     },
-                    'content': {
-                        required: true
-                    },
                     'slug': {
                         required: true
                     },
@@ -293,9 +284,6 @@
                     },
                     'file': {
                         required: 'File is required.'
-                    },
-                    'content': {
-                        required: 'Content is required.'
                     }
                 }
             });
