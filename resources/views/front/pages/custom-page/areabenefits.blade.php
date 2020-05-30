@@ -194,7 +194,7 @@
 
                                         <div class="slider-mask__slick--item">
                                             <div class="slider-mask__image image-background">    
-                                                <img src="{{ url('public/images/testimonial-image.png') }}">
+                                                <img src="{{ url(section('Benefits Section 2.data.first.image')) }}">
                                             </div>
                                             <div class="slider-mask__text"> 
                                                 <div class="slider-mask__text--content">
