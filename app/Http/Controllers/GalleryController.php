@@ -184,7 +184,7 @@ class GalleryController extends Controller
 
     public function upload_images(Request $request) {        
         // $path = storage_path('tmp/gallery');
-        $path = public_path('tmp/gallery');
+        $path = public_path('uploads/tmp/gallery');
 
         if (!file_exists($path)) {
             mkdir($path, 0777, true);
@@ -205,7 +205,7 @@ class GalleryController extends Controller
     private function upload($file) {
         // $extension = $file->getClientOriginalExtension();
         // $file_name = substr((pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME)), 0, 30) . '.' . $extension;
-        $file_name = public_path('tmp/gallery/') . $file;
+        $file_name = public_path('uploads/tmp/gallery/') . $file;
         // return $file_name;
         // $file_name = preg_replace("/[^a-z0-9\_\-\.]/i", '', $file_name);
         $file_path = '/uploads/gallery' . $file;
@@ -226,7 +226,7 @@ class GalleryController extends Controller
         $photos = [];
 
         foreach ($request->input('document', []) as $file) {
-            $old_path = public_path('tmp/gallery/') . $file;
+            $old_path = public_path('uploads/tmp/gallery/') . $file;
             $file_path = '/uploads/gallery/' . $file;
             $new_path = public_path() . $file_path;
             $move = File::move($old_path, $new_path);
