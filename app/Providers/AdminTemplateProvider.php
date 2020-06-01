@@ -121,13 +121,11 @@ class AdminTemplateProvider extends ServiceProvider
                 ]);
             }
 
-            if (auth()->user()->can('Read Event')) {
-                array_push($event_registrations_tab, [
-                    'name' => 'Chapter',
-                    'url' => url('admin/event_registrations/chapter'),
-                    'icon' => 'fa fa-phone'
-                ]);
-            }
+            array_push($event_registrations_tab, [
+                'name' => 'Chapter',
+                'url' => url('admin/event_registrations/chapter'),
+                'icon' => 'fa fa-phone'
+            ]);
 
             array_push($navigation, [
                 'name' => 'Event Registrations',
@@ -175,11 +173,13 @@ class AdminTemplateProvider extends ServiceProvider
                 ]);
             }
 
-            array_push($navigation, [
-                'name' => 'Benefits',
-                'icon' => 'fa fa-phone',
-                'sub' => $benefits_tab
-            ]);
+            if (auth()->user()->can('Read Benefits')) {
+                array_push($navigation, [
+                    'name' => 'Benefits',
+                    'icon' => 'fa fa-phone',
+                    'sub' => $benefits_tab
+                ]);
+            }
 
             $media_tab = [];
 
@@ -199,11 +199,13 @@ class AdminTemplateProvider extends ServiceProvider
                 ]);
             }
 
+            if (auth()->user()->can('Read Webinars')) {
             array_push($navigation, [
                 'name' => 'Media',
                 'icon' => 'fa fa-phone',
                 'sub' => $media_tab
             ]);
+            }
 
            if ($this->hasCrudAccessFor('Board Member')) {
                 $board_member_tab = [];
