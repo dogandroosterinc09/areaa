@@ -9,6 +9,7 @@ use App\Models\ChapterPageAboutUs;
 use App\Models\ChapterPageContactUs;
 use App\Models\ChapterPageEvent;
 use App\Models\ChapterPageLeadership;
+use App\Models\Members;
 use App\Http\Controllers\Controller;
 
 use File;
@@ -26,6 +27,7 @@ class ChapterController extends Controller
     private $chapter_page_contact_us;
     private $chapter_page_event;
     private $chapter_page_leadership;
+    private $members;
 
     /**
      * Create a new controller instance.
@@ -37,7 +39,8 @@ class ChapterController extends Controller
                                 ChapterPageAboutUs $chapter_page_about_us,
                                 ChapterPageContactus $chapter_page_contact_us,
                                 ChapterPageEvent $chapter_page_event,
-                                ChapterPageLeadership $chapter_page_leadership)
+                                ChapterPageLeadership $chapter_page_leadership,
+                                Members $members)
     {
         $this->chapter = $chapter;
         $this->chapter_home = $chapter_home;
@@ -45,6 +48,7 @@ class ChapterController extends Controller
         $this->chapter_page_contact_us = $chapter_page_contact_us;
         $this->chapter_page_event = $chapter_page_event;
         $this->chapter_page_leadership = $chapter_page_leadership;
+        $this->memberes = $members;
     }
 
     /**
@@ -219,6 +223,20 @@ class ChapterController extends Controller
         $chapter = $this->chapter->findOrFail($id);
 
         return view('admin.modules.chapter.pages', compact('chapter'));
+    }
+
+    public function members($id) {
+        $members = \App\Models\Members::
+                    whereHas('user', function($q) use($id) {
+                        $q->where('chapter_id',$id);
+                    })
+                    ->get();
+        
+        $chapter = $this->chapter->findOrFail($id);
+
+        $is_chapter = true;
+
+        return view('admin.modules.members.index', compact('members','is_chapter','chapter'));
     }
 
     public function upload($file) {

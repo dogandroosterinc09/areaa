@@ -63,4 +63,19 @@ class EventRegistration extends Model
     public function chapter() {
         return $this->hasOne('App\Models\Chapter', 'id', 'member_chapter_id');
     }
+
+    public function getEventChapterAttribute() {
+        $event_chapter = \App\Models\Chapter::find($this->attributes['event_chapter_id']);
+
+        if ($event_chapter) {
+            return $event_chapter->name;
+        } else {
+            return 'National';
+        }
+        
+    }
+
+    // public function scopeNational(Builder $query){
+    //     return $query->where('event_id','<>',0);
+    // }
 }

@@ -33,6 +33,31 @@ class MembersController extends Controller
 
     public function index()
     {
+        // if (!auth()->user()->hasPermissionTo('Read Members')) {
+        //     abort('401', '401');
+        // }
+
+        if (auth()->user()->getRoleNames()->first() === 'Chapter Admin') {
+            $members = $this->members
+                    ->whereHas('user', function($q) {
+                        $q->where('chapter_id',auth()->user()->chapter_id);
+                    })
+                    ->get();
+        } else {
+            $members = $this->members
+                    ->whereHas('user', function($q) {
+                        $q->where('chapter_id',0);
+                    })
+                    ->get();
+        }
+
+        
+
+        return view('admin.modules.members.index', compact('members'));
+    }
+
+    public function national()
+    {
         if (!auth()->user()->hasPermissionTo('Read Members')) {
             abort('401', '401');
         }
@@ -40,6 +65,21 @@ class MembersController extends Controller
         $members = $this->members
                     ->whereHas('user', function($q) {
                         $q->where('chapter_id',0);
+                    })
+                    ->get();
+
+        return view('admin.modules.members.index', compact('members'));
+    }
+
+    public function chapter()
+    {
+        if (!auth()->user()->hasPermissionTo('Read Members')) {
+            abort('401', '401');
+        }
+
+        $members = $this->members
+                    ->whereHas('user', function($q) {
+                        $q->where('chapter_id','<>',0);
                     })
                     ->get();
 

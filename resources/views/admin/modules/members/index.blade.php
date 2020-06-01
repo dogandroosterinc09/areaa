@@ -1,6 +1,14 @@
 @extends('admin.layouts.base')
 
 @section('content')
+
+    @isset($is_chapter)
+    <ul class="breadcrumb breadcrumb-top">
+        <li><a href="{{ route('admin.chapters.index') }}">Chapters</a></li>
+        <li><span href="javascript:void(0)">Members</span></li>
+    </ul>    
+    @endisset
+
     @if (auth()->user()->can('Create Members'))
         <div class="row text-center">
             <div class="col-sm-12 col-lg-12">
@@ -24,7 +32,7 @@
         <div class="block-title">
             <h2>
                 <i class="fa fa-newspaper-o sidebar-nav-icon"></i>
-                <strong>Members</strong>
+                <strong>{{ isset($chapter) ? $chapter->name : 'National' }} Members</strong>
             </h2>
         </div>
         <div class="alert alert-info alert-dismissable members-empty {{$members->count() == 0 ? '' : 'johnCena' }}">

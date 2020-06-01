@@ -58,6 +58,7 @@ Route::resource('/events', 'EventController');
 
 Route::resource('/chapters', 'ChapterController');
 Route::get('/chapters/pages/{id}', 'ChapterController@pages')->name('chapters.pages');
+Route::get('/chapters/members/{id}', 'ChapterController@members')->name('chapters.members');
 
 
 
@@ -115,6 +116,8 @@ Route::resource('/chapter_page_homesliders', 'ChapterPageHomesliderController');
 Route::resource('/chapter_contacts', 'ChapterContactController');
 
 
+Route::get('/event_registrations/national', 'EventRegistrationController@national')->name('event_registrations.national');
+Route::get('/event_registrations/chapter', 'EventRegistrationController@chapter')->name('event_registrations.chapter');
 Route::resource('/event_registrations', 'EventRegistrationController');
 
 Route::post('/gallery_upload', 'GalleryController@upload_images');

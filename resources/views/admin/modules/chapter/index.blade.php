@@ -66,6 +66,11 @@
                                        title=""
                                        class="btn btn-default"
                                        data-original-title="Pages"><i class="fa fa-files-o"></i></a>
+                                <a href="{{ route('admin.chapters.members', $chapter->id) }}"
+                                       data-toggle="tooltip"
+                                       title=""
+                                       class="btn btn-default"
+                                       data-original-title="Members"><i class="fa fa-users"></i></a>
                                 @if (auth()->user()->can('Read Chapter'))
                                     <a href="{{ route('admin.chapters.show', $chapter->id) }}"
                                        data-toggle="tooltip"

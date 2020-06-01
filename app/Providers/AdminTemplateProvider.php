@@ -111,13 +111,29 @@ class AdminTemplateProvider extends ServiceProvider
                 ]);
            }
 
+           $event_registrations_tab = [];
+
             if (auth()->user()->can('Read Event')) {
-                array_push($navigation, [
-                    'name' => 'Event Registrations',
-                    'url' => url('admin/event_registrations'),
+                array_push($event_registrations_tab, [
+                    'name' => 'National',
+                    'url' => url('admin/event_registrations/national'),
                     'icon' => 'fa fa-phone'
                 ]);
             }
+
+            if (auth()->user()->can('Read Event')) {
+                array_push($event_registrations_tab, [
+                    'name' => 'Chapter',
+                    'url' => url('admin/event_registrations/chapter'),
+                    'icon' => 'fa fa-phone'
+                ]);
+            }
+
+            array_push($navigation, [
+                'name' => 'Event Registrations',
+                'icon' => 'fa fa-phone',
+                'sub' => $event_registrations_tab
+            ]);
 
             array_push($navigation, [
                 'name' => 'Chapter Events',
@@ -217,13 +233,13 @@ class AdminTemplateProvider extends ServiceProvider
                 ]);
             }
 
-            if (auth()->user()->can('Read Members')) {
+            // if (auth()->user()->can('Read Members')) {
                 array_push($navigation, [
                     'name' => 'Members',
                     'url' => url('admin/members'),
                     'icon' => 'fa fa-users'
                 ]);
-            }
+            // }
 
             if ($this->hasCrudAccessFor('User') || $this->hasCrudAccessFor('Permission') || $this->hasCrudAccessFor('Permission Group') || $this->hasCrudAccessFor('Role')) {
                 $user_management_tab = [];

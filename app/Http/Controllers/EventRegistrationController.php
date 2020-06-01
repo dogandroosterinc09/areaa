@@ -42,6 +42,28 @@ class EventRegistrationController extends Controller
         return view('admin.modules.event_registration.index', compact('event_registrations'));
     }
 
+    public function national() {
+        if (!auth()->user()->hasPermissionTo('Read Event Registration')) {
+            abort('401', '401');
+        }
+
+        $title = 'National';
+        $event_registrations = $this->event_registration->where('event_id','<>',0)->get();
+
+        return view('admin.modules.event_registration.index', compact('event_registrations','title'));
+    }
+
+    public function chapter() {
+        if (!auth()->user()->hasPermissionTo('Read Event Registration')) {
+            abort('401', '401');
+        }
+
+        $title = 'Chapter';
+        $event_registrations = $this->event_registration->where('event_id',0)->get();
+
+        return view('admin.modules.event_registration.index', compact('event_registrations','title'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *

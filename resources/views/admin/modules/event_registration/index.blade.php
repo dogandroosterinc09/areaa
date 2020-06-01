@@ -5,7 +5,7 @@
         <div class="block-title">
             <h2>
                 <i class="fa fa-newspaper-o sidebar-nav-icon"></i>
-                <strong>Event Registrations</strong>
+                <strong>{{ $title }} Event Registrations</strong>
             </h2>
         </div>
         <div class="alert alert-info alert-dismissable event_registration-empty {{$event_registrations->count() == 0 ? '' : 'johnCena' }}">
@@ -20,6 +20,9 @@
                     </th>
                     <th class="text-center">
                         Name
+                    </th>
+                    <th class="text-center">
+                        Chapter
                     </th>
                     <th class="text-left">
                         Event
@@ -38,7 +41,8 @@
                 <tbody>
                 @foreach($event_registrations as $event_registration)
                     <tr data-event_registration-id="{{$event_registration->id}}">
-                        <td class="text-center"><strong>{{ $event_registration->id }}</strong></td>
+                        <td class="text-center"><strong>{{ $event_registration->id }}</strong></td>                        
+                        <td class="text-center"><strong>{{ $event_registration->event_chapter }}</strong></td>                        
                         <td class="text-center"><strong>{{ $event_registration->name }}</strong></td>
                         <td class="text-center"><strong>{{ $event_registration->event_name }}</strong></td>
                         <td class="text-center hidden"><strong>{{ $event_registration->status }}</strong></td>
