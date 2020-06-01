@@ -109,10 +109,10 @@ class UserController extends Controller
             'user_name' => 'required|unique:users,user_name,NULL,id,deleted_at,NULL',
             'email' => 'required|unique:users,email,NULL,id,deleted_at,NULL',
             'password' => 'required|min:8|confirmed',
-            'chapter_id' => 'unique:users,chapter_id',
+            // 'chapter_id' => 'unique:users,chapter_id',
             'roles' => 'required'
         ], [
-            'chapter_id.unique' => 'An admin has already been assigned for this chapter.'
+            // 'chapter_id.unique' => 'An admin has already been assigned for this chapter.'
         ]
         );
         

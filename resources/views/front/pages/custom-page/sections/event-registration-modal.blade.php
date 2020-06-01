@@ -118,6 +118,7 @@
         </div>
         <input type="hidden" name="event_id" value="{{ isset($event) ? $event->id : '' }}">
         <input type="hidden" name="chapter_event_id" value="{{ isset($chapter_event) ? $chapter_event->id : '' }}">
+        <input type="hidden" name="event_chapter_id" value="{{ isset($chapter_event) ? $chapter_event->chapter_id : '' }}">
       </div>
       <div class="modal-footer">        
         <button type="submit" class="btn btn--secondary">Submit</button>
