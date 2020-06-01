@@ -21382,7 +21382,9 @@ ul.bullet-style li h6 {
   margin-bottom: 10px;
 }
 .media-thumbnail__button .btn:hover {
-  color: #fff !important;
+  border: 2px solid #ab1a2d !important;
+  color: #ab1a2d !important;
+  background: transparent !important;
 }
 
 .moreWebinar__item {

@@ -1852,7 +1852,10 @@ ul.bullet-style {
             color: $color-dark !important;
             margin-bottom: 10px;
             &:hover {
-                color: $color-white !important;
+                // color: $color-white !important;
+                border: 2px solid $color-secondary !important;
+                color: $color-secondary !important;
+                background: transparent !important;
             }
         }
     }
