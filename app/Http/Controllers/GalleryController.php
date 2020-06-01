@@ -152,11 +152,15 @@ class GalleryController extends Controller
 
         if (!empty($gallery->photos)) $photos = array_merge(explode(',',$gallery->photos),$photos);
 
+        if (!empty($request->removed_images)) {
+            $photos = array_diff($photos, explode(',',$request->removed_images));
+        }
+
         $gallery->fill(array_merge($request->all(), [
             'photos' => implode(',',$photos),
             'user_id' => auth()->user()->id
         ]))->save();
-
+        
         return redirect()->route('admin.galleries.index')->with('flash_message', [
             'title' => '',
             'message' => 'Gallery ' . $gallery->title . ' successfully updated.',

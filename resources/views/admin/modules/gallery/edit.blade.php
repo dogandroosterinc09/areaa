@@ -45,11 +45,14 @@
                             @foreach(explode(',',$gallery->photos) as $photo)
                             <div class="col-md-3">
                                 <img src="{{asset($photo)}}" class="img-responsive">
+                                <button image-link="{{ $photo }}" type="button" class="btn btn-sm btn-danger btn_remove_image">Remove</button>
                             </div>
                             @endforeach
                         @endif
                         </div>
                     </div>
+
+                    <input type="hidden" name="removed_images">
                 </div>
 
                 <div class="form-group form-actions">
@@ -112,5 +115,19 @@
             @endif
             }
         }
+
+        $(function(){
+            var removed_images = [];
+
+            $(document).on('click','.btn_remove_image', function() {                
+                var image_link = $(this).attr('image-link');
+
+                removed_images.push(image_link);
+
+                $('[name="removed_images"]').val(removed_images.toString());
+
+                $(this).parent().remove();
+            });
+        });
     </script>
 @endpush
