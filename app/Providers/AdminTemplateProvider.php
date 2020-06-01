@@ -173,11 +173,13 @@ class AdminTemplateProvider extends ServiceProvider
                 ]);
             }
 
-            array_push($navigation, [
-                'name' => 'Benefits',
-                'icon' => 'fa fa-phone',
-                'sub' => $benefits_tab
-            ]);
+            if (auth()->user()->can('Read Benefits')) {
+                array_push($navigation, [
+                    'name' => 'Benefits',
+                    'icon' => 'fa fa-phone',
+                    'sub' => $benefits_tab
+                ]);
+            }
 
             $media_tab = [];
 
