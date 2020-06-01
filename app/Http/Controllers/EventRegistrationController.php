@@ -54,12 +54,12 @@ class EventRegistrationController extends Controller
     }
 
     public function chapter() {
-        if (!auth()->user()->hasPermissionTo('Read Event Registration')) {
-            abort('401', '401');
-        }
+        // if (!auth()->user()->hasPermissionTo('Read Event Registration')) {
+        //     abort('401', '401');
+        // }
 
         $title = 'Chapter';
-        $event_registrations = $this->event_registration->where('event_id',0)->get();
+        $event_registrations = $this->event_registration->where('event_id',0)->where('event_chapter_id',auth()->user()->chapter_id)->get();
 
         return view('admin.modules.event_registration.index', compact('event_registrations','title'));
     }
