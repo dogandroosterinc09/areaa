@@ -165,7 +165,24 @@
 
 
         {{-- story section  --}}
-        @if(!empty($chapter_home->sponsors_title) && !empty($chapter_home->sponsors_content))        
+        
+        @php( $other_sponsors = $chapter_home->other_sponsors ? json_decode($chapter_home->other_sponsors) : [] )
+        @php( $is_empty = false )        
+        @if( count($other_sponsors) > 0 )
+            @php( $count = 0 )
+            @foreach($other_sponsors as $sponsor)
+                @if(!empty($sponsor->image))
+                    @php($count++)
+                @endif
+            @endforeach
+            @if( $count == 0 )
+            @php( $is_empty = true )
+            @endif
+        @else
+            @php( $is_empty = true )
+        @endif
+
+        @if(!empty($chapter_home->sponsors_title) && !$is_empty)
         <section class="sponsors" data-aos="fade-up">
             <div class="container-max">
                 <div class="row">
@@ -219,7 +236,7 @@
                             @endif
                             <div class="logo-display__col3">
                                 <div class="row">
-                                    @php( $other_sponsors = $chapter_home->other_sponsors ? json_decode($chapter_home->other_sponsors) : [] )
+                                    
                                     @foreach( $other_sponsors as $sponsor )
                                         @if(!empty($sponsor->image))
                                         <div class="col-md-4">
