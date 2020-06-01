@@ -117,7 +117,7 @@
                             <div class="tab-pane media-tab__item fade {{ $loop->first ? 'show active' : '' }}" id="{{$category->slug}}-view" role="tabpanel"
                                 aria-labelledby="{{$category->slug}}-view">
                                 <div class="{{$category->slug}} container">
-                                    <div class="{{$category->slug}}__list row moreWebinar">
+                                    <div class="{{$category->slug}}__list row more{{$category->slug}}">
                                         
                                         @if(Request::all())
                                             @php( $media = \App\Models\Webinars::where('title','like','%'.Request::get('title').'%')
@@ -129,14 +129,12 @@
                                         @endif
 
                                         @forelse($media as $media_item)
-                                        <div class="col-lg-4 col-md-4 moreWebinar__item moreWebinar">
+                                        <div class="col-lg-4 col-md-4 more{{$category->slug}}__item more{{$category->slug}}">
 
                                             {{-- media-thumbnail --}}
                                             <div class="media-thumbnail">
-                                                <div class="media-thumbnail__featured">
-                                                    @if($media_item->link != '#')
-                                                    <iframe width="560" height="315" src="{{$media_item->link}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                                    @endif
+                                                <div class="media-thumbnail__featured">                                                    
+                                                    <iframe width="560" height="315" src="{{$media_item->link}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                                                    
                                                 </div>
                                                 <div class="media-thumbnail__title">
                                                     <h3>{{ $media_item->title }}</h3>
@@ -189,10 +187,8 @@
 
                                             {{-- media-thumbnail --}}
                                             <div class="media-thumbnail">
-                                                <div class="media-thumbnail__featured">
-                                                    @if($media_item->link != '#')
-                                                    <iframe width="560" height="315" src="{{$media_item->link}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                                    @endif
+                                                <div class="media-thumbnail__featured">                                                    
+                                                    <iframe width="560" height="315" src="{{$media_item->link}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                                                    
                                                 </div>
                                                 <div class="media-thumbnail__title">
                                                     <h3>{{ $media_item->title }}</h3>

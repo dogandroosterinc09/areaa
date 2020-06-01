@@ -187,10 +187,7 @@
                     },
                     'title': {
                         required: true
-                    },
-                    'link': {
-                        required: true
-                    },
+                    }
                     'name': {
                         required: true
                     },
@@ -216,9 +213,6 @@
                     },
                     'title': {
                         required: 'Title is required.'
-                    },
-                    'link': {
-                        required: 'Video Link is required.'
                     },
                     'name': {
                         required: 'Name is required.'
@@ -275,9 +269,6 @@
                     'title': {
                         required: true
                     },
-                    'link': {
-                        required: true
-                    },
                     'name': {
                         required: true
                     },
@@ -311,9 +302,6 @@
                     },
                     'title': {
                         required: 'Title is required.'
-                    },
-                    'link': {
-                        required: 'Video Link is required.'
                     },
                     'name': {
                         required: 'Name is required.'

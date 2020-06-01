@@ -72,7 +72,7 @@ class WebinarsController extends Controller
         }        
 
         $this->validate($request, [
-            'link' => 'required',
+            // 'link' => 'required',
             'title' => 'required',
             'media_category_id' => 'required',
         ],[
@@ -164,7 +164,7 @@ class WebinarsController extends Controller
         }
 
         $this->validate($request, [            
-            'link' => 'required',
+            // 'link' => 'required',
             'title' => 'required',
             'media_category_id' => 'required',
         ],[
