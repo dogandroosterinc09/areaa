@@ -245,7 +245,10 @@
                     form.submit();
                 },
                 rules: {
-                    'name': {
+                    'first_name': {
+                        required: true
+                    },
+                    'last_name': {
                         required: true
                     },
                     'slug': {
@@ -270,8 +273,11 @@
                     }
                 },
                 messages: {
-                    'name': {
-                        required: 'Name is required.'
+                    'first_name': {
+                        required: 'First Name is required.'
+                    },
+                    'last_name': {
+                        required: 'Last Name is required.'
                     },
                     'slug': {
                         required: 'Slug is required.'
@@ -426,7 +432,7 @@
                 "searching": true,
                 "aoColumnDefs": [{
                     'bSortable': false,
-                    'aTargets': [5]
+                    'aTargets': [4]
                 }]
             });
 

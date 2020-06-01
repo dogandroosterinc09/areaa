@@ -37,7 +37,11 @@ class MembersController extends Controller
             abort('401', '401');
         }
 
-        $members = $this->members->get();
+        $members = $this->members
+                    ->whereHas('user', function($q) {
+                        $q->where('chapter_id',0);
+                    })
+                    ->get();
 
         return view('admin.modules.members.index', compact('members'));
     }
@@ -136,10 +140,10 @@ class MembersController extends Controller
             abort('401', '401');
         }
 
+        return $request->all();
+
         $this->validate($request, [
-            'name' => 'required|unique:members,name,' . $id . ',id,deleted_at,NULL',
-            'slug' => 'required|unique:members,slug,' . $id . ',id,deleted_at,NULL',
-            'content' => 'required',
+            
         ]);
 
         $members = $this->members->findOrFail($id);
