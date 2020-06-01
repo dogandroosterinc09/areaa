@@ -66,14 +66,15 @@
                         <div class="form-group{{ $errors->has('who_we_are_featured_video') ? ' has-error' : '' }}">
                             <label class="col-md-2 control-label" for="who_we_are_featured_video">Featured Video</label>
                             <div class="col-md-10">
-                                <div class="input-group">
+                                <input type="text" class="form-control" name="who_we_are_featured_video" value="{{ $chapter_home->who_we_are_featured_video }}">
+                                <!-- <div class="input-group">
                                     <label class="input-group-btn">
                                     <span class="btn btn-primary">
                                         Choose File <input type="file" name="who_we_are_featured_video" style="display: none;">
                                     </span>
                                     </label>
                                     <input type="text" class="form-control" readonly>
-                                </div>
+                                </div> -->
                                 @if($errors->has('who_we_are_featured_video'))
                                     <span class="help-block animation-slideDown">{{ $errors->first('who_we_are_featured_video') }}</span>
                                 @endif

@@ -6,7 +6,7 @@
         uiEditChapterHomeForm,
         uiChapterHomesDatatable,
         uiInputImage,
-        uiInputVideo,
+        // uiInputVideo,
         uiInputCoverImage,
         uiRemoveImgBtn,
         uiInputBadgeIcon,
@@ -173,7 +173,7 @@
             uiChapterHomesDatatable = null;
             uiInputImage = $('input[name="member_benefits_featured_image"]');
             uiInputCoverImage = $('input[name="who_we_are_video_cover_image"]');
-            uiInputVideo = $('input[name="who_we_are_featured_video"]');
+            // uiInputVideo = $('input[name="who_we_are_featured_video"]');
             uiInputBadgeIcon = $('input[name="top_sponsor_image"]');
             uiInputBadgeIcons = $('input[name="other_sponsors_image[]"]');
             uiRemoveImgBtn = $('.remove-image-btn');
@@ -402,14 +402,14 @@
                 _fileselect($(this), numFiles, label, ext, 'image');
             });
 
-            uiInputVideo.on('change', function () {
-                var input = $(this),
-                    numFiles = input.get(0).files ? input.get(0).files.length : 1,
-                    label = input.val().replace(/\\/g, '/').replace(/.*\//, ''),
-                    sValue = $(this).val(),
-                    ext = sValue.substring(sValue.lastIndexOf('.') + 1).toLowerCase();
-                _fileselect($(this), numFiles, label, ext, 'video');
-            });
+            // uiInputVideo.on('change', function () {
+            //     var input = $(this),
+            //         numFiles = input.get(0).files ? input.get(0).files.length : 1,
+            //         label = input.val().replace(/\\/g, '/').replace(/.*\//, ''),
+            //         sValue = $(this).val(),
+            //         ext = sValue.substring(sValue.lastIndexOf('.') + 1).toLowerCase();
+            //     _fileselect($(this), numFiles, label, ext, 'video');
+            // });
 
             uiInputCoverImage.on('change', function () {
                 var input = $(this),
