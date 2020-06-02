@@ -165,6 +165,14 @@
             margin-top: 25px;
         }
     }
+    &--dashboard {
+        .main-content {
+            padding-top: 0 !important;
+        }
+        .dashboard-nav {
+            margin-top: 0 !important;
+        }
+    }
 }
 
 .page {
