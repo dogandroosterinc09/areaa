@@ -1,5 +1,15 @@
 <section class="page page--dashboard page--dashboard--main">
-    @include('front.layouts.sections.header')
+    {{-- @include('front.layouts.sections.header') --}}
+
+    @if(auth()->user()->chapter_id == 0)
+        @include('front.layouts.sections.header')
+    @else        
+        @include('front.layouts.sections.chapter.header_chapter')
+    @endif
+
+    
+    
+
     {{-- @include('front.pages.custom-page.sections.banner') --}}
 
 

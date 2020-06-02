@@ -1,5 +1,5 @@
 <header>
-
+    @php( $chapter = \App\Models\Chapter::find(1) )
     {{-- FOR DESKTOP MENU  --}}
     <div class="main-nagivation-desktop container-max">
         <div class="main-nagivation-desktop__wrapper--row row">
@@ -13,7 +13,9 @@
                 <div class="contact-details-wrap">
                    
                     <div class="info">
+                        @guest
                         <div class="title"><a href="{{url('membership-registration')}}"><span>Join AREAA</span></a></div>
+                        @endguest
                         <ul>
                             <li> <a href="{{section('Contact Us.data.first.tel_link')}}"><i class="ic-phone" aria-hidden="true"></i> {{section('Contact Us.data.first.tel_text')}}</a></li>
                             <li> <a href="{{section('Contact Us.data.first.mail_link')}}"><i class="ic-email"></i> {{section('Contact Us.data.first.mail_text')}}</a></li>
@@ -30,9 +32,32 @@
                                     </ul>
                                  </div> --}}
                              </li>
+                             @guest
                             <li> 
                                 <a href="{{ url($chapter['slug'].'/login') }}"><i class="ic-user"></i> Log In</a>
                             </li>
+                            @else
+                            <li>
+                            
+                            <div class="logout-dropdown">
+                                <a class="dropdown-toggle" href="" role="button" id="logout-button-mobile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="ic-user"></i> Welcome
+                                </a>
+                              
+                                <div class="dropdown-menu" aria-labelledby="logout-button-mobilen">
+                                  <a class="dropdown-item" href="{{ route('customer.dashboard') }}">Dashboad</a>
+                                  {{-- <a class="dropdown-item" href="{{ url( (auth()->user()->chapter == 'national' ? '' : auth()->user()->chapter_slug) . '/events' ) }}">Events</a> --}}
+                                  <a class="dropdown-item" href="{{ route('customer.dashboard.events') }}">Events</a>
+                                 
+                                  <a class="dropdown-item" href="{{ route('customer.dashboard.member_directory') }}">Membership Directory </a>
+                                  <a class="dropdown-item" href="{{ route('customer.dashboard.profile') }}">Profile </a>
+                                  <a class="dropdown-item" href="{{url('support')}}">Support </a>
+                                  <div class="dropdown-divider"></div>
+                                  <a class="dropdown-item" href="{{ route('customer.logout') }}"> <i class="fas fa-power-off"></i> Logout </a>
+                                </div>
+                            </div>
+                            </li>
+                            @endguest
                         </ul>
                     </div>
                 </div>

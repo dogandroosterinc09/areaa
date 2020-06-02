@@ -13,13 +13,24 @@
                  
                     <div class="info">
                         {{-- title --}}
+                        @guest                        
                         <div class="title">
                             <a href="{{url('membership-registration')}}"><span>Join AREAA</span></a>
                         </div>
+                        @endguest
 
                         <ul>
                             <li> <a href="{{section('Contact Us.data.first.tel_link')}}"><i class="ic-phone" aria-hidden="true"></i> {{section('Contact Us.data.first.tel_text')}}</a></li>
                             <li> <a href="{{section('Contact Us.data.first.mail_link')}}"><i class="ic-email"></i> {{section('Contact Us.data.first.mail_text')}}</a></li>
+
+                            @auth
+                            <li>
+                                <a href="{{url('/')}}" class="dropdown-toggle-menu">
+                                <i class="ic-chapter"></i> 
+                                    AREAA National
+                                </a>
+                            </li>
+                            @else
                             <li>  
                                 <a href="{{url('chapter')}}" class="dropdown-toggle-menu">
                                 <i class="ic-pin"></i> 
@@ -36,6 +47,8 @@
                                     </ul>
                                  </div>
                              </li>
+                             @endauth
+
                             <li> 
                                 @auth
                                 {{-- <a href="{{ route('customer.logout') }}"><i class="ic-user"></i> Log Out</a> --}}
@@ -188,6 +201,7 @@
                             </a>
 
                             @auth
+
                             {{-- <a href="{{ route('customer.logout') }}"><i class="ic-user"></i> Log Out</a> --}}
 
                             <div class="logout-dropdown">
@@ -243,6 +257,7 @@
                                 </ul>
                                 <ul>
                                     <!-- **************************************** -->
+                                    @guest
                                     <li class="nav-item">
                                         <a class="nav-link" href="{{ url('chapter') }}">Find Chapter<span
                                                     class="sr-only">(current)</span></a>
@@ -267,6 +282,7 @@
 
                                         </ul>
                                     </li>
+                                    @endguest
                                     <li class="nav-item">
                                         <a class="nav-link" href="{{ url('/') }}">Home <span
                                                     class="sr-only">(current)</span></a>
