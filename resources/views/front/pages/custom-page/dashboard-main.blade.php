@@ -4,7 +4,7 @@
 
     @if(auth()->user()->chapter_id == 0)
         @include('front.layouts.sections.header')
-    @else        
+    @else
         @include('front.layouts.sections.chapter.header_chapter')
     @endif
 
