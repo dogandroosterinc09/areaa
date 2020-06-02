@@ -1,5 +1,8 @@
 <header>
-    @php( $chapter = \App\Models\Chapter::find(1) )
+    @if(!isset($chapter))
+        @php( $chapter = \App\Models\Chapter::find(auth()->user()->chapter_id) )
+    @endif
+    
     {{-- FOR DESKTOP MENU  --}}
     <div class="main-nagivation-desktop container-max">
         <div class="main-nagivation-desktop__wrapper--row row">

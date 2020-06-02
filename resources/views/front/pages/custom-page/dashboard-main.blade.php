@@ -1,4 +1,5 @@
-<section class="page page--dashboard page--dashboard--main">
+<section class="{{ auth()->user()->chapter_id == 0 ? 'page page--dashboard page--dashboard--main' : 'page-chapter' }}">
+
     {{-- @include('front.layouts.sections.header') --}}
 
     @if(auth()->user()->chapter_id == 0)
@@ -7,11 +8,7 @@
         @include('front.layouts.sections.chapter.header_chapter')
     @endif
 
-    
-    
-
     {{-- @include('front.pages.custom-page.sections.banner') --}}
-
 
     {{-- need to dynamic this sub  --}}
     {{-- <section class="sub-banner">
