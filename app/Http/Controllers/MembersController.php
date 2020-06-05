@@ -51,8 +51,6 @@ class MembersController extends Controller
                     ->get();
         }
 
-        
-
         return view('admin.modules.members.index', compact('members'));
     }
 

@@ -73,6 +73,10 @@ class LoginController extends Controller
 
         if ($this->guard()->validate($this->credentials($request))) {
             $user = $this->guard()->getLastAttempted();
+            // print($user);
+            // echo "<br>";
+            // echo $user->email;
+            // die('ln66');
 
             /* only defined roles can login */
             if ($user->hasAnyRole(['Super Admin', 'Admin', 'Chapter Admin']) && $user->is_active && $this->attemptLogin($request)) {

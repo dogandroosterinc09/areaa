@@ -24,7 +24,12 @@ class Members extends Model
         'language_spoken',
         'designations',
         'area_of_specialty',
-        'social_media'
+        'social_media',
+        'authorize_profile_id',
+        'authorize_payment_profile_id',
+        'authorize_address_id',
+        'authorize_subscription_id',
+        'subscription_status'
     ];
 
     public function getAvatarAttribute() {

@@ -153,6 +153,7 @@ class PageController extends Controller
 
                 abort('404', '404');
             } else {
+
                 $seo_meta = $this->getSeoMeta($page);
 
                 if ($slug == 'home') {

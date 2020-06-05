@@ -32,6 +32,17 @@
                         
                     <div class="container-max masking-background__container registration-login-steps">
                         <div class="row">
+
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+
                             {{  Form::open([
                                 'method' => 'POST',
                                 'id' => '',
@@ -94,8 +105,9 @@
                                                                     <div class="steps-wizard__box">
                                                                         <label>Select Your Chapter <span>*</span> </label>
                                                                         <div class="select-box">
-                                                                            <select name="chapter_id">
+                                                                            <select name="chapter_id" required>
                                                                                 <option value="0"><b>National</b> $49.50 now & then $99.00 per Year starting July 1, 2020.</option>
+
                                                                                 @foreach(\App\Models\Chapter::all() as $chapter)
                                                                                 <option value="{{$chapter->id}}">{{$chapter->name}} $49.50 now & then $99.00 per Year starting July 1, 2020.</option>
                                                                                 @endforeach
@@ -138,58 +150,58 @@
                                                                 </div>
                                                                 
                                                                 <div class="col-md-12 steps-wizard__form--field">
-                                                                    <input type="text" placeholder="username*" name="user_name" value="{{ old('user_name') }}">
+                                                                    <input type="text" placeholder="username*" name="user_name" value="{{ old('user_name') }}" required>
                                                                     @if ($errors->has('user_name'))
                                                                         <span id="" class="help-block animation-slideDown">{{ $errors->first('user_name') }}</span>
                                                                     @endif
                                                                 </div>
 
                                                                 <div class="col-md-6 steps-wizard__form--field">
-                                                                    <input type="password" placeholder="Password*" name="password" value="{{ old('password') }}">
+                                                                    <input type="password" placeholder="Password*" name="password" value="{{ old('password') }}" required>
                                                                     @if ($errors->has('password'))
                                                                         <span id="" class="help-block animation-slideDown">{{ $errors->first('password') }}</span>
                                                                     @endif
                                                                 </div>
 
                                                                 <div class="col-md-6 steps-wizard__form--field">
-                                                                    <input type="password" placeholder="Confirm Password*" name="password_confirmation" value="{{ old('password_confirmation') }}">                                                                    
+                                                                    <input type="password" placeholder="Confirm Password*" name="password_confirmation" value="{{ old('password_confirmation') }}" required>                                                                    
                                                                 </div>
 
                                                                 <div class="col-md-6 steps-wizard__form--field">
-                                                                    <input type="text" placeholder="First Name*" name="first_name" value="{{ old('first_name') }}">
+                                                                    <input type="text" placeholder="First Name*" name="first_name" value="{{ old('first_name') }}" required>
                                                                     @if ($errors->has('first_name'))
                                                                         <span id="" class="help-block animation-slideDown">{{ $errors->first('first_name') }}</span>
                                                                     @endif
                                                                 </div>
 
                                                                 <div class="col-md-6 steps-wizard__form--field">
-                                                                    <input type="text" placeholder="Last Name*" name="last_name" value="{{ old('last_name') }}">
+                                                                    <input type="text" placeholder="Last Name*" name="last_name" value="{{ old('last_name') }}" required>
                                                                     @if ($errors->has('last_name'))
                                                                         <span id="" class="help-block animation-slideDown">{{ $errors->first('last_name') }}</span>
                                                                     @endif
                                                                 </div>
 
                                                                 <div class="col-md-6 steps-wizard__form--field">
-                                                                    <input type="text" placeholder="Email Address*" name="email" value="{{ old('email') }}">
+                                                                    <input type="text" placeholder="Email Address*" name="email" value="{{ old('email') }}" required>
                                                                     @if ($errors->has('email'))
                                                                         <span id="" class="help-block animation-slideDown">{{ $errors->first('email') }}</span>
                                                                     @endif
                                                                 </div>
 
                                                                 <div class="col-md-6 steps-wizard__form--field">
-                                                                    <input type="text" placeholder="Confirm Email Address*" name="email_confirmation" value="{{ old('email_confirmation') }}">
+                                                                    <input type="text" placeholder="Confirm Email Address*" name="email_confirmation" value="{{ old('email_confirmation') }}" required>
                                                                 </div>
 
                                                                 
                                                                 <div class="col-md-6 steps-wizard__form--field">
-                                                                    <input type="text" placeholder="Phone Number*" name="phone" value="{{ old('phone') }}">
+                                                                    <input type="text" placeholder="Phone Number*" name="phone" value="{{ old('phone') }}" required>
                                                                     @if ($errors->has('phone'))
                                                                         <span id="" class="help-block animation-slideDown">{{ $errors->first('phone') }}</span>
                                                                     @endif
                                                                 </div>
 
                                                                 <div class="col-md-6 steps-wizard__form--field">
-                                                                    <input type="text" placeholder="Company*" name="company" value="{{ old('company') }}">
+                                                                    <input type="text" placeholder="Company*" name="company" value="{{ old('company') }}" required>
                                                                     @if ($errors->has('company'))
                                                                         <span id="" class="help-block animation-slideDown">{{ $errors->first('company') }}</span>
                                                                     @endif
@@ -199,7 +211,7 @@
                                                                     <div class="selector-option">
                                                                         <label> I am a... </label>
                                                                         <div class="select-box">
-                                                                            <select name="position">
+                                                                            <select name="position" required>
                                                                                 <option>Realtor    </option>
                                                                                 <option>Lender</option>
                                                                                 <option>Other</option>
@@ -240,45 +252,48 @@
                                                                 </div>
 
                                                                 <div class="col-md-12 steps-wizard__form--field">
-                                                                    <input type="text" placeholder="Billing Address*">
+                                                                    <input type="text" placeholder="Billing Address*" name="street_address1" value="{{ old('street_address1') }}" required>
                                                                 </div>
 
                                                                 <div class="col-md-6 steps-wizard__form--field">
-                                                                    <input type="text" placeholder="City*">
+                                                                    <input type="text" placeholder="City*" name="city" value="{{ old('city') }}" required>
                                                                 </div>
 
                                                                 <div class="col-md-6 steps-wizard__form--field">
-                                                                    <input type="text" placeholder="State*">
+                                                                    <input type="text" placeholder="State*" name="state" value="{{ old('state') }}" required>
                                                                 </div>
 
                                                                 <div class="col-md-6 steps-wizard__form--field">
-                                                                    <input type="text" placeholder="Zipcode*">
+                                                                    <input type="text" placeholder="Zipcode*" name="zipcode" value="{{ old('zipcode') }}" required>
                                                                 </div>
 
-                                                                <div class="col-md-6 steps-wizard__form--field flex-middle">
+                                                                <?php /* <div class="col-md-6 steps-wizard__form--field flex-middle">
                                                                     <label class="check-box-label"> 
-                                                                        <input type="checkbox" name="bill">
-                                                                        Billing addres is the same as mailing. 
+                                                                        <input type="checkbox" name="same_as_billing">
+                                                                        Billing address is the same as mailing. 
                                                                     </label>
-                                                                </div>
+                                                                </div> */ ?>
 
                                                                 <div class="col-md-6 steps-wizard__form--field">
-                                                                    <input type="text" placeholder="Email Address*">
+                                                                    <input type="text" placeholder="Country*">
                                                                 </div>
 
-                                                                <div class="col-md-6 steps-wizard__form--field">
+                                                                <?php /* <div class="col-md-6 steps-wizard__form--field">
                                                                     <input type="text" placeholder="Confirm Email Address*">
-                                                                </div>
+                                                                </div> */ ?>
 
                                                                 
                                                                 <div class="col-md-6 steps-wizard__form--field">
-                                                                    <input type="text" placeholder="Phone Number*">
+                                                                    <input type="text" placeholder="Phone Number*" name="phone" value="{{ old('phone') }}">
                                                                 </div>
 
                                                                 <div class="col-md-6 steps-wizard__form--field">
-                                                                    <input type="text" placeholder="Company*">
+                                                                    <input type="text" placeholder="Company*" name="company" value="{{ old('company') }}">
                                                                 </div>
 
+                                                                <div class="col-md-6 steps-wizard__form--field">
+                                                                    <br>
+                                                                </div>
 
                                                                 <div class="col-md-12 steps-wizard__form--field flex-middle">
                                                                     <div class="title-icon">
@@ -288,15 +303,15 @@
                                                                 </div>
 
                                                                 <div class="col-md-6 steps-wizard__form--field">
-                                                                    <input type="text" placeholder="Card Number *">
+                                                                    <input type="text" placeholder="Card Number *" name="card_number" value="4111111111111111" required>
                                                                 </div>
 
                                                                 <div class="col-md-3 steps-wizard__form--field">
-                                                                    <input type="text" placeholder="Exp. Date*">
+                                                                    <input type="text" placeholder="Exp. Date*" name="date_expiry" value="2038-12" required>
                                                                 </div>
 
                                                                 <div class="col-md-3 steps-wizard__form--field">
-                                                                    <input type="text" placeholder="CVS*">
+                                                                    <input type="text" placeholder="CVV*" name="card_cvv" value="123" required>
                                                                 </div>
 
 
