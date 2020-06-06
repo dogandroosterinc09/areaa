@@ -223,6 +223,18 @@
             }
         }
     }
+    &--events-detail {
+        section.events-section .container-max {
+            margin-top: 50px;
+        }
+        .event-details__image {
+            height: 450px;
+            background-position: contain !important;
+            background-size: auto 90% !important;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+    }
 }
 
 .homepage {

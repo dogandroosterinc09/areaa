@@ -225,6 +225,18 @@
                 visibility: visible;
             }
         }
+        .btn--play-modal {
+            display: block;
+            background: $sprite-all;
+            border: 0;
+            width: 77px;
+            height: 78px;
+            // background-position: -457px -321px;
+            background-position: -457px -234px !important;
+            overflow: hidden;
+            text-indent: -999px;
+            outline: none;
+        }
         &:hover {
             button {
                 opacity: 1;

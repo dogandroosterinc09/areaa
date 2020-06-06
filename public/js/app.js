@@ -79166,9 +79166,7 @@ __webpack_require__(/*! ./static/custom/custom-limit-text */ "./resources/assets
 
 __webpack_require__(/*! ./static/custom/custom-loadmore */ "./resources/assets/js/static/custom/custom-loadmore.js");
 
-__webpack_require__(/*! ./static/custom/custom-steps */ "./resources/assets/js/static/custom/custom-steps.js");
-
-__webpack_require__(/*! ./static/custom/custom-htmlvideo */ "./resources/assets/js/static/custom/custom-htmlvideo.js");
+__webpack_require__(/*! ./static/custom/custom-steps */ "./resources/assets/js/static/custom/custom-steps.js"); // require('./static/custom/custom-htmlvideo');
 
 /***/ }),
 
@@ -79192,30 +79190,6 @@ window.cookieconsent.initialise({
   },
   "position": "bottom-right",
   "type": "opt-out"
-});
-
-/***/ }),
-
-/***/ "./resources/assets/js/static/custom/custom-htmlvideo.js":
-/*!***************************************************************!*\
-  !*** ./resources/assets/js/static/custom/custom-htmlvideo.js ***!
-  \***************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-$(document).ready(function () {
-  var ctrlVideo = document.getElementById("video");
-  $('button').click(function () {
-    if ($('button').hasClass("active")) {
-      ctrlVideo.play();
-      $('button').html("Pause");
-      $('button').toggleClass("active");
-    } else {
-      ctrlVideo.pause();
-      $('button').html("play");
-      $('button').toggleClass("active");
-    }
-  });
 });
 
 /***/ }),

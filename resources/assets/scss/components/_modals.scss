@@ -107,3 +107,13 @@
         }
     }
 }
+
+.modal-chapter-popup {
+    &.show {
+        @include flex;
+        @include flex-align-items(center);
+    }
+    .modal-dialog {
+        max-width: 800px;
+    }
+}

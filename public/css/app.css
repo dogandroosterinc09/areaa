@@ -20986,6 +20986,8 @@ ul.bullet-style li h6 {
   display: block;
   height: 100%;
   width: 100%;
+  background-size: auto 85% !important;
+  background-color: #fbf8f8 !important;
 }
 .events-thumbnail__details {
   flex: 0 0 52%;
@@ -21064,8 +21066,9 @@ ul.bullet-style li h6 {
 }
 .event-details__image {
   width: 100%;
-  height: 400px;
-  background-position: top center !important;
+  height: 450px;
+  background-position: center !important;
+  background-size: 100% !important;
 }
 .event-details__image img {
   width: 100%;
@@ -22708,6 +22711,16 @@ section.page--media .search-member-directory {
 .page--dashboard--support section.contact-section {
   margin-top: -15px;
 }
+.page--events-detail section.events-section .container-max {
+  margin-top: 50px;
+}
+.page--events-detail .event-details__image {
+  height: 450px;
+  background-position: contain !important;
+  background-size: auto 90% !important;
+  background-color: #f9f9f9;
+  padding: 20px;
+}
 
 .homepage--main .sponsors {
   background: transparent;
@@ -23437,6 +23450,15 @@ section.page--media .search-member-directory {
   font-weight: bold;
 }
 
+.modal-chapter-popup.show {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center;
+}
+.modal-chapter-popup .modal-dialog {
+  max-width: 800px;
+}
+
 .steps-wizard {
   margin: 50px 0;
   margin-bottom: 100px;
@@ -23881,6 +23903,17 @@ section.page--media .search-member-directory {
   background-position: -456px -235px !important;
   opacity: 1;
   visibility: visible;
+}
+.html-video__button .btn--play-modal {
+  display: block;
+  background: url("../images/sprite.png") no-repeat;
+  border: 0;
+  width: 77px;
+  height: 78px;
+  background-position: -457px -234px !important;
+  overflow: hidden;
+  text-indent: -999px;
+  outline: none;
 }
 .html-video__button:hover button {
   opacity: 1;
