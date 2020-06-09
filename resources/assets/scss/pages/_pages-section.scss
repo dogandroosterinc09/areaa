@@ -235,6 +235,12 @@
             padding: 20px;
         }
     }
+    &--sponsors {
+        section.sponsors.margin-m100 {
+            margin: 0;
+            background: #fff !important;
+        }
+    }
 }
 
 .homepage {
