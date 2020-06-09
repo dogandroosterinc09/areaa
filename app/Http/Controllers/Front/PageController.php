@@ -5,12 +5,14 @@ namespace App\Http\Controllers\Front;
 use App\Models\Page;
 use App\Models\PageType;
 use App\Models\PageSection;
+
 use App\Repositories\PageRepository;
 use App\Http\Controllers\Controller;
 use App\Http\Traits\SystemSettingTrait;
 use App\Repositories\SeoMetaRepository;
 use App\Repositories\HomeSlideRepository;
 
+use DB;
 
 class PageController extends Controller
 {
@@ -164,4 +166,95 @@ class PageController extends Controller
 
         return view('front.pages.custom-pages-index', compact('page', 'seo_meta', 'home_slides'));
     }
+
+
+
+    public function migrateUsers($from, $end) {
+
+        // $chapter = \App\Models\Chapter::where('slug', $slug)->get()->first();
+        $getLiveMembers = DB::table('live_members')
+            // ->where('initial_payment',99)
+            ->whereBetween('membership_id', [$from, $end])
+            // ->take(5)
+            ->get();
+
+        echo "<strong>".count($getLiveMembers)."</strong> members<br>";
+
+        foreach ($getLiveMembers as $member) {
+
+            // Generate temporary password
+            $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            $tempo_password = substr(str_shuffle($chars),0,8);
+
+            $getChapter = \App\Models\Chapter::where('name',$member->membership)->get('id')->first;
+            $chapter = json_decode($getChapter->id, true);
+            $chapter_id = $chapter['id'] > 0? $chapter['id']: 0;
+            echo "> ".$member->membership_id.' | '.$member->membership.' | '.$chapter_id.' | '.$member->email.'<br>';
+
+            $insertUser = \App\Models\User::create([
+                'email' => $member->email,
+                'user_name' => $member->username,
+                'password' => $tempo_password,
+                'first_name' => $member->firstname,
+                'middle_name' => $member->membership_id,
+                'last_name' => $member->lastname,
+                'phone' => $member->phone,
+                'profile_image' => $tempo_password,
+                'chapter_id' => $chapter_id
+            ]);
+
+            // customer role
+            $roles = [3];
+            if (isset($roles)) {
+                foreach ($roles as $role) {
+                    // $role_r = $this->role_model->where('id', '=', $role)->firstOrFail();
+                    // $user->assignRole($role_r);
+                    $role_r = \Spatie\Permission\Models\Role::where('id', '=', $role)->firstOrFail();
+                    $insertUser->assignRole($role_r);
+                }
+            }
+
+            // $insertRole = DB::table('user_has_roles')->insert([
+            //     'role_id' => 3,
+            //     'model_type' => 'App\Models\User',
+            //     'user_id' => $insertUser->id
+            // ]);
+
+            $insertMember = \App\Models\Members::create([
+                'user_id' => $insertUser->id,
+                'bio' => $member->membernotes,
+                'position' => ucfirst($member->iam),
+                'company' => $member->company
+                // 'paypal_id' => $member->paypal_id
+            ]);
+
+            $insertMemberAddress = \App\Models\MemberAddress::create([
+                'user_id' => $insertUser->id,
+                'street_address1' => $member->address1,
+                'street_address2' => $member->address2,
+                'city' => $member->city,
+                'state' => $member->state,
+                'country' => $member->country,
+                'zipcode' => $member->zipcode,
+                'company' => $member->company,
+                'phone' => $member->phone
+            ]);
+
+            // $members = $this->members->create(array_merge($request->all(), [
+            //     'is_active' => $request->has('is_active') ? 1 : 0,
+            //     'slug' => str_slug($request->input('name'))
+            // ]));
+
+        }
+
+        // Get all members
+        //     Insert to users : membership_id, email, username, temporary password (to be sent out), firstname, lastname, phone, chapter_id
+        //     Insert to members : user_id, position (iam), paypal_id, bio (member_notes), created_at (membership_startdate)
+        //     Insert to member_addresses : user_id, street_address, city, state, country, zipcode, company, phone
+
+        die('-- END');
+    }
+
+
+
 }

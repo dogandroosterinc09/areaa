@@ -16,7 +16,7 @@ class MemberAddress extends Model
      * @var array
      */
     protected $fillable = [
-        'member_id',
+        'user_id',
         'street_address1',
         'city',
         'state',

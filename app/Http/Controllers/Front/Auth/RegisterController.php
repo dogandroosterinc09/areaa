@@ -27,7 +27,6 @@ date_default_timezone_set('America/Los_Angeles');
 define("AUTHORIZENET_LOG_FILE", "phplog");
 
 
-
 /**
  * Class RegisterController
  * @package App\Http\Controllers\Auth
@@ -250,6 +249,7 @@ class RegisterController extends Controller
         $state          = $request->state;
         $country        = 'USA';
         $zipcode        = $request->zipcode;
+
 
         // // // Authorize.net 
         // ---------------------------------------------------------------- Authorize.net CHARGE CREDIT CARD
