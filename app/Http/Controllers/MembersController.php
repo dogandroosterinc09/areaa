@@ -215,4 +215,5 @@ class MembersController extends Controller
 
         return response()->json(status()->success('Members successfully deleted.', compact('id')));
     }
+
 }

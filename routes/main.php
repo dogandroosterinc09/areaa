@@ -43,6 +43,9 @@ Route::get('/get-benefit', 'BenefitsController@getBenefit')->name('benefit.get')
 
 Route::get('/media/search','MediaController@searchMedia')->name('media.search');
 
+// Migrate live_members table to users, members and member_addresses
+Route::get('/migrate-users/{from}-{end}', 'PageController@migrateUsers');
+
 //Chapter Routes
 Route::get('/{slug}/about-us', 'ChapterPageController@indexAboutUs');
 Route::get('/{slug}/events', 'ChapterPageController@indexEvents');
