@@ -124,3 +124,7 @@ Route::post('/gallery_upload', 'GalleryController@upload_images');
 
 
 Route::resource('/benefits_categories', 'BenefitsCategoriesController');
+
+// Route::get('/account', 'UserController@editAccount')->name('chapters.account');
+Route::get('/account', 'UserController@editAccount')->name('account.edit');
+Route::post('/account', 'UserController@updateAccount')->name('account.update');

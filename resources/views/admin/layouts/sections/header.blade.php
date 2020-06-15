@@ -22,7 +22,8 @@
                     @endif
                 </a>
                 <ul class="dropdown-menu dropdown-custom dropdown-menu-right">
-                    <li class="dropdown-header text-center">Account</li>
+                    <!-- <li class="dropdown-header text-center">Account</li> -->
+                    <li class="dropdown-header text-center"><a href="{{ url('/admin/account') }}">Account</a></li>
                     <li>
                         <a href="{{ url('/admin/logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                             <i class="fa fa-ban fa-fw pull-right"></i> Logout

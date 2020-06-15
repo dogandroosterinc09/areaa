@@ -573,4 +573,85 @@ class UserController extends Controller
 
         return json_encode($response);
     }
+
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param int $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function editAccount(Request $request) {
+        // if (!auth()->user()->hasPermissionTo('Update User')) {
+        //     abort('401', '401');
+        // }
+
+        $user_id = $request->user()->id;
+        $user = $this->user->findOrFail($user_id);
+
+        // if (!auth()->user()->hasRole('Super Admin')) {
+        //     if ($user->hasRole('Super Admin')) {
+        //         abort('401', '401');
+        //     }
+        // }
+        // $roles = $this->role->get();
+        // return view('admin.modules.user.edit', compact('user', 'roles'));
+
+        return view('admin.modules.account.edit', compact('user'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
+     * @return \Illuminate\Http\RedirectResponse
+     * @throws \Illuminate\Validation\ValidationException
+     */
+    public function updateAccount(Request $request)
+    {
+        // if (!auth()->user()->hasPermissionTo('Update User')) {
+        //     abort('401', '401');
+        // }
+        echo $id = $request->user()->id;
+
+        $user = $this->user->findOrFail($id);
+        // dd($user);
+        // if (!auth()->user()->hasRole('Super Admin')) {
+        //     if ($user->hasRole('Super Admin')) {
+        //         abort('401', '401');
+        //     }
+        // }
+
+        $this->validate($request, [
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'user_name' => 'required|unique:users,user_name,' . $id . ',id,deleted_at,NULL',
+            'email' => 'required|unique:users,email,' . $id . ',id,deleted_at,NULL',
+            'password' => 'required_if:change_password,==,1|min:8|confirmed',
+        ]);
+
+        if ($request->get('change_password') == '1') {
+            $input = $request->only(['first_name', 'last_name', 'user_name', 'email', 'is_active', 'password']);
+        } else {
+            $input = $request->only(['first_name', 'last_name', 'user_name', 'email', 'is_active']);
+        }
+
+        $input['is_active'] = 1;
+        // $input['is_active'] = isset($input['is_active']) ? 1 : 0;
+        // $roles = $request['roles'];
+        $user->fill($input)->save();
+
+        // if (isset($roles)) {
+        //     $user->roles()->sync($roles);
+        // } else {
+        //     $user->roles()->detach();
+        // }
+        return redirect()->route('admin.account.edit')->with('flash_message', [
+            'title' => '',
+            'message' => 'Account successfully updated.',
+            'type' => 'success'
+        ]);
+    }
+
 }
