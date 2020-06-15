@@ -269,6 +269,8 @@
             </div>
             <div class="modal-body">
            
+               <iframe src="https://www.youtube.com/watch?v=LaiWuvIPBgg" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+                <?php /*
                 {{-- @if($chapter_home->who_we_are_featured_video) --}}
                 <video id="video" width="100%" height="100%" poster="{{ asset($chapter_home->who_we_are_video_cover_image) }}" autoplay loop muted controlsList="nodownload" webkitallowfullscreen mozallowfullscreen allowfullscreen>
                     <!-- MP4 for Safari, IE9, iPhone, iPad, Android, and Windows Phone 7 -->
@@ -285,7 +287,8 @@
                         <!-- Image as a last resort -->
                         <img src="{{ url('public/images/video-cover.jpg') }}" width="320" height="240" title="No video playback capabilities" />
                     </object>
-                </video> 
+                </video>
+                */ ?>
 
             </div>
           
