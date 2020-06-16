@@ -261,7 +261,7 @@
                     $('.photo-modal__big-image.image-background img').attr('src', base_url + photos[0]);
 
                     $('.photo-modal__title h3').text(response.title);
-                    $('.photo-modal__description p').text(response.description);
+                    $('.photo-modal__description p').html(response.description);
 
                     var gallery_photos = "";
                     for(var ctr = 0; ctr < photos.length; ctr++) {
