@@ -60,7 +60,10 @@
                                 <div class="events-thumbnail__time">{{ $event->time }}</div>
                                 <div class="events-thumbnail__location"><strong>{{ $event->location_name }}</strong>, {{ $event->locationAddress }}</div>
                                 <div class="events-thumbnail__paragraph">
-                                    {{ $event->description }}
+                                    <?php
+                                    $trimmed = preg_replace("/>.*?</s", "><", $event->description);
+                                    echo $trimmed;
+                                    ?>
                                 </div>
                                 <div class="events-thumbnail__buttons">
                                     <a href="{{ $event->url }}" class="btn btn--secondary"> View Details</a>
