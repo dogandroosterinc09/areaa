@@ -268,7 +268,11 @@
             </div>
             <div class="modal-body">
            
-               <iframe src="{{$chapter_home->who_we_are_featured_video}}?&autoplay=1" width="560" height="315" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+{{--                 
+               <iframe src="{{$chapter_home->who_we_are_featured_video}}?&autoplay=1" width="560" height="315" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> --}}
+
+
+               <iframe src="{{$chapter_home->who_we_are_featured_video}}?rel=0&amp;controls=0&amp;showinfo=0&enablejsapi=1" width="560" height="315" frameborder="0" allowfullscreen></iframe>
                 <?php /*
                 {{-- @if($chapter_home->who_we_are_featured_video) --}}
                 <video id="video" width="100%" height="100%" poster="{{ asset($chapter_home->who_we_are_video_cover_image) }}" autoplay loop muted controlsList="nodownload" webkitallowfullscreen mozallowfullscreen allowfullscreen>
