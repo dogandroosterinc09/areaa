@@ -37,7 +37,7 @@
                     <div class="col-lg-8">
                         <div class="chapter-event-details">
                             <div class="chapter-event-details__image">
-                                <img src="{{ $chapter_event->attachment ? ($chapter_event->attachment)->url : '' }}" alt="chapter Image" class="img-fluid">
+                                <img src="{{ $chapter_event->attachment ? ($chapter_event->attachment)->url : asset('public/images/watermark.jpg') }}" alt="chapter Image" class="img-fluid">
                             </div>
                             <div class="chapter-event-details__description">
                                 <h3>Description</h3>
