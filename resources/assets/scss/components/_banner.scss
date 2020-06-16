@@ -276,6 +276,12 @@ $banner-background-color:#000;
                 }
             }
         }
+        .slick-slide.slick-active {
+            opacity: .7;
+        }
+        .slick-slide.lick-current.slick-active {
+            opacity: 1;
+        }
     }
     .target {
         display: block;
