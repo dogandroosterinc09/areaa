@@ -21725,6 +21725,8 @@ ul.bullet-style li h6 {
 }
 .partnership .container-max {
   max-width: 100%;
+  position: relative;
+  z-index: 2;
 }
 
 .inline-flex {
