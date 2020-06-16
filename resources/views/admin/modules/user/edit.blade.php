@@ -10,7 +10,8 @@
             'method' => 'PUT',
             'id' => 'edit-user',
             'route' => ['admin.users.update', $user->id],
-            'class' => 'form-horizontal '
+            'class' => 'form-horizontal ',
+            'files' => TRUE
             ])
         }}
         <div class="col-md-12">
@@ -66,12 +67,48 @@
                         @endif
                     </div>
                 </div>
+
+                <div class="form-group{{ $errors->has('profile_image') ? ' has-error' : '' }}">
+                    <label class="col-md-3 control-label" for="user_profile_image">Profile Image</label>
+                    <div class="col-md-9">
+                        <div class="input-group">
+                            <label class="input-group-btn">
+                            <span class="btn btn-primary">
+                                Choose File <input type="file" name="profile_image" style="display: none;">
+                            </span>
+                            </label>
+                            <input type="text" class="form-control" readonly>
+                        </div>
+                        @if($errors->has('profile_image'))
+                            <span class="help-block animation-slideDown">{{ $errors->first('profile_image') }}</span>
+                        @endif
+                    </div>
+                    <div class="col-md-offset-3 col-md-9">
+                        <a href="{{ $user->profile_image != '' ? asset($user->profile_image) : '' }}" class="zoom img-thumbnail" style="cursor: default !important;" data-toggle="lightbox-image">
+                            <img src="{{ $user->profile_image != '' ? asset($user->profile_image) : '' }}" alt="" class="img-responsive center-block" style="max-width: 100px;">
+                        </a>
+                        <br>
+                        <a href="javascript:void(0)" class="btn btn-xs btn-danger remove-image-btn" style="display: none;"><i class="fa fa-trash"></i> Remove</a>
+                        <input type="hidden" name="remove_profile_image" class="remove-image" value="0">
+                    </div>
+                </div>
+
                 <div class="form-group">
                     <label class="col-md-3 control-label">Is Active?</label>
 
                     <div class="col-md-9">
                         <label class="switch switch-primary">
                             <input type="checkbox" id="is_active" name="is_active" value="1" {{ Request::old('is_active') ? : ($user->is_active ? 'checked' : '') }}>
+                            <span></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Is Featured?</label>
+
+                    <div class="col-md-9">
+                        <label class="switch switch-primary">
+                            <input type="checkbox" id="is_featured" name="is_featured" value="1" {{ Request::old('is_featured') ? : ($user->is_featured ? 'checked' : '') }}>
                             <span></span>
                         </label>
                     </div>

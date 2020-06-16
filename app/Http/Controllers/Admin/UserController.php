@@ -9,6 +9,8 @@ use Spatie\Permission\Models\Role;
 use App\Http\Controllers\Controller;
 use App\Repositories\UserRepository;
 
+use File;
+
 
 class UserController extends Controller
 {
@@ -110,7 +112,8 @@ class UserController extends Controller
             'email' => 'required|unique:users,email,NULL,id,deleted_at,NULL',
             'password' => 'required|min:8|confirmed',
             // 'chapter_id' => 'unique:users,chapter_id',
-            'roles' => 'required'
+            'roles' => 'required',
+            'profile_image' =>  'mimes:jpg,jpeg,png'
         ], [
             // 'chapter_id.unique' => 'An admin has already been assigned for this chapter.'
         ]
@@ -134,6 +137,11 @@ class UserController extends Controller
                 $role_r = $this->role->where('id', '=', $role)->firstOrFail();
                 $user->assignRole($role_r);
             }
+        }
+
+        if ($request->hasFile('profile_image')) {
+            $file_upload_path = $this->userRepository->uploadFile($request->file('profile_image'));
+            $user->fill(['profile_image' => $file_upload_path])->save();
         }
 
         return redirect()->route('admin.users.index')->with('flash_message', [
@@ -201,6 +209,7 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
+        // dd($request);
         if (!auth()->user()->hasPermissionTo('Update User')) {
             abort('401', '401');
         }
@@ -219,15 +228,17 @@ class UserController extends Controller
             'user_name' => 'required|unique:users,user_name,' . $id . ',id,deleted_at,NULL',
             'email' => 'required|unique:users,email,' . $id . ',id,deleted_at,NULL',
             'password' => 'required_if:change_password,==,1|min:8|confirmed',
+            'profile_image' =>  'mimes:jpg,jpeg,png'
         ]);
 
         if ($request->get('change_password') == '1') {
-            $input = $request->only(['first_name', 'last_name', 'user_name', 'email', 'is_active', 'password']);
+            $input = $request->only(['first_name', 'last_name', 'user_name', 'email', 'is_active', 'is_featured', 'password']);
         } else {
-            $input = $request->only(['first_name', 'last_name', 'user_name', 'email', 'is_active']);
+            $input = $request->only(['first_name', 'last_name', 'user_name', 'email', 'is_active', 'is_featured']);
         }
 
         $input['is_active'] = isset($input['is_active']) ? 1 : 0;
+        $input['is_featured'] = isset($input['is_featured']) ? 1 : 0;
         $roles = $request['roles'];
         $user->fill($input)->save();
 
@@ -236,6 +247,12 @@ class UserController extends Controller
         } else {
             $user->roles()->detach();
         }
+
+        if ($request->hasFile('profile_image')) {
+            $file_upload_path = $this->userRepository->uploadFile($request->file('profile_image'));
+            $user->fill(['profile_image' => $file_upload_path])->save();
+        }
+
         return redirect()->route('admin.users.index')->with('flash_message', [
             'title' => '',
             'message' => 'User successfully updated.',

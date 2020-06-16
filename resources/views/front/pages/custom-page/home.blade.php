@@ -290,7 +290,33 @@
                 <div class="row" data-aos="fade-up">
                     <div class="col-md-12">
                         <div class="feat-members-slider">
+
+                        @php($featureds = \App\Models\User::where('is_featured','=',1)->get())                        
+                        @if ($featureds->isEmpty())
+                            <h3 class="text-danger font-weight-bold text-center w-100 my-5">No Featured Members</h3>
+                        @endif
+                        @foreach($featureds as $featured) 
+                            @if ($featured->chapter_id > 0)
+                                @php($chapter = \App\Models\Chapter::find($featured->chapter_id))
+                                @php($chapter_name = $chapter->name)
+                            @else
+                                @php($chapter_name = 'National')
+                            @endif
                             <div class="feat-members-slider--item">
+                                <a href="#">
+                                    <div class="image-holder image-background">
+                                        <img src="{{ $featured->profile_image ? asset($featured->profile_image) : asset('public/images/no-image.jpg') }}" alt="Member Image">
+                                    </div>
+                                    <div class="desc-txt">
+                                        <div class="name">{{ $featured->first_name.' '.$featured->last_name }}</div>
+                                        <div class="chapter">{{ $chapter_name }}</div>
+                                    </div>
+                                </a>
+                            </div>
+
+                        @endforeach
+
+<!--                             <div class="feat-members-slider--item">
                                 <a href="#">
                                     <div class="image-holder image-background">
                                         <img src="{{ asset('public/images/member-img1.jpg') }}" alt="Member Image">
@@ -355,7 +381,7 @@
                                         <div class="chapter">San Diego Chapter</div>
                                     </div>
                                 </a>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>

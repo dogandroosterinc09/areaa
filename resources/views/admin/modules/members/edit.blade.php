@@ -31,14 +31,25 @@
                 @include('admin.components.input-field', ['label' => 'Area of Specialty', 'value' => $members->area_of_specialty])
 
                 @php($social_media = json_decode($members->social_media) ?? '' )
-
                 
                 @include('admin.components.input-field', ['label' => 'Facebook', 'value' => $social_media->facebook ?? ''])
                 @include('admin.components.input-field', ['label' => 'Twitter', 'value' => $social_media->twitter ?? ''])
                 @include('admin.components.input-field', ['label' => 'Instagram', 'value' => $social_media->instagram ?? ''])
                 
-                
+<!--                 @include('admin.components.attachment', ['label' => 'Profile Image', 'value' => $members->attachment])
 
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Is Featured?</label>
+
+                    <div class="col-md-9">
+                        <label class="switch switch-primary">
+                            <input type="checkbox" id="is_featured" name="is_featured"
+                                   value="1" {{ Request::old('is_featured') ? : ($members->is_featured ? 'checked' : '') }}>
+                            <span></span>
+                        </label>
+                    </div>
+                </div>
+ -->
                 <!-- <div class="form-group">
                     <label class="col-md-3 control-label">Is Active?</label>
 
