@@ -31,7 +31,7 @@
             <div class="container-max">
                 <div class="row">
                     <div class="col-lg-12">
-                        <a href="#" class="btn btn--back">   <i href="#" class="btn btn--third"> </i> Back to National Events </a>
+                        <a href="{{route('chapter_event.main', ['slug'=>$chapter->slug])}}" class="btn btn--back">   <i href="#" class="btn btn--third"> </i> Back to National Events </a>
                     </div>
     
                     <div class="col-lg-8">

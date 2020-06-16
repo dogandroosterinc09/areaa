@@ -48,7 +48,8 @@ Route::get('/migrate-users/{from}-{end}', 'PageController@migrateUsers');
 
 //Chapter Routes
 Route::get('/{slug}/about-us', 'ChapterPageController@indexAboutUs');
-Route::get('/{slug}/events', 'ChapterPageController@indexEvents');
+// Route::get('/{slug}/events', 'ChapterPageController@indexEvents');
+Route::get('/{slug}/events', 'ChapterPageController@indexEvents')->name('chapter_event.main');
 Route::get('/{slug}/leadership-board', 'ChapterPageController@indexLeadershipBoard');
 Route::get('/{slug}/contact-us', 'ChapterPageController@indexContactUs');
 

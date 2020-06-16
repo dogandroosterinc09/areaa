@@ -72,15 +72,29 @@
                                         @endif
                                     </div>
                                     <div class="chapter-events-thumbnail__image">
-                                        <img src="{{ !empty($chapter_event->attachment->url) ? $chapter_event->attachment->url : '' }}" alt="Member Image">
+                                        <a href="{{route('chapter_event.detail', ['slug'=>$chapter->slug,'event_slug'=>$chapter_event->slug])}}" class="btn btn--secondary"><img src="{{ !empty($chapter_event->attachment->url) ? $chapter_event->attachment->url : '' }}" alt="Member Image"></a>
                                     </div>
                                     <div class="chapter-events-thumbnail__details">
-                                        <h5>{{ $chapter_event->name }}</h5>
+                                        <a href="{{route('chapter_event.detail', ['slug'=>$chapter->slug,'event_slug'=>$chapter_event->slug])}}">
+                                            <h5>{{ $chapter_event->name }}</h5>
+                                        </a>
                                         <div class="chapter-events-thumbnail__time">{{ $chapter_event->dateRange }} | {{ $chapter_event->time }}</div>
+
+
+                                        <div class="chapter-events-thumbnail__location"><strong>{{ $chapter_event->location_name }}</strong>, {{ $chapter_event->locationAddress }}</div>
+                                        <div class="chapter-events-thumbnail__paragraph">
+                                            <?php
+                                            $trimmed = preg_replace("/>.*?</s", "><", $chapter_event->description);
+                                            echo $trimmed;
+                                            ?>
+                                        </div>
+                                        <?php /*
                                         <div class="chapter-events-thumbnail__location"><strong>Four Seasons Chicago</strong>, 120 E Delaware Pl, Chicago, CA 60611 United States</div>
                                         <div class="chapter-events-thumbnail__paragraph">
                                             <p> Lorem ipsum dolor sit amet, dolor at ligula faucibus imperdiet libero, phasellus nulla sollicitudin in, libero nec venenatis, luctus pretium imperdiet volutpat sit atque. Porttitor ligula vitae ultrices eleifend, felis suscipit iaculis turpis</p>
                                         </div>
+                                        */ ?>
+
                                         <div class="chapter-events-thumbnail__buttons">
                                             <a href="{{route('chapter_event.detail', ['slug'=>$chapter->slug,'event_slug'=>$chapter_event->slug])}}" class="btn btn--secondary"> View Details</a>
                                         </div>
