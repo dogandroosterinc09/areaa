@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Front;
 use App\Models\Page;
 use App\Models\PageType;
 use App\Models\PageSection;
+use App\Models\Event;
 
 use App\Repositories\PageRepository;
 use App\Http\Controllers\Controller;
@@ -97,11 +98,15 @@ class PageController extends Controller
         $page = $home_slides = [];
 
         if ($slug == '') {
+
             /* home */
             $page = $this->pageRepository->getActivePageBySlug('home');
             $home_slides = $this->homeSlideRepository->getAllActive();
+            // $events = Event::all();
+
             if (empty($page)) {
                 return view('front.pages.home');
+                // return view('front.pages.home', compact('events'));
             } else {
                 $seo_meta = $this->getSeoMeta($page);
             }
@@ -163,8 +168,8 @@ class PageController extends Controller
                 }
             }
         }
-
         return view('front.pages.custom-pages-index', compact('page', 'seo_meta', 'home_slides'));
+        // return view('front.pages.custom-pages-index', compact('page', 'seo_meta', 'home_slides','events'));
     }
 
 
