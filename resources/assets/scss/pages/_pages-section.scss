@@ -8,6 +8,10 @@
     .main-content {
         padding: 80px 0;
     }
+    .banner__thumb-slide {
+        width: 150px !important;
+        // left: 20px;
+    }
     &--homepage {
         .footer__wrapper {
             background: #f8f6f6;
@@ -23,10 +27,6 @@
             position: relative;
             // margin-top: -60px;
             padding-top: 40px;
-        }
-        .banner__thumb-slide {
-            width: 150px !important;
-            // left: 20px;
         }
     }
     .dashboard-nav {

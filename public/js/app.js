@@ -79565,6 +79565,10 @@ $(document).on('click', 'a[href^="#upcoming-envents-owner"]', function (event) {
   $('html, body').animate({
     scrollTop: $($.attr(this, 'href')).offset().top - 300
   }, 500);
+}); // modal video pause on modal
+
+$('.modal').on('hidden.bs.modal', function () {
+  $('.video')[0].pause();
 });
 
 /***/ }),
