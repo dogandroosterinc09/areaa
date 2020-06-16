@@ -255,7 +255,7 @@
 
 
        <!-- Modal -->
-       <div class="modal fade modal-chapter-popup" id="videoModal" tabindex="-1" role="dialog" aria-labelledby=videoModalLabel" aria-hidden="true">
+       <div class="modal fade modal-chapter-popup" id="videoModal" tabindex="-1" role="dialog" aria-labelledby=videoModalLabel" aria-hidden="true" data-modal-window id="modal-youtube">
         <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
