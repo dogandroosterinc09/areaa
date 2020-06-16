@@ -20675,6 +20675,7 @@ ul.bullet-style li h6 {
   border-radius: 100%;
   margin: auto;
   transition: all 0.3s ease;
+  background-position: top center !important;
 }
 .board-thumbnail__image:hover {
   transform: scale(0.9, 0.9);
@@ -22577,6 +22578,10 @@ section.page--media .search-member-directory {
   position: relative;
   padding-top: 40px;
 }
+.page-chapter--homepage .banner__thumb-slide {
+  width: 150px;
+  left: 20px;
+}
 .page-chapter .dashboard-nav {
   margin-bottom: 50px;
   margin-top: -20px;
@@ -22722,8 +22727,8 @@ section.page--media .search-member-directory {
 }
 .page--events-detail .event-details__image {
   height: 450px;
-  background-position: contain !important;
-  background-size: auto 90% !important;
+  background-size: 100% !important;
+  background-position: center !important;
   background-color: #f9f9f9;
   padding: 20px;
 }
@@ -23397,12 +23402,17 @@ section.page--media .search-member-directory {
 .photo-modal__gallery {
   display: flex !important;
   flex-wrap: wrap !important;
+  flex-wrap: inherit;
 }
 .photo-modal__gallery--item {
   width: calc(100%/2);
   display: block;
-  height: 100px;
   cursor: pointer;
+  height: 120px;
+  min-height: inherit;
+  width: 120px;
+  background-size: cover !important;
+  background-position: center !important;
 }
 .photo-modal__big-image {
   height: 550px;

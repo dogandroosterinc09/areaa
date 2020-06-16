@@ -24,6 +24,10 @@
             // margin-top: -60px;
             padding-top: 40px;
         }
+        .banner__thumb-slide {
+            width: 150px;
+            left: 20px;
+        }
     }
     .dashboard-nav {
         margin-bottom: 50px;
@@ -229,8 +233,10 @@
         }
         .event-details__image {
             height: 450px;
-            background-position: contain !important;
-            background-size: auto 90% !important;
+            // background-position: contain !important;
+            // background-size: auto 90% !important;
+            background-size: 100% !important;
+            background-position: center !important;
             background-color: #f9f9f9;
             padding: 20px;
         }

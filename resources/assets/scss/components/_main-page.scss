@@ -1082,6 +1082,7 @@ ul.bullet-style {
         border-radius: 100%;
         margin: auto;
         @include transition(.3s);
+        background-position: top center !important;
         &:hover {
             @include transform_scale(.9,
             .9);
