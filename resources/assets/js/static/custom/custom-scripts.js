@@ -283,64 +283,12 @@ $(document).on('click', 'a[href^="#upcoming-envents-owner"]', function(event) {
 
 
 
+
+
 $(document).ready(function() {
-
-    /**
-     * Autoplay a YouTube, Vimeo, or HTML5 video
-     * @param  {Node} modal  The modal to search inside
-     */
-    var autoplayVideo = function(modal) {
-
-        // Look for a YouTube, Vimeo, or HTML5 video in the modal
-        var video = modal.querySelector('iframe[src*="www.youtube.com"], iframe[src*="player.vimeo.com"], video');
-
-        // Bail if the modal doesn't have a video
-        if (!video) return;
-
-        // If an HTML5 video, play it
-        if (video.tagName.toLowerCase() === 'video') {
-            video.play();
-            return;
-        }
-
-        // Add autoplay to video src
-        // video.src: the current video `src` attribute
-        // (video.src.indexOf('?') < 0 ? '?' : '&'): if the video.src already has query string parameters, add an "&". Otherwise, add a "?".
-        // 'autoplay=1': add the autoplay parameter
-        video.src = video.src + (video.src.indexOf('?') < 0 ? '?' : '&') + 'autoplay=1';
-
-    };
-
-    /**
-     * Stop a YouTube, Vimeo, or HTML5 video
-     * @param  {Node} modal  The modal to search inside
-     */
-    var stopVideo = function(modal) {
-
-        // Look for a YouTube, Vimeo, or HTML5 video in the modal
-        var video = modal.querySelector('iframe[src*="www.youtube.com"], iframe[src*="player.vimeo.com"], video');
-
-        // Bail if the modal doesn't have a video
-        if (!video) return;
-
-        // If an HTML5 video, pause it
-        if (video.tagName.toLowerCase() === 'video') {
-            video.pause();
-            return;
-        }
-
-        // Remove autoplay from video src
-        video.src = video.src.replace('&autoplay=1', '').replace('?autoplay=1', '');
-
-    };
-
-    modals.init({
-        callbackOpen: function(toggle, modal) {
-            autoplayVideo(modal);
-        },
-        callbackClose: function(toggle, modal) {
-            stopVideo(modal);
-        }
+    $('#videoModal').modal({
+        show: false
+    }).on('hidden.bs.modal', function() {
+        $(this).find('video')[0].pause();
     });
-
 });
