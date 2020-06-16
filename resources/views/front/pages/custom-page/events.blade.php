@@ -54,7 +54,7 @@
                                 </a>
                             </div>
                             <div class="events-thumbnail__details">
-                                <a href="{{url('events-detail')}}">
+                                <a href="{{url('events-url')}}">
                                         <h5>{{ $event->name }}</h5>
                                 </a>
                                 <div class="events-thumbnail__time">{{ $event->time }}</div>
