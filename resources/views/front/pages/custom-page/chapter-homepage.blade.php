@@ -73,7 +73,7 @@
 
                         <div class="html-video__button">
                             {{-- <button class="active">play</button> --}}
-                            <a href="#" class="btn btn--play-modal" data-toggle="modal" data-target="#videoModal">play</a>
+                            <a href="#" id="play-modal" class="btn btn--play-modal" data-toggle="modal" data-target="#videoModal">play</a>
                         </div>
 
                         
