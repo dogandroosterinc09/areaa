@@ -27,7 +27,7 @@
                             <div class="img-holder image-background">
                                 <img src="{{ $event->attachment ? optional($event->attachment)->url : asset('public/images/watermark.jpg') }}" alt="Events Image">
                             </div>
-                            <div class="title">{{ $event->name }}<span><i></i></span></div>
+                            <div class="title">{{ (strlen($event->name)>27)? substr($event->name, 0,27).' ...' : $event->name }}<span><i></i></span></div>
                         </a>
                     </div>
                 @endforeach
