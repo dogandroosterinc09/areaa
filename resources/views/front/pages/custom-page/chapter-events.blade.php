@@ -72,7 +72,7 @@
                                         @endif
                                     </div>
                                     <div class="chapter-events-thumbnail__image">
-                                        <a href="{{route('chapter_event.detail', ['slug'=>$chapter->slug,'event_slug'=>$chapter_event->slug])}}" class="image-background"><img src="{{ !empty($chapter_event->attachment->url) ? $chapter_event->attachment->url : '' }}" alt="Member Image"></a>
+                                        <a href="{{route('chapter_event.detail', ['slug'=>$chapter->slug,'event_slug'=>$chapter_event->slug])}}" class="image-background"><img src="{{ !empty($chapter_event->attachment->url) ? $chapter_event->attachment->url : asset('public/images/watermark.jpg') }}" alt="Member Image"></a>
                                     </div>
                                     <div class="chapter-events-thumbnail__details">
                                         <a href="{{route('chapter_event.detail', ['slug'=>$chapter->slug,'event_slug'=>$chapter_event->slug])}}">

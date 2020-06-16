@@ -50,7 +50,8 @@
                             </div>
                             <div class="events-thumbnail__image">
                                 <a href="{{ $event->url }}" class="image-background">
-                                    <img src="{{ $event->attachment ? optional($event->attachment)->url : asset('public/images/no-image.jpg') }}" alt="Member Image">
+                                    <img src="{{ $event->attachment ? optional($event->attachment)->url : asset('public/images/watermark.jpg') }}" alt="Member Image">
+                                    <!-- <img src="{{ $event->attachment ? optional($event->attachment)->url : asset('public/images/no-image.jpg') }}" alt="Member Image"> -->
                                 </a>
                             </div>
                             <div class="events-thumbnail__details">
