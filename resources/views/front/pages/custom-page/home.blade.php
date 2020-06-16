@@ -16,7 +16,23 @@
                 </div>
             </div>
             <div class="events-camp-slider">
-                <div class="events-camp-slider--item">
+
+                @php($events = \App\Models\Event::all())                        
+                @if ($events->isEmpty())
+                    <h3 class="text-danger font-weight-bold text-center w-100 my-5">No Events.</h3>
+                @endif
+                @foreach($events as $event) 
+                    <div class="events-camp-slider--item">
+                        <a href="{{ $event->url }}">
+                            <div class="img-holder image-background">
+                                <img src="{{ $event->attachment ? optional($event->attachment)->url : asset('public/images/watermark.jpg') }}" alt="Events Image">
+                            </div>
+                            <div class="title">{{ (strlen($event->name)>27)? substr($event->name, 0,27).' ...' : $event->name }}<span><i></i></span></div>
+                        </a>
+                    </div>
+                @endforeach
+
+<!--                 <div class="events-camp-slider--item">
                     <a href="#">
                         <div class="img-holder image-background">
                             <img src="{{ asset('public/images/events-img1.jpg') }}" alt="Events Image">
@@ -55,7 +71,7 @@
                         </div>
                         <div class="title">Leadership Summit <span><i></i></span></div>
                     </a>
-                </div>
+                </div> -->
             </div>
         </section>
         {{-- End of Events Camp --}}
