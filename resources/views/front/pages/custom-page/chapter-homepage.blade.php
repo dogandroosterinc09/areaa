@@ -266,11 +266,10 @@
                 <span aria-hidden="true">&times;</span>
             </button> --}}
 
-            <button data-modal-close>
+            <button data-modal-close data-dismiss="modal">
                 <span aria-hidden="true">&times;</span>
             </button>
 
-            data-modal-close
             </div>
             <div class="modal-body">
            
