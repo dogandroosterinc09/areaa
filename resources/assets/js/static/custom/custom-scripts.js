@@ -258,19 +258,3 @@ $(document).on('click', 'a[href^="#upcoming-envents-owner"]', function(event) {
 $('.modal').on('hidden.bs.modal', function() {
     $('.video')[0].pause();
 });
-
-function playStopVideo() {
-    var youtubeFunc = '';
-    var outerDiv = $("#videoModal");
-    var youtubeIframe = outerDiv.find("iframe")[0].contentWindow;
-    outerDiv.on('hidden.bs.modal', function(e) {
-        youtubeFunc = 'stopVideo';
-        youtubeIframe.postMessage('{"event":"command","func":"' + youtubeFunc + '","args":""}', '*');
-    });
-    outerDiv.on('shown.bs.modal', function(e) {
-        youtubeFunc = 'playVideo';
-        youtubeIframe.postMessage('{"event":"command","func":"' + youtubeFunc + '","args":""}', '*');
-    });
-}
-
-playStopVideo();
