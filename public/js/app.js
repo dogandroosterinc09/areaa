@@ -79631,7 +79631,7 @@ $('.banner__thumb-slide').slick({
   vertical: true,
   slidesToShow: 3,
   slidesToScroll: 1,
-  verticalSwiping: true,
+  verticalSwiping: false,
   asNavFor: '.banner__image-slide',
   dots: false,
   focusOnSelect: true
