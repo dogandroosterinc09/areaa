@@ -79593,6 +79593,22 @@ $(document).ready(function () {
     $(this).find('video')[0].pause();
   });
 });
+$(document).ready(function () {
+  $('#videoModal').on('hidden.bs.modal', function () {
+    var $this = $(this).find('iframe'),
+        tempSrc = $this.attr('src');
+    $this.attr('src', "");
+    $this.attr('src', tempSrc);
+  });
+});
+$('#videoModal').on('hidden.bs.modal', function () {
+  var html5Video = document.getElementById("htmlVideo");
+
+  if (html5Video != null) {
+    html5Video.pause();
+    html5Video.currentTime = 0;
+  }
+});
 
 /***/ }),
 

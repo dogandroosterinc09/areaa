@@ -255,27 +255,29 @@
 
 
        <!-- Modal -->
-       <div class="modal fade modal-chapter-popup" data-modal-window id="videoModal" tabindex="-1" role="dialog" aria-labelledby=videoModalLabel" aria-hidden="true">
+       <div class="modal fade modal-chapter-popup" id="videoModal" tabindex="-1" role="dialog" aria-labelledby=videoModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
             <h5 class="modal-title" id="videoModalLabel">
                {{ $chapter_home->who_we_are_title }}
             </h5>
-            {{-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button> --}}
 
-            <button data-modal-close data-dismiss="modal">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
+
+            {{-- <button data-modal-close data-dismiss="modal">
+                <span aria-hidden="true">&times;</span>
+            </button> --}}
 
             </div>
             <div class="modal-body">
            
                
-               <iframe src="{{$chapter_home->who_we_are_featured_video}}?&autoplay=1" width="560" height="315" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+               {{-- <iframe src="{{$chapter_home->who_we_are_featured_video}}?&autoplay=1" width="560" height="315" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> --}}
 
+               <iframe src="{{$chapter_home->who_we_are_featured_video}}" width="560" height="315" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
                {{-- <iframe src="{{$chapter_home->who_we_are_featured_video}}?rel=0&amp;controls=0&amp;showinfo=0&enablejsapi=1" width="560" height="315" frameborder="0" allowfullscreen></iframe> --}}
                 <?php /*
