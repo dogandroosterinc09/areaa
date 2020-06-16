@@ -22579,8 +22579,7 @@ section.page--media .search-member-directory {
   padding-top: 40px;
 }
 .page-chapter--homepage .banner__thumb-slide {
-  width: 150px;
-  left: 20px;
+  width: 150px !important;
 }
 .page-chapter .dashboard-nav {
   margin-bottom: 50px;
