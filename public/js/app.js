@@ -79568,10 +79568,9 @@ $(document).on('click', 'a[href^="#upcoming-envents-owner"]', function (event) {
 });
 $(document).ready(function () {
   // modal video pause on modal
-  $('.modal').on('hidden.bs.modal', function () {
-    $('.video')[0].pause();
-  });
-
+  // $('.modal').on('hidden.bs.modal', function() {
+  //     $('.video')[0].pause();
+  // });
   function playStopVideo() {
     var youtubeFunc = '';
     var outerDiv = $("#videoModal");
