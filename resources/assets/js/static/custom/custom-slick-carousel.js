@@ -16,7 +16,7 @@ $('.banner__image-slide').slick({
     slidesToScroll: 1,
     arrows: false,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 6000,
     fade: true,
     asNavFor: '.banner__thumb-slide'
 });
