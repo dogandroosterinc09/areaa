@@ -255,16 +255,22 @@
 
 
        <!-- Modal -->
-       <div class="modal fade modal-chapter-popup" id="videoModal" tabindex="-1" role="dialog" aria-labelledby=videoModalLabel" aria-hidden="true" data-modal-window>
+       <div class="modal fade modal-chapter-popup" data-modal-window id="videoModal" tabindex="-1" role="dialog" aria-labelledby=videoModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
             <h5 class="modal-title" id="videoModalLabel">
                {{ $chapter_home->who_we_are_title }}
             </h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-modal-close>
+            {{-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button> --}}
+
+            <button data-modal-close>
                 <span aria-hidden="true">&times;</span>
             </button>
+
+            data-modal-close
             </div>
             <div class="modal-body">
            
