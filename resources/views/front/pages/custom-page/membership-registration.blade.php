@@ -1,4 +1,11 @@
 <section class="page page--membership-registration">
+<style>
+a.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: default;
+}
+</style>
     @include('front.layouts.sections.header')
     {{-- @include('front.pages.custom-page.sections.banner') --}}
 
@@ -91,7 +98,7 @@
                                                 </div>
                                             </div>
 
-                                       
+                                            <!-- Added by Richard : Validation -->
 
                                             <div class="tab-content steps-wizard__content">
                                                 <div class="tab-pane steps-wizard__items steps-wizard__items--one active" id="tab1">
@@ -105,7 +112,7 @@
                                                                     <div class="steps-wizard__box">
                                                                         <label>Select Your Chapter <span>*</span> </label>
                                                                         <div class="select-box">
-                                                                            <select name="chapter_id" required>
+                                                                            <select name="chapter_id" id="chapter_id" required>
                                                                                 <option value="0"><b>National</b> $49.50 now & then $99.00 per Year starting July 1, 2020.</option>
 
                                                                                 @foreach(\App\Models\Chapter::all() as $chapter)
@@ -150,58 +157,61 @@
                                                                 </div>
                                                                 
                                                                 <div class="col-md-12 steps-wizard__form--field">
-                                                                    <input type="text" placeholder="username*" name="user_name" value="{{ old('user_name') }}" required>
+                                                                    <input type="text" placeholder="username*" class="account-info-field" name="user_name" value="{{ old('user_name') }}" id="frm-user_name" required>
                                                                     @if ($errors->has('user_name'))
                                                                         <span id="" class="help-block animation-slideDown">{{ $errors->first('user_name') }}</span>
                                                                     @endif
+
                                                                 </div>
 
                                                                 <div class="col-md-6 steps-wizard__form--field">
-                                                                    <input type="password" placeholder="Password*" name="password" value="{{ old('password') }}" required>
+                                                                    <input type="password" placeholder="Password*" class="account-info-field" name="password" value="{{ old('password') }}" id="frm-password" required>
                                                                     @if ($errors->has('password'))
                                                                         <span id="" class="help-block animation-slideDown">{{ $errors->first('password') }}</span>
                                                                     @endif
+                                                                    <span id="passwordSpan" class="help-block"></span>
                                                                 </div>
 
                                                                 <div class="col-md-6 steps-wizard__form--field">
-                                                                    <input type="password" placeholder="Confirm Password*" name="password_confirmation" value="{{ old('password_confirmation') }}" required>                                                                    
+                                                                    <input type="password" placeholder="Confirm Password*" class="account-info-field" name="password_confirmation" value="{{ old('password_confirmation') }}" id="frm-password_confirmation" required>                                                                    
                                                                 </div>
 
                                                                 <div class="col-md-6 steps-wizard__form--field">
-                                                                    <input type="text" placeholder="First Name*" name="first_name" value="{{ old('first_name') }}" required>
+                                                                    <input type="text" placeholder="First Name*" class="account-info-field" name="first_name" value="{{ old('first_name') }}" id="frm-first_name" required>
                                                                     @if ($errors->has('first_name'))
                                                                         <span id="" class="help-block animation-slideDown">{{ $errors->first('first_name') }}</span>
                                                                     @endif
                                                                 </div>
 
                                                                 <div class="col-md-6 steps-wizard__form--field">
-                                                                    <input type="text" placeholder="Last Name*" name="last_name" value="{{ old('last_name') }}" required>
+                                                                    <input type="text" placeholder="Last Name*" class="account-info-field" name="last_name" value="{{ old('last_name') }}" id="frm-last_name" required>
                                                                     @if ($errors->has('last_name'))
                                                                         <span id="" class="help-block animation-slideDown">{{ $errors->first('last_name') }}</span>
                                                                     @endif
                                                                 </div>
 
                                                                 <div class="col-md-6 steps-wizard__form--field">
-                                                                    <input type="text" placeholder="Email Address*" name="email" value="{{ old('email') }}" required>
+                                                                    <input type="text" placeholder="Email Address*" class="account-info-field" name="email" value="{{ old('email') }}" id="frm-email" required>
                                                                     @if ($errors->has('email'))
                                                                         <span id="" class="help-block animation-slideDown">{{ $errors->first('email') }}</span>
                                                                     @endif
+                                                                    <span id="emailAddressSpan" class="help-block"></span>
                                                                 </div>
 
                                                                 <div class="col-md-6 steps-wizard__form--field">
-                                                                    <input type="text" placeholder="Confirm Email Address*" name="email_confirmation" value="{{ old('email_confirmation') }}" required>
+                                                                    <input type="text" placeholder="Confirm Email Address*" class="account-info-field" name="email_confirmation" value="{{ old('email_confirmation') }}" id="frm-email_confirmation" required>
                                                                 </div>
 
                                                                 
                                                                 <div class="col-md-6 steps-wizard__form--field">
-                                                                    <input type="text" placeholder="Phone Number*" name="phone" value="{{ old('phone') }}" required>
+                                                                    <input type="text" placeholder="Phone Number*" class="account-info-field" name="phone" value="{{ old('phone') }}" id="frm-phone" required>
                                                                     @if ($errors->has('phone'))
                                                                         <span id="" class="help-block animation-slideDown">{{ $errors->first('phone') }}</span>
                                                                     @endif
                                                                 </div>
 
                                                                 <div class="col-md-6 steps-wizard__form--field">
-                                                                    <input type="text" placeholder="Company*" name="company" value="{{ old('company') }}" required>
+                                                                    <input type="text" placeholder="Company*" class="account-info-field" name="company" value="{{ old('company') }}" id="frm-company" required>
                                                                     @if ($errors->has('company'))
                                                                         <span id="" class="help-block animation-slideDown">{{ $errors->first('company') }}</span>
                                                                     @endif
@@ -211,7 +221,7 @@
                                                                     <div class="selector-option">
                                                                         <label> I am a... </label>
                                                                         <div class="select-box">
-                                                                            <select name="position" required>
+                                                                            <select name="position" id="frm-position" required>
                                                                                 <option>Realtor    </option>
                                                                                 <option>Lender</option>
                                                                                 <option>Other</option>
@@ -252,19 +262,19 @@
                                                                 </div>
 
                                                                 <div class="col-md-12 steps-wizard__form--field">
-                                                                    <input type="text" placeholder="Billing Address*" name="street_address1" value="{{ old('street_address1') }}" required>
+                                                                    <input type="text" placeholder="Billing Address*" class="billing-info-field" id="frm-street_address1" name="street_address1" value="{{ old('street_address1') }}" required>
                                                                 </div>
 
                                                                 <div class="col-md-6 steps-wizard__form--field">
-                                                                    <input type="text" placeholder="City*" name="city" value="{{ old('city') }}" required>
+                                                                    <input type="text" placeholder="City*" name="city" class="billing-info-field" id="frm-city" value="{{ old('city') }}" required>
                                                                 </div>
 
                                                                 <div class="col-md-6 steps-wizard__form--field">
-                                                                    <input type="text" placeholder="State*" name="state" value="{{ old('state') }}" required>
+                                                                    <input type="text" placeholder="State*" name="state" class="billing-info-field" id="frm-state" value="{{ old('state') }}" required>
                                                                 </div>
 
                                                                 <div class="col-md-6 steps-wizard__form--field">
-                                                                    <input type="text" placeholder="Zipcode*" name="zipcode" value="{{ old('zipcode') }}" required>
+                                                                    <input type="text" placeholder="Zipcode*" name="zipcode" class="billing-info-field" id="frm-zipcode" value="{{ old('zipcode') }}" required>
                                                                 </div>
 
                                                                 <?php /* <div class="col-md-6 steps-wizard__form--field flex-middle">
@@ -275,7 +285,7 @@
                                                                 </div> */ ?>
 
                                                                 <div class="col-md-6 steps-wizard__form--field">
-                                                                    <input type="text" placeholder="Country*">
+                                                                    <input type="text" placeholder="Country*" class="billing-info-field" id="frm-country-bil">
                                                                 </div>
 
                                                                 <?php /* <div class="col-md-6 steps-wizard__form--field">
@@ -284,11 +294,11 @@
 
                                                                 
                                                                 <div class="col-md-6 steps-wizard__form--field">
-                                                                    <input type="text" placeholder="Phone Number*" name="phone" value="{{ old('phone') }}">
+                                                                    <input type="text" placeholder="Phone Number*" class="billing-info-field" id="frm-phone-bil" name="phone" value="{{ old('phone') }}">
                                                                 </div>
 
                                                                 <div class="col-md-6 steps-wizard__form--field">
-                                                                    <input type="text" placeholder="Company*" name="company" value="{{ old('company') }}">
+                                                                    <input type="text" placeholder="Company*" class="billing-info-field" id="frm-company-bil" name="company" value="{{ old('company') }}">
                                                                 </div>
 
                                                                 <div class="col-md-6 steps-wizard__form--field">
@@ -303,21 +313,21 @@
                                                                 </div>
 
                                                                 <div class="col-md-6 steps-wizard__form--field">
-                                                                    <input type="text" placeholder="Card Number *" name="card_number" value="4111111111111111" required>
+                                                                    <input type="text" placeholder="Card Number *" class="billing-info-field" id="frm-card" name="card_number" value="4111111111111111" required>
                                                                 </div>
 
                                                                 <div class="col-md-3 steps-wizard__form--field">
-                                                                    <input type="text" placeholder="Exp. Date*" name="date_expiry" value="2038-12" required>
+                                                                    <input type="text" placeholder="Exp. Date*" class="billing-info-field" id="frm-expiry" name="date_expiry" value="2038-12" required>
                                                                 </div>
 
                                                                 <div class="col-md-3 steps-wizard__form--field">
-                                                                    <input type="text" placeholder="CVV*" name="card_cvv" value="123" required>
+                                                                    <input type="text" placeholder="CVV*" class="billing-info-field" id="frm-cvv" name="card_cvv" value="123" required>
                                                                 </div>
 
 
                                                                 <div class="col-md-12 steps-wizard__form--field">
                                                                     <label class="check-box-label"> 
-                                                                        <input type="checkbox" name="terms">
+                                                                        <input type="checkbox" class="billing-info-field" id="frm-term" name="terms">
                                                                         I Agree to the <a href="#"> Terms & Conditions</a>
                                                                     </label>
                                                                 </div>  
@@ -335,7 +345,7 @@
 
                                                             <div class="col-md-6 text-right">
                                                                 <!-- <a href="#tab3" data-toggle="tab" class="btn btn--next">Submit</a> -->                                                                
-                                                                <button type="submit" class="btn btn--next">Submit</button>
+                                                                <button type="submit" id="btnSubmit" class="btn btn--next">Submit</button>
                                                                 
                                                             </div>
                                                         </div>
@@ -347,7 +357,7 @@
                                                 </div>
                                             </div>
 
-                                         
+                                            <!-- End of Validation -->
 
                                         </div>
 
@@ -367,4 +377,88 @@
 
     </main>
     @include('front.layouts.sections.footer')
+
+    <script type="text/javascript" src="{{ asset('public/js/libraries/jquery-1.9.1.js') }}"></script>        
+    <script>
+        $( document ).ready(function() {
+
+            $( '#steps-wizard-three' ).unbind( 'click' );
+            $( '#steps-wizard-three' ).addClass( 'disabled' );
+
+            $( '#btnSubmit' ).attr('disabled',true);
+
+            $( '.account-info-field' ).change(function() {
+
+                var userName = $('#frm-user_name').val();
+                var password = $('#frm-password').val();
+                var passwordConfirm = $('#frm-password_confirmation').val();
+                var firstName = $('#frm-first_name').val();
+                var lastName = $('#frm-last_name').val();
+                var email = $('#frm-email').val();
+                var emailConfirm = $('#frm-email_confirmation').val();
+                var phone = $('#frm-phone').val();
+                var company = $('#frm-company').val();
+                var position = $('#frm-position').val();
+                
+                if ( userName && password && passwordConfirm && firstName && lastName && email && emailConfirm && phone && company && position) {
+
+                    if ( password != passwordConfirm) {
+                        $( '#passwordSpan' ).addClass( 'animation-slideDown' );
+                        $( '#passwordSpan' ).html( 'Password not matched!' );
+                        $( '#passwordSpan' ).css( 'color' , '#ab1a2d' );
+                        $( '#steps-wizard-three' ).unbind( 'click' );
+                        $( '#steps-wizard-three' ).addClass( 'disabled' );
+
+                    } else if ( email != emailConfirm) {
+                        $( '#passwordSpan' ).html('');
+                        $( '#emailAddressSpan' ).addClass( 'animation-slideDown' );
+                        $( '#emailAddressSpan' ).html( 'Email address not matched!' );
+                        $( '#emailAddressSpan' ).css( 'color' , '#ab1a2d' );
+
+                        $( '#steps-wizard-three' ).unbind( 'click' );
+                        $( '#steps-wizard-three' ).addClass( 'disabled' );
+
+                    } else {
+                        
+                            $( '#emailAddressSpan' ).html('');
+                            $( '#passwordSpan' ).html('');
+                            $( '#steps-wizard-three' ).bind( 'click' );
+                            $( '#steps-wizard-three' ).removeClass( 'disabled' );
+                        
+                    }
+                    
+                }  else {
+                    $( '#steps-wizard-three' ).unbind( 'click' );
+                    $( '#steps-wizard-three' ).addClass( 'disabled' );
+                }
+
+            });
+
+
+            $( '.billing-info-field' ).change(function() {
+                var strt = $('#frm-street_address1').val();
+                var city = $('#frm-city').val();
+                var state = $('#frm-state').val();
+                var zipCode = $('#frm-zipcode').val();
+                var countryBil = $('#frm-country-bil').val();
+                var phoneBil = $('#frm-phone-bil').val();
+                var companyBil = $('#frm-company-bil').val();
+                var card = $('#frm-card').val();
+                var expiry = $('#frm-expiry').val();
+                var cvv = $('#frm-cvv').val();
+                
+                if ( strt && city && state && zipCode && countryBil && phoneBil && companyBil && card && expiry && cvv) {
+                    if ( $('#frm-term').is(":checked") == true ) {
+                        $( '#btnSubmit' ).attr('disabled',false);
+                    } else {
+                        $( '#btnSubmit' ).attr('disabled',true);
+                    }
+                    
+                } else {
+                    $( '#btnSubmit' ).attr('disabled',true);
+                }
+
+            });
+        });
+    </script>
 </section>
