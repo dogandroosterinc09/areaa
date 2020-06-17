@@ -39,7 +39,10 @@
                                             <h5>{{ $chapter_event->dateRange }} | {{ $chapter_event->time }}</h5>
                                             <div class="chapter-events-upcoming__description limit-me">
                                             <p>
-                                            {{ $chapter_event->description }}
+                                            <?php
+                                            $trimmed = preg_replace("/>.*?</s", "><", $chapter_event->description);
+                                            echo $trimmed;
+                                            ?>
                                             </p>                                             
                                             </div>
                                              <a href="{{url($chapter['slug'].'/events')}}" class="btn btn--primary"> Read More Details <i class="fas fa-arrow-right"></i> </a>
