@@ -40,8 +40,10 @@
     }
     &__gallery {
         @include flex;
+        height: 100vh;
+        overflow-y: scroll;
         &--item {
-            width: calc(100%/2);
+            width: calc(100%/2) !important;
             display: block;
             height: 100px;
             cursor: pointer;
