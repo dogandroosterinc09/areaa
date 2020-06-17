@@ -79600,20 +79600,6 @@ $(document).ready(function () {
     $this.attr('src', "");
     $this.attr('src', tempSrc);
   });
-  var stopButton = document.getElementById('play-modal');
-
-  stopButton.onclick = function () {
-    var myPlayer = document.getElementById("videoModal");
-    myPlayer.setAttribute("src", " ");
-  };
-});
-$('#videoModal').on('hidden.bs.modal', function () {
-  var html5Video = document.getElementById("htmlVideo");
-
-  if (html5Video != null) {
-    html5Video.pause();
-    html5Video.currentTime = 0;
-  }
 });
 
 /***/ }),
