@@ -263,7 +263,7 @@
                {{ $chapter_home->who_we_are_title }}
             </h5>
 
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="document.getElementById('video').pause();>
                 <span aria-hidden="true">&times;</span>
             </button>
 
