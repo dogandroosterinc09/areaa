@@ -67,6 +67,9 @@
                             <label class="col-md-2 control-label" for="who_we_are_featured_video">Featured Video</label>
                             <div class="col-md-10">
                                 <input type="text" class="form-control" name="who_we_are_featured_video" value="{{ $chapter_home->who_we_are_featured_video }}">
+                                <small>&nbsp; &nbsp;Example if youtube: https://www.youtube.com/embed/LaiWuvIPBgg<br>
+                                       &nbsp; &nbsp;Example if uploaded: public/uploads/q1ZqlonyJvk5xRqL-1587972946.mp4
+                                </small><br>
                                 <!-- <div class="input-group">
                                     <label class="input-group-btn">
                                     <span class="btn btn-primary">
