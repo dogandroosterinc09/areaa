@@ -52,7 +52,7 @@ a.disabled {
 
                             {{  Form::open([
                                 'method' => 'POST',
-                                'id' => '',
+                                'id' => 'regForm',
                                 'route' => ['membership-registration.post'],
                                 'class' => ''
                                 ])
@@ -208,6 +208,7 @@ a.disabled {
                                                                     @if ($errors->has('phone'))
                                                                         <span id="" class="help-block animation-slideDown">{{ $errors->first('phone') }}</span>
                                                                     @endif
+                                                                    <span id="phoneSpan" class="help-block"></span>
                                                                 </div>
 
                                                                 <div class="col-md-6 steps-wizard__form--field">
@@ -345,7 +346,7 @@ a.disabled {
 
                                                             <div class="col-md-6 text-right">
                                                                 <!-- <a href="#tab3" data-toggle="tab" class="btn btn--next">Submit</a> -->                                                                
-                                                                <button type="submit" id="btnSubmit" class="btn btn--next">Submit</button>
+                                                                <button type="button" onClick="proceedSubmit();" id="btnSubmit" class="btn btn--next"><span id="btnContent">Submit</span></button>
                                                                 
                                                             </div>
                                                         </div>
@@ -380,6 +381,13 @@ a.disabled {
 
     <script type="text/javascript" src="{{ asset('public/js/libraries/jquery-1.9.1.js') }}"></script>        
     <script>
+        function proceedSubmit() {
+            $("#btnContent").html('<img src="{{ asset('public/fonts/ajax-loader1.gif') }}">Saving..');
+            $('#btnSubmit').attr('disabled', true);
+            
+            $('#regForm').submit();
+        }
+
         $( document ).ready(function() {
 
             $( '#steps-wizard-three' ).unbind( 'click' );
@@ -399,7 +407,8 @@ a.disabled {
                 var phone = $('#frm-phone').val();
                 var company = $('#frm-company').val();
                 var position = $('#frm-position').val();
-                
+
+            
                 if ( userName && password && passwordConfirm && firstName && lastName && email && emailConfirm && phone && company && position) {
 
                     if ( password != passwordConfirm) {
@@ -409,7 +418,17 @@ a.disabled {
                         $( '#steps-wizard-three' ).unbind( 'click' );
                         $( '#steps-wizard-three' ).addClass( 'disabled' );
 
+                    } else if($('#frm-password').val().length < 8) {
+                        
+                        $( '#passwordSpan' ).addClass( 'animation-slideDown' );
+                        $( '#passwordSpan' ).html( 'Password minimum 8 lenght' );
+                        $( '#passwordSpan' ).css( 'color' , '#ab1a2d' );
+                        $( '#steps-wizard-three' ).unbind( 'click' );
+                        $( '#steps-wizard-three' ).addClass( 'disabled' );
+                        
+                        
                     } else if ( email != emailConfirm) {
+
                         $( '#passwordSpan' ).html('');
                         $( '#emailAddressSpan' ).addClass( 'animation-slideDown' );
                         $( '#emailAddressSpan' ).html( 'Email address not matched!' );
@@ -459,6 +478,7 @@ a.disabled {
                 }
 
             });
+
         });
     </script>
 </section>
