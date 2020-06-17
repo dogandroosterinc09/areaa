@@ -106,10 +106,10 @@
 
             {{-- story section  --}}
             <section class="fullwidth fullwidth__left-push chapter-benefits">
-                <div class="container-max" >
+                <div class="container-max {{ !empty($chapter_home->attachment) ? '' : 'no-image-img' }}" >
                     <div class="row {{ !$chapter_home->attachment ? 'd-flex justify-content-center' : 'd-flex justify-content-center' }}">
 
-                        <div data-aos="fade-right" class="col-md-6" {{ !empty($chapter_home->attachment) ? 'style=margin-left:-12%;' : 'align=center' }} >
+                        <div data-aos="fade-right" class="col-md-6" {{ !empty($chapter_home->attachment) ? 'style=margin-left:-12%;' : '' }} >
                                 <h2>{{ $chapter_home->member_benefits_title }}</h2>
                                 <p>{{ $chapter_home->member_benefits_content }}</p>
 
