@@ -46,7 +46,8 @@ class ChapterBoardMember extends Model
             case self::TYPE_BOARD_OF_DIRECTOR:
                 return 'Board of Director';
             case self::TYPE_ADVISORY:
-                return 'Advisory';
+                // return 'Advisory';
+                return 'Committee Chair';
             default: return '';
         }
     }

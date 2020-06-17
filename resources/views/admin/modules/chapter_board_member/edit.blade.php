@@ -74,7 +74,7 @@
                 @include('admin.components.radio', ['label' => 'Type', 'value' => $chapter_board_member->type, 'values' => [
                     'Executive' => \App\Models\ChapterBoardMember::TYPE_EXECUTIVE,
                     'Board of Director' => \App\Models\ChapterBoardMember::TYPE_BOARD_OF_DIRECTOR,
-                    'Advisory' => \App\Models\ChapterBoardMember::TYPE_ADVISORY,
+                    'Committee Chair' => \App\Models\ChapterBoardMember::TYPE_ADVISORY,
                 ]])
                 @include('admin.components.toggle', ['label' => 'Is Active', 'value' => $chapter_board_member->is_active])
                 <div class="row">

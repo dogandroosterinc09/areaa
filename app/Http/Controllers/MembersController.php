@@ -38,17 +38,24 @@ class MembersController extends Controller
         // }
 
         if (auth()->user()->getRoleNames()->first() === 'Chapter Admin') {
+            // die('41');
             $members = $this->members
                     ->whereHas('user', function($q) {
                         $q->where('chapter_id',auth()->user()->chapter_id);
                     })
                     ->get();
         } else {
+            // die('48');
             $members = $this->members
                     ->whereHas('user', function($q) {
                         $q->where('chapter_id',0);
                     })
                     ->get();
+            // $members = $this->members
+            //         ->whereHas('user', function($q) {
+            //             $q->where('chapter_id','<>',NULL);
+            //         })
+            //         ->get();
         }
 
         return view('admin.modules.members.index', compact('members'));
