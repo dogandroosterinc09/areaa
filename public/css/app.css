@@ -23808,6 +23808,13 @@ section.page--media .search-member-directory {
 .fullwidth__left-push .container-max {
   padding-left: 12%;
 }
+.fullwidth__left-push .container-max.no-image-img {
+  padding: 0;
+  text-align: center;
+}
+.fullwidth__left-push .container-max.no-image-img ul.bullet-style {
+  margin-top: 0;
+}
 .fullwidth__left-push .fullwidth__left {
   display: flex !important;
   flex-wrap: wrap !important;
