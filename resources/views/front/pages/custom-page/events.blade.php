@@ -45,8 +45,12 @@
                                     {{ $event->startMonth }}
                                 </div>
                                 <div class="events-thumbnail__day events-thumbnail__day--first"> {{ $event->startDay }}</div>
-                                to
-                                <div class="events-thumbnail__day events-thumbnail__day--end"> {{ $event->endDay }}</Div>
+                                @if($event->starts_at == $event->ends_at) 
+                                @else 
+                                    to
+                                    <div class="events-thumbnail__day events-thumbnail__day--end"> {{ $event->endDay }}</Div>
+                                @endif
+
                             </div>
                             <div class="events-thumbnail__image">
                                 <a href="{{ $event->url }}" class="image-background">
@@ -59,7 +63,9 @@
                                         <h5>{{ $event->name }}</h5>
                                 </a>
                                 <div class="events-thumbnail__time">{{ $event->time }}</div>
-                                <div class="events-thumbnail__location"><strong>{{ $event->location_name }}</strong>, {{ $event->locationAddress }}</div>
+                                <div class="events-thumbnail__location"><strong>{{ $event->location_name }}</strong>
+                                    {{ ($event->city!='')? ', '.$event->locationAddress : '' }}
+                                </div>
                                 <div class="events-thumbnail__paragraph">
                                     <?php
                                     $trimmed = preg_replace("/>.*?</s", "><", $event->description);
