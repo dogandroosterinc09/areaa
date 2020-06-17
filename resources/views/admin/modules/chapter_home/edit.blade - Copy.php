@@ -199,7 +199,6 @@
                 @endfor
                 --}}
                 
-                {{-- 
                 @include('admin.components.heading', ['text' => 'Top Sponsor'])
 
                 @php($top_sponsor = json_decode($chapter_home->top_sponsor))
@@ -232,46 +231,22 @@
                         </div>
                     </div>
                 </div>
-
                 @include('admin.components.input-field', ['label' => 'Alt Text', 'field' => 'top_sponsor_image_alt', 'value' =>  $top_sponsor ? $top_sponsor->image_alt : ''])
-                --}}
 
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <h4 style="border-left: 3px solid #61dbd5; padding-left: 8px; margin-bottom: 20px;">Sponsors</h4>
-                        <div class="form-group">
-                            <div class="col-md-10">
-                                <input type='button' value='Add Sponsor' id='addButton' class="btn btn-sm btn-primary">
-                           </div>
-                        </div>
-                    </div>
-                </div>
-                @php ($sponsor_category = [''=>'Select','jade'=>'Jade','diamond'=>'Diamond','emerald'=>'Emerald','opal'=>'Opal','ruby'=>'Ruby','pearl'=>'Pearl'])
+                @include('admin.components.heading', ['text' => 'Other Sponsors'])
 
                 @php($other_sponsors = json_decode($chapter_home->other_sponsors))
-
-                @for($counter = 0; $counter < count($other_sponsors); $counter++)
-                    
-                    <div class="row">
-                        <div class="col-md-8 col-md-offset-2">
-                            <div class="form-group">
-                                <label class="col-md-2 control-label" for="sponsor_category[]">Badge</label>
-                                <div class="col-md-10">
-                                    {{Form::select('sponsor_category[]',$sponsor_category,$other_sponsors[$counter]->badge_icon,['class'=>'form-control'])}}
-                               </div>
-                            </div>
-                        </div>
-                    </div>
-
+                @for($counter = 0; $counter < $max = 12; $counter++)
+                    @include('admin.components.input-field', ['label' => 'Badge Icon', 'field' => 'other_sponsors_badge_icon[]', 'value' => isset($other_sponsors[$counter]->badge_icon) ? $other_sponsors[$counter]->badge_icon : '' ])
                     <div class="row">
                         <div class="col-md-8 col-md-offset-2">
                             <div class="form-group{{ $errors->has('other_sponsor_image') ? ' has-error' : '' }}">
-                                <label class="col-md-2 control-label" for="chapter_sponsor_image[]">Image</label>
+                                <label class="col-md-2 control-label" for="other_sponsors_image[]">Image</label>
                                 <div class="col-md-10">
                                     <div class="input-group">
                                         <label class="input-group-btn">
                                         <span class="btn btn-primary">
-                                            Choose File <input type="file" name="chapter_sponsor_image[]" style="display: none;">
+                                            Choose File <input type="file" name="other_sponsors_image[]" style="display: none;">
                                         </span>
                                         </label>
                                         <input type="text" class="form-control" readonly>
@@ -289,76 +264,14 @@
                             </div>
                         </div>
                     </div>
-                    @include('admin.components.input-field', ['label' => 'Alt Text', 'field' => 'chapter_alt_text[]', 'value' => isset($other_sponsors[$counter]->image_alt) ? $other_sponsors[$counter]->image_alt : ''])
+                    @include('admin.components.input-field', ['label' => 'Alt Text', 'field' => 'other_sponsors_image_alt[]', 'value' => isset($other_sponsors[$counter]->image_alt) ? $other_sponsors[$counter]->image_alt : ''])
 
-                    @if (!($counter == count($other_sponsors)))
+                    @if (!($counter == $max - 1))
                     <div class="col-md-8 col-md-offset-2">
                         <hr>
                     </div>
                     @endif 
                 @endfor
-
-<!--                     <div class="row">
-                        <div class="col-md-8 col-md-offset-2">
-                            <div class="form-group">
-                                <label class="col-md-2 control-label" for="other_sponsors_image[]">Image</label>
-                                <div class="col-md-10">
-                                    <div class="input-group">
-                                        <label class="input-group-btn">
-                                        <span class="btn btn-primary">
-                                            Choose File <input type="file" name="other_sponsors_image[]" style="display: none;">
-                                        </span>
-                                        </label>
-                                        <input type="text" class="form-control" readonly>
-                                    </div>
-                                    @if($errors->has('image'))
-                                        <span class="help-block animation-slideDown">{{ $errors->first('image') }}</span>
-                                    @endif
-                                </div>
-                                <div class="col-md-offset-2 col-md-10">
-                                    Remove
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
-
-                <div id="TextBoxesGroup">
-
-                    <div class="row" id="TextBoxDiv">
-                        <div class="col-md-8 col-md-offset-2">
-                            <div class="form-group">
-                                <label class="col-md-2 control-label" for="chapter_sponsor">Badge</label>
-                                <div class="col-md-10">
-                                    {{Form::select('sponsor_category[]',$sponsor_category,null,['class'=>'form-control'])}}
-                                </div>
-
-                                <label class="col-md-2 control-label" for="chapter_sponsor">Image</label>
-                                <div class="col-md-10">
-                                    <div class="input-group">
-                                        <label class="input-group-btn">
-                                        <span class="btn btn-primary">
-                                            Choose File <input type="file" name="chapter_sponsor_image[]" style="display: none;">
-                                        </span>
-                                        </label>
-                                        <input type="text" class="form-control" readonly>
-                                    </div>
-                                </div>
-
-                                <label class="col-md-2 control-label" for="chapter_sponsor">Alt Text</label>
-                                <div class="col-md-10">
-                                    <input type="text" class="form-control" name="chapter_alt_text[]" value="{{ $chapter_home->chapter_sponsor }}">
-                                </div>
-
-                            </div>
-                        </div>
-
-                    </div>
-
-
-
-                </div>
-
-
 
                 <div class="form-group form-actions">
                     <div class="col-md-9 col-md-offset-3">
@@ -376,85 +289,4 @@
 @push('extrascripts')
     <script type="text/javascript" src="{{ asset('public/js/ckeditor/ckeditor.js') }}"></script>
     <script type="text/javascript" src="{{ asset('public/js/libraries/chapter_homes.js') }}"></script>
-
-
-<script type="text/javascript">
-
-$(document).ready(function(){
-
-    var counter = 2;
-
-    $("#addButton").click(function () {
-
-        // if(counter>10){
-        //     alert("Only 10 textboxes allow");
-        //     return false;
-        // }
-
-        var newTextBoxDiv = $(document.createElement('div'))
-        .attr("id", 'TextBoxDiv' + counter);
-
-        // newTextBoxDiv.after().html('<label>Textbox #'+ counter + ' : </label>' +
-        //     '<input type="text" name="textbox' + counter +
-        //     '" id="textbox' + counter + '" value="" >');
-                    newTextBoxDiv.after().html('<div class="row" id="TextBoxDiv">'+
-                        '<div class="col-md-8 col-md-offset-2">'+
-                        '<div class="form-group">'+
-                            '<label class="col-md-2 control-label" for="chapter_sponsor">Badge</label>'+
-                            '<div class="col-md-10">'+
-                                '<select name="sponsor_category[]" id="sponsor_select" class="form-control">'+
-                                    '<option value="">Select</option>'+
-                                    '<option value="jade">Jade</option>'+
-                                    '<option value="diamond">Diamond</option>'+
-                                    '<option value="emerald">Emerald</option>'+
-                                    '<option value="opal">Opal</option>'+
-                                    '<option value="ruby">Ruby</option>'+
-                                    '<option value="pearl">Pearl</option>'+
-                                '</select>'+
-                            '</div>'+
-                            '<label class="col-md-2 control-label" for="chapter_sponsor">Image</label>'+
-                            '<div class="col-md-10">'+
-                                '<div class="input-group">'+
-                                    '<label class="input-group-btn">'+
-                                    '<span class="btn btn-primary">'+
-                                        'Choose File <input type="file" name="chapter_sponsor_image[]" style="display: none;">'+
-                                    '</span>'+
-                                    '</label>'+
-                                    '<input type="text" class="form-control" readonly>'+
-                                '</div>'+
-                            '</div>'+
-                            '<label class="col-md-2 control-label" for="chapter_sponsor">Alt Text</label>'+
-                            '<div class="col-md-10">'+
-                                '<input type="text" class="form-control" name="chapter_alt_text[]" value="{{ $chapter_home->chapter_sponsor }}">'+
-                            '</div>'+
-                        '</div>'+
-                        '</div>'+
-                    '</div>');
-
-
-        newTextBoxDiv.appendTo("#TextBoxesGroup");
-
-        counter++;
-    });
-
-    $("#removeButton").click(function () {
-
-        if(counter==1){
-            alert("No more textbox to remove");
-            return false;
-        }
-        counter--;
-        $("#TextBoxDiv" + counter).remove();
-    });
-
-    $("#getButtonValue").click(function () {
-        var msg = '';
-        for(i=1; i<counter; i++){
-            msg += "\n Textbox #" + i + " : " + $('#textbox' + i).val();
-        }
-        alert(msg);
-    });
-
-});
-</script>
 @endpush

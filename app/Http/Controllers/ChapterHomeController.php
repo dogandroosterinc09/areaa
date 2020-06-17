@@ -66,6 +66,9 @@ class ChapterHomeController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+        // dd($request);
+
         if (!auth()->user()->hasPermissionTo('Update Chapter Home')) {
             abort('401', '401');
         }        
@@ -93,24 +96,63 @@ class ChapterHomeController extends Controller
         $top_sponsor->image =  isset($chapter_home->top_sponsor_image) ? $chapter_home->top_sponsor_image : $request->top_sponsor_image;
         $top_sponsor->image_alt = $request->top_sponsor_image_alt;
 
+// [{"badge_icon":"ruby","image":"public\/uploads\/sponsor1-1587071957-1591402616.jpg","image_alt":"chapter title"},
+//  {"badge_icon":"emerald","image":"public\/uploads\/sponsor2-1587071957.jpg","image_alt":"chapter title"},
+//  {"badge_icon":"diamond","image":"public\/uploads\/sponsor3-1587071957.jpg","image_alt":"chapter title"},
+//  {"badge_icon":"opal","image":"public\/uploads\/sponsor4-1587071957.jpg","image_alt":"chapter title"},
+//  {"badge_icon":"pearl","image":"public\/uploads\/sponsor5-1587071957.jpg","image_alt":"chapter title"},
+//  {"badge_icon":"opal","image":"public\/uploads\/sponsor6-1587071957.jpg","image_alt":"chapter title"},
+//  {"badge_icon":"pearl","image":"public\/uploads\/sponsor7-1587071957.jpg","image_alt":"chapter title"},
+//  {"badge_icon":"diamond","image":"public\/uploads\/sponsor9-1587071957.jpg","image_alt":"chapter title"},
+//  {"badge_icon":"jade","image":"public\/uploads\/sponsor8-1587073636.jpg","image_alt":"chapter title"},
+//  {"badge_icon":"opal","image":"public\/uploads\/sponsor10-1587073636.jpg","image_alt":"chapter title"},
+//  {"badge_icon":"pearl","image":"public\/uploads\/sponsor11-1587073636.jpg","image_alt":"chapter title"},
+//  {"badge_icon":"diamond","image":"public\/uploads\/sponsor12-1587073636.jpg","image_alt":"chapter title"}]
+
         //Other Sponsors
         $other_sponsors = array();
 
         $db_other_sponsors = json_decode($chapter_home['other_sponsors']);
-
-        for($counter = 0; $counter < count($request->other_sponsors_badge_icon); $counter++) {
-            array_push($other_sponsors, [
-                'badge_icon' => $request->other_sponsors_badge_icon[$counter],
-                'image' => isset($request->other_sponsors_image[$counter]) ? $request->other_sponsors_image[$counter] : 
-                    isset($db_other_sponsors) ? (isset(($db_other_sponsors[$counter])->image) ? ($db_other_sponsors[$counter])->image : '') : '' ,
-                'image_alt' => $request->other_sponsors_image_alt[$counter]
-            ]);
+// die('>> '.count($request->sponsor_category));
+        for($counter = 0; $counter < count($request->sponsor_category); $counter++) {
+            if ($request->sponsor_category[$counter]!='') {
+                array_push($other_sponsors, [
+                    'badge_icon' => $request->sponsor_category[$counter],
+                    'image' => isset($request->chapter_sponsor_image[$counter]) ? $request->chapter_sponsor_image[$counter] : 
+                        isset($db_other_sponsors) ? (isset(($db_other_sponsors[$counter])->image) ? ($db_other_sponsors[$counter])->image : '') : '' ,
+                    'image_alt' => $request->chapter_alt_text[$counter]
+                ]);
+            }
         }
+
+        // print_r($other_sponsors);
+// die('Ln 129');
 
         $chapter_home->fill(array_merge($request->all()), [
             'top_sponsor' => $top_sponsor,
             'other_sponsors' => $other_sponsors
         ])->save();
+
+        // //Other Sponsors
+        // $other_sponsors = array();
+
+        // $db_other_sponsors = json_decode($chapter_home['other_sponsors']);
+
+        // for($counter = 0; $counter < count($request->other_sponsors_badge_icon); $counter++) {
+        //     array_push($other_sponsors, [
+        //         'badge_icon' => $request->other_sponsors_badge_icon[$counter],
+        //         'image' => isset($request->other_sponsors_image[$counter]) ? $request->other_sponsors_image[$counter] : 
+        //             isset($db_other_sponsors) ? (isset(($db_other_sponsors[$counter])->image) ? ($db_other_sponsors[$counter])->image : '') : '' ,
+        //         'image_alt' => $request->other_sponsors_image_alt[$counter]
+        //     ]);
+        // }
+
+        // $chapter_home->fill(array_merge($request->all()), [
+        //     'top_sponsor' => $top_sponsor,
+        //     'other_sponsors' => $other_sponsors
+        // ])->save();
+
+
 
         // if ($request->hasFile('who_we_are_featured_video')) {
         //     $file_upload_path = $this->upload($request->file('who_we_are_featured_video'));
@@ -144,18 +186,26 @@ class ChapterHomeController extends Controller
         }
 
         //Other Sponsors Image        
-
-        $images = $request->file('other_sponsors_image');
-       
-        for($counter = 0; $counter < count($request->other_sponsors_badge_icon); $counter++) {
+        $images = $request->file('chapter_sponsor_image');
+        for($counter = 0; $counter < count($request->sponsor_category); $counter++) {
             if (isset($images[$counter]) && $images[$counter] != "" ) {
                 $file_upload_path = $this->upload($images[$counter]);
                 
                 $other_sponsors[$counter]['image'] = $file_upload_path;
             }
         }
-
         $chapter_home->fill(['other_sponsors'=>$other_sponsors])->save();        
+
+        // //Other Sponsors Image        
+        // $images = $request->file('other_sponsors_image');
+        // for($counter = 0; $counter < count($request->other_sponsors_badge_icon); $counter++) {
+        //     if (isset($images[$counter]) && $images[$counter] != "" ) {
+        //         $file_upload_path = $this->upload($images[$counter]);
+                
+        //         $other_sponsors[$counter]['image'] = $file_upload_path;
+        //     }
+        // }
+        // $chapter_home->fill(['other_sponsors'=>$other_sponsors])->save();        
 
         if (auth()->user()->roles->first()->name === 'Chapter Admin') {
             return redirect()->route('admin.pages.index')->with('flash_message', [
