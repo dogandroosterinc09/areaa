@@ -437,23 +437,23 @@ $(document).ready(function(){
         counter++;
     });
 
-    $("#removeButton").click(function () {
+    // $("#removeButton").click(function () {
 
-        if(counter==1){
-            alert("No more textbox to remove");
-            return false;
-        }
-        counter--;
-        $("#TextBoxDiv" + counter).remove();
-    });
+    //     if(counter==1){
+    //         alert("No more textbox to remove");
+    //         return false;
+    //     }
+    //     counter--;
+    //     $("#TextBoxDiv" + counter).remove();
+    // });
 
-    $("#getButtonValue").click(function () {
-        var msg = '';
-        for(i=1; i<counter; i++){
-            msg += "\n Textbox #" + i + " : " + $('#textbox' + i).val();
-        }
-        alert(msg);
-    });
+    // $("#getButtonValue").click(function () {
+    //     var msg = '';
+    //     for(i=1; i<counter; i++){
+    //         msg += "\n Textbox #" + i + " : " + $('#textbox' + i).val();
+    //     }
+    //     alert(msg);
+    // });
 
 });
 </script>
