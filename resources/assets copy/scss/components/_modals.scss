@@ -41,6 +41,7 @@
     &__gallery {
         @include flex;
         height: 100vh;
+        overflow: scroll;
         overflow-y: scroll;
         &--item {
             width: calc(100%/2) !important;
