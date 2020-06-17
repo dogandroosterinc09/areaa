@@ -23410,9 +23410,11 @@ section.page--media .search-member-directory {
   display: flex !important;
   flex-wrap: wrap !important;
   flex-wrap: inherit;
+  height: 100vh;
+  overflow-y: scroll;
 }
 .photo-modal__gallery--item {
-  width: calc(100%/2);
+  width: calc(100%/2) !important;
   display: block;
   cursor: pointer;
   height: 120px;
