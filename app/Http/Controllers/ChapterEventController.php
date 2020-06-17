@@ -82,12 +82,12 @@ class ChapterEventController extends Controller
             'ends_at' => 'required',
             'time' => 'required',
             'location_name' => 'required',
-            'city' => 'required',
-            'state' => 'required',
-            'zip' => 'required',
-            'country' => 'required',
-            'latitude' => 'required',
-            'longitude' => 'required',
+            // 'city' => 'required',
+            // 'state' => 'required',
+            // 'zip' => 'required',
+            // 'country' => 'required',
+            // 'latitude' => 'required',
+            // 'longitude' => 'required',
         ], [
             'chapter_id.required' => 'The chapter field is required.'
         ]);
@@ -164,13 +164,13 @@ class ChapterEventController extends Controller
             'ends_at' => 'required',
             'location_name' => 'required',
             'time' => 'required',
-            'city' => 'required',
-            'state' => 'required',
-            'zip' => 'required',
-            'country' => 'required',
-            'latitude' => 'required',
-            'longitude' => 'required',
-            'amount' => 'required',
+            // 'city' => 'required',
+            // 'state' => 'required',
+            // 'zip' => 'required',
+            // 'country' => 'required',
+            // 'latitude' => 'required',
+            // 'longitude' => 'required',
+            // 'amount' => 'required',
         ]);
 
         $chapter_event = $this->chapter_event->findOrFail($id);
