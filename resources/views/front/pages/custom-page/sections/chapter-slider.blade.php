@@ -11,7 +11,7 @@
         <div class="banner__image-slide--item">
             <div class="item-left">
                 <div class="banner-content-desc">
-                    {!! $slider->content !!}
+                    <p>{!! $slider->content !!}</p>
                     
                     <a href="{{url($slider->button_link)}}" class="btn btn--primary">{{ $slider->button_label }}</a>
                 </div>

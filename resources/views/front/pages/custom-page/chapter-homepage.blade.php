@@ -73,7 +73,7 @@
 
                         <div class="html-video__button">
                             {{-- <button class="active">play</button> --}}
-                            <a href="#" class="btn btn--play-modal" data-toggle="modal" data-target="#videoModal">play</a>
+                            <a href="#" id="play-modal" class="btn btn--play-modal" data-toggle="modal" data-target="#videoModal">play</a>
                         </div>
 
                         
@@ -106,10 +106,10 @@
 
             {{-- story section  --}}
             <section class="fullwidth fullwidth__left-push chapter-benefits">
-                <div class="container-max" >
+                <div class="container-max {{ !empty($chapter_home->attachment) ? '' : 'no-image-img' }}" >
                     <div class="row {{ !$chapter_home->attachment ? 'd-flex justify-content-center' : 'd-flex justify-content-center' }}">
 
-                        <div data-aos="fade-right" class="col-md-6" {{ !empty($chapter_home->attachment) ? 'style=margin-left:-12%;' : 'align=center' }} >
+                        <div data-aos="fade-right" class="col-md-6" {{ !empty($chapter_home->attachment) ? 'style=margin-left:-12%;' : '' }} >
                                 <h2>{{ $chapter_home->member_benefits_title }}</h2>
                                 <p>{{ $chapter_home->member_benefits_content }}</p>
 
@@ -262,13 +262,23 @@
             <h5 class="modal-title" id="videoModalLabel">
                {{ $chapter_home->who_we_are_title }}
             </h5>
+
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
+
+            {{-- <button data-modal-close data-dismiss="modal">
+                <span aria-hidden="true">&times;</span>
+            </button> --}}
+
             </div>
             <div class="modal-body">
            
+               
                <iframe src="{{$chapter_home->who_we_are_featured_video}}?&autoplay=1" width="560" height="315" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+
+               {{-- <iframe src="{{$chapter_home->who_we_are_featured_video}}?rel=0&amp;controls=0&amp;showinfo=0&enablejsapi=1" width="560" height="315" frameborder="0" allowfullscreen></iframe> --}}
                 <?php /*
                 {{-- @if($chapter_home->who_we_are_featured_video) --}}
                 <video id="video" width="100%" height="100%" poster="{{ asset($chapter_home->who_we_are_video_cover_image) }}" autoplay loop muted controlsList="nodownload" webkitallowfullscreen mozallowfullscreen allowfullscreen>

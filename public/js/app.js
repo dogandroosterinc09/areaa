@@ -79565,6 +79565,47 @@ $(document).on('click', 'a[href^="#upcoming-envents-owner"]', function (event) {
   $('html, body').animate({
     scrollTop: $($.attr(this, 'href')).offset().top - 300
   }, 500);
+}); // $(document).ready(function() {
+//     // modal video pause on modal
+//     // $('.modal').on('hidden.bs.modal', function() {
+//     //     $('.video')[0].pause();
+//     // });
+//     function playStopVideo() {
+//         var youtubeFunc = '';
+//         var outerDiv = $("#videoModal");
+//         var youtubeIframe = outerDiv.find("iframe")[0].contentWindow;
+//         outerDiv.on('hidden.bs.modal', function(e) {
+//             youtubeFunc = 'stopVideo';
+//             youtubeIframe.postMessage('{"event":"command","func":"' + youtubeFunc + '","args":""}', '*');
+//         });
+//         outerDiv.on('shown.bs.modal', function(e) {
+//             youtubeFunc = 'playVideo';
+//             youtubeIframe.postMessage('{"event":"command","func":"' + youtubeFunc + '","args":""}', '*');
+//         });
+//     }
+//     playStopVideo();
+// });
+
+$(document).ready(function () {
+  $('#videoModal').modal({
+    show: false
+  }).on('hidden.bs.modal', function () {
+    $(this).find('video')[0].pause();
+  });
+});
+$(document).ready(function () {
+  $('#videoModal').on('hidden.bs.modal', function () {
+    var $this = $(this).find('iframe'),
+        tempSrc = $this.attr('src');
+    $this.attr('src', "");
+    $this.attr('src', tempSrc);
+  });
+});
+$(function () {
+  $('.modal').on('hidden.bs.modal', function (e) {
+    $iframe = $(this).find("iframe");
+    $iframe.attr("src", $iframe.attr("src"));
+  });
 });
 
 /***/ }),
@@ -79593,12 +79634,18 @@ $('.banner__image-slide').slick({
   slidesToShow: 1,
   slidesToScroll: 1,
   arrows: false,
+  autoplay: true,
+  autoplaySpeed: 6000,
   fade: true,
   asNavFor: '.banner__thumb-slide'
 });
 $('.banner__thumb-slide').slick({
+  // slidesToShow: 3,
+  // slidesToScroll: 1,
+  vertical: true,
   slidesToShow: 3,
   slidesToScroll: 1,
+  verticalSwiping: false,
   asNavFor: '.banner__image-slide',
   dots: false,
   focusOnSelect: true

@@ -34,9 +34,13 @@
     
                     <div class="col-lg-8">
                         <div class="event-details">
+
+                            @if($event->attachment)
                             <div class="event-details__image image-background">
                                 <img src="{{ $event->attachment ? optional($event->attachment)->url : asset('public/images/watermark.jpg') }}" alt="Member Image" class="img-fluid">
                             </div>
+                            @endif
+
                             <div class="event-details__description">
                                 <h3>Description</h3>
                                 <p>{!! $event->description !!}</p>

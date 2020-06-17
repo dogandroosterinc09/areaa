@@ -37,6 +37,7 @@ class User extends Authenticatable
         'profile_image',
         'chapter_id',
         'is_active',
+        'is_featured',
     ];
 
     /**

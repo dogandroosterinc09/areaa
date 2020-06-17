@@ -15,12 +15,18 @@ $('.banner__image-slide').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
+    autoplay: true,
+    autoplaySpeed: 6000,
     fade: true,
     asNavFor: '.banner__thumb-slide'
 });
 $('.banner__thumb-slide').slick({
+    // slidesToShow: 3,
+    // slidesToScroll: 1,
+    vertical: true,
     slidesToShow: 3,
     slidesToScroll: 1,
+    verticalSwiping: false,
     asNavFor: '.banner__image-slide',
     dots: false,
     focusOnSelect: true

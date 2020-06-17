@@ -18693,6 +18693,12 @@ header .contact-details-wrap .info a i.ic-chapter {
 .banner__thumb-slide--item .thumb-holder:hover span {
   color: #fff;
 }
+.banner__thumb-slide .slick-slide.slick-active {
+  opacity: 0.7;
+}
+.banner__thumb-slide .slick-slide.slick-current.slick-active {
+  opacity: 1;
+}
 .banner .target {
   display: block;
   max-width: 100%;
@@ -20675,6 +20681,7 @@ ul.bullet-style li h6 {
   border-radius: 100%;
   margin: auto;
   transition: all 0.3s ease;
+  background-position: top center !important;
 }
 .board-thumbnail__image:hover {
   transform: scale(0.9, 0.9);
@@ -21718,6 +21725,8 @@ ul.bullet-style li h6 {
 }
 .partnership .container-max {
   max-width: 100%;
+  position: relative;
+  z-index: 2;
 }
 
 .inline-flex {
@@ -22563,6 +22572,9 @@ section.page--media .search-member-directory {
 .page-chapter .main-content {
   padding: 80px 0;
 }
+.page-chapter .banner__thumb-slide {
+  width: 150px !important;
+}
 .page-chapter--homepage .footer__wrapper {
   background: #f8f6f6;
 }
@@ -22722,8 +22734,8 @@ section.page--media .search-member-directory {
 }
 .page--events-detail .event-details__image {
   height: 450px;
-  background-position: contain !important;
-  background-size: auto 90% !important;
+  background-size: 100% !important;
+  background-position: center !important;
   background-color: #f9f9f9;
   padding: 20px;
 }
@@ -23397,12 +23409,19 @@ section.page--media .search-member-directory {
 .photo-modal__gallery {
   display: flex !important;
   flex-wrap: wrap !important;
+  flex-wrap: inherit;
+  height: 100vh;
+  overflow-y: scroll;
 }
 .photo-modal__gallery--item {
-  width: calc(100%/2);
+  width: calc(100%/2) !important;
   display: block;
-  height: 100px;
   cursor: pointer;
+  height: 120px;
+  min-height: inherit;
+  width: 120px;
+  background-size: cover !important;
+  background-position: center !important;
 }
 .photo-modal__big-image {
   height: 550px;
@@ -23788,6 +23807,13 @@ section.page--media .search-member-directory {
 }
 .fullwidth__left-push .container-max {
   padding-left: 12%;
+}
+.fullwidth__left-push .container-max.no-image-img {
+  padding: 0;
+  text-align: center;
+}
+.fullwidth__left-push .container-max.no-image-img ul.bullet-style {
+  margin-top: 0;
 }
 .fullwidth__left-push .fullwidth__left {
   display: flex !important;

@@ -8,6 +8,10 @@
     .main-content {
         padding: 80px 0;
     }
+    .banner__thumb-slide {
+        width: 150px !important;
+        // left: 20px;
+    }
     &--homepage {
         .footer__wrapper {
             background: #f8f6f6;
@@ -229,8 +233,10 @@
         }
         .event-details__image {
             height: 450px;
-            background-position: contain !important;
-            background-size: auto 90% !important;
+            // background-position: contain !important;
+            // background-size: auto 90% !important;
+            background-size: 100% !important;
+            background-position: center !important;
             background-color: #f9f9f9;
             padding: 20px;
         }

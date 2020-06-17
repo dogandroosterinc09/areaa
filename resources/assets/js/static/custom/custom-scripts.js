@@ -250,3 +250,65 @@ $(document).on('click', 'a[href^="#upcoming-envents-owner"]', function(event) {
         scrollTop: $($.attr(this, 'href')).offset().top - 300
     }, 500);
 });
+
+
+
+
+
+// $(document).ready(function() {
+
+//     // modal video pause on modal
+//     // $('.modal').on('hidden.bs.modal', function() {
+//     //     $('.video')[0].pause();
+//     // });
+
+
+//     function playStopVideo() {
+//         var youtubeFunc = '';
+//         var outerDiv = $("#videoModal");
+//         var youtubeIframe = outerDiv.find("iframe")[0].contentWindow;
+//         outerDiv.on('hidden.bs.modal', function(e) {
+//             youtubeFunc = 'stopVideo';
+//             youtubeIframe.postMessage('{"event":"command","func":"' + youtubeFunc + '","args":""}', '*');
+//         });
+//         outerDiv.on('shown.bs.modal', function(e) {
+//             youtubeFunc = 'playVideo';
+//             youtubeIframe.postMessage('{"event":"command","func":"' + youtubeFunc + '","args":""}', '*');
+//         });
+//     }
+
+//     playStopVideo();
+
+// });
+
+
+
+
+
+$(document).ready(function() {
+    $('#videoModal').modal({
+        show: false
+    }).on('hidden.bs.modal', function() {
+        $(this).find('video')[0].pause();
+    });
+});
+
+$(document).ready(function() {
+    $('#videoModal').on('hidden.bs.modal', function() {
+        var $this = $(this).find('iframe'),
+            tempSrc = $this.attr('src');
+        $this.attr('src', "");
+        $this.attr('src', tempSrc);
+    });
+
+
+
+});
+
+
+$(function() {
+    $('.modal').on('hidden.bs.modal', function(e) {
+        $iframe = $(this).find("iframe");
+        $iframe.attr("src", $iframe.attr("src"));
+    });
+});
