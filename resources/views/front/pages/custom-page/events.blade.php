@@ -171,7 +171,7 @@
                         {{-- events-thumbnail --}}
                         -->
                         <div class="events-thumbnail__loadmore text-center">
-                            <a href="#" class="btn btn--primary"> Load more </a>
+                            <a href="#" id="loadMore" class="btn btn--primary"> Load more </a>
                         </div>
                    
                     </div>
