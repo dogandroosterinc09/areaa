@@ -80,7 +80,7 @@
                                 </div>
                                 <div class="col-md-12 form-group {{ $errors->has('message') ? ' has-error' : '' }}">
                                     <label for="message">Message</label>
-                                    <textarea id="message" name="message" class="form-control">Message </textarea>
+                                    <textarea id="message" name="message" class="form-control" placeholder="Message"> </textarea>
                                     @if($errors->has('message'))
                                         <span class="help-block animation-slideDown">{{ $errors->first('message') }}</span>
                                     @endif
