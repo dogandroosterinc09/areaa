@@ -1898,6 +1898,9 @@ ul.bullet-style {
 
 .photo-section {
     margin: 50px 0;
+    &__item {
+        display: none;
+    }
 }
 
 .benefit-message {

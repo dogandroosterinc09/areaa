@@ -39,18 +39,21 @@
         padding: 20px !important;
     }
     &__gallery {
-        @include flex;
-        flex-wrap: inherit;
+        // @include flex;
+        // flex-wrap: inherit;
         height: 100vh;
         overflow-y: scroll;
+        display: block;
         &--item {
-            width: calc(100%/2) !important;
+            // width: calc(100%/2) !important;
             display: block;
+            width: 50% !important;
+            float: left;
             // height: 100px;
             cursor: pointer;
             height: 120px;
             min-height: inherit;
-            width: 120px;
+            // width: 120px;
             background-size: cover !important;
             background-position: center !important;
         }

@@ -34,7 +34,7 @@
                <div class="row">
 
                     @foreach(\App\Models\Gallery::all() as $gallery)
-                    <div class="col-lg-4">
+                    <div class="col-lg-4 photo-section__item">
                         {{-- media-thumbnail --}}
                         <div class="photo-thumbnail"  data-target="#exampleModal">
                             
