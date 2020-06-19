@@ -1421,9 +1421,17 @@ ul.bullet-style {
     &__image {
         flex: 0 0 40%;
         max-width: 40%;
-        min-height: 300px;
+        // min-height: 300px;
+        height: 400px;
         position: relative;
-        background-size: cover;
+        background-size: cover !important;
+        &.image-background {
+            a {
+                img {
+                    display: none;
+                }
+            }
+        }
         a {
             display: block;
             height: 100%;
