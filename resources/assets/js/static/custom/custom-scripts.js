@@ -285,33 +285,55 @@ $(document).on('click', 'a[href^="#upcoming-envents-owner"]', function(event) {
 
 
 
-$(document).ready(function() {
-    $('#videoModal').modal({
-        show: false
-    }).on('hidden.bs.modal', function() {
-        $(this).find('video')[0].pause();
-    });
-});
+// $(document).ready(function() {
+//     $('#videoModal').modal({
+//         show: false
+//     }).on('hidden.bs.modal', function() {
+//         $(this).find('video')[0].pause();
+//     });
+// });
+
+// $(document).ready(function() {
+//     $('#videoModal').on('hidden.bs.modal', function() {
+//         var $this = $(this).find('iframe'),
+//             tempSrc = $this.attr('src');
+//         $this.attr('src', "");
+//         $this.attr('src', tempSrc);
+//     });
+
+
+
+// });
+
+
+// $(function() {
+//     $('#videoModal').on('hidden.bs.modal', function(e) {
+//         $iframe = $(this).find("iframe");
+//         $iframe.attr("src", $iframe.attr("src"));
+//     });
+// });
+
+
 
 $(document).ready(function() {
-    $('#videoModal').on('hidden.bs.modal', function() {
-        var $this = $(this).find('iframe'),
-            tempSrc = $this.attr('src');
-        $this.attr('src', "");
-        $this.attr('src', tempSrc);
+    /* Get iframe src attribute value i.e. YouTube video url
+    and store it in a variable */
+    var url = $("#chapter-video").attr('src');
+
+    /* Assign empty url value to the iframe src attribute when
+    modal hide, which stop the video playing */
+    $("#videoModal").on('hide.bs.modal', function() {
+        $("#chapter-video").attr('src', '');
     });
 
-
-
-});
-
-
-$(function() {
-    $('.modal').on('hidden.bs.modal', function(e) {
-        $iframe = $(this).find("iframe");
-        $iframe.attr("src", $iframe.attr("src"));
+    /* Assign the initially stored url back to the iframe src
+    attribute when modal is displayed again */
+    $("#videoModal").on('show.bs.modal', function() {
+        $("#chapter-video").attr('src', url);
     });
 });
+
+
 
 
 // used for events load more 
