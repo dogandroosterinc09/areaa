@@ -11,6 +11,13 @@
             color: $color-secondary;
             margin-bottom: 10px;
         }
+        >a {
+            text-decoration: none;
+            color: $color-secondary;
+            h4 {
+                color: $color-primary;
+            }
+        }
     }
     &__description {
         margin-bottom: 15px;

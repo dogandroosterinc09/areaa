@@ -312,3 +312,19 @@ $(function() {
         $iframe.attr("src", $iframe.attr("src"));
     });
 });
+
+
+
+$(function() {
+    $(".events-thumbnail__item").slice(0, 4).show();
+    $("#loadMore").on('click', function(e) {
+        e.preventDefault();
+        $(".events-thumbnail__item:hidden").slice(0, 4).slideDown();
+        if ($(".events-thumbnail__item:hidden").length == 0) {
+            $("#load").fadeOut('slow');
+        }
+        $('html,body').animate({
+            scrollTop: $(this).offset().top
+        }, 1500);
+    });
+});

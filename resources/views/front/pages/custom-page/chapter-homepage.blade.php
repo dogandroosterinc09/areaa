@@ -35,7 +35,9 @@
                                     </div>
                                     <div class="col-md-9 content-middle">
                                         <div class="chapter-events-upcoming__content ">
-                                            <h4>{{ $chapter_event->name }}</h4>
+                                            <a href="{{url($chapter['slug'].'/events')}}">
+                                                 <h4>{{ $chapter_event->name }}</h4>
+                                            </a>
                                             <h5>{{ $chapter_event->dateRange }} | {{ $chapter_event->time }}</h5>
                                             <div class="chapter-events-upcoming__description limit-me">
                                             <p>
