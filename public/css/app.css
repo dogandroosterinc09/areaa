@@ -20969,15 +20969,18 @@ ul.bullet-style li h6 {
   margin-top: 50px;
 }
 .events-thumbnail__item {
-  display: flex !important;
-  flex-wrap: wrap !important;
   margin-bottom: 45px;
   border-bottom: 1px solid #ddd;
   padding-bottom: 50px;
-  display: none !important;
+  display: none;
 }
 .events-thumbnail__item:last-child {
   border-bottom: 0;
+}
+.events-thumbnail__item-holder {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  width: 100%;
 }
 .events-thumbnail__date-range {
   flex: 0 0 8%;
