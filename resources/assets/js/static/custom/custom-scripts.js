@@ -316,10 +316,10 @@ $(function() {
 
 
 $(function() {
-    $(".events-thumbnail__item").slice(0, 4).show();
+    $(".events-thumbnail__item").slice(0, 3).show();
     $("#loadMore").on('click', function(e) {
         e.preventDefault();
-        $(".events-thumbnail__item:hidden").slice(0, 4).slideDown();
+        $(".events-thumbnail__item:hidden").slice(0, 2).slideDown();
         if ($(".events-thumbnail__item:hidden").length == 0) {
             $("#load").fadeOut('slow');
         }

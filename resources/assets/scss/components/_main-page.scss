@@ -1422,12 +1422,17 @@ ul.bullet-style {
         flex: 0 0 40%;
         max-width: 40%;
         min-height: 300px;
+        position: relative;
+        background-size: cover;
         a {
             display: block;
             height: 100%;
             width: 100%;
-            background-size: auto 85% !important;
-            background-color: #fbf8f8 !important;
+            position: absolute;
+            left: 0;
+            top: 0;
+            // background-size: auto 85% !important;
+            // background-color: #fbf8f8 !important;
         }
     }
     &__details {
