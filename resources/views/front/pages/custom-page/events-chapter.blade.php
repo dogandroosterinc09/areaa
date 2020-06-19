@@ -40,130 +40,50 @@
                         @endif
                         @foreach($events as $event)                        
                         <div class="events-thumbnail__item">
-                            <div class="events-thumbnail__date-range">
-                                <div class="events-thumbnail__month">
-                                    {{ $event->startMonth }}
+                            {{-- events-thumbnail__item-holder --}}
+                            <div class="events-thumbnail__item-holder">
+
+                                <div class="events-thumbnail__date-range">
+                                    <div class="events-thumbnail__month">
+                                        {{ $event->startMonth }}
+                                    </div>
+                                    <div class="events-thumbnail__day events-thumbnail__day--first"> {{ $event->startDay }}</div>
+                                    to
+                                    <div class="events-thumbnail__day events-thumbnail__day--end"> {{ $event->endDay }}</Div>
                                 </div>
-                                <div class="events-thumbnail__day events-thumbnail__day--first"> {{ $event->startDay }}</div>
-                                to
-                                <div class="events-thumbnail__day events-thumbnail__day--end"> {{ $event->endDay }}</Div>
-                            </div>
-                            <div class="events-thumbnail__image">
-                                <a href="{{route('chapter_event.detail', ['slug'=>$event->chapter_slug,'event_slug'=>$event->slug])}}" class="image-background">
-                                    <img src="{{ $event->attachment ? optional($event->attachment)->url : asset('public/images/no-image.jpg') }}" alt="Member Image">
-                                </a>
-                            </div>
-                            <div class="events-thumbnail__details">
-                                <h6>{{ $event->chapter }}</h6>
-                                <a href="{{route('chapter_event.detail', ['slug'=>$event->chapter_slug,'event_slug'=>$event->slug])}}">
-                                        <h5>{{ $event->name }}</h5>
-                                </a>
-                                <div class="events-thumbnail__time">{{ $event->time }}</div>
-                                <div class="events-thumbnail__location"><strong>{{ $event->location_name }}</strong>, {{ $event->locationAddress }}</div>
-                                <div class="events-thumbnail__paragraph">
-                                    {{ $event->description }}
+                                <div class="events-thumbnail__image">
+                                    <a href="{{route('chapter_event.detail', ['slug'=>$event->chapter_slug,'event_slug'=>$event->slug])}}" class="image-background">
+                                        <img src="{{ $event->attachment ? optional($event->attachment)->url : asset('public/images/no-image.jpg') }}" alt="Member Image">
+                                    </a>
                                 </div>
-                                <div class="events-thumbnail__buttons">
-                                    <a href="{{route('chapter_event.detail', ['slug'=>$event->chapter_slug,'event_slug'=>$event->slug])}}" class="btn btn--secondary"> View Details</a>
+                                <div class="events-thumbnail__details">
+                                    <h6>{{ $event->chapter }}</h6>
+                                    <a href="{{route('chapter_event.detail', ['slug'=>$event->chapter_slug,'event_slug'=>$event->slug])}}">
+                                            <h5>{{ $event->name }}</h5>
+                                    </a>
+                                    <div class="events-thumbnail__time">{{ $event->time }}</div>
+                                    <div class="events-thumbnail__location"><strong>{{ $event->location_name }}</strong>, {{ $event->locationAddress }}</div>
+                                    <div class="events-thumbnail__paragraph">
+                                        {{ $event->description }}
+                                    </div>
+                                    <div class="events-thumbnail__buttons">
+                                        <a href="{{route('chapter_event.detail', ['slug'=>$event->chapter_slug,'event_slug'=>$event->slug])}}" class="btn btn--secondary"> View Details</a>
+                                    </div>
                                 </div>
+
                             </div>
+                            {{-- events-thumbnail__item-holder --}}
                         </div>                            
                         @endforeach
                         
-                        <!-- for reference
-                        {{-- events-thumbnail --}}
-                        <div class="events-thumbnail__item">
-                            <div class="events-thumbnail__date-range">
-                                <div class="events-thumbnail__month">
-                                    Apr
-                                </div>
-                                <div class="events-thumbnail__day events-thumbnail__day--first"> 27</div>
-                                to
-                                <div class="events-thumbnail__day events-thumbnail__day--end"> 29</div>
-                            </div>
-                            <div class="events-thumbnail__image">
-                                <a href="{{url('events-detail')}}" class="image-background">
-                                    <img src="{{ asset('public/images/executive-banner.jpg') }}" alt="Member Image">
-                                </a>
-                            </div>
-                            <div class="events-thumbnail__details">
-                                <a href="{{url('events-detail')}}">
-                                        <h5>2020 Global Luxury Summit </h5>
-                                </a>
-                                <div class="events-thumbnail__time">7:00pm - 9:00pm</div>
-                                <div class="events-thumbnail__location"><strong>Four Seasons Chicago</strong>, 120 E Delaware Pl, Chicago, CA 60611 United States</div>
-                                <div class="events-thumbnail__paragraph">
-                                    <p> Lorem ipsum dolor sit amet, dolor at ligula faucibus imperdiet libero, phasellus nulla sollicitudin in, libero nec venenatis, luctus pretium imperdiet volutpat sit atque. Porttitor ligula vitae ultrices eleifend, felis suscipit iaculis turpis</p>
-                                </div>
-                                <div class="events-thumbnail__buttons">
-                                    <a href="{{url('events-detail')}}" class="btn btn--secondary"> View Details</a>
-                                </div>
-                            </div>
-                        </div>
-                        {{-- events-thumbnail --}}
-
-                        {{-- events-thumbnail --}}
-                        <div class="events-thumbnail__item">
-                            <div class="events-thumbnail__date-range">
-                                <div class="events-thumbnail__month">
-                                    Apr
-                                </div>
-                                <div class="events-thumbnail__day events-thumbnail__day--first"> 27</div>
-                                to
-                                <div class="events-thumbnail__day events-thumbnail__day--end"> 29</div>
-                            </div>
-                            <div class="events-thumbnail__image">
-                                <a href="{{url('events-detail')}}" class="image-background">
-                                    <img src="{{ asset('public/images/no-image.jpg') }}" alt="Member Image">
-                                </a>
-                            </div>
-                            <div class="events-thumbnail__details">
-                                <a href="{{url('events-detail')}}">
-                                    <h5>2020 Global Luxury Summit </h5>
-                               </a>
-                                <div class="events-thumbnail__time">7:00pm - 9:00pm</div>
-                                <div class="events-thumbnail__location"><strong>Four Seasons Chicago</strong>, 120 E Delaware Pl, Chicago, CA 60611 United States</div>
-                                <div class="events-thumbnail__paragraph">
-                                    <p> Lorem ipsum dolor sit amet, dolor at ligula faucibus imperdiet libero, phasellus nulla sollicitudin in, libero nec venenatis, luctus pretium imperdiet volutpat sit atque. Porttitor ligula vitae ultrices eleifend, felis suscipit iaculis turpis</p>
-                                </div>
-                                <div class="events-thumbnail__buttons">
-                                    <a href="{{url('events-detail')}}" class="btn btn--secondary"> View Details</a>
-                                </div>
-                            </div>
-                        </div>
-                        {{-- events-thumbnail --}}
-
-
-                        {{-- events-thumbnail --}}
-                        <div class="events-thumbnail__item">
-                            <div class="events-thumbnail__date-range">
-                                <div class="events-thumbnail__month">
-                                    Apr
-                                </div>
-                                <div class="events-thumbnail__day events-thumbnail__day--first"> 27</div>
-                                to
-                                <div class="events-thumbnail__day events-thumbnail__day--end"> 29</div>
-                            </div>
-                            <div class="events-thumbnail__image image-background">
-                                <img src="{{ asset('public/images/no-image.jpg') }}" alt="Member Image">
-                            </div>
-                            <div class="events-thumbnail__details">
-                                <h5>2020 Global Luxury Summit </h5>
-                                <div class="events-thumbnail__time">7:00pm - 9:00pm</div>
-                                <div class="events-thumbnail__location"><strong>Four Seasons Chicago</strong>, 120 E Delaware Pl, Chicago, CA 60611 United States</div>
-                                <div class="events-thumbnail__paragraph">
-                                    <p> Lorem ipsum dolor sit amet, dolor at ligula faucibus imperdiet libero, phasellus nulla sollicitudin in, libero nec venenatis, luctus pretium imperdiet volutpat sit atque. Porttitor ligula vitae ultrices eleifend, felis suscipit iaculis turpis</p>
-                                </div>
-                                <div class="events-thumbnail__buttons">
-                                    <a href="#" class="btn btn--secondary"> View Details</a>
-                                </div>
-                            </div>
-                        </div>
-                        {{-- events-thumbnail --}}
-                        -->
-                        <div class="events-thumbnail__loadmore text-center">
+                        {{-- <div class="events-thumbnail__loadmore text-center">
                             <a href="#" class="btn btn--primary"> Load more </a>
+                        </div> --}}
+
+                        <div class="events-thumbnail__loadmore text-center">
+                            <a href="#" id="loadMore" class="btn btn--primary"> Load more </a>
                         </div>
+                   
                    
                     </div>
 
