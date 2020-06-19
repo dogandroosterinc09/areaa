@@ -144,7 +144,8 @@ class UserController extends Controller
             $user->fill(['profile_image' => $file_upload_path])->save();
         }
 
-        return redirect()->route('admin.users.index')->with('flash_message', [
+        // return redirect()->route('admin.users.index')->with('flash_message', [
+        return redirect()->route('admin.user.index_admin')->with('flash_message', [
             'title' => '',
             'message' => 'User successfully added.',
             'type' => 'success'

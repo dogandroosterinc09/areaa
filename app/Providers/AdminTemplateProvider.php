@@ -248,10 +248,24 @@ class AdminTemplateProvider extends ServiceProvider
 
                 if ($this->hasCrudAccessFor('User')) {
                     array_push($user_management_tab, [
-                        'name' => 'Users',
-                        'url' => url('admin/users'),
+                        'name' => 'All Chapter Members',
+                        'url' => url('admin/user-all'),
                     ]);
                 }
+
+                if ($this->hasCrudAccessFor('User')) {
+                    array_push($user_management_tab, [
+                        'name' => 'All Admins',
+                        'url' => url('admin/user-admin'),
+                    ]);
+                }
+
+                // if ($this->hasCrudAccessFor('User')) {
+                //     array_push($user_management_tab, [
+                //         'name' => 'Users',
+                //         'url' => url('admin/users'),
+                //     ]);
+                // }
 
 
                 if ($this->hasCrudAccessFor('Permission')) {

@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Members;
 use App\Http\Controllers\Controller;
 
+use DB;
+
 class MembersController extends Controller
 {
     /**
@@ -222,5 +224,59 @@ class MembersController extends Controller
 
         return response()->json(status()->success('Members successfully deleted.', compact('id')));
     }
+
+
+    public function displayAllMembers() {
+
+        // die('229');
+        // $members = $this->members
+        //         ->whereHas('user', function($q) {
+        //             $q->where('chapter_id',0);
+        //         })
+        //         // ->take(1000)
+        //         ->get();
+        // $start = microtime(true);
+
+        // $members = $this->members
+        //         ->whereHas('user', function($q) {
+        //             $q->where('chapter_id','<>',NULL);
+        //         })
+        //         ->get();
+
+        $members = DB::table('members')
+            ->join('users', 'members.user_id', '=', 'users.id')
+            ->join('chapters', 'chapters.id', '=', 'users.chapter_id')
+            ->where('users.chapter_id', '<>',NULL)
+            ->get();
+        // echo 'count: '.count($members).'<br>';
+        // print_r($members);
+        // foreach ($members as $member) {
+        //     // echo 'member: '.$member->user->first_name.'<br>';
+        //     echo 'member: '.$member->first_name.'<br>';
+        // }
+        // $time_elapsed_secs = microtime(true) - $start;
+
+        // echo 'time_elapsed_secs: '.$time_elapsed_secs.'<br>';
+        // die('236');
+
+        return view('admin.modules.members.index-2', compact('members'));
+    }
+
+    public function displayAllAdmin() {
+
+        $members = DB::table('users')
+            // ->join('users', 'members.user_id', '=', 'users.id')
+            ->join('chapters', 'chapters.id', '=', 'users.chapter_id')
+            ->join('user_has_roles', 'user_has_roles.user_id', '=', 'users.id')
+            ->where('user_has_roles.role_id',4)
+            // ->take(1000)
+            ->get();
+
+        // print_r($members);
+        // die('273');
+
+        return view('admin.modules.user.index-3', compact('members'));
+    }
+
 
 }

@@ -108,6 +108,8 @@ Route::get('/chapters/pages/{id}/edit/contact_us', 'ChapterPageContactUsControll
 
 
 Route::resource('/members', 'MembersController');
+Route::get('/user-all', 'MembersController@displayAllMembers');
+Route::get('/user-admin', 'MembersController@displayAllAdmin')->name('user.index_admin');
 
 
 Route::resource('/chapter_page_homesliders', 'ChapterPageHomesliderController');
