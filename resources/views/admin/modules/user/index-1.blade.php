@@ -5,19 +5,18 @@
     @isset($is_chapter)
     <ul class="breadcrumb breadcrumb-top">
         <li><a href="{{ route('admin.chapters.index') }}">Main</a></li>
-        <li><span href="javascript:void(0)">All Members</span></li>
+        <li><span href="javascript:void(0)">All Admins</span></li>
     </ul>    
     @endisset
 
-    {{--
     @if (auth()->user()->can('Create Members'))
         <div class="row text-center">
             <div class="col-sm-12 col-lg-12">
-                <a href="{{ route('admin.members.create') }}" class="widget widget-hover-effect2">
+                <a href="{{ route('admin.users.create') }}" class="widget widget-hover-effect2">
                     <div class="widget-extra themed-background">
                         <h4 class="widget-content-light">
                             <strong>Add New</strong>
-                            Member
+                            Admin
                         </h4>
                     </div>
                     <div class="widget-extra-full">
@@ -29,13 +28,11 @@
             </div>
         </div>
     @endif
-    --}}
-
     <div class="block full">
         <div class="block-title">
             <h2>
                 <i class="fa fa-newspaper-o sidebar-nav-icon"></i>
-                <strong>{{-- isset($chapter) ? $chapter->name : 'National' --}}All Chapter Members</strong>
+                <strong>{{-- isset($chapter) ? $chapter->name : 'National' --}}All Admin</strong>
             </h2>
         </div>
         <div class="alert alert-info alert-dismissable members-empty {{$members->count() == 0 ? '' : 'johnCena' }}">
@@ -52,13 +49,10 @@
                         Name
                     </th>   
                     <th class="text-center">
-                        Username
-                    </th>
-                    <th class="text-center">
                         Chapter
                     </th>
                     <th class="text-center">
-                        Date Registered
+                        Username
                     </th>
                     <th class="text-center">
                         Action
@@ -68,37 +62,38 @@
                 <tbody>
                 @foreach($members as $members)
                     <tr data-members-id="{{$members->id}}">
-                        <td class="text-center"><strong>{{ $members->member_id }} | {{ $members->user_id }}</strong></td>
+                        <td class="text-center"><strong>{{ $members->user_id }}</strong></td>
                         <td class="text-left"><strong>{{ $members->first_name.' '.$members->last_name }}</strong></td>
-                        <td class="text-left"><strong>{{ $members->user_name }}</strong></td>
-                        <td class="text-center"><strong>{{ isset($members->chapter_name)? $members->chapter_name: 'National' }}</strong></td>
-                        <td class="text-center">@if($members->joined_date) {{ date('d-m-Y', strtotime($members->joined_date)) }} @endif</td>
+                        <td class="text-left"><strong>{{ $members->name }}</strong></td>
+                        <td class="text-center">{{ $members->user_name }}</td>
                         <td class="text-center">
                             <div class="btn-group btn-group-xs">
-                                <?php /* @if (auth()->user()->can('Read Members'))
-                                    <a href="{{ route('admin.members.show', $members->id) }}"
+                                <?php /* 
+                                @if (auth()->user()->can('Read Members'))
+                                    <a href="{{ route('admin.members.show', $members->user_id) }}"
                                        data-toggle="tooltip"
                                        title=""
                                        class="btn btn-default"
                                        data-original-title="View"><i class="fa fa-eye"></i></a>
-                                @endif */ ?>
+                                @endif 
+                                */ ?>
                                 @if (auth()->user()->can('Update Members'))
-                                    <a href="{{ route('admin.members.edit2', $members->member_id) }}"
+                                    <a href="{{ route('admin.user.edit_admin', $members->user_id) }}"
                                        data-toggle="tooltip"
                                        title=""
                                        class="btn btn-default"
                                        data-original-title="Edit"><i class="fa fa-pencil"></i></a>
                                 @endif
-                                @if (auth()->user()->can('Delete Members'))
-<!--                                     <a href="javascript:void(0)" data-toggle="tooltip"
+                                <?php /* @if (auth()->user()->can('Delete Members'))
+                                    <a href="javascript:void(0)" data-toggle="tooltip"
                                        title=""
                                        class="btn btn-xs btn-danger delete-members-btn"
                                        data-original-title="Delete"
                                        data-members-id="{{ $members->id }}"
-                                       data-members-route="{{ route('admin.members.destroy', $members->id) }}">
+                                       data-members-route="{{ route('admin.members.destroy', $members->user_id) }}">
                                         <i class="fa fa-times"></i>
-                                    </a> -->
-                                @endif
+                                    </a>
+                                @endif */ ?>
                             </div>
                         </td>
                     </tr>

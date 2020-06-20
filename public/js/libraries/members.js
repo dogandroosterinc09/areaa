@@ -425,8 +425,10 @@
             uiMembersDatatable = uiMembersTable.DataTable({
                 "order": [[0, "asc"]],
                 "paging": true,
-                "pageLength": 10,
-                "lengthMenu": [[10, 20, 30, -1], [10, 20, 30, 'All']],
+                // "pageLength": 10,
+                // "lengthMenu": [[10, 20, 30, -1], [10, 20, 30, 'All']],
+                "pageLength": 15,
+                "lengthMenu": [[15, 30, 45, -1], [15, 30, 45, 'All']],
                 "ordering": true,
                 "info": true,
                 "searching": true,

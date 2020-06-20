@@ -8,6 +8,14 @@ Route::get('/dashboard', 'AdminDashboardController')->name('index');
 Route::get('/users/draw', 'UserController@draw')->name('users.draw');
 
 Route::resource('/users', 'UserController');
+// User All Members
+Route::get('/user-admin', 'UserController@displayAllAdmin')->name('user.index_admin');
+Route::get('/admin-edit/{id}', 'UserController@editAdmin')->name('user.edit_admin');
+Route::post('/admin-edit/{id}', 'UserController@updateAdmin')->name('user.update_admin');
+
+Route::get('/user-all', 'UserController@displayAllMembers')->name('user.index_members');
+Route::get('/user-edit/{id}', 'UserController@editMember')->name('user.edit_member');
+Route::post('/user-edit/{id}', 'UserController@updateMember')->name('user.update_member');
 
 
 Route::resource('/roles', 'RoleController');
@@ -108,9 +116,6 @@ Route::get('/chapters/pages/{id}/edit/contact_us', 'ChapterPageContactUsControll
 
 
 Route::resource('/members', 'MembersController');
-Route::get('/user-all', 'MembersController@displayAllMembers');
-Route::get('/user-admin', 'MembersController@displayAllAdmin')->name('user.index_admin');
-
 
 Route::resource('/chapter_page_homesliders', 'ChapterPageHomesliderController');
 

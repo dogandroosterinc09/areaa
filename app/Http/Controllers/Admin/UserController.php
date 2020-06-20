@@ -256,7 +256,7 @@ class UserController extends Controller
 
         return redirect()->route('admin.users.index')->with('flash_message', [
             'title' => '',
-            'message' => 'User successfully updated.',
+            'message' => 'Member successfully updated.',
             'type' => 'success'
         ]);
     }
@@ -671,5 +671,248 @@ class UserController extends Controller
             'type' => 'success'
         ]);
     }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param int $id
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function editMember(Request $request, $id)
+    {
+        if (!auth()->user()->hasPermissionTo('Update Members')) {
+            abort('401', '401');
+        }
+
+        // echo $id;
+        // die();
+        // //Logged in user
+        // $user_id = $request->user()->id;
+        // echo $user_id;
+
+        $user = $this->user->findOrFail($id);
+        // dd($user);
+        // $members = $this->members->findOrFail($id);
+        // $members = $this->members->where('user_id','=',$id)->get();
+        // dd($members->user());
+
+        return view('admin.modules.user.edit-2', compact('user'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
+     * @return \Illuminate\Http\RedirectResponse
+     * @throws \Illuminate\Validation\ValidationException
+     */
+    public function updateMember(Request $request, $id)
+    {
+        if (!auth()->user()->hasPermissionTo('Update Members')) {
+            abort('401', '401');
+        }
+
+        echo $id;
+        // die();
+        $user = $this->user->findOrFail($id);
+
+        $this->validate($request, [
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'user_name' => 'required|unique:users,user_name,' . $id . ',id,deleted_at,NULL',
+            'email' => 'required|unique:users,email,' . $id . ',id,deleted_at,NULL',
+            'password' => 'required_if:change_password,==,1|min:8|confirmed',
+            'profile_image' =>  'mimes:jpg,jpeg,png'
+        ]);
+
+        if ($request->get('change_password') == '1') {
+            $input = $request->only(['first_name', 'last_name', 'user_name', 'email', 'is_active', 'is_featured', 'password']);
+        } else {
+            $input = $request->only(['first_name', 'last_name', 'user_name', 'email', 'is_active', 'is_featured']);
+        }
+
+        $input['is_active'] = isset($input['is_active']) ? 1 : 0;
+        $input['is_featured'] = isset($input['is_featured']) ? 1 : 0;
+        // $roles = $request['roles'];
+        $user->fill($input)->save();
+
+        // if (isset($roles)) {
+        //     $user->roles()->sync($roles);
+        // } else {
+        //     $user->roles()->detach();
+        // }
+
+        if ($request->hasFile('profile_image')) {
+            $file_upload_path = $this->userRepository->uploadFile($request->file('profile_image'));
+            $user->fill(['profile_image' => $file_upload_path])->save();
+        }
+
+        return redirect()->route('admin.user.index_members')->with('flash_message', [
+            'title' => '',
+            'message' => 'Member successfully updated.',
+            'type' => 'success'
+        ]);
+    }
+
+    public function displayAllMembers() {
+
+        // die('229');
+        // $start = microtime(true);
+
+        // $members = $this->members
+        //         ->whereHas('user', function($q) {
+        //             $q->where('chapter_id',0);
+        //         })
+        //         // ->take(1000)
+        //         ->get();
+
+        // $members = $this->members
+        //         ->whereHas('user', function($q) {
+        //             $q->where('chapter_id','<>',NULL);
+        //         })
+        //         ->get();
+
+        // $members = DB::table('members')
+        //     ->join('users', 'members.user_id', '=', 'users.id')
+        //     // ->join('chapters', 'chapters.id', '=', 'users.chapter_id')
+        //     // ->where('users.chapter_id', '<>',NULL)
+        //     ->where('users.chapter_id', 0)
+        //     ->take(1000)
+        //     ->get();
+
+        $members = DB::table('members')
+            ->join('users', 'members.user_id', '=', 'users.id')
+            // ->join('chapters', 'chapters.id', '=', 'users.chapter_id')
+            // ->where('users.chapter_id', '<>',NULL)
+            // ->where('users.chapter_id', 0)
+            ->select('members.id as member_id', 'members.*', 'users.*')
+            ->take(100)
+            ->get();
+
+        // echo 'count: '.count($members).'<br>';
+        // print_r($members);
+        // die();
+        foreach ($members as $member) {
+            if ($member->chapter_id > 0) {
+                $chapter = \App\Models\Chapter::find($member->chapter_id);
+                $member->chapter_name = $chapter->name;
+            } else {
+
+                $member->chapter_name = 'National';
+            }
+            // echo 'member: '.$member->user->first_name.'<br>';
+            // echo 'member: '.$member->first_name.' > chapter: '.$member->chapter_name.'<br>';
+        }
+        // $time_elapsed_secs = microtime(true) - $start;
+
+        // echo 'time_elapsed_secs: '.$time_elapsed_secs.'<br>';
+        // die('236');
+
+        return view('admin.modules.user.index-2', compact('members'));
+    }
+
+    public function displayAllAdmin() {
+
+        $members = DB::table('users')
+            // ->join('users', 'members.user_id', '=', 'users.id')
+            ->join('chapters', 'chapters.id', '=', 'users.chapter_id')
+            ->join('user_has_roles', 'user_has_roles.user_id', '=', 'users.id')
+            ->where('user_has_roles.role_id',4)
+            // ->take(1000)
+            ->get();
+
+        // print_r($members);
+        // die('273');
+
+        return view('admin.modules.user.index-1', compact('members'));
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param int $id
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function editAdmin(Request $request, $id)
+    {
+        if (!auth()->user()->hasPermissionTo('Update Members')) {
+            abort('401', '401');
+        }
+
+        // echo $id;
+        // die();
+        // //Logged in user
+        // $user_id = $request->user()->id;
+        // echo $user_id;
+
+        $user = $this->user->findOrFail($id);
+        $roles = $this->role->get();
+        // dd($user);
+        // $members = $this->members->findOrFail($id);
+        // $members = $this->members->where('user_id','=',$id)->get();
+        // dd($members->user());
+
+        return view('admin.modules.user.edit-1', compact('user','roles'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
+     * @return \Illuminate\Http\RedirectResponse
+     * @throws \Illuminate\Validation\ValidationException
+     */
+    public function updateAdmin(Request $request, $id)
+    {
+        if (!auth()->user()->hasPermissionTo('Update Members')) {
+            abort('401', '401');
+        }
+
+        echo $id;
+        // die();
+        $user = $this->user->findOrFail($id);
+
+        $this->validate($request, [
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'user_name' => 'required|unique:users,user_name,' . $id . ',id,deleted_at,NULL',
+            'email' => 'required|unique:users,email,' . $id . ',id,deleted_at,NULL',
+            'password' => 'required_if:change_password,==,1|min:8|confirmed',
+            'profile_image' =>  'mimes:jpg,jpeg,png'
+        ]);
+
+        if ($request->get('change_password') == '1') {
+            $input = $request->only(['first_name', 'last_name', 'user_name', 'email', 'is_active', 'is_featured', 'password']);
+        } else {
+            $input = $request->only(['first_name', 'last_name', 'user_name', 'email', 'is_active', 'is_featured']);
+        }
+
+        $input['is_active'] = isset($input['is_active']) ? 1 : 0;
+        $input['is_featured'] = isset($input['is_featured']) ? 1 : 0;
+        // $roles = $request['roles'];
+        $user->fill($input)->save();
+
+        // if (isset($roles)) {
+        //     $user->roles()->sync($roles);
+        // } else {
+        //     $user->roles()->detach();
+        // }
+
+        if ($request->hasFile('profile_image')) {
+            $file_upload_path = $this->userRepository->uploadFile($request->file('profile_image'));
+            $user->fill(['profile_image' => $file_upload_path])->save();
+        }
+
+        return redirect()->route('admin.user.index_admin')->with('flash_message', [
+            'title' => '',
+            'message' => 'Member successfully updated.',
+            'type' => 'success'
+        ]);
+    }
+
 
 }

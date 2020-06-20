@@ -68,7 +68,7 @@
                 <tbody>
                 @foreach($members as $members)
                     <tr data-members-id="{{$members->id}}">
-                        <td class="text-center"><strong>{{ $members->member_id }} | {{ $members->user_id }}</strong></td>
+                        <td class="text-center"><strong>{{-- $members->member_id --}} {{ $members->user_id }}</strong></td>
                         <td class="text-left"><strong>{{ $members->first_name.' '.$members->last_name }}</strong></td>
                         <td class="text-left"><strong>{{ $members->user_name }}</strong></td>
                         <td class="text-center"><strong>{{ isset($members->chapter_name)? $members->chapter_name: 'National' }}</strong></td>
@@ -83,7 +83,7 @@
                                        data-original-title="View"><i class="fa fa-eye"></i></a>
                                 @endif */ ?>
                                 @if (auth()->user()->can('Update Members'))
-                                    <a href="{{ route('admin.members.edit2', $members->member_id) }}"
+                                    <a href="{{ route('admin.user.edit_member', $members->user_id) }}"
                                        data-toggle="tooltip"
                                        title=""
                                        class="btn btn-default"
