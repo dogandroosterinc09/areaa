@@ -30,7 +30,7 @@
         </div>
     @endif
     --}}
-    
+
     <div class="block full">
         <div class="block-title">
             <h2>
@@ -52,6 +52,9 @@
                         Name
                     </th>   
                     <th class="text-center">
+                        Username
+                    </th>
+                    <th class="text-center">
                         Chapter
                     </th>
                     <th class="text-center">
@@ -65,10 +68,11 @@
                 <tbody>
                 @foreach($members as $members)
                     <tr data-members-id="{{$members->id}}">
-                        <td class="text-center"><strong>{{ $members->id }}</strong></td>
-                        <td class="text-center"><strong>{{ $members->first_name.' '.$members->last_name }}</strong></td>
-                        <td class="text-center"><strong>{{ $members->name }}</strong></td>
-                        <td class="text-center">{{-- $members->created_at->format('F d, Y') --}}</td>
+                        <td class="text-center"><strong>{{ $members->user_id }}</strong></td>
+                        <td class="text-left"><strong>{{ $members->first_name.' '.$members->last_name }}</strong></td>
+                        <td class="text-left"><strong>{{ $members->user_name }}</strong></td>
+                        <td class="text-center"><strong>{{ isset($members->chapter_name)? $members->chapter_name: 'National' }}</strong></td>
+                        <td class="text-center">@if($members->joined_date) {{ date('d-m-Y', strtotime($members->joined_date)) }} @endif</td>
                         <td class="text-center">
                             <div class="btn-group btn-group-xs">
                                 @if (auth()->user()->can('Read Members'))

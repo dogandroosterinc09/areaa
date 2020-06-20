@@ -229,13 +229,14 @@ class MembersController extends Controller
     public function displayAllMembers() {
 
         // die('229');
+        $start = microtime(true);
+
         // $members = $this->members
         //         ->whereHas('user', function($q) {
         //             $q->where('chapter_id',0);
         //         })
         //         // ->take(1000)
         //         ->get();
-        // $start = microtime(true);
 
         // $members = $this->members
         //         ->whereHas('user', function($q) {
@@ -243,17 +244,35 @@ class MembersController extends Controller
         //         })
         //         ->get();
 
+        // $members = DB::table('members')
+        //     ->join('users', 'members.user_id', '=', 'users.id')
+        //     // ->join('chapters', 'chapters.id', '=', 'users.chapter_id')
+        //     // ->where('users.chapter_id', '<>',NULL)
+        //     ->where('users.chapter_id', 0)
+        //     ->take(1000)
+        //     ->get();
+
         $members = DB::table('members')
             ->join('users', 'members.user_id', '=', 'users.id')
-            ->join('chapters', 'chapters.id', '=', 'users.chapter_id')
-            ->where('users.chapter_id', '<>',NULL)
+            // ->join('chapters', 'chapters.id', '=', 'users.chapter_id')
+            // ->where('users.chapter_id', '<>',NULL)
+            // ->where('users.chapter_id', 0)
+            // ->take(100)
             ->get();
+
         // echo 'count: '.count($members).'<br>';
         // print_r($members);
-        // foreach ($members as $member) {
-        //     // echo 'member: '.$member->user->first_name.'<br>';
-        //     echo 'member: '.$member->first_name.'<br>';
-        // }
+        foreach ($members as $member) {
+            if ($member->chapter_id > 0) {
+                $chapter = \App\Models\Chapter::find($member->chapter_id);
+                $member->chapter_name = $chapter->name;
+            } else {
+
+                $member->chapter_name = 'National';
+            }
+            // echo 'member: '.$member->user->first_name.'<br>';
+            // echo 'member: '.$member->first_name.' > chapter: '.$member->chapter_name.'<br>';
+        }
         // $time_elapsed_secs = microtime(true) - $start;
 
         // echo 'time_elapsed_secs: '.$time_elapsed_secs.'<br>';

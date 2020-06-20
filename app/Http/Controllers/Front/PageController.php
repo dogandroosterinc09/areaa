@@ -176,14 +176,16 @@ class PageController extends Controller
 
     public function migrateUsers($from, $end) {
 
+        // tables: users, user_has_roles, members, member_addresses
+
         // $chapter = \App\Models\Chapter::where('slug', $slug)->get()->first();
-        $getLiveMembers = DB::table('live_members')
+        $getLiveMembers = DB::table('live_members2')
             // ->where('initial_payment',99)
             ->whereBetween('membership_id', [$from, $end])
             // ->take(5)
             ->get();
 
-        echo "<strong>".count($getLiveMembers)."</strong> members<br>";
+        echo "<strong>Start ".$from."</strong> members<br>";
 
         foreach ($getLiveMembers as $member) {
 
@@ -194,7 +196,7 @@ class PageController extends Controller
             $getChapter = \App\Models\Chapter::where('name',$member->membership)->get('id')->first;
             $chapter = json_decode($getChapter->id, true);
             $chapter_id = $chapter['id'] > 0? $chapter['id']: 0;
-            echo "> ".$member->membership_id.' | '.$member->membership.' | '.$chapter_id.' | '.$member->email.'<br>';
+            echo "> ".$member->membership_id.' | '.$member->membership.' | '.$chapter_id.' | '.$member->email.' | '.$member->joined.'<br>';
 
             $insertUser = \App\Models\User::create([
                 'email' => $member->email,
@@ -229,7 +231,9 @@ class PageController extends Controller
                 'user_id' => $insertUser->id,
                 'bio' => $member->membernotes,
                 'position' => ucfirst($member->iam),
-                'company' => $member->company
+                'company' => $member->company,
+                'joined_date' => $member->joined,
+                'expires' => $member->expires,
                 // 'paypal_id' => $member->paypal_id
             ]);
 
@@ -249,7 +253,6 @@ class PageController extends Controller
             //     'is_active' => $request->has('is_active') ? 1 : 0,
             //     'slug' => str_slug($request->input('name'))
             // ]));
-
         }
 
         // Get all members
@@ -257,7 +260,8 @@ class PageController extends Controller
         //     Insert to members : user_id, position (iam), paypal_id, bio (member_notes), created_at (membership_startdate)
         //     Insert to member_addresses : user_id, street_address, city, state, country, zipcode, company, phone
 
-        die('-- END');
+        echo "<strong>".count($getLiveMembers)."</strong> members<br>";
+        die('-- END '.$end);
     }
 
 

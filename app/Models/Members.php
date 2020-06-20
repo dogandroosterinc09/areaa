@@ -29,7 +29,10 @@ class Members extends Model
         'authorize_payment_profile_id',
         'authorize_address_id',
         'authorize_subscription_id',
-        'subscription_status'
+        'subscription_status',
+        'paypal_id',
+        'joined_date',
+        'expires'
     ];
 
     public function getAvatarAttribute() {

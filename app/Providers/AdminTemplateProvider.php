@@ -50,7 +50,8 @@ class AdminTemplateProvider extends ServiceProvider
                 // 'url' => (auth()->user()->getRoleNames()->first() !== 'Chapter Admin' ? url('/') : url('/' . auth()->user()->ChapterSlug)) ,
                 'url' => url('/'),
                 'never_active' => true,
-                'icon' => 'fa fa-paper-plane-o'
+                // 'icon' => 'fa fa-paper-plane-o'
+                'icon' => 'fa fa-home fa-fw'
             ],
         ];
 
@@ -59,7 +60,7 @@ class AdminTemplateProvider extends ServiceProvider
                 array_push($navigation, [
                     'name' => 'Pages',
                     'url' => url('admin/pages'),
-                    'icon' => 'fa fa-archive'
+                    'icon' => 'fa fa-file-o'
                 ]);
             }
 
@@ -67,7 +68,7 @@ class AdminTemplateProvider extends ServiceProvider
                 array_push($navigation, [
                     'name' => 'Home Slides',
                     'url' => url('admin/home_slides'),
-                    'icon' => 'fa fa-sliders'
+                    'icon' => 'fa fa-desktop fa-fw'
                 ]);
             }
 
@@ -75,39 +76,16 @@ class AdminTemplateProvider extends ServiceProvider
                 array_push($navigation, [
                     'name' => 'Chapter Home Slides',
                     'url' => url('admin/chapter_page_homesliders'),
-                    'icon' => 'fa fa-sliders'
+                    'icon' => 'fa fa-desktop fa-fw'
                 ]);
             }
 
-            if (auth()->user()->can('Read Contact')) {
-                array_push($navigation, [
-                    'name' => 'Contacts',
-                    'url' => url('admin/contacts'),
-                    'icon' => 'fa fa-phone'
-                ]);
-            }
-
-            if (auth()->user()->can('Read Chapter Contact')) {
-                array_push($navigation, [
-                    'name' => 'Chapter Contacts',
-                    'url' => url('admin/chapter_contacts'),
-                    'icon' => 'fa fa-phone'
-                ]);
-            }
-
-            if (auth()->user()->can('Read Faq')) {
-                array_push($navigation, [
-                    'name' => 'FAQs',
-                    'url' => url('admin/faqs'),
-                    'icon' => 'fa fa-phone'
-                ]);
-            }
 
            if (auth()->user()->can('Read Event')) {
                 array_push($navigation, [
                     'name' => 'Events',
                     'url' => url('admin/events'),
-                    'icon' => 'fa fa-phone'
+                    'icon' => 'fa fa-calendar'
                 ]);
            }
 
@@ -124,88 +102,28 @@ class AdminTemplateProvider extends ServiceProvider
             array_push($event_registrations_tab, [
                 'name' => 'Chapter',
                 'url' => url('admin/event_registrations/chapter'),
-                'icon' => 'fa fa-phone'
+                'icon' => 'fa fa-map-marker'
             ]);
 
             array_push($navigation, [
                 'name' => 'Event Registrations',
-                'icon' => 'fa fa-phone',
+                'icon' => 'fa fa-calendar',
                 'sub' => $event_registrations_tab
             ]);
 
             array_push($navigation, [
                 'name' => 'Chapter Events',
                 'url' => url('admin/chapter_events'),
-                'icon' => 'fa fa-phone'
+                'icon' => 'fa fa-calendar'
             ]);
 
            if (auth()->user()->can('Read Chapter')) {
                 array_push($navigation, [
                     'name' => 'Chapters',
                     'url' => url('admin/chapters'),
-                    'icon' => 'fa fa-phone'
+                    'icon' => 'fa fa-map-marker'
                 ]);
            }
-
-           if (auth()->user()->can('Read Gallery')) {
-                array_push($navigation, [
-                    'name' => 'Galleries',
-                    'url' => url('admin/galleries'),
-                    'icon' => 'fa fa-phone'
-                ]);
-           }
-
-            $benefits_tab = [];
-
-            if (auth()->user()->can('Read Benefits')) {
-                array_push($benefits_tab, [
-                    'name' => 'Benefits',
-                    'url' => url('admin/benefits'),
-                    'icon' => 'fa fa-phone'
-                ]);
-            }
-
-            if (auth()->user()->can('Read Benefits')) {
-                array_push($benefits_tab, [
-                    'name' => 'Benefits Categories',
-                    'url' => url('admin/benefits_categories'),
-                    'icon' => 'fa fa-phone'
-                ]);
-            }
-
-            if (auth()->user()->can('Read Benefits')) {
-                array_push($navigation, [
-                    'name' => 'Benefits',
-                    'icon' => 'fa fa-phone',
-                    'sub' => $benefits_tab
-                ]);
-            }
-
-            $media_tab = [];
-
-            if (auth()->user()->can('Read Webinars')) {
-                    array_push($media_tab, [
-                        'name' => 'Media',
-                        'url' => url('admin/webinars'),
-                        'icon' => 'fa fa-phone'
-                    ]);
-            }
-        
-            if (auth()->user()->can('Read Media Category')) {
-                array_push($media_tab, [
-                    'name' => 'Media Categories',
-                    'url' => url('admin/media_categories'),
-                    'icon' => 'fa fa-phone'
-                ]);
-            }
-
-            if (auth()->user()->can('Read Webinars')) {
-            array_push($navigation, [
-                'name' => 'Media',
-                'icon' => 'fa fa-phone',
-                'sub' => $media_tab
-            ]);
-            }
 
            if ($this->hasCrudAccessFor('Board Member')) {
                 $board_member_tab = [];
@@ -237,7 +155,7 @@ class AdminTemplateProvider extends ServiceProvider
 
             // if (auth()->user()->can('Read Members')) {
                 array_push($navigation, [
-                    'name' => 'Members',
+                    'name' => 'Chapter Members',
                     'url' => url('admin/members'),
                     'icon' => 'fa fa-users'
                 ]);
@@ -296,11 +214,98 @@ class AdminTemplateProvider extends ServiceProvider
                 ]);
             }
 
+
+            if (auth()->user()->can('Read Contact')) {
+                array_push($navigation, [
+                    'name' => 'Contacts',
+                    'url' => url('admin/contacts'),
+                    'icon' => 'fa fa-phone'
+                ]);
+            }
+
+            if (auth()->user()->can('Read Chapter Contact')) {
+                array_push($navigation, [
+                    'name' => 'Chapter Contacts',
+                    'url' => url('admin/chapter_contacts'),
+                    'icon' => 'fa fa-phone'
+                ]);
+            }
+
+            if (auth()->user()->can('Read Faq')) {
+                array_push($navigation, [
+                    'name' => 'FAQs',
+                    'url' => url('admin/faqs'),
+                    'icon' => 'fa fa-question-circle-o'
+                ]);
+            }
+
+
+           if (auth()->user()->can('Read Gallery')) {
+                array_push($navigation, [
+                    'name' => 'Galleries',
+                    'url' => url('admin/galleries'),
+                    'icon' => 'fa fa-image fa-fw'
+                ]);
+           }
+
+            $benefits_tab = [];
+
+            if (auth()->user()->can('Read Benefits')) {
+                array_push($benefits_tab, [
+                    'name' => 'Benefits',
+                    'url' => url('admin/benefits'),
+                    'icon' => 'fa fa-folder-open-o'
+                ]);
+            }
+
+            if (auth()->user()->can('Read Benefits')) {
+                array_push($benefits_tab, [
+                    'name' => 'Benefits Categories',
+                    'url' => url('admin/benefits_categories'),
+                    'icon' => 'fa fa-folder-open-o'
+                ]);
+            }
+
+            if (auth()->user()->can('Read Benefits')) {
+                array_push($navigation, [
+                    'name' => 'Benefits',
+                    'icon' => 'fa fa-folder-open-o',
+                    'sub' => $benefits_tab
+                ]);
+            }
+
+            $media_tab = [];
+
+            if (auth()->user()->can('Read Webinars')) {
+                    array_push($media_tab, [
+                        'name' => 'Media',
+                        'url' => url('admin/webinars'),
+                        'icon' => 'fa fa-file-image-o'
+                    ]);
+            }
+        
+            if (auth()->user()->can('Read Media Category')) {
+                array_push($media_tab, [
+                    'name' => 'Media Categories',
+                    'url' => url('admin/media_categories'),
+                    'icon' => 'fa fa-file-image-o'
+                ]);
+            }
+
+            if (auth()->user()->can('Read Webinars')) {
+            array_push($navigation, [
+                'name' => 'Media',
+                'icon' => 'fa fa-file-image-o',
+                'sub' => $media_tab
+            ]);
+            }
+
+
             if ($this->hasCrudAccessFor('System Setting')) {
                 array_push($navigation, [
                     'name' => 'System Settings',
                     'url' => url('admin/system_settings'),
-                    'icon' => 'fa fa-gears'
+                    'icon' => 'fa fa-cog fa-spin'
                 ]);
             }
         }

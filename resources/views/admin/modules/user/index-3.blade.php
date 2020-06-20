@@ -32,7 +32,7 @@
         <div class="block-title">
             <h2>
                 <i class="fa fa-newspaper-o sidebar-nav-icon"></i>
-                <strong>{{-- isset($chapter) ? $chapter->name : 'National' --}}All Members</strong>
+                <strong>{{-- isset($chapter) ? $chapter->name : 'National' --}}Admin</strong>
             </h2>
         </div>
         <div class="alert alert-info alert-dismissable members-empty {{$members->count() == 0 ? '' : 'johnCena' }}">
