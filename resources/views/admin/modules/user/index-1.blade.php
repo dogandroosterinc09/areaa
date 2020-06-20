@@ -12,7 +12,7 @@
     @if (auth()->user()->can('Create Members'))
         <div class="row text-center">
             <div class="col-sm-12 col-lg-12">
-                <a href="{{ route('admin.users.create') }}" class="widget widget-hover-effect2">
+                <a href="{{ route('admin.user.create_admin') }}" class="widget widget-hover-effect2">
                     <div class="widget-extra themed-background">
                         <h4 class="widget-content-light">
                             <strong>Add New</strong>
@@ -55,6 +55,9 @@
                         Username
                     </th>
                     <th class="text-center">
+                        Role
+                    </th>
+                    <th class="text-center">
                         Action
                     </th>
                 </tr>
@@ -66,6 +69,7 @@
                         <td class="text-left"><strong>{{ $members->first_name.' '.$members->last_name }}</strong></td>
                         <td class="text-left"><strong>{{ $members->name }}</strong></td>
                         <td class="text-center">{{ $members->user_name }}</td>
+                        <td class="text-center">{{ $members->role_name }}</td>
                         <td class="text-center">
                             <div class="btn-group btn-group-xs">
                                 <?php /* 

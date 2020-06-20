@@ -12,6 +12,9 @@ Route::resource('/users', 'UserController');
 Route::get('/user-admin', 'UserController@displayAllAdmin')->name('user.index_admin');
 Route::get('/admin-edit/{id}', 'UserController@editAdmin')->name('user.edit_admin');
 Route::post('/admin-edit/{id}', 'UserController@updateAdmin')->name('user.update_admin');
+Route::get('/admin-create', 'UserController@createAdmin')->name('user.create_admin');
+Route::post('/admin-create', 'UserController@storeAdmin')->name('user.store_admin');
+
 
 Route::get('/user-all', 'UserController@displayAllMembers')->name('user.index_members');
 Route::get('/user-edit/{id}', 'UserController@editMember')->name('user.edit_member');

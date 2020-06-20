@@ -2,8 +2,8 @@
 
 @section('content')
     <ul class="breadcrumb breadcrumb-top">
-        <li><a href="{{ route('admin.user.index_members') }}">All Chapter Members</a></li>
-        <li><span href="javascript:void(0)">Edit Member</span></li>
+        <li><a href="{{ route('admin.user.index_admin') }}">All Admin</a></li>
+        <li><span href="javascript:void(0)">Edit Admin</span></li>
     </ul>
     <div class="row">
         {{  Form::open([
@@ -17,7 +17,7 @@
         <div class="col-md-12">
             <div class="block">
                 <div class="block-title">
-                    <h2><i class="fa fa-pencil"></i> <strong>Edit Member "{{$user->first_name.' '.$user->last_name}}"</strong></h2>
+                    <h2><i class="fa fa-pencil"></i> <strong>Edit Admin "{{$user->first_name.' '.$user->last_name}}"</strong></h2>
                 </div>
                 <div class="form-group{{ $errors->has('first_name') ? ' has-error' : '' }}">
                     <label class="col-md-3 control-label" for="first_name">Firstname</label>
@@ -99,7 +99,7 @@
                         @if(!$roles->isEmpty())
                             <h4></h4>
                             @foreach ($roles as $role)
-                                {{ Form::radio('roles[]', $role->id, ($role->id == old('roles')[0])) }}
+                                {{ Form::radio('roles[]', $role->id, ($role->id == $user->role->id)) }}
                                 {{ Form::label($role->name, ucfirst($role->name)) }}<br>
                             @endforeach
                         @endif
@@ -109,8 +109,8 @@
                     </div>
                 </div>
 
-                <!-- <div id="chapter_wrapper" class="form-group {{ $errors->has('chapter_id') ? ' has-error' : ' hidden' }}"> -->
-                <div id="chapter_wrapperx" class="form-group">
+                <div id="chapter_wrapper" class="form-group {{ $errors->has('chapter_id') ? ' has-error' : ' hidden' }}">
+                <!-- <div id="chapter_wrapper" class="form-group"> -->
                     <label class="col-md-3 control-label" for="chapter_id">Chapter</label>
                     <div class="col-md-9">
                         <select class="form-control" id="chapter_id" name="chapter_id">

@@ -817,12 +817,30 @@ class UserController extends Controller
 
         $members = DB::table('users')
             // ->join('users', 'members.user_id', '=', 'users.id')
-            ->join('chapters', 'chapters.id', '=', 'users.chapter_id')
+            // ->join('chapters', 'chapters.id', '=', 'users.chapter_id')
             ->join('user_has_roles', 'user_has_roles.user_id', '=', 'users.id')
-            ->where('user_has_roles.role_id',4)
+            // ->where('user_has_roles.role_id',4) // 1, 2, 4
+            ->whereIn('user_has_roles.role_id',array('1','2','4')) // 1, 2, 4
             // ->take(1000)
             ->get();
+        foreach ($members as $member) {
+            if ($member->chapter_id == NULL) {
+                $member->name = '- - -';
+            } elseif ($member->chapter_id == 0) {
+                $member->name = 'National';
+            } else {
+                $chapter = \App\Models\Chapter::find($member->chapter_id);
+                $member->name = $chapter->name;
+            }
 
+            if ($member->role_id == 1) {
+                $member->role_name = 'Super Admin';
+            } elseif ($member->role_id == 2) {
+                $member->role_name = 'Webmaster';
+            } elseif ($member->role_id == 4) {
+                $member->role_name = 'Chapter Admin';
+            }
+        }
         // print_r($members);
         // die('273');
 
@@ -842,15 +860,14 @@ class UserController extends Controller
             abort('401', '401');
         }
 
-        // echo $id;
-        // die();
-        // //Logged in user
-        // $user_id = $request->user()->id;
-        // echo $user_id;
+        echo $id;
 
         $user = $this->user->findOrFail($id);
         $roles = $this->role->get();
-        // dd($user);
+
+        $user->role = $this->role->findOrFail($id);
+        // dd($user->role);
+        // dd($roles);
         // $members = $this->members->findOrFail($id);
         // $members = $this->members->where('user_id','=',$id)->get();
         // dd($members->user());
@@ -910,6 +927,83 @@ class UserController extends Controller
         return redirect()->route('admin.user.index_admin')->with('flash_message', [
             'title' => '',
             'message' => 'Member successfully updated.',
+            'type' => 'success'
+        ]);
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function createAdmin()
+    {
+        if (!auth()->user()->hasPermissionTo('Create User')) {
+            abort('401', '401');
+        }
+
+        $roles = $this->role->get();
+
+        return view('admin.modules.user.create-1', compact('roles'));
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     * @throws \Illuminate\Validation\ValidationException
+     */
+    public function storeAdmin(Request $request)
+    {
+        if (!auth()->user()->hasPermissionTo('Create User')) {
+            abort('401', '401');
+        }
+
+        $this->validate($request, [
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'user_name' => 'required|unique:users,user_name,NULL,id,deleted_at,NULL',
+            'email' => 'required|unique:users,email,NULL,id,deleted_at,NULL',
+            'password' => 'required|min:8|confirmed',
+            // 'chapter_id' => 'unique:users,chapter_id',
+            'roles' => 'required',
+            'profile_image' =>  'mimes:jpg,jpeg,png'
+        ], [
+            // 'chapter_id.unique' => 'An admin has already been assigned for this chapter.'
+        ]
+        );
+        
+        $role = Role::find($request['roles'])->first();
+        
+        if ($role->name === 'Chapter Admin') {
+            if (!empty($request['chapter_id'])) {
+                $user = $this->user->create($request->only('first_name', 'last_name', 'user_name', 'email', 'password', 'chapter_id'));
+            } else {
+                return redirect()->back()->withInput()->withErrors(['chapter_id' => 'Chapter is required.']);
+            }
+        } else {
+            $user = $this->user->create($request->only('first_name', 'last_name', 'user_name', 'email', 'password'));
+        } 
+
+        $roles = $request['roles'];
+        if (isset($roles)) {
+            foreach ($roles as $role) {
+                $role_r = $this->role->where('id', '=', $role)->firstOrFail();
+                $user->assignRole($role_r);
+            }
+        }
+        // $user->roles()->sync($roles);
+
+
+        if ($request->hasFile('profile_image')) {
+            $file_upload_path = $this->userRepository->uploadFile($request->file('profile_image'));
+            $user->fill(['profile_image' => $file_upload_path])->save();
+        }
+
+        return redirect()->route('admin.user.index_admin')->with('flash_message', [
+            'title' => '',
+            'message' => 'Admin successfully added.',
             'type' => 'success'
         ]);
     }
