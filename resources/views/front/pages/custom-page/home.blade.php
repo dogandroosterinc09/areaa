@@ -74,7 +74,7 @@
                 </div> -->
             </div>
             {{-- slider-controls --}}
-            <div class="slick-dots">
+            <div class="slider-controls-two">
                 <button class="slick-prev slick-arrow slide-m-prev-two" aria-label="Previous" type="button" style="display: block;">Previous</button>
                 {{-- <button type="button" class="slide-m-prev-two category-slider__slick--prev"> <i></i> </button> --}}
                 <div class="slick-dots"></div>
