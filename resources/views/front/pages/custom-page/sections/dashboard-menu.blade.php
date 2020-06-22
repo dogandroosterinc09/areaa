@@ -40,9 +40,8 @@
                         </li>
                        
                         <li class="nav-item {{ $active == 'member_directory' ? 'active' : '' }}">
-                            {{-- <a class="nav-link" href="{{ route('customer.dashboard.member_directory') }}">Membership Directory</a> --}}
-
-                            <a class="nav-link" href="#">Membership Details</a> 
+                            <a class="nav-link" href="{{ route('customer.dashboard.member_directory') }}">Membership Directory</a>
+                            {{-- <a class="nav-link" href="#">Membership Details</a> --}}
                         </li>
                 
                         <!-- <li class="nav-item">

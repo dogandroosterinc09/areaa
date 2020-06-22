@@ -266,15 +266,15 @@
                     <div class="row">
                         <div class="col-md-8 col-md-offset-2">
                             <div class="form-group{{ $errors->has('other_sponsor_image') ? ' has-error' : '' }}">
-                                <label class="col-md-2 control-label" for="chapter_sponsor_image[]">Image</label>
+                                <label class="col-md-2 control-label" for="chapter_sponsor_image[]">Images</label>
                                 <div class="col-md-10">
                                     <div class="input-group">
                                         <label class="input-group-btn">
                                         <span class="btn btn-primary">
-                                            Choose File <input type="file" name="chapter_sponsor_image[]" style="display: none;">
+                                            Choose File <input type="file" name="chapter_sponsor_image[]" style="display: none;" onchange="document.getElementById('image_chapter_sponsor[{{$counter}}]').value =this.files[0].name">
                                         </span>
                                         </label>
-                                        <input type="text" class="form-control" readonly>
+                                        <input type="text" class="form-control" id="image_chapter_sponsor[{{$counter}}]" readonly>
                                     </div>
                                     @if($errors->has('image'))
                                         <span class="help-block animation-slideDown">{{ $errors->first('image') }}</span>
@@ -282,8 +282,13 @@
                                 </div>
                                 <div class="col-md-offset-2 col-md-10">
                                     <a href="{{ !empty($other_sponsors[$counter]->image) ? asset($other_sponsors[$counter]->image) : '' }}" class="zoom img-thumbnail" style="cursor: default !important;" data-toggle="lightbox-image">
-                                        <img src="{{ !empty($other_sponsors[$counter]->image) ? asset($other_sponsors[$counter]->image) : '' }}"
-                                            class="img-responsive center-block" style="max-width: 100px;">
+                                        {{-- <img src="{{ !empty($other_sponsors[$counter]->image) ? asset($other_sponsors[$counter]->image) : '' }}"
+                                            class="img-responsive center-block" style="max-width: 100px;"> --}}
+
+                                    <img src="{{ $other_sponsors[$counter]->image ? ($other_sponsors[$counter]->image != '' ? asset($other_sponsors[$counter]->image) : '') : '' }}"
+                                        alt="{{ $other_sponsors[$counter]->image ? ($other_sponsors[$counter]->image != '' ? asset($other_sponsors[$counter]->image) : '') : '' }}"
+                                        class="img-responsive center-block" style="max-width: 100px;">
+
                                     </a>                                
                                 </div>
                             </div>
@@ -337,10 +342,10 @@
                                     <div class="input-group">
                                         <label class="input-group-btn">
                                         <span class="btn btn-primary">
-                                            Choose File <input type="file" name="chapter_sponsor_image[]" style="display: none;">
+                                            Choose File <input type="file" name="chapter_sponsor_image[]" style="display: none;" onchange="document.getElementById('image_chapter_sponsor').value =this.files[0].name">
                                         </span>
                                         </label>
-                                        <input type="text" class="form-control" readonly>
+                                        <input type="text" class="form-control" id="image_chapter_sponsor" readonly>
                                     </div>
                                 </div>
 
@@ -417,10 +422,10 @@ $(document).ready(function(){
                                 '<div class="input-group">'+
                                     '<label class="input-group-btn">'+
                                     '<span class="btn btn-primary">'+
-                                        'Choose File <input type="file" name="chapter_sponsor_image[]" style="display: none;">'+
+                                        'Choose File <input type="file" name="chapter_sponsor_image[]" style="display: none;" onchange="document.getElementById(\'image_chapter_sponsor'+counter+'\').value =this.files[0].name">'+
                                     '</span>'+
                                     '</label>'+
-                                    '<input type="text" class="form-control" readonly>'+
+                                    '<input type="text" class="form-control" id="image_chapter_sponsor'+counter+'" readonly>'+
                                 '</div>'+
                             '</div>'+
                             '<label class="col-md-2 control-label" for="chapter_sponsor">Alt Text</label>'+

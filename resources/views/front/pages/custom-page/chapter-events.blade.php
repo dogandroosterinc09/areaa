@@ -40,12 +40,14 @@
                         <h2>Upcoming Events</h2>
                     </div>
 
+                    {{--
                     @if(count($chapter_events_previous))
                     <div class="col-lg-12">
                         <a href="#" class="btn btn--back">   <i href="#" class="btn btn--third"> </i> view previous events </a>
                     </div>
                     @endif                    
-    
+                    --}}
+
                     <div class="col-lg-12">
                         
                         <div class="chapter-event-display">
