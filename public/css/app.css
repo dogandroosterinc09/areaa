@@ -22334,9 +22334,7 @@ section.page--media .search-member-directory {
   background-position: -190px -8px;
 }
 .events-camp-parent-holder .slider-controls-two {
-  display: flex !important;
-  flex-wrap: wrap !important;
-  align-items: center;
+  position: relative;
   /* Slick Arrows */
   /* Slick Dots */
 }
@@ -22381,9 +22379,7 @@ section.page--media .search-member-directory {
   display: none;
 }
 .events-camp-parent-holder .slider-controls-two .slick-dots {
-  bottom: -5px;
-  display: block;
-  width: 100%;
+  display: inline-block;
   padding: 0;
   list-style: none;
   text-align: center;
@@ -22396,58 +22392,6 @@ section.page--media .search-member-directory {
   margin: 0 10px;
   padding: 0;
   cursor: pointer;
-  border-radius: 100%;
-}
-.events-camp-parent-holder .slider-controls-two .slick-dots li button {
-  background: transparent;
-  width: 10px;
-  height: 10px;
-  border: none;
-  font-size: 0;
-  line-height: 0;
-  display: inline-block;
-  cursor: pointer;
-  outline: none;
-  position: relative;
-  border-radius: 100%;
-}
-.events-camp-parent-holder .slider-controls-two .slick-dots li button::before {
-  font-family: slick;
-  font-size: 6px;
-  line-height: 20px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 10px;
-  height: 10px;
-  opacity: 1;
-  background: #b6b7b7;
-  text-align: center;
-  content: "";
-  display: block;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 100%;
-}
-.events-camp-parent-holder .slider-controls-two .slick-dots li.slick-active button {
-  width: 22px;
-  height: 22px;
-}
-.events-camp-parent-holder .slider-controls-two .slick-dots li.slick-active button:before {
-  background: #000000;
-  width: 10px;
-  height: 10px;
-  border-radius: 100%;
-}
-.events-camp-parent-holder .slider-controls-two .slick-dots li.slick-active button:after {
-  content: "";
-  position: relative;
-  top: -11px;
-  left: -11px;
-  right: 0;
-  display: block;
-  border: 1px solid #000000;
-  width: 22px;
-  height: 22px;
   border-radius: 100%;
 }
 
