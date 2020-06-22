@@ -102,7 +102,7 @@
         <section class="board-board">
             <div class="container-max">
                 <div class="col-lg-12">
-                    <h2>Advisory Board</h2>
+                    <h2>Committee Chair</h2>
 
                     {{-- board-thumbnail row --}}
                     <div class="board-thumbnail row">
