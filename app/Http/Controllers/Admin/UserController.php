@@ -706,7 +706,7 @@ class UserController extends Controller
             // ->where('users.chapter_id', '<>',NULL)
             // ->where('users.chapter_id', 0)
             ->select('members.id as member_id', 'members.*', 'users.*')
-            ->take(100)
+            // ->take(100)
             ->get();
 
         // echo 'count: '.count($members).'<br>';
