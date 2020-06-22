@@ -31,6 +31,20 @@
                         @endif
                     </div>
                 </div>
+
+                <div class="form-group{{ $errors->has('middle_name') ? ' has-error' : '' }}">
+                    <label class="col-md-3 control-label" for="middle_name">Middlename</label>
+
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" id="middle_name" name="middle_name"
+                               value="{{  Request::old('middle_name') ? : $user->middle_name }}"
+                               placeholder="Enter Middle name..">
+                        @if($errors->has('middle_name'))
+                            <span class="help-block animation-slideDown">{{ $errors->first('middle_name') }}</span>
+                        @endif
+                    </div>
+                </div>
+
                 <div class="form-group{{ $errors->has('last_name') ? ' has-error' : '' }}">
                     <label class="col-md-3 control-label" for="last_name">Lastname</label>
 
@@ -74,10 +88,10 @@
                         <div class="input-group">
                             <label class="input-group-btn">
                             <span class="btn btn-primary">
-                                Choose File <input type="file" name="profile_image" style="display: none;">
+                                Choose File <input type="file" name="profile_image" style="display: none;" onchange="document.getElementById('image_profile').value =this.files[0].name">
                             </span>
                             </label>
-                            <input type="text" class="form-control" readonly>
+                            <input type="text" class="form-control" id="image_profile" readonly>
                         </div>
                         @if($errors->has('profile_image'))
                             <span class="help-block animation-slideDown">{{ $errors->first('profile_image') }}</span>
@@ -99,7 +113,7 @@
                         @if(!$roles->isEmpty())
                             <h4></h4>
                             @foreach ($roles as $role)
-                                {{ Form::radio('roles[]', $role->id, ($role->id == $user->role->id)) }}
+                                {{ Form::radio('roles[]', $role->id, ($role->id == $user->role_id)) }}
                                 {{ Form::label($role->name, ucfirst($role->name)) }}<br>
                             @endforeach
                         @endif

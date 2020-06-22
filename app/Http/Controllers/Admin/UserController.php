@@ -672,89 +672,7 @@ class UserController extends Controller
         ]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param int $id
-     *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function editMember(Request $request, $id)
-    {
-        if (!auth()->user()->hasPermissionTo('Update Members')) {
-            abort('401', '401');
-        }
 
-        // echo $id;
-        // die();
-        // //Logged in user
-        // $user_id = $request->user()->id;
-        // echo $user_id;
-
-        $user = $this->user->findOrFail($id);
-        // dd($user);
-        // $members = $this->members->findOrFail($id);
-        // $members = $this->members->where('user_id','=',$id)->get();
-        // dd($members->user());
-
-        return view('admin.modules.user.edit-2', compact('user'));
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @param int $id
-     * @return \Illuminate\Http\RedirectResponse
-     * @throws \Illuminate\Validation\ValidationException
-     */
-    public function updateMember(Request $request, $id)
-    {
-        if (!auth()->user()->hasPermissionTo('Update Members')) {
-            abort('401', '401');
-        }
-
-        echo $id;
-        // die();
-        $user = $this->user->findOrFail($id);
-
-        $this->validate($request, [
-            'first_name' => 'required',
-            'last_name' => 'required',
-            'user_name' => 'required|unique:users,user_name,' . $id . ',id,deleted_at,NULL',
-            'email' => 'required|unique:users,email,' . $id . ',id,deleted_at,NULL',
-            'password' => 'required_if:change_password,==,1|min:8|confirmed',
-            'profile_image' =>  'mimes:jpg,jpeg,png'
-        ]);
-
-        if ($request->get('change_password') == '1') {
-            $input = $request->only(['first_name', 'last_name', 'user_name', 'email', 'is_active', 'is_featured', 'password']);
-        } else {
-            $input = $request->only(['first_name', 'last_name', 'user_name', 'email', 'is_active', 'is_featured']);
-        }
-
-        $input['is_active'] = isset($input['is_active']) ? 1 : 0;
-        $input['is_featured'] = isset($input['is_featured']) ? 1 : 0;
-        // $roles = $request['roles'];
-        $user->fill($input)->save();
-
-        // if (isset($roles)) {
-        //     $user->roles()->sync($roles);
-        // } else {
-        //     $user->roles()->detach();
-        // }
-
-        if ($request->hasFile('profile_image')) {
-            $file_upload_path = $this->userRepository->uploadFile($request->file('profile_image'));
-            $user->fill(['profile_image' => $file_upload_path])->save();
-        }
-
-        return redirect()->route('admin.user.index_members')->with('flash_message', [
-            'title' => '',
-            'message' => 'Member successfully updated.',
-            'type' => 'success'
-        ]);
-    }
 
     public function displayAllMembers() {
 
@@ -813,6 +731,91 @@ class UserController extends Controller
         return view('admin.modules.user.index-2', compact('members'));
     }
 
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param int $id
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function editMember(Request $request, $id)
+    {
+        if (!auth()->user()->hasPermissionTo('Update Members')) {
+            abort('401', '401');
+        }
+
+        // echo $id;
+        // die();
+        // //Logged in user
+        // $user_id = $request->user()->id;
+        // echo $user_id;
+
+        $user = $this->user->findOrFail($id);
+        // dd($user);
+        // $members = $this->members->findOrFail($id);
+        // $members = $this->members->where('user_id','=',$id)->get();
+        // dd($members->user());
+
+        return view('admin.modules.user.edit-2', compact('user'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
+     * @return \Illuminate\Http\RedirectResponse
+     * @throws \Illuminate\Validation\ValidationException
+     */
+    public function updateMember(Request $request, $id)
+    {
+        if (!auth()->user()->hasPermissionTo('Update Members')) {
+            abort('401', '401');
+        }
+
+        echo $id;
+        // die();
+        $user = $this->user->findOrFail($id);
+
+        $this->validate($request, [
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'user_name' => 'required|unique:users,user_name,' . $id . ',id,deleted_at,NULL',
+            'email' => 'required|unique:users,email,' . $id . ',id,deleted_at,NULL',
+            'password' => 'required_if:change_password,==,1|min:8|confirmed',
+            'profile_image' =>  'mimes:jpg,jpeg,png'
+        ]);
+
+        if ($request->get('change_password') == '1') {
+            $input = $request->only(['first_name', 'middle_name', 'last_name', 'user_name', 'email', 'is_active', 'is_featured', 'password']);
+        } else {
+            $input = $request->only(['first_name', 'middle_name', 'last_name', 'user_name', 'email', 'is_active', 'is_featured']);
+        }
+
+        $input['is_active'] = isset($input['is_active']) ? 1 : 0;
+        $input['is_featured'] = isset($input['is_featured']) ? 1 : 0;
+        // $roles = $request['roles'];
+        $user->fill($input)->save();
+
+        // if (isset($roles)) {
+        //     $user->roles()->sync($roles);
+        // } else {
+        //     $user->roles()->detach();
+        // }
+
+        if ($request->hasFile('profile_image')) {
+            $file_upload_path = $this->userRepository->uploadFile($request->file('profile_image'));
+            $user->fill(['profile_image' => $file_upload_path])->save();
+        }
+
+        return redirect()->route('admin.user.index_members')->with('flash_message', [
+            'title' => '',
+            'message' => 'Member successfully updated.',
+            'type' => 'success'
+        ]);
+    }
+
+
     public function displayAllAdmin() {
 
         $members = DB::table('users')
@@ -860,17 +863,12 @@ class UserController extends Controller
             abort('401', '401');
         }
 
-        echo $id;
-
-        $user = $this->user->findOrFail($id);
+        // $user = $this->user->findOrFail($id);
+        $user = $this->user::where('users.id',$id)
+                ->join('user_has_roles', 'user_has_roles.user_id','users.id')
+                ->first();
         $roles = $this->role->get();
-
-        $user->role = $this->role->findOrFail($id);
-        // dd($user->role);
-        // dd($roles);
-        // $members = $this->members->findOrFail($id);
-        // $members = $this->members->where('user_id','=',$id)->get();
-        // dd($members->user());
+        // dd($user);
 
         return view('admin.modules.user.edit-1', compact('user','roles'));
     }
@@ -903,9 +901,9 @@ class UserController extends Controller
         ]);
 
         if ($request->get('change_password') == '1') {
-            $input = $request->only(['first_name', 'last_name', 'user_name', 'email', 'is_active', 'is_featured', 'password']);
+            $input = $request->only(['first_name', 'middle_name', 'last_name', 'user_name', 'email', 'is_active', 'is_featured', 'password']);
         } else {
-            $input = $request->only(['first_name', 'last_name', 'user_name', 'email', 'is_active', 'is_featured']);
+            $input = $request->only(['first_name', 'middle_name', 'last_name', 'user_name', 'email', 'is_active', 'is_featured']);
         }
 
         $input['is_active'] = isset($input['is_active']) ? 1 : 0;

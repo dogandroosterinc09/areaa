@@ -19,6 +19,9 @@
                 <div class="block-title">
                     <h2><i class="fa fa-pencil"></i> <strong>Edit Member "{{$user->first_name.' '.$user->last_name}}"</strong></h2>
                 </div>
+
+                <?php // print_r($user); ?>
+
                 <div class="form-group{{ $errors->has('first_name') ? ' has-error' : '' }}">
                     <label class="col-md-3 control-label" for="first_name">Firstname</label>
 
@@ -31,6 +34,20 @@
                         @endif
                     </div>
                 </div>
+
+                <div class="form-group{{ $errors->has('middle_name') ? ' has-error' : '' }}">
+                    <label class="col-md-3 control-label" for="middle_name">Middlename</label>
+
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" id="middle_name" name="middle_name"
+                               value="{{  Request::old('middle_name') ? : $user->middle_name }}"
+                               placeholder="Enter middle name..">
+                        @if($errors->has('middle_name'))
+                            <span class="help-block animation-slideDown">{{ $errors->first('middle_name') }}</span>
+                        @endif
+                    </div>
+                </div>
+
                 <div class="form-group{{ $errors->has('last_name') ? ' has-error' : '' }}">
                     <label class="col-md-3 control-label" for="last_name">Lastname</label>
 
@@ -74,10 +91,10 @@
                         <div class="input-group">
                             <label class="input-group-btn">
                             <span class="btn btn-primary">
-                                Choose File <input type="file" name="profile_image" style="display: none;">
+                                Choose File <input type="file" name="profile_image" style="display: none;" onchange="document.getElementById('image_profile').value =this.files[0].name">
                             </span>
                             </label>
-                            <input type="text" class="form-control" readonly>
+                            <input type="text" id="image_profile" class="form-control" readonly>
                         </div>
                         @if($errors->has('profile_image'))
                             <span class="help-block animation-slideDown">{{ $errors->first('profile_image') }}</span>
@@ -113,6 +130,24 @@
                         </label>
                     </div>
                 </div>
+
+                <div id="chapter_wrapper" class="form-group {{ $errors->has('chapter_id') ? ' has-error' : '' }}">
+                    <label class="col-md-3 control-label" for="chapter_id">Chapter</label>
+                    <div class="col-md-9">
+                        <select class="form-control" id="chapter_id" name="chapter_id">
+                        @php( $chapters = \App\Models\Chapter::all() )
+                            <option value="">Select Chapter</option>
+                            <option {{ $user->chapter_id == 0 ? 'selected' : '' }} value="0">National</option>
+                        @foreach($chapters as $chapter)
+                            <option {{ $user->chapter_id == $chapter->id ? 'selected' : '' }} value="{{ $chapter->id }}">{{ $chapter->name }}</option>
+                        @endforeach
+                        </select>
+                        @if($errors->has('chapter_id'))
+                            <span class="help-block animation-slideDown">{{ $errors->first('chapter_id') }}</span>
+                        @endif
+                    </div>
+                </div>
+
                 <div class="form-group change-pass-checkbox-container">
                     <label class="col-md-3 control-label">Change Password</label>
 
