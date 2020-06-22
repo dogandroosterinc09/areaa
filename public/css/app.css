@@ -22333,6 +22333,17 @@ section.page--media .search-member-directory {
   background: url("../images/sprite.png") no-repeat;
   background-position: -190px -8px;
 }
+.events-camp-parent-holder .slider-controls-two {
+  position: absolute;
+  bottom: -15%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.events-camp-parent-holder .slider-controls-two .slick-dots {
+  position: inherit !important;
+}
 .events-camp-parent-holder .slide-m-dots-two {
   position: relative;
   /* Slick Arrows */

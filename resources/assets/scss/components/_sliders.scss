@@ -282,6 +282,17 @@
             }
         }
     }
+    .slider-controls-two {
+        position: absolute;
+        bottom: -15%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .slick-dots {
+            position: inherit !important;
+        }
+    }
     .slide-m-dots-two {
         position: relative;
         /* Slick Arrows */
