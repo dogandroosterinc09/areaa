@@ -42,6 +42,11 @@ $('.events-camp-slider').slick({
     autoplaySpeed: 5000,
     cssEase: 'linear',
     arrows: true,
+    nextArrow: "<button class=\"slick-prev slick-arrow\"></i>",
+    prevArrow: "<button class=\"slick-next slick-arrow\"></button>",
+    appendDots: $(".slide-m-dots-two"),
+    prevArrow: $(".slide-m-prev-two"),
+    nextArrow: $(".slide-m-next-two"),
     responsive: [{
             breakpoint: 1024,
             settings: {
