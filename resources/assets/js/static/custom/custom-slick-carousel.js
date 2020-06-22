@@ -44,6 +44,8 @@ $('.events-camp-slider').slick({
     arrows: true,
     // nextArrow: "<i class=\"category-slider__slick--next\"></i>",
     // prevArrow: "<i class=\"category-slider__slick--prev\"></i>",
+    nextArrow: "<i class=\"events-camp-slider--next\"></i>",
+    prevArrow: "<i class=\"events-camp-slider--prev\"></i>",
     appendDots: $(".slide-m-dots-two"),
     prevArrow: $(".slide-m-prev-two"),
     nextArrow: $(".slide-m-next-two"),
