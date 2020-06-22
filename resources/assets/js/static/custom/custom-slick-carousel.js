@@ -36,18 +36,12 @@ $('.banner__thumb-slide').slick({
 $('.events-camp-slider').slick({
     dots: true,
     infinite: true,
-    speed: 300,
+    speed: 800,
     slidesToShow: 4,
-    slidesToScroll: 1,
-    arrows: true,
     autoplay: true,
     autoplaySpeed: 5000,
+    cssEase: 'linear',
     arrows: true,
-    nextArrow: "<i class=\"events-camp-slider--next\"></i>",
-    prevArrow: "<i class=\"events-camp-slider--prev\"></i>",
-    appendDots: $(".slide-m-dots-two"),
-    prevArrow: $(".slide-m-prev-two"),
-    nextArrow: $(".slide-m-next-two"),
     responsive: [{
             breakpoint: 1024,
             settings: {
@@ -76,8 +70,6 @@ $('.events-camp-slider').slick({
         // instead of a settings object
     ]
 });
-
-
 
 
 
