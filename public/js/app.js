@@ -79665,8 +79665,6 @@ $(function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-var _$$slick;
-
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 $('.banner__slick').slick({
@@ -79700,39 +79698,40 @@ $('.banner__thumb-slide').slick({
   dots: false,
   focusOnSelect: true
 });
-$('.events-camp-slider').slick((_$$slick = {
+$('.events-camp-slider').slick({
   dots: true,
   infinite: true,
-  speed: 300,
+  speed: 800,
   slidesToShow: 4,
-  slidesToScroll: 1,
-  arrows: true,
   autoplay: true,
-  autoplaySpeed: 5000
-}, _defineProperty(_$$slick, "arrows", true), _defineProperty(_$$slick, "nextArrow", "<i class=\"events-camp-slider--next\"></i>"), _defineProperty(_$$slick, "prevArrow", "<i class=\"events-camp-slider--prev\"></i>"), _defineProperty(_$$slick, "appendDots", $(".slide-m-dots-two")), _defineProperty(_$$slick, "prevArrow", $(".slide-m-prev-two")), _defineProperty(_$$slick, "nextArrow", $(".slide-m-next-two")), _defineProperty(_$$slick, "responsive", [{
-  breakpoint: 1024,
-  settings: {
-    slidesToShow: 3,
-    slidesToScroll: 3,
-    infinite: true,
-    dots: true
-  }
-}, {
-  breakpoint: 600,
-  settings: {
-    slidesToShow: 2,
-    slidesToScroll: 2
-  }
-}, {
-  breakpoint: 480,
-  settings: {
-    slidesToShow: 1,
-    slidesToScroll: 1
-  } // You can unslick at a given breakpoint now by adding:
-  // settings: "unslick"
-  // instead of a settings object
+  autoplaySpeed: 5000,
+  cssEase: 'linear',
+  arrows: true,
+  responsive: [{
+    breakpoint: 1024,
+    settings: {
+      slidesToShow: 3,
+      slidesToScroll: 3,
+      infinite: true,
+      dots: true
+    }
+  }, {
+    breakpoint: 600,
+    settings: {
+      slidesToShow: 2,
+      slidesToScroll: 2
+    }
+  }, {
+    breakpoint: 480,
+    settings: {
+      slidesToShow: 1,
+      slidesToScroll: 1
+    } // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
 
-}]), _$$slick)); // $('.global-featured-slider__top--slick').slick({
+  }]
+}); // $('.global-featured-slider__top--slick').slick({
 //     lazyLoad: 'ondemand',
 //     slidesToShow: 1,
 //     slidesToScroll: 1,
