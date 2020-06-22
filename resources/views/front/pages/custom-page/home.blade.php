@@ -15,72 +15,75 @@
                     </div>
                 </div>
             </div>
-            <div class="events-camp-slider">
 
-                @php($events = \App\Models\Event::all())                        
-                @if ($events->isEmpty())
-                    <h3 class="text-danger font-weight-bold text-center w-100 my-5">No Events.</h3>
-                @endif
-                @foreach($events as $event) 
-                    <div class="events-camp-slider--item">
-                        <a href="{{ $event->url }}">
+            <div class="events-camp-parent-holder">
+                <div class="events-camp-slider">
+
+                    @php($events = \App\Models\Event::all())                        
+                    @if ($events->isEmpty())
+                        <h3 class="text-danger font-weight-bold text-center w-100 my-5">No Events.</h3>
+                    @endif
+                    @foreach($events as $event) 
+                        <div class="events-camp-slider--item">
+                            <a href="{{ $event->url }}">
+                                <div class="img-holder image-background">
+                                    <img src="{{ $event->attachment ? optional($event->attachment)->url : asset('public/images/watermark.jpg') }}" alt="Events Image">
+                                </div>
+                                <div class="title">{{ (strlen($event->name)>27)? substr($event->name, 0,27).' ...' : $event->name }}<span><i></i></span></div>
+                            </a>
+                        </div>
+                    @endforeach
+
+    <!--                 <div class="events-camp-slider--item">
+                        <a href="#">
                             <div class="img-holder image-background">
-                                <img src="{{ $event->attachment ? optional($event->attachment)->url : asset('public/images/watermark.jpg') }}" alt="Events Image">
+                                <img src="{{ asset('public/images/events-img1.jpg') }}" alt="Events Image">
                             </div>
-                            <div class="title">{{ (strlen($event->name)>27)? substr($event->name, 0,27).' ...' : $event->name }}<span><i></i></span></div>
+                            <div class="title">Leadership Summit <span><i></i></span></div>
                         </a>
                     </div>
-                @endforeach
-
-<!--                 <div class="events-camp-slider--item">
-                    <a href="#">
-                        <div class="img-holder image-background">
-                            <img src="{{ asset('public/images/events-img1.jpg') }}" alt="Events Image">
-                        </div>
-                        <div class="title">Leadership Summit <span><i></i></span></div>
-                    </a>
+                    <div class="events-camp-slider--item">
+                        <a href="#">
+                            <div class="img-holder image-background">
+                                <img src="{{ asset('public/images/events-img2.jpg') }}" alt="Events Image">
+                            </div>
+                            <div class="title">Regional Retreats <span><i></i></span></div>
+                        </a>
+                    </div>
+                    <div class="events-camp-slider--item">
+                        <a href="#">
+                            <div class="img-holder image-background">
+                                <img src="{{ asset('public/images/events-img3.jpg') }}" alt="Events Image">
+                            </div>
+                            <div class="title">Global & Luxury Summit <span><i></i></span></div>
+                        </a>
+                    </div>
+                    <div class="events-camp-slider--item">
+                        <a href="#">
+                            <div class="img-holder image-background">
+                                <img src="{{ asset('public/images/events-img4.jpg') }}" alt="Events Image">
+                            </div>
+                            <div class="title">National Convention <span><i></i></span></div>
+                        </a>
+                    </div>
+                    <div class="events-camp-slider--item">
+                        <a href="#">
+                            <div class="img-holder image-background">
+                                <img src="{{ asset('public/images/events-img1.jpg') }}" alt="Events Image">
+                            </div>
+                            <div class="title">Leadership Summit <span><i></i></span></div>
+                        </a>
+                    </div> -->
                 </div>
-                <div class="events-camp-slider--item">
-                    <a href="#">
-                        <div class="img-holder image-background">
-                            <img src="{{ asset('public/images/events-img2.jpg') }}" alt="Events Image">
-                        </div>
-                        <div class="title">Regional Retreats <span><i></i></span></div>
-                    </a>
+                {{-- slider-controls --}}
+                <div class="slider-controls-two">
+                    <button class="slick-prev slick-arrow slide-m-prev-two" aria-label="Previous" type="button" style="display: block;">Previous</button>
+                    {{-- <button type="button" class="slide-m-prev-two category-slider__slick--prev"> <i></i> </button> --}}
+                    <div class="slick-dots"></div>
+                    {{-- <button type="button" class="slide-m-next-two category-slider__slick--next"> <i></i> </button> --}}
+                    {{-- <button type="button" class="slide-m-next">next</button> --}}
+                    <button class="slick-next slick-arrow slide-m-next-two" aria-label="Next" type="button" style="display: block;">Next</button>
                 </div>
-                <div class="events-camp-slider--item">
-                    <a href="#">
-                        <div class="img-holder image-background">
-                            <img src="{{ asset('public/images/events-img3.jpg') }}" alt="Events Image">
-                        </div>
-                        <div class="title">Global & Luxury Summit <span><i></i></span></div>
-                    </a>
-                </div>
-                <div class="events-camp-slider--item">
-                    <a href="#">
-                        <div class="img-holder image-background">
-                            <img src="{{ asset('public/images/events-img4.jpg') }}" alt="Events Image">
-                        </div>
-                        <div class="title">National Convention <span><i></i></span></div>
-                    </a>
-                </div>
-                <div class="events-camp-slider--item">
-                    <a href="#">
-                        <div class="img-holder image-background">
-                            <img src="{{ asset('public/images/events-img1.jpg') }}" alt="Events Image">
-                        </div>
-                        <div class="title">Leadership Summit <span><i></i></span></div>
-                    </a>
-                </div> -->
-            </div>
-            {{-- slider-controls --}}
-            <div class="slider-controls-two">
-                <button class="slick-prev slick-arrow slide-m-prev-two" aria-label="Previous" type="button" style="display: block;">Previous</button>
-                {{-- <button type="button" class="slide-m-prev-two category-slider__slick--prev"> <i></i> </button> --}}
-                <div class="slick-dots"></div>
-                {{-- <button type="button" class="slide-m-next-two category-slider__slick--next"> <i></i> </button> --}}
-                {{-- <button type="button" class="slide-m-next">next</button> --}}
-                <button class="slick-next slick-arrow slide-m-next-two" aria-label="Next" type="button" style="display: block;">Next</button>
             </div>
 
         </section>
