@@ -73,6 +73,16 @@
                     </a>
                 </div> -->
             </div>
+            {{-- slider-controls --}}
+            <div class="slick-dots">
+                <button class="slick-prev slick-arrow slide-m-prev-two" aria-label="Previous" type="button" style="display: block;">Previous</button>
+                {{-- <button type="button" class="slide-m-prev-two category-slider__slick--prev"> <i></i> </button> --}}
+                <div class="slick-dots"></div>
+                {{-- <button type="button" class="slide-m-next-two category-slider__slick--next"> <i></i> </button> --}}
+                {{-- <button type="button" class="slide-m-next">next</button> --}}
+                <button class="slick-next slick-arrow slide-m-next-two" aria-label="Next" type="button" style="display: block;">Next</button>
+            </div>
+
         </section>
         {{-- End of Events Camp --}}
 
