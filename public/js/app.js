@@ -79703,16 +79703,13 @@ $('.banner__thumb-slide').slick({
 $('.events-camp-slider').slick((_$$slick = {
   dots: true,
   infinite: true,
-  speed: 800,
+  speed: 300,
   slidesToShow: 4,
-  autoplay: true,
-  autoplaySpeed: 5000,
-  cssEase: 'linear',
+  slidesToScroll: 1,
   arrows: true,
-  nextArrow: "<i class=\"events-camp-slider--next\"></i>",
-  prevArrow: "<i class=\"events-camp-slider--prev\"></i>",
-  appendDots: $(".slide-m-dots-two")
-}, _defineProperty(_$$slick, "prevArrow", $(".slide-m-prev-two")), _defineProperty(_$$slick, "nextArrow", $(".slide-m-next-two")), _defineProperty(_$$slick, "responsive", [{
+  autoplay: true,
+  autoplaySpeed: 5000
+}, _defineProperty(_$$slick, "arrows", true), _defineProperty(_$$slick, "nextArrow", "<i class=\"events-camp-slider--next\"></i>"), _defineProperty(_$$slick, "prevArrow", "<i class=\"events-camp-slider--prev\"></i>"), _defineProperty(_$$slick, "appendDots", $(".slide-m-dots-two")), _defineProperty(_$$slick, "prevArrow", $(".slide-m-prev-two")), _defineProperty(_$$slick, "nextArrow", $(".slide-m-next-two")), _defineProperty(_$$slick, "responsive", [{
   breakpoint: 1024,
   settings: {
     slidesToShow: 3,
