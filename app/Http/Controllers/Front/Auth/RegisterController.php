@@ -335,55 +335,55 @@ class RegisterController extends Controller
         $controller = new AnetController\CreateTransactionController($req);
         $response = $controller->executeWithApiResponse(\net\authorize\api\constants\ANetEnvironment::SANDBOX);
         
-        print_r($customerAddress);
+        // print_r($customerAddress);
 
         if ($response != null) {
-            echo 'line 279 <br>';
+            // echo 'line 279 <br>';
             // Check to see if the API request was successfully received and acted upon
             if ($response->getMessages()->getResultCode() == "Ok") {
-                echo 'line 282 <br>';
+                // echo 'line 282 <br>';
                 // Since the API request was successful, look for a transaction response
                 // and parse it to display the results of authorizing the card
                 $tresponse = $response->getTransactionResponse();
             
                 if ($tresponse != null && $tresponse->getMessages() != null) {
-                    echo 'line 288 - good <br>';
-                    echo " Successfully created transaction with Transaction ID: " . $tresponse->getTransId() . "<br>";
-                    echo " Transaction Response Code: " . $tresponse->getResponseCode() . "<br>";
-                    echo " Message Code: " . $tresponse->getMessages()[0]->getCode() . "<br>";
-                    echo " Auth Code: " . $tresponse->getAuthCode() . "<br>";
-                    echo " Description: " . $tresponse->getMessages()[0]->getDescription() . "<br>";
+                    // echo 'line 288 - good <br>';
+                    // echo " Successfully created transaction with Transaction ID: " . $tresponse->getTransId() . "<br>";
+                    // echo " Transaction Response Code: " . $tresponse->getResponseCode() . "<br>";
+                    // echo " Message Code: " . $tresponse->getMessages()[0]->getCode() . "<br>";
+                    // echo " Auth Code: " . $tresponse->getAuthCode() . "<br>";
+                    // echo " Description: " . $tresponse->getMessages()[0]->getDescription() . "<br>";
                     $chargecreditcardsuccess = 1;
                 } else {
-                    echo "Transaction Failed \n";
+                    // echo "Transaction Failed \n";
                     if ($tresponse->getErrors() != null) {
-                        echo " Error Code  : " . $tresponse->getErrors()[0]->getErrorCode() . "\n";
-                        echo " Error Message : " . $tresponse->getErrors()[0]->getErrorText() . "\n";
+                        // echo " Error Code  : " . $tresponse->getErrors()[0]->getErrorCode() . "\n";
+                        // echo " Error Message : " . $tresponse->getErrors()[0]->getErrorText() . "\n";
                     }
                 }
                 // Or, print errors if the API request wasn't successful
             } else {
-                echo "Transaction Failed \n";
+                // echo "Transaction Failed \n";
                 $tresponse = $response->getTransactionResponse();
             
                 if ($tresponse != null && $tresponse->getErrors() != null) {
-                    echo " Error Code  : " . $tresponse->getErrors()[0]->getErrorCode() . "<br>";
-                    echo " Error Message : " . $tresponse->getErrors()[0]->getErrorText() . "<br>";
+                    // echo " Error Code  : " . $tresponse->getErrors()[0]->getErrorCode() . "<br>";
+                    // echo " Error Message : " . $tresponse->getErrors()[0]->getErrorText() . "<br>";
                 } else {
-                    echo " Error Code  : " . $response->getMessages()->getMessage()[0]->getCode() . "<br>";
-                    echo " Error Message : " . $response->getMessages()->getMessage()[0]->getText() . "<br>";
+                    // echo " Error Code  : " . $response->getMessages()->getMessage()[0]->getCode() . "<br>";
+                    // echo " Error Message : " . $response->getMessages()->getMessage()[0]->getText() . "<br>";
                 }
             }
         } else {
-            echo  "No response returned \n";
+            // echo  "No response returned \n";
         }
 
         // return $response;
         // ---------------------------------------------------------------- Authorize.net CREATE CUSTOMER PROFILE
         if ($chargecreditcardsuccess == 1) {
-            echo '-------- <br>';
-            echo 'line 322 - create customer profile';
-            echo '-------- <br>';
+            // echo '-------- <br>';
+            // echo 'line 322 - create customer profile';
+            // echo '-------- <br>';
 
             $transId = $tresponse->getTransId();
 
@@ -404,23 +404,23 @@ class RegisterController extends Controller
             // You can just provide the customer Profile ID
             // $request->setCustomerProfileId("123343");
 
-            echo '-------- <br>';
-            print_r($customerProfile);
+            // echo '-------- <br>';
+            // print_r($customerProfile);
 
             $controller = new AnetController\CreateCustomerProfileFromTransactionController($req);
 
             $response = $controller->executeWithApiResponse(\net\authorize\api\constants\ANetEnvironment::SANDBOX);
 
-            echo '-------- <br>';
-            print_r($response);
+            // echo '-------- <br>';
+            // print_r($response);
 
             if (($response != null) && ($response->getMessages()->getResultCode() == "Ok") ) {
-                echo "SUCCESS: PROFILE ID : " . $response->getCustomerProfileId() . "<br>";
+                // echo "SUCCESS: PROFILE ID : " . $response->getCustomerProfileId() . "<br>";
                 $existingcustomerprofileid = $response->getCustomerProfileId();
             } else {
-                echo "ERROR :  Invalid response\n";
+                // echo "ERROR :  Invalid response\n";
                 $errorMessages = $response->getMessages()->getMessage();
-                echo "Response : " . $errorMessages[0]->getCode() . "  " .$errorMessages[0]->getText() . "<br>";
+                // echo "Response : " . $errorMessages[0]->getCode() . "  " .$errorMessages[0]->getText() . "<br>";
             }
             // return $response;
         }
@@ -484,12 +484,12 @@ class RegisterController extends Controller
         $controller = new AnetController\CreateCustomerShippingAddressController($req);
         $response = $controller->executeWithApiResponse(\net\authorize\api\constants\ANetEnvironment::SANDBOX);
         if (($response != null) && ($response->getMessages()->getResultCode() == "Ok") ) {
-            echo "Create Customer Shipping Address SUCCESS: ADDRESS ID : " . $response-> getCustomerAddressId() . "<br>";
+            // echo "Create Customer Shipping Address SUCCESS: ADDRESS ID : " . $response-> getCustomerAddressId() . "<br>";
             $customerAddressId = $response-> getCustomerAddressId();
         } else {
-            echo "Create Customer Shipping Address  ERROR :  Invalid response\n";
+            // echo "Create Customer Shipping Address  ERROR :  Invalid response\n";
             $errorMessages = $response->getMessages()->getMessage();
-            echo "Response : " . $errorMessages[0]->getCode() . "  " .$errorMessages[0]->getText() . "<br>";
+            // echo "Response : " . $errorMessages[0]->getCode() . "  " .$errorMessages[0]->getText() . "<br>";
         }
 
 
@@ -497,17 +497,17 @@ class RegisterController extends Controller
         $controller = new AnetController\CreateCustomerPaymentProfileController($paymentprofilerequest);
         $response = $controller->executeWithApiResponse(\net\authorize\api\constants\ANetEnvironment::SANDBOX);
 
-        echo '-------- <br>';
-        print_r($response);
-        echo '-------- <br>';
+        // echo '-------- <br>';
+        // print_r($response);
+        // echo '-------- <br>';
 
         if (($response != null) && ($response->getMessages()->getResultCode() == "Ok") ) {
-            echo "Create Customer Payment Profile SUCCESS - ID: " . $response->getCustomerPaymentProfileId() . "<br>";
+            // echo "Create Customer Payment Profile SUCCESS - ID: " . $response->getCustomerPaymentProfileId() . "<br>";
             $customerPaymentProfileId = $response->getCustomerPaymentProfileId();
         } else {
-            echo "Create Customer Payment Profile: ERROR Invalid response\n";
+            // echo "Create Customer Payment Profile: ERROR Invalid response\n";
             $errorMessages = $response->getMessages()->getMessage();
-            echo "Response : " . $errorMessages[0]->getCode() . "  " .$errorMessages[0]->getText() . "<br>";
+            // echo "Response : " . $errorMessages[0]->getCode() . "  " .$errorMessages[0]->getText() . "<br>";
 
         }
 
@@ -566,12 +566,12 @@ class RegisterController extends Controller
         $controller = new AnetController\ARBCreateSubscriptionController($req);
         $response = $controller->executeWithApiResponse( \net\authorize\api\constants\ANetEnvironment::SANDBOX);
         if (($response != null) && ($response->getMessages()->getResultCode() == "Ok") ) {
-            echo "SUCCESS: Subscription ID : " . $response->getSubscriptionId() . "<br>";
+            // echo "SUCCESS: Subscription ID : " . $response->getSubscriptionId() . "<br>";
             $subscriptionID = $response->getSubscriptionId();
         } else {
-            echo "ERROR :  Invalid response\n";
+            // echo "ERROR :  Invalid response\n";
             $errorMessages = $response->getMessages()->getMessage();
-            echo "Response : " . $errorMessages[0]->getCode() . "  " .$errorMessages[0]->getText() . "<br>";
+            // echo "Response : " . $errorMessages[0]->getCode() . "  " .$errorMessages[0]->getText() . "<br>";
         }
 
         // return $response;
