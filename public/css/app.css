@@ -22362,7 +22362,7 @@ section.page--media .search-member-directory {
   font-size: 0;
   border: none;
   position: absolute;
-  left: -20px;
+  left: -30px;
   bottom: -18px;
   top: inherit;
   cursor: pointer;
@@ -22386,7 +22386,7 @@ section.page--media .search-member-directory {
   font-size: 0;
   border: none;
   position: absolute;
-  right: -20px;
+  right: -30px;
   bottom: -18px;
   top: inherit;
   cursor: pointer;
