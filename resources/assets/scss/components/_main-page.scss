@@ -32,7 +32,9 @@ section {
     &.events-camp {
         margin: 0 0 0 auto;
         max-width: 1803px;
-        min-height: 895px;
+        // min-height: 895px;
+        min-height: auto;
+        padding-bottom: 120px;
         overflow: hidden;
         background: url('../images/events-bg.png') no-repeat;
         a.btn--secondary {
