@@ -31,10 +31,10 @@
             <div class="container-max">
                 <div class="row">
                     <div class="col-lg-12">
-                        @if (Session::get('is_chapter_event')==1)
+                        @if (Session::get('is_chapter_event')==2)
                             <a href="{{route('chapter_event.main', ['slug'=>$chapter->slug])}}" class="btn btn--back">   <i href="#" class="btn btn--third"> </i> Back to {{$chapter->name}} Events </a>
                         @else
-                            <a href="{{ url('events') }}" class="btn btn--back">   <i href="#" class="btn btn--third"> </i> Back to National Events </a>
+                            <a href="{{ url('events-chapter') }}" class="btn btn--back">   <i href="#" class="btn btn--third"> </i> Back to Chapter Events </a>
                         @endif
                     </div>
     

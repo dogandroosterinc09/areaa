@@ -154,7 +154,7 @@ class ChapterPageController extends Controller
         ->orderBy('ends_at')
         ->get();
         
-        \Session::put('is_chapter_event',1);
+        \Session::put('is_chapter_event', 2); // 0 = Natl Events, 1 = Chapter Events, 2 = Chapter --- see PageController Ln171
 
         return view('front.pages.custom-pages-index', compact('page', 'chapter', 'chapter_page_event', 'chapter_events', 'chapter_events_previous'));
     }
