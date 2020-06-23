@@ -79780,8 +79780,8 @@ $('.feat-members-slider').slick((_$$slick2 = {
   arrows: true,
   nextArrow: "<i class=\"feat-members-slider--next\"></i>",
   prevArrow: "<i class=\"feat-members-slider--prev\"></i>",
-  appendDots: $(".slide-m-dots-two")
-}, _defineProperty(_$$slick2, "prevArrow", $(".slide-m-prev-two")), _defineProperty(_$$slick2, "nextArrow", $(".slide-m-next-two")), _defineProperty(_$$slick2, "responsive", [{
+  appendDots: $(".feat-members-slider__slide-m-dots-two")
+}, _defineProperty(_$$slick2, "prevArrow", $(".feat-members-slider__slide-m-prev-two")), _defineProperty(_$$slick2, "nextArrow", $(".feat-members-slider__slide-m-next-two")), _defineProperty(_$$slick2, "responsive", [{
   breakpoint: 1100,
   settings: {
     slidesToShow: 3,

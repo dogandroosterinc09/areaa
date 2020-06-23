@@ -132,9 +132,9 @@ $('.feat-members-slider').slick({
     arrows: true,
     nextArrow: "<i class=\"feat-members-slider--next\"></i>",
     prevArrow: "<i class=\"feat-members-slider--prev\"></i>",
-    appendDots: $(".slide-m-dots-two"),
-    prevArrow: $(".slide-m-prev-two"),
-    nextArrow: $(".slide-m-next-two"),
+    appendDots: $(".feat-members-slider__slide-m-dots-two"),
+    prevArrow: $(".feat-members-slider__slide-m-prev-two"),
+    nextArrow: $(".feat-members-slider__slide-m-next-two"),
     responsive: [{
             breakpoint: 1100,
             settings: {

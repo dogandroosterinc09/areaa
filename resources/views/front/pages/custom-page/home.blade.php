@@ -398,13 +398,13 @@
                         </div>
                         {{-- end of feat-members-slider --}}
                          {{-- slider-controls --}}
-                        <div class="slider-controls-two">
-                            <button class="slick-prev slick-arrow slide-m-prev-two" aria-label="Previous" type="button" style="display: block;">Previous</button>
+                        <div class="feat-members-slider__slider-controls-two">
+                            <button class="slick-prev slick-arrow feat-members-slider__slide-m-prev-two" aria-label="Previous" type="button" style="display: block;">Previous</button>
                             {{-- <button type="button" class="slide-m-prev-two category-slider__slick--prev"> <i></i> </button> --}}
-                            <div class="slide-m-dots-two"></div>
+                            <div class="feat-members-slider__slide-m-dots-two"></div>
                             {{-- <button type="button" class="slide-m-next-two category-slider__slick--next"> <i></i> </button> --}}
                             {{-- <button type="button" class="slide-m-next">next</button> --}}
-                            <button class="slick-next slick-arrow slide-m-next-two" aria-label="Next" type="button" style="display: block;">Next</button>
+                            <button class="slick-next slick-arrow feat-members-slider__slide-m-next-two" aria-label="Next" type="button" style="display: block;">Next</button>
                         </div>
 
 
