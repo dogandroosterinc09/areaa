@@ -512,7 +512,7 @@ class RegisterController extends Controller
         }
 
 
-        sleep(10); // If subscription is instantly done after create profile --> Error Response : E00040 The record cannot be found.
+        sleep(13); // If subscription is instantly done after create profile --> Error Response : E00040 The record cannot be found.
         // ---------------------------------------------------------------- Authorize.net CREATE SUBSCRIPTION for July 1 charging
         /* Create a merchantAuthenticationType object with authentication details
            retrieved from the constants file */
