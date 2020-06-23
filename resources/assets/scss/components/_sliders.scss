@@ -510,138 +510,138 @@
                 }
             }
         }
-    }
-    &__slider-controls-two {
-        width: auto !important;
-        display: inline-block;
-        position: relative;
-        margin-top: 35px;
-        .slick-dots {
-            position: inherit !important;
-        }
-        .slick-dots {
+        &__slider-controls-two {
+            width: auto !important;
             display: inline-block;
-            bottom: 0 !important;
-            padding: 0;
-            list-style: none;
-            text-align: center;
-        }
-        .slick-dots li {
             position: relative;
-            display: inline-block;
-            width: 10px;
-            height: 10px;
-            margin: 0 10px;
-            padding: 0;
-            cursor: pointer;
-            -webkit-border-radius: 100%;
-            -moz-border-radius: 100%;
-            border-radius: 100%;
+            margin-top: 35px;
+            .slick-dots {
+                position: inherit !important;
+            }
+            .slick-dots {
+                display: inline-block;
+                bottom: 0 !important;
+                padding: 0;
+                list-style: none;
+                text-align: center;
+            }
+            .slick-dots li {
+                position: relative;
+                display: inline-block;
+                width: 10px;
+                height: 10px;
+                margin: 0 10px;
+                padding: 0;
+                cursor: pointer;
+                -webkit-border-radius: 100%;
+                -moz-border-radius: 100%;
+                border-radius: 100%;
+            }
+            .slick-dots li button {
+                background: transparent;
+                width: 10px;
+                height: 10px;
+                border: none;
+                font-size: 0;
+                line-height: 0;
+                display: inline-block;
+                cursor: pointer;
+                outline: none;
+                position: relative;
+                -webkit-border-radius: 100%;
+                -moz-border-radius: 100%;
+                border-radius: 100%;
+            }
+            .slick-dots li button::before {
+                font-family: slick;
+                font-size: 6px;
+                line-height: 20px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 10px;
+                height: 10px;
+                opacity: 1;
+                background: #b6b7b7;
+                text-align: center;
+                content: '';
+                display: block;
+                -webkit-font-smoothing: antialiased;
+                -webkit-border-radius: 100%;
+                -moz-border-radius: 100%;
+                border-radius: 100%;
+            }
+            .slick-dots li.slick-active button {
+                width: 22px;
+                height: 22px;
+            }
+            .slick-dots li.slick-active button:before {
+                background: #000000;
+                width: 10px;
+                height: 10px;
+                -webkit-border-radius: 100%;
+                -moz-border-radius: 100%;
+                border-radius: 100%;
+            }
+            .slick-dots li.slick-active button:after {
+                content: '';
+                position: relative;
+                top: -11px;
+                left: -11px;
+                right: 0;
+                display: block;
+                border: 1px solid #000000;
+                width: 22px;
+                height: 22px;
+                -webkit-border-radius: 100%;
+                -moz-border-radius: 100%;
+                border-radius: 100%;
+            }
         }
-        .slick-dots li button {
-            background: transparent;
-            width: 10px;
-            height: 10px;
-            border: none;
+        &__slide-m-next-two {
+            background: url('../images/sprite.png') no-repeat;
+            background-position: -11px -46px;
+            width: 29px;
+            height: 24px;
             font-size: 0;
-            line-height: 0;
-            display: inline-block;
-            cursor: pointer;
-            outline: none;
-            position: relative;
-            -webkit-border-radius: 100%;
-            -moz-border-radius: 100%;
-            border-radius: 100%;
-        }
-        .slick-dots li button::before {
-            font-family: slick;
-            font-size: 6px;
-            line-height: 20px;
+            border: none;
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 10px;
-            height: 10px;
-            opacity: 1;
-            background: #b6b7b7;
-            text-align: center;
-            content: '';
-            display: block;
-            -webkit-font-smoothing: antialiased;
-            -webkit-border-radius: 100%;
-            -moz-border-radius: 100%;
-            border-radius: 100%;
+            right: -55px;
+            bottom: -18px;
+            top: inherit;
+            // top: 100%;
+            // right: 54%;
+            //  right: 52%;
+            cursor: pointer;
+            z-index: 9;
+            opacity: .4;
+            &:hover {
+                opacity: 1;
+            }
+            &::before {
+                display: none;
+            }
         }
-        .slick-dots li.slick-active button {
-            width: 22px;
-            height: 22px;
-        }
-        .slick-dots li.slick-active button:before {
-            background: #000000;
-            width: 10px;
-            height: 10px;
-            -webkit-border-radius: 100%;
-            -moz-border-radius: 100%;
-            border-radius: 100%;
-        }
-        .slick-dots li.slick-active button:after {
-            content: '';
-            position: relative;
-            top: -11px;
-            left: -11px;
-            right: 0;
-            display: block;
-            border: 1px solid #000000;
-            width: 22px;
-            height: 22px;
-            -webkit-border-radius: 100%;
-            -moz-border-radius: 100%;
-            border-radius: 100%;
-        }
-    }
-    &__slide-m-next-two {
-        background: url('../images/sprite.png') no-repeat;
-        background-position: -11px -46px;
-        width: 29px;
-        height: 24px;
-        font-size: 0;
-        border: none;
-        position: absolute;
-        right: -55px;
-        bottom: -18px;
-        top: inherit;
-        // top: 100%;
-        // right: 54%;
-        //  right: 52%;
-        cursor: pointer;
-        z-index: 9;
-        opacity: .4;
-        &:hover {
-            opacity: 1;
-        }
-        &::before {
-            display: none;
-        }
-    }
-    &__slide-m-prev-two {
-        background: url('../images/sprite.png') no-repeat;
-        background-position: -11px -46px;
-        width: 29px;
-        height: 24px;
-        font-size: 0;
-        border: none;
-        position: absolute;
-        right: -55px;
-        bottom: -18px;
-        top: inherit;
-        cursor: pointer;
-        z-index: 9;
-        opacity: .4;
-        &:hover {
-            opacity: 1;
-        }
-        &::before {
-            display: none;
+        &__slide-m-prev-two {
+            background: url('../images/sprite.png') no-repeat;
+            background-position: -11px -46px;
+            width: 29px;
+            height: 24px;
+            font-size: 0;
+            border: none;
+            position: absolute;
+            right: -55px;
+            bottom: -18px;
+            top: inherit;
+            cursor: pointer;
+            z-index: 9;
+            opacity: .4;
+            &:hover {
+                opacity: 1;
+            }
+            &::before {
+                display: none;
+            }
         }
     }
 }
