@@ -302,111 +302,120 @@
                 </div>
                 <div class="row" data-aos="fade-up">
                     <div class="col-md-12">
-                        <div class="feat-members-slider">
+                        {{-- feat-members-slider-parent --}}
+                        <div class="feat-members-slider-parent">
 
-                        @php($featureds = \App\Models\User::where('is_featured','=',1)->get())                        
-                        @if ($featureds->isEmpty())
-                            <h3 class="text-danger font-weight-bold text-center w-100 my-5">No Featured Members</h3>
-                        @endif
-                        @foreach($featureds as $featured) 
-                            @if ($featured->chapter_id > 0)
-                                @php($chapter = \App\Models\Chapter::find($featured->chapter_id))
-                                @php($chapter_name = $chapter->name)
-                            @else
-                                @php($chapter_name = 'National')
-                            @endif
-                            <div class="feat-members-slider--item">
-                                <a href="#">
-                                    <div class="image-holder image-background">
-                                        <img src="{{ $featured->profile_image ? asset($featured->profile_image) : asset('public/images/no-image.jpg') }}" alt="Member Image">
-                                    </div>
-                                    <div class="desc-txt">
-                                        <div class="name">{{ $featured->first_name.' '.$featured->last_name }}</div>
-                                        <div class="chapter">{{ $chapter_name }}</div>
-                                    </div>
-                                </a>
-                            </div>
+                       
+                            <div class="feat-members-slider">
 
-                        @endforeach
+                                @php($featureds = \App\Models\User::where('is_featured','=',1)->get())                        
+                                @if ($featureds->isEmpty())
+                                    <h3 class="text-danger font-weight-bold text-center w-100 my-5">No Featured Members</h3>
+                                @endif
+                                @foreach($featureds as $featured) 
+                                    @if ($featured->chapter_id > 0)
+                                        @php($chapter = \App\Models\Chapter::find($featured->chapter_id))
+                                        @php($chapter_name = $chapter->name)
+                                    @else
+                                        @php($chapter_name = 'National')
+                                    @endif
+                                    <div class="feat-members-slider--item">
+                                        <a href="#">
+                                            <div class="image-holder image-background">
+                                                <img src="{{ $featured->profile_image ? asset($featured->profile_image) : asset('public/images/no-image.jpg') }}" alt="Member Image">
+                                            </div>
+                                            <div class="desc-txt">
+                                                <div class="name">{{ $featured->first_name.' '.$featured->last_name }}</div>
+                                                <div class="chapter">{{ $chapter_name }}</div>
+                                            </div>
+                                        </a>
+                                    </div>
 
-<!--                             <div class="feat-members-slider--item">
-                                <a href="#">
-                                    <div class="image-holder image-background">
-                                        <img src="{{ asset('public/images/member-img1.jpg') }}" alt="Member Image">
+                                @endforeach
+
+        <!--                             <div class="feat-members-slider--item">
+                                        <a href="#">
+                                            <div class="image-holder image-background">
+                                                <img src="{{ asset('public/images/member-img1.jpg') }}" alt="Member Image">
+                                            </div>
+                                            <div class="desc-txt">
+                                                <div class="name">May Marcus</div>
+                                                <div class="chapter">San Diego Chapter</div>
+                                            </div>
+                                        </a>
                                     </div>
-                                    <div class="desc-txt">
-                                        <div class="name">May Marcus</div>
-                                        <div class="chapter">San Diego Chapter</div>
+                                    <div class="feat-members-slider--item">
+                                        <a href="#">
+                                            <div class="image-holder image-background">
+                                                <img src="{{ asset('public/images/member-img2.jpg') }}" alt="Member Image">
+                                            </div>
+                                            <div class="desc-txt">
+                                                <div class="name">May Marcus</div>
+                                                <div class="chapter">San Diego Chapter</div>
+                                            </div>
+                                        </a>
                                     </div>
-                                </a>
-                            </div>
-                            <div class="feat-members-slider--item">
-                                <a href="#">
-                                    <div class="image-holder image-background">
-                                        <img src="{{ asset('public/images/member-img2.jpg') }}" alt="Member Image">
+                                    <div class="feat-members-slider--item">
+                                        <a href="#">
+                                            <div class="image-holder image-background">
+                                                <img src="{{ asset('public/images/member-img3.jpg') }}" alt="Member Image">
+                                            </div>
+                                            <div class="desc-txt">
+                                                <div class="name">May Marcus</div>
+                                                <div class="chapter">San Diego Chapter</div>
+                                            </div>
+                                        </a>
                                     </div>
-                                    <div class="desc-txt">
-                                        <div class="name">May Marcus</div>
-                                        <div class="chapter">San Diego Chapter</div>
+                                    <div class="feat-members-slider--item">
+                                        <a href="#">
+                                            <div class="image-holder image-background">
+                                                <img src="{{ asset('public/images/member-img4.jpg') }}" alt="Member Image">
+                                            </div>
+                                            <div class="desc-txt">
+                                                <div class="name">May Marcus</div>
+                                                <div class="chapter">San Diego Chapter</div>
+                                            </div>
+                                        </a>
                                     </div>
-                                </a>
-                            </div>
-                            <div class="feat-members-slider--item">
-                                <a href="#">
-                                    <div class="image-holder image-background">
-                                        <img src="{{ asset('public/images/member-img3.jpg') }}" alt="Member Image">
+                                    <div class="feat-members-slider--item">
+                                        <a href="#">
+                                            <div class="image-holder image-background">
+                                                <img src="{{ asset('public/images/member-img5.jpg') }}" alt="Member Image">
+                                            </div>
+                                            <div class="desc-txt">
+                                                <div class="name">May Marcus</div>
+                                                <div class="chapter">San Diego Chapter</div>
+                                            </div>
+                                        </a>
                                     </div>
-                                    <div class="desc-txt">
-                                        <div class="name">May Marcus</div>
-                                        <div class="chapter">San Diego Chapter</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="feat-members-slider--item">
-                                <a href="#">
-                                    <div class="image-holder image-background">
-                                        <img src="{{ asset('public/images/member-img4.jpg') }}" alt="Member Image">
-                                    </div>
-                                    <div class="desc-txt">
-                                        <div class="name">May Marcus</div>
-                                        <div class="chapter">San Diego Chapter</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="feat-members-slider--item">
-                                <a href="#">
-                                    <div class="image-holder image-background">
-                                        <img src="{{ asset('public/images/member-img5.jpg') }}" alt="Member Image">
-                                    </div>
-                                    <div class="desc-txt">
-                                        <div class="name">May Marcus</div>
-                                        <div class="chapter">San Diego Chapter</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="feat-members-slider--item">
-                                <a href="#">
-                                    <div class="image-holder image-background">
-                                        <img src="{{ asset('public/images/member-img1.jpg') }}" alt="Member Image">
-                                    </div>
-                                    <div class="desc-txt">
-                                        <div class="name">May Marcus</div>
-                                        <div class="chapter">San Diego Chapter</div>
-                                    </div>
-                                </a>
-                            </div> -->
+                                    <div class="feat-members-slider--item">
+                                        <a href="#">
+                                            <div class="image-holder image-background">
+                                                <img src="{{ asset('public/images/member-img1.jpg') }}" alt="Member Image">
+                                            </div>
+                                            <div class="desc-txt">
+                                                <div class="name">May Marcus</div>
+                                                <div class="chapter">San Diego Chapter</div>
+                                            </div>
+                                        </a>
+                                    </div> -->
+                                </div>
+                                {{-- feat-members-slider --}}
+
+                                {{-- end of feat-members-slider --}}
+                                {{-- slider-controls --}}
+                                <div class="feat-members-slider__slider-controls-two">
+                                    <button class="slick-prev slick-arrow feat-members-slider__slide-m-prev-two" aria-label="Previous" type="button" style="display: block;">Previous</button>
+                                    {{-- <button type="button" class="slide-m-prev-two category-slider__slick--prev"> <i></i> </button> --}}
+                                    <div class="feat-members-slider__slide-m-dots-two"></div>
+                                    {{-- <button type="button" class="slide-m-next-two category-slider__slick--next"> <i></i> </button> --}}
+                                    {{-- <button type="button" class="slide-m-next">next</button> --}}
+                                    <button class="slick-next slick-arrow feat-members-slider__slide-m-next-two" aria-label="Next" type="button" style="display: block;">Next</button>
+                                </div>
+
+
                         </div>
-                        {{-- end of feat-members-slider --}}
-                         {{-- slider-controls --}}
-                        <div class="feat-members-slider__slider-controls-two">
-                            <button class="slick-prev slick-arrow feat-members-slider__slide-m-prev-two" aria-label="Previous" type="button" style="display: block;">Previous</button>
-                            {{-- <button type="button" class="slide-m-prev-two category-slider__slick--prev"> <i></i> </button> --}}
-                            <div class="feat-members-slider__slide-m-dots-two"></div>
-                            {{-- <button type="button" class="slide-m-next-two category-slider__slick--next"> <i></i> </button> --}}
-                            {{-- <button type="button" class="slide-m-next">next</button> --}}
-                            <button class="slick-next slick-arrow feat-members-slider__slide-m-next-two" aria-label="Next" type="button" style="display: block;">Next</button>
-                        </div>
-
+                        {{-- feat-members-slider-parent --}}
 
                     </div>
                 </div>

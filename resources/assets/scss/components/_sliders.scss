@@ -436,16 +436,16 @@
     }
 }
 
-.feat-members {
-    p {
-        // font-size: 21px;
-    }
+.feat-members-slider-parent {
+    text-align: center;
+    position: relative;
     .feat-members-slider {
         position: relative;
         display: block;
         width: 100%;
         margin: 30px 0;
         padding: 0 0 70px;
+        padding-bottom: 0;
         &--item {
             position: relative;
             a {
