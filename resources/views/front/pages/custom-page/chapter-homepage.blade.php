@@ -29,14 +29,15 @@
                             <div class="chapter-events-upcoming__box">
                                 <div class="row">
                                     <div class="col-md-3 chapter-events-upcoming__image">
-                                        <a href="{{url($chapter['slug'].'/events')}}">
+                                        <a href="{{url($chapter['slug'].'/event/'.$chapter_event->slug)}}">
                                             <img src="{{ $chapter_event->attachment->url }}" alt="event title" class="img-fluid">
                                         </a>
                                     </div>
                                     <div class="col-md-9 content-middle">
                                         <div class="chapter-events-upcoming__content ">
-                                            <a href="{{url($chapter['slug'].'/events')}}">
+                                            <a href="{{url($chapter['slug'].'/event/'.$chapter_event->slug)}}">
                                                  <h4>{{ $chapter_event->name }}</h4>
+                                                 {{$chapter_event->slug}}
                                             </a>
                                             <h5>{{ $chapter_event->dateRange }} | {{ $chapter_event->time }}</h5>
                                             <div class="chapter-events-upcoming__description limit-me">
@@ -47,7 +48,7 @@
                                             ?>
                                             </p>                                             
                                             </div>
-                                             <a href="{{url($chapter['slug'].'/events')}}" class="btn btn--primary"> Read More Details <i class="fas fa-arrow-right"></i> </a>
+                                             <a href="{{url($chapter['slug'].'/event/'.$chapter_event->slug)}}" class="btn btn--primary"> Read More Details <i class="fas fa-arrow-right"></i> </a>
                                         </div>
                                     </div>
                                 </div>

@@ -154,6 +154,8 @@ class ChapterPageController extends Controller
         ->orderBy('ends_at')
         ->get();
         
+        \Session::put('is_chapter_event',1);
+
         return view('front.pages.custom-pages-index', compact('page', 'chapter', 'chapter_page_event', 'chapter_events', 'chapter_events_previous'));
     }
 

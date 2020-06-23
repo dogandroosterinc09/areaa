@@ -42,7 +42,6 @@ class ChapterEventController extends Controller
         } else {
             $chapter_events = $this->chapter_event->get();
         }
-        
 
         return view('admin.modules.chapter_event.index', compact('chapter_events'));
     }

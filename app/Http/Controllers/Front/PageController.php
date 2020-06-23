@@ -166,6 +166,8 @@ class PageController extends Controller
                 if ($slug == 'home') {
                     $home_slides = $this->homeSlideRepository->getAllActive();
                 }
+        
+                \Session::forget('is_chapter_event',1);
             }
         }
         return view('front.pages.custom-pages-index', compact('page', 'seo_meta', 'home_slides'));
