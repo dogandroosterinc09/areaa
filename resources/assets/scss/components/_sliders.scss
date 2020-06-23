@@ -224,6 +224,7 @@
 
 .events-camp-parent-holder {
     position: relative;
+    text-align: center;
     .events-camp-slider {
         position: relative;
         display: block;
@@ -314,6 +315,8 @@
             border: none;
             position: absolute;
             left: -20px;
+            bottom: -18px;
+            top: inherit;
             // top: 100%;
             // left: 32%;
             //  left: 30%;
@@ -337,6 +340,8 @@
             border: none;
             position: absolute;
             right: -20px;
+            bottom: -18px;
+            top: inherit;
             // top: 100%;
             // right: 54%;
             //  right: 52%;
