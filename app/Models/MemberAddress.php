@@ -18,14 +18,14 @@ class MemberAddress extends Model
     protected $fillable = [
         'user_id',
         'street_address1',
+        'street_address2',
         'city',
         'state',
         'zipcode',
+        'country',
         'phone',
         'company',
         'address_type'
     ];
-
-
 
 }

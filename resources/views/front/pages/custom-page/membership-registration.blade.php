@@ -286,7 +286,7 @@ a.disabled {
                                                                 </div> */ ?>
 
                                                                 <div class="col-md-6 steps-wizard__form--field">
-                                                                    <input type="text" placeholder="Country*" class="billing-info-field" id="frm-country-bil">
+                                                                    <input type="text" placeholder="Country*" name="country" class="billing-info-field" id="frm-country-bil">
                                                                 </div>
 
                                                                 <?php /* <div class="col-md-6 steps-wizard__form--field">
@@ -382,7 +382,7 @@ a.disabled {
     <script type="text/javascript" src="{{ asset('public/js/libraries/jquery-1.9.1.js') }}"></script>        
     <script>
         function proceedSubmit() {
-            $("#btnContent").html('<img src="{{ asset('public/fonts/ajax-loader1.gif') }}">Saving..');
+            $("#btnContent").html('<img src="{{ asset('public/fonts/ajax-loader1.gif') }}"> Processing ..');
             $('#btnSubmit').attr('disabled', true);
             
             $('#regForm').submit();

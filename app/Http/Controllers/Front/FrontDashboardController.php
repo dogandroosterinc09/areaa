@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 
 use App\Models\Members;
 use App\Models\User;
+use App\Models\MemberAddress;
 
 use Illuminate\Http\Request;
 
@@ -16,11 +17,12 @@ use DB;
 
 class FrontDashboardController extends Controller
 {
-    public function __construct(PageRepository $pageRepository, Members $members, User $user)
+    public function __construct(PageRepository $pageRepository, Members $members, User $user, MemberAddress $member_address)
     {
         $this->pageRepository = $pageRepository;
         $this->members = $members;
         $this->user = $user;
+        $this->member_address = $member_address;
     }
 
 
@@ -139,6 +141,7 @@ class FrontDashboardController extends Controller
         $page = $this->pageRepository->getActivePageBySlug('dashboard-profile');
         $active = 'profile';
         $profile = $this->members->where('user_id', auth()->user()->id)->get()->first();
+        $billing = $this->member_address->where('user_id', auth()->user()->id)->get()->first();
 
         $social_media = json_decode($profile->social_media) ? : new \stdClass;
 
@@ -146,7 +149,7 @@ class FrontDashboardController extends Controller
         $social_media->instagram = isset($social_media->instagram) ? $social_media->instagram : '' ;
         $social_media->twitter = isset($social_media->twitter) ? $social_media->twitter : '' ;
 
-        return view('front.pages.custom-pages-index', compact('page', 'active', 'profile', 'social_media'));
+        return view('front.pages.custom-pages-index', compact('page', 'active', 'profile', 'social_media','billing'));
     }
 
     public function updateProfile(Request $request) {      
@@ -162,13 +165,24 @@ class FrontDashboardController extends Controller
 
         $member = $this->members->where('user_id', auth()->user()->id)->get()->first();
         $user = $this->user->find(auth()->user()->id);
+        $billing = $this->member_address->where('user_id', auth()->user()->id)->get()->first();
         
         $member->fill(array_merge($request->all(),[
             'social_media' => json_encode($social_media)
         ]))->save();
+
         $user->fill([
             'email' => $request->email,
             'phone' => $request->phone
+        ])->save();
+
+        $billing->fill([
+            'street_address1' => $request->street_address1,
+            'street_address2' => $request->street_address2,
+            'city' => $request->city,
+            'state' => $request->state,
+            'country' => $request->country,
+            'zipcode' => $request->zipcode
         ])->save();
 
         if ($request->hasFile('avatar')) {

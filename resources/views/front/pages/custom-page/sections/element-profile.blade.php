@@ -181,44 +181,46 @@
 
                     <div class="profile__billing profile__border">
                         <div class="container">
+                            <?php //print_r($billing); ?>
+
                             <div class="row">
                                 <div class="col-md-12">
-                                    <h3><i class="fa fa-key" aria-hidden="true"></i>Billing Address</h3>
+                                    <h3><i class="fa fa-home" aria-hidden="true"></i>Billing Address</h3>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="address1"> Billing Address 1</label>
-                                        <input type="text" name="address1" value="">
+                                        <label for="street_address1"> Billing Address 1</label>
+                                        <input type="text" name="street_address1" value="{{ $billing->street_address1 }}">
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="address2"> Billing Address 2</label>
-                                        <input type="text" name="address2" value="">
+                                        <label for="street_address2"> Billing Address 2</label>
+                                        <input type="text" name="street_address2" value="{{ $billing->street_address2 }}">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <label for="Country"> Country </label>
-                                        <input type="text" name="Country" value="">
+                                        <label for="country"> Country </label>
+                                        <input type="text" name="country" value="{{ $billing->country }}">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="zipcode"> Zipcode </label>
-                                        <input type="text" name="zipcode" value="">
+                                        <input type="text" name="zipcode" value="{{ $billing->zipcode }}">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="city"> City </label>
-                                        <input type="text" name="city" value="">
+                                        <input type="text" name="city" value="{{ $billing->city }}">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <label for="state"> States </label>
-                                        <input type="text" name="state" value="">
+                                        <label for="state"> State </label>
+                                        <input type="text" name="state" value="{{ $billing->state }}">
                                     </div>
                                 </div>
                             </div>
@@ -277,6 +279,33 @@
                         </div>
                     </div>
                     {{-- profile__submit --}}
+
+
+                    <div class="profile__info profile__border information">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h3><i class="fas fa-cog"></i>Subscription Status</h3>
+                            </div>
+
+                            <div class="col-md-3">
+                                <b>Joined Date</b>
+                            </div>
+                            <div class="col-md-9">
+                              <input type="text" name="location" value="{{ $profile->joined_date }}" readonly="true">
+                            </div>
+
+                            <div class="col-md-3">
+                                <b>Is Active</b>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" name="company" value="{{ ($profile->expires=='Never')? 'Active': $profile->expires }}" readonly="readonly">
+                            </div>
+
+
+                          
+
+                        </div>
+                    </div>
 
 
                 </div>

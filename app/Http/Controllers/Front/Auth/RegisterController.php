@@ -623,6 +623,8 @@ class RegisterController extends Controller
             'authorize_payment_profile_id' => $customerPaymentProfileId,
             'authorize_address_id' => $customerAddressId,
             'authorize_subscription_id' => $subscriptionID,
+            'joined_date' => date('m/d/y', strtotime(Now())),
+            'expires' => 'Never',
             'subscription_status' => 1
         ]);
 
@@ -632,6 +634,7 @@ class RegisterController extends Controller
             'city' => $request->city,
             'state' => $request->state,
             'zipcode' => $request->zipcode,
+            'country' => $request->country,
             'company' => $request->company,
             'phone' => $request->phone
         ]);
