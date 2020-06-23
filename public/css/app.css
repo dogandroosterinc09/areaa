@@ -22336,12 +22336,10 @@ section.page--media .search-member-directory {
   background-position: -190px -8px;
 }
 .events-camp-parent-holder .slider-controls-two {
-  position: absolute;
-  bottom: -15%;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: auto !important;
+  display: inline-block;
+  position: relative;
+  margin-top: 35px;
 }
 .events-camp-parent-holder .slider-controls-two .slick-dots {
   position: inherit !important;
@@ -22364,6 +22362,8 @@ section.page--media .search-member-directory {
   height: 24px;
   font-size: 0;
   border: none;
+  position: absolute;
+  left: -20px;
   cursor: pointer;
   z-index: 9;
   opacity: 0.4;
@@ -22384,6 +22384,8 @@ section.page--media .search-member-directory {
   height: 24px;
   font-size: 0;
   border: none;
+  position: absolute;
+  right: -20px;
   cursor: pointer;
   z-index: 9;
   opacity: 0.4;
