@@ -199,9 +199,9 @@
                     'thumbnail_image': {
                         required: true
                     },
-                    'thumbnail_text': {
-                        required: true
-                    },
+                    // 'thumbnail_text': {
+                    //     required: true
+                    // },
                 },
                 messages: {                    
                     'name': {
@@ -222,9 +222,9 @@
                     'thumbnail_image': {
                         required: 'Thumbnail Image is required.'
                     },
-                    'thumbnail_text': {
-                        required: 'Thumbnail text is required.'
-                    },
+                    // 'thumbnail_text': {
+                    //     required: 'Thumbnail text is required.'
+                    // },
                 }
             });
 
@@ -282,9 +282,9 @@
                             }
                         }
                     },
-                    'thumbnail_text': {
-                        required: true
-                    },
+                    // 'thumbnail_text': {
+                    //     required: true
+                    // },
                 },
                 messages: {
                     'name': {
@@ -305,9 +305,9 @@
                     'thumbnail_image': {
                         required: 'Thumbnail Image is required.'
                     },
-                    'thumbnail_text': {
-                        required: 'Thumbnail text is required.'
-                    },
+                    // 'thumbnail_text': {
+                    //     required: 'Thumbnail text is required.'
+                    // },
                 }
             });
 
