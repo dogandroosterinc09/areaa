@@ -112,7 +112,6 @@
 
                 <div class="form-group">
                     <label class="col-md-3 control-label">Is Active?</label>
-
                     <div class="col-md-9">
                         <label class="switch switch-primary">
                             <input type="checkbox" id="is_active" name="is_active" value="1" {{ Request::old('is_active') ? : ($user->is_active ? 'checked' : '') }}>
@@ -122,10 +121,27 @@
                 </div>
                 <div class="form-group">
                     <label class="col-md-3 control-label">Is Featured?</label>
-
                     <div class="col-md-9">
                         <label class="switch switch-primary">
                             <input type="checkbox" id="is_featured" name="is_featured" value="1" {{ Request::old('is_featured') ? : ($user->is_featured ? 'checked' : '') }}>
+                            <span></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Is A-List?</label>
+                    <div class="col-md-9">
+                        <label class="switch switch-primary">
+                            <input type="checkbox" id="is_alist" name="is_alist" value="1" {{ Request::old('is_alist') ? : ($user->is_alist ? 'checked' : '') }}>
+                            <span></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Is Luxury?</label>
+                    <div class="col-md-9">
+                        <label class="switch switch-primary">
+                            <input type="checkbox" id="is_luxury" name="is_luxury" value="1" {{ Request::old('is_luxury') ? : ($user->is_luxury ? 'checked' : '') }}>
                             <span></span>
                         </label>
                     </div>

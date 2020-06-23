@@ -787,13 +787,15 @@ class UserController extends Controller
         ]);
 
         if ($request->get('change_password') == '1') {
-            $input = $request->only(['first_name', 'middle_name', 'last_name', 'user_name', 'email', 'is_active', 'is_featured', 'password']);
+            $input = $request->only(['first_name', 'middle_name', 'last_name', 'user_name', 'email', 'is_active', 'is_featured', 'is_alist', 'is_luxury', 'password']);
         } else {
-            $input = $request->only(['first_name', 'middle_name', 'last_name', 'user_name', 'email', 'is_active', 'is_featured']);
+            $input = $request->only(['first_name', 'middle_name', 'last_name', 'user_name', 'email', 'is_active', 'is_featured', 'is_alist', 'is_luxury']);
         }
 
         $input['is_active'] = isset($input['is_active']) ? 1 : 0;
         $input['is_featured'] = isset($input['is_featured']) ? 1 : 0;
+        $input['is_alist'] = isset($input['is_alist']) ? 1 : 0;
+        $input['is_luxury'] = isset($input['is_luxury']) ? 1 : 0;
         // $roles = $request['roles'];
         $user->fill($input)->save();
 

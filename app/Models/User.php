@@ -38,6 +38,8 @@ class User extends Authenticatable
         'chapter_id',
         'is_active',
         'is_featured',
+        'is_alist',
+        'is_luxury',
     ];
 
     /**
