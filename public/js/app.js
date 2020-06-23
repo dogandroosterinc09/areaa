@@ -79665,7 +79665,7 @@ $(function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-var _$$slick;
+var _$$slick, _$$slick2;
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -79769,7 +79769,7 @@ $('.events-camp-slider').slick((_$$slick = {
 //     arrows: true
 // });
 
-$('.feat-members-slider').slick({
+$('.feat-members-slider').slick((_$$slick2 = {
   dots: true,
   infinite: true,
   speed: 800,
@@ -79778,31 +79778,33 @@ $('.feat-members-slider').slick({
   autoplaySpeed: 5000,
   cssEase: 'linear',
   arrows: true,
-  responsive: [{
-    breakpoint: 1100,
-    settings: {
-      slidesToShow: 3,
-      slidesToScroll: 3,
-      infinite: true,
-      dots: true
-    }
-  }, {
-    breakpoint: 1000,
-    settings: {
-      slidesToShow: 2,
-      slidesToScroll: 2
-    }
-  }, {
-    breakpoint: 480,
-    settings: {
-      slidesToShow: 1,
-      slidesToScroll: 1
-    } // You can unslick at a given breakpoint now by adding:
-    // settings: "unslick"
-    // instead of a settings object
+  nextArrow: "<i class=\"feat-members-slider--next\"></i>",
+  prevArrow: "<i class=\"feat-members-slider--prev\"></i>",
+  appendDots: $(".slide-m-dots-two")
+}, _defineProperty(_$$slick2, "prevArrow", $(".slide-m-prev-two")), _defineProperty(_$$slick2, "nextArrow", $(".slide-m-next-two")), _defineProperty(_$$slick2, "responsive", [{
+  breakpoint: 1100,
+  settings: {
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    infinite: true,
+    dots: true
+  }
+}, {
+  breakpoint: 1000,
+  settings: {
+    slidesToShow: 2,
+    slidesToScroll: 2
+  }
+}, {
+  breakpoint: 480,
+  settings: {
+    slidesToShow: 1,
+    slidesToScroll: 1
+  } // You can unslick at a given breakpoint now by adding:
+  // settings: "unslick"
+  // instead of a settings object
 
-  }]
-});
+}]), _$$slick2));
 $('.insta-gram__slide').slick({
   dots: false,
   infinite: true,

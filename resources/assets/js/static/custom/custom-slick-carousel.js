@@ -130,6 +130,11 @@ $('.feat-members-slider').slick({
     autoplaySpeed: 5000,
     cssEase: 'linear',
     arrows: true,
+    nextArrow: "<i class=\"feat-members-slider--next\"></i>",
+    prevArrow: "<i class=\"feat-members-slider--prev\"></i>",
+    appendDots: $(".slide-m-dots-two"),
+    prevArrow: $(".slide-m-prev-two"),
+    nextArrow: $(".slide-m-next-two"),
     responsive: [{
             breakpoint: 1100,
             settings: {
