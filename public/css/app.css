@@ -20200,6 +20200,9 @@ section .sponsors .sponsor-logo__items {
   flex-wrap: wrap !important;
   align-items: center;
 }
+.content-middle__right {
+  justify-content: flex-end;
+}
 
 ul.bullet-style {
   display: flex !important;

@@ -7,10 +7,10 @@
         <section class="events-camp wrapper padding-top90" data-aos="fade-up">
             <div class="container-max">
                 <div class="row">
-                    <div class="col-md-10">
+                    <div class="col-md-8">
                         <h2>Events & Campaigns</h2>
                     </div>
-                    <div class="col-md-2 content-middle">
+                    <div class="col-md-3 content-middle content-middle__right">
                         <a href="{{url('events')}}" class="btn btn--secondary">View All Events</a>
                     </div>
                 </div>

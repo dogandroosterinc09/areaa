@@ -551,6 +551,9 @@ section {
 .content-middle {
     @include flex;
     @include flex-align-items(center);
+    &__right {
+        @include flex-justify-content(flex-end);
+    }
 }
 
 ul.bullet-style {
