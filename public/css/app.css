@@ -18332,6 +18332,7 @@ header .contact-details-wrap .info {
   padding: 10px 0 10px 50px;
   border-bottom-left-radius: 100px;
   height: 50px;
+  width: 800px !important;
 }
 header .contact-details-wrap .info > ul {
   display: block;
@@ -20199,6 +20200,9 @@ section .sponsors .sponsor-logo__items {
   flex-wrap: wrap !important;
   align-items: center;
 }
+.content-middle__right {
+  justify-content: flex-end;
+}
 
 ul.bullet-style {
   display: flex !important;
@@ -20678,7 +20682,7 @@ ul.bullet-style li h6 {
 .events-thumbnail__paragraph {
   border-bottom: 1px solid #ddd;
   margin-bottom: 25px;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
 }
 .events-thumbnail__month {
   text-transform: uppercase;
@@ -24586,6 +24590,25 @@ _::-webkit-:not(:root:root),
 
   .follow-us__wrapper .primary-heading h2 {
     font-size: 3em;
+  }
+}
+@media only screen and (max-width: 1500px) {
+  .events-camp-parent-holder .events-camp-slider--item a .title {
+    padding: 15px !important;
+    font: 600 15px "Open Sans", sans-serif;
+    height: 55px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    padding-right: 65px !important;
+  }
+
+  .events-camp-parent-holder .events-camp-slider--item a .img-holder {
+    height: 250px;
+  }
+
+  .become-member .img-holder {
+    width: 40%;
   }
 }
 @media only screen and (max-width: 1400px) {
