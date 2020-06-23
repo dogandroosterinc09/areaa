@@ -11,7 +11,7 @@
                         <h2>Events & Campaigns</h2>
                     </div>
                     <div class="col-md-2 content-middle">
-                        <a href="{{url('events')}}" class="btn btn--secondary">View All</a>
+                        <a href="{{url('events')}}" class="btn btn--secondary">View All Events</a>
                     </div>
                 </div>
             </div>
