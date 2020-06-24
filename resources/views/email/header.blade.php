@@ -43,7 +43,7 @@
     <tr>
         <td align="center" bgcolor="#dddddd"
             style="padding: 20px 20px 20px 20px; color: #ffffff; font-family: Arial, sans-serif; font-size: 36px; font-weight: bold;">
-            <img src="{{ asset('public/img/icon/logo-full.png') }}" alt="Areaa Logo" width="350" height="auto"
+            <img src="{{ asset('public/images/header/header-logo.png') }}" alt="Areaa Logo" width="350" height="auto"
                  style="display:block;"/>
         </td>
     </tr>

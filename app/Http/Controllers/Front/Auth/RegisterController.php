@@ -673,8 +673,8 @@ class RegisterController extends Controller
             // $message->subject('New email!!!');
             $message->to($request->email, $request->first_name." ".$request->last_name);
             // $message->to($data['email'], $data['first_name']." ".$data['last_name']);
-            $message->cc('dennis@dogandrooster.com', 'Areaa Admin');
-            $message->cc('frontend1@dogandrooster.com', 'Areaa Admin');
+            $message->cc('jmiranda@areaa.org', 'Areaa Admin');
+            $message->cc('dennis@dogandrooster.com', 'DNR Dev');
             $message->subject('AREAA | Membership Registration');
             $message->from('no-reply@areaa.com','Areaa Webmaster');
         });

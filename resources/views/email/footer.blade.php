@@ -10,8 +10,7 @@
             <tr>
                 <td align="center" width="100%"
                     style="color: #999999; font-family: Arial, sans-serif; font-size: 12px;">
-                    {{ date('Y') }} &copy; <a href="javasript:void(0)"
-                                              style="color: #E61704;"></a>
+                    {{ date('Y') }} &copy; <a href="javasript:void(0)" style="color: #E61704;">Areaa.org</a>
                 </td>
             </tr>
         </table>
