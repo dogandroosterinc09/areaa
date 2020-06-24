@@ -153,66 +153,114 @@ class AdminTemplateProvider extends ServiceProvider
                 ]);
             }
 
-            // if (auth()->user()->can('Read Members')) {
+            // // if (auth()->user()->can('Read Members')) {
+            //     array_push($navigation, [
+            //         'name' => 'Chapter Members',
+            //         'url' => url('admin/members'),
+            //         'icon' => 'fa fa-users'
+            //     ]);
+            // // }
+
+            if (auth()->user()->can('Read Chapter')) { // Webmaster
+                array_push($navigation, [
+                    'name' => 'All Chapter Members',
+                    'url' => url('admin/user-all'),
+                    'icon' => 'fa fa-users'
+                ]);
+            } else { // Chapter Admin
                 array_push($navigation, [
                     'name' => 'Chapter Members',
                     'url' => url('admin/members'),
                     'icon' => 'fa fa-users'
                 ]);
-            // }
+            }
 
-            if ($this->hasCrudAccessFor('User') || $this->hasCrudAccessFor('Permission') || $this->hasCrudAccessFor('Permission Group') || $this->hasCrudAccessFor('Role')) {
-                $user_management_tab = [];
-
-                if ($this->hasCrudAccessFor('User')) {
-                    array_push($user_management_tab, [
-                        'name' => 'All Chapter Members',
-                        'url' => url('admin/user-all'),
-                    ]);
-                }
-
-                if ($this->hasCrudAccessFor('User')) {
-                    array_push($user_management_tab, [
-                        'name' => 'All Admins',
-                        'url' => url('admin/user-admin'),
-                    ]);
-                }
-
-                // if ($this->hasCrudAccessFor('User')) {
-                //     array_push($user_management_tab, [
-                //         'name' => 'Users',
-                //         'url' => url('admin/users'),
-                //     ]);
-                // }
-
-
-                if ($this->hasCrudAccessFor('Permission')) {
-                    array_push($user_management_tab, [
-                        'name' => 'Permissions',
-                        'url' => url('admin/permissions'),
-                    ]);
-                }
-
-                if ($this->hasCrudAccessFor('Permission Group')) {
-                    array_push($user_management_tab, [
-                        'name' => 'Permission Groups',
-                        'url' => url('admin/permission_groups'),
-                    ]);
-                }
-
-                if ($this->hasCrudAccessFor('Role')) {
-                    array_push($user_management_tab, [
-                        'name' => 'Roles',
-                        'url' => url('admin/roles'),
-                    ]);
-                }
-
+            if ($this->hasCrudAccessFor('User')) {
                 array_push($navigation, [
-                    'name' => 'User Management',
-                    'icon' => 'fa fa-users',
-                    'sub' => $user_management_tab
+                    'name' => 'All Admins',
+                    'url' => url('admin/user-admin'),
+                    'icon' => 'fa fa-users'
                 ]);
             }
+
+
+            // // if ($this->hasCrudAccessFor('User') || $this->hasCrudAccessFor('Permission') || $this->hasCrudAccessFor('Permission Group') || $this->hasCrudAccessFor('Role')) {
+
+            //     $member_management_tab = [];
+
+            //     array_push($member_management_tab, [
+            //         'name' => 'Chapter Members',
+            //         'url' => url('admin/members'),
+            //         'icon' => 'fa fa-users'
+            //     ]);
+
+            //     if ($this->hasCrudAccessFor('User')) {
+            //         array_push($member_management_tab, [
+            //             'name' => 'All Chapter Members',
+            //             'url' => url('admin/user-all'),
+            //         ]);
+            //     }
+
+            //     array_push($navigation, [
+            //         'name' => 'Members',
+            //         'icon' => 'fa fa-users',
+            //         'sub' => $member_management_tab
+            //     ]);
+            // // }
+
+
+            // if ($this->hasCrudAccessFor('User') || $this->hasCrudAccessFor('Permission') || $this->hasCrudAccessFor('Permission Group') || $this->hasCrudAccessFor('Role')) {
+            //     $user_management_tab = [];
+
+            //     // if ($this->hasCrudAccessFor('User')) {
+            //     //     array_push($user_management_tab, [
+            //     //         'name' => 'All Chapter Members',
+            //     //         'url' => url('admin/user-all'),
+            //     //     ]);
+            //     // }
+
+            //     if ($this->hasCrudAccessFor('User')) {
+            //         array_push($user_management_tab, [
+            //             'name' => 'All Admins',
+            //             'url' => url('admin/user-admin'),
+            //         ]);
+            //     }
+
+            //     // if ($this->hasCrudAccessFor('User')) {
+            //     //     array_push($user_management_tab, [
+            //     //         'name' => 'Users',
+            //     //         'url' => url('admin/users'),
+            //     //     ]);
+            //     // }
+
+
+            //     if ($this->hasCrudAccessFor('Permission')) {
+            //         array_push($user_management_tab, [
+            //             'name' => 'Permissions',
+            //             'url' => url('admin/permissions'),
+            //         ]);
+            //     }
+
+            //     if ($this->hasCrudAccessFor('Permission Group')) {
+            //         array_push($user_management_tab, [
+            //             'name' => 'Permission Groups',
+            //             'url' => url('admin/permission_groups'),
+            //         ]);
+            //     }
+
+            //     if ($this->hasCrudAccessFor('Role')) {
+            //         array_push($user_management_tab, [
+            //             'name' => 'Roles',
+            //             'url' => url('admin/roles'),
+            //         ]);
+            //     }
+
+            //     array_push($navigation, [
+            //         'name' => 'User Management',
+            //         'icon' => 'fa fa-users',
+            //         'sub' => $user_management_tab
+            //     ]);
+            // }
 
 
             if (auth()->user()->can('Read Contact')) {

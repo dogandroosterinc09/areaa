@@ -642,27 +642,7 @@ class RegisterController extends Controller
         ]);
 
 
-
-        // $member = new Member;
-        // $member->first_name = Input::get('first_name');
-        // $member->last_name  = Input::get('last_name');
-        // $member->email      = Input::get('email');
-        // $member->user_name  = Input::get('email');
-        // $member->password   = Input::get('password');
-        // $member->zip_code   = Input::get('zip_code');
-        // $member->country    = 'US';
-        // $member->is_active  = 1;
-        // $member->save();
-
-        // $data = array('name'=>$member->first_name." ".$member->last_name,
-        //     'email'=>$member->email);
-
-        // Mail::send('email.signup', $data, function($message) use ($member) {
-        //     $message->to($member->email, $member->first_name." ".$member->last_name);
-        //     $message->cc('dennis+999@dogandrooster.com', 'John Doe Admin');
-        //     $message->subject('Gaveler | Sign Up');
-        //     $message->from('no-reply@gaveler.com','Gaveler Admin');
-        // });
+        // Must Add transaction record
 
         if ($request->chapter_id==0) {
             $chapter_name = 'National';
