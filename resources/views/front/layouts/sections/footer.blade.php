@@ -73,9 +73,9 @@
                         <article>
                             <h4>Membership</h4>
                             <ul>
-                                <li><a href="#"> Why join </a></li>
+                                <li><a href="{{url('about-us')}}"> Why join </a></li>
                                 <li><a href="{{url('areabenefits')}}"> Benefits </a></li>
-                                <li><a href="#"> Find a Member </a></li>
+                                <li><a href="{{ route('customer.login') }}""> Find a Member </a></li>
                                 <li><a href="{{url('chapter')}}"> Chapter Locations </a></li>
                                 {{-- <li><a href="{{url('membership-registration')}}"> A-List </a></li> --}}
                             </ul>

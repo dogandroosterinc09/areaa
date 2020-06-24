@@ -168,6 +168,12 @@
         .contact-details-content .contact-details {
             margin-top: 25px;
         }
+        section.dashboard-nav {
+            margin-bottom: 0 !important;
+        }
+        section.contact-section.paper-background.curl-tail-bottom {
+            margin-top: -16px;
+        }
     }
     &--dashboard {
         .main-content {

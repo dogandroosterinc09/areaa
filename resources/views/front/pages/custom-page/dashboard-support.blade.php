@@ -1,4 +1,4 @@
-<section class="{{ auth()->user()->chapter_id == 0 ? 'page page--dashboard page--dashboard--support' : 'page-chapter page-chapter--dashboard' }}">
+<section class="{{ auth()->user()->chapter_id == 0 ? 'page page--dashboard page--dashboard--support' : 'page-chapter page-chapter--dashboard page-chapter--support' }}">
     {{-- @include('front.layouts.sections.header') --}}
 
     @if(auth()->user()->chapter_id == 0)
