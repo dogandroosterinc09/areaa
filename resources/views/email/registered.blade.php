@@ -2,19 +2,21 @@
 <tr>
     <td align="center" bgcolor="#ffffff"
         style="padding: 40px 20px 40px 20px; color: #555555; font-family: Arial, sans-serif; font-size: 20px; line-height: 30px; border-bottom: 1px solid #f6f6f6;">
-        <b>Hi {{-- isset($data['user_data']) ? $data['user_data']['first_name'] .' '.  $data['user_data']['last_name'] : '' --}},</b>
+        <b>Hi {{ $name }},</b>
         <br>
-        <span>Thanks for signing up to {{ $name }}.</span>
+        <span>Thanks for signing up to Areaa.org!</span>
     </td>
 </tr>
 <tr>
     <td align="center" bgcolor="#f9f9f9"
         style="padding: 20px 20px 0 20px; color: #555555; font-family: Arial, sans-serif; font-size: 20px; line-height: 30px;">
         <p>
-            <b>Name: {{-- isset($data['user_data']) ? $data['user_data']['first_name'] .' '.  $data['user_data']['last_name'] : '' --}}</b>
+            <b>Name: {{ $name }}</b><br>
+            <b>Email: {{ $email }}</b><br>
+            <b>Chapter: {{ $chapter_name }}</b><br>
+            <b>Join Date: {{ $joined_date }}</b>
         </p>
         <p>
-            <b>Email: {{ $email }}</b>
         </p>
     </td>
 </tr>

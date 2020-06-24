@@ -664,8 +664,11 @@ class RegisterController extends Controller
         //     $message->from('no-reply@gaveler.com','Gaveler Admin');
         // });
 
+        $chapter = \App\Models\Chapter::find($chapter_id);
         $data = array('name'=>$request->first_name." ".$request->last_name,
-            'email'=>$request->email);
+            'email'=>$request->email,
+            'chapter_name'=>$chapter->chapter_name,
+            'joined_date'=>date('m/d/yy', strtotime(Now())));
 
         // Send Mail
         Mail::send('email.registered', $data, function($message) use($request) {
