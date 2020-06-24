@@ -664,10 +664,15 @@ class RegisterController extends Controller
         //     $message->from('no-reply@gaveler.com','Gaveler Admin');
         // });
 
-        $chapter = \App\Models\Chapter::find($request->chapter_id);
+        if ($request->chapter_id==0) {
+            $chapter_name = 'National';
+        } else {
+            $chapter = \App\Models\Chapter::find($request->chapter_id);
+            $chapter_name = $chapter->name;
+        }
         $data = array('name'=>$request->first_name." ".$request->last_name,
             'email'=>$request->email,
-            'chapter_name'=>$chapter->chapter_name,
+            'chapter_name'=>$chapter_name,
             'joined_date'=>date('m/d/yy', strtotime(Now())));
 
         // Send Mail
