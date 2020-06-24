@@ -664,7 +664,7 @@ class RegisterController extends Controller
         //     $message->from('no-reply@gaveler.com','Gaveler Admin');
         // });
 
-        $chapter = \App\Models\Chapter::find($chapter_id);
+        $chapter = \App\Models\Chapter::find($request->chapter_id);
         $data = array('name'=>$request->first_name." ".$request->last_name,
             'email'=>$request->email,
             'chapter_name'=>$chapter->chapter_name,
