@@ -2,19 +2,19 @@
 <tr>
     <td align="center" bgcolor="#ffffff"
         style="padding: 40px 20px 40px 20px; color: #555555; font-family: Arial, sans-serif; font-size: 20px; line-height: 30px; border-bottom: 1px solid #f6f6f6;">
-        <b>Hi {{ isset($data['user_data']) ? $data['user_data']['first_name'] .' '.  $data['user_data']['last_name'] : '' }},</b>
+        <b>Hi {{-- isset($data['user_data']) ? $data['user_data']['first_name'] .' '.  $data['user_data']['last_name'] : '' --}},</b>
         <br>
-        <span>Thanks for signing up to {{ $seo_meta['name'] }}.</span>
+        <span>Thanks for signing up to {{ $name }}.</span>
     </td>
 </tr>
 <tr>
     <td align="center" bgcolor="#f9f9f9"
         style="padding: 20px 20px 0 20px; color: #555555; font-family: Arial, sans-serif; font-size: 20px; line-height: 30px;">
         <p>
-            <b>Name: {{ isset($data['user_data']) ? $data['user_data']['first_name'] .' '.  $data['user_data']['last_name'] : '' }}</b>
+            <b>Name: {{-- isset($data['user_data']) ? $data['user_data']['first_name'] .' '.  $data['user_data']['last_name'] : '' --}}</b>
         </p>
         <p>
-            <b>Email: {{ isset($data['user_data']) && $data['user_data']['email'] ? $data['user_data']['email'] : '' }}</b>
+            <b>Email: {{ $email }}</b>
         </p>
     </td>
 </tr>
@@ -25,7 +25,7 @@
             <tr>
                 <td align="center" height="50" style="font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; background-color: #425688; padding: 0px 20px;">
                     <a class="button" style="color: #ffffff; text-align: center; text-decoration: none;"
-                       href="{{ url('customer/dashboard') }}">Dashboard</a>
+                       href="{{ url('login') }}">Login</a>
                 </td>
             </tr>
         </table>

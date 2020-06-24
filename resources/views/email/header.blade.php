@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <title>{!! $seo_meta['title'] !!}</title>
+    <title>Areaa</title>
     <meta name="viewport" content="width=device-width"/>
     <style type="text/css">
         @media only screen and (max-width: 550px), screen and (max-device-width: 550px) {
@@ -43,7 +43,7 @@
     <tr>
         <td align="center" bgcolor="#dddddd"
             style="padding: 20px 20px 20px 20px; color: #ffffff; font-family: Arial, sans-serif; font-size: 36px; font-weight: bold;">
-            <img src="{{ asset('public/img/icon/logo-full.png') }}" alt="{!! $seo_meta['name'] !!} Logo" width="350" height="auto"
+            <img src="{{ asset('public/img/icon/logo-full.png') }}" alt="Areaa Logo" width="350" height="auto"
                  style="display:block;"/>
         </td>
     </tr>

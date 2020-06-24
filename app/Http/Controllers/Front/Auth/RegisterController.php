@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Input;
 use Spatie\Permission\Models\Role;
 
+use Mail;
+
 // Authorize.net
 require 'vendor/autoload.php';
 
@@ -638,6 +640,44 @@ class RegisterController extends Controller
             'company' => $request->company,
             'phone' => $request->phone
         ]);
+
+
+
+        // $member = new Member;
+        // $member->first_name = Input::get('first_name');
+        // $member->last_name  = Input::get('last_name');
+        // $member->email      = Input::get('email');
+        // $member->user_name  = Input::get('email');
+        // $member->password   = Input::get('password');
+        // $member->zip_code   = Input::get('zip_code');
+        // $member->country    = 'US';
+        // $member->is_active  = 1;
+        // $member->save();
+
+        // $data = array('name'=>$member->first_name." ".$member->last_name,
+        //     'email'=>$member->email);
+
+        // Mail::send('email.signup', $data, function($message) use ($member) {
+        //     $message->to($member->email, $member->first_name." ".$member->last_name);
+        //     $message->cc('dennis+999@dogandrooster.com', 'John Doe Admin');
+        //     $message->subject('Gaveler | Sign Up');
+        //     $message->from('no-reply@gaveler.com','Gaveler Admin');
+        // });
+
+        $data = array('name'=>$request->first_name." ".$request->last_name,
+            'email'=>$request->email);
+
+        // Send Mail
+        Mail::send('email.registered', $data, function($message) use($request) {
+            // $message->to($data['email']);
+            // $message->subject('New email!!!');
+            $message->to($request->email, $request->first_name." ".$request->last_name);
+            // $message->to($data['email'], $data['first_name']." ".$data['last_name']);
+            $message->cc('dennis@dogandrooster.com', 'Areaa Admin');
+            $message->cc('frontend1@dogandrooster.com', 'Areaa Admin');
+            $message->subject('AREAA | Membership Registration');
+            $message->from('no-reply@areaa.com','Areaa Webmaster');
+        });
 
         // die('--- 602');
         $this->guard()->login($user);
