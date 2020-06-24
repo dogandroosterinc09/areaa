@@ -193,6 +193,7 @@
     background-color: #777;
     opacity: 0.25;
     filter: alpha(opacity=25);
+    z-index: 999;
 }
 
 #to-top:hover {

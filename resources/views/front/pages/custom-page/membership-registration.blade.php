@@ -142,7 +142,7 @@ a.disabled {
                                                      {{-- steps-wizard__button --}}
 
                                                      <div class="steps-wizard__bottom text-center"> 
-                                                        For additional questions, visit our <a href="#">FAQs page<i class="fas fa-long-arrow-alt-right"></i>  </a>
+                                                        For additional questions, visit our <a href="{{url('FAQ')}}">FAQs page<i class="fas fa-long-arrow-alt-right"></i>  </a>
                                                     </div>
 
                                                 </div>

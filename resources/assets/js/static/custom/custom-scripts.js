@@ -347,13 +347,13 @@ $(function() {
         }
         $('html,body').animate({
             scrollTop: $(this).offset().top
-        }, 1500);
+        }, 300);
     });
 });
 
 
 $(function() {
-    $(".photo-section__item").slice(0, 3).show();
+    $(".photo-section__item").slice(0, 12).show();
     $("#loadMore").on('click', function(e) {
         e.preventDefault();
         $(".photo-section__item:hidden").slice(0, 2).slideDown();
@@ -362,6 +362,6 @@ $(function() {
         }
         $('html,body').animate({
             scrollTop: $(this).offset().top
-        }, 1500);
+        }, 300);
     });
 });

@@ -18332,7 +18332,6 @@ header .contact-details-wrap .info {
   padding: 10px 0 10px 50px;
   border-bottom-left-radius: 100px;
   height: 50px;
-  width: 800px !important;
 }
 header .contact-details-wrap .info > ul {
   display: block;
@@ -18352,11 +18351,12 @@ header .contact-details-wrap .info__menu {
   position: absolute;
   background: #3b3d40;
   width: 100%;
-  left: 0;
   top: 40px;
   z-index: 999;
   display: none;
   padding: 20px;
+  left: -140px;
+  width: 800px;
 }
 header .contact-details-wrap .info__menu ul {
   list-style: none;
@@ -18996,6 +18996,7 @@ header .contact-details-wrap .info a i.ic-chapter {
   background-color: #777;
   opacity: 0.25;
   filter: alpha(opacity=25);
+  z-index: 999;
 }
 
 #to-top:hover {
@@ -20680,9 +20681,11 @@ ul.bullet-style li h6 {
   margin-bottom: 15px;
 }
 .events-thumbnail__paragraph {
-  border-bottom: 1px solid #ddd;
   margin-bottom: 25px;
   padding-bottom: 20px;
+  border-top: 1px solid #ddd;
+  padding-top: 25px;
+  margin-top: 25px !important;
 }
 .events-thumbnail__month {
   text-transform: uppercase;
@@ -22738,6 +22741,12 @@ section.page--media .search-member-directory {
 .page-chapter--support .contact-details-content .contact-details {
   margin-top: 25px;
 }
+.page-chapter--support section.dashboard-nav {
+  margin-bottom: 0 !important;
+}
+.page-chapter--support section.contact-section.paper-background.curl-tail-bottom {
+  margin-top: -16px;
+}
 .page-chapter--dashboard .main-content {
   padding-top: 0 !important;
 }
@@ -24484,6 +24493,10 @@ _::-webkit-:not(:root:root),
 @media only screen and (max-width: 1800px) {
   .banner__image-slide .item-right::before {
     right: -70px;
+  }
+
+  section.chapters .btn-wrap {
+    left: 0;
   }
 }
 @media only screen and (max-width: 1700px) {
