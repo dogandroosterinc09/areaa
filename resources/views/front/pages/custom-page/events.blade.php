@@ -34,7 +34,15 @@
                 <div class="col-lg-12">
 
                     <div class="events-thumbnail">
-                        @php($events = \App\Models\Event::all())                        
+                        <?php
+                            $today = date('Y-m-d');
+                            $events = \App\Models\Event::where('starts_at','>=', $today)
+                            ->where('ends_at','<=', $today)
+                            ->orWhere('starts_at','>=', $today)
+                            ->orderBy('starts_at', 'asc')
+                            ->get();
+                        ?>
+
                         @if ($events->isEmpty())
                             <h3 class="text-danger font-weight-bold text-center w-100 my-5">No Events.</h3>
                         @endif
