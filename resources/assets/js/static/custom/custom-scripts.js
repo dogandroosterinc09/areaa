@@ -328,8 +328,6 @@ $(document).ready(function() {
         $("#chapter-video").attr('src', '');
     });
 
-
-
     /* Assign empty url value to the iframe src attribute when
     modal hide, which stop the video playing */
     $("#videoModal").on('hide.bs.modal', function() {
