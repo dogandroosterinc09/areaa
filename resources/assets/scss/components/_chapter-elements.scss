@@ -586,9 +586,12 @@
         margin-bottom: 15px;
     }
     &__paragraph {
-        border-bottom: 1px solid #ddd;
+        // border-bottom: 1px solid #ddd;
         margin-bottom: 25px;
         padding-bottom: 10px;
+        border-top: 1px solid #ddd;
+        padding-top: 25px;
+        margin-top: 25px !important;
     }
     &__month {
         text-transform: uppercase;
