@@ -385,7 +385,7 @@
             <div class="modal-body">
            
                
-               <iframe id="chapter-video" src="{{$chapter_home->who_we_are_featured_video}}?" width="560" height="315" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+               <iframe id="chapter-video" src="{{$chapter_home->who_we_are_featured_video}}?" width="560" height="315" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
 
 
                {{-- <iframe src="{{$chapter_home->who_we_are_featured_video}}?rel=0&amp;controls=0&amp;showinfo=0&enablejsapi=1" width="560" height="315" frameborder="0" allowfullscreen></iframe> --}}
