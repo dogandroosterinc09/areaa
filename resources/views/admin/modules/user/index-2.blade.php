@@ -58,7 +58,7 @@
                         Chapter
                     </th>
                     <th class="text-center">
-                        Date Registered
+                        Joined Date
                     </th>
                     <th class="text-center">
                         Action
@@ -72,7 +72,7 @@
                         <td class="text-left"><strong>{{ $members->first_name.' '.$members->last_name }}</strong></td>
                         <td class="text-left"><strong>{{ $members->user_name }}</strong></td>
                         <td class="text-center"><strong>{{ isset($members->chapter_name)? $members->chapter_name: 'National' }}</strong></td>
-                        <td class="text-center">@if($members->joined_date) {{ date('d-m-Y', strtotime($members->joined_date)) }} @endif</td>
+                        <td class="text-left">@if($members->joined_date) {{ date('M d, Y', strtotime($members->joined_date)) }} @endif</td>
                         <td class="text-center">
                             <div class="btn-group btn-group-xs">
                                 <?php /* @if (auth()->user()->can('Read Members'))

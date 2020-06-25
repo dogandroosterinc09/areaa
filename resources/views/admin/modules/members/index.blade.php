@@ -9,6 +9,7 @@
     </ul>    
     @endisset
 
+    {{--
     @if (auth()->user()->can('Create Members'))
         <div class="row text-center">
             <div class="col-sm-12 col-lg-12">
@@ -28,6 +29,8 @@
             </div>
         </div>
     @endif
+    --}}
+    
     <div class="block full">
         <div class="block-title">
             <h2>

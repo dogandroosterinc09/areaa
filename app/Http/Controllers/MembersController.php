@@ -3,8 +3,13 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+
 use App\Models\Members;
+use App\Models\MemberAddress;
+use App\Models\User;
+
 use App\Http\Controllers\Controller;
+use App\Repositories\UserRepository;
 
 use DB;
 
@@ -18,13 +23,37 @@ class MembersController extends Controller
     private $members;
 
     /**
+     * MemberAddress model instance.
+     *
+     * @var MemberAddress
+     */
+    private $memberAddress;
+
+    /**
+     * User repository instance.
+     *
+     * @var UserRepository
+     */
+    private $userRepository;
+
+    /**
+     * User model instance.
+     *
+     * @var User
+     */
+    private $user;
+
+    /**
      * Create a new controller instance.
      *
      * @param Members $members
      */
-    public function __construct(Members $members)
+    public function __construct(Members $members, MemberAddress $memberAddress, User $user, UserRepository $userRepository)
     {
         $this->members = $members;
+        $this->memberAddress = $memberAddress;
+        $this->user = $user;
+        $this->userRepository = $userRepository;
     }
 
     /**
@@ -184,13 +213,16 @@ class MembersController extends Controller
      */
     public function edit($id)
     {
+
         if (!auth()->user()->hasPermissionTo('Update Members')) {
             abort('401', '401');
         }
 
-        $members = $this->members->findOrFail($id);
+        // $members = $this->members->findOrFail($id);
+        $user = $this->user->findOrFail($id);
 
-        return view('admin.modules.members.edit', compact('members'));
+        // return view('admin.modules.members.edit', compact('members'));
+        return view('admin.modules.members.edit', compact('user'));
     }
 
     /**
@@ -207,24 +239,77 @@ class MembersController extends Controller
             abort('401', '401');
         }
 
-        return $request->all();
+        // return $request->all();
+        // echo $id;
+        // die();
+        $user = $this->user->findOrFail($id);
+        $member = $this->members->where('user_id',$id)->first();
+        $billing = $this->memberAddress->where('user_id',$id)->first();
+
+        // print_r($member);
+        // print_r($billing);
+        // die();
 
         $this->validate($request, [
-            
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'user_name' => 'required|unique:users,user_name,' . $id . ',id,deleted_at,NULL',
+            'email' => 'required|unique:users,email,' . $id . ',id,deleted_at,NULL',
+            'password' => 'required_if:change_password,==,1|min:8|confirmed',
+            'profile_image' =>  'mimes:jpg,jpeg,png'
         ]);
 
-        $members = $this->members->findOrFail($id);
+        if ($request->get('change_password') == '1') {
+            $input = $request->only(['first_name', 'middle_name', 'last_name', 'user_name', 'email', 'is_active', 'is_featured', 'is_alist', 'is_luxury', 'password']);
+        } else {
+            $input = $request->only(['first_name', 'middle_name', 'last_name', 'user_name', 'email', 'is_active', 'is_featured', 'is_alist', 'is_luxury']);
+        }
 
-        $members->fill(array_merge($request->all(), [
-            'is_active' => $request->has('is_active') ? 1 : 0,
-            'slug' => str_slug($request->input('name'))
-        ]))->save();
+        $input['is_active'] = isset($input['is_active']) ? 1 : 0;
+        $input['is_featured'] = isset($input['is_featured']) ? 1 : 0;
+        $input['is_alist'] = isset($input['is_alist']) ? 1 : 0;
+        $input['is_luxury'] = isset($input['is_luxury']) ? 1 : 0;
+        // $roles = $request['roles'];
+        $user->fill($input)->save();
+
+        if ($request->hasFile('profile_image')) {
+            $file_upload_path = $this->userRepository->uploadFile($request->file('profile_image'));
+            $user->fill(['profile_image' => $file_upload_path])->save();
+        }
+
+        $billing_data = $request->only(['street_address1', 'street_address2', 'city', 'state', 'country', 'zipcode', 'company', 'phone']);
+        $billing->fill($billing_data)->save();
+
+        // $billing->fill(array_merge($request->all(), [
+        //     'is_active' => $request->has('is_active') ? 1 : 0,
+        //     'slug' => str_slug($request->input('name'))
+        // ]))->save();
+
+
 
         return redirect()->route('admin.members.index')->with('flash_message', [
             'title' => '',
-            'message' => 'Members ' . $members->name . ' successfully updated.',
+            'message' => 'Member successfully updated.',
             'type' => 'success'
         ]);
+
+
+        // $this->validate($request, [
+            
+        // ]);
+
+        // $members = $this->members->findOrFail($id);
+
+        // $members->fill(array_merge($request->all(), [
+        //     'is_active' => $request->has('is_active') ? 1 : 0,
+        //     'slug' => str_slug($request->input('name'))
+        // ]))->save();
+
+        // return redirect()->route('admin.members.index')->with('flash_message', [
+        //     'title' => '',
+        //     'message' => 'Members ' . $members->name . ' successfully updated.',
+        //     'type' => 'success'
+        // ]);
     }
 
 

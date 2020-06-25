@@ -774,7 +774,7 @@ class UserController extends Controller
         }
 
         echo $id;
-        // die();
+        die();
         $user = $this->user->findOrFail($id);
 
         $this->validate($request, [
