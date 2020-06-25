@@ -62,16 +62,16 @@
                             <div class="chapter-events-next-preview">
                                <div class="container">
                                     <div class="row">
-                                        @if($previousEvent)
+                                        {{-- @if($previousEvent)
                                         <div class="chapter-events-next-preview__details chapter-events-next-preview__left col-sm-6">
                                             <div class="chapter-events-next-preview__holder">
                                                 <a href="{{route('chapter_event.detail', ['slug'=>$chapter->slug,'event_slug'=>$previousEvent->slug])}}">
                                                     <h4>Previous Event</h4>
                                                     <h3>{{ $previousEvent->name }}</h3>
-                                                    {{-- <div class="chapter-events-next-preview__date-time">
+                                                    <!-- <div class="chapter-events-next-preview__date-time">
                                                         <div class="events-next-preview__month">Oct. 08 - 10</div> 
                                                         <div class="events-next-preview__time">7:00pm - 9:00pm</div>
-                                                    </div> --}}
+                                                    </div> -->
                                                 </a>
                                             </div>
                                             
@@ -88,16 +88,16 @@
                                                 <a href="{{route('chapter_event.detail', ['slug'=>$chapter->slug,'event_slug'=>$nextEvent->slug])}}">
                                                     <h4>Next Event</h4>
                                                     <h3>{{ $nextEvent->name }}</h3>
-                                                    {{-- <div class="chapter-events-next-preview__date-time">
+                                                    <!-- <div class="chapter-events-next-preview__date-time">
                                                         <div class="events-next-preview__month">Oct. 08 - 10</div> 
                                                         <div class="events-next-preview__time">7:00pm - 9:00pm</div>
-                                                    </div> --}}
+                                                    </div> -->
                                                 </a>
                                             </div>
                                             
                                             <a href="#" class="btn btn--third"> </a>
                                         </div>                                        
-                                        @endif                                        
+                                        @endif --}}
                                     </div>
                                </div>
                             </div>
