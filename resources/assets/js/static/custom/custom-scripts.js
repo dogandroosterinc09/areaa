@@ -314,9 +314,10 @@ $(document).on('click', 'a[href^="#upcoming-envents-owner"]', function(event) {
 // });
 
 
+
 (function() {
-    $(".modal-chapter-popup").on("hidden.bs.modal", function() {
-        $(this).removeData();
+    $(".modal").on("hidden.bs.modal", function() {
+        $("#chapter-video").attr('src', '');
     });
 });
 
