@@ -315,10 +315,14 @@ $(document).on('click', 'a[href^="#upcoming-envents-owner"]', function(event) {
 
 
 
+
 $(document).ready(function() {
+
+
     /* Get iframe src attribute value i.e. YouTube video url
     and store it in a variable */
     var url = $("#chapter-video").attr('src');
+    $("#chapter-video").attr('src', '');
 
     /* Assign empty url value to the iframe src attribute when
     modal hide, which stop the video playing */
