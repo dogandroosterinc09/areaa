@@ -32,7 +32,7 @@
         <div class="block-title">
             <h2>
                 <i class="fa fa-newspaper-o sidebar-nav-icon"></i>
-                <strong>{{ isset($chapter) ? $chapter->name : 'National' }} Members</strong>
+                <strong>{{ isset($members->chaptername) ? $members->chaptername : 'National' }} Members</strong>
             </h2>
         </div>
         <div class="alert alert-info alert-dismissable members-empty {{$members->count() == 0 ? '' : 'johnCena' }}">
@@ -47,12 +47,15 @@
                     </th>
                     <th class="text-center">
                         Name
-                    </th>   
+                    </th>
+                    <th class="text-center">
+                        Username
+                    </th>
                     <th class="text-center">
                         Chapter
                     </th>
                     <th class="text-center">
-                        Date Registered
+                        Joined Date
                     </th>
                     <th class="text-center">
                         Action
@@ -63,18 +66,20 @@
                 @foreach($members as $members)
                     <tr data-members-id="{{$members->id}}">
                         <td class="text-center"><strong>{{ $members->id }}</strong></td>
-                        <td class="text-center"><strong>{{ $members->name }}</strong></td>
-                        <td class="text-center"><strong>{{ $members->chapter }}</strong></td>
-                        <td class="text-center">{{ $members->created_at->format('F d, Y') }}</td>
+                        <td class="text-left"><strong>{{ $members->first_name.' '.$members->last_name }}</strong></td>
+                        <td class="text-left"><strong>{{ $members->user_name }}</strong></td>
+                        <td class="text-center"><strong>{{ $members->chapter_name }}</strong></td>
+                        <td class="text-left">{{-- $members->created_at->format('F d, Y') --}} {{-- $members->joined_date --}} {{ (!empty($members->joined_date))? date('M d, Y', strtotime($members->joined_date)) : '- - -' }}</td>
                         <td class="text-center">
                             <div class="btn-group btn-group-xs">
-                                @if (auth()->user()->can('Read Members'))
+                                {{-- @if (auth()->user()->can('Read Members'))
                                     <a href="{{ route('admin.members.show', $members->id) }}"
                                        data-toggle="tooltip"
                                        title=""
                                        class="btn btn-default"
                                        data-original-title="View"><i class="fa fa-eye"></i></a>
-                                @endif
+                                @endif --}}
+
                                 @if (auth()->user()->can('Update Members'))
                                     <a href="{{ route('admin.members.edit', $members->id) }}"
                                        data-toggle="tooltip"

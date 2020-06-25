@@ -39,25 +39,45 @@ class MembersController extends Controller
         //     abort('401', '401');
         // }
 
-        if (auth()->user()->getRoleNames()->first() === 'Chapter Admin') {
-            // die('41');
-            $members = $this->members
-                    ->whereHas('user', function($q) {
-                        $q->where('chapter_id',auth()->user()->chapter_id);
-                    })
-                    ->get();
-        } else {
-            // die('48');
-            $members = $this->members
-                    ->whereHas('user', function($q) {
-                        $q->where('chapter_id',0);
-                    })
-                    ->get();
+        if (auth()->user()->getRoleNames()->first() === 'Chapter Admin') { 
+
+            // Chapter Members
             // $members = $this->members
             //         ->whereHas('user', function($q) {
-            //             $q->where('chapter_id','<>',NULL);
+            //             $q->where('chapter_id',auth()->user()->chapter_id);
             //         })
             //         ->get();
+
+            $members = DB::table('members')
+                ->join('users', 'members.user_id', '=', 'users.id')
+                ->where('users.chapter_id', auth()->user()->chapter_id)
+                ->select('members.id as member_id', 'members.*', 'users.*')
+                ->get();
+
+            $chapter = \App\Models\Chapter::find(auth()->user()->chapter_id);
+            $members->chaptername = $chapter->name;
+            foreach ($members as $member) {
+                $member->chapter_name = $chapter->name;
+            }
+
+        } else { 
+
+            // National Members
+            $members = DB::table('members')
+                ->join('users', 'members.user_id', '=', 'users.id')
+                ->where('users.chapter_id', 0)
+                ->select('members.id as member_id', 'members.*', 'users.*')
+                ->get();
+
+            // $members = $this->members
+            //         ->whereHas('user', function($q) {
+            //             $q->where('chapter_id',0);
+            //         })
+            //         ->get();
+            foreach ($members as $member) {
+                $member->chapter_name = 'National';
+            }
+
         }
 
         return view('admin.modules.members.index', compact('members'));
