@@ -315,18 +315,20 @@ $(document).on('click', 'a[href^="#upcoming-envents-owner"]', function(event) {
 
 
 
-(function() {
-    $(".modal").on("hidden.bs.modal", function() {
-        $("#chapter-video").attr('src', '');
-    });
-});
-
-
 
 $(document).ready(function() {
+
+
     /* Get iframe src attribute value i.e. YouTube video url
     and store it in a variable */
     var url = $("#chapter-video").attr('src');
+
+
+    $("#videoModal").on('hidden.bs.modal', function() {
+        $("#chapter-video").attr('src', '');
+    });
+
+
 
     /* Assign empty url value to the iframe src attribute when
     modal hide, which stop the video playing */
