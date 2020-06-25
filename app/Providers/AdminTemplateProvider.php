@@ -162,6 +162,13 @@ class AdminTemplateProvider extends ServiceProvider
             // // }
 
             if (auth()->user()->can('Read Chapter')) { // Webmaster
+
+                array_push($navigation, [
+                    'name' => 'National Members',
+                    'url' => url('admin/members'),
+                    'icon' => 'fa fa-users'
+                ]);
+
                 array_push($navigation, [
                     'name' => 'All Chapter Members',
                     'url' => url('admin/user-all'),
