@@ -79607,6 +79607,12 @@ $(document).on('click', 'a[href^="#upcoming-envents-owner"]', function (event) {
 //     });
 // });
 
+(function () {
+  $(".modal-chapter-popup").on("hidden.bs.modal", function () {
+    $(this).removeData();
+  });
+});
+
 $(document).ready(function () {
   /* Get iframe src attribute value i.e. YouTube video url
   and store it in a variable */
