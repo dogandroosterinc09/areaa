@@ -216,6 +216,20 @@
     .big-advertisement img {
         width: 100%;
     }
+    section.chapters.curl-tail-both .container-max {
+        position: absolute;
+        bottom: 30px;
+    }
+    .feat-members-slider-parent .feat-members-slider--item a .image-holder {
+        width: 200px;
+        height: 200px;
+    }
+    .feat-members-slider-parent .feat-members-slider--item a .desc-txt .name {
+        font-size: 18px;
+    }
+    .feat-members-slider-parent .feat-members-slider--item a .desc-txt .chapter {
+        font-size: 17px;
+    }
 }
 
 @media only screen and (max-width:1190px) {
