@@ -370,7 +370,7 @@ $(function() {
     // });
 
 
-    $(".photo-section .container-max .row").slice(0, 3).show();
+    $(".photo-section__item").slice(0, 3).show();
     if ($(".photo-section__item:hidden").length != 0) {
         $("#loadMore").show();
     }
