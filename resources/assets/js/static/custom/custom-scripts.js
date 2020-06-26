@@ -370,13 +370,13 @@ $(function() {
     // });
 
 
-    $(".photo-section__item").slice(0, 3).show();
+    $(".photo-section__item").slice(0, 12).show();
     if ($(".photo-section__item:hidden").length != 0) {
         $("#loadMore").show();
     }
     $("#loadMore").on('click', function(e) {
         e.preventDefault();
-        $(".photo-section__item:hidden").slice(0, 6).slideDown();
+        $(".photo-section__item:hidden").slice(0, 3).slideDown();
         if ($(".photo-section__item:hidden").length == 0) {
             $("#loadMore").fadeOut('slow');
         }
