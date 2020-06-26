@@ -3,6 +3,8 @@
     /* declare global variables within the class */
     var uiChangePasswordRadio,
         uiChangePasswordContainer,
+        uiChangeExpiryRadio,
+        uiChangeExpiryContainer,
         uiUsersTable,
         uiCreateUserForm,
         uiEditUserForm,
@@ -51,6 +53,8 @@
             /* assign a value to the global variable within this class */
             uiChangePasswordRadio = $('#change_password');
             uiChangePasswordContainer = $('.change-pass-container');
+            uiChangeExpiryRadio = $('#change_expiry');
+            uiChangeExpiryContainer = $('.change-expiry-container');
             uiUsersTable = $('#users-table');
             uiCreateUserForm = $('#create-user');
             uiEditUserForm = $('#edit-user');
@@ -66,6 +70,17 @@
                 } else {
                     uiChangePasswordContainer.slideUp();
                     uiChangePasswordContainer.find('input').attr('disabled', 'disabled').addClass('johnCena');
+                }
+            });
+
+            /*user change expiry*/
+            uiChangeExpiryRadio.on('change', function (e) {
+                if ($(this).is(':checked')) {
+                    uiChangeExpiryContainer.slideDown();
+                    uiChangeExpiryContainer.find('input').removeAttr('disabled').removeClass('johnCena');
+                } else {
+                    uiChangeExpiryContainer.slideUp();
+                    uiChangeExpiryContainer.find('input').attr('disabled', 'disabled').addClass('johnCena');
                 }
             });
 

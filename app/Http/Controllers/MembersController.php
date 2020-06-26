@@ -240,15 +240,10 @@ class MembersController extends Controller
         }
 
         // return $request->all();
-        // echo $id;
-        // die();
         $user = $this->user->findOrFail($id);
         $member = $this->members->where('user_id',$id)->first();
         $billing = $this->memberAddress->where('user_id',$id)->first();
-
-        // print_r($member);
-        // print_r($billing);
-        // die();
+        // return $member;
 
         $this->validate($request, [
             'first_name' => 'required',
@@ -280,12 +275,17 @@ class MembersController extends Controller
         $billing_data = $request->only(['street_address1', 'street_address2', 'city', 'state', 'country', 'zipcode', 'company', 'phone']);
         $billing->fill($billing_data)->save();
 
-        // $billing->fill(array_merge($request->all(), [
-        //     'is_active' => $request->has('is_active') ? 1 : 0,
-        //     'slug' => str_slug($request->input('name'))
-        // ]))->save();
 
-
+        $member_input = $request->only(['bio', 'position', 'location', 'language_spoken', 'joined_date', 'expires']);
+        if (isset($request->joined_date)) {
+            $member_input['joined_date'] = date('m/d/Y', strtotime($request->joined_date));
+        }
+        if (isset($request->change_expiry)) {
+            $member_input['expires'] = date('m/d/Y', strtotime($request->expires));
+        } else {
+            $member_input['expires'] = 'Never';
+        }
+        $member->fill($member_input)->save();
 
         return redirect()->route('admin.members.index')->with('flash_message', [
             'title' => '',
