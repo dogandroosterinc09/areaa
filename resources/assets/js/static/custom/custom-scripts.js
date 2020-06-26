@@ -372,7 +372,7 @@ $(function() {
 
     $(".photo-section__item").slice(0, 12).show();
     if ($(".photo-section__item:hidden").length != 0) {
-        $("#loadMore").show();
+        $("#loadMore").hide();
     }
     $("#loadMore").on('click', function(e) {
         e.preventDefault();
