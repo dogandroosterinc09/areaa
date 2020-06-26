@@ -79641,8 +79641,7 @@ $(function () {
     }, 300);
   });
 });
-$(function () {
-  // $(".photo-section__item").slice(0, 12).show();
+$(function () {// $(".photo-section__item").slice(0, 12).show();
   // $("#loadMore").on('click', function(e) {
   //     e.preventDefault();
   //     $(".photo-section__item:hidden").slice(0, 2).slideDown();
@@ -79653,19 +79652,28 @@ $(function () {
   //         scrollTop: $(this).offset().top
   //     }, 300);
   // });
-  $(".photo-section__item").slice(0, 12).show();
+  // $(".photo-section__item").slice(0, 12).show();
+  // if ($(".photo-section__item:hidden").length != 0) {
+  //     $("#loadMore").hide();
+  // }
+  // $("#loadMore").on('click', function(e) {
+  //     e.preventDefault();
+  //     $(".photo-section__item:hidden").slice(0, 3).slideDown();
+  //     if ($(".photo-section__item:hidden").length == 0) {
+  //         $("#loadMore").fadeOut('slow');
+  //     }
+  // });
+});
+$(function () {
+  $(document).find(".photo-section__item").slice(0, 12).show();
+  $("#loadMore").click(function () {
+    $(".photo-section__item:hidden").slice(0, 12).slideDown();
 
-  if ($(".photo-section__item:hidden").length != 0) {
-    $("#loadMore").hide();
-  }
-
-  $("#loadMore").on('click', function (e) {
-    e.preventDefault();
-    $(".photo-section__item:hidden").slice(0, 3).slideDown();
-
-    if ($(".photo-section__item:hidden").length == 0) {
-      $("#loadMore").fadeOut('slow');
+    if ($(".photo-section__item").length) {
+      $("#loadMore").hide();
     }
+
+    return false;
   });
 });
 
