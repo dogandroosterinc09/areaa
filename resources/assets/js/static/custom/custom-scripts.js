@@ -342,17 +342,32 @@ $(document).ready(function() {
 
 // used for events load more 
 $(function() {
+    // $(".events-thumbnail__item").slice(0, 3).show();
+    // $("#loadMore").on('click', function(e) {
+    //     e.preventDefault();
+    //     $(".events-thumbnail__item:hidden").slice(0, 2).slideDown();
+    //     if ($(".events-thumbnail__item:hidden").length == 0) {
+    //         $("#loadMore").fadeOut('slow');
+    //     }
+    //     $('html,body').animate({
+    //         scrollTop: $(this).offset().top
+    //     }, 300);
+    // });
+
     $(".events-thumbnail__item").slice(0, 3).show();
+    if ($(".events-thumbnail__item:hidden").length != 0) {
+        $("#loadMore").show();
+    }
     $("#loadMore").on('click', function(e) {
         e.preventDefault();
-        $(".events-thumbnail__item:hidden").slice(0, 2).slideDown();
+        $(".events-thumbnail__item:hidden").slice(0, 12).slideDown();
         if ($(".events-thumbnail__item:hidden").length == 0) {
             $("#loadMore").fadeOut('slow');
         }
-        $('html,body').animate({
-            scrollTop: $(this).offset().top
-        }, 300);
     });
+
+
+
 });
 
 
