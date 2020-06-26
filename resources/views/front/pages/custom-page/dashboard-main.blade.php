@@ -193,7 +193,7 @@
                                 {{-- loop here  --}}
 
                                 {{-- loop here  --}}
-                                {{--
+                                
                                 <div class="col-lg-4">
                                     <div class="navigation-icon__item">
                                         <div class="navigation-icon__hover">
@@ -202,7 +202,7 @@
                                             </a>
                                         </div>
                                         <div class="navigation-icon__icon">
-                                           <div class="navigation-icon__icon--object menu-icon menu-icon--one">
+                                           <div class="navigation-icon__icon--object menu-icon menu-icon--membership">
 
                                            </div>
                                         </div>
@@ -211,7 +211,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                --}}
+                               
                                 {{-- loop here  --}}
 
 
@@ -225,7 +225,7 @@
                                             </a>
                                         </div>
                                         <div class="navigation-icon__icon">
-                                           <div class="navigation-icon__icon--object menu-icon menu-icon--one">
+                                           <div class="navigation-icon__icon--object menu-icon menu-icon--support">
 
                                            </div>
                                         </div>

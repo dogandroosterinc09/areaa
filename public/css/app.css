@@ -23140,11 +23140,17 @@ section.page--media .search-member-directory {
 .menu-icon--profile {
   background-position: -351px -224px;
 }
-.menu-icon--profile {
-  background-position: -351px -224px;
+.menu-icon--inbox {
+  background-position: -163px -282px;
+}
+.menu-icon--membership {
+  background-position: -286px -283px;
 }
 .menu-icon--location {
   background-position: -164px -345px;
+}
+.menu-icon--support {
+  background-position: -345px -283px;
 }
 .menu-icon--phone {
   background-position: -225px -345px;
