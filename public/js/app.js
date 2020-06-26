@@ -79655,7 +79655,7 @@ $(function () {
   // });
   $(".photo-section__item").slice(0, 3).show();
 
-  if ($(".photo-section__item:hidden").length != 3) {
+  if ($(".photo-section__item:hidden").length != 4) {
     $("#loadMore").hide();
   }
 
