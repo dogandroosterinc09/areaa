@@ -386,7 +386,7 @@ $(function() {
 
 
 $(function() {
-    $(document).find(".photo-section__item").slice(0, 12).show();
+    $(document).find(".photo-section__item").slice(0, 3).show();
     $("#loadMore").click(function() {
         $(".photo-section__item:hidden").slice(0, 12).slideDown();
         if ($(".photo-section__item").length) {
