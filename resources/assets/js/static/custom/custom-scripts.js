@@ -370,9 +370,10 @@ $(function() {
     // });
 
 
+    $("#loadMore").hide();
     $(".photo-section__item").slice(0, 5).show();
-    if ($(".photo-section__item:hidden").length != 5) {
-        $("#loadMore").hide();
+    if ($(".photo-section__item:hidden").length == 5) {
+        $("#loadMore").show();
     }
     $("#loadMore").on('click', function(e) {
         e.preventDefault();
