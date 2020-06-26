@@ -85,7 +85,7 @@
 
 
                                         <div class="chapter-events-thumbnail__location"><strong>{{ $chapter_event->location_name }}</strong>
-                                            {{ ($chapter_event->city!='')? ', '.$chapter_event->locationAddress : '' }}
+                                            {{ ($chapter_event->city!='')? ' '.$chapter_event->locationAddress : '' }}
                                         </div>
                                         <div class="chapter-events-thumbnail__paragraph">
                                             <?php

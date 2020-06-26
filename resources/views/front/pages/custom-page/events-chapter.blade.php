@@ -70,9 +70,14 @@
                                             <h5>{{ $event->name }}</h5>
                                     </a>
                                     <div class="events-thumbnail__time">{{ $event->time }}</div>
-                                    <div class="events-thumbnail__location"><strong>{{ $event->location_name }}</strong>, {{ $event->locationAddress }}</div>
+                                    <div class="events-thumbnail__location"><strong>{{ $event->location_name }}</strong>
+                                        {{ ($event->city!='')? ' '.$event->locationAddress : '' }}</div>
                                     <div class="events-thumbnail__paragraph">
-                                        {{ $event->description }}
+                                        {{-- $event->description --}}
+                                        <?php
+                                        $trimmed = preg_replace("/>.*?</s", "><", $event->description);
+                                        echo $trimmed;
+                                        ?>
                                     </div>
                                     <div class="events-thumbnail__buttons">
                                         <a href="{{route('chapter_event.detail', ['slug'=>$event->chapter_slug,'event_slug'=>$event->slug])}}" class="btn btn--secondary"> View Details</a>

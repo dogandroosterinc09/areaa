@@ -74,7 +74,7 @@
                                         </a>
                                         <div class="events-thumbnail__time">{{ $event->time }}</div>
                                         <div class="events-thumbnail__location"><strong>{{ $event->location_name }}</strong>
-                                            {{ ($event->city!='')? ', '.$event->locationAddress : '' }}
+                                            {{ ($event->city!='')? ' '.$event->locationAddress : '' }}
                                         </div>
                                         <div class="events-thumbnail__paragraph">
                                             <?php
