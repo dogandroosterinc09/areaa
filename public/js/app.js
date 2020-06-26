@@ -79662,7 +79662,7 @@ $(function () {
 
   $("#loadMore").on('click', function (e) {
     e.preventDefault();
-    $(".photo-section__item:hidden").slice(0, 3).slideDown();
+    $(".photo-section__item:hidden").slice(0, 3).slideUp();
 
     if ($(".photo-section__item:hidden").length == 0) {
       $("#loadMore").fadeOut('slow');
