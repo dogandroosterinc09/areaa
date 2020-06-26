@@ -79656,7 +79656,7 @@ $(function () {
   $("#loadMore").hide();
   $(".photo-section__item").slice(0, 5).show();
 
-  if ($(".photo-section__item:hidden").length == 5) {
+  if ($(".photo-section__item:hidden").length != 6) {
     $("#loadMore").show();
   }
 
