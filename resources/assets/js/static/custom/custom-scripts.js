@@ -382,7 +382,7 @@ $(function() {
     //     }
     // });
 
-    $(".photo-section__item").slice(0, 12).show();
+    $(".photo-section__item").slice(0, 9).show();
     if ($(".photo-section__item:hidden").length != 0) {
         $("#loadMore").show();
     }
