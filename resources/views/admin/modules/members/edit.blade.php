@@ -129,6 +129,81 @@
                 ?>
                 <hr>
                 <div class="form-group">
+                    <label class="col-md-3 control-label" for="street_address1"><strong>Other Information</strong></label>
+                    <div class="col-md-9"></div>
+                </div>
+                <div class="form-group{{ $errors->has('bio') ? ' has-error' : '' }}">
+                    <label class="col-md-3 control-label" for="bio">Bio</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" id="bio" name="bio"
+                               value="{{  Request::old('bio') ? : $member->bio }}"
+                               placeholder="Enter Bio..">
+                        @if($errors->has('bio'))
+                            <span class="help-block animation-slideDown">{{ $errors->first('bio') }}</span>
+                        @endif
+                    </div>
+                </div>
+                <div class="form-group{{ $errors->has('position') ? ' has-error' : '' }}">
+                    <label class="col-md-3 control-label" for="position">Position</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" id="position" name="position"
+                               value="{{  Request::old('position') ? : $member->position }}"
+                               placeholder="Enter Position..">
+                        @if($errors->has('position'))
+                            <span class="help-block animation-slideDown">{{ $errors->first('position') }}</span>
+                        @endif
+                    </div>
+                </div>
+                <div class="form-group{{ $errors->has('location') ? ' has-error' : '' }}">
+                    <label class="col-md-3 control-label" for="location">Location</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" id="location" name="location"
+                               value="{{  Request::old('location') ? : $member->location }}"
+                               placeholder="Enter Location..">
+                        @if($errors->has('location'))
+                            <span class="help-block animation-slideDown">{{ $errors->first('location') }}</span>
+                        @endif
+                    </div>
+                </div>
+                <div class="form-group{{ $errors->has('language_spoken') ? ' has-error' : '' }}">
+                    <label class="col-md-3 control-label" for="language_spoken">Language Spoken</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" id="language_spoken" name="language_spoken"
+                               value="{{  Request::old('language_spoken') ? : $member->language_spoken }}"
+                               placeholder="Enter Language Spoken..">
+                        @if($errors->has('language_spoken'))
+                            <span class="help-block animation-slideDown">{{ $errors->first('language_spoken') }}</span>
+                        @endif
+                    </div>
+                </div>
+                {{--
+                <div class="form-group{{ $errors->has('company') ? ' has-error' : '' }}">
+                    <label class="col-md-3 control-label" for="company">Company</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" id="company" name="company"
+                               value="{{  Request::old('company') ? : $billing->company }}"
+                               placeholder="Enter Company..">
+                        @if($errors->has('company'))
+                            <span class="help-block animation-slideDown">{{ $errors->first('company') }}</span>
+                        @endif
+                    </div>
+                </div>
+                <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
+                    <label class="col-md-3 control-label" for="phone">Phone</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" id="phone" name="phone"
+                               value="{{  Request::old('phone') ? : $billing->phone }}"
+                               placeholder="Enter Phone..">
+                        @if($errors->has('phone'))
+                            <span class="help-block animation-slideDown">{{ $errors->first('phone') }}</span>
+                        @endif
+                    </div>
+                </div>
+                --}}
+
+
+                <hr>
+                <div class="form-group">
                     <label class="col-md-3 control-label" for="street_address1"><strong>BILLING</strong></label>
                     <div class="col-md-9"></div>
                 </div>
@@ -224,6 +299,22 @@
 
 
                 <hr>
+                <div id="chapter_wrapper" class="form-group {{ $errors->has('chapter_id') ? ' has-error' : '' }}">
+                    <label class="col-md-3 control-label" for="chapter_id">Chapter</label>
+                    <div class="col-md-9">
+                        <select class="form-control" id="chapter_id" name="chapter_id">
+                        @php( $chapters = \App\Models\Chapter::all() )
+                            <option value="">Select Chapter</option>
+                            <option {{ $user->chapter_id == 0 ? 'selected' : '' }} value="0">National</option>
+                        @foreach($chapters as $chapter)
+                            <option {{ $user->chapter_id == $chapter->id ? 'selected' : '' }} value="{{ $chapter->id }}">{{ $chapter->name }}</option>
+                        @endforeach
+                        </select>
+                        @if($errors->has('chapter_id'))
+                            <span class="help-block animation-slideDown">{{ $errors->first('chapter_id') }}</span>
+                        @endif
+                    </div>
+                </div>
                 <div class="form-group">
                     <label class="col-md-3 control-label">Is Active?</label>
                     <div class="col-md-9">
@@ -264,24 +355,6 @@
                         </label>
                     </div>
                 </div>
-
-                <div id="chapter_wrapper" class="form-group {{ $errors->has('chapter_id') ? ' has-error' : '' }}">
-                    <label class="col-md-3 control-label" for="chapter_id">Chapter</label>
-                    <div class="col-md-9">
-                        <select class="form-control" id="chapter_id" name="chapter_id">
-                        @php( $chapters = \App\Models\Chapter::all() )
-                            <option value="">Select Chapter</option>
-                            <option {{ $user->chapter_id == 0 ? 'selected' : '' }} value="0">National</option>
-                        @foreach($chapters as $chapter)
-                            <option {{ $user->chapter_id == $chapter->id ? 'selected' : '' }} value="{{ $chapter->id }}">{{ $chapter->name }}</option>
-                        @endforeach
-                        </select>
-                        @if($errors->has('chapter_id'))
-                            <span class="help-block animation-slideDown">{{ $errors->first('chapter_id') }}</span>
-                        @endif
-                    </div>
-                </div>
-
                 <div class="form-group change-pass-checkbox-container">
                     <label class="col-md-3 control-label">Change Password</label>
 
@@ -327,15 +400,52 @@
                         @endif
                     </div>
                 </div>
+                {{--
+                <div class="form-group{{ $errors->has('expires') ? ' has-error' : '' }}">
+                    <label class="col-md-3 control-label" for="expires">Expires</label>
+                    <div class="col-md-9">
+                        <input type="date" class="form-control" id="expires" name="expires"
+                               value="{{ Request::old('expires') ? date('yy-m-d', strtotime(old('expires'))) : date('yy-m-d', strtotime($member->expires)) }}"
+                               placeholder="Enter Expiry..">
+                        @if($errors->has('expires'))
+                            <span class="help-block animation-slideDown">{{ $errors->first('expires') }}</span>
+                        @endif
+                    </div>
+                </div>
                 <div class="form-group{{ $errors->has('expires') ? ' has-error' : '' }}">
                     <label class="col-md-3 control-label" for="expires">Expires</label>
                     <div class="col-md-9">
                         <input type="text" class="form-control" id="expires" name="expires"
                                value="{{  Request::old('expires') ? : $member->expires }}"
-                               placeholder="Enter Expires..">
+                               placeholder="Enter Expiry..">
                         @if($errors->has('expires'))
                             <span class="help-block animation-slideDown">{{ $errors->first('expires') }}</span>
                         @endif
+                    </div>
+                </div>
+                --}}
+
+                <div class="form-group change-expiry-checkbox-container">
+                    <label class="col-md-3 control-label">Expiring</label>
+
+                    <div class="col-md-9">
+                        <label class="switch switch-primary">
+                            <input type="checkbox" id="change_expiry" name="change_expiry" value="1" {{ ($errors->has('expires') || Request::old('expires') || ($member->expires!='Never') ) ? 'checked' : ''}}>
+                            <span></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="change-expiry-container" style="{{ ($errors->has('expires') || Request::old('expires') || ($member->expires!='Never')) ? '' : 'display:none;'}}">
+                    <div class="form-group{{ $errors->has('expires') ? ' has-error' : '' }}">
+                        <label class="col-md-3 control-label" for="expires">Expiry Date {{-- old('expires') .' | '. date('Y-m-d', strtotime(old('expires'))) --}}</label>
+
+                        <div class="col-md-9">
+                            <input type="date" class="form-control" id="expires" value="{{ Request::old('expires') ? date('Y-m-d', strtotime(old('expires'))) : date('Y-m-d', strtotime($member->expires)) }}" name="expires"
+                                   placeholder="Enter new expiry date..">
+                            @if($errors->has('expires'))
+                                <span class="help-block animation-slideDown">{{ $errors->first('expires') }}</span>
+                            @endif
+                        </div>
                     </div>
                 </div>
 
