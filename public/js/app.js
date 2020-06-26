@@ -79646,7 +79646,7 @@ $(function () {
 
   $("#loadMore").on('click', function (e) {
     e.preventDefault();
-    $(".events-thumbnail__item:hidden").slice(0, 3).slideDown();
+    $(".events-thumbnail__item:hidden").slice(0, 12).slideDown();
 
     if ($(".events-thumbnail__item:hidden").length == 0) {
       $("#loadMore").fadeOut('slow');
