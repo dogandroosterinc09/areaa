@@ -79653,9 +79653,9 @@ $(function () {
   //         scrollTop: $(this).offset().top
   //     }, 300);
   // });
-  $(".photo-section__item").slice(0, 3).show();
+  $(".photo-section__item").slice(0, 5).show();
 
-  if ($(".photo-section__item:hidden").length != 4) {
+  if ($(".photo-section__item:hidden").length != 5) {
     $("#loadMore").hide();
   }
 
