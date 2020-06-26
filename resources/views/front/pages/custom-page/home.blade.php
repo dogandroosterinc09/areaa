@@ -235,7 +235,12 @@
                             @endforeach                            
                         </div>
                         <div class="btn-wrap text-center margin-top50">
-                            <a href="{{ section('Growing Opportunities.data.first.btn1_link') }}" class="btn btn--secondary margin-right20">{{ section('Growing Opportunities.data.first.btn1_text') }}</a> <a href="{{ section('Growing Opportunities.data.first.btn2_link') }}" class="btn btn--primary">{{ section('Growing Opportunities.data.first.btn2_text') }}</a>
+                            @if(section('Growing Opportunities.data.first.btn1_text'))
+                            <a href="{{ section('Growing Opportunities.data.first.btn1_link') }}" class="btn btn--secondary margin-right20">{{ section('Growing Opportunities.data.first.btn1_text') }}</a> 
+                            @endif
+                            @if(section('Growing Opportunities.data.first.btn2_text'))
+                            <a href="{{ section('Growing Opportunities.data.first.btn2_link') }}" class="btn btn--primary">{{ section('Growing Opportunities.data.first.btn2_text') }}</a>
+                            @endif
                         </div>
                     </div>
                     <div class="col-md-6" data-aos="fade-left">
