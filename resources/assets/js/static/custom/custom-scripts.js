@@ -386,10 +386,10 @@ $(function() {
 
 
 $(function() {
-    $(document).find(".photo-section__item").slice(0, 3).show();
+    $(document).find(".photo-section__item").slice(0, 6).show();
     $("#loadMore").click(function() {
-        $(".photo-section__item:hidden").slice(0, 12).slideDown();
-        if ($(".photo-section__item").length) {
+        $(".photo-section__item:hidden").slice(0, 2).slideDown();
+        if ($(".photo-section__item").length != 4) {
             $("#loadMore").hide();
         }
         return false;
