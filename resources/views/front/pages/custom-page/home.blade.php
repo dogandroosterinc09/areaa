@@ -166,7 +166,13 @@
                             </div>
                             @endforeach                            
                             <div class="btn-wrap">
-                                <a href="{{ section('Partnership.data.first.btn1_link') }}" class="btn btn--secondary margin-right20">{{ section('Partnership.data.first.btn1_text') }}</a> <a href="{{ section('Partnership.data.first.btn2_link') }}" class="btn btn--primary">{{ section('Partnership.data.first.btn2_text') }}</a>
+                                @if(section('Partnership.data.first.btn1_text'))
+                                <a href="{{ section('Partnership.data.first.btn1_link') }}" class="btn btn--secondary margin-right20">
+                                {{ section('Partnership.data.first.btn1_text') }}</a> 
+                                @endif
+                                @if(section('Partnership.data.first.btn2_text'))
+                                <a href="{{ section('Partnership.data.first.btn2_link') }}" class="btn btn--primary">{{ section('Partnership.data.first.btn2_text') }}</a>
+                                @endif
                             </div>
                         </div>
                          {{-- partnership-level --}}
