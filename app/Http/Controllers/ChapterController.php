@@ -12,7 +12,7 @@ use App\Models\ChapterPageLeadership;
 use App\Models\Members;
 use App\Http\Controllers\Controller;
 
-use File;
+use File, DB;
 
 class ChapterController extends Controller
 {
@@ -226,13 +226,25 @@ class ChapterController extends Controller
     }
 
     public function members($id) {
-        $members = \App\Models\Members::
-                    whereHas('user', function($q) use($id) {
-                        $q->where('chapter_id',$id);
-                    })
-                    ->get();
+
+        $members = DB::table('members')
+            ->join('users', 'members.user_id', '=', 'users.id')
+            ->where('users.chapter_id', $id)
+            ->select('members.id as member_id', 'members.*', 'users.*')
+            ->get();
+
+        // $chapter = \App\Models\Chapter::find($id);
+        // $members = \App\Models\Members::
+        //             whereHas('user', function($q) use($id) {
+        //                 $q->where('chapter_id',$id);
+        //             })
+        //             ->get();
         
         $chapter = $this->chapter->findOrFail($id);
+        $members->chaptername = $chapter->name;
+        foreach ($members as $member) {
+            $member->chapter_name = $chapter->name;
+        }
 
         $is_chapter = true;
 
