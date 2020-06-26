@@ -79,11 +79,11 @@
 
 
     {{-- story section  --}}
+    @php( $section_2 = json_decode($chapter_page_aboutus->section_2) )
     <section class="fullwidth fullwidth__right-push chapter-national">
         <div class="container-max">
             <div class="row">
 
-                @php( $section_2 = json_decode($chapter_page_aboutus->section_2) )
                 <div class="col-md-6 fullwidth__left" data-aos="fade-right">
                     @if($section_2->featured_image)
                     <div class="fullwidth__image image-background">
@@ -92,7 +92,6 @@
                     </div>
                     @endif
                 </div>
-
 
                 <div class="col-md-6 fullwidth__right" data-aos="fade-left">
                     

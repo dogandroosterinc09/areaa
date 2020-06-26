@@ -64,6 +64,7 @@
                         <td class="text-center">{{ $faq->created_at->format('F d, Y') }}</td>
                         <td class="text-center">
                             <div class="btn-group btn-group-xs">
+                                {{--
                                 @if (auth()->user()->can('Read Faq'))
                                     <a href="{{ route('admin.faqs.show', $faq->id) }}"
                                        data-toggle="tooltip"
@@ -71,12 +72,13 @@
                                        class="btn btn-default"
                                        data-original-title="View"><i class="fa fa-eye"></i></a>
                                 @endif
+                                --}}
                                 @if (auth()->user()->can('Update Faq'))
                                     <a href="{{ route('admin.faqs.edit', $faq->id) }}"
                                        data-toggle="tooltip"
                                        title=""
                                        class="btn btn-default"
-                                       data-original-title="Edit"><i class="fa fa-pencil"></i></a>
+                                       data-original-title="Edit">&nbsp;{{--<i class="fa fa-pencil"></i>--}} Edit &nbsp;</a> &nbsp;
                                 @endif
                                 @if (auth()->user()->can('Delete Faq'))
                                     <a href="javascript:void(0)" data-toggle="tooltip"
@@ -84,8 +86,8 @@
                                        class="btn btn-xs btn-danger delete-faq-btn"
                                        data-original-title="Delete"
                                        data-faq-id="{{ $faq->id }}"
-                                       data-faq-route="{{ route('admin.faqs.destroy', $faq->id) }}">
-                                        <i class="fa fa-times"></i>
+                                       data-faq-route="{{ route('admin.faqs.destroy', $faq->id) }}"> Delete
+                                        {{-- <i class="fa fa-times"></i> --}}
                                     </a>
                                 @endif
                             </div>
