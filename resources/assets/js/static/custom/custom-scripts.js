@@ -357,15 +357,30 @@ $(function() {
 
 
 $(function() {
-    $(".photo-section__item").slice(0, 12).show();
+    // $(".photo-section__item").slice(0, 12).show();
+    // $("#loadMore").on('click', function(e) {
+    //     e.preventDefault();
+    //     $(".photo-section__item:hidden").slice(0, 2).slideDown();
+    //     if ($(".photo-section__item:hidden").length == 0) {
+    //         $("#loadMore").fadeOut('slow');
+    //     }
+    //     $('html,body').animate({
+    //         scrollTop: $(this).offset().top
+    //     }, 300);
+    // });
+
+
+    $(".photo-section .container-max .row").slice(0, 3).show();
+    if ($(".photo-section__item:hidden").length != 0) {
+        $("#loadMore").show();
+    }
     $("#loadMore").on('click', function(e) {
         e.preventDefault();
-        $(".photo-section__item:hidden").slice(0, 2).slideDown();
+        $(".photo-section__item:hidden").slice(0, 6).slideDown();
         if ($(".photo-section__item:hidden").length == 0) {
             $("#loadMore").fadeOut('slow');
         }
-        $('html,body').animate({
-            scrollTop: $(this).offset().top
-        }, 300);
     });
+
+
 });
