@@ -158,7 +158,7 @@
                                             </a>
                                         </div>
                                         <div class="navigation-icon__icon">
-                                           <div class="navigation-icon__icon--object menu-icon menu-icon--one">
+                                           <div class="navigation-icon__icon--object menu-icon menu-icon--inbox">
 
                                            </div>
                                         </div>
