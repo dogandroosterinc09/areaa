@@ -92,6 +92,11 @@
         .main-content {
             padding: 0px 0 !important
         }
+        .custom-radio__checkmark--boxstyle:after,
+        .custom-checkbox__checkmark--boxstyle:after {
+            width: 8px !important;
+            height: 8px !important;
+        }
     }
     &--resources-american-report {
         main.main-content {
@@ -224,6 +229,11 @@
         }
         .login-section__left .login-section__form h2 {
             margin-bottom: 25px !important;
+        }
+        .custom-radio__checkmark--boxstyle:after,
+        .custom-checkbox__checkmark--boxstyle:after {
+            width: 8px !important;
+            height: 8px !important;
         }
     }
     &--dashboard {
