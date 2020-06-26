@@ -25,8 +25,8 @@
                     <h2><i class="fa fa-pencil"></i> <strong>Edit Chapter About Us "{{$chapter_page_about_us->chapter}}"</strong></h2>
                 </div>
                 
+                {{--
                 @include('admin.components.heading', ['text' => 'Page Details'])
-
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
                         <div class="form-group{{ $errors->has('banner_image') ? ' has-error' : '' }}">
@@ -53,8 +53,8 @@
                         </div>
                     </div>
                 </div>
-
                 @include('admin.components.editor', ['label' => 'Content', 'field' => 'content', 'value' => $chapter_page_about_us->content])
+                --}}
 
                 @include('admin.components.heading', ['text' => 'Sections'])
                 
