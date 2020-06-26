@@ -393,7 +393,7 @@
                     </label>
                     <div class="col-md-9">
                         <input type="date" class="form-control" id="joined_date" name="joined_date"
-                               value="{{ Request::old('joined_date') ? date('yy-m-d', strtotime(old('joined_date'))) : date('yy-m-d', strtotime($member->joined_date)) }}"
+                               value="{{ Request::old('joined_date') ? date('Y-m-d', strtotime(old('joined_date'))) : date('Y-m-d', strtotime($member->joined_date)) }}"
                                placeholder="Enter joined date..">
                         @if($errors->has('joined_date'))
                             <span class="help-block animation-slideDown">{{ $errors->first('joined_date') }}</span>
@@ -405,7 +405,7 @@
                     <label class="col-md-3 control-label" for="expires">Expires</label>
                     <div class="col-md-9">
                         <input type="date" class="form-control" id="expires" name="expires"
-                               value="{{ Request::old('expires') ? date('yy-m-d', strtotime(old('expires'))) : date('yy-m-d', strtotime($member->expires)) }}"
+                               value="{{ Request::old('expires') ? date('Y-m-d', strtotime(old('expires'))) : date('Y-m-d', strtotime($member->expires)) }}"
                                placeholder="Enter Expiry..">
                         @if($errors->has('expires'))
                             <span class="help-block animation-slideDown">{{ $errors->first('expires') }}</span>
