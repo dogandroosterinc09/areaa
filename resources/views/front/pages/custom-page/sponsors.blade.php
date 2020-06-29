@@ -66,7 +66,10 @@
 
                 <?php
                 $otherSponsors = \App\Models\Section::findOrFail(28);
+                // $otherSponsors = \App\Models\Section::where('id',28)->first();
                 $other_sponsors = json_decode($otherSponsors->value);
+                // print_r($otherSponsors);
+                // die('71');
                 // Sponsors
                 // $other_sponsors = array();
 
