@@ -29,11 +29,16 @@
                 </div>
 
                 <div class="profile__badge">
+                    <?php
+                    $userData = \App\Models\User::findOrFail($profile->user_id);
+                    // print_r($userData);
+                    ?>
                     @foreach(explode(',',$profile->badges) as $badge)
                     <img src="{{ url($badge) }}" alt="" class="img-fluid">
                     @endforeach
-                    <!-- <img src="{{ url('public/images/area-list.png') }}" alt="" class="img-fluid"> 
-                    <img src="{{ url('public/images/area-lux.jpg') }}" alt=""  class="img-fluid">   -->
+
+                    @if($userData->is_alist == 1) <img src="{{ url('public/images/area-list.png') }}" alt="" class="img-fluid"> @endif
+                    @if($userData->is_luxury == 1) <img src="{{ url('public/images/area-lux.jpg') }}" alt=""  class="img-fluid"> @endif
                   
                 </div>
 
