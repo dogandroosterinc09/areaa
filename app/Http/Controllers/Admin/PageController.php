@@ -247,15 +247,26 @@ class PageController extends Controller
         if ($request->hasFile('banner_image'))
             $page->attach($request->file('banner_image'));
 
+
         foreach ($page->sections as $section) {
+            // print_r($section);
+
             if ($section->isAttachment) {
                 $page->attach($request->file($section->alias));
             } else {
+                // if ($section->id != 28) {
+                // echo 'ids: '.$section->id.'<br>';
+                // echo $request->input($section->alias);
+                // echo '---- <br>';
+
                 $section->value = $request->input($section->alias);
                 $section->save();
+                // }
             }
         }
+        // die('ln264');
 
+        /*
         // IF Sponsors page - save to table 'sections' on field 'value' where section 'id' = 28
         if ($id==52) {
             echo 'sponsors page';
@@ -301,6 +312,7 @@ class PageController extends Controller
             print_r($other_sponsors);
             // die('ln263');
         }
+        */
 
 
         return redirect()->route('admin.pages.index')->with('flash_message', [

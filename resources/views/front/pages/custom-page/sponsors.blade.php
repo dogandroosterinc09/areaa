@@ -65,50 +65,50 @@
 
 
                 <?php
-                $otherSponsors = \App\Models\Section::findOrFail(28);
-                // $otherSponsors = \App\Models\Section::where('id',28)->first();
-                $other_sponsors = json_decode($otherSponsors->value);
-                // print_r($otherSponsors);
-                // die('71');
-                // Sponsors
-                // $other_sponsors = array();
+                // $otherSponsors = \App\Models\Section::findOrFail(28);
+                // // $otherSponsors = \App\Models\Section::where('id',28)->first();
+                // $other_sponsors = json_decode($otherSponsors->value);
+                // // print_r($otherSponsors);
+                // // die('71');
+                // // Sponsors
+                // // $other_sponsors = array();
 
-                $jades = array();
-                $diamonds = array();
-                $emeralds = array();
-                $opals = array();
-                $rubies = array();
-                $pearls = array();
+                // $jades = array();
+                // $diamonds = array();
+                // $emeralds = array();
+                // $opals = array();
+                // $rubies = array();
+                // $pearls = array();
 
-                foreach ($other_sponsors as $sponsor) {
-                    // echo $sponsor->badge_icon.' - '.$sponsor->image_alt.'<br>';
-                    if ($sponsor->badge_icon=='jade') {
-                        array_push($jades, $sponsor);
-                    }
-                    if ($sponsor->badge_icon=='diamond') {
-                        array_push($diamonds, $sponsor);
-                    }
-                    if ($sponsor->badge_icon=='emerald') {
-                        array_push($emeralds, $sponsor);
-                    }
-                    if ($sponsor->badge_icon=='opal') {
-                        array_push($opals, $sponsor);
-                    }
-                    if ($sponsor->badge_icon=='ruby') {
-                        array_push($rubies, $sponsor);
-                    }
-                    if ($sponsor->badge_icon=='pearl') {
-                        array_push($pearls, $sponsor);
-                    }
-                }
-                // print_r($jades);
-                // die('ln101');
+                // foreach ($other_sponsors as $sponsor) {
+                //     // echo $sponsor->badge_icon.' - '.$sponsor->image_alt.'<br>';
+                //     if ($sponsor->badge_icon=='jade') {
+                //         array_push($jades, $sponsor);
+                //     }
+                //     if ($sponsor->badge_icon=='diamond') {
+                //         array_push($diamonds, $sponsor);
+                //     }
+                //     if ($sponsor->badge_icon=='emerald') {
+                //         array_push($emeralds, $sponsor);
+                //     }
+                //     if ($sponsor->badge_icon=='opal') {
+                //         array_push($opals, $sponsor);
+                //     }
+                //     if ($sponsor->badge_icon=='ruby') {
+                //         array_push($rubies, $sponsor);
+                //     }
+                //     if ($sponsor->badge_icon=='pearl') {
+                //         array_push($pearls, $sponsor);
+                //     }
+                // }
+                // // print_r($jades);
+                // // die('ln101');
                 ?>
                 <div class="col-md-8">
                     <div class="logo-display">
                         <div class="logo-display__single">{{-- jade --}}
                             <div class="row">
-
+                                {{--
                                 @foreach($jades as $jade)
                                     <div class="col-md-5">
                                         <div class="sponsor-thumbnail">
@@ -117,21 +117,21 @@
                                         </div>
                                     </div>
                                 @endforeach
-
-                                {{--
+                                --}}
+                                
                                 <div class="col-md-5">
                                     <div class="sponsor-thumbnail">
                                         <div class="sponsor-thumbnail__badge sponsor-thumbnail__badge--{{ section('Top Sponsor.data.first.badge_icon') }}">  </div>
                                         <img src="{{ url('public/images/sponsor0.jpg') }}" alt="chapter title" class="img-fluid">
                                     </div>
                                 </div>
-                                --}}
+                                
                             </div>
                            
                         </div>
                         <div class="logo-display__col3">
                             <div class="row">
-
+                                {{--
                                 @foreach( $diamonds as $diamond )
                                     @if(!empty($diamond->image))
                                     <div class="col-md-4">
@@ -186,8 +186,8 @@
                                     </div>
                                     @endif
                                 @endforeach
+                                --}} 
 
-                                {{--
                                 @foreach( section('Other Sponsors.data') as $data )
                                 <div class="col-md-4">
                                     <div class="sponsor-thumbnail">
@@ -196,6 +196,7 @@
                                     </div>
                                 </div>
                                 @endforeach
+
                                 <!-- <div class="col-md-4">
                                     <div class="sponsor-thumbnail">
                                         <div class="sponsor-thumbnail__badge sponsor-thumbnail__badge--ruby">  </div>
@@ -272,7 +273,7 @@
                                         <img src="{{ url('public/images/sponsor12.jpg') }}" alt="chapter title" class="img-fluid">
                                     </div>
                                 </div> -->
-                                --}}
+
                             </div>
                         </div>
                     </div>

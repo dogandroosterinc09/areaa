@@ -29,8 +29,10 @@
 
                 @include('admin.components.heading', ['text' => 'Sections'])
                 
+                @include('admin.modules.page.page_sections')
+
                 @if($page->id==52)
-                    @include('admin.modules.page.page_sponsors')
+                    {{-- @include('admin.modules.page.page_sponsors') --}}
                 @else
                     @include('admin.modules.page.page_sections')
                 @endif
