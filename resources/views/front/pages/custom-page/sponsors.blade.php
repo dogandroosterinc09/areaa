@@ -137,7 +137,7 @@
                                     <div class="col-md-4">
                                         <div class="sponsor-thumbnail">
                                             <div class="sponsor-thumbnail__badge sponsor-thumbnail__badge--{{ $diamond->badge_icon }}">  </div>
-                                            <img src="{{ $diamond->image }}" alt="{{ $diamond->alt_text }}" class="img-fluid">
+                                            <img src="{{ $diamond->image }}" alt="{{ $diamond->image_alt }}" class="img-fluid">
                                         </div>
                                     </div>
                                     @endif
