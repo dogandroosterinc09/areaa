@@ -31,13 +31,9 @@
                 
                 @include('admin.modules.page.page_sections')
 
-                {{--
                 @if($page->id==52)
                     @include('admin.modules.page.page_sponsors')
-                @else
-                    @include('admin.modules.page.page_sections')
                 @endif
-                --}}
 
 
                 <div class="form-group form-actions">

@@ -1,23 +1,26 @@
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
-                        <h4 style="border-left: 3px solid #61dbd5; padding-left: 8px; margin-bottom: 20px;">Sponsors</h4>
+                        <h4 style="border-left: 3px solid #61dbd5; padding-left: 8px; margin-bottom: 20px;"><input type='button' value='Add Sponsor' id='addButton' class="btn btn-sm btn-primary"></h4>
                         <div class="form-group">
                             <div class="col-md-10">
-                                <input type='button' value='Add Sponsor' id='addButton' class="btn btn-sm btn-primary">
+                                <small>* By selected <strong>No Category</strong> - Sponsor will be removed when Saved.</small>
+                                {{-- <input type='button' value='Add Sponsor' id='addButton' class="btn btn-sm btn-primary"> --}}
                            </div>
                         </div>
                     </div>
                 </div>
 
                 <?php
-                foreach ($page->sections as $page_section) {
-                    // echo 'section id:  '.$page_section->id.'<br>';
+                // print_r($page->other_content);
+                // die('ln23');
+                // foreach ($page->sections as $page_section) {
+                //     // echo 'section id:  '.$page_section->id.'<br>';
 
-                    if ($page_section->id==28) {
-                        $page_other_sponsors = $page_section->value;
-                        break;
-                    }
-                }
+                //     if ($page_section->id==28) {
+                //         $page_other_sponsors = $page_section->value;
+                //         break;
+                //     }
+                // }
                 // print_r($page_other_sponsors);
                 // die('ln23');
 
@@ -27,7 +30,8 @@
 
                 @php ($sponsor_category = [''=>'No Category','jade'=>'Jade','diamond'=>'Diamond','emerald'=>'Emerald','opal'=>'Opal','ruby'=>'Ruby','pearl'=>'Pearl'])
 
-                @php($other_sponsors = json_decode($page_other_sponsors))
+                {{-- @php($other_sponsors = json_decode($page_other_sponsors)) --}}
+                @php($other_sponsors = json_decode($page->other_content))
 
                 @for($counter = 0; $counter < count($other_sponsors); $counter++)
                     
@@ -112,3 +116,4 @@
                         </div>
                     </div>
                 </div>
+                
