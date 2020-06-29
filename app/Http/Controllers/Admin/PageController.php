@@ -219,6 +219,43 @@ class PageController extends Controller
             abort('401', '401');
         }
 
+        // dd($request);
+
+        $this->validate($request, [
+            'name' => 'required|unique:pages,name,' . $id . ',id,deleted_at,NULL',
+            'slug' => 'required|unique:pages,slug,' . $id . ',id,deleted_at,NULL',
+//            'content' => 'required',
+//            'page_type_id' => 'required',
+//            'banner_image' => 'mimes:jpg,jpeg,png',
+        ]);
+
+        $page = $this->page->findOrFail($id);
+        $input = $request->all();
+        $input['is_active'] = isset($input['is_active']) ? 1 : 0;
+        /* if slug is hidden, generate slug automatically */
+//        $input['slug'] = str_slug($input['name']);
+
+        /* seo meta */
+        $input['seo_meta_id'] = isset($input['seo_meta_id']) ? $input['seo_meta_id'] : 0;
+        $seo_inputs = $request->only(['meta_title', 'meta_keywords', 'meta_description', 'seo_meta_id', 'canonical_link']);
+        $seo_meta = $this->seoMetaRepository->updateOrCreate($seo_inputs);
+        $input['seo_meta_id'] = $seo_meta->id;
+        /* seo meta */
+
+        $page->fill($input)->save();
+
+        if ($request->hasFile('banner_image'))
+            $page->attach($request->file('banner_image'));
+
+        foreach ($page->sections as $section) {
+            if ($section->isAttachment) {
+                $page->attach($request->file($section->alias));
+            } else {
+                $section->value = $request->input($section->alias);
+                $section->save();
+            }
+        }
+
         // IF Sponsors page - save to table 'sections' on field 'value' where section 'id' = 28
         if ($id==52) {
             echo 'sponsors page';
@@ -259,47 +296,12 @@ class PageController extends Controller
                 }
             }
 
-            print_r($other_sponsors);
-            die('ln263');
             $sponsors->value = $other_sponsors;
             $sponsors->save();
+            print_r($other_sponsors);
+            // die('ln263');
         }
-        // dd($request);
 
-        $this->validate($request, [
-            'name' => 'required|unique:pages,name,' . $id . ',id,deleted_at,NULL',
-            'slug' => 'required|unique:pages,slug,' . $id . ',id,deleted_at,NULL',
-//            'content' => 'required',
-//            'page_type_id' => 'required',
-//            'banner_image' => 'mimes:jpg,jpeg,png',
-        ]);
-
-        $page = $this->page->findOrFail($id);
-        $input = $request->all();
-        $input['is_active'] = isset($input['is_active']) ? 1 : 0;
-        /* if slug is hidden, generate slug automatically */
-//        $input['slug'] = str_slug($input['name']);
-
-        /* seo meta */
-        $input['seo_meta_id'] = isset($input['seo_meta_id']) ? $input['seo_meta_id'] : 0;
-        $seo_inputs = $request->only(['meta_title', 'meta_keywords', 'meta_description', 'seo_meta_id', 'canonical_link']);
-        $seo_meta = $this->seoMetaRepository->updateOrCreate($seo_inputs);
-        $input['seo_meta_id'] = $seo_meta->id;
-        /* seo meta */
-
-        $page->fill($input)->save();
-
-        if ($request->hasFile('banner_image'))
-            $page->attach($request->file('banner_image'));
-
-        foreach ($page->sections as $section) {
-            if ($section->isAttachment) {
-                $page->attach($request->file($section->alias));
-            } else {
-                $section->value = $request->input($section->alias);
-                $section->save();
-            }
-        }
 
         return redirect()->route('admin.pages.index')->with('flash_message', [
             'title' => '',
