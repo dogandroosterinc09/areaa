@@ -31,8 +31,6 @@
                 
                 @include('admin.modules.page.page_sections')
 
-                @include('admin.modules.page.page_sections')
-                
                 {{--
                 @if($page->id==52)
                     @include('admin.modules.page.page_sponsors')
