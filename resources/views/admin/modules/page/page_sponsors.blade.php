@@ -10,21 +10,24 @@
                 </div>
 
                 <?php
-                // dd($page->sections);
-                // echo $page->sections->id
                 foreach ($page->sections as $page_section) {
+                    // echo 'section id:  '.$page_section->id.'<br>';
+
                     if ($page_section->id==28) {
-                        $page->other_sponsors = $page_section->value;
+                        $page_other_sponsors = $page_section->value;
                         break;
                     }
                 }
+                // print_r($page_other_sponsors);
+                // die('ln23');
 
+                // Sample Data saved in table 'sections' with 'id=28' / for sponsors page only National Areaa
                 // $page->other_sponsors = '[{"badge_icon":"ruby","image":"public\/uploads\/sponsor1-1587071957-1591402616.jpg","image_alt":"chapter title"},{"badge_icon":"emerald","image":"public\/uploads\/sponsor2-1587071957.jpg","image_alt":"chapter title"},{"badge_icon":"diamond","image":"public\/uploads\/sponsor3-1587071957.jpg","image_alt":"chapter title"},{"badge_icon":"opal","image":"public\/uploads\/sponsor4-1587071957.jpg","image_alt":"chapter title"},{"badge_icon":"pearl","image":"public\/uploads\/sponsor5-1587071957.jpg","image_alt":"chapter title"},{"badge_icon":"opal","image":"public\/uploads\/sponsor6-1587071957.jpg","image_alt":"chapter title"},{"badge_icon":"pearl","image":"public\/uploads\/sponsor7-1587071957.jpg","image_alt":"chapter title"},{"badge_icon":"diamond","image":"public\/uploads\/sponsor9-1587071957.jpg","image_alt":"chapter title"},{"badge_icon":"jade","image":"public\/uploads\/sponsor8-1587073636.jpg","image_alt":"chapter title"},{"badge_icon":"opal","image":"public\/uploads\/sponsor10-1587073636.jpg","image_alt":"chapter title"},{"badge_icon":"pearl","image":"public\/uploads\/sponsor11-1587073636.jpg","image_alt":"chapter title"},{"badge_icon":"diamond","image":"public\/uploads\/sponsor12-1587073636.jpg","image_alt":"chapter title"}]';
                 ?>
 
-                @php ($sponsor_category = [''=>'Select','jade'=>'Jade','diamond'=>'Diamond','emerald'=>'Emerald','opal'=>'Opal','ruby'=>'Ruby','pearl'=>'Pearl'])
+                @php ($sponsor_category = [''=>'No Category','jade'=>'Jade','diamond'=>'Diamond','emerald'=>'Emerald','opal'=>'Opal','ruby'=>'Ruby','pearl'=>'Pearl'])
 
-                @php($other_sponsors = json_decode($page->other_sponsors))
+                @php($other_sponsors = json_decode($page_other_sponsors))
 
                 @for($counter = 0; $counter < count($other_sponsors); $counter++)
                     

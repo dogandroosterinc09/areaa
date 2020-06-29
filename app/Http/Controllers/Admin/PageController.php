@@ -231,6 +231,7 @@ class PageController extends Controller
             $db_other_sponsors = json_decode($sponsors->value);
             for($counter = 0; $counter < count($request->sponsor_category); $counter++) {
                 if ($request->sponsor_category[$counter]!='') {
+
                     array_push($other_sponsors, [
                         'badge_icon' => $request->sponsor_category[$counter],
                         'image' => isset($request->chapter_sponsor_image[$counter]) ? $request->chapter_sponsor_image[$counter] : 
@@ -241,33 +242,28 @@ class PageController extends Controller
             }
 
             // print_r($other_sponsors);
-
-            $sponsors->value = $other_sponsors;
-            $sponsors->save();
+            // die('ln244');
+            // $sponsors->value = $other_sponsors;
+            // $sponsors->save();
 
             // Other Sponsors Image        
             // $file_path = '/uploads/page_section_images';
             $images = $request->file('chapter_sponsor_image');
             for($counter = 0; $counter < count($request->sponsor_category); $counter++) {
-                if (isset($images[$counter]) && $images[$counter] != "" ) {
-                    $file_upload_path = $this->pageRepository->uploadFilePageSection($images[$counter]);
-                    
-                    $other_sponsors[$counter]['image'] = $file_upload_path;
+                if ($request->sponsor_category[$counter]!='') {
+                    if (isset($images[$counter]) && $images[$counter] != "" ) {
+                        $file_upload_path = $this->pageRepository->uploadFilePageSection($images[$counter]);
+                        
+                        $other_sponsors[$counter]['image'] = $file_upload_path;
+                    }
                 }
             }
-            $sponsors->fill(['value'=>$other_sponsors])->save();        
 
-            // $sponsors->fill(array_merge([
-            //     'value' => $other_sponsors
-            // ])->save();
-            // $chapter_home->fill(array_merge($request->all()), [
-            //     'top_sponsor' => $top_sponsor,
-            //     'other_sponsors' => $other_sponsors
-            // ])->save();
+            print_r($other_sponsors);
+            $sponsors->value = $other_sponsors;
+            $sponsors->save();
         }
-
-
-        dd($request);
+        // dd($request);
 
         $this->validate($request, [
             'name' => 'required|unique:pages,name,' . $id . ',id,deleted_at,NULL',

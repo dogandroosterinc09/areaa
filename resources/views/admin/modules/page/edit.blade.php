@@ -170,7 +170,7 @@
                     '<label class="col-md-2 control-label" for="chapter_sponsor">Badge</label>'+
                     '<div class="col-md-10">'+
                         '<select name="sponsor_category[]" id="sponsor_select" class="form-control">'+
-                            '<option value="">Select</option>'+
+                            '<option value="">No Category</option>'+
                             '<option value="jade">Jade</option>'+
                             '<option value="diamond">Diamond</option>'+
                             '<option value="emerald">Emerald</option>'+
