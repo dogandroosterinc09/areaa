@@ -65,19 +65,19 @@
                         <td class="text-center">{{ $board_member->created_at->format('F d, Y') }}</td>
                         <td class="text-center">
                             <div class="btn-group btn-group-xs">
-                                {{-- @if (auth()->user()->can('Read Board Member'))
+                                @if (auth()->user()->can('Read Board Member'))
                                     <a href="{{ route('admin.board_members.show', $board_member->id) }}"
                                        data-toggle="tooltip"
                                        title=""
                                        class="btn btn-default"
                                        data-original-title="View"><i class="fa fa-eye"></i></a>
-                                @endif --}}
+                                @endif
                                 @if (auth()->user()->can('Update Board Member'))
                                     <a href="{{ route('admin.board_members.edit', $board_member->id) }}"
                                        data-toggle="tooltip"
                                        title=""
                                        class="btn btn-default"
-                                       data-original-title="Edit">{{--<i class="fa fa-pencil"></i>--}}Edit</a>
+                                       data-original-title="Edit"><i class="fa fa-pencil"></i></a>
                                 @endif
                                 @if (auth()->user()->can('Delete Board Member'))
                                     <a href="javascript:void(0)" data-toggle="tooltip"
@@ -86,7 +86,7 @@
                                        data-original-title="Delete"
                                        data-board_member-id="{{ $board_member->id }}"
                                        data-board_member-route="{{ route('admin.board_members.destroy', $board_member->id) }}">
-                                        {{--<i class="fa fa-times"></i>--}}Delete
+                                        <i class="fa fa-times"></i>
                                     </a>
                                 @endif
                             </div>

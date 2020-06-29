@@ -210,7 +210,7 @@
                                 </a>
                               
                                 <div class="dropdown-menu" aria-labelledby="logout-button-mobilen">
-                                  <a class="dropdown-item" href="{{ route('customer.dashboard') }}">Dashboard</a>
+                                  <a class="dropdown-item" href="{{ route('customer.dashboard') }}">Dashboad</a>
                                   {{-- <a class="dropdown-item" href="{{ url( (auth()->user()->chapter == 'national' ? '' : auth()->user()->chapter_slug) . '/events' ) }}">Events</a> --}}
                                   <a class="dropdown-item" href="{{ route('customer.dashboard.events') }}">Events</a>
                                  

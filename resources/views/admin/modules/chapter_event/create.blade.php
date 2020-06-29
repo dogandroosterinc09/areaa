@@ -50,6 +50,7 @@
 
                 @include('admin.components.input-field', ['label' => 'Name'])
                 @include('admin.components.input-field', ['label' => 'Amount', 'type' => 'number'])
+                @include('admin.components.input-field', ['label' => 'Amount Member', 'type' => 'number', 'field' => 'amount_member'])
                 @include('admin.components.input-field', ['label' => 'Starts At', 'type' => 'date'])
                 @include('admin.components.input-field', ['label' => 'Ends At', 'type' => 'date'])
                 @include('admin.components.input-field', ['label' => 'Time'])

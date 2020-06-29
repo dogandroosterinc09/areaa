@@ -82,8 +82,7 @@ class EventController extends Controller
             // 'country' => 'required',
             // 'latitude' => 'required',
             // 'longitude' => 'required',
-            'amount' => 'required',
-            'amount_member' => 'required',
+            // 'amount' => 'required',
         ]);
 
         $event = $this->event->create(array_merge($request->all(), [
@@ -163,8 +162,7 @@ class EventController extends Controller
             // 'country' => 'required',
             // 'latitude' => 'required',
             // 'longitude' => 'required',
-            'amount' => 'required',
-            'amount_member' => 'required',
+            // 'amount' => 'required',
         ]);
 
         $event = $this->event->findOrFail($id);

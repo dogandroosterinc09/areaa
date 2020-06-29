@@ -69,6 +69,7 @@ class ChapterEventController extends Controller
      */
     public function store(Request $request)
     {
+
         if (!auth()->user()->hasPermissionTo('Create Chapter Event')) {
             abort('401', '401');
         }
@@ -81,6 +82,8 @@ class ChapterEventController extends Controller
             'ends_at' => 'required',
             'time' => 'required',
             'location_name' => 'required',
+            'amount' => 'required',
+            'amount_member' => 'required',
             // 'city' => 'required',
             // 'state' => 'required',
             // 'zip' => 'required',
@@ -163,13 +166,14 @@ class ChapterEventController extends Controller
             'ends_at' => 'required',
             'location_name' => 'required',
             'time' => 'required',
+            'amount' => 'required',
+            'amount_member' => 'required',
             // 'city' => 'required',
             // 'state' => 'required',
             // 'zip' => 'required',
             // 'country' => 'required',
             // 'latitude' => 'required',
             // 'longitude' => 'required',
-            // 'amount' => 'required',
         ]);
 
         $chapter_event = $this->chapter_event->findOrFail($id);

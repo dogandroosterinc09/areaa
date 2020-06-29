@@ -3,26 +3,26 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use App\Models\Event;
+use App\Models\ChapterEvent;
 use App\Http\Controllers\Controller;
 
-class EventController extends Controller
+class ChapterEventController extends Controller
 {
     /**
-     * Event model instance.
+     * ChapterEvent model instance.
      *
-     * @var Event
+     * @var ChapterEvent
      */
-    private $event;
+    private $chapter_event;
 
     /**
      * Create a new controller instance.
      *
-     * @param Event $event
+     * @param ChapterEvent $chapter_event
      */
-    public function __construct(Event $event)
+    public function __construct(ChapterEvent $chapter_event)
     {
-        $this->event = $event;
+        $this->chapter_event = $chapter_event;
     }
 
     /**
@@ -33,13 +33,17 @@ class EventController extends Controller
 
     public function index()
     {
-        if (!auth()->user()->hasPermissionTo('Read Event')) {
+        if (!auth()->user()->hasPermissionTo('Read Chapter Event')) {
             abort('401', '401');
         }
 
-        $events = $this->event->get();
+        if (auth()->user()->roles->first()->name == 'Chapter Admin') {
+            $chapter_events = $this->chapter_event->where('chapter_id', auth()->user()->chapter_id)->get();
+        } else {
+            $chapter_events = $this->chapter_event->get();
+        }
 
-        return view('admin.modules.event.index', compact('events'));
+        return view('admin.modules.chapter_event.index', compact('chapter_events'));
     }
 
     /**
@@ -49,11 +53,11 @@ class EventController extends Controller
      */
     public function create()
     {
-        if (!auth()->user()->hasPermissionTo('Create Event')) {
+        if (!auth()->user()->hasPermissionTo('Create Chapter Event')) {
             abort('401', '401');
         }
 
-        return view('admin.modules.event.create');
+        return view('admin.modules.chapter_event.create');
     }
 
     /**
@@ -65,16 +69,17 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        if (!auth()->user()->hasPermissionTo('Create Event')) {
+        if (!auth()->user()->hasPermissionTo('Create Chapter Event')) {
             abort('401', '401');
         }
 
         $this->validate($request, [
             'name' => 'required',
-//            'slug' => 'required|unique:events,slug,NULL,id,deleted_at,NULL',
+            'chapter_id' => 'required',
             'description' => 'required',
             'starts_at' => 'required',
             'ends_at' => 'required',
+            'time' => 'required',
             'location_name' => 'required',
             // 'city' => 'required',
             // 'state' => 'required',
@@ -82,21 +87,21 @@ class EventController extends Controller
             // 'country' => 'required',
             // 'latitude' => 'required',
             // 'longitude' => 'required',
-            'amount' => 'required',
-            'amount_member' => 'required',
+        ], [
+            'chapter_id.required' => 'The chapter field is required.'
         ]);
 
-        $event = $this->event->create(array_merge($request->all(), [
+        $chapter_event = $this->chapter_event->create(array_merge($request->all(), [
             'slug' => str_slug($request->input('name'))
         ]));
 
         if ($request->hasFile('thumbnail')) {
-            $event->attach($request->file('thumbnail'));
+            $chapter_event->attach($request->file('thumbnail'));
         }
 
-        return redirect()->route('admin.events.index')->with('flash_message', [
+        return redirect()->route('admin.chapter_events.index')->with('flash_message', [
             'title' => '',
-            'message' => 'Event ' . $event->name . ' successfully added.',
+            'message' => 'Chapter Event ' . $chapter_event->name . ' successfully added.',
             'type' => 'success'
         ]);
     }
@@ -109,13 +114,13 @@ class EventController extends Controller
      */
     public function show($id)
     {
-        if (!auth()->user()->hasPermissionTo('Read Event')) {
+        if (!auth()->user()->hasPermissionTo('Read Chapter Event')) {
             abort('401', '401');
         }
 
-        $event = $this->event->findOrFail($id);
+        $chapter_event = $this->chapter_event->findOrFail($id);
 
-        return view('admin.modules.event.show', compact('event'));
+        return view('admin.modules.chapter_event.show', compact('chapter_event'));
     }
 
     /**
@@ -127,13 +132,13 @@ class EventController extends Controller
      */
     public function edit($id)
     {
-        if (!auth()->user()->hasPermissionTo('Update Event')) {
+        if (!auth()->user()->hasPermissionTo('Update Chapter Event')) {
             abort('401', '401');
         }
 
-        $event = $this->event->findOrFail($id);
+        $chapter_event = $this->chapter_event->findOrFail($id);
 
-        return view('admin.modules.event.edit', compact('event'));
+        return view('admin.modules.chapter_event.edit', compact('chapter_event'));
     }
 
     /**
@@ -146,12 +151,13 @@ class EventController extends Controller
      */
     public function update(Request $request, $id)
     {
-        if (!auth()->user()->hasPermissionTo('Update Event')) {
+        if (!auth()->user()->hasPermissionTo('Update Chapter Event')) {
             abort('401', '401');
         }
 
         $this->validate($request, [
             'name' => 'required',
+            'chapter_id' => 'required',
             'description' => 'required',
             'starts_at' => 'required',
             'ends_at' => 'required',
@@ -163,23 +169,23 @@ class EventController extends Controller
             // 'country' => 'required',
             // 'latitude' => 'required',
             // 'longitude' => 'required',
-            'amount' => 'required',
-            'amount_member' => 'required',
+            // 'amount' => 'required',
         ]);
 
-        $event = $this->event->findOrFail($id);
+        $chapter_event = $this->chapter_event->findOrFail($id);
 
-        $event->fill(array_merge($request->all(), [
+        $chapter_event->fill(array_merge($request->all(), [
+            'is_active' => $request->has('is_active') ? 1 : 0,
             'slug' => str_slug($request->input('name'))
         ]))->save();
 
         if ($request->hasFile('thumbnail')) {
-            $event->attach($request->file('thumbnail'));
+            $chapter_event->attach($request->file('thumbnail'));
         }
 
-        return redirect()->route('admin.events.index')->with('flash_message', [
+        return redirect()->route('admin.chapter_events.index')->with('flash_message', [
             'title' => '',
-            'message' => 'Event ' . $event->name . ' successfully updated.',
+            'message' => 'Chapter Event ' . $chapter_event->name . ' successfully updated.',
             'type' => 'success'
         ]);
     }
@@ -192,13 +198,13 @@ class EventController extends Controller
      */
     public function destroy($id)
     {
-        if (!auth()->user()->hasPermissionTo('Delete Event')) {
+        if (!auth()->user()->hasPermissionTo('Delete Chapter Event')) {
             abort('401', '401');
         }
 
-        $event = $this->event->findOrFail($id);
-        $event->delete();
+        $chapter_event = $this->chapter_event->findOrFail($id);
+        $chapter_event->delete();
 
-        return response()->json(status()->success('Event successfully deleted.', compact('id')));
+        return response()->json(status()->success('Chapter Event successfully deleted.', compact('id')));
     }
 }

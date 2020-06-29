@@ -179,26 +179,16 @@ class ChapterPageController extends Controller
             
             ? $chapter_page_leadership->content : $default_content;
         }
-
-        // die('---');        
+        
         $chapter_board = new \stdClass();
         $chapter_board->executives = $this->chapter_board_member->where('type', $this->chapter_board_member::TYPE_EXECUTIVE)
-                                          ->where('chapter_id', $chapter->id)->where('is_active', 1)->get();
+                                          ->where('chapter_id', $chapter->id)->get();
         $chapter_board->board_of_directors = $this->chapter_board_member->where('type', $this->chapter_board_member::TYPE_BOARD_OF_DIRECTOR)
-                                          ->where('chapter_id', $chapter->id)->where('is_active', 1)->get();
+                                          ->where('chapter_id', $chapter->id)->get();
         $chapter_board->advisory = $this->chapter_board_member->where('type',  $this->chapter_board_member::TYPE_ADVISORY)
-                                          ->where('chapter_id', $chapter->id)->where('is_active', 1)->get();
+                                          ->where('chapter_id', $chapter->id)->get();
         $chapter_board->no_type = $this->chapter_board_member->where('type', 0)
-                                          ->where('chapter_id', $chapter->id)->where('is_active', 1)->get();
-
-        // $chapter_board->executives = $this->chapter_board_member->where('type', $this->chapter_board_member::TYPE_EXECUTIVE)
-        //                                   ->where('chapter_id', $chapter->id)->get();
-        // $chapter_board->board_of_directors = $this->chapter_board_member->where('type', $this->chapter_board_member::TYPE_BOARD_OF_DIRECTOR)
-        //                                   ->where('chapter_id', $chapter->id)->get();
-        // $chapter_board->advisory = $this->chapter_board_member->where('type',  $this->chapter_board_member::TYPE_ADVISORY)
-        //                                   ->where('chapter_id', $chapter->id)->get();
-        // $chapter_board->no_type = $this->chapter_board_member->where('type', 0)
-        //                                   ->where('chapter_id', $chapter->id)->get();
+                                          ->where('chapter_id', $chapter->id)->get();
 
         return view('front.pages.custom-pages-index', compact('page', 'chapter', 'chapter_page_leadership', 'chapter_board'));
     }

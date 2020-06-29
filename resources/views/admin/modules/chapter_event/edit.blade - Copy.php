@@ -50,7 +50,6 @@
 
                 @include('admin.components.input-field', ['label' => 'Name', 'value' => $chapter_event->name])
                 @include('admin.components.input-field', ['label' => 'Amount', 'type' => 'number', 'value' => $chapter_event->amount])
-                @include('admin.components.input-field', ['label' => 'Amount Member', 'type' => 'number', 'value' => $chapter_event->amount_member])
                 @include('admin.components.input-field', ['label' => 'Starts At', 'type' => 'date', 'value' => $chapter_event->starts_at->format('Y-m-d')])
                 @include('admin.components.input-field', ['label' => 'Ends At', 'type' => 'date', 'value' => $chapter_event->ends_at->format('Y-m-d')])
                 @include('admin.components.input-field', ['label' => 'Time', 'value' => $chapter_event->time])

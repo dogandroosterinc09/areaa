@@ -219,56 +219,6 @@ class PageController extends Controller
             abort('401', '401');
         }
 
-        // IF Sponsors page - save to table 'sections' on field 'value' where section 'id' = 28
-        if ($id==52) {
-            echo 'sponsors page';
-    
-            $sponsors = \App\Models\Section::findOrFail(28);
-            // Sponsors
-            $other_sponsors = array();
-
-            // $db_other_sponsors = json_decode($chapter_home['other_sponsors']);
-            $db_other_sponsors = json_decode($sponsors->value);
-            for($counter = 0; $counter < count($request->sponsor_category); $counter++) {
-                if ($request->sponsor_category[$counter]!='') {
-                    array_push($other_sponsors, [
-                        'badge_icon' => $request->sponsor_category[$counter],
-                        'image' => isset($request->chapter_sponsor_image[$counter]) ? $request->chapter_sponsor_image[$counter] : 
-                            isset($db_other_sponsors) ? (isset(($db_other_sponsors[$counter])->image) ? ($db_other_sponsors[$counter])->image : '') : '' ,
-                        'image_alt' => $request->chapter_alt_text[$counter]
-                    ]);
-                }
-            }
-
-            // print_r($other_sponsors);
-
-            $sponsors->value = $other_sponsors;
-            $sponsors->save();
-
-            // Other Sponsors Image        
-            // $file_path = '/uploads/page_section_images';
-            $images = $request->file('chapter_sponsor_image');
-            for($counter = 0; $counter < count($request->sponsor_category); $counter++) {
-                if (isset($images[$counter]) && $images[$counter] != "" ) {
-                    $file_upload_path = $this->pageRepository->uploadFilePageSection($images[$counter]);
-                    
-                    $other_sponsors[$counter]['image'] = $file_upload_path;
-                }
-            }
-            $sponsors->fill(['value'=>$other_sponsors])->save();        
-
-            // $sponsors->fill(array_merge([
-            //     'value' => $other_sponsors
-            // ])->save();
-            // $chapter_home->fill(array_merge($request->all()), [
-            //     'top_sponsor' => $top_sponsor,
-            //     'other_sponsors' => $other_sponsors
-            // ])->save();
-        }
-
-
-        dd($request);
-
         $this->validate($request, [
             'name' => 'required|unique:pages,name,' . $id . ',id,deleted_at,NULL',
             'slug' => 'required|unique:pages,slug,' . $id . ',id,deleted_at,NULL',

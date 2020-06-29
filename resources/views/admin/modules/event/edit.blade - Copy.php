@@ -23,7 +23,6 @@
                 @include('admin.components.attachment', ['label' => 'Thumbnail', 'value' => $event->attachment])
                 @include('admin.components.input-field', ['label' => 'Name', 'value' => $event->name])
                 @include('admin.components.input-field', ['label' => 'Amount', 'type' => 'number', 'value' => $event->amount])
-                @include('admin.components.input-field', ['label' => 'Amount Member', 'type' => 'number', 'value' => $event->amount_member])
                 @include('admin.components.input-field', ['label' => 'Starts At', 'type' => 'date', 'value' => $event->starts_at->format('Y-m-d')])
                 @include('admin.components.input-field', ['label' => 'Ends At', 'type' => 'date', 'value' => $event->ends_at->format('Y-m-d')])
                 @include('admin.components.input-field', ['label' => 'Time', 'value' => $event->time])

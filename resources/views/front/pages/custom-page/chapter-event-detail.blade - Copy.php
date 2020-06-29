@@ -122,13 +122,7 @@
                                     <li><span><strong>Time</strong></span> <span>{{ $chapter_event->time }}</span></li>
                                     <li><span><strong>Location</strong></span> <span><strong>{{ $chapter_event->location_name }}</strong> 
                                         {{ ($chapter_event->city!='')? $chapter_event->locationAddress : '' }}</span></li>
-                                @auth
-                                    @if ($chapter_event->amount_member > 0) 
-                                        <li><span><strong>Member Price</strong></span> <span>${{ $chapter_event->amount_member }}</span></li>
-                                    @endif
-                                @else
                                     @if ($chapter_event->amount > 0) <li><span><strong>Cost</strong></span> <span>${{ $chapter_event->amount }}</span></li> @endif
-                                @endauth
                                 </ul>
                                 <div class="register-info__button">
                                     <a href="#" class="btn btn--secondary" data-toggle="modal" data-target="#registerModal"> Register</a>

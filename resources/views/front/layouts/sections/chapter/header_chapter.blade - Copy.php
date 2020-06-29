@@ -64,26 +64,22 @@
                         </ul>
                     </div>
                 </div>
-                <?php
-                $uri_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-                $uri_segments = explode('/', $uri_path);
-                ?>
                 <nav class="navbar-bar">
                     <ul class="navbar-bar__wrapper">
-                        <li class="nav-item dropdown {{ isset($uri_segments[3]) ? '' : 'active' }}">
-                            <a class="nav-link" href="{{ url($chapter['slug']) }}">Home {{-- $uri_segments[3] --}}</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="{{ url($chapter['slug']) }}">Home</a>
                         </li>
-                        <li class="nav-item dropdown {{ isset($uri_segments[3]) && $uri_segments[3] == 'about-us' ? 'active' : '' }}">
+                        <li class="nav-item dropdown">
                             <a class="nav-link" href="{{ url($chapter['slug'].'/about-us') }}">About Us</a>
                         </li>
                         
-                        <li class="nav-item {{ isset($uri_segments[3]) && $uri_segments[3] == 'events' ? 'active' : '' }}">
+                        <li class="nav-item">
                             <a class="nav-link" href="{{ url($chapter['slug'].'/events') }}">Events</a>
                         </li>
-                        <li class="nav-item dropdown {{ isset($uri_segments[3]) && $uri_segments[3] == 'leadership-board' ? 'active' : '' }}">
+                        <li class="nav-item dropdown">
                             <a class="nav-link" href="{{ url($chapter['slug'].'/leadership-board') }}">Leadership</a>
                         </li>
-                        <li class="nav-item dropdown {{ isset($uri_segments[3]) && $uri_segments[3] == 'contact-us' ? 'active' : '' }}">
+                        <li class="nav-item dropdown">
                             <a class="nav-link" href="{{ url($chapter['slug'].'/contact-us') }}">Contact Us</a>
                         </li>
                     </ul>

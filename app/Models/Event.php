@@ -33,6 +33,7 @@ class Event extends Model
         'longitude',
         'latitude',
         'amount',
+        'amount_member',
     ];
 
     /**

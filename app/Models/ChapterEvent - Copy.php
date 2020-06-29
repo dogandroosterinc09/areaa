@@ -34,7 +34,6 @@ class ChapterEvent extends Model
         'longitude',
         'latitude',
         'amount',
-        'amount_member',
     ];
 
     /**

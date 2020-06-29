@@ -30,11 +30,8 @@ class ChapterBoardMemberController extends Controller
     }
 
     public function showChapterBoardMemberDetail($slug, $board_slug) {
-        // $chapter = \App\Models\Chapter::where('slug',$slug)->get()->first();
-        // $chapter_board_member = $this->chapter_board_member->where('slug',$board_slug)->get()->first();
-
         $chapter = \App\Models\Chapter::where('slug',$slug)->get()->first();
-        $chapter_board_member = $this->chapter_board_member->where('is_active',1)->where('slug',$board_slug)->get()->first();
+        $chapter_board_member = $this->chapter_board_member->where('slug',$board_slug)->get()->first();
         
         //Redirect to 404 when chapter does not exist
         if (!$chapter || !$chapter_board_member) {
@@ -52,13 +49,13 @@ class ChapterBoardMemberController extends Controller
 
     public function previousBoardMember($chapter_board_member, $chapter_id) {
         return  $chapter_board_member->where('id', '<', $chapter_board_member->id)
-                    ->where('chapter_id',$chapter_id)->where('is_active',1)
+                    ->where('chapter_id',$chapter_id)
                     ->orderBy('type')->get()->last();
     }
 
     public function nextBoardMember($chapter_board_member, $chapter_id) {
         return  $chapter_board_member->where('id', '>', $chapter_board_member->id)
-                    ->where('chapter_id',$chapter_id)->where('is_active',1)
+                    ->where('chapter_id',$chapter_id)
                     ->orderBy('type')->get()->first();
     }
 }

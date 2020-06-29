@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 use Carbon\Carbon;
 
-class ChapterEvent extends Model
+class Event extends Model
 {
     use SoftDeletes, HasAttachment;
 
@@ -19,7 +19,6 @@ class ChapterEvent extends Model
      */
     protected $fillable = [
         'name',
-        'chapter_id',
         'slug',
         'thumbnail',
         'description',
@@ -34,7 +33,6 @@ class ChapterEvent extends Model
         'longitude',
         'latitude',
         'amount',
-        'amount_member',
     ];
 
     /**
@@ -44,14 +42,10 @@ class ChapterEvent extends Model
      */
     protected $dates = ['starts_at', 'ends_at'];
 
-    public function getChapterAttribute() {
-        $chapter = \App\Models\Chapter::select('name')->where('id',$this->attributes['chapter_id'])->get()->first();
-        return $chapter->name;
-    }
+    public function getUrlAttribute() {
+        $route = "event.show";
 
-    public function getChapterSlugAttribute() {
-        $chapter = \App\Models\Chapter::select('slug')->where('id',$this->attributes['chapter_id'])->get()->first();
-        return $chapter->slug;
+        return route($route, $this->attributes['slug']);
     }
 
     public function getLocationAddressAttribute() {
@@ -71,10 +65,6 @@ class ChapterEvent extends Model
         return \Carbon\Carbon::parse($this->attributes['starts_at'])->format('d');
     }
 
-    public function getEndMonthAttribute() {
-        return \Carbon\Carbon::parse($this->attributes['ends_at'])->format('M');
-    }
-
     public function getEndDayAttribute() {
         return \Carbon\Carbon::parse($this->attributes['ends_at'])->format('d');
     }
@@ -90,8 +80,6 @@ class ChapterEvent extends Model
         $endDay = ' ' . Carbon::parse($endDate)->format('d');
         $endYear = ', ' . Carbon::parse($endDate)->format('Y');
 
-        $dateRange = $startDate == $endDate ? Carbon::parse($startDate)->format('F d, Y') : "$startMonth$startDay$startYear - $endMonth$endDay$endYear";
-
-        return $dateRange;
+        return "$startMonth$startDay$startYear - $endMonth$endDay$endYear";
     }
 }

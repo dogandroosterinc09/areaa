@@ -28,14 +28,7 @@
                 @include('admin.components.toggle', ['label' => 'Is Active', 'value' => $page->is_active])
 
                 @include('admin.components.heading', ['text' => 'Sections'])
-                
-                @if($page->id==52)
-                    @include('admin.modules.page.page_sponsors')
-                @else
-                    @include('admin.modules.page.page_sections')
-                @endif
-
-
+                                @include('admin.modules.page.page_sections')
 
                 <div class="form-group form-actions">
                     <div class="col-md-9 col-md-offset-3">
@@ -151,59 +144,4 @@
     </script>
     <script type="text/javascript" src="{{ asset('public/js/ckeditor/ckeditor.js') }}"></script>
     <script type="text/javascript" src="{{ asset('public/js/libraries/pages.js') }}"></script>
-
-    @if($page->id==52)
-    <script type="text/javascript">
-
-    $(document).ready(function(){
-
-        var counter = 2;
-
-        $("#addButton").click(function () {
-
-            var newTextBoxDiv = $(document.createElement('div'))
-            .attr("id", 'TextBoxDiv' + counter);
-
-            newTextBoxDiv.after().html('<div class="row" id="TextBoxDiv">'+
-                '<div class="col-md-8 col-md-offset-2">'+
-                '<div class="form-group">'+
-                    '<label class="col-md-2 control-label" for="chapter_sponsor">Badge</label>'+
-                    '<div class="col-md-10">'+
-                        '<select name="sponsor_category[]" id="sponsor_select" class="form-control">'+
-                            '<option value="">Select</option>'+
-                            '<option value="jade">Jade</option>'+
-                            '<option value="diamond">Diamond</option>'+
-                            '<option value="emerald">Emerald</option>'+
-                            '<option value="opal">Opal</option>'+
-                            '<option value="ruby">Ruby</option>'+
-                            '<option value="pearl">Pearl</option>'+
-                        '</select>'+
-                    '</div>'+
-                    '<label class="col-md-2 control-label" for="chapter_sponsor">Image</label>'+
-                    '<div class="col-md-10">'+
-                        '<div class="input-group">'+
-                            '<label class="input-group-btn">'+
-                            '<span class="btn btn-primary">'+
-                                'Choose File <input type="file" name="chapter_sponsor_image[]" style="display: none;" onchange="document.getElementById(\'image_chapter_sponsor'+counter+'\').value =this.files[0].name">'+
-                            '</span>'+
-                            '</label>'+
-                            '<input type="text" class="form-control" id="image_chapter_sponsor'+counter+'" readonly>'+
-                        '</div>'+
-                    '</div>'+
-                    '<label class="col-md-2 control-label" for="chapter_sponsor">Alt Text</label>'+
-                    '<div class="col-md-10">'+
-                        '<input type="text" class="form-control" name="chapter_alt_text[]" value="">'+
-                    '</div>'+
-                '</div>'+
-                '</div>'+
-            '</div>');
-
-            newTextBoxDiv.appendTo("#TextBoxesGroup");
-
-            counter++;
-        });
-    });
-    </script>
-    @endif
-
 @endpush

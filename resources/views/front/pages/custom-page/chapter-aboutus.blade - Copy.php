@@ -80,9 +80,7 @@
 
     {{-- story section  --}}
     @php( $section_2 = json_decode($chapter_page_aboutus->section_2) )
-    @php( $centerNoImg = (!$section_2->featured_image)? 'center-no-img': '')
-
-    <section class="fullwidth fullwidth__right-push chapter-national {{$centerNoImg}}">
+    <section class="fullwidth fullwidth__right-push chapter-national">
         <div class="container-max">
             <div class="row">
 

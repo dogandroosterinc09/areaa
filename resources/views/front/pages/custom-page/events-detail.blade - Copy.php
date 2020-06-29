@@ -100,14 +100,7 @@
                                         <span><strong>{{ $event->location_name }}</strong> 
                                         {{ ($event->city!='')? $event->locationAddress : '' }}
                                         </span></li>
-
-                                @auth
-                                    @if ($event->amount_member > 0) 
-                                        <li><span><strong>Member Price</strong></span> <span>${{ $event->amount_member }}</span></li>
-                                    @endif
-                                @else
                                     @if ($event->amount > 0) <li><span><strong>Cost</strong></span> <span>${{ $event->amount }}</span></li> @endif
-                                @endauth
                                 </ul>
                                 <div class="register-info__button">
                                     <a href="#" class="btn btn--secondary" data-toggle="modal" data-target="#registerModal"> Register</a>
