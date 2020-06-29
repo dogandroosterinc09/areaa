@@ -18,8 +18,26 @@
 
             <div class="events-camp-parent-holder">
                 <div class="events-camp-slider">
+                    <?php 
+                    $events_campaigns = json_decode($page->other_content);
+                    ?>
 
-                    @php($events = \App\Models\Event::all())                        
+                    @if (empty($events_campaigns))
+                        <h3 class="text-danger font-weight-bold text-center w-100 my-5">No Events.</h3>
+                    @endif
+
+                    @foreach($events_campaigns as $event)
+                        <div class="events-camp-slider--item">
+                            <a href="{{ $event->link }}">
+                                <div class="img-holder image-background">
+                                    <img src="{{ $event->image ? $event->image : asset('public/images/watermark.jpg') }}" alt="Events Image">
+                                </div>
+                                <div class="title">{{ (strlen($event->title)>27)? substr($event->title, 0,27).' ...' : $event->title }}<span><i></i></span></div>
+                            </a>
+                        </div>
+                    @endforeach
+
+                    <?php /* @php($events = \App\Models\Event::all())                        
                     @if ($events->isEmpty())
                         <h3 class="text-danger font-weight-bold text-center w-100 my-5">No Events.</h3>
                     @endif
@@ -32,7 +50,7 @@
                                 <div class="title">{{ (strlen($event->name)>27)? substr($event->name, 0,27).' ...' : $event->name }}<span><i></i></span></div>
                             </a>
                         </div>
-                    @endforeach
+                    @endforeach */ ?>
 
     <!--                 <div class="events-camp-slider--item">
                         <a href="#">

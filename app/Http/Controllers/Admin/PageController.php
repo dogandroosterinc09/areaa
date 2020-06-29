@@ -258,6 +258,43 @@ class PageController extends Controller
         }
         // die('ln264');
 
+        // IF HOME PAGE - save 'Events and Campaigns' to table 'page' on field 'other_content' where 'id' = 1
+        if ($id==1) {
+            $events = array();
+
+            $other_content = json_decode($page->other_content);
+            for($counter = 0; $counter < count($request->event_title); $counter++) {
+                if ($request->event_title[$counter]!='') {
+
+                    array_push($events, [
+                        'title' => $request->event_title[$counter],
+                        'image' => isset($request->event_image[$counter]) ? $request->event_image[$counter] : 
+                            isset($other_content) ? (isset(($other_content[$counter])->image) ? ($other_content[$counter])->image : '') : '' ,
+                        'link' => $request->event_link[$counter]
+                    ]);
+                }
+            }
+
+            // Sponsors Image path
+            // $file_path = '/uploads/page_section_images';
+            $images = $request->file('event_image');
+            for($counter = 0; $counter < count($request->event_title); $counter++) {
+                if ($request->event_title[$counter]!='') {
+                    if (isset($images[$counter]) && $images[$counter] != "" ) {
+                        $file_upload_path = $this->pageRepository->uploadFilePageSection($images[$counter]);
+                        
+                        $events[$counter]['image'] = $file_upload_path;
+                    }
+                }
+            }
+
+            $page->other_content = $events;
+            $page->save();
+            // print_r($events);
+            // die('ln294');
+        }
+        // die('ln296');
+
         // IF Sponsors page - save to sponsors to table 'page' on field 'other_content' where 'id' = 52
         if ($id==52) {
             $other_sponsors = array();
@@ -293,6 +330,8 @@ class PageController extends Controller
             // print_r($other_sponsors);
             // die('ln263');
         }
+
+
 
         /*
         // IF Sponsors page - save to table 'sections' on field 'value' where section 'id' = 28

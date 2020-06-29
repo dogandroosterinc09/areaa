@@ -35,6 +35,10 @@
                     @include('admin.modules.page.page_sponsors')
                 @endif
 
+                @if($page->id==1 && !empty($page->other_content))
+                    @include('admin.modules.page.page_events_campaigns')
+                @endif
+
 
                 <div class="form-group form-actions">
                     <div class="col-md-9 col-md-offset-3">
@@ -150,6 +154,53 @@
     </script>
     <script type="text/javascript" src="{{ asset('public/js/ckeditor/ckeditor.js') }}"></script>
     <script type="text/javascript" src="{{ asset('public/js/libraries/pages.js') }}"></script>
+
+    @if($page->id==1)
+    <script type="text/javascript">
+
+    $(document).ready(function(){
+
+        var counter = 2;
+
+        $("#addButton").click(function () {
+
+            var newTextBoxDiv = $(document.createElement('div'))
+            .attr("id", 'TextBoxDiv' + counter);
+
+            newTextBoxDiv.after().html('<div class="row" id="TextBoxDiv">'+
+                '<div class="col-md-8 col-md-offset-2">'+
+                '<div class="form-group">'+
+                    '<label class="col-md-2 control-label" for="event">Title</label>'+
+                    '<div class="col-md-10">'+
+                        '<input type="text" class="form-control" name="event_title[]" value="">'+
+                    '</div>'+
+                    '<label class="col-md-2 control-label" for="event">Image</label>'+
+                    '<div class="col-md-10">'+
+                        '<div class="input-group">'+
+                            '<label class="input-group-btn">'+
+                            '<span class="btn btn-primary">'+
+                                'Choose File <input type="file" name="event_image[]" style="display: none;" onchange="document.getElementById(\'image_event'+counter+'\').value =this.files[0].name">'+
+                            '</span>'+
+                            '</label>'+
+                            '<input type="text" class="form-control" id="image_event'+counter+'" readonly>'+
+                        '</div>'+
+                    '</div>'+
+                    '<label class="col-md-2 control-label" for="event">Link</label>'+
+                    '<div class="col-md-10">'+
+                        '<input type="text" class="form-control" name="event_link[]" value="">'+
+                    '</div>'+
+                '</div>'+
+                '</div>'+
+            '</div>');
+
+            newTextBoxDiv.appendTo("#TextBoxesGroup");
+
+            counter++;
+        });
+    });
+    </script>
+    @endif
+
 
     @if($page->id==52)
     <script type="text/javascript">
