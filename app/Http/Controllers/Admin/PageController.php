@@ -260,6 +260,7 @@ class PageController extends Controller
             }
 
             print_r($other_sponsors);
+            die('ln263');
             $sponsors->value = $other_sponsors;
             $sponsors->save();
         }
