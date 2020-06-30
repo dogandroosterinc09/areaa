@@ -242,9 +242,13 @@
                     '</div>'+
                     '<label class="col-md-2 control-label" for="chapter_sponsor">Alt Text</label>'+
                     '<div class="col-md-10">'+
-                        '<input type="text" class="form-control" name="chapter_alt_text[]" value="">'+
+                        '<input type="text" class="form-control" name="chapter_alt_text[]" value="" placeholder="Enter Alt Text..">'+
                     '</div>'+
-                '</div>'+
+                    '<label class="col-md-2 control-label" for="chapter_sponsor">Link</label>'+
+                    '<div class="col-md-10">'+
+                        '<input type="text" class="form-control" name="chapter_link[]" value="" placeholder="Enter Link..">'+
+                    '</div>'+
+                '</div><hr>'+
                 '</div>'+
             '</div>');
 

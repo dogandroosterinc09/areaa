@@ -307,7 +307,8 @@ class PageController extends Controller
                         'badge_icon' => $request->sponsor_category[$counter],
                         'image' => isset($request->chapter_sponsor_image[$counter]) ? $request->chapter_sponsor_image[$counter] : 
                             isset($db_other_sponsors) ? (isset(($db_other_sponsors[$counter])->image) ? ($db_other_sponsors[$counter])->image : '') : '' ,
-                        'image_alt' => $request->chapter_alt_text[$counter]
+                        'image_alt' => $request->chapter_alt_text[$counter],
+                        'link' => $request->chapter_link[$counter]
                     ]);
                 }
             }
@@ -319,7 +320,6 @@ class PageController extends Controller
                 if ($request->sponsor_category[$counter]!='') {
                     if (isset($images[$counter]) && $images[$counter] != "" ) {
                         $file_upload_path = $this->pageRepository->uploadFilePageSection($images[$counter]);
-                        
                         $other_sponsors[$counter]['image'] = $file_upload_path;
                     }
                 }

@@ -49,7 +49,7 @@
                     <div class="row">
                         <div class="col-md-8 col-md-offset-2">
                             <div class="form-group{{ $errors->has('other_sponsor_image') ? ' has-error' : '' }}">
-                                <label class="col-md-2 control-label" for="chapter_sponsor_image[]">Images</label>
+                                <label class="col-md-2 control-label" for="chapter_sponsor_image[]">Image</label>
                                 <div class="col-md-10">
                                     <div class="input-group">
                                         <label class="input-group-btn">
@@ -77,7 +77,31 @@
                             </div>
                         </div>
                     </div>
+                    
                     @include('admin.components.input-field', ['label' => 'Alt Text', 'field' => 'chapter_alt_text[]', 'value' => isset($other_sponsors[$counter]->image_alt) ? $other_sponsors[$counter]->image_alt : ''])
+                    @include('admin.components.input-field', ['label' => 'Link', 'field' => 'chapter_link[]', 'value' => isset($other_sponsors[$counter]->link) ? $other_sponsors[$counter]->link : ''])
+
+                    {{-- <div class="row">
+                        <div class="col-md-3 col-md-offset-3">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="chapter_alt_text[]">Alt Text</label>
+                                <div class="col-md-7">
+                                    <input type="text" class="form-control valid" id="chapter_alt_text[]" name="chapter_alt_text[]" value="{{ isset($other_sponsors[$counter]->image_alt) ? $other_sponsors[$counter]->image_alt : '' }}" placeholder="Enter Alt Text.." aria-invalid="false">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="col-md-2 control-label" for="chapter_link[]">Link</label>
+                                <div class="col-md-10">
+                                    <input type="text" class="form-control valid" id="chapter_link[]" name="chapter_link[]" value="{{ isset($other_sponsors[$counter]->link) ? $other_sponsors[$counter]->link : '' }}" placeholder="Enter URL Link.." aria-invalid="false">
+                                </div>
+                            </div>
+                        </div>
+                    </div> --}}
+
+
 
                     @if (!($counter == count($other_sponsors)))
                     <div class="col-md-8 col-md-offset-2">
@@ -109,11 +133,38 @@
 
                                 <label class="col-md-2 control-label" for="chapter_sponsor">Alt Text</label>
                                 <div class="col-md-10">
-                                    <input type="text" class="form-control" name="chapter_alt_text[]" value="">
+                                    <input type="text" class="form-control" name="chapter_alt_text[]" value="" placeholder="Enter Alt Text..">
                                 </div>
 
+
+                                <label class="col-md-2 control-label" for="chapter_sponsor">Link</label>
+                                <div class="col-md-10">
+                                    <input type="text" class="form-control" name="chapter_link[]" value="" placeholder="Enter Link..">
+                                </div>
+
+    <!--                             <div class="row col-md-10">
+                                    <div class="col-md-3 col-md-offset-3">
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label" for="chapter_alt_text[]">Alt Text</label>
+                                            <div class="col-md-7">
+                                                <input type="text" class="form-control valid" id="chapter_alt_text[]" name="chapter_alt_text[]" value="{{ isset($other_sponsors[$counter]->image_alt) ? $other_sponsors[$counter]->image_alt : '' }}" placeholder="Enter Alt Text.." aria-invalid="false">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="col-md-2 control-label" for="chapter_link[]">Link</label>
+                                            <div class="col-md-10">
+                                                <input type="text" class="form-control valid" id="chapter_link[]" name="chapter_link[]" value="{{ isset($other_sponsors[$counter]->link) ? $other_sponsors[$counter]->link : '' }}" placeholder="Enter URL Link.." aria-invalid="false">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> -->
+
                             </div>
+                <hr>
                         </div>
                     </div>
+
                 </div>
-                

@@ -112,7 +112,7 @@
                                     <div class="col-md-5">
                                         <div class="sponsor-thumbnail">
                                             {{-- <div class="sponsor-thumbnail__badge sponsor-thumbnail__badge--{{ $jade->badge_icon }}">  </div> --}}
-                                            <img src="{{ asset($jade->image) }}" alt="{{ $jade->image_alt }}" class="img-fluid">
+                                            <a href="{{ $jade->link }}" target="_new"><img src="{{ asset($jade->image) }}" alt="{{ $jade->image_alt }}" class="img-fluid"></a>
                                         </div>
                                     </div>
                                 @endforeach
@@ -136,7 +136,7 @@
                                         <div class="sponsor-thumbnail">
                                             {{-- <div class="sponsor-thumbnail__badge sponsor-thumbnail__badge--{{ $diamond->badge_icon }}">  </div> --}}
                                             
-                                            <a href="#" target="_new"><img src="{{ $diamond->image }}" alt="{{ $diamond->image_alt }}" class="img-fluid"></a>
+                                            <a href="{{ $diamond->link }}" target="_new"><img src="{{ $diamond->image }}" alt="{{ $diamond->image_alt }}" class="img-fluid"></a>
                                         </div>
                                     </div>
                                     @endif
@@ -152,7 +152,7 @@
                                     @if(!empty($emerald->image))
                                     <div class="col-md-4">
                                         <div class="sponsor-thumbnail">
-                                            <a href="#" target="_new"><img src="{{ $emerald->image }}" alt="{{ $emerald->image_alt }}" class="img-fluid"></a>
+                                            <a href="{{ $emerald->link }}" target="_new"><img src="{{ $emerald->image }}" alt="{{ $emerald->image_alt }}" class="img-fluid"></a>
                                         </div>
                                     </div>
                                     @endif
@@ -168,7 +168,7 @@
                                     @if(!empty($opal->image))
                                     <div class="col-md-4">
                                         <div class="sponsor-thumbnail">
-                                            <a href="#" target="_new"><img src="{{ $opal->image }}" alt="{{ $opal->image_alt }}" class="img-fluid"></a>
+                                            <a href="{{ $opal->link }}" target="_new"><img src="{{ $opal->image }}" alt="{{ $opal->image_alt }}" class="img-fluid"></a>
                                         </div>
                                     </div>
                                     @endif
@@ -184,7 +184,7 @@
                                     @if(!empty($ruby->image))
                                     <div class="col-md-4">
                                         <div class="sponsor-thumbnail">
-                                            <a href="#" target="_new"><img src="{{ $ruby->image }}" alt="{{ $ruby->image_alt }}" class="img-fluid"></a>
+                                            <a href="{{ $ruby->link }}" target="_new"><img src="{{ $ruby->image }}" alt="{{ $ruby->image_alt }}" class="img-fluid"></a>
                                         </div>
                                     </div>
                                     @endif
@@ -200,7 +200,7 @@
                                     @if(!empty($pearl->image))
                                     <div class="col-md-4">
                                         <div class="sponsor-thumbnail">
-                                            <a href="#" target="_new"><img src="{{ $pearl->image }}" alt="{{ $pearl->image_alt }}" class="img-fluid"></a>
+                                            <a href="{{ $pearl->link }}" target="_new"><img src="{{ $pearl->image }}" alt="{{ $pearl->image_alt }}" class="img-fluid"></a>
                                         </div>
                                     </div>
                                     @endif
