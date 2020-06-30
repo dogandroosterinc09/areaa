@@ -1,21 +1,8 @@
 window.$ = window.jQuery = require('jquery');
 require('popper.js');
 require('bootstrap');
-require('select2');
-require('jquery-validation');
-require('slick-carousel');
-require('magnific-popup');
-window.swal = require('sweetalert');
-require('readmore-js');
-require('datatables');
-require('cookieconsent');
-var AOS = require('aos');
-AOS.init({
-    easing: 'ease-in-out-sine'
-});
 
 $(document).ready(function() {
-
 
     /* Get iframe src attribute value i.e. YouTube video url
     and store it in a variable */
@@ -36,6 +23,20 @@ $(document).ready(function() {
     });
 
 });
+
+require('select2');
+require('jquery-validation');
+require('slick-carousel');
+require('magnific-popup');
+window.swal = require('sweetalert');
+require('readmore-js');
+require('datatables');
+require('cookieconsent');
+var AOS = require('aos');
+AOS.init({
+    easing: 'ease-in-out-sine'
+});
+
 
 
 // vendor
