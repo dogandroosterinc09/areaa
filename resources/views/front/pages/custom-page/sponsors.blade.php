@@ -105,7 +105,7 @@
                     <div class="logo-display">
                         <div class="logo-display__single">
                           
-                            <div class="row">
+                            <div class="row logo-display__single--item">
                                     <div class="col-md-12">
                                         <h5>Jade</h5>
                                     </div>

@@ -24056,11 +24056,19 @@ section.page--media .search-member-directory {
   -webkit-transform: scale(1.1, 1.1);
   -o-transform: scale(1.1, 1.1);
 }
-.logo-display__single--detail {
+.logo-display__single--item {
   border-bottom: 1px solid #ddd;
   margin-bottom: 25px;
 }
-.logo-display__single--detail h5 {
+.logo-display__single--item h5 {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.logo-display__col3--item {
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 25px;
+}
+.logo-display__col3--item h5 {
   font-weight: bold;
   text-transform: uppercase;
 }
