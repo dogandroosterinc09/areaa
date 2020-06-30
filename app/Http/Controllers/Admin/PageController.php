@@ -258,14 +258,51 @@ class PageController extends Controller
         }
         // die('ln264');
 
-        // IF HOME PAGE - save 'Events and Campaigns' to table 'page' on field 'other_content' where 'id' = 1
+        // IF HOME PAGE 
+        // - save 'Events and Campaigns' to table 'page' on field 'other_content' where 'id' = 1
+        // - save 'Featured Sponsors' to table 'page' on field 'other_section' where 'id' = 1
         if ($id==1) {
+
+            // Featured Sponsors
+            $feat_sponsors = array();
+
+            $other_section = json_decode($page->other_section);
+            for($counter = 0; $counter < count($request->feat_sponsor_title); $counter++) {
+                if ($request->feat_sponsor_title[$counter]!='') {
+                    array_push($feat_sponsors, [
+                        'title' => $request->feat_sponsor_title[$counter],
+                        'image' => isset($request->feat_sponsor_image[$counter]) ? $request->feat_sponsor_image[$counter] : 
+                            isset($other_section) ? (isset(($other_section[$counter])->image) ? ($other_section[$counter])->image : '') : '' ,
+                        'link' => $request->feat_sponsor_link[$counter]
+                    ]);
+                }
+            }
+
+            // Sponsors Image path
+            // $file_path = '/uploads/page_section_images';
+            $feat_images = $request->file('feat_sponsor_image');
+            for($counter = 0; $counter < count($request->feat_sponsor_title); $counter++) {
+                if ($request->feat_sponsor_title[$counter]!='') {
+                    if (isset($feat_images[$counter]) && $feat_images[$counter] != "" ) {
+                        $file_upload_path = $this->pageRepository->uploadFilePageSection($feat_images[$counter]);
+                        
+                        $feat_sponsors[$counter]['image'] = $file_upload_path;
+                    }
+                }
+            }
+
+            $page->other_section = $feat_sponsors;
+            $page->save();
+            // print_r($feat_sponsors);
+            // die('ln297');
+
+
+            // Events and Campaigns
             $events = array();
 
             $other_content = json_decode($page->other_content);
             for($counter = 0; $counter < count($request->event_title); $counter++) {
                 if ($request->event_title[$counter]!='') {
-
                     array_push($events, [
                         'title' => $request->event_title[$counter],
                         'image' => isset($request->event_image[$counter]) ? $request->event_image[$counter] : 
@@ -275,7 +312,9 @@ class PageController extends Controller
                 }
             }
 
-            // Sponsors Image path
+            // die('ln279');
+
+            // Events and Campaign Image path
             // $file_path = '/uploads/page_section_images';
             $images = $request->file('event_image');
             for($counter = 0; $counter < count($request->event_title); $counter++) {
@@ -292,6 +331,8 @@ class PageController extends Controller
             $page->save();
             // print_r($events);
             // die('ln294');
+
+
         }
         // die('ln296');
 
