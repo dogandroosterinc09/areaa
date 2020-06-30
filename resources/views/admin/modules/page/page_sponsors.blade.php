@@ -3,7 +3,7 @@
                         <h4 style="border-left: 3px solid #61dbd5; padding-left: 8px; margin-bottom: 20px;"><input type='button' value='Add Sponsor' id='addButton' class="btn btn-sm btn-primary"></h4>
                         <div class="form-group">
                             <div class="col-md-10">
-                                <small>* By selected <strong>No Category</strong> - Sponsor will be removed when Saved.</small>
+                                <small>* By selecting <strong>No Category</strong> - Sponsor will be removed when Saved.</small>
                                 {{-- <input type='button' value='Add Sponsor' id='addButton' class="btn btn-sm btn-primary"> --}}
                            </div>
                         </div>

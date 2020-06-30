@@ -106,86 +106,100 @@
                 ?>
                 <div class="col-md-8">
                     <div class="logo-display">
-                        <div class="logo-display__single">{{-- jade --}}
+                        <div class="logo-display__single"><h5>Jade</h5>
                             <div class="row">
                                 @foreach($jades as $jade)
                                     <div class="col-md-5">
                                         <div class="sponsor-thumbnail">
-                                            <div class="sponsor-thumbnail__badge sponsor-thumbnail__badge--{{ $jade->badge_icon }}">  </div>
+                                            {{-- <div class="sponsor-thumbnail__badge sponsor-thumbnail__badge--{{ $jade->badge_icon }}">  </div> --}}
                                             <img src="{{ asset($jade->image) }}" alt="{{ $jade->image_alt }}" class="img-fluid">
                                         </div>
                                     </div>
                                 @endforeach
                                 
-                                {{--
-                                <div class="col-md-5">
+                                {{-- <div class="col-md-5">
                                     <div class="sponsor-thumbnail">
                                         <div class="sponsor-thumbnail__badge sponsor-thumbnail__badge--{{ section('Top Sponsor.data.first.badge_icon') }}">  </div>
                                         <img src="{{ url('public/images/sponsor0.jpg') }}" alt="chapter title" class="img-fluid">
                                     </div>
-                                </div>
-                                --}}
-                                
+                                </div> --}}
                             </div>
-                           
                         </div>
+                        <hr>
                         <div class="logo-display__col3">
+                            @if(!empty($diamonds))
+                            <h5>Diamond</h5>
                             <div class="row">
-
                                 @foreach( $diamonds as $diamond )
                                     @if(!empty($diamond->image))
                                     <div class="col-md-4">
                                         <div class="sponsor-thumbnail">
-                                            <div class="sponsor-thumbnail__badge sponsor-thumbnail__badge--{{ $diamond->badge_icon }}">  </div>
-                                            <img src="{{ $diamond->image }}" alt="{{ $diamond->image_alt }}" class="img-fluid">
+                                            {{-- <div class="sponsor-thumbnail__badge sponsor-thumbnail__badge--{{ $diamond->badge_icon }}">  </div> --}}
+                                            
+                                            <a href="#" target="_new"><img src="{{ $diamond->image }}" alt="{{ $diamond->image_alt }}" class="img-fluid"></a>
                                         </div>
                                     </div>
                                     @endif
                                 @endforeach
-                                
+                            </div>
+                            @endif
+
+                            @if(!empty($emeralds))
+                            <h5>Emerald</h5>
+                            <div class="row">
                                 @foreach( $emeralds as $emerald )
                                     @if(!empty($emerald->image))
                                     <div class="col-md-4">
                                         <div class="sponsor-thumbnail">
-                                            <div class="sponsor-thumbnail__badge sponsor-thumbnail__badge--{{ $emerald->badge_icon }}">  </div>
-                                            <img src="{{ $emerald->image }}" alt="{{ $emerald->image_alt }}" class="img-fluid">
+                                            <a href="#" target="_new"><img src="{{ $emerald->image }}" alt="{{ $emerald->image_alt }}" class="img-fluid"></a>
                                         </div>
                                     </div>
                                     @endif
                                 @endforeach
+                            </div>
+                            @endif
 
+                            @if(!empty($opals))
+                            <h5>Opal</h5>
                                 @foreach( $opals as $opal )
                                     @if(!empty($opal->image))
                                     <div class="col-md-4">
                                         <div class="sponsor-thumbnail">
-                                            <div class="sponsor-thumbnail__badge sponsor-thumbnail__badge--{{ $opal->badge_icon }}">  </div>
-                                            <img src="{{ $opal->image }}" alt="{{ $opal->image_alt }}" class="img-fluid">
+                                            <a href="#" target="_new"><img src="{{ $opal->image }}" alt="{{ $opal->image_alt }}" class="img-fluid"></a>
                                         </div>
                                     </div>
                                     @endif
                                 @endforeach
+                            </div>
+                            @endif
 
+                            @if(!empty($rubies))
+                            <h5>Ruby</h5>
                                 @foreach( $rubies as $ruby )
                                     @if(!empty($ruby->image))
                                     <div class="col-md-4">
                                         <div class="sponsor-thumbnail">
-                                            <div class="sponsor-thumbnail__badge sponsor-thumbnail__badge--{{ $ruby->badge_icon }}">  </div>
-                                            <img src="{{ $ruby->image }}" alt="{{ $ruby->image_alt }}" class="img-fluid">
+                                            <a href="#" target="_new"><img src="{{ $ruby->image }}" alt="{{ $ruby->image_alt }}" class="img-fluid"></a>
                                         </div>
                                     </div>
                                     @endif
                                 @endforeach
+                            </div>
+                            @endif
 
+                            @if(!empty($pearls))
+                            <h5>Pearl</h5>
                                 @foreach( $pearls as $pearl )
                                     @if(!empty($pearl->image))
                                     <div class="col-md-4">
                                         <div class="sponsor-thumbnail">
-                                            <div class="sponsor-thumbnail__badge sponsor-thumbnail__badge--{{ $pearl->badge_icon }}">  </div>
-                                            <img src="{{ $pearl->image }}" alt="{{ $pearl->image_alt }}" class="img-fluid">
+                                            <a href="#" target="_new"><img src="{{ $pearl->image }}" alt="{{ $pearl->image_alt }}" class="img-fluid"></a>
                                         </div>
                                     </div>
                                     @endif
                                 @endforeach
+                            </div>
+                            @endif
 
                                 {{--
                                 @foreach( section('Other Sponsors.data') as $data )
