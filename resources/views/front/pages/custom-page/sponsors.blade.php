@@ -65,13 +65,10 @@
 
 
                 <?php
-                // $otherSponsors = \App\Models\Section::findOrFail(28);
-                // $otherSponsors = \App\Models\Section::where('id',28)->first();
-                $other_sponsors = json_decode($page->other_content);
-                // print_r($otherSponsors);
-                // die('71');
                 // Sponsors
+                // $otherSponsors = \App\Models\Section::findOrFail(28);
                 // $other_sponsors = array();
+                $other_sponsors = json_decode($page->other_content);
 
                 $jades = array();
                 $diamonds = array();
@@ -217,83 +214,6 @@
                                     </div>
                                 </div>
                                 @endforeach
-
-                                <!-- <div class="col-md-4">
-                                    <div class="sponsor-thumbnail">
-                                        <div class="sponsor-thumbnail__badge sponsor-thumbnail__badge--ruby">  </div>
-                                        <img src="{{ url('public/images/sponsor1.jpg') }}" alt="chapter title" class="img-fluid">
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="sponsor-thumbnail">
-                                        <div class="sponsor-thumbnail__badge sponsor-thumbnail__badge--emerald">  </div>
-                                        <img src="{{ url('public/images/sponsor2.jpg') }}" alt="chapter title" class="img-fluid">
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="sponsor-thumbnail">
-                                        <div class="sponsor-thumbnail__badge sponsor-thumbnail__badge--diamond">  </div>
-                                        <img src="{{ url('public/images/sponsor3.jpg') }}" alt="chapter title" class="img-fluid">
-                                    </div>
-                                </div>
-
-                                <div class="col-md-4">
-                                    <div class="sponsor-thumbnail">
-                                        <div class="sponsor-thumbnail__badge sponsor-thumbnail__badge--opal">  </div>
-                                        <img src="{{ url('public/images/sponsor4.jpg') }}" alt="chapter title" class="img-fluid">
-                                    </div>
-                                </div>
-
-                                <div class="col-md-4">
-                                    <div class="sponsor-thumbnail">
-                                        <div class="sponsor-thumbnail__badge sponsor-thumbnail__badge--pearl">  </div>
-                                        <img src="{{ url('public/images/sponsor5.jpg') }}" alt="chapter title" class="img-fluid">
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="sponsor-thumbnail">
-                                        <div class="sponsor-thumbnail__badge sponsor-thumbnail__badge--diamond">  </div>
-                                        <img src="{{ url('public/images/sponsor6.jpg') }}" alt="chapter title" class="img-fluid">
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="sponsor-thumbnail">
-                                        <div class="sponsor-thumbnail__badge sponsor-thumbnail__badge--opal">  </div>
-                                        <img src="{{ url('public/images/sponsor7.jpg') }}" alt="chapter title" class="img-fluid">
-                                    </div>
-                                </div>
-
-                                <div class="col-md-4">
-                                    <div class="sponsor-thumbnail">
-                                        <div class="sponsor-thumbnail__badge sponsor-thumbnail__badge--pearl">  </div>
-                                        <img src="{{ url('public/images/sponsor8.jpg') }}" alt="chapter title" class="img-fluid">
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="sponsor-thumbnail">
-                                        <div class="sponsor-thumbnail__badge sponsor-thumbnail__badge--diamond">  </div>
-                                        <img src="{{ url('public/images/sponsor9.jpg') }}" alt="chapter title" class="img-fluid">
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="sponsor-thumbnail">
-                                        <div class="sponsor-thumbnail__badge sponsor-thumbnail__badge--opal">  </div>
-                                        <img src="{{ url('public/images/sponsor10.jpg') }}" alt="chapter title" class="img-fluid">
-                                    </div>
-                                </div>
-
-                                <div class="col-md-4">
-                                    <div class="sponsor-thumbnail">
-                                        <div class="sponsor-thumbnail__badge sponsor-thumbnail__badge--pearl">  </div>
-                                        <img src="{{ url('public/images/sponsor11.jpg') }}" alt="chapter title" class="img-fluid">
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="sponsor-thumbnail">
-                                        <div class="sponsor-thumbnail__badge sponsor-thumbnail__badge--diamond">  </div>
-                                        <img src="{{ url('public/images/sponsor12.jpg') }}" alt="chapter title" class="img-fluid">
-                                    </div>
-                                </div> -->
                                 --}} 
 
                             </div>
