@@ -126,7 +126,7 @@
                                 </div> --}}
                             </div>
                         </div>
-                        <hr>
+                        {{-- <hr> --}}
                         <div class="logo-display__col3">
                             @if(!empty($diamonds))
                           
