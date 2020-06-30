@@ -463,9 +463,22 @@
             </div>
             <div class="sponsor-logo">
                 <div class="sponsor-logo__slide">
-                    @foreach( section('Sponsors Images.data') as $data )
-                    <div class="sponsor-logo__items"><img src="{{ $data->image }}" alt="{{ $data->alt_text }}"></div>                    
-                    @endforeach                    
+
+                    {{-- @foreach( section('Sponsors Images.data') as $data )
+                    <div class="sponsor-logo__items"><img src="{{ $data->image }}" alt="{{ $data->alt_text }}"></div>
+                    @endforeach --}}
+
+                    @php($featured_sponsors = json_decode($page->other_section))
+
+                    @if (empty($featured_sponsors))
+                        <h3 class="text-danger font-weight-bold text-center w-100 my-5">No Featured Sponsor</h3>
+                    @endif
+
+                    @foreach($featured_sponsors as $featSponsor)
+                        <div class="sponsor-logo__items">
+                            <a href="{{ $featSponsor->link }}"><img src="{{ $featSponsor->image }}" alt="{{ $featSponsor->title }}"></a></div>
+                    @endforeach
+
                 </div>
                 {{-- <img src="{{ asset('public/images/sponsors-logos.png') }}" alt="Sponsors Image"> --}}
             </div>

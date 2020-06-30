@@ -36,6 +36,7 @@
                 @endif
 
                 @if($page->id==1 && !empty($page->other_content))
+                    @include('admin.modules.page.page_featured_sponsors')
                     @include('admin.modules.page.page_events_campaigns')
                 @endif
 
@@ -162,6 +163,7 @@
 
         var counter = 2;
 
+        // Events and Campaigns
         $("#addButton").click(function () {
 
             var newTextBoxDiv = $(document.createElement('div'))
@@ -197,7 +199,46 @@
 
             counter++;
         });
+
+        // Featured Sponsors
+        $("#addSponsor").click(function () {
+
+            var newFeatSponsorDiv = $(document.createElement('div'))
+            .attr("id", 'featSponsorDiv' + counter);
+
+            newFeatSponsorDiv.after().html('<div class="row" id="featSponsorDiv">'+
+                '<div class="col-md-8 col-md-offset-2">'+
+                '<div class="form-group">'+
+                    '<label class="col-md-2 control-label" for="feat_sponsor">Image</label>'+
+                    '<div class="col-md-10">'+
+                        '<div class="input-group">'+
+                            '<label class="input-group-btn">'+
+                            '<span class="btn btn-primary">'+
+                                'Choose File <input type="file" name="feat_sponsor_image[]" style="display: none;" onchange="document.getElementById(\'image_feat_sponsor'+counter+'\').value =this.files[0].name">'+
+                            '</span>'+
+                            '</label>'+
+                            '<input type="text" class="form-control" id="image_feat_sponsor'+counter+'" readonly>'+
+                        '</div>'+
+                    '</div>'+
+                    '<label class="col-md-2 control-label" for="feat_sponsor">Title</label>'+
+                    '<div class="col-md-10">'+
+                        '<input type="text" class="form-control" name="feat_sponsor_title[]" value="">'+
+                    '</div>'+
+                    '<label class="col-md-2 control-label" for="feat_sponsor">Link</label>'+
+                    '<div class="col-md-10">'+
+                        '<input type="text" class="form-control" name="feat_sponsor_link[]" value="">'+
+                    '</div>'+
+                '</div>'+
+                '</div>'+
+            '</div>');
+
+            newFeatSponsorDiv.appendTo("#featSponsorGroup");
+
+            counter++;
+        });
+
     });
+
     </script>
     @endif
 

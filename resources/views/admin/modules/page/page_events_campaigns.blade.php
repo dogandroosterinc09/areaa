@@ -34,7 +34,7 @@
                 @php($events_campaigns = json_decode($page->other_content))
 
                 @for($counter = 0; $counter < count($events_campaigns); $counter++)
-                    
+                    <div id="event-row{{$counter}}">
                     <?php /* <div class="row">
                         <div class="col-md-8 col-md-offset-2">
                             <div class="form-group">
@@ -85,10 +85,9 @@
                     <div class="row">
                         <div class="col-md-8 col-md-offset-2">
                             <div class="form-group">
-                                <label class="col-md-2 control-label" for="event_delete[]">&nbsp;</label>
+                                <label class="col-md-2 control-label" for="delete">&nbsp;</label>
                                 <div class="col-md-10">
-                                    <input type="checkbox" name="event_delete[]">
-                                    <small>DELETE</small>
+                                    <input type="button" name="hide" id="remove{{$counter}}" onclick="$('#event-row'+{{$counter}}).remove();" value="Remove{{--$counter--}}">
                                </div>
                             </div>
                         </div>
@@ -100,6 +99,7 @@
                         <hr>
                     </div>
                     @endif 
+                </div>
                 @endfor
 
             @endif
