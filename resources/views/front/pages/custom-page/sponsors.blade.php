@@ -145,6 +145,7 @@
                             @endif
 
                             @if(!empty($emeralds))
+                            <hr>
                             <h5>Emerald</h5>
                             <div class="row">
                                 @foreach( $emeralds as $emerald )
@@ -160,6 +161,7 @@
                             @endif
 
                             @if(!empty($opals))
+                            <hr>
                             <h5>Opal</h5>
                                 @foreach( $opals as $opal )
                                     @if(!empty($opal->image))
@@ -174,6 +176,7 @@
                             @endif
 
                             @if(!empty($rubies))
+                            <hr>
                             <h5>Ruby</h5>
                                 @foreach( $rubies as $ruby )
                                     @if(!empty($ruby->image))
@@ -188,6 +191,7 @@
                             @endif
 
                             @if(!empty($pearls))
+                            <hr>
                             <h5>Pearl</h5>
                                 @foreach( $pearls as $pearl )
                                     @if(!empty($pearl->image))
