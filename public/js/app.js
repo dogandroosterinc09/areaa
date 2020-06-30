@@ -79121,6 +79121,24 @@ var AOS = __webpack_require__(/*! aos */ "./node_modules/aos/dist/aos.js");
 
 AOS.init({
   easing: 'ease-in-out-sine'
+});
+$(document).ready(function () {
+  /* Get iframe src attribute value i.e. YouTube video url
+  and store it in a variable */
+  var url = $("#chapter-video").attr('src');
+  $("#chapter-video").attr('src', '');
+  /* Assign empty url value to the iframe src attribute when
+  modal hide, which stop the video playing */
+
+  $("#videoModal").on('hide.bs.modal', function () {
+    $("#chapter-video").attr('src', '');
+  });
+  /* Assign the initially stored url back to the iframe src
+  attribute when modal is displayed again */
+
+  $("#videoModal").on('show.bs.modal', function () {
+    $("#chapter-video").attr('src', url);
+  });
 }); // vendor
 
 __webpack_require__(/*! ./static/platform/platform */ "./resources/assets/js/static/platform/platform.js");
@@ -79610,20 +79628,18 @@ $(document).on('click', 'a[href^="#upcoming-envents-owner"]', function (event) {
 $(document).ready(function () {
   /* Get iframe src attribute value i.e. YouTube video url
   and store it in a variable */
-  var url = $("#chapter-video").attr('src');
-  $("#chapter-video").attr('src', '');
-  /* Assign empty url value to the iframe src attribute when
-  modal hide, which stop the video playing */
-
-  $("#videoModal").on('hide.bs.modal', function () {
-    $("#chapter-video").attr('src', '');
-  });
-  /* Assign the initially stored url back to the iframe src
-  attribute when modal is displayed again */
-
-  $("#videoModal").on('show.bs.modal', function () {
-    $("#chapter-video").attr('src', url);
-  });
+  // var url = $("#chapter-video").attr('src');
+  // $("#chapter-video").attr('src', '');
+  // /* Assign empty url value to the iframe src attribute when
+  // modal hide, which stop the video playing */
+  // $("#videoModal").on('hide.bs.modal', function() {
+  //     $("#chapter-video").attr('src', '');
+  // });
+  // /* Assign the initially stored url back to the iframe src
+  // attribute when modal is displayed again */
+  // $("#videoModal").on('show.bs.modal', function() {
+  //     $("#chapter-video").attr('src', url);
+  // });
 }); // used for events load more 
 
 $(function () {
