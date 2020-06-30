@@ -110,7 +110,7 @@
                                         <h5>Jade</h5>
                                     </div>
                                 @foreach($jades as $jade)
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
                                         <div class="sponsor-thumbnail">
                                             {{-- <div class="sponsor-thumbnail__badge sponsor-thumbnail__badge--{{ $jade->badge_icon }}">  </div> --}}
                                             <a href="{{ $jade->link }}" target="_new"><img src="{{ asset($jade->image) }}" alt="{{ $jade->image_alt }}" class="img-fluid"></a>
