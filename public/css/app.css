@@ -24433,6 +24433,20 @@ img.img-dropshadow {
 .chapter-national {
   margin-bottom: 50px;
 }
+.chapter-national.center-no-img .container-max {
+  margin: auto !important;
+}
+.chapter-national.center-no-img .fullwidth__left {
+  display: none;
+}
+.chapter-national.center-no-img .fullwidth__right {
+  text-align: center;
+  flex: 0 0 80%;
+  margin: auto;
+  max-width: 80%;
+  padding: 0 !important;
+  margin: auto !important;
+}
 
 .login-section {
   margin-top: 50px;

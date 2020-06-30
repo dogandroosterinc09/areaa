@@ -698,6 +698,22 @@ img {
 
 .chapter-national {
     margin-bottom: 50px;
+    &.center-no-img {
+        .container-max {
+            margin: auto !important;
+        }
+        .fullwidth__left {
+            display: none;
+        }
+        .fullwidth__right {
+            text-align: center;
+            flex: 0 0 80%;
+            margin: auto;
+            max-width: 80%;
+            padding: 0 !important;
+            margin: auto !important;
+        }
+    }
 }
 
 .login-section {
