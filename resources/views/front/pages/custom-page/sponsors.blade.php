@@ -103,10 +103,14 @@
                 ?>
                 <div class="col-md-8">
                     <div class="logo-display">
-                        <div class="logo-display__single"><h5>Jade</h5>
+                        <div class="logo-display__single">
+                          
                             <div class="row">
+                                    <div class="col-md-12">
+                                        <h5>Jade</h5>
+                                    </div>
                                 @foreach($jades as $jade)
-                                    <div class="col-md-5">
+                                    <div class="col-md-4">
                                         <div class="sponsor-thumbnail">
                                             {{-- <div class="sponsor-thumbnail__badge sponsor-thumbnail__badge--{{ $jade->badge_icon }}">  </div> --}}
                                             <a href="{{ $jade->link }}" target="_new"><img src="{{ asset($jade->image) }}" alt="{{ $jade->image_alt }}" class="img-fluid"></a>
@@ -125,8 +129,11 @@
                         <hr>
                         <div class="logo-display__col3">
                             @if(!empty($diamonds))
-                            <h5>Diamond</h5>
-                            <div class="row">
+                          
+                            <div class="row logo-display__col3--item">
+                                <div class="col-md-12">
+                                    <h5>Diamond</h5>
+                                </div>
                                 @foreach( $diamonds as $diamond )
                                     @if(!empty($diamond->image))
                                     <div class="col-md-4">
@@ -142,9 +149,12 @@
                             @endif
 
                             @if(!empty($emeralds))
-                            <hr>
-                            <h5>Emerald</h5>
-                            <div class="row">
+                            {{-- <hr> --}}
+                          
+                            <div class="row logo-display__col3--item">
+                                <div class="col-md-12">
+                                    <h5>Emerald</h5>
+                                </div>
                                 @foreach( $emeralds as $emerald )
                                     @if(!empty($emerald->image))
                                     <div class="col-md-4">
@@ -158,9 +168,11 @@
                             @endif
 
                             @if(!empty($opals))
-                            <hr>
-                            <h5>Opal</h5>
-                            <div class="row">
+                            {{-- <hr> --}}
+                            <div class="row logo-display__col3--item">
+                                <div class="col-md-12">
+                                    <h5>Opal</h5>
+                                </div>
                                 @foreach( $opals as $opal )
                                     @if(!empty($opal->image))
                                     <div class="col-md-4">
@@ -174,9 +186,12 @@
                             @endif
 
                             @if(!empty($rubies))
-                            <hr>
-                            <h5>Ruby</h5>
-                            <div class="row">
+                            {{-- <hr> --}}
+                          
+                            <div class="row logo-display__col3--item">
+                                <div class="col-md-12">
+                                    <h5>Ruby</h5>
+                                </div>
                                 @foreach( $rubies as $ruby )
                                     @if(!empty($ruby->image))
                                     <div class="col-md-4">
@@ -190,9 +205,9 @@
                             @endif
 
                             @if(!empty($pearls))
-                            <hr>
+                            {{-- <hr> --}}
                             <h5>Pearl</h5>
-                            <div class="row">
+                            <div class="row logo-display__col3--item">
                                 @foreach( $pearls as $pearl )
                                     @if(!empty($pearl->image))
                                     <div class="col-md-4">
