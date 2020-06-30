@@ -701,6 +701,8 @@ img {
     &.center-no-img {
         .container-max {
             margin: auto !important;
+            padding: 0;
+            max-width: 80%;
         }
         .fullwidth__left {
             display: none;

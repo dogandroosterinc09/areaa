@@ -24435,6 +24435,8 @@ img.img-dropshadow {
 }
 .chapter-national.center-no-img .container-max {
   margin: auto !important;
+  padding: 0;
+  max-width: 80%;
 }
 .chapter-national.center-no-img .fullwidth__left {
   display: none;
