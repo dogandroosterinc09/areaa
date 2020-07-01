@@ -773,8 +773,8 @@ class UserController extends Controller
             abort('401', '401');
         }
 
-        echo $id;
-        die();
+        // echo $id;
+        // die();
         $user = $this->user->findOrFail($id);
 
         $this->validate($request, [
