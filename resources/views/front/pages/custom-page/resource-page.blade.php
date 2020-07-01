@@ -66,47 +66,41 @@
             <div class="container-max">
                 <div class="row">
 
-
                     <div class="col-lg-12 text-center font-weight-bold">
-                        <h4 class="">AREAA Resources: </h4>
+                        <!-- <h4 class="">AREAA Resources: </h4> -->
+                        <h4>{{ section('Section 1.data.first.title') }}</h2>
                     </div>
+                    {!! section('Section 1.data.first.content') !!}
 
-                    <div class="col-md-12">
-                           
-                            {{-- comment insert class on UL  --}}
-                            {{-- use class bullet-style only if you want one col  --}}
-                            {{-- use class bullet-style__col-2 to enable 2cols --}}
-                            {{-- use class bullet-style__col-3 to enable 3cols --}}
-                            {{-- bullet-style--uppercase the strong tag will capitalize --}}
-                            <ul class="bullet-style bullet-style__col-2 bullet-style--uppercase">
-                                <li>
-                                   <strong>2017 Student Debt and Housing Report, by Better Homes and Gardens </strong> <br>
-                                   <a href="#">Click here to download the 2017 Student Debt Report</a>
-                                </li>
-                                <li>
-                                    <strong>2016 State of Asia America Report </strong> <br>
-                                    <a href="https://www.areaa.org/wp-content/uploads/2013/10/DRAFT-saa16-120816.pdf" target="blank">Click here to download the 2016 State of Asia America Report</a>
-                                </li>
-                                <li> <strong>2016 Chinese Investment in US Real Estate, by Asia Society </strong>  <br>
-                                    <a href="http://asiasociety.org/files/uploads/66files/Asia%20Society%20Breaking%20Ground%20Complete%20Final.pdf" target="blank">Click here to download the 2016 China Investment in US Real Estate Report</a>
+                    <?php /* <div class="col-md-12">
+                        {{-- comment insert class on UL  --}}
+                        {{-- use class bullet-style only if you want one col  --}}
+                        {{-- use class bullet-style__col-2 to enable 2cols --}}
+                        {{-- use class bullet-style__col-3 to enable 3cols --}}
+                        {{-- bullet-style--uppercase the strong tag will capitalize --}}
+                        <ul class="bullet-style bullet-style__col-2 bullet-style--uppercase">
+                            <li>
+                               <strong>2017 Student Debt and Housing Report, by Better Homes and Gardens </strong> <br>
+                               <a href="#">Click here to download the 2017 Student Debt Report</a>
+                            </li>
+                            <li>
+                                <strong>2016 State of Asia America Report </strong> <br>
+                                <a href="https://www.areaa.org/wp-content/uploads/2013/10/DRAFT-saa16-120816.pdf" target="blank">Click here to download the 2016 State of Asia America Report</a>
+                            </li>
+                            <li> <strong>2016 Chinese Investment in US Real Estate, by Asia Society </strong>  <br>
+                                <a href="http://asiasociety.org/files/uploads/66files/Asia%20Society%20Breaking%20Ground%20Complete%20Final.pdf" target="blank">Click here to download the 2016 China Investment in US Real Estate Report</a>
 
-                                </li>
-                                <li>
-                                    <strong>2015 State of Asia America Report </strong>  <br>
-                                    <a href="https://www.areaa.org/wp-content/uploads/2013/10/SAA15.pdf" target="blank">Click here to download the 2015 State of Asia America Housing Report</a>
-                                </li>
-                                
-                            </ul>
+                            </li>
+                            <li>
+                                <strong>2015 State of Asia America Report </strong>  <br>
+                                <a href="https://www.areaa.org/wp-content/uploads/2013/10/SAA15.pdf" target="blank">Click here to download the 2015 State of Asia America Housing Report</a>
+                            </li>
+                        </ul>
+                    </div> */ ?>
 
-
-                    </div>
-
-                 
-              
                 </div>
             </div> {{-- end of default-content--row --}}
         </section> {{-- end of default-content --}}
-
 
 
           {{-- story section  --}}
@@ -114,12 +108,14 @@
             <div class="container-max">
                 <div class="row">
 
-
                     <div class="col-md-8">
 
-                            <h2>2018-19 State of Asia America Report</h2>
-                            <p>Our annual compilation of data relating to AAPI housing, demographics, education, income, policy, and more is now available.</p>
+                    <h2>{{ section('Section 2.data.first.title') }}</h2>
 
+                    <p>{!! section('Section 2.data.first.content') !!}</p>
+
+                            <?php /* <h2>2018-19 State of Asia America Report</h2>
+                            <p>Our annual compilation of data relating to AAPI housing, demographics, education, income, policy, and more is now available.</p>
                             {{-- comment insert class on UL  --}}
                             {{-- use class bullet-style only if you want one col  --}}
                             {{-- use class bullet-style__col-2 to enable 2cols --}}
@@ -135,15 +131,15 @@
                                     <a href="https://www.dropbox.com/s/nca8s4ky353qekt/SAA15.pdf?dl=0" target="blank"> Click here to download</a> </li>
                                 </li>
                             </ul>
-
                             <div class="btn-group">
                                 <a href="#" class="btn btn btn--secondary">Download</a>
-                           </div>
+                            </div> */ ?>
 
                     </div>
 
                     <div class="col-md-4">
-                        <img src="{{ url('public/images/area-cover.jpg') }}" alt="chapter title" class="img-fluid">
+                        <img src="{{ section('Section 2.data.first.image') }}" alt="{{ section('Section 2.data.first.alt_text') }}">
+                        <!-- <img src="{{ url('public/images/area-cover.jpg') }}" alt="chapter title" class="img-fluid"> -->
                     </div>
 
             
