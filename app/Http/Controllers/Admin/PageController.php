@@ -372,7 +372,9 @@ class PageController extends Controller
 
             $db_other_sponsors = json_decode($page->other_content);
             for($counter = 0; $counter < count($request->sponsor_category); $counter++) {
-                if ($request->sponsor_category[$counter]!='') {
+
+                // if ($request->sponsor_category[$counter]!='') {
+                if ($request->chapter_link[$counter]!='') {
 
                     array_push($other_sponsors, [
                         'badge_icon' => $request->sponsor_category[$counter],
@@ -388,7 +390,8 @@ class PageController extends Controller
             // $file_path = '/uploads/page_section_images';
             $images = $request->file('chapter_sponsor_image');
             for($counter = 0; $counter < count($request->sponsor_category); $counter++) {
-                if ($request->sponsor_category[$counter]!='') {
+                // if ($request->sponsor_category[$counter]!='') {
+                if ($request->chapter_link[$counter]!='') {
                     if (isset($images[$counter]) && $images[$counter] != "" ) {
                         $file_upload_path = $this->pageRepository->uploadFilePageSection($images[$counter]);
                         $other_sponsors[$counter]['image'] = $file_upload_path;

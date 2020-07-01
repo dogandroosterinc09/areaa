@@ -3,7 +3,7 @@
                         <h4 style="border-left: 3px solid #61dbd5; padding-left: 8px; margin-bottom: 20px;"><input type='button' value='Add Sponsor' id='addButton' class="btn btn-sm btn-primary"></h4>
                         <div class="form-group">
                             <div class="col-md-10">
-                                <small>* By selecting <strong>No Category</strong> - Sponsor will be removed when Saved.</small>
+                                <!-- <small>* By selecting <strong>No Category</strong> - Sponsor will be removed when Saved.</small> -->
                                 {{-- <input type='button' value='Add Sponsor' id='addButton' class="btn btn-sm btn-primary"> --}}
                            </div>
                         </div>
@@ -34,6 +34,7 @@
                 @php($other_sponsors = json_decode($page->other_content))
 
                 @for($counter = 0; $counter < count($other_sponsors); $counter++)
+                    <div id="sponsor-row{{$counter}}">
                     
                     <div class="row">
                         <div class="col-md-8 col-md-offset-2">
@@ -81,7 +82,19 @@
                     @include('admin.components.input-field', ['label' => 'Alt Text', 'field' => 'chapter_alt_text[]', 'value' => isset($other_sponsors[$counter]->image_alt) ? $other_sponsors[$counter]->image_alt : ''])
                     @include('admin.components.input-field', ['label' => 'Link', 'field' => 'chapter_link[]', 'value' => isset($other_sponsors[$counter]->link) ? $other_sponsors[$counter]->link : ''])
 
-                    {{-- <div class="row">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2">
+                            <div class="form-group">
+                                <label class="col-md-2 control-label" for="delete">&nbsp;</label>
+                                <div class="col-md-10">
+                                    <input type="button" name="hide" id="remove{{$counter}}" onclick="$('#sponsor-row'+{{$counter}}).remove();" value="Remove{{--$counter--}}">
+                               </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    {{-- <!-- <div class="row">
                         <div class="col-md-3 col-md-offset-3">
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="chapter_alt_text[]">Alt Text</label>
@@ -99,7 +112,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div> --}}
+                    </div> --> --}}
 
 
 
@@ -108,6 +121,7 @@
                         <hr>
                     </div>
                     @endif 
+                </div>
                 @endfor
 
                 <div id="TextBoxesGroup">
