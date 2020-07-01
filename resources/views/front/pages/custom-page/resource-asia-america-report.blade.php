@@ -37,7 +37,10 @@
 
                     <div class="col-md-8">
 
-                            <h2>2018-19 State of Asia America Report</h2>
+                            <h2>{{ section('Body.data.first.title') }}</h2>
+                            <p>{!! section('Body.data.first.content') !!}</p>
+
+                            <?php /* <h2>2018-19 State of Asia America Report</h2>
                             <p>Our annual compilation of data relating to AAPI housing, demographics, education, income, policy, and more is now available.</p>
 
                             {{-- comment insert class on UL  --}}
@@ -58,12 +61,12 @@
 
                             <div class="btn-group">
                                 <a href="#" class="btn btn btn--secondary">Download</a>
-                           </div>
+                            </div> */ ?>
 
                     </div>
 
                     <div class="col-md-4">
-                        <img src="{{ url('public/images/area-cover.jpg') }}" alt="chapter title" class="img-fluid">
+                        <img src="{{ section('Body.data.first.image') }}" alt="{{ section('Body.data.first.alt_text') }}">
                     </div>
 
             
