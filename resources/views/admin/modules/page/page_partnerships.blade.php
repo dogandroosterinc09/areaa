@@ -26,7 +26,7 @@
                 // $page->other_section = '[{"title":"ruby","image":"public\/uploads\/sponsor1-1587071957-1591402616.jpg","link":"chapter title"},{"title":"emerald","image":"public\/uploads\/sponsor2-1587071957.jpg","link":"chapter title"},{"title":"diamond","image":"public\/uploads\/sponsor3-1587071957.jpg","link":"chapter title"}]';
                 ?>
 
-            @if($page->other_section)
+            @if($page->other_section2)
 
                 @php($partnerships = json_decode($page->other_section2))
 
