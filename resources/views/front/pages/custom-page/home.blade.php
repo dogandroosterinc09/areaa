@@ -200,7 +200,22 @@
                         {{-- big-advertisement --}}
                         <div class="big-advertisement" data-aos="fade-up">
                             <div class="big-advertisement__slick">
+
+                            @php($partnerships = json_decode($page->other_section2))
+                            @if (empty($partnerships))
+                                <h3 class="text-danger font-weight-bold text-center w-100 my-5">No Partnership ads.</h3>
+                            @endif
+
+                            @foreach($partnerships as $partner_slide)
                                 <div class="big-advertisement__slick--item">
+                                    <a href="{{$partner_slide->link}}">
+                                        <img src="{{$partner_slide->image}}{{-- asset('public/images/advertisement-big.jpg') --}}" alt="ads">
+                                     </a>
+                                </div>
+                            @endforeach
+
+                            {{--
+                                <!-- <div class="big-advertisement__slick--item">
                                     <a href="#">
                                         <img src="{{ asset('public/images/advertisement-big.jpg') }}" alt="ads">   
                                      </a>
@@ -224,7 +239,9 @@
                                     <a href="#">
                                         <img src="{{ asset('public/images/advertisement-usbank.jpg') }}" alt="usbank"> 
                                     </a>  
-                                </div>
+                                </div> -->
+                            --}}
+
                             </div>
                         </div>
                         {{-- big-advertisement --}}

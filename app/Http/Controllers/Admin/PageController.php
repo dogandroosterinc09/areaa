@@ -261,7 +261,39 @@ class PageController extends Controller
         // IF HOME PAGE 
         // - save 'Events and Campaigns' to table 'page' on field 'other_content' where 'id' = 1
         // - save 'Featured Sponsors' to table 'page' on field 'other_section' where 'id' = 1
+        // - save 'Partnerships' to table 'page' on field 'other_section2' where 'id' = 1
         if ($id==1) {
+
+            // Partnerships
+            $partnerships = array();
+
+            $other_section2 = json_decode($page->other_section2);
+            for($counter = 0; $counter < count($request->partnership_link); $counter++) {
+                if ($request->partnership_link[$counter]!='') {
+                    array_push($partnerships, [
+                        'image' => isset($request->partnership_image[$counter]) ? $request->partnership_image[$counter] : 
+                            isset($other_section2) ? (isset(($other_section2[$counter])->image) ? ($other_section2[$counter])->image : '') : '' ,
+                        'link' => $request->partnership_link[$counter]
+                    ]);
+                }
+            }
+
+            // Partnerships Image path
+            // $file_path = '/uploads/page_section_images';
+            $feat_images = $request->file('partnership_image');
+            for($counter = 0; $counter < count($request->partnership_link); $counter++) {
+                if ($request->partnership_link[$counter]!='') {
+                    if (isset($feat_images[$counter]) && $feat_images[$counter] != "" ) {
+                        $file_upload_path = $this->pageRepository->uploadFilePageSection($feat_images[$counter]);
+                        $partnerships[$counter]['image'] = $file_upload_path;
+                    }
+                }
+            }
+
+            $page->other_section2 = $partnerships;
+            $page->save();
+            // print_r($partnerships);
+            // die('ln297');
 
             // Featured Sponsors
             $feat_sponsors = array();
@@ -331,8 +363,6 @@ class PageController extends Controller
             $page->save();
             // print_r($events);
             // die('ln294');
-
-
         }
         // die('ln296');
 

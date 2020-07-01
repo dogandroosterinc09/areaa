@@ -38,6 +38,7 @@
                 @if($page->id==1 && !empty($page->other_content))
                     @include('admin.modules.page.page_featured_sponsors')
                     @include('admin.modules.page.page_events_campaigns')
+                    @include('admin.modules.page.page_partnerships')
                 @endif
 
 
@@ -233,6 +234,39 @@
             '</div>');
 
             newFeatSponsorDiv.appendTo("#featSponsorGroup");
+
+            counter++;
+        });
+
+        // Partnerships Slide
+        $("#addPartnership").click(function () {
+
+            var newPartnershipDiv = $(document.createElement('div'))
+            .attr("id", 'TextBoxDiv' + counter);
+
+            newPartnershipDiv.after().html('<div class="row" id="PartnershipDiv">'+
+                '<div class="col-md-8 col-md-offset-2">'+
+                '<div class="form-group">'+
+                    '<label class="col-md-2 control-label" for="event">Image</label>'+
+                    '<div class="col-md-10">'+
+                        '<div class="input-group">'+
+                            '<label class="input-group-btn">'+
+                            '<span class="btn btn-primary">'+
+                                'Choose File <input type="file" name="partnership_image[]" style="display: none;" onchange="document.getElementById(\'image_partnership'+counter+'\').value =this.files[0].name">'+
+                            '</span>'+
+                            '</label>'+
+                            '<input type="text" class="form-control" id="image_partnership'+counter+'" readonly>'+
+                        '</div>'+
+                    '</div>'+
+                    '<label class="col-md-2 control-label" for="event">Link</label>'+
+                    '<div class="col-md-10">'+
+                        '<input type="text" class="form-control" name="partnership_link[]" value="">'+
+                    '</div>'+
+                '</div>'+
+                '</div>'+
+            '</div>');
+
+            newPartnershipDiv.appendTo("#PartnershipGroup");
 
             counter++;
         });

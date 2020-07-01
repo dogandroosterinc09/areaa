@@ -96,10 +96,24 @@
                     </div>
                     <div class="col-md-5 footer__item">
 
-                         {{-- big-advertisement --}}
-                         <div class="small-advertisement ">
+                        {{-- big-advertisement --}}
+                        <div class="small-advertisement ">
                             <div class="small-advertisement__slick">
+
+                            @if (empty($partnerships))
+                                <h3 class="text-danger font-weight-bold text-center w-100 my-5">No Partnership ads.</h3>
+                            @endif
+
+                            @foreach($partnerships as $partner_slide)
                                 <div class="small-advertisement__slick--item">
+                                    <a href="{{$partner_slide->link}}" target="_blank">
+                                        <img src="{{$partner_slide->image}}{{-- asset('public/images/advertisement-big.jpg') --}}" alt="ads">
+                                     </a>
+                                </div>
+                            @endforeach
+
+                                {{--
+                                <!-- <div class="small-advertisement__slick--item">
                                     <a href="#" target="_blank">
                                         <img src="{{ asset('public/images/advertisement-big.jpg') }}" alt="areaa run with us"> 
                                     </a>  
@@ -123,7 +137,8 @@
                                     <a href="#">
                                         <img src="{{ asset('public/images/advertisement-usbank.jpg') }}" alt="usbank"> 
                                     </a>  
-                                </div>
+                                </div> -->
+                                --}}
                             </div>
                         </div>
                         {{-- big-advertisement --}}
