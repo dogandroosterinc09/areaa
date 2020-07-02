@@ -33,7 +33,23 @@
         <section class="faq-navigation" data-aos="fade-up">
             <div class="container-max">
                 <div class="row">
-                    <div class="col-lg-4 text-center">
+
+                    @foreach( section('FAQ Contact Details.data') as $data ) 
+                        <div class="col-lg-4 text-center">
+                            <div class="navigation-icon__item">
+                                <div class="navigation-icon__icon">
+                                   <div class="navigation-icon__icon--object menu-icon menu-icon--{{ $data->icon }}"></div>
+                                </div>
+                                <div class="navigation-icon__title">
+                                    <h3>{{ $data->title }}</h3>
+                                    <p>{{ $data->content }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+
+
+                    <?php /* <div class="col-lg-4 text-center">
                         <div class="navigation-icon__item">
                             <div class="navigation-icon__icon">
                                <div class="navigation-icon__icon--object menu-icon menu-icon--location">
@@ -77,8 +93,7 @@
                                 <!-- <p>Email: <a href="mailto:contact@areaa.org">contact@areaa.org</a></p> -->
                             </div>
                         </div>
-                    </div>
-
+                    </div> */ ?>
 
                 </div>
             </div>

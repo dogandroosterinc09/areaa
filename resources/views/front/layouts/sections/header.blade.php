@@ -180,6 +180,9 @@
                     </ul>
                 </nav>
             </div>
+            <!-- Line 183 -->
+            {{-- print_r(auth()->user()) --}}
+
             <!-- ending of row  -->
         </div>
         <!-- ending of container  -->
