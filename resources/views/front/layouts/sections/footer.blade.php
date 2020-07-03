@@ -100,6 +100,8 @@
                         <div class="small-advertisement ">
                             <div class="small-advertisement__slick">
 
+                            @php($home = \App\Models\Page::findOrFail(1))
+                            @php($partnerships = json_decode($home->other_section2))
                             @if (empty($partnerships))
                                 <h3 class="text-danger font-weight-bold text-center w-100 my-5">No Partnership ads.</h3>
                             @else

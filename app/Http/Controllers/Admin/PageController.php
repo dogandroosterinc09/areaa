@@ -266,6 +266,202 @@ class PageController extends Controller
 
             // Partnerships
             $partnerships = array();
+            $other_section2 = json_decode($page->other_section2);
+            // Partnerships Image path
+            // $file_path = '/uploads/page_section_images';
+            $feat_images = $request->file('partnership_image');
+            for($counter = 0; $counter < count($request->partnership_link); $counter++) {
+
+                if ($request->partnership_link[$counter]!='') {
+                    $image = '';
+                    if (isset($request->partnership_id[$counter])) {
+                        $partnership_id = $request->partnership_id[$counter];
+
+                        $image = (isset($request->partnership_image[$counter]))? $this->pageRepository->uploadFilePageSection($feat_images[$counter]) : ($other_section2[$partnership_id])->image;
+
+                        // if (isset($request->partnership_image[$counter])) {
+                        //     // echo 'upload NEW image: '.$partnership_id.' with new img:'.$request->partnership_image[$counter].'<br>';
+                        //     $file_upload_path = $this->pageRepository->uploadFilePageSection($feat_images[$counter]);
+                        //     $image = $file_upload_path;
+                        // } else {
+                        //     // echo 'keep old image: '.($other_section2[$partnership_id])->image.' for partnership '.$partnership_id.'<br>';
+                        //     $image = ($other_section2[$partnership_id])->image;
+                        // }
+                    } else {
+                        if (isset($partnership_id)) {$partnership_id++;} else {$partnership_id = 0;}
+                        $image = $this->pageRepository->uploadFilePageSection($feat_images[$counter]);
+                    }
+
+                    array_push($partnerships, [
+                        'image' => $image,
+                        'link' => $request->partnership_link[$counter]
+                    ]);
+                }
+            }
+
+            // print_r($partnerships);
+            $page->other_section2 = $partnerships;
+            $page->save();
+            // die('ln297');
+
+
+            // Featured Sponsors
+            $feat_sponsors = array();
+            $other_section = json_decode($page->other_section);
+            // Featured Sponsors Image path
+            // $file_path = '/uploads/page_section_images';
+            $feat_images = $request->file('feat_sponsor_image');
+            for($counter = 0; $counter < count($request->feat_sponsor_link); $counter++) {
+
+                if ($request->feat_sponsor_title[$counter]!='') {
+                    $image = '';
+                    if (isset($request->feat_sponsor_id[$counter])) {
+                        $feat_sponsor_id = $request->feat_sponsor_id[$counter];
+
+                        $image = (isset($request->feat_sponsor_image[$counter]))? $this->pageRepository->uploadFilePageSection($feat_images[$counter]) : ($other_section[$feat_sponsor_id])->image;
+                    } else {
+                        if (isset($feat_sponsor_id)) {$feat_sponsor_id++;} else {$feat_sponsor_id = 0;}
+                        $image = $this->pageRepository->uploadFilePageSection($feat_images[$counter]);
+                    }
+
+                    array_push($feat_sponsors, [
+                        'title' => $request->feat_sponsor_title[$counter],
+                        'image' => $image,
+                        'link' => $request->feat_sponsor_link[$counter]
+                    ]);
+                }
+            }
+
+            // print_r($feat_sponsors);
+            $page->other_section = $feat_sponsors;
+            $page->save();
+            // die('ln297');
+
+
+            // Events and Campaigns
+            $eventsArray = array();
+            $other_content = json_decode($page->other_content);
+            // Featured Sponsors Image path
+            // $file_path = '/uploads/page_section_images';
+            $feat_images = $request->file('event_image');
+            for($counter = 0; $counter < count($request->event_title); $counter++) {
+
+                if ($request->event_title[$counter]!='') {
+                    $image = '';
+                    if (isset($request->event_id[$counter])) {
+                        $event_id = $request->event_id[$counter];
+
+                        $image = (isset($request->event_image[$counter]))? $this->pageRepository->uploadFilePageSection($feat_images[$counter]) : ($other_content[$event_id])->image;
+                    } else {
+                        if (isset($event_id)) {$event_id++;} else {$event_id = 0;}
+                        $image = $this->pageRepository->uploadFilePageSection($feat_images[$counter]);
+                    }
+
+                    array_push($eventsArray, [
+                        'title' => $request->event_title[$counter],
+                        'image' => $image,
+                        'link' => $request->event_link[$counter]
+                    ]);
+                }
+            }
+
+            // print_r($eventsArray);
+            $page->other_content = $eventsArray;
+            $page->save();
+            // die('ln297');
+
+        }
+        // die('ln296');
+
+        // IF Sponsors page - save to sponsors to table 'page' on field 'other_content' where 'id' = 52
+        if ($id==52) {
+
+            $sponsorArray = array();
+
+            $db_other_sponsors = json_decode($page->other_content);
+            $images = $request->file('chapter_sponsor_image');
+            for($counter = 0; $counter < count($request->sponsor_category); $counter++) {
+                // echo $request->sponsor_id[$counter].'<br>';
+                if ($request->chapter_alt_text[$counter]!='') {
+                    $image = '';
+                    if (isset($request->sponsor_id[$counter])) {
+                        $sponsor_id = $request->sponsor_id[$counter];
+                        // echo 'keep current sponsor: '.$sponsor_id.' '.($db_other_sponsors[$sponsor_id])->image_alt.'<br>';
+                        echo 'sponsor: '.$sponsor_id.' '.$request->chapter_alt_text[$counter].'<br>';
+                        if (isset($request->chapter_sponsor_image[$counter])) {
+                            echo 'upload NEW image: '.$sponsor_id.' with new img:'.$request->chapter_sponsor_image[$counter].'<br>';
+                            $file_upload_path = $this->pageRepository->uploadFilePageSection($images[$counter]);
+                            $image = $file_upload_path;
+                        } else {
+                            echo 'keep old image: '.($db_other_sponsors[$sponsor_id])->image.' for sponsor '.$sponsor_id.'<br>';
+                            $image = ($db_other_sponsors[$sponsor_id])->image;
+                        }
+                    } else {
+                        if (isset($sponsor_id)) {$sponsor_id++;} else {$sponsor_id = 0;}
+                        $image = $this->pageRepository->uploadFilePageSection($images[$counter]);
+                        echo 'upload new sponsor: '.$sponsor_id.' '.$request->chapter_alt_text[$counter].'<br>';
+                    }
+                    echo 'sponsor_id: '.$sponsor_id.'<br>';
+                    echo '<hr>';
+
+                    array_push($sponsorArray, [
+                        'badge_icon' => $request->sponsor_category[$counter],
+                        'image' => $image,
+                        'image_alt' => $request->chapter_alt_text[$counter],
+                        'link' => $request->chapter_link[$counter]
+                    ]);
+                }
+            }
+
+            // print_r($sponsorArray);
+            // echo '<br>-------<br>';
+            $page->other_content = $sponsorArray;
+            $page->save();
+            // die('');
+
+            // $other_sponsors = array();
+
+            // $db_other_sponsors = json_decode($page->other_content);
+            // for($counter = 0; $counter < count($request->sponsor_category); $counter++) {
+                // if ($request->sponsor_category[$counter]!='') {
+                // if ($request->chapter_link[$counter]!='') {
+
+                //     array_push($other_sponsors, [
+                //         'badge_icon' => $request->sponsor_category[$counter],
+                //         'image' => isset($request->chapter_sponsor_image[$counter]) ? $request->chapter_sponsor_image[$counter] : 
+                //             isset($db_other_sponsors) ? (isset(($db_other_sponsors[$counter])->image) ? ($db_other_sponsors[$counter])->image : '') : '' ,
+                //         'image_alt' => $request->chapter_alt_text[$counter],
+                //         'link' => $request->chapter_link[$counter]
+                //     ]);
+                // }
+            // }
+            // print_r($other_sponsors);
+            // echo '<br>-------<br>';
+
+            // // Sponsors Image path
+            // // $file_path = '/uploads/page_section_images';
+            // $images = $request->file('chapter_sponsor_image');
+            // for($counter = 0; $counter < count($request->sponsor_category); $counter++) {
+            //     // if ($request->sponsor_category[$counter]!='') {
+            //     if ($request->chapter_link[$counter]!='') {
+            //         if (isset($images[$counter]) && $images[$counter] != "" ) {
+            //             $file_upload_path = $this->pageRepository->uploadFilePageSection($images[$counter]);
+            //             $other_sponsors[$counter]['image'] = $file_upload_path;
+            //         }
+            //     }
+            // }
+            // print_r($other_sponsors);
+
+            // $page->other_content = $other_sponsors;
+            // $page->save();
+            // print_r($other_sponsors);
+            // die('ln263');
+        }
+
+        /* if ($id==1) {
+
+            // Partnerships
+            $partnerships = array();
 
             $other_section2 = json_decode($page->other_section2);
             for($counter = 0; $counter < count($request->partnership_link); $counter++) {
@@ -363,98 +559,7 @@ class PageController extends Controller
             $page->save();
             // print_r($events);
             // die('ln294');
-        }
-        // die('ln296');
-
-        // IF Sponsors page - save to sponsors to table 'page' on field 'other_content' where 'id' = 52
-        if ($id==52) {
-            $other_sponsors = array();
-
-            $db_other_sponsors = json_decode($page->other_content);
-            for($counter = 0; $counter < count($request->sponsor_category); $counter++) {
-
-                // if ($request->sponsor_category[$counter]!='') {
-                if ($request->chapter_link[$counter]!='') {
-
-                    array_push($other_sponsors, [
-                        'badge_icon' => $request->sponsor_category[$counter],
-                        'image' => isset($request->chapter_sponsor_image[$counter]) ? $request->chapter_sponsor_image[$counter] : 
-                            isset($db_other_sponsors) ? (isset(($db_other_sponsors[$counter])->image) ? ($db_other_sponsors[$counter])->image : '') : '' ,
-                        'image_alt' => $request->chapter_alt_text[$counter],
-                        'link' => $request->chapter_link[$counter]
-                    ]);
-                }
-            }
-
-            // Sponsors Image path
-            // $file_path = '/uploads/page_section_images';
-            $images = $request->file('chapter_sponsor_image');
-            for($counter = 0; $counter < count($request->sponsor_category); $counter++) {
-                // if ($request->sponsor_category[$counter]!='') {
-                if ($request->chapter_link[$counter]!='') {
-                    if (isset($images[$counter]) && $images[$counter] != "" ) {
-                        $file_upload_path = $this->pageRepository->uploadFilePageSection($images[$counter]);
-                        $other_sponsors[$counter]['image'] = $file_upload_path;
-                    }
-                }
-            }
-
-            $page->other_content = $other_sponsors;
-            $page->save();
-            // print_r($other_sponsors);
-            // die('ln263');
-        }
-
-
-
-        /*
-        // IF Sponsors page - save to table 'sections' on field 'value' where section 'id' = 28
-        if ($id==52) {
-            echo 'sponsors page';
-    
-            $sponsors = \App\Models\Section::findOrFail(28);
-            // Sponsors
-            $other_sponsors = array();
-
-            // $db_other_sponsors = json_decode($chapter_home['other_sponsors']);
-            $db_other_sponsors = json_decode($sponsors->value);
-            for($counter = 0; $counter < count($request->sponsor_category); $counter++) {
-                if ($request->sponsor_category[$counter]!='') {
-
-                    array_push($other_sponsors, [
-                        'badge_icon' => $request->sponsor_category[$counter],
-                        'image' => isset($request->chapter_sponsor_image[$counter]) ? $request->chapter_sponsor_image[$counter] : 
-                            isset($db_other_sponsors) ? (isset(($db_other_sponsors[$counter])->image) ? ($db_other_sponsors[$counter])->image : '') : '' ,
-                        'image_alt' => $request->chapter_alt_text[$counter]
-                    ]);
-                }
-            }
-
-            // print_r($other_sponsors);
-            // die('ln244');
-            // $sponsors->value = $other_sponsors;
-            // $sponsors->save();
-
-            // Other Sponsors Image        
-            // $file_path = '/uploads/page_section_images';
-            $images = $request->file('chapter_sponsor_image');
-            for($counter = 0; $counter < count($request->sponsor_category); $counter++) {
-                if ($request->sponsor_category[$counter]!='') {
-                    if (isset($images[$counter]) && $images[$counter] != "" ) {
-                        $file_upload_path = $this->pageRepository->uploadFilePageSection($images[$counter]);
-                        
-                        $other_sponsors[$counter]['image'] = $file_upload_path;
-                    }
-                }
-            }
-
-            $sponsors->value = $other_sponsors;
-            $sponsors->save();
-            print_r($other_sponsors);
-            // die('ln263');
-        }
-        */
-
+        } */
 
         return redirect()->route('admin.pages.index')->with('flash_message', [
             'title' => '',

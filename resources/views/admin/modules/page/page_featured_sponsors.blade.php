@@ -74,7 +74,9 @@
                     <div class="row">
                         <div class="col-md-8 col-md-offset-2">
                             <div class="form-group">
-                                <label class="col-md-2 control-label" for="delete">&nbsp;</label>
+                                <label class="col-md-2 control-label" for="delete">&nbsp;
+                                    <input type="hidden" name="feat_sponsor_id[]" value="{{$counter}}">
+                                </label>
                                 <div class="col-md-10">
                                     <input type="button" name="hide" id="remove{{$counter}}" onclick="$('#feat_sponsor-row'+{{$counter}}).remove();" value="Remove{{--$counter--}}">
                                </div>
