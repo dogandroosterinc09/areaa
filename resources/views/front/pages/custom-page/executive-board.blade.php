@@ -26,7 +26,7 @@
             <div class="container-max">
                 <div class="col-lg-12">
                     <div class="board-thumbnail">
-                        @php($executives = \App\Models\BoardMember::executives()->orderBy('order')->get())
+                        @php($executives = \App\Models\BoardMember::executives()->where('is_active',1)->orderBy('order')->get())
                         @if($executives->isEmpty())
                             <h3 class="text-danger font-weight-bold text-center w-100 my-5">No Executive Members.</h3>
                         @endif

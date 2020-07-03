@@ -25,6 +25,9 @@ class BoardMemberController extends Controller {
         $page = $this->pageRepository->getActivePageBySlug('board-detail');
 
         $data = $this->getBoardMember($slug, self::TYPE_DELEGATE);
+        if ($data['boardMember']->is_active==0) {
+            abort('404', '404');
+        }
 
         $boardMember = $data['boardMember'];
         $previousBoardMember = $data['previousBoardMember'];
@@ -37,6 +40,9 @@ class BoardMemberController extends Controller {
         $page = $this->pageRepository->getActivePageBySlug('board-detail');
 
         $data = $this->getBoardMember($slug, self::TYPE_EXECUTIVE);
+        if ($data['boardMember']->is_active==0) {
+            abort('404', '404');
+        }
 
         $boardMember = $data['boardMember'];
         $previousBoardMember = $data['previousBoardMember'];
@@ -60,6 +66,7 @@ class BoardMemberController extends Controller {
     public function nextBoardMember($board_member, $type) {
         return $board_member->where('order', '>', $board_member->order)
                 ->where('type','=', $type)
+                ->where('is_active',1)
                 ->orderBy('order')
                 ->get()->first();
     }
@@ -67,6 +74,7 @@ class BoardMemberController extends Controller {
     public function previousBoardMember($board_member, $type) {
         return $board_member->where('order', '<', $board_member->order)
                 ->where('type','=', $type)
+                ->where('is_active',1)
                 ->orderBy('order')
                 ->get()->last();
     }

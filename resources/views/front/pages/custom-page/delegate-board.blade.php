@@ -35,7 +35,7 @@
                 <div class="col-lg-12">
 
                     <div class="board-thumbnail row">
-                        @php($delegates = \App\Models\BoardMember::delegates()->orderBy('order')->get())
+                        @php($delegates = \App\Models\BoardMember::delegates()->where('is_active',1)->orderBy('order')->get())
                         @if($delegates->isEmpty())
                             <h3 class="text-danger font-weight-bold text-center w-100 my-5">No Delegates Members.</h3>
                         @endif
