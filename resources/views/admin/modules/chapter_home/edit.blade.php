@@ -250,8 +250,8 @@
 
                 @php($other_sponsors = json_decode($chapter_home->other_sponsors))
 
+                @if($other_sponsors)
                 @for($counter = 0; $counter < count($other_sponsors); $counter++)
-                    
                 <div id="sponsor-row{{$counter}}">
                     <div class="row">
                         <div class="col-md-8 col-md-offset-2">
@@ -318,6 +318,7 @@
                     @endif 
                 </div>
                 @endfor
+                @endif
 
 <!--                     <div class="row">
                         <div class="col-md-8 col-md-offset-2">
