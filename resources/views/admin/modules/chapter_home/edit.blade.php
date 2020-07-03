@@ -252,6 +252,7 @@
 
                 @for($counter = 0; $counter < count($other_sponsors); $counter++)
                     
+                <div id="sponsor-row{{$counter}}">
                     <div class="row">
                         <div class="col-md-8 col-md-offset-2">
                             <div class="form-group">
@@ -295,12 +296,27 @@
                         </div>
                     </div>
                     @include('admin.components.input-field', ['label' => 'Alt Text', 'field' => 'chapter_alt_text[]', 'value' => isset($other_sponsors[$counter]->image_alt) ? $other_sponsors[$counter]->image_alt : ''])
+                    @include('admin.components.input-field', ['label' => 'Link', 'field' => 'chapter_link[]', 'value' => isset($other_sponsors[$counter]->link) ? $other_sponsors[$counter]->link : ''])
+
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2">
+                            <div class="form-group">
+                                <label class="col-md-2 control-label" for="delete">&nbsp;
+                                    <input type="hidden" name="sponsor_id[]" value="{{$counter}}">
+                                </label>
+                                <div class="col-md-10">
+                                    <input type="button" name="hide" id="remove{{$counter}}" onclick="$('#sponsor-row'+{{$counter}}).remove();" value="Remove{{--$counter--}}">
+                               </div>
+                            </div>
+                        </div>
+                    </div>
 
                     @if (!($counter == count($other_sponsors)))
                     <div class="col-md-8 col-md-offset-2">
                         <hr>
                     </div>
                     @endif 
+                </div>
                 @endfor
 
 <!--                     <div class="row">
@@ -354,12 +370,15 @@
                                     <input type="text" class="form-control" name="chapter_alt_text[]" value="{{ $chapter_home->chapter_sponsor }}">
                                 </div>
 
+                                <label class="col-md-2 control-label" for="chapter_sponsor">Link</label>
+                                <div class="col-md-10">
+                                    <input type="text" class="form-control" name="chapter_link[]" value="" placeholder="Enter Link..">
+                                </div>
+
                             </div>
                         </div>
 
                     </div>
-
-
 
                 </div>
 
@@ -431,6 +450,10 @@ $(document).ready(function(){
                             '<label class="col-md-2 control-label" for="chapter_sponsor">Alt Text</label>'+
                             '<div class="col-md-10">'+
                                 '<input type="text" class="form-control" name="chapter_alt_text[]" value="{{ $chapter_home->chapter_sponsor }}">'+
+                            '</div>'+
+                            '<label class="col-md-2 control-label" for="chapter_sponsor">Link</label>'+
+                            '<div class="col-md-10">'+
+                                '<input type="text" class="form-control" name="chapter_link[]" value="" placeholder="Enter Link..">'+
                             '</div>'+
                         '</div>'+
                         '</div>'+

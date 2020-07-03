@@ -109,30 +109,79 @@ class ChapterHomeController extends Controller
 //  {"badge_icon":"pearl","image":"public\/uploads\/sponsor11-1587073636.jpg","image_alt":"chapter title"},
 //  {"badge_icon":"diamond","image":"public\/uploads\/sponsor12-1587073636.jpg","image_alt":"chapter title"}]
 
-        //Other Sponsors
+
+        // Other Sponsors
         $other_sponsors = array();
 
         $db_other_sponsors = json_decode($chapter_home['other_sponsors']);
-// die('>> '.count($request->sponsor_category));
+        $images = $request->file('chapter_sponsor_image');
         for($counter = 0; $counter < count($request->sponsor_category); $counter++) {
-            if ($request->sponsor_category[$counter]!='') {
+            // echo $request->sponsor_id[$counter].'<br>';
+            if ($request->chapter_alt_text[$counter]!='') {
+                $image = '';
+                if (isset($request->sponsor_id[$counter])) {
+                    $sponsor_id = $request->sponsor_id[$counter];
+
+                    // // echo 'keep current sponsor: '.$sponsor_id.' '.($db_other_sponsors[$sponsor_id])->image_alt.'<br>';
+                    // echo 'sponsor: '.$sponsor_id.' '.$request->chapter_alt_text[$counter].'<br>';
+                    // if (isset($request->chapter_sponsor_image[$counter])) {
+                    //     echo 'upload NEW image: '.$sponsor_id.' with new img:'.$request->chapter_sponsor_image[$counter].'<br>';
+                    //     $file_upload_path = $this->upload($images[$counter]);
+                    //     $image = $file_upload_path;
+                    // } else {
+                    //     echo 'keep old image: '.($db_other_sponsors[$sponsor_id])->image.' for sponsor '.$sponsor_id.'<br>';
+                    //     $image = ($db_other_sponsors[$sponsor_id])->image;
+                    // }
+
+                    $image = (isset($request->chapter_sponsor_image[$counter]))? $this->upload($images[$counter]) : ($db_other_sponsors[$sponsor_id])->image;
+
+                } else {
+                    if (isset($sponsor_id)) {$sponsor_id++;} else {$sponsor_id = 0;}
+                    $image = $this->upload($images[$counter]);
+                    echo 'upload new sponsor: '.$sponsor_id.' '.$request->chapter_alt_text[$counter].'<br>';
+                }
+                echo 'sponsor_id: '.$sponsor_id.'<br>';
+                echo '<hr>';
+
                 array_push($other_sponsors, [
                     'badge_icon' => $request->sponsor_category[$counter],
-                    'image' => isset($request->chapter_sponsor_image[$counter]) ? $request->chapter_sponsor_image[$counter] : 
-                        isset($db_other_sponsors) ? (isset(($db_other_sponsors[$counter])->image) ? ($db_other_sponsors[$counter])->image : '') : '' ,
-                    'image_alt' => $request->chapter_alt_text[$counter]
+                    'image' => $image,
+                    'image_alt' => $request->chapter_alt_text[$counter],
+                    'link' => $request->chapter_link[$counter]
                 ]);
             }
         }
 
+        // // print_r($other_sponsors);
+        // // echo '<br>-------<br>';
+        // $page->other_content = $other_sponsors;
+        // $page->save();
+
+
+
+        // //Other Sponsors
+        // $other_sponsors = array();
+        // $db_other_sponsors = json_decode($chapter_home['other_sponsors']);
+        // // die('>> '.count($request->sponsor_category));
+        // for($counter = 0; $counter < count($request->sponsor_category); $counter++) {
+        //     if ($request->sponsor_category[$counter]!='') {
+        //         array_push($other_sponsors, [
+        //             'badge_icon' => $request->sponsor_category[$counter],
+        //             'image' => isset($request->chapter_sponsor_image[$counter]) ? $request->chapter_sponsor_image[$counter] : 
+        //                 isset($db_other_sponsors) ? (isset(($db_other_sponsors[$counter])->image) ? ($db_other_sponsors[$counter])->image : '') : '' ,
+        //             'image_alt' => $request->chapter_alt_text[$counter]
+        //         ]);
+        //     }
+        // }
         // print_r($other_sponsors);
-// die('Ln 129');
+        // die('Ln 129');
 
         $chapter_home->fill(array_merge($request->all()), [
             'top_sponsor' => $top_sponsor,
             'other_sponsors' => $other_sponsors
         ])->save();
 
+        $chapter_home->fill(['other_sponsors'=>$other_sponsors])->save();        
         // //Other Sponsors
         // $other_sponsors = array();
 
@@ -185,16 +234,16 @@ class ChapterHomeController extends Controller
             $chapter_home->fill(['top_sponsor'=>json_encode($top_sponsor)])->save();
         }
 
-        //Other Sponsors Image        
-        $images = $request->file('chapter_sponsor_image');
-        for($counter = 0; $counter < count($request->sponsor_category); $counter++) {
-            if (isset($images[$counter]) && $images[$counter] != "" ) {
-                $file_upload_path = $this->upload($images[$counter]);
+        // //Other Sponsors Image        
+        // $images = $request->file('chapter_sponsor_image');
+        // for($counter = 0; $counter < count($request->sponsor_category); $counter++) {
+        //     if (isset($images[$counter]) && $images[$counter] != "" ) {
+        //         $file_upload_path = $this->upload($images[$counter]);
                 
-                $other_sponsors[$counter]['image'] = $file_upload_path;
-            }
-        }
-        $chapter_home->fill(['other_sponsors'=>$other_sponsors])->save();        
+        //         $other_sponsors[$counter]['image'] = $file_upload_path;
+        //     }
+        // }
+        // $chapter_home->fill(['other_sponsors'=>$other_sponsors])->save();        
 
         // //Other Sponsors Image        
         // $images = $request->file('other_sponsors_image');
