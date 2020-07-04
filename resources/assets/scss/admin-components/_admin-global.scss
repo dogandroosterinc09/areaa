@@ -8,3 +8,40 @@
         margin-left: 20px;
     }
 }
+
+.preloader.themed-background {
+    background: $color-primary;
+    background-color: $color-primary;
+}
+
+ul.sidebar-section.sidebar-themes {
+    display: none;
+}
+
+.timeline-list .active .timeline-icon,
+.form-control:focus,
+.wizard-steps span,
+.switch-primary span,
+a.list-group-item.active,
+a.list-group-item.active:hover,
+a.list-group-item.active:focus,
+.pager>li>a:hover,
+.pagination>li>a:hover,
+.chosen-container .chosen-drop,
+.chosen-container-multi .chosen-choices li.search-choice,
+.chosen-container-active .chosen-single,
+.chosen-container-active.chosen-with-drop .chosen-single,
+.chosen-container-active .chosen-choices,
+div.tagsinput span.tag,
+.themed-border,
+.select2-container.select2-container--open .select2-dropdown,
+.select2-container--default.select2-container--open .select2-selection--single,
+.select2-container--default.select2-container--open .select2-selection--multiple,
+.select2-container--default.select2-container--focus.select2-container--open .select2-selection--multiple,
+.select2-container--default.select2-container--focus .select2-selection--single {
+    border-color: $color-secondary;
+}
+
+.sidebar-nav a.active {
+    border-left: 5px solid $color-secondary;
+}
