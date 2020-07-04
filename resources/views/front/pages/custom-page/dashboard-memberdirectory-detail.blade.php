@@ -120,11 +120,13 @@
                                             <img src="{{ $member->avatar ? asset($member->avatar) : url('public/images/no-pix.jpg') }}" alt=""> 
                                         </div>
 
+                                        @if($member->user->is_alist == 1)
                                         <div class="memberdirectory-detail__year">
                                             <div class="memberdirectory-detail__badge-year">
-                                                {{ $member->membership_year }}
+                                                {{ $member->user->alist_years }}
                                             </div>
                                         </div>
+                                        @endif
 
                                         <div class="memberdirectory-detail__badge">                                            
                                             {{-- print_r($member->user) --}}

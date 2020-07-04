@@ -39,6 +39,7 @@ class User extends Authenticatable
         'is_active',
         'is_featured',
         'is_alist',
+        'alist_years',
         'is_luxury',
     ];
 

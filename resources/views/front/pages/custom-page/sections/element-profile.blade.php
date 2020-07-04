@@ -21,25 +21,22 @@
                     <a href="javascript:void(0)" class="btn btn--primary" onclick="$('input[name=avatar]').trigger('click')" style="margin-top:20px;">upload image</a>
                     <input type="file" name="avatar" style="display: none;">
                 </div>
-
+                
+                @if($profile->user->is_alist == 1) 
                 <div class="profile__year">
                     <div class="memberdirectory-detail__badge-year">
-                        {{ $profile->membership_year }}
+                        {{ $profile->user->alist_years }}
                     </div>
                 </div>
+                @endif
 
                 <div class="profile__badge">
-                    <?php
-                    $userData = \App\Models\User::findOrFail($profile->user_id);
-                    // print_r($userData);
-                    ?>
-
                     {{-- @foreach(explode(',',$profile->badges) as $badge)
                     <img src="{{ url($badge) }}" alt="" class="img-fluid">
                     @endforeach --}}
 
-                    @if($userData->is_alist == 1) <img src="{{ url('public/images/area-list.png') }}" alt="" class="img-fluid"> @endif
-                    @if($userData->is_luxury == 1) <img src="{{ url('public/images/area-lux.jpg') }}" alt=""  class="img-fluid"> @endif
+                    @if($profile->user->is_alist == 1) <img src="{{ url('public/images/area-list.png') }}" alt="" class="img-fluid"> @endif
+                    @if($profile->user->is_luxury == 1) <img src="{{ url('public/images/area-lux.jpg') }}" alt=""  class="img-fluid"> @endif
                   
                 </div>
 

@@ -135,6 +135,10 @@
                             <input type="checkbox" id="is_alist" name="is_alist" value="1" {{ Request::old('is_alist') ? : ($user->is_alist ? 'checked' : '') }}>
                             <span></span>
                         </label>
+                        Years Won
+                        <input type="text" class="form-control" id="alist_years" name="alist_years"
+                               value="{{  Request::old('alist_years') ? : $user->alist_years }}"
+                               placeholder="Enter years won..">
                     </div>
                 </div>
                 <div class="form-group">

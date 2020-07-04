@@ -255,9 +255,9 @@ class MembersController extends Controller
         ]);
 
         if ($request->get('change_password') == '1') {
-            $input = $request->only(['first_name', 'middle_name', 'last_name', 'user_name', 'email', 'is_active', 'is_featured', 'is_alist', 'is_luxury', 'password']);
+            $input = $request->only(['first_name', 'middle_name', 'last_name', 'user_name', 'email', 'is_active', 'is_featured', 'is_alist','alist_years', 'is_luxury', 'password']);
         } else {
-            $input = $request->only(['first_name', 'middle_name', 'last_name', 'user_name', 'email', 'is_active', 'is_featured', 'is_alist', 'is_luxury']);
+            $input = $request->only(['first_name', 'middle_name', 'last_name', 'user_name', 'email', 'is_active', 'is_featured', 'is_alist','alist_years', 'is_luxury']);
         }
 
         $input['is_active'] = isset($input['is_active']) ? 1 : 0;
