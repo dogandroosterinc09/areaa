@@ -338,15 +338,22 @@
                 <div class="form-group">
                     <label class="col-md-3 control-label">Is A-List?</label>
                     <div class="col-md-9">
-                        <label class="switch switch-primary">
-                            <input type="checkbox" id="is_alist" name="is_alist" value="1" 
-                            {{ Request::old('is_alist') ? (old('is_alist')==1? 'checked' : '') : ($user->is_alist ? 'checked' : '') }}>
-                            <span></span>
-                        </label> 
-                        Years won
-                        <input type="text" class="form-control" id="alist_years" name="alist_years"
-                               value="{{  Request::old('alist_years') ? : $user->alist_years }}"
-                               placeholder="Enter years won..">
+
+                        {{-- flex-display --}}
+                        <div class="flex-display">
+                            <label class="switch switch-primary">
+                                <input type="checkbox" id="is_alist" name="is_alist" value="1" 
+                                {{ Request::old('is_alist') ? (old('is_alist')==1? 'checked' : '') : ($user->is_alist ? 'checked' : '') }}>
+                                <span></span>
+                            </label> 
+                            <span class="title-block">   Years won </span>
+                            
+                            <input type="text" class="form-control" id="alist_years" name="alist_years"
+                            value="{{  Request::old('alist_years') ? : $user->alist_years }}"
+                            placeholder="Enter years won..">
+                        </div>
+                        {{-- flex-display --}}
+                     
                     </div>
                 </div>
                 <div class="form-group">

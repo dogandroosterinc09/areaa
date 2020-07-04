@@ -1,3 +1,69 @@
+.themed-background.btn--primary {
+  background: #ff8300;
+  background-color: #ff8300;
+  display: block;
+  border-radius: 0;
+}
+
+.widget-extra.themed-background {
+  background: #ff8300;
+  background-color: #ff8300;
+  display: block;
+  display: block;
+  border-radius: 0;
+}
+
+.widget-extra-full i.fa.fa-plus {
+  color: #ab1a2d;
+}
+
+.btn-group a {
+  margin: 0px 5px !important;
+  display: inline-block;
+}
+
+.btn-danger,
+.delete-contact-btn,
+.delete-page-btn {
+  background: #77777a;
+  color: #fff;
+  margin: 0;
+  display: inline-block;
+  border-radius: 3px !important;
+  -moz-border-radius: 3px !important;
+  border: 1px solid transparent;
+  transition: all 0.5s ease;
+}
+.btn-danger:hover,
+.delete-contact-btn:hover,
+.delete-page-btn:hover {
+  background: #ab1a2d;
+  border: 1px solid transparent;
+}
+
+.btn.btn-default {
+  margin: 0;
+  border-radius: 3px !important;
+  -moz-border-radius: 3px !important;
+  color: #4d4d4d;
+  border: 1px solid #77777a;
+  transition: all 0.5s ease;
+}
+.btn.btn-default i {
+  color: #4d4d4d;
+}
+
+.flex-display {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.flex-display .title-block {
+  font-weight: 600;
+  width: 120px;
+  margin-left: 20px;
+}
+
 div#login-container {
   /* background: #f99; */
   max-width: 352px;

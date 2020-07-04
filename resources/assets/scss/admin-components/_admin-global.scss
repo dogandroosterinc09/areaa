@@ -1,0 +1,9 @@
+.flex-display {
+    @include flex;
+    @include flex-align-items(center);
+    .title-block {
+        font-weight: 600;
+        width: 120px;
+        margin-left: 20px;
+    }
+}

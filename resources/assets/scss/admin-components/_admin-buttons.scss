@@ -1,0 +1,60 @@
+.themed-background {
+    &.btn {
+        &--primary {
+            background: $color-third;
+            background-color: $color-third;
+            display: block;
+            border-radius: 0;
+        }
+    }
+}
+
+.widget-extra {
+    &.themed-background {
+        background: $color-third;
+        background-color: $color-third;
+        display: block;
+        display: block;
+        border-radius: 0;
+    }
+}
+
+.widget-extra-full {
+    i.fa.fa-plus {
+        color: $color-primary;
+    }
+}
+
+.btn-group {
+    a {
+        margin: 0px 5px !important;
+        display: inline-block;
+    }
+}
+
+.btn-danger,
+.delete-contact-btn,
+.delete-page-btn {
+    background: $color-secondary;
+    color: $color-white;
+    margin: 0;
+    display: inline-block;
+    @include border-radius(3px);
+    border: 1px solid transparent;
+    @include transition(.5s);
+    &:hover {
+        background: $color-primary;
+        border: 1px solid transparent;
+    }
+}
+
+.btn.btn-default {
+    margin: 0;
+    @include border-radius(3px);
+    color: $color-dark;
+    border: 1px solid $color-gray;
+    @include transition(.5s);
+    i {
+        color: $color-dark;
+    }
+}
