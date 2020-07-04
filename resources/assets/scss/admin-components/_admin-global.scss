@@ -1,6 +1,7 @@
 .flex-display {
     @include flex;
     @include flex-align-items(center);
+    flex-wrap: inherit !important;
     .title-block {
         font-weight: 600;
         width: 120px;

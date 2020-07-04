@@ -57,6 +57,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  flex-wrap: inherit !important;
 }
 .flex-display .title-block {
   font-weight: 600;
