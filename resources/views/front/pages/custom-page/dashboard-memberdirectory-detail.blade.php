@@ -127,9 +127,13 @@
                                         </div>
 
                                         <div class="memberdirectory-detail__badge">                                            
-                                            @foreach(explode(',',$member->badges) as $badge)                                            
+                                            {{-- print_r($member->user) --}}
+                                            {{-- @foreach(explode(',',$member->badges) as $badge)                                            
                                             <img src="{{ url($badge) }}" alt="" class="img-fluid"> 
-                                            @endforeach
+                                            @endforeach --}}
+                        
+                                            @if($member->user->is_alist == 1) <img src="{{ url('public/images/area-list.png') }}" alt="" class="img-fluid"> @endif
+                                            @if($member->user->is_luxury == 1) <img src="{{ url('public/images/area-lux.jpg') }}" alt=""  class="img-fluid"> @endif
                                             <!-- <img src="{{ url('public/images/area-list.png') }}" alt="" class="img-fluid"> 
                                             <img src="{{ url('public/images/area-lux.jpg') }}" alt=""  class="img-fluid">  -->
                                         </div>
