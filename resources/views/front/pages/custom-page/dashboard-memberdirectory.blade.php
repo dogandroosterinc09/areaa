@@ -311,7 +311,7 @@
 
                                 </div>
                                 
-                                <div class="col-lg-12 text-center">
+                                {{-- <div class="col-lg-12 text-center">
                                     <nav aria-label="" class="pagination-section">
                                         <ul class="pagination">
                                           <li class="page-item {{$members->previousPageUrl() ? '' : 'disabled'}}">
@@ -337,6 +337,14 @@
                                             <span class="page-link">Next</span>
                                             @endif                                            
                                           </li>
+                                        </ul>
+                                      </nav>
+                                </div> --}}
+
+                                <div class="col-lg-12 text-center">
+                                    <nav aria-label="" class="pagination-section">
+                                        <ul class="pagination">
+                                            {{ $members->render() }}
                                         </ul>
                                       </nav>
                                 </div>

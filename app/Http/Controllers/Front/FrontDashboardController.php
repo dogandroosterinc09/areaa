@@ -133,6 +133,7 @@ class FrontDashboardController extends Controller
         // $social_media->facebook = isset($social_media->facebook) ? $social_media->facebook : '' ;
         // $social_media->instagram = isset($social_media->instagram) ? $social_media->instagram : '' ;
         // $social_media->twitter = isset($social_media->twitter) ? $social_media->twitter : '' ;
+        $members->appends($_GET)->links();
 
         return view('front.pages.custom-pages-index', compact('page', 'members', 'params', 'active'));
     }
