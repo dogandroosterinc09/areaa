@@ -87,10 +87,10 @@
                                         <div class="chapter-events-thumbnail__location"><strong>{{ $chapter_event->location_name }}</strong>
                                             {{ ($chapter_event->city!='')? ' '.$chapter_event->locationAddress : '' }}
                                         </div>
-                                        <div class="chapter-events-thumbnail__paragraph">{{$chapter_event->short_description}}
+                                        <div class="chapter-events-thumbnail__paragraph">
                                             <?php
-                                            // $trimmed = preg_replace("/>.*?</s", "><", $chapter_event->description);
-                                            // echo $trimmed;
+                                            $trimmed = preg_replace("/>.*?</s", "><", $chapter_event->description);
+                                            echo $trimmed;
                                             ?>
                                         </div>
                                         <?php /*

@@ -44,7 +44,7 @@
                         Duration
                     </th>
                     <th class="text-left">
-                        Content
+                        Short Description
                     </th>
                     <th class="text-center">
                         Date Created
@@ -62,7 +62,7 @@
                         <td class="text-left">
                             {{ optional($event->starts_at)->format('F d, Y') }} - {{ optional($event->ends_at)->format('F d, Y') }}
                         </td>
-                        <td class="text-left">{!! str_limit(strip_tags($event->description), 50) !!}</td>
+                        <td class="text-left">{{ $event->short_description }}{{-- str_limit(strip_tags($event->description), 50) --}}</td>
                         <td class="text-center">{{ $event->created_at->format('F d, Y') }}</td>
                         <td class="text-center">
                             <div class="btn-group btn-group-xs">

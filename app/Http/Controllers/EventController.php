@@ -72,6 +72,7 @@ class EventController extends Controller
         $this->validate($request, [
             'name' => 'required',
 //            'slug' => 'required|unique:events,slug,NULL,id,deleted_at,NULL',
+            'short_description' => 'required',
             'description' => 'required',
             'starts_at' => 'required',
             'ends_at' => 'required',
@@ -82,8 +83,8 @@ class EventController extends Controller
             // 'country' => 'required',
             // 'latitude' => 'required',
             // 'longitude' => 'required',
-            'amount' => 'required',
-            'amount_member' => 'required',
+            // 'amount' => 'required',
+            // 'amount_member' => 'required',
         ]);
 
         $event = $this->event->create(array_merge($request->all(), [
@@ -152,6 +153,7 @@ class EventController extends Controller
 
         $this->validate($request, [
             'name' => 'required',
+            'short_description' => 'required',
             'description' => 'required',
             'starts_at' => 'required',
             'ends_at' => 'required',
@@ -163,8 +165,8 @@ class EventController extends Controller
             // 'country' => 'required',
             // 'latitude' => 'required',
             // 'longitude' => 'required',
-            'amount' => 'required',
-            'amount_member' => 'required',
+            // 'amount' => 'required',
+            // 'amount_member' => 'required',
         ]);
 
         $event = $this->event->findOrFail($id);

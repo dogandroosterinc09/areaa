@@ -47,7 +47,7 @@
                         Duration
                     </th>
                     <th class="text-left">
-                        Short Description
+                        Content
                     </th>
                     <th class="text-center">
                         Date Created
@@ -66,7 +66,7 @@
                         <td class="text-left">
                             {{ $chapter_event->starts_at->format('F d, Y') }} - {{ optional($chapter_event->ends_at)->format('F d, Y') }}
                         </td>
-                        <td class="text-left">{{$chapter_event->short_description}}{{-- str_limit(strip_tags($chapter_event->description), 50) --}}</td>
+                        <td class="text-left">{!! str_limit(strip_tags($chapter_event->description), 50) !!}</td>
                         <td class="text-center">{{ $chapter_event->created_at->format('F d, Y') }}</td>
                         <td class="text-center">
                             <div class="btn-group btn-group-xs">

@@ -21,6 +21,7 @@ class Event extends Model
         'name',
         'slug',
         'thumbnail',
+        'short_description',
         'description',
         'starts_at',
         'ends_at',

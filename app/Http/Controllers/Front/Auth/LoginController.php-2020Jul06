@@ -59,7 +59,6 @@ class LoginController extends Controller
      */
     public function showLoginForm()
     {
-        // die('Ln62');
         $page = $this->page_repository->getActivePageBySlug('customer/login');
         if (!empty($page)) {
             $seo_meta = $this->getSeoMeta($page);
@@ -70,7 +69,6 @@ class LoginController extends Controller
 
     public function showChapterLoginForm($slug)
     {
-        // die('Ln73');
         $page = $this->page_repository->getActivePageBySlug('customer/login');
         $chapter = $this->verifyChapter($slug);
         

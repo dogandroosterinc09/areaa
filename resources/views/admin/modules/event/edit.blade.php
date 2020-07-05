@@ -27,8 +27,8 @@
                 @include('admin.components.input-field', ['label' => 'Starts At', 'type' => 'date', 'value' => $event->starts_at->format('Y-m-d')])
                 @include('admin.components.input-field', ['label' => 'Ends At', 'type' => 'date', 'value' => $event->ends_at->format('Y-m-d')])
                 @include('admin.components.input-field', ['label' => 'Time', 'value' => $event->time])
+                @include('admin.components.input-field', ['label' => 'Short Description', 'field'=>'short_description','value'=>$event->short_description])
                 @include('admin.components.editor', ['label' => 'Description', 'value' => $event->description])
-
                 @include('admin.components.heading', ['text' => 'Location'])
                 @include('admin.components.input-field', ['label' => 'Name', 'field' => 'location_name', 'value' => $event->location_name])
                 @include('admin.components.input-field', ['label' => 'City', 'value' => $event->city])

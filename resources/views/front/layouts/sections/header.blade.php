@@ -24,12 +24,28 @@
                             <li> <a href="{{section('Contact Us.data.first.mail_link')}}"><i class="ic-email"></i> {{section('Contact Us.data.first.mail_text')}}</a></li>
 
                             @auth
-                            <li>
-                                <a href="{{url('/')}}" class="dropdown-toggle-menu">
-                                <i class="ic-chapter"></i> 
-                                    AREAA National
-                                </a>
-                            </li>
+                                @if (auth()->user()->hasAnyRole(['Customer']))
+                                    <li>
+                                        <a href="{{url('/')}}" class="dropdown-toggle-menu">
+                                        <i class="ic-chapter"></i> 
+                                            AREAA National
+                                        </a>
+                                    </li>
+                                @else
+                                    <li>  
+                                        <a href="{{url('chapter')}}" class="dropdown-toggle-menu">
+                                        <i class="ic-pin"></i> 
+                                        Find your Chapter
+                                        </a>
+                                        <div class="info__menu">
+                                            <ul>
+                                                @foreach(\App\Models\Chapter::all() as $chapter)
+                                                <li> <a href="{{url('/'.$chapter->slug)}}">{{$chapter->name}}</a></li>
+                                                @endforeach
+                                            </ul>
+                                         </div>
+                                     </li>
+                                @endif
                             @else
                             <li>  
                                 <a href="{{url('chapter')}}" class="dropdown-toggle-menu">
@@ -41,48 +57,52 @@
                                         @foreach(\App\Models\Chapter::all() as $chapter)
                                         <li> <a href="{{url('/'.$chapter->slug)}}">{{$chapter->name}}</a></li>
                                         @endforeach
-                                        <!-- <li> <a href="{{url('/aloha')}}"> Aloha</a></li>
-                                        <li> <a href="{{url('/atlantametro')}}"> Atlanta Metro</a></li>
-                                        <li> <a href="{{url('/newyorkeast')}}"> New York East</a></li> -->
                                     </ul>
                                  </div>
                              </li>
                              @endauth
 
                             <li> 
-                                @auth
-                                {{-- <a href="{{ route('customer.logout') }}"><i class="ic-user"></i> Log Out</a> --}}
 
-                                <div class="logout-dropdown">
-                                    <a class="dropdown-toggle" href="" role="button" id="logout-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <i class="ic-user"></i> Welcome
-                                    </a>
-                                  
-                                    <div class="dropdown-menu" aria-labelledby="logout-button">
-                                      <a class="dropdown-item" href="{{ route('customer.dashboard') }}">Dashboad</a>
-                                      {{-- <a class="dropdown-item" href="{{ url( (auth()->user()->chapter == 'national' ? '' : auth()->user()->chapter_slug) . '/events' ) }}">Events</a> --}}
-                                      <a class="dropdown-item" href="{{ route('customer.dashboard.events') }}">Events</a>
-                                     
-                                      <a class="dropdown-item" href="{{ route('customer.dashboard.member_directory') }}">Membership Directory </a>
-                                      <a class="dropdown-item" href="{{ route('customer.dashboard.profile') }}">Profile </a>
-                                      <a class="dropdown-item" href="{{ route('customer.dashboard.support') }}">Support </a>
-                                      <div class="dropdown-divider"></div>
-                                      <a class="dropdown-item" href="{{ route('customer.logout') }}"> <i class="fas fa-power-off"></i> Logout </a>
+                            @auth
+                                @if (auth()->user()->hasAnyRole(['Customer']))
+                                    <div class="logout-dropdown">
+                                        <a class="dropdown-toggle" href="" role="button" id="logout-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ic-user"></i> Welcome {{auth()->user()->first_name}} </a>
+                                        <div class="dropdown-menu" aria-labelledby="logout-button">
+                                          <a class="dropdown-item" href="{{ route('customer.dashboard') }}">Dashboard</a>
+                                          {{-- <a class="dropdown-item" href="{{ url( (auth()->user()->chapter == 'national' ? '' : auth()->user()->chapter_slug) . '/events' ) }}">Events</a> --}}
+                                          <a class="dropdown-item" href="{{ route('customer.dashboard.events') }}">Events</a>
+                                          <a class="dropdown-item" href="{{ route('customer.dashboard.member_directory') }}">Membership Directory </a>
+                                          <a class="dropdown-item" href="{{ route('customer.dashboard.profile') }}">Profile </a>
+                                          <a class="dropdown-item" href="{{ route('customer.dashboard.support') }}">Support </a>
+                                          <div class="dropdown-divider"></div>
+                                          <a class="dropdown-item" href="{{ route('customer.logout') }}"> <i class="fas fa-power-off"></i> Logout </a>
+                                        </div>
                                     </div>
-                                </div>
-
-
                                 @else
-
-
+                                    <a href="{{ route('customer.login') }}"><i class="ic-user"></i> Log In</a>
+                                @endif
+                            @else
                                 <a href="{{ route('customer.login') }}"><i class="ic-user"></i> Log In</a>
-                                @endauth                                
+                            @endauth
+
                             </li>
                         </ul>
                     </div>
                 </div>
                 <nav class="navbar-bar">
                     <ul class="navbar-bar__wrapper">
+
+        {{-- print_r(auth()->user()) --}}
+        {{-- @auth
+            @if (!auth()->user()->hasAnyRole(['Customer']))
+            <li>Admin</li>
+            @else
+            <li>Customer</li>
+            @endif
+        @else
+            <li>Not Logged In</li>
+        @endauth --}}
                         <li class="nav-item dropdown
                             {{ ($page->slug == 'about-us' || 
                                $page->slug == 'executive-board' ||
@@ -165,9 +185,7 @@
                             </a>
                             <div class="dropdown-menu">
                                 <ul class="sub-menu mega-menu">
-                                    {{-- <li>
-                                        <a class="nav-link" href="#"> a | r | e Magazine</a>
-                                    </li> --}}
+                                    {{-- <li><a class="nav-link" href="#"> a | r | e Magazine</a></li> --}}
                                     <li class="{{ $page->slug == 'resource-asia-america-report' ? 'active' : '' }}">
                                         <a class="nav-link" href="{{ url('resource-asia-america-report')}}"> State of Asia America Report</a>
                                     </li>
@@ -181,7 +199,6 @@
                 </nav>
             </div>
             <!-- Line 183 -->
-            {{-- print_r(auth()->user()) --}}
 
             <!-- ending of row  -->
         </div>
@@ -204,35 +221,25 @@
                             </a>
 
                             @auth
-
-                            {{-- <a href="{{ route('customer.logout') }}"><i class="ic-user"></i> Log Out</a> --}}
-
-                            <div class="logout-dropdown">
-                                <a class="dropdown-toggle" href="" role="button" id="logout-button-mobile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="ic-user"></i> Welcome
-                                </a>
-                              
-                                <div class="dropdown-menu" aria-labelledby="logout-button-mobilen">
-                                  <a class="dropdown-item" href="{{ route('customer.dashboard') }}">Dashboard</a>
-                                  {{-- <a class="dropdown-item" href="{{ url( (auth()->user()->chapter == 'national' ? '' : auth()->user()->chapter_slug) . '/events' ) }}">Events</a> --}}
-                                  <a class="dropdown-item" href="{{ route('customer.dashboard.events') }}">Events</a>
-                                 
-                                  <a class="dropdown-item" href="{{ route('customer.dashboard.member_directory') }}">Membership Directory </a>
-                                  <a class="dropdown-item" href="{{ route('customer.dashboard.profile') }}">Profile </a>
-                                  <a class="dropdown-item" href="{{url('support')}}">Support </a>
-                                  <div class="dropdown-divider"></div>
-                                  <a class="dropdown-item" href="{{ route('customer.logout') }}"> <i class="fas fa-power-off"></i> Logout </a>
-                                </div>
-                            </div>
-
-
+                                @if (auth()->user()->hasAnyRole(['Customer']))
+                                    <div class="logout-dropdown">
+                                        <a class="dropdown-toggle" href="" role="button" id="logout-button-mobile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ic-user"></i> Welcome {{auth()->user()->first_name}} </a>
+                                      
+                                        <div class="dropdown-menu" aria-labelledby="logout-button-mobilen">
+                                          <a class="dropdown-item" href="{{ route('customer.dashboard') }}">Dashboard</a>
+                                          {{-- <a class="dropdown-item" href="{{ url( (auth()->user()->chapter == 'national' ? '' : auth()->user()->chapter_slug) . '/events' ) }}">Events</a> --}}
+                                          <a class="dropdown-item" href="{{ route('customer.dashboard.events') }}">Events</a>
+                                          <a class="dropdown-item" href="{{ route('customer.dashboard.member_directory') }}">Membership Directory </a>
+                                          <a class="dropdown-item" href="{{ route('customer.dashboard.profile') }}">Profile </a>
+                                          <a class="dropdown-item" href="{{url('support')}}">Support </a>
+                                          <div class="dropdown-divider"></div>
+                                          <a class="dropdown-item" href="{{ route('customer.logout') }}"> <i class="fas fa-power-off"></i> Logout </a>
+                                        </div>
+                                    </div>
+                                @endif   
                             @else
-
-
-                            <a href="{{ route('customer.login') }}"><i class="ic-user"></i> Log In</a>
-                            @endauth   
-
-
+                                <a href="{{ route('customer.login') }}"><i class="ic-user"></i> Log In</a>
+                            @endauth
 
                         </div>
 
@@ -262,14 +269,9 @@
                                     <!-- **************************************** -->
                                     @guest
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{ url('chapter') }}">Find Chapter<span
-                                                    class="sr-only">(current)</span></a>
-                                        <div class="icon-button icon-button__open">
-                                            <i class="fa fa-plus" aria-hidden="true"></i>
-                                        </div>
-                                        <div class="icon-button icon-button__close">
-                                            <i class="fa fa-angle-down" aria-hidden="true"></i>
-                                        </div>
+                                        <a class="nav-link" href="{{ url('chapter') }}">Find Chapter<span class="sr-only">(current)</span></a>
+                                        <div class="icon-button icon-button__open"><i class="fa fa-plus" aria-hidden="true"></i></div>
+                                        <div class="icon-button icon-button__close"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
 
                                         <ul class="sub-menu no-mega-sub">
                                             {{-- <li> <a href="{{url('/aloha')}}"> Aloha</a></li>
@@ -279,13 +281,10 @@
                                             @foreach(\App\Models\Chapter::all() as $chapter)
                                             <li> <a href="{{url('/'.$chapter->slug)}}">{{$chapter->name}}</a></li>
                                             @endforeach
-                                            <!-- <li> <a href="{{url('/aloha')}}"> Aloha</a></li>
-                                            <li> <a href="{{url('/atlantametro')}}"> Atlanta Metro</a></li>
-                                            <li> <a href="{{url('/newyorkeast')}}"> New York East</a></li> -->
-
                                         </ul>
                                     </li>
                                     @endguest
+
                                     <li class="nav-item">
                                         <a class="nav-link" href="{{ url('/') }}">Home <span
                                                     class="sr-only">(current)</span></a>

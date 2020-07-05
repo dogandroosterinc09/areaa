@@ -19,6 +19,7 @@
                         @guest
                         <div class="title"><a href="{{url('membership-registration')}}"><span>Join AREAA</span></a></div>
                         @endguest
+
                         <ul>
                             <li> <a href="{{section('Contact Us.data.first.tel_link')}}"><i class="ic-phone" aria-hidden="true"></i> {{section('Contact Us.data.first.tel_text')}}</a></li>
                             <li> <a href="{{section('Contact Us.data.first.mail_link')}}"><i class="ic-email"></i> {{section('Contact Us.data.first.mail_text')}}</a></li>
@@ -27,43 +28,38 @@
                                 <i class="ic-chapter"></i> 
                                 AREAA National
                                 </a>
-                                {{-- <div class="info__menu">
-                                    <ul>
-                                        <li> <a href="{{url('/aloha')}}"> Aloha</a></li>
-                                        <li> <a href="{{url('/atlantametro')}}"> Atlanta Metro</a></li>
-                                        <li> <a href="{{url('/newyorkeast')}}"> New York East</a></li>
-                                    </ul>
-                                 </div> --}}
                              </li>
-                             @guest
-                            <li> 
-                                <a href="{{ url($chapter['slug'].'/login') }}"><i class="ic-user"></i> Log In</a>
-                            </li>
+
+                            @auth
+                                @if (auth()->user()->hasAnyRole(['Customer']))
+                                <li>
+                                    <div class="logout-dropdown">
+                                        <a class="dropdown-toggle" href="" role="button" id="logout-button-mobile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ic-user"></i> Welcome {{auth()->user()->first_name}} </a>
+                                      
+                                        <div class="dropdown-menu" aria-labelledby="logout-button-mobilen">
+                                          <a class="dropdown-item" href="{{ route('customer.dashboard') }}">Dashboard</a>
+                                          {{-- <a class="dropdown-item" href="{{ url( (auth()->user()->chapter == 'national' ? '' : auth()->user()->chapter_slug) . '/events' ) }}">Events</a> --}}
+                                          <a class="dropdown-item" href="{{ route('customer.dashboard.events') }}">Events</a>
+                                         
+                                          <a class="dropdown-item" href="{{ route('customer.dashboard.member_directory') }}">Membership Directory </a>
+                                          <a class="dropdown-item" href="{{ route('customer.dashboard.profile') }}">Profile </a>
+                                          <a class="dropdown-item" href="{{url('support')}}">Support </a>
+                                          <div class="dropdown-divider"></div>
+                                          <a class="dropdown-item" href="{{ route('customer.logout') }}"> <i class="fas fa-power-off"></i> Logout </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                @else
+                                    <li><a href="{{ url($chapter['slug'].'/login') }}"><i class="ic-user"></i> Log In</a></li>
+                                @endif
                             @else
-                            <li>
-                            
-                            <div class="logout-dropdown">
-                                <a class="dropdown-toggle" href="" role="button" id="logout-button-mobile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="ic-user"></i> Welcome
-                                </a>
-                              
-                                <div class="dropdown-menu" aria-labelledby="logout-button-mobilen">
-                                  <a class="dropdown-item" href="{{ route('customer.dashboard') }}">Dashboard</a>
-                                  {{-- <a class="dropdown-item" href="{{ url( (auth()->user()->chapter == 'national' ? '' : auth()->user()->chapter_slug) . '/events' ) }}">Events</a> --}}
-                                  <a class="dropdown-item" href="{{ route('customer.dashboard.events') }}">Events</a>
-                                 
-                                  <a class="dropdown-item" href="{{ route('customer.dashboard.member_directory') }}">Membership Directory </a>
-                                  <a class="dropdown-item" href="{{ route('customer.dashboard.profile') }}">Profile </a>
-                                  <a class="dropdown-item" href="{{url('support')}}">Support </a>
-                                  <div class="dropdown-divider"></div>
-                                  <a class="dropdown-item" href="{{ route('customer.logout') }}"> <i class="fas fa-power-off"></i> Logout </a>
-                                </div>
-                            </div>
-                            </li>
-                            @endguest
+                                <li><a href="{{ url($chapter['slug'].'/login') }}"><i class="ic-user"></i> Log In</a></li>
+                            @endauth
+
                         </ul>
                     </div>
                 </div>
+
                 <?php
                 $uri_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
                 $uri_segments = explode('/', $uri_path);
@@ -211,8 +207,8 @@
                                             </li>
                                         </ul>
                                     </li>
-{{-- 
-                                    <li class="nav-item">
+ 
+                                    {{-- <li class="nav-item">
                                         <a class="nav-link" href="{{ url('contact-us') }}">Contact Us</a>
                                     </li> --}}
                                     <!-- **************************************** -->

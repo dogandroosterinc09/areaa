@@ -54,8 +54,8 @@
                 @include('admin.components.input-field', ['label' => 'Starts At', 'type' => 'date'])
                 @include('admin.components.input-field', ['label' => 'Ends At', 'type' => 'date'])
                 @include('admin.components.input-field', ['label' => 'Time'])
+                @include('admin.components.input-field', ['label' => 'Short Description', 'field' => 'short_description'])
                 @include('admin.components.editor', ['label' => 'Description'])
-
                 @include('admin.components.heading', ['text' => 'Location'])
                 @include('admin.components.input-field', ['label' => 'Name', 'field' => 'location_name'])
                 @include('admin.components.input-field', ['label' => 'City'])
