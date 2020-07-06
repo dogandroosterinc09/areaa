@@ -75,13 +75,13 @@
                         <td class="text-left">{{-- $members->created_at->format('F d, Y') --}} {{-- $members->joined_date --}} {{ (!empty($members->joined_date))? date('M d, Y', strtotime($members->joined_date)) : '- - -' }}</td>
                         <td class="text-center">
                             <div class="btn-group btn-group-xs">
-                                {{-- @if (auth()->user()->can('Read Members'))
-                                    <a href="{{ route('admin.members.show', $members->id) }}"
+                                {{-- @if (auth()->user()->can('Read Members')) --}}
+                                    <a href="{{ route('admin.members.display', $members->id) }}"
                                        data-toggle="tooltip"
                                        title=""
                                        class="btn btn-default"
-                                       data-original-title="View"><i class="fa fa-eye"></i></a>
-                                @endif --}}
+                                       data-original-title="View">View{{--<i class="fa fa-eye"></i>--}}</a>
+                                {{-- @endif --}}
 
                                 @if (auth()->user()->can('Update Members'))
                                     <a href="{{ route('admin.members.edit', $members->id) }}"

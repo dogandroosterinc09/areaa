@@ -198,8 +198,10 @@ class MembersController extends Controller
         if (!auth()->user()->hasPermissionTo('Read Members')) {
             abort('401', '401');
         }
+        // dd(auth()->user());
 
         $members = $this->members->findOrFail($id);
+        // dd($members);
 
         return view('admin.modules.members.show', compact('members'));
     }
@@ -369,6 +371,32 @@ class MembersController extends Controller
     //         'type' => 'success'
     //     ]);
     // }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param int $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function display($id)
+    {
+        // if (!auth()->user()->hasPermissionTo('Read Members')) {
+        //     abort('401', '401');
+        // }
+
+        // print_r(auth()->user());
+
+        // $members = $this->members->findOrFail($id);
+        // return $request->all();
+        $user = $this->user->findOrFail($id);
+        $member = $this->members->where('user_id',$id)->first();
+        $billing = $this->memberAddress->where('user_id',$id)->first();
+
+        // dd($user);
+
+        return view('admin.modules.members.display', compact('user','member','billing'));
+    }
+
 
     /**
      * Remove the specified resource from storage.
