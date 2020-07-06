@@ -122,11 +122,7 @@
                     </div>
                 </div>
 
-                <?php 
-                $member = \App\Models\Members::where('user_id',$user->id)->first();
-                $billing = \App\Models\MemberAddress::where('user_id',$user->id)->first();
-                // print_r($member);
-                ?>
+                @php ($member = \App\Models\Members::where('user_id',$user->id)->first())
                 <hr>
                 <div class="form-group">
                     <label class="col-md-3 control-label" for="street_address1"><strong>Other Information</strong></label>
@@ -176,6 +172,7 @@
                         @endif
                     </div>
                 </div>
+
                 {{--
                 <div class="form-group{{ $errors->has('company') ? ' has-error' : '' }}">
                     <label class="col-md-3 control-label" for="company">Company</label>
@@ -201,7 +198,8 @@
                 </div>
                 --}}
 
-
+                @php ($billing = \App\Models\MemberAddress::where('user_id',$user->id)->first())
+                @if ($billing)
                 <hr>
                 <div class="form-group">
                     <label class="col-md-3 control-label" for="street_address1"><strong>BILLING</strong></label>
@@ -296,7 +294,7 @@
                         @endif
                     </div>
                 </div>
-
+                @endif
 
                 <hr>
                 <div id="chapter_wrapper" class="form-group {{ $errors->has('chapter_id') ? ' has-error' : '' }}">
