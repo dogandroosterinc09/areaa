@@ -19,13 +19,13 @@
                         ID
                     </th>
                     <th class="text-center">
-                        Name
-                    </th>
-                    <th class="text-center">
                         Chapter
                     </th>
                     <th class="text-left">
                         Event
+                    </th>
+                    <th class="text-center">
+                        Name
                     </th>
                     <th class="text-left hidden">
                         Status
@@ -43,8 +43,8 @@
                     <tr data-event_registration-id="{{$event_registration->id}}">
                         <td class="text-center"><strong>{{ $event_registration->id }}</strong></td>                        
                         <td class="text-center"><strong>{{ $event_registration->event_chapter }}</strong></td>                        
-                        <td class="text-center"><strong>{{ $event_registration->name }}</strong></td>
-                        <td class="text-center"><strong>{{ $event_registration->event_name }}</strong></td>
+                        <td class="text-left"><strong>{{ $event_registration->event_name }}</strong></td>
+                        <td class="text-left"><strong>{{ $event_registration->name }}</strong></td>
                         <td class="text-center hidden"><strong>{{ $event_registration->status }}</strong></td>
                         <td class="text-center">{{ $event_registration->created_at->format('F d, Y') }}</td>
                         <td class="text-center">

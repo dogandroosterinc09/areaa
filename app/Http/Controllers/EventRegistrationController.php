@@ -57,9 +57,14 @@ class EventRegistrationController extends Controller
         // if (!auth()->user()->hasPermissionTo('Read Event Registration')) {
         //     abort('401', '401');
         // }
-
         $title = 'Chapter';
-        $event_registrations = $this->event_registration->where('event_id',0)->where('event_chapter_id',auth()->user()->chapter_id)->get();
+        // echo 'chapter_id: '.auth()->user()->chapter_id.'<br>';
+
+        if (auth()->user()->chapter_id > 0) { // Chapter Admin login
+            $event_registrations = $this->event_registration->where('event_id',0)->where('event_chapter_id',auth()->user()->chapter_id)->get();
+        } else { // Nationals
+            $event_registrations = $this->event_registration->where('event_id',0)->get();
+        }
 
         return view('admin.modules.event_registration.index', compact('event_registrations','title'));
     }
