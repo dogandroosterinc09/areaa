@@ -38,6 +38,13 @@
                                         Find your Chapter
                                         </a>
                                         <div class="info__menu">
+                                            {{-- @foreach(\App\Models\Chapter::skip(0)->take(5)->get() as $chapter)
+                                            <ul><li><a href="{{url('/'.$chapter->slug)}}">{{$chapter->name}}</a></li></ul>
+                                            @endforeach
+                                            @foreach(\App\Models\Chapter::skip(5)->take(5)->get() as $chapter)
+                                            <ul><li><a href="{{url('/'.$chapter->slug)}}">{{$chapter->name}}</a></li></ul>
+                                            @endforeach --}}
+
                                             <ul>
                                                 @foreach(\App\Models\Chapter::all() as $chapter)
                                                 <li> <a href="{{url('/'.$chapter->slug)}}">{{$chapter->name}}</a></li>
