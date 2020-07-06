@@ -10,7 +10,7 @@
             <div class="item-left">
                 <div class="banner-content-desc">
                     {!! $home_slide->content !!}
-                    <a href="{{ $home_slide->button_link }}" class="btn btn--primary">{{ $home_slide->button_label }}</a>
+                    <a href="{{ $home_slide->button_link }}" class="btn btn--primary">{{ $home_slide->button_label }}xx</a>
                 </div>
             </div>
             <div class="item-right">
