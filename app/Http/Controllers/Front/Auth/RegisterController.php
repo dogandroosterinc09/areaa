@@ -661,13 +661,14 @@ class RegisterController extends Controller
             // $message->subject('New email!!!');
             $message->to($request->email, $request->first_name." ".$request->last_name);
             // $message->to($data['email'], $data['first_name']." ".$data['last_name']);
-            $message->cc('jmiranda@areaa.org', 'Areaa Admin');
+            // $message->cc('jmiranda@areaa.org', 'Areaa Admin');
             $message->cc('dennis@dogandrooster.com', 'DNR Dev');
             $message->subject('AREAA | Membership Registration');
             $message->from('no-reply@areaa.com','Areaa Webmaster');
         });
 
         // die('--- 602');
+        Session::flash('register_success', 'You can now receieve special benefits and discounts, as well as, gain access to resources.'); 
         $this->guard()->login($user);
 
         return $this->registered($request, $user)?: redirect($this->redirectPath());
