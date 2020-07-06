@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Input;
 use Spatie\Permission\Models\Role;
 
-use Mail;
+use Mail, Session;
 
 // Authorize.net
 require 'vendor/autoload.php';
@@ -661,7 +661,7 @@ class RegisterController extends Controller
             // $message->subject('New email!!!');
             $message->to($request->email, $request->first_name." ".$request->last_name);
             // $message->to($data['email'], $data['first_name']." ".$data['last_name']);
-            // $message->cc('jmiranda@areaa.org', 'Areaa Admin');
+            $message->cc('jmiranda@areaa.org', 'Areaa Admin');
             $message->cc('dennis@dogandrooster.com', 'DNR Dev');
             $message->subject('AREAA | Membership Registration');
             $message->from('no-reply@areaa.com','Areaa Webmaster');
