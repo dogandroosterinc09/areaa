@@ -668,7 +668,7 @@ class RegisterController extends Controller
         });
 
         // die('--- 602');
-        Session::flash('register_success', 'You can now receieve special benefits and discounts, as well as, gain access to resources.'); 
+        Session::flash('register_success', 'You can now receive special benefits and discounts, as well as, gain access to resources.'); 
         $this->guard()->login($user);
 
         return $this->registered($request, $user)?: redirect($this->redirectPath());
