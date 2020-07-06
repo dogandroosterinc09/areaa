@@ -131,14 +131,16 @@
                 <div class="form-group">
                     <label class="col-md-3 control-label">Is A-List?</label>
                     <div class="col-md-9">
+                        <div class="flex-display">
                         <label class="switch switch-primary">
                             <input type="checkbox" id="is_alist" name="is_alist" value="1" {{ Request::old('is_alist') ? : ($user->is_alist ? 'checked' : '') }}>
                             <span></span>
                         </label>
-                        Years Won
+                        <span class="title-block">   Years won </span>
                         <input type="text" class="form-control" id="alist_years" name="alist_years"
                                value="{{  Request::old('alist_years') ? : $user->alist_years }}"
                                placeholder="Enter years won..">
+                        </div>
                     </div>
                 </div>
                 <div class="form-group">
