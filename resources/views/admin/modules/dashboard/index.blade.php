@@ -24,9 +24,12 @@
 
         @php($event_registrations = \App\Models\EventRegistration::where('event_id',0)->where('event_chapter_id',auth()->user()->chapter_id)->orderByDesc('created_at')->get())
     @else
-        @php($members = \App\Models\Members::whereHas('user', function($q) {
-                            $q->where('chapter_id',0);
-                        })->orderByDesc('created_at')->limit(10)->get())
+        <?php
+        // $members = \App\Models\Members::whereHas('user', function($q) {
+        //                     $q->where('chapter_id',0);
+        //                 })->orderByDesc('created_at')->limit(10)->get());
+        $members = \App\Models\Members::with('user')->orderByDesc('created_at')->limit(10)->get();
+        ?>
 
         @php($event_registrations = \App\Models\EventRegistration::where('event_id','<>',0)->orderByDesc('created_at')->get())
     @endif
