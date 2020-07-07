@@ -18545,6 +18545,9 @@ header .contact-details-wrap .info a i.ic-chapter {
   font-size: 1.2em;
   color: #fff;
 }
+.banner__cta {
+  margin-top: 15px;
+}
 .banner__image-slide {
   position: relative;
   display: block;
@@ -18570,6 +18573,7 @@ header .contact-details-wrap .info a i.ic-chapter {
   min-width: 760px;
   left: 26%;
   z-index: 3;
+  font-size: 14px;
 }
 .banner__image-slide .item-left .banner-content-desc h1 {
   color: #303132;
@@ -18578,6 +18582,9 @@ header .contact-details-wrap .info a i.ic-chapter {
 .banner__image-slide .item-left .banner-content-desc h2 {
   color: #303132;
   font: 900 65px "Open Sans", sans-serif;
+}
+.banner__image-slide .item-left .banner-content-desc p {
+  font-size: 14px;
 }
 .banner__image-slide .item-left .banner-content-desc img {
   margin-bottom: 50px;
