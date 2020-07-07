@@ -45,17 +45,29 @@
                                             <ul><li><a href="{{url('/'.$chapter->slug)}}">{{$chapter->name}}</a></li></ul>
                                             @endforeach --}}
 
-
                                             <div class="row">
                                                 <div class="col-md-4">
                                                     <ul>
-                                                        @foreach(\App\Models\Chapter::all() as $chapter)
+                                                        @foreach(\App\Models\Chapter::skip(0)->take(15)->get() as $chapter)
+                                                        <li> <a href="{{url('/'.$chapter->slug)}}">{{$chapter->name}}</a></li>
+                                                        @endforeach
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <ul>
+                                                        @foreach(\App\Models\Chapter::skip(15)->take(15)->get() as $chapter)
+                                                        <li> <a href="{{url('/'.$chapter->slug)}}">{{$chapter->name}}</a></li>
+                                                        @endforeach
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <ul>
+                                                        @foreach(\App\Models\Chapter::skip(30)->take(15)->get() as $chapter)
                                                         <li> <a href="{{url('/'.$chapter->slug)}}">{{$chapter->name}}</a></li>
                                                         @endforeach
                                                     </ul>
                                                 </div>
                                             </div>
-
                                          </div>
                                      </li>
                                 @endif
