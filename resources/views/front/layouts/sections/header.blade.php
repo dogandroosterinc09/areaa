@@ -45,11 +45,17 @@
                                             <ul><li><a href="{{url('/'.$chapter->slug)}}">{{$chapter->name}}</a></li></ul>
                                             @endforeach --}}
 
-                                            <ul>
-                                                @foreach(\App\Models\Chapter::all() as $chapter)
-                                                <li> <a href="{{url('/'.$chapter->slug)}}">{{$chapter->name}}</a></li>
-                                                @endforeach
-                                            </ul>
+
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <ul>
+                                                        @foreach(\App\Models\Chapter::all() as $chapter)
+                                                        <li> <a href="{{url('/'.$chapter->slug)}}">{{$chapter->name}}</a></li>
+                                                        @endforeach
+                                                    </ul>
+                                                </div>
+                                            </div>
+
                                          </div>
                                      </li>
                                 @endif
