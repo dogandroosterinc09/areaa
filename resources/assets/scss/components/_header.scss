@@ -246,18 +246,27 @@ header {
                 padding: 20px;
                 left: -140px;
                 width: 800px;
+                .row {
+                    >div {
+                        padding: 5px;
+                    }
+                }
                 ul {
                     list-style: none;
-                    @include flex;
-                    @include flex-align-items(center);
-                    @include flex-justify-content(flex-start);
+                    // @include flex;
+                    // @include flex-align-items(center);
+                    // @include flex-justify-content(flex-start);
+                    display: block;
                     padding: 0;
+                    width: 100%;
                     li {
-                        width: calc(100%/3);
+                        // width: calc(100%/3);
                         text-align: left;
                         a {
                             font-weight: 600;
+                            display: block;
                             @include transition(.5s);
+                            display: block;
                             &:hover {
                                 opacity: .5;
                             }

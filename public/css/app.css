@@ -18358,21 +18358,23 @@ header .contact-details-wrap .info__menu {
   left: -140px;
   width: 800px;
 }
+header .contact-details-wrap .info__menu .row > div {
+  padding: 5px;
+}
 header .contact-details-wrap .info__menu ul {
   list-style: none;
-  display: flex !important;
-  flex-wrap: wrap !important;
-  align-items: center;
-  justify-content: flex-start;
+  display: block;
   padding: 0;
+  width: 100%;
 }
 header .contact-details-wrap .info__menu ul li {
-  width: calc(100%/3);
   text-align: left;
 }
 header .contact-details-wrap .info__menu ul li a {
   font-weight: 600;
+  display: block;
   transition: all 0.5s ease;
+  display: block;
 }
 header .contact-details-wrap .info__menu ul li a:hover {
   opacity: 0.5;
