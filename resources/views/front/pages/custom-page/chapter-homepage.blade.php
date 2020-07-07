@@ -30,7 +30,7 @@
                                 <div class="row">
                                     <div class="col-md-3 chapter-events-upcoming__image">
                                         <a href="{{url($chapter['slug'].'/event/'.$chapter_event->slug)}}">
-                                            <img src="{{ $chapter_event->attachment->url }}" alt="event title" class="img-fluid">
+                                            <img src="{{ isset($chapter_event->attachment->url)? $chapter_event->attachment->url : asset('public/images/watermark.jpg') }}" alt="event title" class="img-fluid">
                                         </a>
                                     </div>
                                     <div class="col-md-9 content-middle">
