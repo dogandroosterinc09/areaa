@@ -32,7 +32,7 @@
                         @endif
                         @foreach($executives as $executive)
                             <div class="board-thumbnail__item col-lg-3 col-md-6">
-                                <a href="{{ $executive->url }}">
+                                @if(!empty($executive->bio)) <a href="{{ $executive->url }}"> @endif
                                     <div class="board-thumbnail__image image-background">
                                         <img src="{{ $executive->attachment ? optional($executive->attachment)->url : asset('public/images/no-image.jpg') }}"
                                              alt="{{ optional($executive->attachment)->name }}">
@@ -40,8 +40,9 @@
                                     <div class="board-thumbnail__details">
                                         <h5>{{ $executive->name }}</h5>
                                         <h6>{{ $executive->position }}</h6>
+                                        {{-- $executive->bio --}}
                                     </div>
-                                </a>
+                                @if(!empty($executive->bio)) </a> @endif
                             </div>
                         @endforeach
                     </div>

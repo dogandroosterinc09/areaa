@@ -43,15 +43,16 @@
                     @foreach( $chapter_board->executives as $executive )
                         {{-- board-thumbnail --}}
                         <div class="board-thumbnail__item col-lg-3 col-md-6" data-aos="fade-up">
-                            <a href="{{route('chapter_board_member.detail', ['slug'=>$chapter->slug,'board_slug'=>$executive->slug])}}">
+                            @if(!empty($executive->bio)) <a href="{{route('chapter_board_member.detail', ['slug'=>$chapter->slug,'board_slug'=>$executive->slug])}}"> @endif
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ optional($executive->attachment)->url ? optional($executive->attachment)->url : asset('public/images/no-pix.jpg') }}" alt="Member Image">
                                 </div>
                                 <div class="board-thumbnail__details">
                                     <h5>{{ $executive->name }}</h5>
                                     <h6>{{ $executive->position }}</h6>
+                                    {{ $executive->bio }}
                                 </div>
-                            </a>
+                            @if(!empty($executive->bio)) </a> @endif
                         </div>
                         {{-- board-thumbnail --}}
                     @endforeach
@@ -78,7 +79,7 @@
                     @foreach( $chapter_board->board_of_directors as $board_of_director )
                         {{-- board-thumbnail --}}
                         <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{route('chapter_board_member.detail', ['slug'=>$chapter->slug,'board_slug'=>$board_of_director->slug])}}">
+                            @if(!empty($board_of_director->bio)) <a href="{{route('chapter_board_member.detail', ['slug'=>$chapter->slug,'board_slug'=>$board_of_director->slug])}}"> @endif
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ optional($board_of_director->attachment)->url ? optional($board_of_director->attachment)->url : asset('public/images/no-pix.jpg') }}" alt="Member Image">
                                 </div>
@@ -86,7 +87,7 @@
                                     <h5>{{ $board_of_director->name }}</h5>
                                     <h6>{{ $board_of_director->position }}</h6>
                                 </div>
-                            </a>
+                            @if(!empty($board_of_director->bio)) </a> @endif
                         </div>
                         {{-- board-thumbnail --}}
                     @endforeach
@@ -110,7 +111,7 @@
                     @foreach( $chapter_board->advisory as $advisory )
                         {{-- board-thumbnail --}}
                         <div class="board-thumbnail__item col-lg-3 col-md-6">
-                            <a href="{{route('chapter_board_member.detail', ['slug'=>$chapter->slug,'board_slug'=>$advisory->slug])}}">
+                            @if(!empty($advisory->bio)) <a href="{{route('chapter_board_member.detail', ['slug'=>$chapter->slug,'board_slug'=>$advisory->slug])}}"> @endif
                                 <div class="board-thumbnail__image image-background">
                                     <img src="{{ optional($advisory->attachment)->url ? optional($advisory->attachment)->url : asset('public/images/no-pix.jpg') }}" alt="Member Image">
                                 </div>
@@ -118,7 +119,7 @@
                                     <h5>{{ $advisory->name }}</h5>
                                     <h6>{{ $advisory->position }}</h6>
                                 </div>
-                            </a>
+                            @if(!empty($advisory->bio)) </a> @endif
                         </div>
                         {{-- board-thumbnail --}}
                     @endforeach

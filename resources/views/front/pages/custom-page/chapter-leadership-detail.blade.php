@@ -59,10 +59,10 @@
                                 <img src="{{ optional($previousBoardMember->attachment)->url ? optional($previousBoardMember->attachment)->url : asset('public/images/no-pix.jpg') }}">
                             </div>
                             <div class="next-board__content">
-                                <a href="{{ route('chapter_board_member.detail', ['slug'=>$chapter->slug,'board_slug'=>$previousBoardMember->slug]) }}">
+                                @if(!empty($previousBoardMember->bio)) <a href="{{ route('chapter_board_member.detail', ['slug'=>$chapter->slug,'board_slug'=>$previousBoardMember->slug]) }}"> @endif
                                     <i class="fas fa-angle-left"></i>Previous
                                     <h3>{{ $previousBoardMember->name }}</h3>
-                                </a>
+                                @if(!empty($previousBoardMember->bio)) </a> @endif
                             </div>
                             @endif
                         </div>
@@ -71,10 +71,10 @@
                         <div class="next-board__item">
                             @if($nextBoardMember)
                             <div class="next-board__content">
-                                <a href="{{ route('chapter_board_member.detail', ['slug'=>$chapter->slug,'board_slug'=>$nextBoardMember->slug]) }}">
+                                @if(!empty($nextBoardMember->bio)) <a href="{{ route('chapter_board_member.detail', ['slug'=>$chapter->slug,'board_slug'=>$nextBoardMember->slug]) }}"> @endif
                                     Next<i class="fas fa-angle-right"></i>
                                     <h3>{{ $nextBoardMember->name }}</h3>
-                                </a>
+                                @if(!empty($nextBoardMember->bio)) </a> @endif
                             </div>
                             <div class="next-board__image">
                                 <img src="{{ optional($nextBoardMember->attachment)->url ? optional($nextBoardMember->attachment)->url : asset('public/images/no-pix.jpg') }}">

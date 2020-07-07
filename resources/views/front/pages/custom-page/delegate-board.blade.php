@@ -41,7 +41,7 @@
                         @endif
                         @foreach($delegates as $delegate)
                             <div class="board-thumbnail__item col-lg-3 col-md-6">
-                                <a href="{{ $delegate->url }}">
+                                @if(!empty($delegate->bio)) <a href="{{ $delegate->url }}"> @endif
                                     <div class="board-thumbnail__image image-background">
                                         <img src="{{ $delegate->attachment ? optional($delegate->attachment)->url : asset('public/images/no-image.jpg') }}"
                                              alt="Member Image">
@@ -50,7 +50,7 @@
                                         <h5>{{ $delegate->name }}</h5>
                                         <h6>{{ $delegate->position }}</h6>
                                     </div>
-                                </a>
+                                @if(!empty($delegate->bio)) </a> @endif
                             </div>
                         @endforeach                        
 
