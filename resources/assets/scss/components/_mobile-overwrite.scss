@@ -240,6 +240,40 @@
         margin: auto;
         margin-bottom: 20px;
     }
+    .events-camp .events-camp-slider--item a .title {
+        font-size: .9em !important;
+    }
+    .become-member .content-text h4 {
+        font-size: 1.2em;
+    }
+    .become-member .content-text {
+        width: 100% !important;
+        margin: 0 !important;
+        outline: 1px solid;
+    }
+    .become-member__button a {
+        display: inline-block !important;
+        width: auto;
+    }
+    .become-member__button {
+        display: block;
+    }
+    .events-camp-parent-holder .events-camp-slider--item a .img-holder {
+        height: 200px;
+    }
+    .become-member .members-count {
+        border-radius: 80px !important;
+        margin-top: 60px !important;
+    }
+    .become-member .members-count .txt-count span {
+        font-size: 2.8em;
+    }
+    .become-member .members-count .txt-count {
+        margin: 30px;
+    }
+    section h2 {
+        font-size: 2.5em;
+    }
 }
 
 @media only screen and (max-width:1100px) {
