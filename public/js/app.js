@@ -79268,7 +79268,7 @@ $(".limit-me").text(function (index, currentText) {
 /***/ (function(module, exports) {
 
 $(document).ready(function () {
-  $(".moreBox").slice(0, 6).show();
+  $(".moreBox").slice(0, 13).show(); // if 0,3 show 2 rows and load more on 3rd row
 
   if ($(".moreBox__item:hidden").length != 0) {
     $("#loadMore").show();
@@ -79276,7 +79276,7 @@ $(document).ready(function () {
 
   $("#loadMore").on('click', function (e) {
     e.preventDefault();
-    $(".moreBox:hidden").slice(0, 6).slideDown();
+    $(".moreBox:hidden").slice(0, 100).slideDown(); // if 0,2 on click show next 2
 
     if ($(".moreBox:hidden").length == 0) {
       $("#loadMore").fadeOut('slow');
@@ -81353,9 +81353,9 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;function _typeof
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\areaa\resources\assets\js\app.js */"./resources/assets/js/app.js");
-__webpack_require__(/*! C:\xampp\htdocs\areaa\resources\assets\scss\app.scss */"./resources/assets/scss/app.scss");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\areaa\resources\assets\scss\admin-control.scss */"./resources/assets/scss/admin-control.scss");
+__webpack_require__(/*! D:\xampp\htdocs\areaa\resources\assets\js\app.js */"./resources/assets/js/app.js");
+__webpack_require__(/*! D:\xampp\htdocs\areaa\resources\assets\scss\app.scss */"./resources/assets/scss/app.scss");
+module.exports = __webpack_require__(/*! D:\xampp\htdocs\areaa\resources\assets\scss\admin-control.scss */"./resources/assets/scss/admin-control.scss");
 
 
 /***/ })
