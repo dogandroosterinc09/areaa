@@ -79879,9 +79879,9 @@ $('.sponsor-logo__slide').slick({
   cssEase: 'linear',
   arrows: false,
   responsive: [{
-    breakpoint: 1100,
+    breakpoint: 1190,
     settings: {
-      slidesToShow: 3,
+      slidesToShow: 5,
       slidesToScroll: 3,
       infinite: true,
       dots: true
@@ -79889,7 +79889,7 @@ $('.sponsor-logo__slide').slick({
   }, {
     breakpoint: 1000,
     settings: {
-      slidesToShow: 3,
+      slidesToShow: 4,
       slidesToScroll: 2
     }
   }, {
