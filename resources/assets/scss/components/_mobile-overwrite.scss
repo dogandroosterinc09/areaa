@@ -453,7 +453,7 @@
         width: 100%;
         padding: 5px;
         text-transform: capitalize;
-        font-size: .9em !important;
+        font-size: .8em !important;
         height: auto !important;
         min-height: inherit;
     }
@@ -525,7 +525,6 @@
         font-size: 1.1em !important;
     }
     section.become-member.wrapper .container-max .row>div {
-        outline: 1px solid;
         flex: 0 0 100%;
         max-width: 100%;
         margin: 0;
@@ -533,6 +532,22 @@
     }
     .banner__thumb-slide button {
         display: none !important;
+    }
+    section h2 {
+        font-size: 2em;
+    }
+    section.events-camp .container-max .row>div {
+        width: 100% !important;
+        max-width: 100%;
+        flex: 0 0 100%;
+        text-align: center;
+    }
+    .content-middle__right {
+        justify-content: center;
+    }
+    .events-camp-parent-holder .events-camp-slider--item a .title span {
+        height: 100% !important;
+        padding: 0 !important;
     }
 }
 
