@@ -393,11 +393,12 @@
 
 
 
-                               
-
+                               {{-- Update resources/assets/js/static/custom/custom-loadmore.js and run 'npm run dev' on git bash --}}
+                                @if(count($faqs) > 13)
                                 <div class="accordion__button text-center">
                                     <a href="#" id="loadMore" class="btn btn--primary"> Load more</a>
                                 </div>
+                                @endif
                             
                             </div>
                             <!-- Accordion wrapper -->
