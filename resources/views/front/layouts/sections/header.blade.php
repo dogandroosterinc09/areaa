@@ -77,7 +77,7 @@
                                 <i class="ic-pin"></i> 
                                 Find your Chapter
                                 </a>
-                                <div class="info__menu">
+                                <div class="info__menu info__menu--grid-enable">
                                     <ul>
                                         @foreach(\App\Models\Chapter::all() as $chapter)
                                         <li> <a href="{{url('/'.$chapter->slug)}}">{{$chapter->name}}</a></li>
