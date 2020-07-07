@@ -240,7 +240,7 @@
         margin: auto;
         margin-bottom: 20px;
     }
-    .events-camp .events-camp-slider--item a .title {
+    section.events-camp .events-camp-slider--item a .title {
         font-size: .9em !important;
     }
     .become-member .content-text h4 {
@@ -249,7 +249,6 @@
     .become-member .content-text {
         width: 100% !important;
         margin: 0 !important;
-        outline: 1px solid;
     }
     .become-member__button a {
         display: inline-block !important;
@@ -266,10 +265,10 @@
         margin-top: 60px !important;
     }
     .become-member .members-count .txt-count span {
-        font-size: 2.8em;
+        font-size: 2.8em !important;
     }
     .become-member .members-count .txt-count {
-        margin: 30px;
+        margin: 30px !important;
     }
     section h2 {
         font-size: 2.5em;
