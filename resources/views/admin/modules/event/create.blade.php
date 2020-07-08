@@ -22,8 +22,36 @@
                 @include('admin.components.heading', ['text' => 'Event Details'])
                 @include('admin.components.attachment', ['label' => 'Thumbnail'])
                 @include('admin.components.input-field', ['label' => 'Name'])
-                @include('admin.components.input-field', ['label' => 'Amount', 'type' => 'number'])
-                @include('admin.components.input-field', ['label' => 'Amount Member', 'type' => 'number', 'field' => 'amount_member'])
+                {{-- @include('admin.components.input-field', ['label' => 'Amount', 'type' => 'number'])
+                @include('admin.components.input-field', ['label' => 'Amount Member', 'type' => 'number', 'field' => 'amount_member']) --}}
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="form-group{{ $errors->has('amount') ? ' has-error' : '' }}">
+                            <label class="col-md-2 control-label" for="amount">Amount</label>
+                            <div class="col-md-10">
+                                <input type="number" class="form-control" id="amount" name="amount"
+                                       value="{{  old('amount')? old('amount') : '' }}" placeholder="Enter Regular Amount.." min='0' step="0.01">
+                                @if($errors->has('amount'))
+                                    <span class="help-block animation-slideDown">{{ $errors->first('amount') }}</span>
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="form-group{{ $errors->has('amount_member') ? ' has-error' : '' }}">
+                            <label class="col-md-2 control-label" for="amount_member">Amount Member</label>
+                            <div class="col-md-10">
+                                <input type="number" class="form-control" id="amount_member" name="amount_member"
+                                       value="{{  old('amount_member')? old('amount_member') : '' }}" placeholder="Enter Amount Member.." min='0' step="0.01">
+                                @if($errors->has('amount_member'))
+                                    <span class="help-block animation-slideDown">{{ $errors->first('amount_member') }}</span>
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 @include('admin.components.input-field', ['label' => 'Starts At', 'type' => 'date'])
                 @include('admin.components.input-field', ['label' => 'Ends At', 'type' => 'date'])
                 @include('admin.components.input-field', ['label' => 'Time'])
@@ -35,8 +63,8 @@
                 @include('admin.components.input-field', ['label' => 'State'])
                 @include('admin.components.input-field', ['label' => 'Zip'])
                 @include('admin.components.input-field', ['label' => 'Country'])
-                @include('admin.components.input-field', ['label' => 'Longitude'])
                 @include('admin.components.input-field', ['label' => 'Latitude'])
+                @include('admin.components.input-field', ['label' => 'Longitude'])
                 <div class="form-group form-actions">
                     <div class="col-md-9 col-md-offset-3">
                         <a href="{{ route('admin.events.index') }}" class="btn btn-sm btn-warning">Cancel</a>
