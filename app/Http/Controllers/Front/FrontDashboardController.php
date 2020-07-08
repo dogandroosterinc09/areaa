@@ -155,7 +155,7 @@ class FrontDashboardController extends Controller
 
     public function updateProfile(Request $request) {      
         // return $request->all();
-
+        // die('Ln158');
         $social_media = new \stdClass;
 
         $social_media->facebook = $request->facebook;

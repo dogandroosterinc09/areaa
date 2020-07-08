@@ -294,14 +294,14 @@
                                 <b>Joined Date</b>
                             </div>
                             <div class="col-md-9">
-                              <input type="text" name="location" value="{{ $profile->joined_date }}" readonly="true">
+                              <input type="text" name="joined_date" value="{{ $profile->joined_date }}" readonly="true">
                             </div>
 
                             <div class="col-md-3">
                                 <b>Is Active</b>
                             </div>
                             <div class="col-md-9">
-                                <input type="text" name="company" value="{{ ($profile->expires=='Never')? 'Active': $profile->expires }}" readonly="readonly">
+                                <input type="text" name="expires" value="{{ ($profile->expires=='Never')? 'Active': $profile->expires }}" readonly="readonly">
                             </div>
 
 
