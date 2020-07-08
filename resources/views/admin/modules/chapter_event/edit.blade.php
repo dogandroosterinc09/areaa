@@ -90,8 +90,8 @@
                 @include('admin.components.input-field', ['label' => 'State', 'value' => $chapter_event->state])
                 @include('admin.components.input-field', ['label' => 'Zip', 'value' => $chapter_event->zip])
                 @include('admin.components.input-field', ['label' => 'Country', 'value' => $chapter_event->country])
-                @include('admin.components.input-field', ['label' => 'Longitude', 'value' => $chapter_event->longitude])
                 @include('admin.components.input-field', ['label' => 'Latitude', 'value' => $chapter_event->latitude])
+                @include('admin.components.input-field', ['label' => 'Longitude', 'value' => $chapter_event->longitude])
                 <div class="form-group form-actions">
                     <div class="col-md-9 col-md-offset-3">
                         <a href="{{ route('admin.chapter_events.index') }}" class="btn btn-sm btn-warning">Cancel</a>

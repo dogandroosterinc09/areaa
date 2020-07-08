@@ -90,8 +90,8 @@
                 @include('admin.components.input-field', ['label' => 'State'])
                 @include('admin.components.input-field', ['label' => 'Zip'])
                 @include('admin.components.input-field', ['label' => 'Country'])
-                @include('admin.components.input-field', ['label' => 'Longitude'])
                 @include('admin.components.input-field', ['label' => 'Latitude'])
+                @include('admin.components.input-field', ['label' => 'Longitude'])
 
                 <div class="form-group form-actions">
                     <div class="col-md-9 col-md-offset-3">
