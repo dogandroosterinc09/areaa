@@ -66,38 +66,10 @@
                                 {{-- <li><a href="#"> In Language Support </a></li> --}}
                             </ul>
                         </article>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3 footer__item">
-                        <article>
-                            <h4>Membership</h4>
-                            <ul>
-                                <li><a href="{{url('about-us')}}"> Why join </a></li>
-                                <li><a href="{{url('areabenefits')}}"> Benefits </a></li>
-                                <li><a href="{{ route('customer.login') }}""> Find a Member </a></li>
-                                <li><a href="{{url('chapter')}}"> Chapter Locations </a></li>
-                                {{-- <li><a href="{{url('membership-registration')}}"> A-List </a></li> --}}
-                            </ul>
-                        </article>
-                    </div>
-                    <div class="col-md-4 footer__item">
-                        <article>
-                            <h4>Events</h4>
-                            <ul>
-                                {{-- <li><a href="#"> Leadership Summit</a></li>
-                                <li><a href="#">Global & Luxury Summit</a></li> --}}
-                                {{-- <li><a href="#">Regional Retreats</a></li> --}}
-                                <li><a href="{{url('events')}}">National Convention</a></li>
-                                <li><a href="{{url('events-chapter')}}">Chapter Events </a></li>
-                                {{-- <li><a href="#">How to get involved </a></li> --}}
-                            </ul>
-                        </article>
-                    </div>
-                    <div class="col-md-5 footer__item">
 
-                        {{-- big-advertisement --}}
-                        <div class="small-advertisement ">
+
+                          {{-- big-advertisement --}}
+                          <div class="small-advertisement">
                             <div class="small-advertisement__slick">
 
                             @php($home = \App\Models\Page::findOrFail(1))
@@ -144,6 +116,37 @@
                             </div>
                         </div>
                         {{-- big-advertisement --}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 footer__item">
+                        <article>
+                            <h4>Membership</h4>
+                            <ul>
+                                <li><a href="{{url('about-us')}}"> Why join </a></li>
+                                <li><a href="{{url('areabenefits')}}"> Benefits </a></li>
+                                <li><a href="{{ route('customer.login') }}""> Find a Member </a></li>
+                                <li><a href="{{url('chapter')}}"> Chapter Locations </a></li>
+                                {{-- <li><a href="{{url('membership-registration')}}"> A-List </a></li> --}}
+                            </ul>
+                        </article>
+                    </div>
+                    <div class="col-md-4 footer__item">
+                        <article>
+                            <h4>Events</h4>
+                            <ul>
+                                {{-- <li><a href="#"> Leadership Summit</a></li>
+                                <li><a href="#">Global & Luxury Summit</a></li> --}}
+                                {{-- <li><a href="#">Regional Retreats</a></li> --}}
+                                <li><a href="{{url('events')}}">National Convention</a></li>
+                                <li><a href="{{url('events-chapter')}}">Chapter Events </a></li>
+                                {{-- <li><a href="#">How to get involved </a></li> --}}
+                            </ul>
+                        </article>
+                    </div>
+                    <div class="col-md-5 footer__item">
+
+                      
                        
                     </div>
                 </div>

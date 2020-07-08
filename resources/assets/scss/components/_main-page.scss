@@ -291,11 +291,13 @@ section {
             min-height: 753px;
             top: 0;
             left: 0;
+            width: 1px;
         }
         .btn-wrap {
             position: absolute;
             bottom: 85px;
             left: -125px;
+            width: 300px;
         }
         &:hover {
             h2 {
@@ -1336,9 +1338,18 @@ ul.bullet-style {
             height: 100%;
             display: block;
         }
+        &:hover {
+            -webkit-transform: scale(.9);
+            -ms-transform: scale(.9);
+            transform: scale(.9);
+            -webkit-box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, .2);
+            box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, .2);
+        }
     }
     &__image {
         min-height: 225px;
+        background-size: 90% !important;
+        background-position: center;
         a {
             display: block;
             width: 100%;
@@ -1346,6 +1357,7 @@ ul.bullet-style {
         }
     }
     &__title {
+        display: none;
         a {
             display: block;
             text-decoration: none;
@@ -1746,6 +1758,7 @@ ul.bullet-style {
     width: 280px;
     max-width: 280px;
     height: 280px;
+    margin-top: 25px;
     &__slick {
         &--item {
             a {
@@ -2078,6 +2091,10 @@ ul.bullet-style {
                     @include border-radius(100%);
                     width: 35px;
                     height: 35px;
+                    font-size: .9em;
+                    @include flex;
+                    @include flex-align-items(center);
+                    @include flex-justify-content(center);
                 }
             }
             &.disabled {
@@ -2122,6 +2139,10 @@ ul.bullet-style {
         justify-content: center;
         color: #fff;
         margin-bottom: 20px;
+        padding: 10px;
+        font-size: .8em;
+        line-height: 15px;
+        text-align: center;
     }
     &__social-link {
         border-top: 1px solid #000;

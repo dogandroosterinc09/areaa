@@ -19978,11 +19978,13 @@ section.chapters .map-content {
   min-height: 753px;
   top: 0;
   left: 0;
+  width: 1px;
 }
 section.chapters .btn-wrap {
   position: absolute;
   bottom: 85px;
   left: -125px;
+  width: 300px;
 }
 section.chapters:hover h2 {
   color: #fff;
@@ -20931,13 +20933,23 @@ ul.bullet-style li h6 {
   height: 100%;
   display: block;
 }
+.chapter-list-view__item:hover {
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.2);
+}
 .chapter-list-view__image {
   min-height: 225px;
+  background-size: 90% !important;
+  background-position: center;
 }
 .chapter-list-view__image a {
   display: block;
   width: 100%;
   height: 100%;
+}
+.chapter-list-view__title {
+  display: none;
 }
 .chapter-list-view__title a {
   display: block;
@@ -21296,6 +21308,7 @@ ul.bullet-style li h6 {
   width: 280px;
   max-width: 280px;
   height: 280px;
+  margin-top: 25px;
 }
 .small-advertisement__slick {
   /* Slick Dots */
@@ -21614,6 +21627,11 @@ ul.bullet-style li h6 {
   -moz-border-radius: 100%;
   width: 35px;
   height: 35px;
+  font-size: 0.9em;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center;
+  justify-content: center;
 }
 .pagination-section .pagination .page-item.disabled .page-link {
   color: #b9b1b2;
@@ -21651,6 +21669,10 @@ ul.bullet-style li h6 {
   justify-content: center;
   color: #fff;
   margin-bottom: 20px;
+  padding: 10px;
+  font-size: 0.8em;
+  line-height: 15px;
+  text-align: center;
 }
 .memberdirectory-detail__social-link {
   border-top: 1px solid #000;

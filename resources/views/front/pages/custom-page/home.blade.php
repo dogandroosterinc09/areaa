@@ -410,8 +410,7 @@
 
     @include('front.layouts.sections.footer')
 </section>
-
-{{-- <!--
+<!--
 <style>
     #map_wrapper {
         height: 400px;
@@ -486,4 +485,4 @@
     }
     google.maps.event.addDomListener(window, 'load', initialize);
 </script>
---> --}}
+--> 
