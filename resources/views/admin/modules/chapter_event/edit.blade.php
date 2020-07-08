@@ -49,8 +49,36 @@
                 </div>
 
                 @include('admin.components.input-field', ['label' => 'Name', 'value' => $chapter_event->name])
-                @include('admin.components.input-field', ['label' => 'Amount', 'type' => 'number', 'value' => $chapter_event->amount])
-                @include('admin.components.input-field', ['label' => 'Amount Member', 'type' => 'number', 'value' => $chapter_event->amount_member])
+                {{-- @include('admin.components.input-field', ['label' => 'Amount', 'type' => 'number', 'value' => $chapter_event->amount])
+                @include('admin.components.input-field', ['label' => 'Amount Member', 'type' => 'number', 'value' => $chapter_event->amount_member]) --}}
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="form-group{{ $errors->has('amount') ? ' has-error' : '' }}">
+                            <label class="col-md-2 control-label" for="amount">Amount</label>
+                            <div class="col-md-10">
+                                <input type="number" class="form-control" id="amount" name="amount"
+                                       value="{{ old('amount')? old('amount') : $chapter_event->amount? $chapter_event->amount : '' }}" placeholder="Enter Regular Amount.." min='0' step="0.01">
+                                @if($errors->has('amount'))
+                                    <span class="help-block animation-slideDown">{{ $errors->first('amount') }}</span>
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="form-group{{ $errors->has('amount_member') ? ' has-error' : '' }}">
+                            <label class="col-md-2 control-label" for="amount_member">Amount Member</label>
+                            <div class="col-md-10">
+                                <input type="number" class="form-control" id="amount_member" name="amount_member"
+                                       value="{{  old('amount_member')? old('amount_member') : $chapter_event->amount_member? $chapter_event->amount_member : '' }}" placeholder="Enter Amount Member.." min='0' step="0.01">
+                                @if($errors->has('amount_member'))
+                                    <span class="help-block animation-slideDown">{{ $errors->first('amount_member') }}</span>
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 @include('admin.components.input-field', ['label' => 'Starts At', 'type' => 'date', 'value' => $chapter_event->starts_at->format('Y-m-d')])
                 @include('admin.components.input-field', ['label' => 'Ends At', 'type' => 'date', 'value' => $chapter_event->ends_at->format('Y-m-d')])
                 @include('admin.components.input-field', ['label' => 'Time', 'value' => $chapter_event->time])
