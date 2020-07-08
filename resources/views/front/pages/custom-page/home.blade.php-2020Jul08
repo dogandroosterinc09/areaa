@@ -18,7 +18,9 @@
 
             <div class="events-camp-parent-holder">
                 <div class="events-camp-slider">
-                    @php($events_campaigns = json_decode($page->other_content))
+                    <?php 
+                    $events_campaigns = json_decode($page->other_content);
+                    ?>
 
                     @if (empty($events_campaigns))
                         <h3 class="text-danger font-weight-bold text-center w-100 my-5">No Events.</h3>
@@ -50,7 +52,46 @@
                         </div>
                     @endforeach */ ?>
 
-
+    <!--                 <div class="events-camp-slider--item">
+                        <a href="#">
+                            <div class="img-holder image-background">
+                                <img src="{{ asset('public/images/events-img1.jpg') }}" alt="Events Image">
+                            </div>
+                            <div class="title">Leadership Summit <span><i></i></span></div>
+                        </a>
+                    </div>
+                    <div class="events-camp-slider--item">
+                        <a href="#">
+                            <div class="img-holder image-background">
+                                <img src="{{ asset('public/images/events-img2.jpg') }}" alt="Events Image">
+                            </div>
+                            <div class="title">Regional Retreats <span><i></i></span></div>
+                        </a>
+                    </div>
+                    <div class="events-camp-slider--item">
+                        <a href="#">
+                            <div class="img-holder image-background">
+                                <img src="{{ asset('public/images/events-img3.jpg') }}" alt="Events Image">
+                            </div>
+                            <div class="title">Global & Luxury Summit <span><i></i></span></div>
+                        </a>
+                    </div>
+                    <div class="events-camp-slider--item">
+                        <a href="#">
+                            <div class="img-holder image-background">
+                                <img src="{{ asset('public/images/events-img4.jpg') }}" alt="Events Image">
+                            </div>
+                            <div class="title">National Convention <span><i></i></span></div>
+                        </a>
+                    </div>
+                    <div class="events-camp-slider--item">
+                        <a href="#">
+                            <div class="img-holder image-background">
+                                <img src="{{ asset('public/images/events-img1.jpg') }}" alt="Events Image">
+                            </div>
+                            <div class="title">Leadership Summit <span><i></i></span></div>
+                        </a>
+                    </div> -->
                 </div>
                 {{-- slider-controls --}}
                 <div class="slider-controls-two">
@@ -173,6 +214,35 @@
                                 @endforeach
                             @endif
 
+
+                            {{--
+                                <!-- <div class="big-advertisement__slick--item">
+                                    <a href="#">
+                                        <img src="{{ asset('public/images/advertisement-big.jpg') }}" alt="ads">   
+                                     </a>
+                                </div>
+                                <div class="big-advertisement__slick--item">
+                                    <a href="https://www.wellsfargo.com/mortgage/" target="_blank">
+                                        <img src="{{ asset('public/images/advertisement-wellfargo.jpg') }}" alt="wellfargo"> 
+                                    </a>  
+                                </div>
+                                <div class="big-advertisement__slick--item">
+                                    <a href="https://www.wellsfargo.com/mortgage/" target="_blank">
+                                        <img src="{{ asset('public/images/advertisement-bankamerica.jpg') }}" alt="bankamerica"> 
+                                    </a>  
+                                </div>
+                                <div class="big-advertisement__slick--item">
+                                    <a href="#">
+                                        <img src="{{ asset('public/images/advertisement-citi.jpg') }}" alt="citi"> 
+                                    </a>  
+                                </div>
+                                <div class="big-advertisement__slick--item">
+                                    <a href="#">
+                                        <img src="{{ asset('public/images/advertisement-usbank.jpg') }}" alt="usbank"> 
+                                    </a>  
+                                </div> -->
+                            --}}
+
                             </div>
                         </div>
                         {{-- big-advertisement --}}
@@ -236,45 +306,6 @@
         </section> --}}
         {{-- End of Chapters --}}
 
-        <?php
-        // $markers = array(
-        //     // your example['Palace of Westminster, London', 51.499633,-0.124755]
-        //     array(
-        //         'Palace of Westminster, London',
-        //         51.499633,
-        //         -0.124755
-        //     ),
-        //     array(
-        //         'Westminster Abbey, London',
-        //         51.4992453,
-        //         -0.1272561
-        //     ),
-        //     array(
-        //         'QEII Centre, London',
-        //         51.4997296,
-        //         -0.128683
-        //     ),
-        //     array(
-        //         'Winston Churchill Statue, London',
-        //         51.5004308,
-        //         -0.1275243
-        //     ),
-        //     array(
-        //         'Fitzroy Lodge Amature Boxing Club, London',
-        //         51.4954215,
-        //         -0.1154758
-        //     ),
-        //     array(
-        //         'Balham Boxing Club, London',
-        //         51.4419539,
-        //         -0.1336075
-        //     )
-        // );
-        ?>
-
-        {{-- <div id="map_wrapper">
-            <div id="map_canvas" class="mapping"></div>
-        </div> --}}
 
           {{-- Start  --}}
           <section class="chapters curl-tail-both">
@@ -349,6 +380,72 @@
 
                                 @endforeach
 
+        <!--                             <div class="feat-members-slider--item">
+                                        <a href="#">
+                                            <div class="image-holder image-background">
+                                                <img src="{{ asset('public/images/member-img1.jpg') }}" alt="Member Image">
+                                            </div>
+                                            <div class="desc-txt">
+                                                <div class="name">May Marcus</div>
+                                                <div class="chapter">San Diego Chapter</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="feat-members-slider--item">
+                                        <a href="#">
+                                            <div class="image-holder image-background">
+                                                <img src="{{ asset('public/images/member-img2.jpg') }}" alt="Member Image">
+                                            </div>
+                                            <div class="desc-txt">
+                                                <div class="name">May Marcus</div>
+                                                <div class="chapter">San Diego Chapter</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="feat-members-slider--item">
+                                        <a href="#">
+                                            <div class="image-holder image-background">
+                                                <img src="{{ asset('public/images/member-img3.jpg') }}" alt="Member Image">
+                                            </div>
+                                            <div class="desc-txt">
+                                                <div class="name">May Marcus</div>
+                                                <div class="chapter">San Diego Chapter</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="feat-members-slider--item">
+                                        <a href="#">
+                                            <div class="image-holder image-background">
+                                                <img src="{{ asset('public/images/member-img4.jpg') }}" alt="Member Image">
+                                            </div>
+                                            <div class="desc-txt">
+                                                <div class="name">May Marcus</div>
+                                                <div class="chapter">San Diego Chapter</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="feat-members-slider--item">
+                                        <a href="#">
+                                            <div class="image-holder image-background">
+                                                <img src="{{ asset('public/images/member-img5.jpg') }}" alt="Member Image">
+                                            </div>
+                                            <div class="desc-txt">
+                                                <div class="name">May Marcus</div>
+                                                <div class="chapter">San Diego Chapter</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="feat-members-slider--item">
+                                        <a href="#">
+                                            <div class="image-holder image-background">
+                                                <img src="{{ asset('public/images/member-img1.jpg') }}" alt="Member Image">
+                                            </div>
+                                            <div class="desc-txt">
+                                                <div class="name">May Marcus</div>
+                                                <div class="chapter">San Diego Chapter</div>
+                                            </div>
+                                        </a>
+                                    </div> -->
                                 </div>
                                 {{-- feat-members-slider --}}
 
@@ -410,80 +507,3 @@
 
     @include('front.layouts.sections.footer')
 </section>
-
-{{-- <!--
-<style>
-    #map_wrapper {
-        height: 400px;
-    }
-    #map_canvas {
-        width: 100%;
-        height: 100vh;
-    }
-</style>
-<script src="https://maps.googleapis.com/maps/api/js"></script>    
-<script type="text/javascript">
-
-    function initialize() {
-        var map;
-        var bounds = new google.maps.LatLngBounds();
-        var mapOptions = {
-            mapTypeId: "roadmap",
-            center: new google.maps.LatLng(52.791331, -1.918728), // somewhere in the uk BEWARE center is required
-            zoom: 3,
-        };
-
-        // Display a map on the page
-        map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
-        map.setTilt(45);
-
-        // Multiple Markers
-        var markers = <?php //echo json_encode( $markers ); ?>;
-
-        // Info Window Content
-        var infoWindowContent = [
-            ['<div class="info_content">' +
-            '<h3>London Eye</h3>' +
-            '<p>The London Eye is a giant Ferris wheel situated on the banks of the River Thames. The entire structure is 135 metres (443 ft) tall and the wheel has a diameter of 120 metres (394 ft).</p>' + '</div>'],
-            ['<div class="info_content">' +
-            '<h3>Palace of Westminster</h3>' +
-            '<p>The Palace of Westminster is the meeting place of the House of Commons and the House of Lords, the two houses of the Parliament of the United Kingdom. Commonly known as the Houses of Parliament after its tenants.</p>' +
-            '</div>']
-        ];
-
-        // Display multiple markers on a map
-        var infoWindow = new google.maps.InfoWindow();
-        var marker, i;
-
-        // Loop through our array of markers & place each one on the map
-        for (i = 0; i < markers.length; i++) {
-            var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
-            bounds.extend(position);
-            marker = new google.maps.Marker({
-                position: position,
-                map: map,
-                title: markers[i][0]
-            });
-
-            // Allow each marker to have an info window
-            google.maps.event.addListener(marker, 'click', (function (marker, i) {
-                return function () {
-                    infoWindow.setContent(infoWindowContent[i][0]);
-                    infoWindow.open(map, marker);
-                }
-            })(marker, i));
-
-            // Automatically center the map fitting all markers on the screen
-            map.fitBounds(bounds);
-        }
-
-        //Override our map zoom level once our fitBounds function runs (Make sure it only runs once)
-        var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function (event) {
-            this.setZoom(10);
-            google.maps.event.removeListener(boundsListener);
-        });
-
-    }
-    google.maps.event.addDomListener(window, 'load', initialize);
-</script>
---> --}}
