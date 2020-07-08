@@ -1325,6 +1325,7 @@ ul.bullet-style {
         @include border-radius(10px);
         overflow: hidden;
         margin-bottom: 25px;
+        @include transition(.3s);
         .image-background {
             a {
                 img {
