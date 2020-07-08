@@ -146,7 +146,7 @@
                             <iframe width="300" height="170" frameborder="0" style="border:0" allowfullscreen src="https://maps.google.com/maps?q={{$chapter_event->latitude}},{{$chapter_event->longitude}}&hl=es&z=14&amp;output=embed"></iframe>
                             --> --}}
 
-                            @if($chapter_event->location_name)
+                            @if($chapter_event->location_name && strtolower($chapter_event->location_name)!='online')
                             <iframe width="100%" height="300" frameborder="0" style="border:0" allowfullscreen src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB5npvhjIbytxAbiMKUQak32FQ8-boyLg0&q={{$chapter_event->location_name}},{{$chapter_event->city}}+{{$chapter_event->state}}"></iframe>
                             @endif
 

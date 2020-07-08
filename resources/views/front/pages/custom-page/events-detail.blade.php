@@ -124,7 +124,7 @@
                             src="https://www.google.com/maps/embed/v1/place?q={{$event->location_name}}&key={{env('GOOGLE_MAP_API_KEY')}}"></iframe>
                             --> --}}
 
-                            @if($event->location_name)
+                            @if($event->location_name && strtolower($event->location_name)!='online')
                             <iframe width="100%" height="300" frameborder="0" style="border:0" allowfullscreen src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB5npvhjIbytxAbiMKUQak32FQ8-boyLg0&q={{$event->location_name}},{{$event->city}}+{{$event->state}}"></iframe>
                             @endif
 
