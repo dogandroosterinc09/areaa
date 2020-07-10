@@ -154,6 +154,7 @@ class ChapterEventController extends Controller
      */
     public function update(Request $request, $id)
     {
+
         if (!auth()->user()->hasPermissionTo('Update Chapter Event')) {
             abort('401', '401');
         }
@@ -178,6 +179,7 @@ class ChapterEventController extends Controller
 
         $chapter_event = $this->chapter_event->findOrFail($id);
 
+        // dd($request->all());
         $chapter_event->fill(array_merge($request->all(), [
             'is_active' => $request->has('is_active') ? 1 : 0,
             'slug' => str_slug($request->input('name'))

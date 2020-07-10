@@ -55,7 +55,7 @@
                         </div>
                     </td>
                 </tr>
-                <tr>
+                {{-- <tr>
                     <td class="text-left">Events</td>
                     <td class="text-left"><a href="{{ url($chapter->slug).'/events' }}" target="_blank">{{ url($chapter->slug).'/events' }}</a></td>
                     <td class="text-center">
@@ -67,7 +67,7 @@
                                        data-original-title="Edit"><i class="fa fa-pencil"></i></a>
                         </div>
                     </td>
-                </tr>
+                </tr> --}}
                 <tr>
                     <td class="text-left">Leadership</td>
                     <td class="text-left"><a href="{{ url($chapter->slug).'/leadership-board' }}" target="_blank">{{ url($chapter->slug).'/leadership-board' }}</a></td>

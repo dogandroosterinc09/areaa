@@ -45,7 +45,7 @@
 
 
                     <div class="col-lg-6 contact-section__item contact-section__right" data-aos="fade-left">
-                        <h4>Fill out the form below and someone will be in contact with you shortly.</h4>
+                        <h4>{{ isset($section_1->form_text)? $section_1->form_text : 'Fill out the form below and someone will be in contact with you shortly...'}}</h4>
                         <div class="contact-form">
                             {{  Form::open([
                                 'method' => 'POST',
@@ -55,7 +55,7 @@
                                 ])
                             }}
 
-                            {{ $chapter->slug }}
+                            {{-- $chapter->slug --}}
                             <div class="form-box row">
                                 <div class="col-md-6 form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                                     <label for="name">Name</label>

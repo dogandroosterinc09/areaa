@@ -98,6 +98,10 @@ class PageController extends Controller
         }
 
         $pages = $this->page->get();
+        // foreach ($pages as $page) {
+        //     echo 'slug: '.$page->slug.'<br>';
+        // }
+        // die('102');
 
         return view('admin.modules.page.index', compact('pages'));
     }

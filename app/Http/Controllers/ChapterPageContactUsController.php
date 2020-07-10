@@ -73,6 +73,7 @@ class ChapterPageContactUsController extends Controller
      */
     public function update(Request $request, $id)
     {
+        // dd($request);
         if (!auth()->user()->hasPermissionTo('Update Chapter Page Contact Us')) {
             abort('401', '401');
         }
@@ -89,6 +90,7 @@ class ChapterPageContactUsController extends Controller
         $section_1->location_text = $request->location_text;
         $section_1->telephone_text = $request->telephone_text;
         $section_1->mail_text = $request->mail_text;
+        $section_1->form_text = $request->form_text;
 
         $chapter_page_contact_us->fill(array_merge($request->all(),[
             'section_1' => json_encode($section_1)
@@ -102,13 +104,14 @@ class ChapterPageContactUsController extends Controller
         if (auth()->user()->roles->first()->name === 'Chapter Admin') {
             return redirect()->route('admin.pages.index')->with('flash_message', [
                 'title' => '',
-                'message' => 'Chapter Page Event ' . $chapter_page_contact_us->name . ' successfully updated.',
+                // 'message' => 'Chapter Page ' . $chapter_page_contact_us->name . ' successfully updated.',
+                'message' => 'Chapter Page Contact Us successfully updated.',
                 'type' => 'success',
             ]);
         } else {
             return redirect()->route('admin.chapters.pages',$chapter_page_contact_us->chapter_id)->with('flash_message', [
                 'title' => '',
-                'message' => 'Chapter Page Event ' . $chapter_page_contact_us->name . ' successfully updated.',
+                'message' => 'Chapter Page ' . $chapter_page_contact_us->name . ' successfully updated.',
                 'type' => 'success'
             ]);
         }

@@ -57,13 +57,15 @@
                 --}}
 
                 @include('admin.components.editor', ['label' => 'Content', 'field' => 'content', 'value' => $chapter_page_contact_us->content])
-                
                 @include('admin.components.heading', ['text' => 'Sections'])
                 @include('admin.components.heading', ['text' => 'Section 1'])
+
                 @php( $section_1 = json_decode($chapter_page_contact_us->section_1) )                
                 @include('admin.components.input-field', ['label' => 'Location Text', 'field' => 'location_text', 'value' => $section_1->location_text])
-                @include('admin.components.input-field', ['label' => 'Telephone Text', 'field' => 'telephone_text', 'value' => $section_1->telephone_text])                
-                @include('admin.components.input-field', ['label' => 'Mail Text', 'field' => 'mail_text', 'value' => $section_1->mail_text])                
+                @include('admin.components.input-field', ['label' => 'Telephone Text', 'field' => 'telephone_text', 'value' => $section_1->telephone_text])
+                @include('admin.components.input-field', ['label' => 'Mail Text', 'field' => 'mail_text', 'value' => $section_1->mail_text])
+
+                @include('admin.components.input-field', ['label' => 'Form Text', 'field' => 'form_text', 'value' => isset($section_1->form_text)? $section_1->form_text: ''])
 
                 <div class="form-group form-actions">
                     <div class="col-md-9 col-md-offset-3">
