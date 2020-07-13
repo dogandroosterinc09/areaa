@@ -37,6 +37,7 @@
                 <i class="fa fa-newspaper-o sidebar-nav-icon"></i>
                 <strong>{{-- isset($chapter) ? $chapter->name : 'National' --}}All Chapter Members</strong>
             </h2>
+                <a href="{{ route('admin.user.generate_csv') }}"><button type="submit">Export All Members (csv file)</button></a>
         </div>
         <div class="alert alert-info alert-dismissable members-empty {{$members->count() == 0 ? '' : 'johnCena' }}">
             <i class="fa fa-info-circle"></i> No Members found.

@@ -8,6 +8,7 @@ Route::get('/dashboard', 'AdminDashboardController')->name('index');
 Route::get('/users/draw', 'UserController@draw')->name('users.draw');
 
 Route::resource('/users', 'UserController');
+
 // User All Members
 Route::get('/user-admin', 'UserController@displayAllAdmin')->name('user.index_admin');
 Route::get('/admin-edit/{id}', 'UserController@editAdmin')->name('user.edit_admin');
@@ -15,10 +16,11 @@ Route::post('/admin-edit/{id}', 'UserController@updateAdmin')->name('user.update
 Route::get('/admin-create', 'UserController@createAdmin')->name('user.create_admin');
 Route::post('/admin-create', 'UserController@storeAdmin')->name('user.store_admin');
 
-
 Route::get('/user-all', 'UserController@displayAllMembers')->name('user.index_members');
 Route::get('/user-edit/{id}', 'UserController@editMember')->name('user.edit_member');
 Route::post('/user-edit/{id}', 'UserController@updateMember')->name('user.update_member');
+Route::get('/members-generate-csv', 'UserController@generateCSV')->name('user.generate_csv');
+// Route::get('/members-generate-csv/{$id}', 'UserController@generateCSV')->name('user.generate_csv');
 
 
 Route::resource('/roles', 'RoleController');

@@ -706,7 +706,7 @@ class UserController extends Controller
             // ->where('users.chapter_id', '<>',NULL)
             // ->where('users.chapter_id', 0)
             ->select('members.id as member_id', 'members.*', 'users.*')
-            // ->take(100)
+            ->take(10)
             ->get();
 
         // echo 'count: '.count($members).'<br>';
@@ -730,6 +730,151 @@ class UserController extends Controller
 
         return view('admin.modules.user.index-2', compact('members'));
     }
+
+
+
+    public function generateCSV() {
+
+        // die('738');
+        // $start = microtime(true);
+
+        // $members = $this->members
+        //         ->whereHas('user', function($q) {
+        //             $q->where('chapter_id',0);
+        //         })
+        //         // ->take(1000)
+        //         ->get();
+
+        // $members = $this->members
+        //         ->whereHas('user', function($q) {
+        //             $q->where('chapter_id','<>',NULL);
+        //         })
+        //         ->get();
+
+        // $members = DB::table('members')
+        //     ->join('users', 'members.user_id', '=', 'users.id')
+        //     // ->join('chapters', 'chapters.id', '=', 'users.chapter_id')
+        //     // ->where('users.chapter_id', '<>',NULL)
+        //     ->where('users.chapter_id', 0)
+        //     ->take(1000)
+        //     ->get();
+
+        $members = DB::table('members')
+            ->join('users', 'members.user_id', '=', 'users.id')
+            // ->join('chapters', 'chapters.id', '=', 'users.chapter_id')
+            // ->where('users.chapter_id', '<>',NULL)
+            // ->where('users.chapter_id', 0)
+            // ->select('members.id as member_id', 'members.*', 'users.*')
+            ->select('members.id as member_id',
+                'users.first_name', 
+                'users.last_name',
+                'users.user_name',
+                'users.email',
+                'users.phone',
+                'users.chapter_id',
+                'users.is_active',
+                'users.is_featured',
+                'users.is_alist',
+                'users.alist_years',
+                'users.is_luxury',
+                'members.bio',
+                'members.position',
+                'members.expires')
+            // ->take(10)
+            ->get();
+
+    $member_headers = explode(',', 'member_id,first_name,last_name,user_name,email,phone,chapter_id,is_active,is_featured,is_alist,alist_years,is_luxury,bio,position,expires');
+
+// foreach ($members as $member) {
+//     print_r($member);
+//     echo '- - - - - <br>';
+//     // $array = (array) $member;
+// }
+
+// echo 'ln 771<br>';
+// // download_send_headers("data_export_" . date("Y-m-d") . ".csv");
+    $filename = "data_export_" . date("Y-m-d") . ".csv";
+
+    // disable caching
+    $now = gmdate("D, d M Y H:i:s");
+    header("Expires: Tue, 03 Jul 2001 06:00:00 GMT");
+    header("Cache-Control: max-age=0, no-cache, must-revalidate, proxy-revalidate");
+    header("Last-Modified: ".$now." GMT");
+
+    // force download  
+    header("Content-Type: application/force-download");
+    header("Content-Type: application/octet-stream");
+    header("Content-Type: application/download");
+
+    // disposition / encoding on response body
+    header("Content-Disposition: attachment;filename=".$filename."");
+    header("Content-Transfer-Encoding: binary");
+// echo 'ln 789<br>';
+
+// // echo array2csv($members);
+//    if (count($members) == 0) {
+//      return null;
+//    }
+
+// $members = array (
+//     array('aaa', 'bbb', 'ccc', 'dddd'),
+//     array('123', '456', '789'),
+//     array('"aaa"', '"bbb"')
+// );
+
+// $member_headers = array (
+//     array('member_id','first','last')
+// );
+
+
+   ob_start();
+   $df = fopen("php://output", 'w');
+   fputcsv($df, $member_headers);
+   // fputcsv($df, array_keys(reset($members)));
+   foreach ($members as $row) {
+      // fputcsv($df, $row);
+        $arrayRow = (array) $row;
+        // print_r($arrayRow);
+        // echo '<br>- - - - - <br>';
+      fputcsv($df, $arrayRow);
+   }
+   fclose($df);
+   return ob_get_clean();
+
+    return redirect()->route('admin.user.index_members')->with('flash_message', [
+        'title' => '',
+        'message' => 'Download completed',
+        'type' => 'success'
+    ]);
+
+// die('802');
+
+// download_send_headers("data_export_" . date("Y-m-d") . ".csv");
+// echo array2csv($array);
+// die();
+
+        // echo 'count: '.count($members).'<br>';
+        // print_r($members);
+        // die();
+        // foreach ($members as $member) {
+        //     if ($member->chapter_id > 0) {
+        //         $chapter = \App\Models\Chapter::find($member->chapter_id);
+        //         $member->chapter_name = $chapter->name;
+        //     } else {
+
+        //         $member->chapter_name = 'National';
+        //     }
+        //     // echo 'member: '.$member->user->first_name.'<br>';
+        //     // echo 'member: '.$member->first_name.' > chapter: '.$member->chapter_name.'<br>';
+        // }
+        // $time_elapsed_secs = microtime(true) - $start;
+
+        // echo 'time_elapsed_secs: '.$time_elapsed_secs.'<br>';
+        // die('236');
+
+        // return view('admin.modules.user.index-2', compact('members'));
+    }
+
 
     /**
      * Show the form for editing the specified resource.
