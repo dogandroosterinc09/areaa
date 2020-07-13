@@ -8,7 +8,7 @@
             <div class="container-max">
                 <div class="row">
                     <div class="col-md-8">
-                        <h2>Upcoming Events</h2>
+                        <h2>Events & Campaigns</h2>
                     </div>
                     <div class="col-md-3 content-middle content-middle__right">
                         <a href="{{url('events')}}" class="btn btn--secondary">View All Events</a>
@@ -35,6 +35,22 @@
                         </div>
                     @endforeach
 
+                    <?php /* @php($events = \App\Models\Event::all())                        
+                    @if ($events->isEmpty())
+                        <h3 class="text-danger font-weight-bold text-center w-100 my-5">No Events.</h3>
+                    @endif
+                    @foreach($events as $event) 
+                        <div class="events-camp-slider--item">
+                            <a href="{{ $event->url }}">
+                                <div class="img-holder image-background">
+                                    <img src="{{ $event->attachment ? optional($event->attachment)->url : asset('public/images/watermark.jpg') }}" alt="Events Image">
+                                </div>
+                                <div class="title">{{ (strlen($event->name)>27)? substr($event->name, 0,27).' ...' : $event->name }}<span><i></i></span></div>
+                            </a>
+                        </div>
+                    @endforeach */ ?>
+
+
                 </div>
                 {{-- slider-controls --}}
                 <div class="slider-controls-two">
@@ -58,18 +74,16 @@
 
                         <div class="become-member__content">
                             <h2>{{ section('Become a Member.data.first.title') }}</h2>
-                            <!-- <div class="content-text"> -->
+                            <div class="content-text">
                                 {!! section('Become a Member.data.first.content') !!}
                                 <br/>
 
                                 <div class="become-member__button">
                                     <a href="{{ section('Become a Member.data.first.btn1_link') }}" class="btn btn--secondary margin-right20">{{ section('Become a Member.data.first.btn1_text') }}</a> 
-                                    @if(section('Become a Member.data.first.btn2_link'))
-                                        <a href="{{ section('Become a Member.data.first.btn2_link') }}" class="btn btn--primary">{{ section('Become a Member.data.first.btn2_text') }}</a>
-                                    @endif
+                                    <a href="{{ section('Become a Member.data.first.btn2_link') }}" class="btn btn--primary">{{ section('Become a Member.data.first.btn2_text') }}</a>
                                 </div>
                                
-                            <!-- </div> -->
+                            </div>
                         </div>                    
                     </div>
                     <div class="col-md-5"></div>
@@ -117,11 +131,8 @@
                             {{-- <p>We have more than 30 partners fromLocal to International.</p> --}}
                             {!! section('Partnership.data.first.content') !!}
                         </div>
-
                            {{-- partnership-level --}}
                            <div class="partnership-level partnership-level__adjustment">
-
-                            {{--
                             @foreach( section('Partnership Levels.data') as $data )
                             <div class="partnership-level--item">
                                 <div class="icon {{ $data->icon }}"></div>
@@ -131,8 +142,6 @@
                                 </div>
                             </div>
                             @endforeach                            
-                            --}}
-
                             <div class="btn-wrap">
                                 @if(section('Partnership.data.first.btn1_text'))
                                 <a href="{{ section('Partnership.data.first.btn1_link') }}" class="btn btn--secondary margin-right20">

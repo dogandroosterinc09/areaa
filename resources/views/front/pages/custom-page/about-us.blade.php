@@ -37,15 +37,16 @@
                         <img src="{{ section('Our Mission.data.first.image') }}" alt="{{ section('Our Mission.data.first.alt_text') }}">
                     </div>
                     <div class="col-md-6 our-mission__right content-middle" data-aos="fade-left">
-                        <div class="our-mission__content">
+                        <!-- <div class="our-mission__content"> -->
 
                             <h2>{{ section('Our Mission.data.first.title') }}</h2>
 
                             <p>{{ section('Our Mission.data.first.content') }}</p>
                             <a href="{{ section('Our Mission.data.first.btn_link') }}" class="btn btn btn--secondary">{{ section('Our Mission.data.first.btn_text') }}</a>
-                        </div>
-
+                        <!-- </div> -->
                     </div>
+                    <div class="clear">&nbsp;<br></div>
+
                 </div>
             </div> {{-- end of default-content--row --}}
         </section> {{-- end of default-content --}}
@@ -126,8 +127,12 @@
                             <div class="hightlight__left">
                                 <h4>{{ section('Membership.data.first.title') }}</h4>
                                 <div class="btn-group">
+                                    @if(section('Membership.data.first.btn1_link'))
                                      <a href="{{ section('Membership.data.first.btn1_link') }}" class="btn btn btn--secondary">{{ section('Membership.data.first.btn1_text') }}</a>
+                                    @endif
+                                    @if(section('Membership.data.first.btn2_link'))
                                      <a href="{{ section('Membership.data.first.btn2_link') }}" class="btn btn btn--primary">{{ section('Membership.data.first.btn2_text') }}</a>
+                                    @endif
                                 </div>
                             </div>
                           

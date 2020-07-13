@@ -15,7 +15,7 @@
                     <div class="item"><i class="mail"></i> <a href="{{ section('Contact Us.data.first.mail_link') }}">{{ section('Contact Us.data.first.mail_text') }}</a></div>
                 </div>
 
-                <div class="join-content join-content__left">
+                {{-- <div class="join-content join-content__left">
                     <div class="title">
                         <h4>Join AREAA today!</h4>
                     </div>
@@ -25,7 +25,7 @@
                             <a href="{{url('membership-registration')}}" class="btn btn--secondary">Join</a>
                         </div>
                     </div>
-                </div>
+                </div> --}}
 
             </div>
             <div class="col-md-8 footer__item">

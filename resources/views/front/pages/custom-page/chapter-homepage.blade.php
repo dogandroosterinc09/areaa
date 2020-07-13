@@ -386,79 +386,6 @@
 
                             </div>
 
-
-
-                                <?php /* <div class="row">
-                                    
-                                    @foreach( $diamonds as $diamond )
-                                        @if(!empty($diamond->image))
-                                        <div class="col-md-4">
-                                            <div class="sponsor-thumbnail">
-                                                <div class="sponsor-thumbnail__badge sponsor-thumbnail__badge--{{ $diamond->badge_icon }}">  </div>
-                                                <img src="{{ $diamond->image }}" alt="{{ $diamond->image_alt }}" class="img-fluid">
-                                            </div>
-                                        </div>
-                                        @endif
-                                    @endforeach
-
-                                    @foreach( $emeralds as $emerald )
-                                        @if(!empty($emerald->image))
-                                        <div class="col-md-4">
-                                            <div class="sponsor-thumbnail">
-                                                <div class="sponsor-thumbnail__badge sponsor-thumbnail__badge--{{ $emerald->badge_icon }}">  </div>
-                                                <img src="{{ $emerald->image }}" alt="{{ $emerald->image_alt }}" class="img-fluid">
-                                            </div>
-                                        </div>
-                                        @endif
-                                    @endforeach
-
-                                    @foreach( $opals as $opal )
-                                        @if(!empty($opal->image))
-                                        <div class="col-md-4">
-                                            <div class="sponsor-thumbnail">
-                                                <div class="sponsor-thumbnail__badge sponsor-thumbnail__badge--{{ $opal->badge_icon }}">  </div>
-                                                <img src="{{ $opal->image }}" alt="{{ $opal->image_alt }}" class="img-fluid">
-                                            </div>
-                                        </div>
-                                        @endif
-                                    @endforeach
-
-                                    @foreach( $rubies as $ruby )
-                                        @if(!empty($ruby->image))
-                                        <div class="col-md-4">
-                                            <div class="sponsor-thumbnail">
-                                                <div class="sponsor-thumbnail__badge sponsor-thumbnail__badge--{{ $ruby->badge_icon }}">  </div>
-                                                <img src="{{ $ruby->image }}" alt="{{ $ruby->image_alt }}" class="img-fluid">
-                                            </div>
-                                        </div>
-                                        @endif
-                                    @endforeach
-
-                                    @foreach( $pearls as $pearl )
-                                        @if(!empty($pearl->image))
-                                        <div class="col-md-4">
-                                            <div class="sponsor-thumbnail">
-                                                <div class="sponsor-thumbnail__badge sponsor-thumbnail__badge--{{ $pearl->badge_icon }}">  </div>
-                                                <img src="{{ $pearl->image }}" alt="{{ $pearl->image_alt }}" class="img-fluid">
-                                            </div>
-                                        </div>
-                                        @endif
-                                    @endforeach
-
-                                    {{--
-                                    @foreach( $other_sponsors as $sponsor )
-                                        @if(!empty($sponsor->image))
-                                        <div class="col-md-4">
-                                            <div class="sponsor-thumbnail">
-                                                <div class="sponsor-thumbnail__badge sponsor-thumbnail__badge--{{ $sponsor->badge_icon }}">  </div>
-                                                <img src="{{ $sponsor->image }}" alt="{{ $sponsor->image_alt }}" class="img-fluid">
-                                            </div>
-                                        </div>
-                                        @endif
-                                    @endforeach
-                                    --}}
-                                </div> */ ?>
-
                             </div>
                         </div>
                        
@@ -526,8 +453,6 @@
         </div>
         </div>
     </div>
-
-
 
 
     @include('front.layouts.sections.chapter.footer_chapter')
