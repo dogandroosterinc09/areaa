@@ -36,7 +36,7 @@
                     <div class="col-md-6 our-mission__left" data-aos="fade-right">
                         <img src="{{ section('Our Mission.data.first.image') }}" alt="{{ section('Our Mission.data.first.alt_text') }}">
                     </div>
-                    <div class="col-md-6 our-mission__right content-middle" data-aos="fade-left">
+                    <div class="col-md-6 our-mission__right content-middle" data-aos="fade-left" valign="top">
                         <!-- <div class="our-mission__content"> -->
 
                             <h2>{{ section('Our Mission.data.first.title') }}</h2>
