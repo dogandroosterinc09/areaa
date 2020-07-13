@@ -706,7 +706,7 @@ class UserController extends Controller
             // ->where('users.chapter_id', '<>',NULL)
             // ->where('users.chapter_id', 0)
             ->select('members.id as member_id', 'members.*', 'users.*')
-            ->take(10)
+            // ->take(10)
             ->get();
 
         // echo 'count: '.count($members).'<br>';
@@ -735,29 +735,6 @@ class UserController extends Controller
 
     public function generateCSV() {
 
-        // die('738');
-        // $start = microtime(true);
-
-        // $members = $this->members
-        //         ->whereHas('user', function($q) {
-        //             $q->where('chapter_id',0);
-        //         })
-        //         // ->take(1000)
-        //         ->get();
-
-        // $members = $this->members
-        //         ->whereHas('user', function($q) {
-        //             $q->where('chapter_id','<>',NULL);
-        //         })
-        //         ->get();
-
-        // $members = DB::table('members')
-        //     ->join('users', 'members.user_id', '=', 'users.id')
-        //     // ->join('chapters', 'chapters.id', '=', 'users.chapter_id')
-        //     // ->where('users.chapter_id', '<>',NULL)
-        //     ->where('users.chapter_id', 0)
-        //     ->take(1000)
-        //     ->get();
 
         $members = DB::table('members')
             ->join('users', 'members.user_id', '=', 'users.id')
@@ -785,12 +762,6 @@ class UserController extends Controller
 
     $member_headers = explode(',', 'member_id,first_name,last_name,user_name,email,phone,chapter_id,is_active,is_featured,is_alist,alist_years,is_luxury,bio,position,expires');
 
-// foreach ($members as $member) {
-//     print_r($member);
-//     echo '- - - - - <br>';
-//     // $array = (array) $member;
-// }
-
 // echo 'ln 771<br>';
 // // download_send_headers("data_export_" . date("Y-m-d") . ".csv");
     $filename = "data_export_" . date("Y-m-d") . ".csv";
@@ -816,16 +787,6 @@ class UserController extends Controller
 //      return null;
 //    }
 
-// $members = array (
-//     array('aaa', 'bbb', 'ccc', 'dddd'),
-//     array('123', '456', '789'),
-//     array('"aaa"', '"bbb"')
-// );
-
-// $member_headers = array (
-//     array('member_id','first','last')
-// );
-
 
    ob_start();
    $df = fopen("php://output", 'w');
@@ -841,13 +802,13 @@ class UserController extends Controller
    fclose($df);
    return ob_get_clean();
 
-    return redirect()->route('admin.user.index_members')->with('flash_message', [
-        'title' => '',
-        'message' => 'Download completed',
-        'type' => 'success'
-    ]);
+    die('802');
 
-// die('802');
+    // return redirect()->route('admin.user.index_members')->with('flash_message', [
+    //     'title' => '',
+    //     'message' => 'Download completed',
+    //     'type' => 'success'
+    // ]);
 
 // download_send_headers("data_export_" . date("Y-m-d") . ".csv");
 // echo array2csv($array);
@@ -867,12 +828,6 @@ class UserController extends Controller
         //     // echo 'member: '.$member->user->first_name.'<br>';
         //     // echo 'member: '.$member->first_name.' > chapter: '.$member->chapter_name.'<br>';
         // }
-        // $time_elapsed_secs = microtime(true) - $start;
-
-        // echo 'time_elapsed_secs: '.$time_elapsed_secs.'<br>';
-        // die('236');
-
-        // return view('admin.modules.user.index-2', compact('members'));
     }
 
 
