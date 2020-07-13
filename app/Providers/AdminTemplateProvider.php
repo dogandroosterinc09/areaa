@@ -174,6 +174,13 @@ class AdminTemplateProvider extends ServiceProvider
                     'url' => url('admin/user-all'),
                     'icon' => 'fa fa-users'
                 ]);
+
+                array_push($navigation, [
+                    'name' => 'Export Members (CSV)',
+                    'url' => url('admin/members-generate-csv'),
+                    'icon' => 'fa fa-download'
+                ]);
+
             } else { // Chapter Admin
                 array_push($navigation, [
                     'name' => 'Chapter Members',
