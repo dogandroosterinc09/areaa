@@ -162,7 +162,7 @@
                                 <ul class="sub-menu mega-menu">
                                     <li><a href="{{url('about-us')}}"> Why join </a></li>
                                     <li class="{{ $page->slug == 'areabenefits' ? 'active' : '' }}" ><a href="{{url('areabenefits')}}"> Benefits </a></li>
-                                    <li><a href="{{ route('customer.login') }}"> Find a Member </a></li>
+                                    <li><a href="{{ route('customer.dashboard.member_directory') }}"> Find a Member </a></li>
                                     <li class="{{ $page->slug == 'chapter' ? 'active' : '' }}" ><a href="{{url('chapter')}}"> Chapter Locations </a></li>
                                     {{-- <li><a href="{{url('membership-registration')}}"> A-List </a></li> --}}
                                 </ul>

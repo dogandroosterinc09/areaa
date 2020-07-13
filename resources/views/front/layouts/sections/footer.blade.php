@@ -80,7 +80,7 @@
                                 @foreach($partnerships as $partner_slide)
                                     <div class="small-advertisement__slick--item">
                                         <a href="{{$partner_slide->link}}" target="_blank">
-                                            <img src="{{$partner_slide->image}}{{-- asset('public/images/advertisement-big.jpg') --}}" alt="ads">
+                                            <img src="{{asset($partner_slide->image)}}{{-- asset('public/images/advertisement-big.jpg') --}}" alt="ads">
                                          </a>
                                     </div>
                                 @endforeach
