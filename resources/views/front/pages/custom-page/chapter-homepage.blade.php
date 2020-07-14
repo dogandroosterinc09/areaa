@@ -28,12 +28,12 @@
                             {{-- loop here --}}
                             <div class="chapter-events-upcoming__box">
                                 <div class="row">
-                                    <div class="col-md-3 chapter-events-upcoming__image">
+                                    <div class="col-md-4 chapter-events-upcoming__image">
                                         <a href="{{url($chapter['slug'].'/event/'.$chapter_event->slug)}}">
                                             <img src="{{ isset($chapter_event->attachment->url)? $chapter_event->attachment->url : asset('public/images/watermark.jpg') }}" alt="event title" class="img-fluid">
                                         </a>
                                     </div>
-                                    <div class="col-md-9 content-middle">
+                                    <div class="col-md-8 content-middle">
                                         <div class="chapter-events-upcoming__content ">
                                             <a href="{{url($chapter['slug'].'/event/'.$chapter_event->slug)}}">
                                                  <h4>{{ $chapter_event->name }}</h4>
