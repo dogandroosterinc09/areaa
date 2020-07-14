@@ -35,11 +35,13 @@ class WebinarsController extends Controller
 
     public function index()
     {
+
         if (!auth()->user()->hasPermissionTo('Read Webinars')) {
             abort('401', '401');
         }
 
-        $webinars = $this->webinars->get();
+        // $webinars = $this->webinars->get();
+        $webinars = $this->webinars->orderby('created_at','desc')->get();
 
         return view('admin.modules.webinars.index', compact('webinars'));
     }

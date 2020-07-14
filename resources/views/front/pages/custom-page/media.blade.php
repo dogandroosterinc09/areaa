@@ -123,9 +123,11 @@
                                             @php( $media = \App\Models\Webinars::where('title','like','%'.Request::get('title').'%')
                                                 ->where('tags','like','%'.Request::get('tags').'%')
                                                 ->where('media_category_id', $category->id)
+                                                ->orderby('created_at', 'desc')
                                                 ->get() )
                                         @else
-                                            @php( $media = \App\Models\Webinars::where('media_category_id', $category->id)->get() )
+                                            {{-- @php( $media = \App\Models\Webinars::where('media_category_id', $category->id)->get() ) --}}
+                                            @php( $media = \App\Models\Webinars::where('media_category_id', $category->id)->orderby('created_at', 'desc')->get() )
                                         @endif
 
                                         @forelse($media as $media_item)

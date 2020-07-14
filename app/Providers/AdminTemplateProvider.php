@@ -39,21 +39,36 @@ class AdminTemplateProvider extends ServiceProvider
 
     private function getAdminNav()
     {
-        $navigation = [
-            [
-                'name' => 'Dashboard',
-                'url' => url('admin/dashboard'),
-                'icon' => 'fa fa-dashboard'
-            ],
-            [
-                'name' => 'Front-end Site',
-                // 'url' => (auth()->user()->getRoleNames()->first() !== 'Chapter Admin' ? url('/') : url('/' . auth()->user()->ChapterSlug)) ,
-                'url' => url('/'),
-                'never_active' => true,
-                // 'icon' => 'fa fa-paper-plane-o'
-                'icon' => 'fa fa-home fa-fw'
-            ],
-        ];
+        if (auth()->check()) {
+            $navigation = [
+                [
+                    'name' => 'Dashboard',
+                    'url' => url('admin/dashboard'),
+                    'icon' => 'fa fa-dashboard'
+                ],
+                [
+                    'name' => 'Front-end Site',
+                    'url' => (auth()->user()->getRoleNames()->first() !== 'Chapter Admin' ? url('/') : url('/' . auth()->user()->ChapterSlug)) ,
+                    // 'url' => url('/'),
+                    'never_active' => true,
+                    'icon' => 'fa fa-home fa-fw'
+                ],
+            ];
+        } else {
+            $navigation = [
+                [
+                    'name' => 'Dashboard',
+                    'url' => url('admin/dashboard'),
+                    'icon' => 'fa fa-dashboard'
+                ],
+                [
+                    'name' => 'Front-end Site',
+                    'url' => url('/'),
+                    'never_active' => true,
+                    'icon' => 'fa fa-home fa-fw'
+                ],
+            ];
+        }
 
         if (auth()->check()) {
             if ($this->hasCrudAccessFor('Page')) {
