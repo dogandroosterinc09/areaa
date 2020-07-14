@@ -57,6 +57,9 @@
                                     </div>
                                     <div class="events-thumbnail__day events-thumbnail__day--first"> {{ $event->startDay }}</div>
                                     to
+                                    <div class="events-thumbnail__month events-thumbnail__month--end">
+                                        {{ $event->endMonth }} 
+                                    </div>
                                     <div class="events-thumbnail__day events-thumbnail__day--end"> {{ $event->endDay }}</Div>
                                 </div>
                                 <div class="events-thumbnail__image">
