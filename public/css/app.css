@@ -24379,9 +24379,9 @@ section.page--media .search-member-directory {
   font-weight: 600;
 }
 .chapter-events-thumbnail__image {
-  flex: 0 0 35%;
-  max-width: 35%;
-  padding-right: 10%;
+  flex: 0 0 40%;
+  max-width: 40%;
+  padding-right: 5%;
 }
 .chapter-events-thumbnail__image a {
   display: block;
@@ -24389,6 +24389,8 @@ section.page--media .search-member-directory {
   width: 100%;
 }
 .chapter-events-thumbnail__details {
+  flex: 40%;
+  max-width: 40%;
   flex: 0 0 52%;
   max-width: 52%;
 }
