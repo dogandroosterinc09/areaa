@@ -58,6 +58,9 @@
                                         @if($event->starts_at == $event->ends_at) 
                                         @else 
                                             to
+                                            <div class="events-thumbnail__month events-thumbnail__month--end">
+                                                {{ $event->endMonth }}
+                                            </div>
                                             <div class="events-thumbnail__day events-thumbnail__day--end"> {{ $event->endDay }}</Div>
                                         @endif
 
