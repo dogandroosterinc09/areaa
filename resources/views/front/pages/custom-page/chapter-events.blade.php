@@ -67,9 +67,12 @@
                                         <div class="chapter-events-thumbnail__day chapter-events-thumbnail__day--first"> {{ $chapter_event->startDay }}</div>
                                         to
                                         @if($chapter_event->startMonth != $chapter_event->endMonth)
-                                        <div class="chapter-events-thumbnail__month">
-                                        {{ $chapter_event->endMonth }}
+                                        <div class="events-thumbnail__month events-thumbnail__month--end">
+                                            {{ $chapter_event->endMonth }}
                                         </div>
+                                        {{-- <div class="chapter-events-thumbnail__month">
+                                        {{ $chapter_event->endMonth }}
+                                        </div> --}}
                                         @endif
                                         <div class="chapter-events-thumbnail__day chapter-events-thumbnail__day--end"> {{ $chapter_event->endDay }}</div>
                                         @endif
