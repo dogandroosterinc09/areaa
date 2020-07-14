@@ -58,7 +58,7 @@
                                     <div class="events-thumbnail__day events-thumbnail__day--first"> {{ $event->startDay }}</div>
                                     to
                                     <div class="events-thumbnail__month events-thumbnail__month--end">
-                                        {{ $event->endMonth }} 
+                                        {{ $event->startMonth }}
                                     </div>
                                     <div class="events-thumbnail__day events-thumbnail__day--end"> {{ $event->endDay }}</Div>
                                 </div>
