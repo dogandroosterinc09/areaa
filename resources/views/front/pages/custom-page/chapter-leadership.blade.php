@@ -50,7 +50,6 @@
                                 <div class="board-thumbnail__details">
                                     <h5>{{ $executive->name }}</h5>
                                     <h6>{{ $executive->position }}</h6>
-                                    {{ $executive->bio }}
                                 </div>
                             @if(!empty($executive->bio)) </a> @endif
                         </div>

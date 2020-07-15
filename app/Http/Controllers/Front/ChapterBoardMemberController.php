@@ -53,12 +53,14 @@ class ChapterBoardMemberController extends Controller
     public function previousBoardMember($chapter_board_member, $chapter_id) {
         return  $chapter_board_member->where('id', '<', $chapter_board_member->id)
                     ->where('chapter_id',$chapter_id)->where('is_active',1)
-                    ->orderBy('type')->get()->last();
+                    // ->orderBy('type')->get()->last();
+                    ->orderBy('type')->orderBy('id')->get()->last();
     }
 
     public function nextBoardMember($chapter_board_member, $chapter_id) {
         return  $chapter_board_member->where('id', '>', $chapter_board_member->id)
                     ->where('chapter_id',$chapter_id)->where('is_active',1)
-                    ->orderBy('type')->get()->first();
+                    // ->orderBy('type')->get()->first();
+                    ->orderBy('type')->orderBy('id')->get()->first();
     }
 }
