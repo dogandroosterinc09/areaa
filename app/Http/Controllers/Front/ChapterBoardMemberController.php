@@ -61,6 +61,6 @@ class ChapterBoardMemberController extends Controller
         return  $chapter_board_member->where('id', '>', $chapter_board_member->id)
                     ->where('chapter_id',$chapter_id)->where('is_active',1)
                     // ->orderBy('type')->get()->first();
-                    ->orderBy('type')->orderBy('id')->get()->first();
+                    ->orderBy('id')->orderBy('type')->first();
     }
 }

@@ -59,10 +59,10 @@
                                 <img src="{{ optional($previousBoardMember->attachment)->url ? optional($previousBoardMember->attachment)->url : asset('public/images/no-pix.jpg') }}">
                             </div>
                             <div class="next-board__content">
-                                @if(!empty($previousBoardMember->bio)) <a href="{{ route('chapter_board_member.detail', ['slug'=>$chapter->slug,'board_slug'=>$previousBoardMember->slug]) }}"> @endif
+                                <a href="{{ (!empty($previousBoardMember->bio))? route('chapter_board_member.detail', ['slug'=>$chapter->slug,'board_slug'=>$previousBoardMember->slug]) : url($chapter->slug.'/leadership-board') }}">
                                     <i class="fas fa-angle-left"></i>Previous
                                     <h3>{{ $previousBoardMember->name }}</h3>
-                                @if(!empty($previousBoardMember->bio)) </a> @endif
+                                </a>
                             </div>
                             @endif
                         </div>
@@ -71,10 +71,16 @@
                         <div class="next-board__item">
                             @if($nextBoardMember)
                             <div class="next-board__content">
-                                @if(!empty($nextBoardMember->bio)) <a href="{{ route('chapter_board_member.detail', ['slug'=>$chapter->slug,'board_slug'=>$nextBoardMember->slug]) }}"> @endif
+                                <a href="{{ (!empty($nextBoardMember->bio))? route('chapter_board_member.detail', ['slug'=>$chapter->slug,'board_slug'=>$nextBoardMember->slug]) : url($chapter->slug.'/leadership-board') }}">
                                     Next<i class="fas fa-angle-right"></i>
                                     <h3>{{ $nextBoardMember->name }}</h3>
-                                @if(!empty($nextBoardMember->bio)) </a> @endif
+                                </a>
+
+                                {{-- @if(!empty($nextBoardMember->bio)) <a href="{{ route('chapter_board_member.detail', ['slug'=>$chapter->slug,'board_slug'=>$nextBoardMember->slug]) }}"> @endif
+                                    Next<i class="fas fa-angle-right"></i>
+                                    <h3>{{ $nextBoardMember->name }}</h3>
+                                @if(!empty($nextBoardMember->bio)) </a> @endif --}}
+
                             </div>
                             <div class="next-board__image">
                                 <img src="{{ optional($nextBoardMember->attachment)->url ? optional($nextBoardMember->attachment)->url : asset('public/images/no-pix.jpg') }}">
