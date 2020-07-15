@@ -118,7 +118,6 @@ class FrontDashboardController extends Controller
 
                 $national = 'national';
                 if (strpos($national, $chapter) !== false) {
-                    // echo 'true';
                     $query->where('users.chapter_id','=', '0');
                 } else {
                     $query->join('chapters','chapters.id','=','users.chapter_id')
