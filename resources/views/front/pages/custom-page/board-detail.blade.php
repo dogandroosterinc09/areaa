@@ -65,7 +65,7 @@
                             </div>
                             
                             <div class="next-board__content">
-                                <a href="{{ $previousBoardMember->url }}">
+                                <a href="{{ (!empty($previousBoardMember->bio))? $previousBoardMember->url : '#' }}">
                                     <i class="fas fa-angle-left"></i>Previous
                                     <h3>{{ $previousBoardMember->name }}</h3>
                                 </a>
@@ -78,7 +78,7 @@
                         <div class="next-board__item">
                         @if($nextBoardMember)       
                             <div class="next-board__content">
-                                <a href="{{ $nextBoardMember->url }}">
+                                <a href="{{ (!empty($nextBoardMember->bio))? $nextBoardMember->url : '#' }}">
                                     Next<i class="fas fa-angle-right"></i>
                                     <h3>{{ $nextBoardMember->name }}</h3>
                                 </a>
