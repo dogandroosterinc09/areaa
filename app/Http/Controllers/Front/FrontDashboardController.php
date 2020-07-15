@@ -90,7 +90,7 @@ class FrontDashboardController extends Controller
         $designation = $request->designation;
 
         $members = $this->members->join('users','users.id','=','members.user_id')
-            ->join('chapters','chapters.id','=','users.chapter_id')
+            // ->join('chapters','chapters.id','=','users.chapter_id')
             ->when(!empty($keyword), function($query) use ($keyword) {                
                 return $query->where(function ($query2) use ($keyword) {
                     return $query2->where('users.first_name','like','%' . $keyword .'%' )
@@ -114,7 +114,17 @@ class FrontDashboardController extends Controller
                 return $query->where('company','like', '%' . $company .'%');
             })
             ->when(!empty($chapter), function($query) use ($chapter) {
-                return $query->where('chapters.name','like', '%' . $chapter .'%');
+                // return $query->where('chapters.name','like', '%' . $chapter .'%');
+
+                $national = 'national';
+                if (strpos($national, $chapter) !== false) {
+                    // echo 'true';
+                    $query->where('users.chapter_id','=', '0');
+                } else {
+                    $query->join('chapters','chapters.id','=','users.chapter_id')
+                          ->where('chapters.name','like', '%' . $chapter .'%');
+                }
+
             })
             ->when(!empty($designation), function($query) use ($designation) {
                 return $query->where('designations','like', '%' . $designation .'%');
