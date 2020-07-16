@@ -738,16 +738,21 @@ class UserController extends Controller
 
         $members = DB::table('members')
             ->join('users', 'members.user_id', '=', 'users.id')
-            // ->join('chapters', 'chapters.id', '=', 'users.chapter_id')
-            // ->where('users.chapter_id', '<>',NULL)
-            // ->where('users.chapter_id', 0)
-            // ->select('members.id as member_id', 'members.*', 'users.*')
+            ->join('member_addresses', 'member_addresses.user_id', '=', 'users.id')
             ->select('members.id as member_id',
                 'users.first_name', 
                 'users.last_name',
                 'users.user_name',
                 'users.email',
                 'users.phone',
+                'member_addresses.street_address1',
+                'member_addresses.street_address2',
+                'member_addresses.city',
+                'member_addresses.state',
+                'member_addresses.country',
+                'member_addresses.zipcode',
+                'member_addresses.company as company_name',
+                'member_addresses.phone as company_phone',
                 'users.chapter_id',
                 'users.is_active',
                 'users.is_featured',
@@ -756,11 +761,45 @@ class UserController extends Controller
                 'users.is_luxury',
                 'members.bio',
                 'members.position',
+                'members.role',
+                'members.location',
+                'members.company',
+                'members.language_spoken',
+                'members.designations',
+                'members.area_of_specialty',
+                'members.social_media',
+                'members.authorize_profile_id',
+                'members.authorize_payment_profile_id',
+                'members.authorize_address_id',
+                'members.authorize_subscription_id',
+                'members.subscription_status',
+                'members.paypal_id',
+                'members.joined_date',
                 'members.expires')
             // ->take(10)
             ->get();
 
-    $member_headers = explode(',', 'member_id,first_name,last_name,user_name,email,phone,chapter_id,is_active,is_featured,is_alist,alist_years,is_luxury,bio,position,expires');
+            foreach ($members as $member) {
+
+                if ($member->chapter_id > 0) {
+                    $chapter = \App\Models\Chapter::find($member->chapter_id);
+                    $member->chapter_id = $chapter->name;
+                } else {
+                    $member->chapter_id = 'National';
+                }
+
+                $member->is_active      = ($member->is_active == 1)? 'yes': 'no';
+                $member->is_featured    = ($member->is_featured == 1)? 'yes': 'no';
+                $member->is_alist       = ($member->is_alist == 1)? 'yes': 'no';
+                $member->is_luxury      = ($member->is_luxury == 1)? 'yes': 'no';
+            }
+
+
+// return $members;
+// die('xxx');
+
+    // $member_headers = explode(',', 'member_id,first_name,last_name,user_name,email,phone,chapter_name,is_active,is_featured,is_alist,alist_years,is_luxury,bio,position,expires');
+    $member_headers = explode(',', 'member_id,first_name,last_name,user_name,email,phone,street_address1,street_address2,city,state,country,zipcode,company,phone,chapter_name,is_active,is_featured,is_alist,alist_years,is_luxury,bio,position,role,location,company,language_spoken,designations,area_of_specialty,social_media,authorize_profile_id,authorize_payment_profile_id,authorize_address_id,authorize_subscription_id,subscription_status,paypal_id,joined_date,expires');
 
 // echo 'ln 771<br>';
 // // download_send_headers("data_export_" . date("Y-m-d") . ".csv");
