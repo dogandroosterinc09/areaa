@@ -7,8 +7,11 @@ use App\Http\Traits\SystemSettingTrait;
 use App\Models\User;
 use App\Models\Members;
 use App\Models\MemberAddress;
+use App\Models\Transaction;
+
 use App\Repositories\PageRepository;
 use App\Repositories\UserRepository;
+
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
@@ -67,6 +70,7 @@ class RegisterController extends Controller
     public function __construct(User $user_model,
                                 Role $role_model,
                                 Members $member,
+                                Transaction $transaction_model,
                                 MemberAddress $member_address_model,
                                 PageRepository $page_repository,
                                 UserRepository $user_repository
@@ -79,6 +83,7 @@ class RegisterController extends Controller
         $this->user_model = $user_model;
         $this->role_model = $role_model;
         $this->member = $member;
+        $this->transaction_model = $transaction_model;
         $this->member_address_model = $member_address_model;
         $this->page_repository = $page_repository;
         $this->user_repository = $user_repository;
@@ -355,6 +360,11 @@ class RegisterController extends Controller
                     // echo " Message Code: " . $tresponse->getMessages()[0]->getCode() . "<br>";
                     // echo " Auth Code: " . $tresponse->getAuthCode() . "<br>";
                     // echo " Description: " . $tresponse->getMessages()[0]->getDescription() . "<br>";
+                    $payment_transaction_id = $tresponse->getTransId();
+                    $payment_response_code = $tresponse->getResponseCode();
+                    $payment_message_code = $tresponse->getMessages()[0]->getCode();
+                    $payment_auth_code = $tresponse->getAuthCode();
+                    $payment_messages = $tresponse->getMessages()[0]->getDescription();
                     $chargecreditcardsuccess = 1;
                 } else {
                     // echo "Transaction Failed \n";
@@ -379,8 +389,11 @@ class RegisterController extends Controller
         } else {
             // echo  "No response returned \n";
         }
-
         // return $response;
+
+        // STORE Initial Payment Transaction in database
+
+
         // ---------------------------------------------------------------- Authorize.net CREATE CUSTOMER PROFILE
         if ($chargecreditcardsuccess == 1) {
             // echo '-------- <br>';
@@ -575,8 +588,9 @@ class RegisterController extends Controller
             $errorMessages = $response->getMessages()->getMessage();
             // echo "Response : " . $errorMessages[0]->getCode() . "  " .$errorMessages[0]->getText() . "<br>";
         }
-
         // return $response;
+
+        // STORE Subscription transaction in database
 
 
         // Saves in Members table
@@ -642,7 +656,43 @@ class RegisterController extends Controller
         ]);
 
 
-        // Must Add transaction record
+        // Record single payment
+        $payment = $this->transaction_model->create([
+            'user_id' => $user->id,
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
+            'transaction_label' => 'Initial Payment - Registration',
+            'transaction_invoice' => 'Invoice',
+            'transaction_reference' => $payment_transaction_id,
+            'transaction_amount' => '123.45',
+            'notes1' => 'message_code: '.$payment_message_code.' | messages: '.$payment_messages,
+            'notes2' => 'auth_code: '.$payment_auth_code,
+            'is_subscription' => 0,
+            'is_success' => 1,
+            'start_date' => date('m/d/yy', strtotime(Now())),
+            'end_date' => date('m/d/yy', strtotime(Now()))
+        ]);
+
+
+        // Record subscription payment
+        $subscription = $this->transaction_model->create([
+            'user_id' => $user->id,
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
+            'transaction_label' => 'Membership Subscription',
+            'transaction_invoice' => 'Subscription Invoice',
+            'transaction_reference' => $subscriptionID,
+            'transaction_amount' => '99.99',
+            'notes1' => 'some Subscription notes 1',
+            'notes2' => 'some Subscription notes 2',
+            'is_subscription' => 1,
+            'is_success' => 1,
+            'start_date' => date('m/d/yy', strtotime(Now())),
+            'end_date' => date('m/d/yy', strtotime(Now()))
+        ]);
+
+        // return $response;
+
 
         if ($request->chapter_id==0) {
             $chapter_name = 'National';
