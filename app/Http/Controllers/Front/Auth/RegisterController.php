@@ -241,10 +241,29 @@ class RegisterController extends Controller
             'company' => 'required'
         ]);
 
+        $currentDate    = new \DateTime('now');
+        $currentMonth   = $currentDate->format('m');
+        $currentYear    = $currentDate->format('Y');
+
+        $monthly_rate = \Config::get('constants.monthly_rate');
+
+        // $currentMonth = '12';
+        // echo 'current month: '.$currentMonth.'<br>';
+
+        if ($currentMonth < 7) {
+            $membership_fee = (7 - $currentMonth) * $monthly_rate;
+            $subscription_start_year = $currentYear;
+        } else {
+            $membership_fee = (19 - $currentMonth) * $monthly_rate;
+            $subscription_start_year = $currentYear + 1;
+        }
+        // echo 'membership fee: '.$membership_fee;
+
+
         // Process Authorize subscription
         $email_address  = $request->email;
         $phone_number   = $request->phone;
-        $amountToCharge = 49.50;
+        $amountToCharge = $membership_fee;
         $card_number    = "4111111111111111";
         $card_expiry    = "2030-12";
         $card_cvv       = rand(100,999);
@@ -254,7 +273,7 @@ class RegisterController extends Controller
         $street_address1 = $request->street_address1;
         $city           = $request->city;
         $state          = $request->state;
-        $country        = 'USA';
+        $country        = 'US';
         $zipcode        = $request->zipcode;
 
 
@@ -557,7 +576,8 @@ class RegisterController extends Controller
         // $paymentSchedule->setTotalOccurrences("12");
         // $paymentSchedule->setTrialOccurrences("1");
         // $paymentSchedule->setStartDate(new DateTime('2021-07-01'));
-        $date_renewal = new \DateTime('2021-07-01');
+        // $date_renewal = new \DateTime('2021-07-01');
+        $date_renewal = new \DateTime($subscription_start_year.'-07-01'); // July 1 of next year
         $paymentSchedule->setStartDate($date_renewal);
         $paymentSchedule->setTotalOccurrences("9999"); // Ongoing
         // $paymentSchedule->setTrialOccurrences("1");
@@ -664,7 +684,7 @@ class RegisterController extends Controller
             'transaction_label' => 'Initial Payment - Registration',
             'transaction_invoice' => 'Invoice',
             'transaction_reference' => $payment_transaction_id,
-            'transaction_amount' => '123.45',
+            'transaction_amount' => $membership_fee,
             'notes1' => 'message_code: '.$payment_message_code.' | messages: '.$payment_messages,
             'notes2' => 'auth_code: '.$payment_auth_code,
             'is_subscription' => 0,
@@ -682,8 +702,8 @@ class RegisterController extends Controller
             'transaction_label' => 'Membership Subscription',
             'transaction_invoice' => 'Subscription Invoice',
             'transaction_reference' => $subscriptionID,
-            'transaction_amount' => '99.99',
-            'notes1' => 'some Subscription notes 1',
+            'transaction_amount' => \Config::get('constants.yearly_rate'),
+            'notes1' => 'Subscription starting ( '.$subscription_start_year.'-07-01 )',
             'notes2' => 'some Subscription notes 2',
             'is_subscription' => 1,
             'is_success' => 1,

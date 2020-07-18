@@ -304,7 +304,18 @@
                                 <input type="text" name="expires" value="{{ ($profile->expires=='Never')? 'Active': $profile->expires }}" readonly="readonly">
                             </div>
 
+                            <hr>
+                            <div class="col-md-12">
+                                <h3><i class="fas fa-cog"></i>Invoice</h3>
+                            </div>
 
+                            <div class="col-md-12">
+                                <b>Transaction ID</b> | Title | Date Transacted | Amount | Column 1 | Column 2 | Column 3
+                            </div>
+
+                            <div class="col-md-12">
+                                <b>Transaction ID</b> | Title | Date Transacted | Amount | Column 1 | Column 2 | Column 3
+                            </div>
                           
 
                         </div>

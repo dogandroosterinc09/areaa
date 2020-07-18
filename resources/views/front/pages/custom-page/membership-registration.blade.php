@@ -98,7 +98,69 @@ a.disabled {
                                                 </div>
                                             </div>
 
+
                                             <!-- Added by Richard : Validation -->
+        <?php
+        $currentDate    = new \DateTime('now');
+        $currentMonth   = $currentDate->format('m');
+        $currentYear    = $currentDate->format('Y');
+
+        $monthly_rate = Config::get('constants.monthly_rate');
+
+        // $currentMonth = '12';
+        // echo 'current month: '.$currentMonth.'<br>';
+
+        // switch ($currentMonth) {
+        //     case '01':
+        //         $membership_fee = $monthly_rate * 6;
+        //         break;
+        //     case '02':
+        //         $membership_fee = $monthly_rate * 5;
+        //         break;
+        //     case '03':
+        //         $membership_fee = $monthly_rate * 4;
+        //         break;
+        //     case '04':
+        //         $membership_fee = $monthly_rate * 3;
+        //         break;
+        //     case '05':
+        //         $membership_fee = $monthly_rate * 2;
+        //         break;
+        //     case '06':
+        //         $membership_fee = $monthly_rate * 1;
+        //         break;
+        //     case '07':
+        //         $membership_fee = $monthly_rate * 12;
+        //         break;
+        //     case '08':
+        //         $membership_fee = $monthly_rate * 11;
+        //         break;
+        //     case '09':
+        //         $membership_fee = $monthly_rate * 10;
+        //         break;
+        //     case '10':
+        //         $membership_fee = $monthly_rate * 9;
+        //         break;
+        //     case '11':
+        //         $membership_fee = $monthly_rate * 8;
+        //         break;
+        //     case '12':
+        //         $membership_fee = $monthly_rate * 7;
+        //         break;
+        //     default:
+        //         # code...
+        //         break;
+        // }
+
+        if ($currentMonth < 7) {
+            $membership_fee = (7 - $currentMonth) * $monthly_rate;
+            $subscription_start_year = $currentYear;
+        } else {
+            $membership_fee = (19 - $currentMonth) * $monthly_rate;
+            $subscription_start_year = $currentYear + 1;
+        }
+        // echo 'membership fee: '.$membership_fee;
+        ?>
 
                                             <div class="tab-content steps-wizard__content">
                                                 <div class="tab-pane steps-wizard__items steps-wizard__items--one active" id="tab1">
@@ -113,10 +175,10 @@ a.disabled {
                                                                         <label>Select Your Chapter <span>*</span> </label>
                                                                         <div class="select-box">
                                                                             <select name="chapter_id" id="chapter_id" required>
-                                                                                <option value="0"><b>National</b> $49.50 now & then $99.00 per Year starting July 1, 2020.</option>
+                                                                                <option value="0"><b>National</b> ${{number_format($membership_fee, 2)}} now & then $99.00 per year starting July 1, {{$subscription_start_year}}.</option>
 
                                                                                 @foreach(\App\Models\Chapter::all() as $chapter)
-                                                                                <option value="{{$chapter->id}}"><b>{{$chapter->name}}</b> $49.50 now & then $99.00 per Year starting July 1, 2020.</option>
+                                                                                <option value="{{$chapter->id}}"><b>{{$chapter->name}}</b> ${{number_format($membership_fee, 2)}} now & then $99.00 per year starting July 1, {{$subscription_start_year}}.</option>
                                                                                 @endforeach
                                                                                 <!-- <option value="1">San Diego $49.50 now & then $99.00 per Year starting July 1, 2020.</option> -->
                                                                             </select>
