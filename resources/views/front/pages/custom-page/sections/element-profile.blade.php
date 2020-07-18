@@ -82,7 +82,6 @@
                                 <textarea class="form-control" name="bio" rows="10">{{ $profile->bio }}</textarea>
                             </div>
                         </div>
-                        <!-- Lorem ipsum dolor sit amet, praesent placerat donec, tristique interdum vestibulum dui varius eget donec, sit pede nec mollis, tincidunt adipiscing varius, at lectus pellentesque viverra quis pellentesque dictumst. Luctus wisi sit natoque, est consectetuer porta, mauris porttitor id arcu faucibus felis. Montes faucibus tempor nec, quam est aenean porta tortor nunc, nisl per erat lobortis ex massa sit, sed purus platea rhoncus mattis. Sed donec commodo. Felis lobortis, turpis tellus sapien, vestibulum etiam eleifend, vestibulum amet quis. Tincidunt a sociis vitae risus veniam elit, mauris aliquam quis, dapibus perspiciatis massa, a in et erat aliquam luctus. Dolor amet mattis, a lorem, libero lorem laoreet vel fusce integer netus, convallis lacinia, sodales posuere nunc vel eget nullam libero. Non ipsum fermentum felis pede tortor imperdiet, malesuada odio sed orci, neque auctor. Hendrerit vehicula nec leo in. Cursus turpis in ut in iaculis, congue fermentum turpis tristique vestibulum, sociosqu porttitor, mauris enim ipsum vestibulum, metus massa ipsum fusce sed. Ut nunc neque libero imperdiet vel, urna libero adipiscing asperiores turpis, interdum donec, scelerisque eget vitae phasellus sollicitudin sit pede, nunc nec class mauris ad in tellus. -->
                     </div>
 
                     <div class="profile__info profile__border information">
@@ -305,18 +304,51 @@
                             </div>
 
                             <hr>
-                            <div class="col-md-12">
-                                <h3><i class="fas fa-cog"></i>Invoice</h3>
+
+                            <div class="table-responsive">
+                                <table width="100%" border="1" style="border-style:dotted;">
+                                    <thead>
+                                        <tr>
+                                            <th> <b>Transaction ID</b> </th>
+                                            <th> Title </th>
+                                            <th> Date Transacted </th>
+                                            <th> Amount </th>
+                                            <th> Column 1 </th>
+                                            <th> Column 2 </th>
+                                            <th> Column 3 </th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        @if(isset($charge))
+                                        <tr>
+                                            <td>{{$charge->transaction_reference}}</td>
+                                            <td>{{$charge->transaction_invoice}}</td>
+                                            <td>{{$charge->created_at}}</td>
+                                            <td>{{$charge->transaction_amount}}</td>
+                                            <td> - - - </td>
+                                            <td> - - - </td>
+                                            <td> - - - </td>
+                                        </tr>
+                                        @endif
+
+                                        @if(isset($subscription))
+                                        @foreach($subscription as $sub)
+                                        <tr>
+                                            <td>{{$sub->transaction_reference}}</td>
+                                            <td>{{$sub->transaction_invoice}}</td>
+                                            <td>{{$sub->created_at}}</td>
+                                            <td>{{$sub->transaction_amount}}</td>
+                                            <td> - - - </td>
+                                            <td> - - - </td>
+                                            <td> - - - </td>
+                                        </tr>
+                                        @endforeach
+                                        @endif
+                                    </tbody>
+                                </table>
                             </div>
 
-                            <div class="col-md-12">
-                                <b>Transaction ID</b> | Title | Date Transacted | Amount | Column 1 | Column 2 | Column 3
-                            </div>
-
-                            <div class="col-md-12">
-                                <b>Transaction ID</b> | Title | Date Transacted | Amount | Column 1 | Column 2 | Column 3
-                            </div>
-                          
 
                         </div>
                     </div>

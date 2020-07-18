@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Members;
 use App\Models\User;
 use App\Models\MemberAddress;
+use App\Models\Transaction;
 
 use Illuminate\Http\Request;
 
@@ -17,12 +18,13 @@ use DB;
 
 class FrontDashboardController extends Controller
 {
-    public function __construct(PageRepository $pageRepository, Members $members, User $user, MemberAddress $member_address)
+    public function __construct(PageRepository $pageRepository, Members $members, User $user, MemberAddress $member_address, Transaction $transaction_model)
     {
         $this->pageRepository = $pageRepository;
         $this->members = $members;
         $this->user = $user;
         $this->member_address = $member_address;
+        $this->transaction_model = $transaction_model;
     }
 
 
@@ -159,7 +161,10 @@ class FrontDashboardController extends Controller
         $social_media->instagram = isset($social_media->instagram) ? $social_media->instagram : '' ;
         $social_media->twitter = isset($social_media->twitter) ? $social_media->twitter : '' ;
 
-        return view('front.pages.custom-pages-index', compact('page', 'active', 'profile', 'social_media','billing'));
+        $charge = $this->transaction_model->where('user_id', auth()->user()->id)->where('is_subscription',0)->get()->first();
+        $subscription = $this->transaction_model->where('user_id', auth()->user()->id)->where('is_subscription',1)->get();
+
+        return view('front.pages.custom-pages-index', compact('page', 'active', 'profile', 'social_media','billing','charge','subscription'));
     }
 
     public function updateProfile(Request $request) {      
