@@ -28,6 +28,11 @@ Route::group([
     Route::get('/support', 'FrontDashboardController@showSupport')->name('dashboard.support');
 });
 
+// Redirect to Login before Register event - for Members 
+Route::get('/member-register-event/{id}', 'EventController@memberEventRegistration')->name('event.register_member')->middleware(['auth.customer']);
+// Redirect to Events registration and payment page - for Guests
+Route::get('/guest-register-event/{id}', 'EventController@guestEventRegistration')->name('event.register_guest');
+
 Route::post('/contact/store', 'ContactController@store')->name('contact.store');
 
 Route::get('/executive-board/{slug}', 'BoardMemberController@showExecutive')->name('board.executive.show');
@@ -37,6 +42,7 @@ Route::get('/delegate-board/{slug}', 'BoardMemberController@showDelegate')->name
 Route::get('/event/{slug}', 'EventController@showEvent')->name('event.show');
 
 Route::post('/event/event-register', 'EventController@registerToEvent')->name('event.register');
+Route::post('/event/event-register-login', 'EventController@registerLogin')->name('event.register_login');
 
 Route::get('/get-gallery', 'GalleryController@getGallery')->name('gallery.get');
 Route::get('/get-benefit', 'BenefitsController@getBenefit')->name('benefit.get');

@@ -30,6 +30,9 @@
         @elseif ($page['slug'] == 'events-detail')
             @include('front.pages.custom-page.events-detail')
 
+        @elseif ($page['slug'] == 'events-register')
+            @include('front.pages.custom-page.events-register')
+
         @elseif ($page['slug'] == 'FAQ')
             @include('front.pages.custom-page.FAQ')
 

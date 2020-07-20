@@ -110,7 +110,8 @@
                                 @endauth
                                 </ul>
                                 <div class="register-info__button">
-                                    <a href="#" class="btn btn--secondary" data-toggle="modal" data-target="#registerModal"> Register</a>
+                                    <a href="{{url('member-register-event/'.$event->id)}}" class="btn btn--secondary"> Login</a> &bull; 
+                                    <a href="{{url('guest-register-event/'.$event->id)}}" class="btn btn--secondary"> As Guest</a>
                                 </div>
                             </div>
                         </div>

@@ -23,6 +23,7 @@ class EventController extends Controller
     }
 
     public function showEvent($slug) {
+
         $page = $this->pageRepository->getActivePageBySlug('events-detail');
 
         $event = $this->event->where('slug','=',$slug)->get()->first();
@@ -57,4 +58,45 @@ class EventController extends Controller
             'type' => 'success'
         ]);
     }
+
+
+    public function memberEventRegistration($id = 0) {
+
+        // Create cart
+        // Display registration page - pre-filled
+
+        // die('show event registration and payment field for MEMBER');
+
+        $page = $this->pageRepository->getActivePageBySlug('events-register');
+        $event = $this->event->where('id',$id)->get()->first();
+
+        return view('front.pages.custom-pages-index', compact('page','event'));
+    }
+
+    public function guestEventRegistration($id = 0) {
+
+        // Create cart
+        // Display registration page
+
+        // die('show event registration and payment field for GUEST');
+        $page = $this->pageRepository->getActivePageBySlug('events-register');
+        $event = $this->event->where('id',$id)->get()->first();
+
+        return view('front.pages.custom-pages-index', compact('page','event'));
+        // return view('front.pages.custom-page.events-register', compact('page','event'));
+    }
+
+    // public function registerLogin(Request $request) {
+
+    //     $this->validate($request, [
+    //         'email' => 'required|email',
+    //         'password' => 'required'
+    //         // 'member_chapter_id' => 'required_if:is_member,1'
+    //     ],[
+    //         // 'is_member.required' => "Please indicate if you're a member or not.",
+    //         // 'member_chapter_id.required_if' => 'Please indicate your chapter.'
+    //     ]);
+    // }
+
+
 }
