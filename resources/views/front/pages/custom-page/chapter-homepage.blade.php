@@ -112,10 +112,10 @@
 
             {{-- story section  --}}
             <section class="fullwidth fullwidth__left-push chapter-benefits">
-                <div class="container-max {{ !empty($chapter_home->attachment) ? '' : 'no-image-img' }}" >
-                    <div class="row {{ !$chapter_home->attachment ? 'd-flex justify-content-center' : 'd-flex justify-content-center' }}">
+                <div class="container-max {{ !empty($chapter_home->member_benefits_featured_image) ? '' : 'no-image-img' }}" >
+                    <div class="row {{ !$chapter_home->member_benefits_featured_image ? 'd-flex justify-content-center' : 'd-flex justify-content-center' }}">
 
-                        <div data-aos="fade-right" class="col-md-6" {{ !empty($chapter_home->attachment) ? 'style=margin-left:-12%;' : '' }} >
+                        <div data-aos="fade-right" class="col-md-6" {{ !empty($chapter_home->member_benefits_featured_image) ? 'style=margin-left:-12%;' : '' }} >
                                 <h2>{{ $chapter_home->member_benefits_title }}</h2>
                                 <p>{{ $chapter_home->member_benefits_content }}</p>
 
@@ -146,7 +146,7 @@
 
                         </div>
 
-                        @if($chapter_home->attachment)
+                        @if($chapter_home->member_benefits_featured_image)
                         <div class="col-md-6" data-aos="fade-left">
                             {{-- <img src="{{ $chapter_home->attachment ? $chapter_home->attachment->url : '' }}" alt="{{ $chapter_home->attachment ? $chapter_home->attachment->url : '' }}" class="img-fluid"> --}}
                             <img src="{{ $chapter_home->member_benefits_featured_image }}" alt="{{  $chapter_home->member_benefits_featured_image_alt }}" class="img-fluid">
