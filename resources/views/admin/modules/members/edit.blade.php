@@ -15,6 +15,7 @@
             ])
         --}}
 
+        {{-- <!-- MembersController update --> --}}
         {{  Form::open([
             'method' => 'PUT',
             'id' => 'edit-members',
@@ -313,6 +314,19 @@
                         @endif
                     </div>
                 </div>
+
+                <div class="form-group{{ $errors->has('admin_notes') ? ' has-error' : '' }}">
+                    <label class="col-md-3 control-label" for="admin_notes">Admin Notes</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" id="admin_notes" name="admin_notes"
+                               value="{{  Request::old('admin_notes') ? : $user->admin_notes }}"
+                               placeholder="Enter Admin Notes..">
+                        @if($errors->has('admin_notes'))
+                            <span class="help-block animation-slideDown">{{ $errors->first('admin_notes') }}</span>
+                        @endif
+                    </div>
+                </div>
+
                 <div class="form-group">
                     <label class="col-md-3 control-label">Is Active?</label>
                     <div class="col-md-9">

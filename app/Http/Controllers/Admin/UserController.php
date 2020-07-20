@@ -650,9 +650,9 @@ class UserController extends Controller
         ]);
 
         if ($request->get('change_password') == '1') {
-            $input = $request->only(['first_name', 'last_name', 'user_name', 'email', 'is_active', 'password']);
+            $input = $request->only(['first_name', 'last_name', 'user_name', 'email', 'is_active', 'admin_notes', 'password']);
         } else {
-            $input = $request->only(['first_name', 'last_name', 'user_name', 'email', 'is_active']);
+            $input = $request->only(['first_name', 'last_name', 'user_name', 'email', 'is_active', 'admin_notes']);
         }
 
         $input['is_active'] = 1;
@@ -740,9 +740,9 @@ class UserController extends Controller
             ->join('users', 'members.user_id', '=', 'users.id')
             ->join('member_addresses', 'member_addresses.user_id', '=', 'users.id')
             ->select('members.id as member_id',
+                'users.user_name',
                 'users.first_name', 
                 'users.last_name',
-                'users.user_name',
                 'users.email',
                 'users.phone',
                 'member_addresses.street_address1',
@@ -755,11 +755,12 @@ class UserController extends Controller
                 'member_addresses.phone as company_phone',
                 'users.chapter_id',
                 'users.is_active',
+                'members.joined_date',
+                'members.expires',
                 'users.is_featured',
                 'users.is_alist',
                 'users.alist_years',
                 'users.is_luxury',
-                'members.bio',
                 'members.position',
                 'members.role',
                 'members.location',
@@ -774,8 +775,8 @@ class UserController extends Controller
                 'members.authorize_subscription_id',
                 'members.subscription_status',
                 'members.paypal_id',
-                'members.joined_date',
-                'members.expires')
+                'members.bio',
+                'users.admin_notes')
             // ->take(10)
             ->get();
 
@@ -799,7 +800,7 @@ class UserController extends Controller
 // die('xxx');
 
     // $member_headers = explode(',', 'member_id,first_name,last_name,user_name,email,phone,chapter_name,is_active,is_featured,is_alist,alist_years,is_luxury,bio,position,expires');
-    $member_headers = explode(',', 'member_id,first_name,last_name,user_name,email,phone,street_address1,street_address2,city,state,country,zipcode,company,phone,chapter_name,is_active,is_featured,is_alist,alist_years,is_luxury,bio,position,role,location,company,language_spoken,designations,area_of_specialty,social_media,authorize_profile_id,authorize_payment_profile_id,authorize_address_id,authorize_subscription_id,subscription_status,paypal_id,joined_date,expires');
+    $member_headers = explode(',', 'member_id,user_name,first_name,last_name,email,phone,street_address1,street_address2,city,state,country,zipcode,company,phone,chapter_name,is_active,joined_date,expires,is_featured,is_alist,alist_years,is_luxury,position,role,location,company,language_spoken,designations,area_of_specialty,social_media,authorize_profile_id,authorize_payment_profile_id,authorize_address_id,authorize_subscription_id,subscription_status,paypal_id,bio,admin_notes');
 
 // echo 'ln 771<br>';
 // // download_send_headers("data_export_" . date("Y-m-d") . ".csv");
