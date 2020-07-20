@@ -41,6 +41,7 @@ class User extends Authenticatable
         'is_alist',
         'alist_years',
         'is_luxury',
+        'admin_notes',
     ];
 
     /**
