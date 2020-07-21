@@ -39,6 +39,9 @@ class AdminTemplateProvider extends ServiceProvider
 
     private function getAdminNav()
     {
+
+        // dd(auth()->user());
+
         if (auth()->check()) {
             $navigation = [
                 [
@@ -192,7 +195,7 @@ class AdminTemplateProvider extends ServiceProvider
 
                 array_push($navigation, [
                     'name' => 'Export Members (CSV)',
-                    'url' => url('admin/members-generate-csv'),
+                    'url' => url('admin/members-generate-csv/0'),
                     'icon' => 'fa fa-download'
                 ]);
 
@@ -201,6 +204,12 @@ class AdminTemplateProvider extends ServiceProvider
                     'name' => 'Chapter Members',
                     'url' => url('admin/members'),
                     'icon' => 'fa fa-users'
+                ]);
+
+                array_push($navigation, [
+                    'name' => 'Export Members (CSV)',
+                    'url' => url('admin/members-generate-csv/'.auth()->user()->chapter_id),
+                    'icon' => 'fa fa-download'
                 ]);
             }
 

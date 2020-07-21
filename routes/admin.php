@@ -19,8 +19,8 @@ Route::post('/admin-create', 'UserController@storeAdmin')->name('user.store_admi
 Route::get('/user-all', 'UserController@displayAllMembers')->name('user.index_members');
 Route::get('/user-edit/{id}', 'UserController@editMember')->name('user.edit_member');
 Route::post('/user-edit/{id}', 'UserController@updateMember')->name('user.update_member');
-Route::get('/members-generate-csv', 'UserController@generateCSV')->name('user.generate_csv');
-// Route::get('/members-generate-csv/{$id}', 'UserController@generateCSV')->name('user.generate_csv');
+// Route::get('/members-generate-csv', 'UserController@generateCSV')->name('user.generate_csv');
+Route::get('/members-generate-csv/{id}', 'UserController@generateCSV')->name('user.generate_csv');
 
 
 Route::resource('/roles', 'RoleController');
