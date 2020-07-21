@@ -2399,3 +2399,14 @@ ul.bullet-style {
         margin-left: 10px;
     }
 }
+
+.form-label {
+    h4 {
+        text-transform: uppercase;
+    }
+}
+
+.help-block {
+    font-size: .8em;
+    color: $color-secondary
+}

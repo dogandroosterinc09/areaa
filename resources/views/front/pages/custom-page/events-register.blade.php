@@ -85,6 +85,10 @@
                             <h4>Registration Info {{$viewing_user}}</h4>              
                             <div class="register-info__list">
 
+                                <div class="heading-primary">
+                                    <h4>member information</h4>
+                                </div>
+
                                 <div class="form-group{{ $errors->has('first_name') ? ' has-error' : '' }}">
                                     <div class="col-xs-12">
                                         <div class="input-group">
@@ -150,6 +154,9 @@
                                 </div>
 
                                 <hr>
+                                <div class="heading-primary">
+                                    <h4>BILLING INFORMATION</h4>
+                                </div>
 
                                 <div class="form-group{{ $errors->has('first_name') ? ' has-error' : '' }}">
                                     <div class="col-xs-12">
@@ -213,6 +220,11 @@
                                 </div>
 
                                 <hr>
+
+
+                                <div class="form-label">
+                                    <h4>credit card payment</h4>
+                                </div>
 
                                 <div class="form-group{{ $errors->has('first_name') ? ' has-error' : '' }}">
                                     <div class="col-xs-12">
