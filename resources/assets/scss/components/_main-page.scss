@@ -1336,7 +1336,7 @@ ul.bullet-style {
 }
 
 .event-single-map {
-    height: 445px;
+    max-height: 445px;
     iframe {
         height: 100%;
     }
