@@ -319,6 +319,7 @@
         height: 100%;
         left: 0;
         top: 0;
+        pointer-events: none;
     }
     &__badge {
         position: absolute;
@@ -364,6 +365,7 @@
             padding: 0 15px;
             text-decoration: none;
             color: $color-black;
+            pointer-events: none;
             &:hover {
                 opacity: .5;
             }
