@@ -1297,10 +1297,40 @@ ul.bullet-style {
                 }
             }
         }
+        .form-group {
+            input,
+            select {
+                border-radius: 100px !important;
+                padding: 20px;
+                display: block;
+            }
+            &__col2 {
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-pack: justify;
+                -ms-flex-pack: justify;
+                justify-content: space-between;
+                >div {
+                    width: calc(95%/2);
+                }
+            }
+        }
     }
     &__button {
         .btn {
             width: 100%;
+        }
+        &--group {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            .btn {
+                width: calc(95%/2);
+            }
         }
     }
 }
@@ -2403,6 +2433,16 @@ ul.bullet-style {
 .form-label {
     h4 {
         text-transform: uppercase !important;
+    }
+    &__img {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 100px;
+        img {
+            width: auto;
+            height: 100%;
+        }
     }
 }
 

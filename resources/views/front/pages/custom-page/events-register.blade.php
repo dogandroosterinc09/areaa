@@ -224,6 +224,9 @@
 
                                 <div class="form-label">
                                     <h4>credit card payment</h4>
+                                    <div class="form-label__img">
+                                        
+                                    </div>
                                 </div>
 
                                 <div class="form-group{{ $errors->has('first_name') ? ' has-error' : '' }}">
@@ -258,17 +261,30 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group{{ $errors->has('first_name') ? ' has-error' : '' }}">
+                                <div class="form-group__col2 form-group{{ $errors->has('csv_text') ? ' has-error' : '' }}">
                                     <div class="col-xs-12">
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="gi gi-user"></i></span>
-                                            <input type="text" id="csv_name" name="first_name" class="form-control input-lg"
+                                            <input type="text" id="csv_text" name="csv_text" class="form-control input-lg"
                                                     placeholder="CSV"
-                                                    value="{{ old('first_name') }}" autofocus>
+                                                    value="{{ old('csv_text') }}" autofocus>
                                         </div>
                                         @if ($errors->has('first_name'))
                                             <span id="first_name-error" class="help-block animation-slideDown">
                                             {{ $errors->first('first_name') }}
+                                        </span>
+                                        @endif
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="gi gi-user"></i></span>
+                                            <input type="text" id="expiry_date" name="expiry_date" class="form-control input-lg"
+                                                    placeholder="Expiry Date"
+                                                    value="{{ old('expiry_date') }}" autofocus>
+                                        </div>
+                                        @if ($errors->has('expiry_date'))
+                                            <span id="first_name-error" class="help-block animation-slideDown">
+                                            {{ $errors->first('expiry_date') }}
                                         </span>
                                         @endif
                                     </div>

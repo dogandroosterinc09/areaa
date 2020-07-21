@@ -40,6 +40,14 @@
             display: block;
             margin: auto;
         }
+        &-outline {
+            background: transparent;
+            color: $color-secondary;
+            &:hover {
+                background: $color-secondary;
+                color: $color-white;
+            }
+        }
         &:hover {
             color: $color-darkred;
             // background: $color-darkred;
