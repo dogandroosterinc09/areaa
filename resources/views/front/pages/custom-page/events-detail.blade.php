@@ -110,7 +110,7 @@
                                 @endauth
                                 </ul>
                                 <div class="register-info__button register-info__button--group">
-                                    <a href="{{url('member-register-event/'.$event->id)}}" class="btn btn--secondary"> Login</a> &bull; 
+                                    <a href="{{url('member-register-event/'.$event->id)}}" class="btn btn--secondary"> Login</a> 
                                     <a href="{{url('guest-register-event/'.$event->id)}}" class="btn btn--secondary btn--secondary-outline"> As Guest</a>
                                 </div>
                             </div>
