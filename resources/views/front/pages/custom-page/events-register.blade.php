@@ -258,6 +258,22 @@
                                     </div>
                                 </div>
 
+                                <div class="form-group{{ $errors->has('first_name') ? ' has-error' : '' }}">
+                                    <div class="col-xs-12">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="gi gi-user"></i></span>
+                                            <input type="text" id="csv_name" name="first_name" class="form-control input-lg"
+                                                    placeholder="CSV"
+                                                    value="{{ old('first_name') }}" autofocus>
+                                        </div>
+                                        @if ($errors->has('first_name'))
+                                            <span id="first_name-error" class="help-block animation-slideDown">
+                                            {{ $errors->first('first_name') }}
+                                        </span>
+                                        @endif
+                                    </div>
+                                </div>
+
                                 {{--
                                 @auth
                                     @if ($event->amount_member > 0) 
