@@ -44,8 +44,8 @@
             background: transparent;
             color: $color-secondary;
             &:hover {
-                background: $color-secondary;
-                color: $color-white;
+                background: $color-secondary !important;
+                color: $color-white !important;
             }
         }
         &:hover {

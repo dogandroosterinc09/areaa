@@ -2431,6 +2431,7 @@ ul.bullet-style {
 }
 
 .form-label {
+    position: relative;
     h4 {
         text-transform: uppercase !important;
     }
@@ -2440,8 +2441,8 @@ ul.bullet-style {
         top: 0;
         width: 100px;
         img {
-            width: auto;
-            height: 100%;
+            width: 100%;
+            height: auto;
         }
     }
 }
