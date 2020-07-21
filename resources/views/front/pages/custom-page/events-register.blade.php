@@ -225,7 +225,7 @@
                                 <div class="form-label">
                                     <h4>credit card payment</h4>
                                     <div class="form-label__img">
-                                        
+                                        <img src="{{ url('public/images/payment-option.jpg') }}" alt="payment-option" class="img-fluid"> 
                                     </div>
                                 </div>
 
