@@ -278,7 +278,7 @@
                                     <div class="col-xs-12">
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="gi gi-user"></i></span>
-                                            <input type="text" id="expiry_date" name="expiry_date" class="form-control input-lg"
+                                            <input type="date" id="expiry_date" name="expiry_date" class="form-control input-lg"
                                                     placeholder="Expiry Date"
                                                     value="{{ old('expiry_date') }}" autofocus>
                                         </div>
