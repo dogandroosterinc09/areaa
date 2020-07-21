@@ -85,7 +85,7 @@
                             <h4>Registration Info {{$viewing_user}}</h4>              
                             <div class="register-info__list">
 
-                                <div class="heading-primary">
+                                <div class="form-label">
                                     <h4>member information</h4>
                                 </div>
 
@@ -154,7 +154,7 @@
                                 </div>
 
                                 <hr>
-                                <div class="heading-primary">
+                                <div class="form-label">
                                     <h4>BILLING INFORMATION</h4>
                                 </div>
 
