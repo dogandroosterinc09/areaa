@@ -163,7 +163,7 @@
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="gi gi-user"></i></span>
                                             <input type="text" id="first_name" name="first_name" class="form-control input-lg"
-                                                    placeholder="Billing First Name"
+                                                    placeholder="First Name"
                                                     value="{{ old('first_name') }}" autofocus>
                                         </div>
                                         @if ($errors->has('first_name'))
@@ -178,7 +178,7 @@
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="gi gi-user"></i></span>
                                             <input type="text" id="first_name" name="first_name" class="form-control input-lg"
-                                                    placeholder="Billing Last Name"
+                                                    placeholder="Last Name"
                                                     value="{{ old('first_name') }}" autofocus>
                                         </div>
                                         @if ($errors->has('first_name'))
@@ -193,7 +193,7 @@
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="gi gi-user"></i></span>
                                             <input type="text" id="first_name" name="first_name" class="form-control input-lg"
-                                                    placeholder="Billing Street Address"
+                                                    placeholder="Street Address"
                                                     value="{{ old('first_name') }}" autofocus>
                                         </div>
                                         @if ($errors->has('first_name'))
@@ -208,7 +208,7 @@
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="gi gi-user"></i></span>
                                             <input type="text" id="first_name" name="first_name" class="form-control input-lg"
-                                                    placeholder="Billing City"
+                                                    placeholder="City"
                                                     value="{{ old('first_name') }}" autofocus>
                                         </div>
                                         @if ($errors->has('first_name'))
